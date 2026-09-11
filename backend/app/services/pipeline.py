@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import logging
+
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -19,7 +21,13 @@ from app.services.prompts.builder import PromptBuilder
 from app.services.rule_engine.service import RuleEngine
 from app.services.state.service import StateService
 from app.services.validation.models import LLMResponse, StateUpdate
-from app.services.validation.service import ValidationService
+from app.services.validation.service import KnowledgeBoundaryError, ValidationError, ValidationService
+from app.services.validation.knowledge import unfamiliar_topic_response
+from app.services.validation.items import requested_transfer, transfer_answer
+from app.services.validation.knowledge import outside_world
+from app.services.quests.bow import dialogue as bow_dialogue, maybe_start, get_quest, snapshot as bow_snapshot, reply
+
+logger = logging.getLogger(__name__)
 
 
 class ConversationPipeline:
@@ -34,24 +42,43 @@ class ConversationPipeline:
         self._llm_service = LLMService()
 
     def chat(self, npc_id: int, player_message: str) -> ChatResponse:
-        npc = self._require_npc(npc_id)
         player = self._require_player()
+        npc = self._require_npc(npc_id)
         quest = self._db.scalar(select(Quest).where(Quest.player_id == player.id))
 
         context_builder = ContextBuilder(self._db, memory_service=self._memory_service)
         context = context_builder.build(npc=npc, player=player, player_input=player_message)
         prompt = self._prompt_builder.build(context)
 
+        grounded = None
+        if not outside_world(player_message):
+            request = requested_transfer(player_message)
+            if request == ('give_item', 'bow') and not npc.pending_item and 'bow' not in (npc.inventory or []):
+                grounded = bow_dialogue(self._db, npc, player_message, player)
+            if grounded is None:
+                grounded = transfer_answer(player_message, list(npc.inventory or []), list(player.inventory or []), npc.pending_item)
+            if grounded is None:
+                grounded = bow_dialogue(self._db, npc, player_message, player)
+            if grounded is None and any(phrase in player_message.lower() for phrase in ('inventory', 'what do you have', 'what are you carrying')):
+                stock = ', '.join(npc.inventory or []) or 'nothing'
+                grounded = reply(f"I currently carry {stock}. Select an item in my supplies to request it.")
         try:
-            generation = self._llm_service.generate(prompt, context.as_dict())
+            if grounded is not None or requested_transfer(player_message) is not None or npc.pending_item:
+                # Ownership and explicit transfer requests are game rules, not LLM decisions.
+                generation = GenerationResult(raw_text="", raw_json={})
+            else:
+                generation = self._llm_service.generate(prompt, context.as_dict())
         except Exception:
+            logger.exception("LLM generation failed for NPC %s (model=%s)", npc.id, self._settings.llm_model)
             generation = GenerationResult(raw_text="{}", raw_json={})
-        validated_output = self._validate_or_repair(generation.raw_json, npc, context, player_message)
+        validated_output = grounded or self._validate_or_repair(generation.raw_json, npc, context, player_message)
         conditioned_output = self._role_conditioning.apply(npc, validated_output)
         _rules = self._rule_engine.evaluate(npc)
 
         state_service = StateService(self._db)
         snapshot = state_service.apply(npc=npc, player=player, quest=quest, output=conditioned_output)
+
+        maybe_start(self._db, player, npc, conditioned_output)
 
         memory_event = self._memory_service.build_interaction_memory(
             npc=npc,
@@ -83,6 +110,7 @@ class ConversationPipeline:
         current_player = self._db.scalar(select(Player).where(Player.id == player.id)) or player
 
         return ChatResponse(
+            bow_quest=bow_snapshot(get_quest(self._db, player.id)),
             npc=NPCRead.model_validate(refreshed_npc),
             validated_output=StructuredNPCOutput.model_validate(conditioned_output.model_dump()),
             final_dialogue=conditioned_output.dialogue,
@@ -95,7 +123,11 @@ class ConversationPipeline:
     def _validate_or_repair(self, raw_json: dict, npc: NPC, context, player_message: str) -> LLMResponse:
         try:
             return self._validation_service.validate(raw_json, npc, context).output
-        except Exception:
+        except KnowledgeBoundaryError as exc:
+            logger.warning("NPC %s knowledge boundary: %s", npc.id, exc)
+            return unfamiliar_topic_response(npc.role)
+        except ValidationError as exc:
+            logger.warning("NPC %s output rejected: %s", npc.id, exc)
             return self._fallback_output(npc=npc, context=context, player_message=player_message)
 
     def _fallback_output(self, npc: NPC, context, player_message: str) -> LLMResponse:
@@ -103,8 +135,8 @@ class ConversationPipeline:
             return LLMResponse(
                 intent="assist",
                 emotion="friendly",
-                dialogue="I can share wood and tell you where the forest is safest.",
-                action="give_item",
+                dialogue="I can tell you about the forest. Ask me about the supplies I have.",
+                action="speak",
                 reasoning="Fallback response after validation rejected the raw output.",
                 state_update=StateUpdate(trust=0.03, fear=0.0, aggression=0.0, curiosity=0.02),
             )
@@ -112,7 +144,7 @@ class ConversationPipeline:
         return LLMResponse(
             intent="assist",
             emotion="calm",
-            dialogue="Bring me wood and I will craft an axe for you.",
+            dialogue="I can help with workshop supplies. Open Quests if you would like me to make a bow.",
             action="speak",
             reasoning="Fallback response after validation rejected the raw output.",
             state_update=StateUpdate(trust=0.03, fear=0.0, aggression=0.0, curiosity=0.02),
@@ -126,13 +158,13 @@ class ConversationPipeline:
         return 0.4
 
     def _require_npc(self, npc_id: int) -> NPC:
-        npc = self._db.scalar(select(NPC).where(NPC.id == npc_id))
+        npc = self._db.scalar(select(NPC).where(NPC.id == npc_id).with_for_update())
         if npc is None:
             raise ValueError(f"NPC {npc_id} does not exist")
         return npc
 
     def _require_player(self) -> Player:
-        player = self._db.scalar(select(Player).where(Player.id == 1))
+        player = self._db.scalar(select(Player).where(Player.id == 1).with_for_update())
         if player is None:
             raise ValueError("Seed player does not exist")
         return player

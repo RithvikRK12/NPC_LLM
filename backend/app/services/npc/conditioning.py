@@ -17,9 +17,9 @@ class RoleConditioningService:
         sanitized_action = output.action if output.action not in constraints["forbidden_actions"] else "speak"
         aggression_delta = min(output.state_update.aggression, constraints["max_aggression"])
         state_update = StateUpdate(
-            trust=clamp(output.state_update.trust),
-            fear=clamp(output.state_update.fear),
-            aggression=clamp(aggression_delta),
-            curiosity=clamp(output.state_update.curiosity),
+            trust=clamp(output.state_update.trust, -1.0, 1.0),
+            fear=clamp(output.state_update.fear, -1.0, 1.0),
+            aggression=clamp(aggression_delta, -1.0, 1.0),
+            curiosity=clamp(output.state_update.curiosity, -1.0, 1.0),
         )
         return output.model_copy(update={"action": sanitized_action, "state_update": state_update})

@@ -4,6 +4,9 @@ extends CharacterBody2D
 
 
 func _physics_process(_delta: float) -> void:
+	if get_viewport().gui_get_focus_owner() is LineEdit:
+		velocity = Vector2.ZERO
+		return
 	var direction := Vector2.ZERO
 	if Input.is_key_pressed(KEY_A):
 		direction.x -= 1.0

@@ -13,6 +13,8 @@ class NPCRead(ORMBaseModel):
     curiosity: float
     location: str
     current_state: str
+    pending_item: str | None = None
+    inventory: list[str]
 
 
 class NPCStateUpdate(BaseModel):

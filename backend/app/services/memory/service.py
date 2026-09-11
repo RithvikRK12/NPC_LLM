@@ -43,13 +43,13 @@ class MemoryService:
     def store_memory(self, npc: NPC, event: str, importance: float, emotion: str) -> Memory:
         memory = Memory(
             npc_id=npc.id,
-            event=event,
+            event=event[:512],
             importance=importance,
             emotion=emotion,
             embedding=self._embedder.embed(event),
         )
         self._db.add(memory)
-        self._db.commit()
+        self._db.flush()
         self._db.refresh(memory)
         return memory
 
@@ -63,7 +63,7 @@ class MemoryService:
         scored_rows: list[RetrievedMemory] = []
 
         for memory in rows:
-            memory_embedding = memory.embedding or []
+            memory_embedding = memory.embedding if memory.embedding is not None else []
             similarity = cosine_similarity(query_embedding, memory_embedding)
             age_hours = max((now.replace(tzinfo=None) - memory.timestamp).total_seconds() / 3600.0, 0.0)
             recency = 1.0 / (1.0 + age_hours / 24.0)

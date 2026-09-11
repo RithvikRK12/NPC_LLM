@@ -33,17 +33,22 @@ class StateService:
         quest_status = quest.status if quest else "unknown"
         quest_progress = quest.progress if quest else 0
 
-        if npc.role == "gatherer" and output.action in {"give_item", "help_player"} and "wood" not in inventory:
-            inventory.append("wood")
-            quest_status = "active"
-            quest_progress = max(quest_progress, 50)
+        if output.intent == 'confirm_transfer' and output.action == 'ask_question':
+            npc.pending_item = output.item
+        elif output.intent in {'cancel_transfer', 'unavailable_item'} or output.action in {'give_item', 'receive_item'}:
+            npc.pending_item = None
+        npc_inventory = list(npc.inventory or [])
+        if output.action in {"give_item", "receive_item"}:
+            source, destination = (npc_inventory, inventory) if output.action == "give_item" else (inventory, npc_inventory)
+            if not output.item or output.item not in source:
+                raise ValueError("The requested item is no longer available")
+            source.remove(output.item)
+            destination.append(output.item)
+            if output.action == "give_item" and output.item == "wood" and quest_status != "completed":
+                quest_status = "active"
+                quest_progress = max(quest_progress, 50)
+        npc.inventory = npc_inventory
 
-        if npc.role == "craftsman" and output.action == "craft_axe" and "wood" in inventory:
-            inventory.remove("wood")
-            if "axe" not in inventory:
-                inventory.append("axe")
-            quest_status = "completed"
-            quest_progress = 100
 
         player.inventory = inventory
 
@@ -55,7 +60,7 @@ class StateService:
         self._db.add(player)
         if quest is not None:
             self._db.add(quest)
-        self._db.commit()
+        self._db.flush()
         self._db.refresh(npc)
         self._db.refresh(player)
         if quest is not None:

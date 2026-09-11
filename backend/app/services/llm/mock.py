@@ -29,8 +29,8 @@ class MockLLMProvider(LLMProvider):
             response = {
                 "intent": "assist",
                 "emotion": "friendly",
-                "dialogue": "I found wood for you. Take it, then visit the Craftsman.",
-                "action": "give_item" if not has_wood else "speak",
+                "dialogue": "The forest is peaceful today. How are you doing?",
+                "action": "speak",
                 "reasoning": "The Gatherer shares resources and talks about the forest.",
                 "state_update": {"trust": 0.05, "fear": -0.02, "aggression": 0.0, "curiosity": 0.02},
             }
@@ -39,8 +39,8 @@ class MockLLMProvider(LLMProvider):
         response = {
             "intent": "assist",
             "emotion": "calm",
-            "dialogue": "I can repair tools and help craft an axe if you bring wood.",
-            "action": "craft_axe" if "axe" in player_input else "repair_tool",
+            "dialogue": "Welcome to my workshop. It is a fine day in the village.",
+            "action": "speak",
             "reasoning": "The Craftsman offers safe trade and crafting support.",
             "state_update": {"trust": 0.04, "fear": -0.01, "aggression": 0.0, "curiosity": 0.01},
         }

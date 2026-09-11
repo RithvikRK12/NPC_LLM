@@ -21,12 +21,14 @@ class OpenAICompatibleProvider(LLMProvider):
             "model": self._settings.llm_model,
             "messages": [
                 {"role": "system", "content": prompt},
-                {"role": "user", "content": json.dumps(context, ensure_ascii=True)},
+                *context.get("recent_dialogue", []),
+                {"role": "user", "content": context.get("player_input", "")},
             ],
             "temperature": 0.2,
+            "response_format": {"type": "json_object"},
         }
         headers = {"Authorization": f"Bearer {self._settings.llm_api_key}"} if self._settings.llm_api_key else {}
-        with httpx.Client(timeout=30.0) as client:
+        with httpx.Client(timeout=httpx.Timeout(self._settings.llm_timeout_seconds, connect=5.0)) as client:
             response = client.post(f"{self._settings.llm_base_url.rstrip('/')}/chat/completions", json=payload, headers=headers)
             response.raise_for_status()
             data = response.json()

@@ -1,4 +1,4 @@
-from sqlalchemy import Float, Integer, String
+from sqlalchemy import Float, Integer, String, JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database.base import Base
@@ -16,6 +16,9 @@ class NPC(Base):
     curiosity: Mapped[float] = mapped_column(Float, default=0.5)
     location: Mapped[str] = mapped_column(String(128), default="village_square")
     current_state: Mapped[str] = mapped_column(String(128), default="idle")
+
+    pending_item: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    inventory: Mapped[list[str]] = mapped_column(JSON, default=list)
 
     memories = relationship("Memory", back_populates="npc", cascade="all, delete-orphan")
     conversations = relationship("Conversation", back_populates="npc", cascade="all, delete-orphan")

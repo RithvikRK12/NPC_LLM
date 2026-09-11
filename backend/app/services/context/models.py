@@ -10,6 +10,7 @@ class ConversationContext:
     player_input: str
     npc_state: dict[str, Any]
     memories: list[dict[str, Any]] = field(default_factory=list)
+    recent_dialogue: list[dict[str, str]] = field(default_factory=list)
     quest: dict[str, Any] = field(default_factory=dict)
     inventory: list[str] = field(default_factory=list)
     location: str = ""
@@ -23,6 +24,7 @@ class ConversationContext:
             "npc_state": self.npc_state,
             "memories": self.memories,
             "quest": self.quest,
+            "recent_dialogue": self.recent_dialogue,
             "inventory": self.inventory,
             "location": self.location,
             "time": self.time,

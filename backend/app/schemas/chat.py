@@ -21,11 +21,13 @@ class StructuredNPCOutput(BaseModel):
     emotion: str
     dialogue: str
     action: str
+    item: str | None = None
     reasoning: str
     state_update: StateUpdatePayload
 
 
 class ChatResponse(BaseModel):
+    bow_quest: dict = Field(default_factory=dict)
     npc: NPCRead
     validated_output: StructuredNPCOutput
     final_dialogue: str

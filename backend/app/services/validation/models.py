@@ -15,5 +15,6 @@ class LLMResponse(BaseModel):
     emotion: str = Field(min_length=1)
     dialogue: str = Field(min_length=1, max_length=240)
     action: str = Field(min_length=1)
+    item: str | None = None
     reasoning: str = Field(min_length=1)
     state_update: StateUpdate

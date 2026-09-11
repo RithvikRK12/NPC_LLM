@@ -17,4 +17,5 @@ func apply_state(data: Dictionary) -> void:
 func refresh_label(trust: float = 0.0, fear: float = 0.0, aggression: float = 0.0, curiosity: float = 0.0) -> void:
 	if label == null:
 		return
-	label.text = "%s\nT %.2f | F %.2f | A %.2f | C %.2f" % [display_name, trust, fear, aggression, curiosity]
+	label.text = "%s\n%s" % [display_name, "Workshop" if role_name == "craftsman" else "Forest edge"]
+	label.tooltip_text = "Trust %.2f | Fear %.2f | Aggression %.2f | Curiosity %.2f" % [trust, fear, aggression, curiosity]

@@ -1,13 +1,20 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 
 from app.config.settings import get_settings
 from app.models.npc import NPC
 from app.services.validation.models import LLMResponse
+from app.services.validation.knowledge import outside_world
+from app.services.validation.items import transfer_answer, ITEMS
 
 
 class ValidationError(RuntimeError):
+    pass
+
+
+class KnowledgeBoundaryError(ValidationError):
     pass
 
 
@@ -21,6 +28,14 @@ class ValidationService:
         self._settings = get_settings()
 
     def validate(self, raw_output: dict, npc: NPC, context: object | None = None) -> ValidationResult:
+        if npc.role in {"craftsman", "gatherer"}:
+            player_input = getattr(context, "player_input", "")
+            if outside_world(player_input) or outside_world(str(raw_output.get("dialogue", ""))):
+                raise KnowledgeBoundaryError("Modern technology is outside the NPC's world knowledge")
+        transfer = transfer_answer(getattr(context, "player_input", ""), list(npc.inventory or []),
+                                   list(getattr(context, "inventory", []) or []), npc.pending_item)
+        if transfer is not None:
+            return ValidationResult(output=transfer)
         try:
             output = LLMResponse.model_validate(raw_output)
         except Exception as exc:
@@ -29,6 +44,12 @@ class ValidationService:
         if len(output.dialogue) > self._settings.max_dialogue_chars:
             raise ValidationError("Dialogue exceeds maximum length")
 
+        if output.action in {"give_item", "receive_item"}:
+            raise ValidationError("Item transfers require an explicit player request naming an owned item")
+        if output.action not in {"speak", "idle", "ask_question", "share_memory"}:
+            raise ValidationError("The model cannot trigger crafting, transfers, or quest rewards")
+        if re.search(r"\b(?:axe|bow|food|fruits|hammer|rope|saw|string|water|wood|quest|reward|crafted|crafting|completed|finished|inventory)\b|\bi (?:have|own|carry|give|gave|made)\b|\byou (?:have|received|earned)\b", output.dialogue, re.I):
+            raise ValidationError("Inventory and quest claims must come from authoritative game rules")
         self._validate_ranges(output)
         self._validate_action(output.action, npc, context)
         self._validate_contradictions(output)
@@ -37,8 +58,8 @@ class ValidationService:
     def _validate_ranges(self, output: LLMResponse) -> None:
         for field_name in ("trust", "fear", "aggression", "curiosity"):
             value = getattr(output.state_update, field_name)
-            if not 0.0 <= value <= 1.0:
-                raise ValidationError(f"{field_name} must be between 0 and 1")
+            if not -1.0 <= value <= 1.0:
+                raise ValidationError(f"{field_name} delta must be between -1 and 1")
 
     def _validate_action(self, action: str, npc: NPC, context: object | None) -> None:
         forbidden_by_role = {
@@ -53,6 +74,7 @@ class ValidationService:
             "idle",
             "trade",
             "give_item",
+            "receive_item",
             "repair_tool",
             "craft_axe",
             "request_materials",
@@ -67,7 +89,7 @@ class ValidationService:
             inventory = []
             if context is not None and hasattr(context, "inventory"):
                 inventory = list(getattr(context, "inventory") or [])
-            if "wood" not in inventory:
+            if "wood" not in inventory and "wood" not in (npc.inventory or []):
                 raise ValidationError("Crafting an axe requires wood in the inventory")
 
     def _validate_contradictions(self, output: LLMResponse) -> None:
