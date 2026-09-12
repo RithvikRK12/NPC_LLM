@@ -89,6 +89,10 @@ def finish_if_ready(db, player):
     quest.phase = 'completed'
     craftsman.current_state = 'available'
     output = reply('Your bow is ready. Here you are! Get a bow is complete.')
+    from app.services.memory.service import MemoryService
+    classification = {'important': True, 'importance': 1.0, 'category': 'quest_completion',
+                      'reason': 'Server completed crafting and granted one bow.', 'stored': True, 'version': 1}
+    MemoryService(db).store_memory(craftsman, 'Bow quest completed. Craftsman gave the player one bow.', 1.0, 'calm', event_type='quest_completion', quest_id='get_bow')
     db.add(Conversation(npc_id=craftsman.id, player_input='[Bow crafting finished]', llm_output={},
-                        validated_output=output.model_dump(), final_dialogue=output.dialogue))
+                        validated_output=output.model_dump() | {"memory_classification": classification}, final_dialogue=output.dialogue))
     return output.dialogue

@@ -25,6 +25,10 @@ from app.services.validation.service import ValidationError, ValidationService
 
 class NPCPipelineTests(unittest.TestCase):
     def setUp(self):
+        embedding_patch = patch('app.services.memory.embedding.EmbeddingService.embed_many',
+                                side_effect=lambda texts, **kw: [[1.0] + [0.0] * 767 for _ in texts])
+        embedding_patch.start()
+        self.addCleanup(embedding_patch.stop)
         self.engine = create_engine('sqlite://', poolclass=StaticPool,
                                     connect_args={'check_same_thread': False})
         Base.metadata.create_all(self.engine)
@@ -377,6 +381,43 @@ class NPCPipelineTests(unittest.TestCase):
             with self.subTest(changes=changes), self.assertRaises(ValidationError):
                 ValidationService().validate(self.output() | changes, NPC(role='craftsman'))
 
+    def test_memory_selects_events_and_player_preferences_not_small_talk(self):
+        from app.models import Memory
+        raw = self.output() | {'dialogue': 'Good to see you in the village.'}
+        with patch.object(OpenAICompatibleProvider, 'generate', return_value=json.dumps(raw)):
+            for message in ('hello', 'thanks', 'What do you like?'):
+                result = self.client.post('/chat', json={'npc_id': 1, 'player_message': message}).json()
+                self.assertFalse(result['memory_classification']['important'])
+            for _ in range(2):
+                result = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'I prefer quiet forests'}).json()
+                self.assertTrue(result['memory_classification']['important'])
+        memories = list(self.db.scalars(select(Memory)))
+        self.assertEqual(len(memories), 1)
+        self.assertIn('unverified preference', memories[0].event)
+        self.assertFalse(result['memory_classification']['stored'])
+        self.assertEqual(len(list(self.db.scalars(select(Conversation)))), 5)
+        gift = self.client.post('/inventory/transfer', json={'npc_id': 1, 'item': 'water', 'direction': 'to_npc'}).json()
+        self.assertEqual(gift['memory_classification']['category'], 'item_transfer')
+        missing = self.client.post('/inventory/transfer', json={'npc_id': 1, 'item': 'water', 'direction': 'to_npc'}).json()
+        self.assertFalse(missing['memory_classification']['important'])
+        self.assertEqual(len(list(self.db.scalars(select(Memory)))), 2)
+        saved = self.db.scalars(select(Conversation).order_by(Conversation.id.desc())).first()
+        self.assertEqual(saved.validated_output['memory_classification'], missing['memory_classification'])
+
+    def test_rejected_preference_does_not_become_memory(self):
+        raw = self.output() | {'action': 'attack'}
+        with patch.object(OpenAICompatibleProvider, 'generate', return_value=json.dumps(raw)):
+            result = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'I prefer quiet forests'}).json()
+        self.assertEqual(result['memory_classification']['category'], 'excluded')
+        self.assertEqual(result['memories'], [])
+
+    def test_legacy_routine_memories_are_not_retrieved(self):
+        from app.models import Memory
+        from app.services.memory.service import MemoryService
+        self.db.add(Memory(npc_id=1, event='hello', importance=.6, emotion='calm', embedding=[]))
+        self.db.commit()
+        self.assertEqual(MemoryService(self.db).retrieve_relevant_memories(self.db.get(NPC, 1), 'hello'), [])
+
     def test_chat_returns_model_dialogue_and_persists_signed_state(self):
         raw = self.output()
         raw['dialogue'] = 'The workshop opens at sunrise.'
@@ -386,7 +427,8 @@ class NPCPipelineTests(unittest.TestCase):
         data = response.json()
         self.assertEqual(data['final_dialogue'], raw['dialogue'])
         self.assertAlmostEqual(data['npc']['fear'], 0.09)
-        self.assertTrue(data['memories'])
+        self.assertEqual(data['memories'], [])
+        self.assertFalse(data['memory_classification']['important'])
         saved = self.db.scalar(select(Conversation))
         self.assertEqual(saved.llm_output, raw)
         self.assertEqual(saved.final_dialogue, raw['dialogue'])

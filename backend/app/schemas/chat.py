@@ -27,6 +27,7 @@ class StructuredNPCOutput(BaseModel):
 
 
 class ChatResponse(BaseModel):
+    memory_classification: dict = Field(default_factory=dict)
     bow_quest: dict = Field(default_factory=dict)
     npc: NPCRead
     validated_output: StructuredNPCOutput

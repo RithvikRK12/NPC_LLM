@@ -10,3 +10,5 @@ class MemoryRead(ORMBaseModel):
     importance: float
     emotion: str
     timestamp: datetime
+    event_type: str = "legacy"
+    quest_id: str | None = None

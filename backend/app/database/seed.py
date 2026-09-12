@@ -66,6 +66,8 @@ def reset_world(db: Session) -> None:
         if initial is not None:
             for name, value in initial.items():
                 setattr(npc, name, list(value) if isinstance(value, list) else value)
+        from uuid import uuid4
+        npc.memory_revision = str(uuid4())
         npc.pending_item = None
     quest = db.scalar(select(Quest).where(Quest.player_id == player.id))
     if quest is not None:

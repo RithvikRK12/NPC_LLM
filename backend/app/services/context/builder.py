@@ -40,6 +40,7 @@ class ContextBuilder:
                 continue
             recent_dialogue.append({"role": "user", "content": turn.player_input})
             accepted = dict(turn.validated_output or {})
+            accepted.pop("memory_classification", None)
             accepted["dialogue"] = turn.final_dialogue
             recent_dialogue.append({"role": "assistant", "content": json.dumps(accepted)})
         return ConversationContext(

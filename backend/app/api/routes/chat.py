@@ -25,6 +25,8 @@ def clear_chat(npc_id: int, db: Session = Depends(get_db)):
     npc = db.scalar(select(NPC).where(NPC.id == npc_id).with_for_update())
     if npc is None:
         raise HTTPException(status_code=404, detail='NPC not found')
+    from uuid import uuid4
+    npc.memory_revision = str(uuid4())
     npc.pending_item = None
     db.execute(delete(Conversation).where(Conversation.npc_id == npc_id))
     db.execute(delete(Memory).where(Memory.npc_id == npc_id))

@@ -16,6 +16,7 @@ from app.schemas.npc import NPCRead
 from app.services.context.builder import ContextBuilder
 from app.services.llm.service import GenerationResult, LLMService
 from app.services.memory.service import MemoryService
+from app.services.memory.importance import classify
 from app.services.npc.conditioning import RoleConditioningService
 from app.services.prompts.builder import PromptBuilder
 from app.services.rule_engine.service import RuleEngine
@@ -50,6 +51,9 @@ class ConversationPipeline:
         context = context_builder.build(npc=npc, player=player, player_input=player_message)
         prompt = self._prompt_builder.build(context)
 
+        quest_before = get_quest(self._db, player.id).phase
+        pending_before = npc.pending_item
+        self._output_rejected = False
         grounded = None
         if not outside_world(player_message):
             request = requested_transfer(player_message)
@@ -80,25 +84,26 @@ class ConversationPipeline:
 
         maybe_start(self._db, player, npc, conditioned_output)
 
-        memory_event = self._memory_service.build_interaction_memory(
-            npc=npc,
-            player_input=player_message,
-            dialogue=conditioned_output.dialogue,
-            action=conditioned_output.action,
-            relationship_mode=_rules.relationship_mode,
+        decision = classify(
+            player_message, conditioned_output, grounded=grounded is not None,
+            quest_before=quest_before, quest_after=get_quest(self._db, player.id).phase,
+            pending_before=pending_before, pending_after=npc.pending_item,
+            rejected=self._output_rejected,
         )
-        self._memory_service.store_memory(
-            npc=npc,
-            event=memory_event,
-            importance=self._importance_for_output(conditioned_output),
-            emotion=conditioned_output.emotion,
-        )
+        stored = None
+        if decision.important:
+            stored = self._memory_service.store_memory(
+                npc=npc, event=decision.event, importance=decision.importance,
+                emotion=conditioned_output.emotion, event_type=decision.category,
+                quest_id="get_bow" if decision.category.startswith("quest_") else None,
+            )
+        memory_classification = decision.payload() | {'stored': stored is not None}
 
         conversation = Conversation(
             npc_id=npc.id,
             player_input=player_message,
             llm_output=generation.raw_json,
-            validated_output=conditioned_output.model_dump(),
+            validated_output=conditioned_output.model_dump() | {"memory_classification": memory_classification},
             final_dialogue=conditioned_output.dialogue,
         )
         self._db.add(conversation)
@@ -110,6 +115,7 @@ class ConversationPipeline:
         current_player = self._db.scalar(select(Player).where(Player.id == player.id)) or player
 
         return ChatResponse(
+            memory_classification=memory_classification,
             bow_quest=bow_snapshot(get_quest(self._db, player.id)),
             npc=NPCRead.model_validate(refreshed_npc),
             validated_output=StructuredNPCOutput.model_validate(conditioned_output.model_dump()),
@@ -124,9 +130,11 @@ class ConversationPipeline:
         try:
             return self._validation_service.validate(raw_json, npc, context).output
         except KnowledgeBoundaryError as exc:
+            self._output_rejected = True
             logger.warning("NPC %s knowledge boundary: %s", npc.id, exc)
             return unfamiliar_topic_response(npc.role)
         except ValidationError as exc:
+            self._output_rejected = True
             logger.warning("NPC %s output rejected: %s", npc.id, exc)
             return self._fallback_output(npc=npc, context=context, player_message=player_message)
 
@@ -149,13 +157,6 @@ class ConversationPipeline:
             reasoning="Fallback response after validation rejected the raw output.",
             state_update=StateUpdate(trust=0.03, fear=0.0, aggression=0.0, curiosity=0.02),
         )
-
-    def _importance_for_output(self, output: LLMResponse) -> float:
-        if output.action in {"craft_axe", "give_item", "repair_tool"}:
-            return 0.9
-        if output.emotion in {"friendly", "calm"}:
-            return 0.6
-        return 0.4
 
     def _require_npc(self, npc_id: int) -> NPC:
         npc = self._db.scalar(select(NPC).where(NPC.id == npc_id).with_for_update())

@@ -17,6 +17,8 @@ class NPC(Base):
     location: Mapped[str] = mapped_column(String(128), default="village_square")
     current_state: Mapped[str] = mapped_column(String(128), default="idle")
 
+    memory_revision: Mapped[str] = mapped_column(String(36), default="initial", server_default="initial")
+
     pending_item: Mapped[str | None] = mapped_column(String(64), nullable=True)
     inventory: Mapped[list[str]] = mapped_column(JSON, default=list)
 

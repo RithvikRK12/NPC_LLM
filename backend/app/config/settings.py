@@ -16,7 +16,12 @@ class Settings(BaseSettings):
     llm_api_key: str = Field(default="")
     llm_model: str = Field(default="gpt-4.1-mini")
     llm_timeout_seconds: float = Field(default=120.0, gt=0)
-    embedding_model: str = Field(default="text-embedding-3-small")
+    embedding_model: str = Field(default="nomic-embed-text")
+    embedding_base_url: str = "http://127.0.0.1:11434"
+    embedding_dimensions: int = Field(default=768, ge=1)
+    embedding_revision: str = "v1"
+    embedding_timeout_seconds: float = Field(default=30.0, gt=0)
+    memory_candidate_count: int = Field(default=40, ge=20, le=50)
     max_dialogue_chars: int = 240
     memory_top_k: int = 5
 
