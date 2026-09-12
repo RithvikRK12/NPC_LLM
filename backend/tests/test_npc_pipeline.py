@@ -335,6 +335,28 @@ class NPCPipelineTests(unittest.TestCase):
         self.assertNotIn('bow', result['player_inventory'])
         self.assertEqual(result['bow_quest']['phase'], 'available')
 
+    def test_saved_world_survives_new_sessions_and_read_requests(self):
+        from app.models import Memory
+        self.client.post('/quests/bow/start')
+        self.client.post('/inventory/transfer', json={'npc_id': 1, 'item': 'water', 'direction': 'to_npc'})
+        self.assertEqual(self.client.put('/world/player-position', json={'x': 123.5, 'y': -82}).status_code, 200)
+        before = self.client.get('/world').json()
+        count = len(list(self.db.scalars(select(Memory))))
+        with Session(self.engine) as reopened:
+            seed_world(reopened)
+            app.dependency_overrides[get_db] = lambda: reopened
+            after = self.client.get('/world').json()
+            self.assertEqual(after, before)
+            self.assertEqual(after['player_position'], {'x': 123.5, 'y': -82})
+            self.assertEqual(len(list(reopened.scalars(select(Memory)))), count)
+            reset = self.client.post('/world/new-game').json()
+            self.assertEqual(reset['player_position'], {'x': 0., 'y': 0.})
+            self.assertEqual(reset['bow_quest']['phase'], 'available')
+            self.assertEqual(reset['histories']['1'], [])
+            self.assertEqual(reset['player_inventory'], ['water', 'food'])
+            self.assertEqual(list(reopened.scalars(select(Memory))), [])
+        app.dependency_overrides[get_db] = lambda: self.db
+
     def test_new_game_resets_inventory_chats_states_and_crafting(self):
         from app.models import BowQuest
         self.client.post('/quests/bow/start')

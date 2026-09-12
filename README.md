@@ -1,6 +1,6 @@
 # Willowbrook NPC quest demo
 
-A Godot 4 village backed by FastAPI, SQLAlchemy, and a local or compatible LLM. Every Godot game launch starts a fresh run in free roam: starter inventories, initial NPC states, empty chats, and an unstarted bow quest.
+A Godot 4 village backed by FastAPI, SQLAlchemy, and a local or compatible LLM. Godot resumes the saved world on launch, including position, inventories, NPC states, chats, memories and quest progress. Use Restart Game to begin a fresh run.
 
 ## Run
 
@@ -32,7 +32,7 @@ Each run starts with Craftsman: saw, hammer, rope; Gatherer: axe, wood, fruits; 
 
 Transfers check current ownership and save both inventories with the conversation. PostgreSQL requests lock the player row to serialize world mutations. String is a single-use pickup, available only at the gather step; its endpoint validates the game-reported position against a 64-unit pickup radius. This is a local demo, not a server-simulated multiplayer movement system.
 
-The backend controls quest steps, crafting deadlines, material consumption, and the one-time bow reward. Deadlines survive a backend restart during a run; launching the game again resets them. The model cannot trigger crafting or grant rewards. Known inventory and quest questions use authoritative replies; generated small talk is checked for unsupported actions, inventory/quest claims, and a curated set of outside-world technology topics. This reduces hallucinations but does not guarantee every unrestricted natural-language sentence is factual.
+The backend controls quest steps, crafting deadlines, material consumption, and the one-time bow reward. Deadlines survive backend and game restarts; elapsed crafting completes when the game resumes. The model cannot trigger crafting or grant rewards. Known inventory and quest questions use authoritative replies; generated small talk is checked for unsupported actions, inventory/quest claims, and a curated set of outside-world technology topics. This reduces hallucinations but does not guarantee every unrestricted natural-language sentence is factual.
 
 ## Tests
 
@@ -59,4 +59,4 @@ This uses game HTTP handlers, tests the pickup and real crafting delay, and save
 
 The game calls `advance` only while crafting. Context, prompts, validation, role conditioning, state updates and memory are organized under `backend/app/services`.
 
-Godot calls `POST /world/new-game` before enabling gameplay. It clears chat memories and resets inventories, NPC emotions, pending requests, pickup state, and crafting timers without changing NPC IDs. Backend-only restarts and ordinary world reads do not reset an ongoing run. This demo has one shared world, so opening another game window starts a fresh run for that world too.
+Godot loads `GET /world` before enabling gameplay. Player position autosaves once per second through `PUT /world/player-position` and saves again on normal window close; gameplay transactions save immediately. A forced process termination can lose the most recent unsaved movement. The Restart Game button asks for confirmation and calls `POST /world/new-game`, clearing chats and memories and resetting inventories, position, NPC states, pending requests, pickups and crafting timers without changing NPC IDs. Pending operations finish before restart is allowed. On save failure, normal close keeps the window open to let you retry. This demo still uses one shared save, not separate player profiles; restart affects that shared world.

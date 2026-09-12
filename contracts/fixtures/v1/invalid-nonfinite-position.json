@@ -1,0 +1,68 @@
+{
+  "envelope": {
+    "schema_version": 1,
+    "record_id": "command:cautious-move",
+    "trace_id": "trace:001",
+    "causation_id": "approval:001",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": null,
+    "created_at": "2026-09-12T10:00:00Z",
+    "source_ids": [
+      "approval:001",
+      "observation:003"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "role:gatherer",
+        "version": "v1"
+      }
+    ]
+  },
+  "revisions": {
+    "npc_id": "npc:gatherer",
+    "base_npc_state_revision": 7,
+    "approved_npc_state_revision": 8,
+    "quest": [
+      {
+        "scope_id": "quest:bow:001",
+        "revision": 2
+      }
+    ],
+    "inventory": [],
+    "relationship": [],
+    "policy": [],
+    "controller": [
+      {
+        "scope_id": "npc:gatherer",
+        "revision": 5
+      }
+    ]
+  },
+  "command": {
+    "approval_id": "approval:001",
+    "controller_revision": 5,
+    "kind": "move_to",
+    "target_id": null,
+    "position": {
+      "x": 1e309,
+      "y": -2.5,
+      "area_id": "area:village",
+      "spatial_revision": 4
+    },
+    "parameters": {
+      "expression": "cautious",
+      "max_speed": 110.0,
+      "arrival_distance": 48.0
+    },
+    "issued_at": "2026-09-12T10:00:00Z",
+    "expires_at": "2026-09-12T10:00:03Z",
+    "dialogue_condition": {
+      "kind": "commitment",
+      "timing": "on_command_accepted",
+      "verified_outcome_id": null
+    }
+  }
+}

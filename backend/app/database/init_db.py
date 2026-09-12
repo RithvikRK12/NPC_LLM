@@ -17,3 +17,7 @@ def initialize_database() -> None:
     if 'pending_item' not in {c['name'] for c in inspect(engine).get_columns('npcs')}:
         with engine.begin() as connection:
             connection.execute(text('ALTER TABLE npcs ADD COLUMN pending_item VARCHAR(64)'))
+
+    if 'position' not in {c['name'] for c in inspect(engine).get_columns('players')}:
+        with engine.begin() as connection:
+            connection.execute(text('ALTER TABLE players ADD COLUMN position JSON'))

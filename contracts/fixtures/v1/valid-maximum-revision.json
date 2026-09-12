@@ -1,0 +1,63 @@
+{
+  "envelope": {
+    "schema_version": 1,
+    "record_id": "command:calm-speak",
+    "trace_id": "trace:001",
+    "causation_id": "approval:001",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": "player:local",
+    "created_at": "2026-09-12T10:00:00Z",
+    "source_ids": [
+      "approval:001",
+      "observation:003"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "role:gatherer",
+        "version": "v1"
+      }
+    ]
+  },
+  "revisions": {
+    "npc_id": "npc:gatherer",
+    "base_npc_state_revision": 7,
+    "approved_npc_state_revision": 8,
+    "quest": [
+      {
+        "scope_id": "quest:bow:001",
+        "revision": 2
+      }
+    ],
+    "inventory": [],
+    "relationship": [],
+    "policy": [],
+    "controller": [
+      {
+        "scope_id": "npc:gatherer",
+        "revision": 9007199254740991
+      }
+    ]
+  },
+  "command": {
+    "approval_id": "approval:001",
+    "controller_revision": 9007199254740991,
+    "kind": "speak",
+    "target_id": "player:local",
+    "position": null,
+    "parameters": {
+      "expression": "calm",
+      "max_speed": null,
+      "arrival_distance": null
+    },
+    "issued_at": "2026-09-12T10:00:00Z",
+    "expires_at": "2026-09-12T10:00:03Z",
+    "dialogue_condition": {
+      "kind": "expression",
+      "timing": "on_command_accepted",
+      "verified_outcome_id": null
+    }
+  }
+}

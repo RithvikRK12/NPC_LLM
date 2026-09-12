@@ -1,0 +1,12 @@
+{
+  "intents": [],
+  "activities": [],
+  "expressions": [],
+  "actions": [],
+  "dialogue_timings": [],
+  "time_window": {
+    "not_before": null,
+    "expires_at": null
+  },
+  "mandatory_evidence": []
+}

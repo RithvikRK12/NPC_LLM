@@ -1,0 +1,65 @@
+{
+  "intents": [
+    "converse",
+    "decline",
+    "defer",
+    "help",
+    "request_purpose",
+    "seek_information",
+    "set_boundary"
+  ],
+  "activities": [
+    "conversing",
+    "idle",
+    "interacting",
+    "moving"
+  ],
+  "expressions": [
+    "calm",
+    "cautious",
+    "firm",
+    "neutral",
+    "practical",
+    "reassuring"
+  ],
+  "actions": [
+    {
+      "action": "approach_target",
+      "targets": [
+        {
+          "kind": "entity",
+          "entity_ids": [
+            "player-1"
+          ],
+          "area_ids": null,
+          "predicates": [
+            "reachable",
+            "visible"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "parameter": "max_speed",
+          "interval": {
+            "minimum": 0.0,
+            "maximum": 110.0
+          }
+        }
+      ]
+    }
+  ],
+  "dialogue_timings": [
+    "on_arrival",
+    "on_command_accepted",
+    "on_failure",
+    "on_interaction_success"
+  ],
+  "time_window": {
+    "not_before": null,
+    "expires_at": null
+  },
+  "mandatory_evidence": [
+    "snapshot-1"
+  ]
+}

@@ -59,6 +59,7 @@ def reset_world(db: Session) -> None:
     npcs = list(db.scalars(select(NPC).order_by(NPC.id).with_for_update()))
     db.execute(delete(Conversation))
     db.execute(delete(Memory))
+    player.position = {'x': 0.0, 'y': 0.0}
     player.inventory = ['water', 'food']
     player.current_location = 'village_square'
     for npc in npcs:

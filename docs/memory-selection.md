@@ -135,9 +135,8 @@ are preserved, not reclassified; low-priority legacy rows remain unindexed.
 If Ollama fails, an important event is still stored without a semantic vector
 and an error is logged. Retrieval falls back to no long-term memories while
 recent dialogue and authoritative state remain available; it does not silently
-use hashes. Run reindex after recovery to repair missing vectors. The existing
-new-game reset clears memories each launch, so personalization remains within a
-playthrough. The complete conversation log and important memories are not capped.
+use hashes. Run reindex after recovery to repair missing vectors. Ordinary game launches preserve memories across sessions. The explicit
+Restart Game option clears the shared save and its memories. The complete conversation log and important memories are not capped.
 
 ## Validation
 

@@ -21,15 +21,27 @@ var quest_busy := false
 var bow_state: Dictionary = {}
 var string_pickup: Sprite2D
 var pickup_hint: Label
+var restart_button: Button
+var restart_dialog: ConfirmationDialog
+var position_request: HTTPRequest
+var position_busy := false
+var last_saved_position := Vector2.INF
+var sent_position := Vector2.ZERO
+var quitting := false
+var world_busy := false
 
 
 func _ready() -> void:
+	get_tree().auto_accept_quit = false
 	_build_world()
 	_build_ui()
 	_load_world()
 
 
 func _process(_delta: float) -> void:
+	player.set_physics_process(world_loaded and not quitting and not restart_dialog.visible)
+	restart_button.disabled = not world_loaded or _operations_pending() or quitting
+	if quitting and not _operations_pending(): _save_position()
 	_update_current_npc()
 	interaction_label.text = "E  Talk to " + current_npc.display_name if current_npc != null else "Approach a villager to talk"
 	_update_give_action()
@@ -38,6 +50,7 @@ func _process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not world_loaded or quitting or restart_dialog.visible: return
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_E:
 			_open_dialogue()
@@ -77,6 +90,7 @@ func _build_world() -> void:
 	player = preload("res://scripts/player.gd").new()
 	player.position = Vector2(0, 0)
 	add_child(player)
+	player.set_physics_process(false)
 	_add_world_marker(player, Color(0.25, 0.70, 0.90), "Player")
 	var camera := Camera2D.new()
 	camera.zoom = Vector2(1.0, 1.0)
@@ -115,6 +129,27 @@ func _build_ui() -> void:
 	quests_button.custom_minimum_size = Vector2(150, 34)
 	quests_button.pressed.connect(func(): quest_panel.visible = not quest_panel.visible; inventory_drawer.hide())
 	hud.add_child(quests_button)
+	restart_button = Button.new()
+	restart_button.text = "Restart Game"
+	restart_button.position = Vector2(190, 108)
+	restart_button.custom_minimum_size = Vector2(150, 34)
+	hud.add_child(restart_button)
+	restart_dialog = ConfirmationDialog.new()
+	restart_dialog.title = "Restart Game"
+	restart_dialog.dialog_text = "Start again? This clears quests, inventories, chats and NPC memories."
+	restart_dialog.ok_button_text = "Restart"
+	restart_dialog.confirmed.connect(_restart_game)
+	hud.add_child(restart_dialog)
+	restart_button.pressed.connect(func(): restart_dialog.popup_centered())
+	position_request = HTTPRequest.new()
+	position_request.timeout = 5
+	add_child(position_request)
+	position_request.request_completed.connect(_position_completed)
+	var save_timer := Timer.new()
+	save_timer.wait_time = 1.0
+	save_timer.timeout.connect(_save_position)
+	add_child(save_timer)
+	save_timer.start()
 	quest_request = HTTPRequest.new()
 	quest_request.timeout = 10
 	add_child(quest_request)
@@ -205,13 +240,14 @@ func _load_world() -> void:
 	for window in chat_windows.values():
 		if window.pending:
 			return
-	if not world_loaded:
-		world_request.request(backend_url + "/world/new-game", PackedStringArray(), HTTPClient.METHOD_POST)
-	else:
-		world_request.request(backend_url + "/world")
+	if world_busy: return
+	world_busy = true
+	if world_request.request(backend_url + "/world") != OK:
+		world_busy = false
 
 
 func _world_completed(result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
+	world_busy = false
 	if result != HTTPRequest.RESULT_SUCCESS or code != 200:
 		inventory_label.text = "Connecting to the village..."
 		return
@@ -219,6 +255,9 @@ func _world_completed(result: int, code: int, _headers: PackedStringArray, body:
 	if not parsed is Dictionary:
 		return
 	var data: Dictionary = parsed
+	var saved: Dictionary = data.get("player_position", {"x": 0, "y": 0})
+	player.position = Vector2(float(saved.get("x", 0)), float(saved.get("y", 0)))
+	last_saved_position = player.position
 	for npc in data.get("npcs", []):
 		var id := int(npc.get("id", 0))
 		if chat_windows.has(id):
@@ -342,7 +381,7 @@ func _update_quest(data: Dictionary) -> void:
 
 
 func _quest_call(action: String, payload: Dictionary = {}) -> void:
-	if quest_busy or not world_loaded: return
+	if quest_busy or not world_loaded or quitting or restart_dialog.visible: return
 	quest_busy = true
 	quest_panel.start_button.disabled = true
 	var error := quest_request.request(backend_url + "/quests/bow/" + action, PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_POST, JSON.stringify(payload))
@@ -373,3 +412,61 @@ func _quest_completed(result: int, code: int, _headers: PackedStringArray, body:
 		for id in chat_windows:
 			if npc_nodes[id].role_name == "craftsman":
 				chat_windows[id].append_dialogue("Craftsman", str(data.reward_dialogue))
+
+
+func _operations_pending() -> bool:
+	if quest_busy or position_busy or world_busy: return true
+	for window in chat_windows.values():
+		if window.pending: return true
+	return false
+
+
+func _restart_game() -> void:
+	if _operations_pending() or not world_loaded: return
+	world_loaded = false
+	world_busy = true
+	inventory_drawer.hide()
+	quest_panel.hide()
+	for window in chat_windows.values(): window.close_chat()
+	var error := world_request.request(backend_url + "/world/new-game", PackedStringArray(), HTTPClient.METHOD_POST)
+	if error != OK:
+		world_busy = false
+		inventory_label.text = "Restart could not be sent. Reconnecting..."
+
+
+func _save_position() -> void:
+	if not world_loaded or position_busy or world_busy or restart_dialog.visible: return
+	if player.position == last_saved_position:
+		if quitting and not _operations_pending(): get_tree().quit()
+		return
+	sent_position = player.position
+	position_busy = true
+	var error := position_request.request(backend_url + "/world/player-position", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_PUT, JSON.stringify({"x": sent_position.x, "y": sent_position.y}))
+	if error != OK:
+		position_busy = false
+		_save_failed()
+
+
+func _position_completed(result: int, code: int, _headers: PackedStringArray, _body: PackedByteArray) -> void:
+	position_busy = false
+	if result == HTTPRequest.RESULT_SUCCESS and code == 200:
+		last_saved_position = sent_position
+	else:
+		_save_failed()
+
+
+func _save_failed() -> void:
+	quitting = false
+	inventory_label.text = "Position save failed. Check the backend and try closing again."
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		if not world_loaded:
+			get_tree().quit()
+		else:
+			restart_dialog.hide()
+			quitting = true
+			inventory_drawer.hide()
+			quest_panel.hide()
+			for window in chat_windows.values(): window.close_chat()
