@@ -110,7 +110,7 @@ def read_fixture(path: Path) -> CommandFixture:
 
 
 if __name__ == "__main__":
-    fixture_dir = Path(__file__).resolve().parents[2].parent / "contracts" / "fixtures" / "v1"
+    fixture_dir = Path(__file__).resolve().parents[2] / "contracts" / "fixtures" / "v1"
     failures = []
     for path in sorted(fixture_dir.glob("*.json")):
         try:

@@ -2,17 +2,17 @@
 
 ## Overall status
 
-**Target architecture implementation underway; contracts.core / C01 complete.** The current game has working foundations, but none of the 59 target modules is complete against its new detailed-design contract.
+**Target architecture implementation underway; contracts.core, ports.core and fuzzy.membership complete; domain.world.eligibility / T02 is next.** The current game has working foundations, and the common contract, port and membership layers are now complete against their detailed-design packets.
 
 Sources: [proposal](proposal.md), [detailed design](detailed-design.md), and confirmed decisions in [high-level design](high-level-design.md). The detailed design's **Role Conditioning → final Control Validation → FSEC** sequence controls where proposal examples disagree.
 
 There are **52 named module rows** in the detailed design and **7 supporting packets** for common contracts, ports, persistence, HTTP transport, durable delivery, authored policy content and system integration. All have individual files; parent package directories are organizational boundaries, not additional executable modules to double-count.
 
-- Target modules complete: **0/59**.
+- Target modules complete: **3/59**.
 - Modules with inspected reusable foundations: **9** (still unchecked).
-- New module implementation in progress: **contracts.core / C03 next; ports.core / P02; fuzzy.membership / T01**.
-- Current verification: **95 backend tests passed** on 2026-09-12 (`PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests`, exit 0). This includes the 44-test baseline, C01/C02 (30), P01 (12), and membership T01 (9).
-- Live semantic and Godot smoke checks were **not run** for this documentation-only planning change; obtain fresh evidence during their integration tasks.
+- New module implementation in progress: **none; next ready task is domain.world.eligibility / T02**.
+- Current verification: **134 backend tests passed** on 2026-09-13 (`PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests`, exit 0). This includes the 44-test baseline, C01/C02 (30), C03 Python checks (4), P01 (12), P03 write-port conformance checks (14), membership T04 (22), and domain.world.eligibility T01 (8).
+- Live semantic checks were **not run** for this pass. The C03 Godot headless fixture check is recorded below; obtain fresh semantic and full integration evidence during their integration tasks.
 
 ## Tracking rules
 
@@ -25,7 +25,21 @@ There are **52 named module rows** in the detailed design and **7 supporting pac
 
 ## Completed work
 
+- [x] `fuzzy.membership / T02`: pure triangular/trapezoidal fuzzification accepted on 2026-09-13; configured labels, dimension order, candidate/input identity and policy version propagation are covered by 14 focused tests.
+
+- [x] `fuzzy.membership / T03`: membership invariant hardening accepted on 2026-09-13; trapezoid shoulder endpoints, bounded degrees and typed configuration errors are covered by 19 focused tests.
+
+- [x] `fuzzy.membership / T04`: adjacent handoff verification accepted on 2026-09-13; accepted C01 envelopes produce immutable `Memberships` for the documented `fuzzy.inference` input and mismatched timeline/version cases reject before output.
+
+- [x] `domain.world.eligibility / T01`: local typed event/world/policy/result boundary and fixtures accepted on 2026-09-13; unsupported interaction kind, duplicate evidence fields, fake protocol execution and infrastructure-free import are covered by 8 focused tests.
+
+- [x] `ports.core / P03`: reusable write-port conformance suite accepted on 2026-09-13; deterministic in-memory fake passes unchanged and broken fakes demonstrate failure detection for premature commit, cursor skipping and wrong error mapping.
+
 - [x] `fuzzy.membership / T01`: local typed input/policy/output and rejection fixtures; 9 focused tests accepted on 2026-09-12.
+
+- [x] `ports.core / P02`: application-owned write transactions, CAS/idempotency contracts, delivery cursors and deterministic in-memory fake; 11 focused tests accepted on 2026-09-13.
+
+- [x] `contracts.core / C03`: shared cross-language fixture corpus and independent Python/Godot reader checks accepted on 2026-09-13.
 
 - [x] `contracts.core / C02`: closed vocabularies, narrowing constraints and timing values; 17 focused tests accepted on 2026-09-12.
 
@@ -43,7 +57,6 @@ There are **52 named module rows** in the detailed design and **7 supporting pac
 
 ## In-progress work
 
-- [ ] `ports.core / P02` — `/root/ports_p01`; application-owned transaction/CAS/delivery protocols and in-memory tests.
 - Main Agent owns review and tracking.
 
 ## Module status
@@ -52,17 +65,17 @@ The following is a topological integration order, not a demand to serialize all 
 
 ### Dependency layer 0
 
-- [ ] [contracts.core](tasks/contracts-core.md) — C01/C02 complete; C03 pending.
+- [x] [contracts.core](tasks/contracts-core.md) — C01/C02/C03 complete; cross-language fixture gate passed.
 
 ### Dependency layer 1
 
-- [ ] [ports.core](tasks/ports-core.md) — P01 complete; P02 in progress, P03 and final contract gate pending.
-- [ ] [domain.world.eligibility](tasks/domain-world-eligibility.md) — Planned.
+- [x] [ports.core](tasks/ports-core.md) — P01/P02/P03 complete; direct contracts gate passed.
+- [ ] [domain.world.eligibility](tasks/domain-world-eligibility.md) — T01 complete; T02–T04 pending.
 - [ ] [perception.normalize](tasks/perception-normalize.md) — Planned.
 - [ ] [memory.reconcile](tasks/memory-reconcile.md) — Planned.
 - [ ] [reasoning.proposal_check](tasks/reasoning-proposal-check.md) — Planned.
 - [ ] [state.merge](tasks/state-merge.md) — Planned.
-- [ ] [fuzzy.membership](tasks/fuzzy-membership.md) — T01 complete; T02–T04 pending.
+- [x] [fuzzy.membership](tasks/fuzzy-membership.md) — T01–T04 complete; direct contracts gate passed.
 - [ ] [roles.permissions](tasks/roles-permissions.md) — Planned.
 - [ ] [control.fallback](tasks/control-fallback.md) — Planned.
 - [ ] [domain.quest.recovery](tasks/domain-quest-recovery.md) — Planned.
@@ -165,7 +178,7 @@ The following is a topological integration order, not a demand to serialize all 
 
 | Item | Impact | Owner / mitigation |
 | --- | --- | --- |
-| Envelopes exist; behaviour contracts and ports remain in progress | New modules can otherwise invent incompatible identities or source references. | `contracts.core`, then `ports.core`; next task below. |
+| Port conformance is frozen; no production persistence adapter is registered yet | New adapter work must still prove PostgreSQL concurrency and durable delivery against the reusable suite. | `adapters.persistence`; keep the P03 suite unchanged for adapter registration. |
 | Specific favour scenarios and trade prices are not approved | Blocks production recovery-content activation, not generic offer/grant mechanics. | `policy.content / K02` requests owner-approved content; never invent prices or an alternate NPC. |
 | Numerical tuning, performance objectives and retention periods are intentionally deferred | Cannot claim latency/scale targets or silently delete history. | `policy.content / K03` records deferral; `integration.system / I05` produces measurements. This is not a blocker to pure modules. |
 | Existing helpers mix extraction, persistence and dialogue orchestration | Refactoring may duplicate effects or keep the model inside transactions. | Application and persistence packets enforce pure candidates, relevant revision checks and short commits. |
@@ -178,9 +191,9 @@ The following is a topological integration order, not a demand to serialize all 
 
 ## Next recommended task
 
-**`contracts.core / C03 — Publish cross-language fixture and ownership conventions`.**
+**`domain.world.eligibility / T02 — Implement the primary behaviour`.**
 
-C01/C02 are accepted. Freeze representative envelopes/commands, validate them with independent Python and Godot readers, reject incompatible versions, and document handoff ownership and version changes. Address observed Godot JSON integer precision before freeze. P02 and fuzzy membership T01 continue independently.
+C01/C02/C03 and the T01 eligibility boundary are accepted. Implement target existence, accepted position, range, visibility and permitted interaction predicate evaluation from the pure `WorldView`.
 
 ## Verification and handoff log
 
@@ -189,7 +202,7 @@ C01/C02 are accepted. Freeze representative envelopes/commands, validate them wi
 - Documentation checks: unique task IDs, complete named-module coverage, existing local links, acyclic integration dependencies and per-task acceptance/test/dependency fields.
 - 2026-09-12: C01 assigned to `/root/c01_contracts`; Main Agent reviewed design and preserved existing changes. Fresh baseline: 44 tests passed, exit 0; existing Starlette/httpx deprecation warning remains.
 - Environment: Godot 4.7.2 executable verified at `/private/tmp/npc-godot/Godot.app/Contents/MacOS/Godot` (project editor metadata); use headless disposable fixture checks for C03.
-- Ready queue: C01 → C02 → C03; then ports.core P01. Pure module fixture tasks may proceed once the required common types are frozen, while their final integration gates remain pending.
+- Ready queue after domain.world.eligibility T01 acceptance: domain.world.eligibility T02. Pure module fixture tasks may proceed once their required common types are frozen, while their final integration gates remain pending.
 
 - 2026-09-12 C01 accepted: four new contracts/fixture/test files listed in the packet; 13 focused tests and 57 combined backend tests passed (exit 0). Review corrected 2D positions and envelope-independent rejection values. No runtime integration claimed.
 
@@ -198,3 +211,10 @@ C01/C02 are accepted. Freeze representative envelopes/commands, validate them wi
 - 2026-09-12 P01 accepted: `backend/app/ports/{__init__,read}.py` and `backend/tests/test_read_ports.py`; Main Agent reviewed and independently ran 12 focused tests, exit 0. Generic handoffs retain domain ownership. P02 next; final gate remains pending.
 
 - 2026-09-12 C02 and fuzzy.membership T01 accepted after independent review and focused tests (17 and 9 respectively). Combined backend regression: 95 passed, exit 0; existing deprecation warning only.
+- 2026-09-13 C03 accepted: Python shared-fixture checks passed (4); independent Godot 4.7.2 headless reader passed 4 valid and 3 invalid checks. Revision wire values are bounded to `2^53-1` for cross-language JSON precision.
+- 2026-09-13 P02 accepted: `backend/app/ports/{__init__,fakes,write}.py` and `backend/tests/test_write_ports.py`; focused write-port suite passed 11 tests, exit 0. Short application-owned transactions, rollback staging, relevant-revision CAS, exact retry receipts, changed-payload conflicts and durable cursor semantics are covered by the deterministic fake. Production PostgreSQL concurrency remains a later adapter gate.
+- 2026-09-13 P03 accepted: `backend/tests/port_conformance.py` and `backend/tests/test_write_ports.py`; focused write-port conformance passed 14 tests, exit 0. The same reusable suite now runs against the deterministic in-memory fake and is ready for production adapter subclasses. Broken fakes demonstrate detection for premature commit visibility, cursor skipping and wrong INVALID_CONTRACT mapping.
+- 2026-09-13 fuzzy.membership T02 accepted: `backend/app/domain/fuzzy/membership.py`, `backend/tests/test_fuzzy_membership.py` and `backend/tests/fixtures/fuzzy/membership-t02-{triangle,trapezoid,branches}.json`; focused membership suite passed 14 tests, exit 0. Full backend regression passed 118 tests, exit 0. Primary behaviour evaluates overlapping triangular/trapezoidal functions over normalized inputs and preserves configured label/version identities; T03 owns malformed-policy and endpoint hardening.
+- 2026-09-13 fuzzy.membership T03 accepted: `backend/app/domain/fuzzy/membership.py` and `backend/tests/test_fuzzy_membership.py`; focused membership suite passed 19 tests, exit 0. Full backend regression passed 123 tests, exit 0. Trapezoid shoulder endpoints are included, malformed policy points and missing dimensions return typed `INVALID_CONTRACT` values, and emitted degrees remain bounded.
+- 2026-09-13 fuzzy.membership T04 accepted: `backend/app/domain/fuzzy/membership.py` and `backend/tests/test_fuzzy_membership.py`; focused membership suite passed 22 tests, exit 0. Full backend regression passed 126 tests, exit 0. Accepted C01-style envelopes produce immutable `Memberships` suitable for the documented `fuzzy.inference` handoff; mismatched policy timeline/version rejects with typed `INVALID_CONTRACT`; a test-local inference handoff rejects old timelines with `OLD_TIMELINE`. No runtime, full-game or live semantic check was required for this pure module gate.
+- 2026-09-13 domain.world.eligibility T01 accepted: `backend/app/domain/world/{__init__,eligibility}.py`, `backend/tests/test_world_eligibility.py` and `backend/tests/fixtures/world/eligibility-t01-{valid,rejected}.json`; focused eligibility suite passed 8 tests, exit 0. Full backend regression passed 134 tests, exit 0. The module exposes immutable event/world/policy/result handoffs over C01 envelopes and values only; no ORM, HTTP, Godot node or live world service dependency is introduced. T02 owns predicate evaluation.

@@ -1,0 +1,198 @@
+{
+  "event": {
+    "schema_version": 1,
+    "record_id": "interaction-event:001",
+    "trace_id": "trace:eligibility:001",
+    "causation_id": "player-input:001",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-09-13T10:00:00Z",
+    "source_ids": [
+      "player-input:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "world:interaction",
+        "version": "v1"
+      }
+    ],
+    "interaction_id": "interaction:001",
+    "kind": "speak",
+    "expected_revisions": {
+      "npc_id": "npc:gatherer",
+      "base_npc_state_revision": 4,
+      "approved_npc_state_revision": null,
+      "quest": [],
+      "inventory": [],
+      "relationship": [],
+      "policy": [],
+      "controller": [
+        {
+          "scope_id": "controller:gatherer",
+          "revision": 2
+        }
+      ]
+    },
+    "reported_actor_position": {
+      "x": 1.0,
+      "y": 1.5,
+      "area_id": "area:village",
+      "spatial_revision": 7
+    },
+    "speech": "Hello there.",
+    "item_id": null
+  },
+  "world": {
+    "schema_version": 1,
+    "record_id": "world-view:001",
+    "trace_id": "trace:eligibility:001",
+    "causation_id": "world-snapshot:001",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-09-13T10:00:00Z",
+    "source_ids": [
+      "world-snapshot:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "world:interaction",
+        "version": "v1"
+      }
+    ],
+    "revisions": {
+      "npc_id": "npc:gatherer",
+      "base_npc_state_revision": 4,
+      "approved_npc_state_revision": null,
+      "quest": [],
+      "inventory": [],
+      "relationship": [],
+      "policy": [],
+      "controller": [
+        {
+          "scope_id": "controller:gatherer",
+          "revision": 2
+        }
+      ]
+    },
+    "actor_position": {
+      "x": 1.0,
+      "y": 1.5,
+      "area_id": "area:village",
+      "spatial_revision": 7
+    },
+    "targets": [
+      {
+        "entity_id": "npc:gatherer",
+        "position": {
+          "x": 2.0,
+          "y": 1.5,
+          "area_id": "area:village",
+          "spatial_revision": 7
+        },
+        "visibility": "direct",
+        "interaction_kinds": [
+          "speak",
+          "request_item"
+        ]
+      }
+    ]
+  },
+  "policy": {
+    "schema_version": 1,
+    "record_id": "interaction-policy:001",
+    "trace_id": "trace:eligibility:001",
+    "causation_id": "policy-publication:eligibility",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": null,
+    "created_at": "2026-09-13T10:00:00Z",
+    "source_ids": [
+      "policy-publication:eligibility"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "world:interaction",
+        "version": "v1"
+      }
+    ],
+    "policy_id": "world:interaction",
+    "version": "v1",
+    "rules": [
+      {
+        "kind": "speak",
+        "max_distance": 2.0,
+        "require_direct_visibility": true
+      },
+      {
+        "kind": "request_item",
+        "max_distance": 1.5,
+        "require_direct_visibility": true
+      }
+    ]
+  },
+  "result": {
+    "schema_version": 1,
+    "record_id": "eligibility-result:001",
+    "trace_id": "trace:eligibility:001",
+    "causation_id": "interaction-event:001",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-09-13T10:00:00Z",
+    "source_ids": [
+      "interaction-event:001",
+      "world-view:001",
+      "interaction-policy:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "world:interaction",
+        "version": "v1"
+      }
+    ],
+    "interaction_id": "interaction:001",
+    "status": "eligible",
+    "predicates": [
+      {
+        "name": "target_exists",
+        "passed": true,
+        "evidence_ids": [
+          "world-view:001"
+        ]
+      },
+      {
+        "name": "in_range",
+        "passed": true,
+        "evidence_ids": [
+          "world-view:001"
+        ]
+      },
+      {
+        "name": "visible",
+        "passed": true,
+        "evidence_ids": [
+          "world-view:001"
+        ]
+      },
+      {
+        "name": "operation_permitted",
+        "passed": true,
+        "evidence_ids": [
+          "interaction-policy:001"
+        ]
+      }
+    ],
+    "policy_id": "world:interaction",
+    "policy_version": "v1"
+  }
+}

@@ -6,7 +6,7 @@
 
 Source: [Detailed design](../detailed-design.md), 4.3 Behavioural-control modules; [proposal](../proposal.md). The confirmed detailed-design ordering overrides conflicting proposal examples.
 
-**Status:** T01 complete; target module not complete. **Owner:** `/root/c01_contracts`, Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
+**Status:** T01–T04 complete; target module complete. **Owner:** Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
 
 ## Dependencies and sequencing
 
@@ -28,17 +28,17 @@ Keep domain calculations pure where applicable; external adapters receive fake c
   - **Tests:** Round-trip or construct the valid fixture, reject missing required fields and unsupported variants, and prove input fixtures are not mutated. Import and exercise the module with fake dependencies only.
   - **Depends on:** Start contracts above. Do not wait for full runtime integration.
 
-- [ ] **T02 — Implement the primary behaviour.**
+- [x] **T02 — Implement the primary behaviour.**
   - **Acceptance:** Implement overlapping triangular/trapezoidal membership functions over normalized inputs with configured labels and versions.
   - **Tests:** Use the valid T01 fixture and a focused fixture for each successful branch named in this acceptance criterion; assert exact result/state/effect identity rather than generated prose. Use a fixed clock and IDs where relevant.
   - **Depends on:** T01; use immutable upstream result fixtures.
 
-- [ ] **T03 — Enforce failures and invariants.**
+- [x] **T03 — Enforce failures and invariants.**
   - **Acceptance:** Handle shoulder endpoints correctly and reject unordered points or invalid ranges; output membership degrees must remain bounded.
   - **Tests:** Overlap, endpoint shoulders, range guarantees, invalid point ordering. Assert typed rejection/fallback and absence of unintended effects, not merely that an exception occurred.
   - **Depends on:** T02. Failure injection must remain local to this module and its ports.
 
-- [ ] **T04 — Verify adjacent handoff and publish evidence.**
+- [x] **T04 — Verify adjacent handoff and publish evidence.**
   - **Acceptance:** Consume fixtures produced by each direct dependency and show this module's result satisfies the next documented handoff without changing upstream policy or schema implicitly. Record test evidence and unsupported capabilities.
   - **Tests:** One focused adjacent-module contract check plus the module regression suite; include a mismatched source version/timeline where applicable. Do not run the full game unless this is an engine adapter check.
   - **Depends on:** T01–T03 and the direct Integration gate above. Until those dependencies are ready, record this task as waiting without blocking local unit work.
@@ -53,4 +53,10 @@ Check the whole-module box in master-progress only when every applicable uncheck
 - Current task state: T01 accepted by Main Agent (2026-09-12). C01 core types frozen, 13 focused tests passed. Allowed paths: `backend/app/domain/fuzzy/membership.py`, package initializers, `backend/tests/test_fuzzy_membership.py`, `backend/tests/fixtures/fuzzy/*.json`. No primary algorithm until T02 is assigned.
 - T01 files: `backend/app/domain/fuzzy/membership.py`, domain/fuzzy package initializers, `backend/tests/test_fuzzy_membership.py`, `backend/tests/fixtures/fuzzy/membership-t01-{valid,rejected}.json`.
 - T01 evidence (root): `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p test_fuzzy_membership.py` — 9 passed, exit 0, independently run after Main Agent review. Valid/rejected typed fixture boundary, finite normalized values and nested immutability verified; no algorithm or semantic policy activation claimed.
-- Final integration gate waits for contracts.core completion; T01 fixture boundary uses accepted C01.
+- Assigned task/owner: T02 / Main Agent.
+- Current task state: T02 accepted by Main Agent (2026-09-13). Pure `fuzzify` evaluates configured triangular and trapezoidal labels for normalized inputs and emits immutable memberships with the candidate input, candidate state and policy version identities preserved. T03 still owns failure/invariant hardening for malformed authored points and endpoint shoulders.
+- T02 files: `backend/app/domain/fuzzy/membership.py`, `backend/tests/test_fuzzy_membership.py`, `backend/tests/fixtures/fuzzy/membership-t02-{triangle,trapezoid,branches}.json`.
+- T02 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_fuzzy_membership.py'` — 14 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 118 passed, exit 0; existing Starlette/httpx deprecation warning remains.
+- Direct contracts gate satisfied by contracts.core C01/C02/C03; T04 adjacent handoff remains before the fuzzy.membership module can close.
+- T03 accepted 2026-09-13. Files: `backend/app/domain/fuzzy/membership.py`, `backend/tests/test_fuzzy_membership.py`. Evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_fuzzy_membership.py'` — 19 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 123 passed, exit 0. Shoulder endpoints on trapezoids now include `a == b` and `c == d`; unordered triangle points, out-of-range policy points and missing dimensions return typed `INVALID_CONTRACT` errors without emitting memberships; output degrees remain bounded.
+- T04 accepted 2026-09-13. Files: `backend/app/domain/fuzzy/membership.py`, `backend/tests/test_fuzzy_membership.py`. Evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_fuzzy_membership.py'` — 22 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 126 passed, exit 0. The module consumes accepted C01 envelopes through `MembershipInput`/`MembershipPolicy`, emits immutable `Memberships` suitable for the documented `fuzzy.inference` handoff, rejects mismatched policy timeline/version without output, and records no unsupported runtime capabilities. No full game or live semantic check is required for this pure module gate.

@@ -1,0 +1,38 @@
+{
+  "event": {
+    "schema_version": 1,
+    "record_id": "interaction-event:bad-kind",
+    "trace_id": "trace:eligibility:bad",
+    "causation_id": "player-input:bad",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-09-13T10:00:00Z",
+    "source_ids": [
+      "player-input:bad"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "world:interaction",
+        "version": "v1"
+      }
+    ],
+    "interaction_id": "interaction:bad",
+    "kind": "attack",
+    "expected_revisions": {
+      "npc_id": "npc:gatherer",
+      "base_npc_state_revision": 4
+    }
+  },
+  "error": {
+    "code": "INVALID_CONTRACT",
+    "stage": "domain.world.eligibility",
+    "retryable": false,
+    "source_ids": [
+      "interaction-event:bad-kind"
+    ],
+    "public_message": "Interaction kind is unsupported."
+  }
+}

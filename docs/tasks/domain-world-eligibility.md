@@ -6,7 +6,7 @@
 
 Source: [Detailed design](../detailed-design.md), 4.1 Application, world and quest modules; [proposal](../proposal.md). The confirmed detailed-design ordering overrides conflicting proposal examples.
 
-**Status:** Planned; target module not complete. **Owner:** unassigned. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
+**Status:** T01 complete; T02–T04 pending; target module not complete. **Owner:** Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
 
 ## Dependencies and sequencing
 
@@ -23,7 +23,7 @@ Keep domain calculations pure where applicable; external adapters receive fake c
 
 ## Task checklist
 
-- [ ] **T01 — Define the module contract and fixture boundary.**
+- [x] **T01 — Define the module contract and fixture boundary.**
   - **Acceptance:** Publish the public input/output/error types above, with owned domain fields and shared envelope references. Supply a valid fixture and one rejected fixture; expose no ORM/session or node object in the handoff.
   - **Tests:** Round-trip or construct the valid fixture, reject missing required fields and unsupported variants, and prove input fixtures are not mutated. Import and exercise the module with fake dependencies only.
   - **Depends on:** Start contracts above. Do not wait for full runtime integration.
@@ -49,7 +49,7 @@ Check the whole-module box in master-progress only when every applicable uncheck
 
 ## Execution record
 
-- Assigned task/owner: unassigned.
-- Current task state: not started.
-- Test evidence for new work: none yet.
-- Blocker: dependency gates above; no additional module-specific blocker recorded.
+- Assigned task/owner: T01 / Main Agent.
+- Current task state: T01 accepted by Main Agent (2026-09-13). C01/C02/C03 and ports.core are accepted; this packet starts a pure values-only domain boundary.
+- T01 files: `backend/app/domain/world/__init__.py`, `backend/app/domain/world/eligibility.py`, `backend/tests/test_world_eligibility.py`, `backend/tests/fixtures/world/eligibility-t01-{valid,rejected}.json`.
+- T01 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_world_eligibility.py'` — 8 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 134 passed, exit 0; existing Starlette/httpx deprecation warning remains. Valid/rejected fixtures cover immutable event/world/policy/result handoffs, unsupported interaction kinds, strict scalar fields, duplicate target/rule/predicate rejection, fake protocol execution and infrastructure-free import. No live world service or eligibility algorithm claimed until T02.
