@@ -21,6 +21,7 @@ from app.services.llm.service import LLMService
 from app.services.llm.openai_compatible import OpenAICompatibleProvider
 from app.services.npc.conditioning import RoleConditioningService
 from app.services.validation.service import ValidationError, ValidationService
+from app.services.validation.control import classify_player_affect, smooth_emotions
 
 
 class NPCPipelineTests(unittest.TestCase):
@@ -117,11 +118,60 @@ class NPCPipelineTests(unittest.TestCase):
             ValidationService().validate(self.output() | {'dialogue': 'AWS is a cloud computing platform.'},
                                          NPC(role='craftsman'))
 
+    def test_structured_response_rejects_unknown_and_nonfinite_fields(self):
+        with self.assertRaises(ValidationError):
+            ValidationService().validate(self.output() | {'surprise': True}, NPC(role='craftsman'))
+        bad_delta = self.output()
+        bad_delta['state_update'] = bad_delta['state_update'] | {'trust': float('nan')}
+        with self.assertRaises(ValidationError):
+            ValidationService().validate(bad_delta, NPC(role='craftsman'))
+
+    def test_player_affect_is_smoothed_and_bounded(self):
+        insult = classify_player_affect("you are a useless fool")
+        threat = classify_player_affect("I will attack you")
+        apology = classify_player_affect("sorry, I was wrong")
+        neutral = classify_player_affect("The workshop is open")
+        self.assertEqual(insult.category, "insult")
+        self.assertGreater(threat.aggression, insult.aggression)
+        self.assertLess(apology.aggression, 0)
+        self.assertEqual(neutral.intensity, 0)
+
+        npc = NPC(role="craftsman", trust=0.65, fear=0.10, aggression=0.05, curiosity=0.30)
+        first = smooth_emotions(npc, insult).next
+        self.assertGreater(first.aggression, npc.aggression)
+        npc.trust = first.trust
+        npc.fear = first.fear
+        npc.aggression = first.aggression
+        npc.curiosity = first.curiosity
+        for _ in range(1000):
+            next_state = smooth_emotions(npc, insult).next
+            npc.trust = next_state.trust
+            npc.fear = next_state.fear
+            npc.aggression = next_state.aggression
+            npc.curiosity = next_state.curiosity
+        self.assertTrue(0 <= npc.trust <= 1)
+        self.assertTrue(0 <= npc.aggression <= 1)
+
     def test_village_questions_are_not_blocked_by_substrings(self):
         for question in ('Can you repair my axe?', 'Do you have nails or saws?',
                          'There are clouds above the forest'):
             context = ConversationContext(player_input=question, npc_state={})
             ValidationService().validate(self.output(), NPC(role='craftsman'), context)
+
+    def test_harmless_item_and_village_object_questions_do_not_fallback(self):
+        examples = [
+            ('What is wood?', 'Wood is fallen timber we gather for fires, repairs, and simple craftwork.'),
+            ('What is your favorite type of window?', 'I like a small shuttered window that keeps rain out and lets morning air in.'),
+        ]
+        for question, dialogue in examples:
+            raw = self.output('gatherer') | {'dialogue': dialogue}
+            with self.subTest(question=question):
+                with patch.object(OpenAICompatibleProvider, 'generate', return_value=json.dumps(raw)):
+                    response = self.client.post('/chat', json={'npc_id': 2, 'player_message': question})
+                self.assertEqual(response.status_code, 200, response.text)
+                data = response.json()
+                self.assertEqual(data['final_dialogue'], dialogue)
+                self.assertNotIn('Fallback response', data['validated_output']['reasoning'])
 
     def test_outside_world_response_has_no_gameplay_rewards(self):
         for npc_id in (1, 2):
@@ -150,9 +200,23 @@ class NPCPipelineTests(unittest.TestCase):
                 response = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'What do you want?'})
             self.assertEqual(response.status_code, 200, response.text)
             data = response.json()
-            self.assertIn(expected, data['final_dialogue'])
+            self.assertIn(expected.lower(), data['final_dialogue'].lower())
             self.assertEqual(data['validated_output']['action'], 'speak')
             self.assertEqual(data['player_inventory'], inventory)
+
+    def test_general_crafting_question_uses_llm_not_bow_keyword_grounding(self):
+        raw = self.output() | {
+            'dialogue': 'I can mend handles, shape small tools, and talk through simple workshop work.',
+            'action': 'speak',
+        }
+        with patch.object(OpenAICompatibleProvider, 'generate', return_value=json.dumps(raw)) as generate:
+            response = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'What else can you craft?'})
+        self.assertEqual(response.status_code, 200, response.text)
+        data = response.json()
+        self.assertEqual(data['final_dialogue'], raw['dialogue'])
+        self.assertEqual(data['validated_output']['action'], 'speak')
+        self.assertEqual(data['bow_quest']['phase'], 'available')
+        generate.assert_called_once()
 
     def test_craftsman_cannot_offer_wood_when_asked_for_it(self):
         context = ConversationContext(player_input='can you give me some wood', npc_state={})
@@ -183,6 +247,25 @@ class NPCPipelineTests(unittest.TestCase):
             self.assertEqual(data['quest_progress'], 50)
             self.assertEqual(data['validated_output']['action'], 'give_item' if i == 0 else 'speak')
         self.assertIn("don't have", data['final_dialogue'])
+
+    def test_angry_gatherer_refuses_wood_without_transfer(self):
+        for message in ('you are useless', 'you stupid fool', 'I hate you'):
+            self.client.post('/chat', json={'npc_id': 2, 'player_message': message})
+
+        blocked = self.client.post('/inventory/transfer', json={'npc_id': 2, 'item': 'wood', 'direction': 'to_player'}).json()
+        self.assertEqual(blocked['validated_output']['intent'], 'refuse')
+        self.assertEqual(blocked['validated_output']['action'], 'speak')
+        self.assertIn('respect', blocked['final_dialogue'].lower())
+        self.assertIn('wood', blocked['npc']['inventory'])
+        self.assertNotIn('wood', blocked['player_inventory'])
+        self.assertIsNone(blocked['npc']['pending_item'])
+
+        for message in ('sorry, I was wrong', 'please forgive me', 'thank you for your patience', 'please help me'):
+            recovered = self.client.post('/chat', json={'npc_id': 2, 'player_message': message}).json()
+        self.assertLess(recovered['npc']['aggression'], 0.65)
+        asked = self.client.post('/inventory/transfer', json={'npc_id': 2, 'item': 'wood', 'direction': 'to_player'}).json()
+        self.assertEqual(asked['validated_output']['action'], 'ask_question')
+        self.assertIn('wood', asked['npc']['inventory'])
 
     def test_other_items_and_reverse_transfers(self):
         for npc_id, item in [(1, 'rope'), (2, 'fruits'), (1, 'hammer')]:
@@ -307,6 +390,37 @@ class NPCPipelineTests(unittest.TestCase):
         self.assertEqual(repeat['player_inventory'].count('bow'), 1)
         self.assertIsNone(repeat['reward_dialogue'])
         self.assertEqual(self.client.post('/quests/bow/start').json()['bow_quest']['phase'], 'completed')
+
+    def test_angry_craftsman_refuses_bow_without_consuming_materials(self):
+        from app.models import BowQuest
+
+        self.client.post('/quests/bow/start')
+        self.client.post('/chat', json={'npc_id': 1, 'player_message': 'Can you give me a bow?'})
+        craftsman = self.db.get(NPC, 1)
+        craftsman.inventory = ['wood', 'string']
+        self.db.commit()
+
+        for message in ('you are useless', 'you stupid fool', 'I hate you'):
+            self.client.post('/chat', json={'npc_id': 1, 'player_message': message})
+
+        blocked = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'craft the bow now'}).json()
+        self.assertEqual(blocked['validated_output']['action'], 'speak')
+        self.assertEqual(blocked['validated_output']['intent'], 'refuse')
+        self.assertIn('respect', blocked['final_dialogue'].lower())
+        self.assertEqual(blocked['bow_quest']['phase'], 'gather')
+        self.assertIn('wood', blocked['npc']['inventory'])
+        self.assertIn('string', blocked['npc']['inventory'])
+        bow = self.db.get(BowQuest, 1)
+        self.assertIsNone(bow.ready_at)
+        self.assertNotIn('bow', blocked['player_inventory'])
+
+        for message in ('sorry, I was wrong', 'please forgive me', 'thank you for your patience', 'please help me'):
+            recovered = self.client.post('/chat', json={'npc_id': 1, 'player_message': message}).json()
+        self.assertLess(recovered['npc']['aggression'], 0.65)
+        craft = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'please craft the bow'}).json()
+        self.assertEqual(craft['bow_quest']['phase'], 'crafting')
+        self.assertNotIn('wood', craft['npc']['inventory'])
+        self.assertNotIn('string', craft['npc']['inventory'])
 
     def test_bow_does_not_start_from_chat_and_repeat_start_does_not_restock(self):
         before = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'I want a bow'}).json()
@@ -448,7 +562,7 @@ class NPCPipelineTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200, response.text)
         data = response.json()
         self.assertEqual(data['final_dialogue'], raw['dialogue'])
-        self.assertAlmostEqual(data['npc']['fear'], 0.09)
+        self.assertAlmostEqual(data['npc']['fear'], 0.097725)
         self.assertEqual(data['memories'], [])
         self.assertFalse(data['memory_classification']['important'])
         saved = self.db.scalar(select(Conversation))

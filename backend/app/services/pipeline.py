@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from dataclasses import asdict
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -26,6 +27,14 @@ from app.services.validation.service import KnowledgeBoundaryError, ValidationEr
 from app.services.validation.knowledge import unfamiliar_topic_response
 from app.services.validation.items import requested_transfer, transfer_answer
 from app.services.validation.knowledge import outside_world
+from app.services.validation.control import (
+    authorize_action,
+    bow_related_request,
+    classify_player_affect,
+    make_validation_context,
+    refusal_response,
+    smooth_emotions,
+)
 from app.services.quests.bow import dialogue as bow_dialogue, maybe_start, get_quest, snapshot as bow_snapshot, reply
 
 logger = logging.getLogger(__name__)
@@ -49,6 +58,7 @@ class ConversationPipeline:
 
         context_builder = ContextBuilder(self._db, memory_service=self._memory_service)
         context = context_builder.build(npc=npc, player=player, player_input=player_message)
+        validation_context = make_validation_context(npc=npc, player=player, player_input=player_message, quest=quest)
         prompt = self._prompt_builder.build(context)
 
         quest_before = get_quest(self._db, player.id).phase
@@ -60,7 +70,12 @@ class ConversationPipeline:
             if request == ('give_item', 'bow') and not npc.pending_item and 'bow' not in (npc.inventory or []):
                 grounded = bow_dialogue(self._db, npc, player_message, player)
             if grounded is None:
-                grounded = transfer_answer(player_message, list(npc.inventory or []), list(player.inventory or []), npc.pending_item)
+                grounded = transfer_answer(
+                    player_message,
+                    list(validation_context.npc_inventory),
+                    list(validation_context.player_inventory),
+                    validation_context.pending_item,
+                )
             if grounded is None:
                 grounded = bow_dialogue(self._db, npc, player_message, player)
             if grounded is None and any(phrase in player_message.lower() for phrase in ('inventory', 'what do you have', 'what are you carrying')):
@@ -75,14 +90,41 @@ class ConversationPipeline:
         except Exception:
             logger.exception("LLM generation failed for NPC %s (model=%s)", npc.id, self._settings.llm_model)
             generation = GenerationResult(raw_text="{}", raw_json={})
-        validated_output = grounded or self._validate_or_repair(generation.raw_json, npc, context, player_message)
+        validated_output = grounded or self._validate_or_repair(generation.raw_json, npc, validation_context, player_message)
         conditioned_output = self._role_conditioning.apply(npc, validated_output)
+        affect = classify_player_affect(player_message)
+        emotion_computation = smooth_emotions(npc, affect, conditioned_output.state_update)
+        action_decision = authorize_action(npc, conditioned_output, emotion_computation.next, player_message)
+        if not action_decision.allowed:
+            logger.info(
+                "NPC action blocked",
+                extra={
+                    "npc_id": npc.id,
+                    "npc_role": npc.role,
+                    "affect_category": affect.category,
+                    "previous_emotion": asdict(emotion_computation.previous),
+                    "next_emotion": asdict(emotion_computation.next),
+                    "requested_action": action_decision.requested_action,
+                    "effective_action": action_decision.effective_action,
+                    "refusal_reason": action_decision.reason_code,
+                    "quest_phase_before": quest_before,
+                },
+            )
+            get_quest(self._db, player.id).phase = quest_before
+            conditioned_output = refusal_response(action_decision)
         _rules = self._rule_engine.evaluate(npc)
 
         state_service = StateService(self._db)
-        snapshot = state_service.apply(npc=npc, player=player, quest=quest, output=conditioned_output)
+        snapshot = state_service.apply(
+            npc=npc,
+            player=player,
+            quest=quest,
+            output=conditioned_output,
+            emotion_snapshot=emotion_computation.next,
+        )
 
-        maybe_start(self._db, player, npc, conditioned_output)
+        may_start_bow = action_decision.allowed and grounded is not None and bow_related_request(player_message, conditioned_output)
+        maybe_start(self._db, player, npc, conditioned_output, allowed=may_start_bow)
 
         decision = classify(
             player_message, conditioned_output, grounded=grounded is not None,

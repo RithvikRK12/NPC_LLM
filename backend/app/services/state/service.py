@@ -8,6 +8,7 @@ from app.models.npc import NPC
 from app.models.player import Player
 from app.models.quest import Quest
 from app.services.validation.models import LLMResponse
+from app.services.validation.control import EmotionSnapshot
 from app.utils.math_utils import clamp
 
 
@@ -22,11 +23,24 @@ class StateService:
     def __init__(self, db: Session) -> None:
         self._db = db
 
-    def apply(self, npc: NPC, player: Player, quest: Quest | None, output: LLMResponse) -> WorldStateSnapshot:
-        npc.trust = clamp(npc.trust + output.state_update.trust)
-        npc.fear = clamp(npc.fear + output.state_update.fear)
-        npc.aggression = clamp(npc.aggression + output.state_update.aggression)
-        npc.curiosity = clamp(npc.curiosity + output.state_update.curiosity)
+    def apply(
+        self,
+        npc: NPC,
+        player: Player,
+        quest: Quest | None,
+        output: LLMResponse,
+        emotion_snapshot: EmotionSnapshot | None = None,
+    ) -> WorldStateSnapshot:
+        if emotion_snapshot is None:
+            npc.trust = clamp(npc.trust + output.state_update.trust)
+            npc.fear = clamp(npc.fear + output.state_update.fear)
+            npc.aggression = clamp(npc.aggression + output.state_update.aggression)
+            npc.curiosity = clamp(npc.curiosity + output.state_update.curiosity)
+        else:
+            npc.trust = emotion_snapshot.trust
+            npc.fear = emotion_snapshot.fear
+            npc.aggression = emotion_snapshot.aggression
+            npc.curiosity = emotion_snapshot.curiosity
         npc.current_state = output.action
 
         inventory = list(player.inventory or [])
@@ -35,7 +49,7 @@ class StateService:
 
         if output.intent == 'confirm_transfer' and output.action == 'ask_question':
             npc.pending_item = output.item
-        elif output.intent in {'cancel_transfer', 'unavailable_item'} or output.action in {'give_item', 'receive_item'}:
+        elif output.intent in {'cancel_transfer', 'unavailable_item', 'refuse'} or output.action in {'give_item', 'receive_item'}:
             npc.pending_item = None
         npc_inventory = list(npc.inventory or [])
         if output.action in {"give_item", "receive_item"}:

@@ -42,8 +42,29 @@ def reply(text, intent='inform'):
 
 def dialogue(db, npc, message, player):
     quest = get_quest(db, player.id)
-    words = set(re.findall(r'[a-z]+', message.lower()))
-    relevant = bool(words & {'bow', 'quest', 'craft', 'crafting', 'materials', 'string'}) or message.lower().strip(' ?!.') in {'what do you want', 'what do you need', 'what next', 'what should i do'}
+    text = message.lower().strip()
+    words = set(re.findall(r'[a-z]+', text))
+    exact_progress_questions = {
+        'what do you want',
+        'what do you need',
+        'what next',
+        'what should i do',
+    }
+    explicit_bow_request = bool(words & {'bow', 'quest'}) and bool(words & {
+        'ask',
+        'begin',
+        'build',
+        'can',
+        'craft',
+        'give',
+        'make',
+        'need',
+        'quest',
+        'start',
+        'want',
+    })
+    quest_progress_request = quest.phase in {'meet', 'gather', 'crafting'} and text.strip(' ?!.') in exact_progress_questions
+    relevant = explicit_bow_request or quest_progress_request
     if not relevant:
         return None
     if quest.phase == 'available':
@@ -62,7 +83,9 @@ def dialogue(db, npc, message, player):
     return reply('I have the wood and string. I will begin crafting your bow now.')
 
 
-def maybe_start(db, player, npc, output):
+def maybe_start(db, player, npc, output, allowed=True):
+    if not allowed:
+        return
     quest = get_quest(db, player.id)
     if npc.role != 'craftsman' or quest.phase != 'gather':
         return
