@@ -34,7 +34,7 @@ func run_check() -> void:
 	scene._quest_call("start")
 	if not await wait_for(func(): return not scene.quest_busy): return
 	scene.chat_windows[1].open_chat()
-	scene.chat_windows[1].transfer_item("energy_cell", "to_npc")
+	scene.chat_windows[1].transfer_item("water", "to_npc")
 	if not await wait_for(func(): return not scene.chat_windows[1].pending): return
 	scene.player.position = Vector2(95, 105)
 	scene._save_position()
@@ -47,7 +47,7 @@ func run_check() -> void:
 	if not await wait_for(func(): return scene.world_loaded): return
 	if not check(scene.player.position == Vector2(95, 105), "Launch must restore position"): return
 	if not check(scene.bow_state.phase == "meet", "Launch must preserve quest"): return
-	if not check(not scene.player_items.has("energy_cell"), "Launch must preserve inventory"): return
+	if not check(not scene.player_items.has("water"), "Launch must preserve inventory"): return
 	if not check(scene.chat_windows[1].dialogue_log.get_parsed_text().contains("Thank you"), "Launch must restore chats"): return
 	if not await wait_for(func(): return not scene._operations_pending()): return
 	scene.restart_button.pressed.emit()
@@ -57,7 +57,7 @@ func run_check() -> void:
 	if not await wait_for(func(): return scene.world_loaded): return
 	if not check(scene.player.position == Vector2.ZERO, "Restart must reset position"): return
 	if not check(scene.bow_state.phase == "available", "Restart must reset quest"): return
-	if not check(scene.player_items == ["energy_cell", "med_patch"], "Restart must restore starter inventory"): return
+	if not check(scene.player_items == ["water", "food"], "Restart must restore starter inventory"): return
 	if not check(not scene.chat_windows[1].dialogue_log.get_parsed_text().contains("Thank you"), "Restart must clear chat"): return
 	print("PASS persistence across launches and explicit restart")
 	quit(0)

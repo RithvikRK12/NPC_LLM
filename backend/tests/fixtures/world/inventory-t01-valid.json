@@ -19,9 +19,9 @@
         "version": "v1"
       }
     ],
-    "request_id": "inventory-request:give_data_shard",
+    "request_id": "inventory-request:give_fruits",
     "operation": "transfer",
-    "item_id": "item:data_shard",
+    "item_id": "item:fruits",
     "quantity": 1,
     "from_owner_id": "npc:gatherer",
     "to_owner_id": "player:hero",
@@ -44,7 +44,7 @@
       "policy": [],
       "controller": []
     },
-    "idempotency_key": "give_data_shard_001"
+    "idempotency_key": "give_fruits_001"
   },
   "view": {
     "schema_version": 1,
@@ -87,28 +87,28 @@
     },
     "catalog": [
       {
-        "item_id": "item:data_shard",
+        "item_id": "item:fruits",
         "stackable": true
       },
       {
-        "item_id": "item:energy_cell",
+        "item_id": "item:water",
         "stackable": true
       }
     ],
     "quantities": [
       {
         "owner_id": "npc:gatherer",
-        "item_id": "item:data_shard",
+        "item_id": "item:fruits",
         "quantity": 2
       },
       {
         "owner_id": "player:hero",
-        "item_id": "item:data_shard",
+        "item_id": "item:fruits",
         "quantity": 0
       },
       {
         "owner_id": "player:hero",
-        "item_id": "item:energy_cell",
+        "item_id": "item:water",
         "quantity": 3
       }
     ],
@@ -135,22 +135,22 @@
         "version": "v1"
       }
     ],
-    "effect_id": "inventory-effect:give_data_shard_001",
-    "request_id": "inventory-request:give_data_shard",
+    "effect_id": "inventory-effect:give_fruits_001",
+    "request_id": "inventory-request:give_fruits",
     "kind": "transfer",
-    "item_id": "item:data_shard",
+    "item_id": "item:fruits",
     "quantity": 1,
     "owner_deltas": [
       {
         "owner_id": "npc:gatherer",
-        "item_id": "item:data_shard",
+        "item_id": "item:fruits",
         "before_quantity": 2,
         "delta": -1,
         "after_quantity": 1
       },
       {
         "owner_id": "player:hero",
-        "item_id": "item:data_shard",
+        "item_id": "item:fruits",
         "before_quantity": 0,
         "delta": 1,
         "after_quantity": 1

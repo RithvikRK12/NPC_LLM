@@ -26,7 +26,7 @@
     "verified_event_id": "event:quest_reward_001",
     "verified_event_kind": "quest_reward_granted",
     "event_fields": {
-      "item_name": "Pulse Blaster"
+      "item_name": "Bow"
     }
   },
   "policy": {
@@ -97,7 +97,7 @@
     ],
     "display_id": "dialogue:001",
     "source_id": "event:quest_reward_001",
-    "text": "Pulse Blaster online. Sync complete.",
+    "text": "Bow online. Sync complete.",
     "expression": "reassuring",
     "condition": {
       "kind": "outcome",

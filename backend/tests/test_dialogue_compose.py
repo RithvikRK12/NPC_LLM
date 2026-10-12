@@ -86,7 +86,7 @@ class DialogueComposeContractTests(unittest.TestCase):
         self.assertEqual(composer(source, policy), expected)
         self.assertEqual(self.valid, original)
         self.valid["source"]["event_fields"]["item_name"] = "Changed"
-        self.assertEqual(source.event_fields["item_name"], "Pulse Blaster")
+        self.assertEqual(source.event_fields["item_name"], "Bow")
         with self.assertRaises(ValidationError):
             source.kind = DialogueSourceKind.EXPRESSION
 
@@ -147,7 +147,7 @@ class DialogueComposeBehaviourTests(unittest.TestCase):
         result = self._compose(payload)
         self.assertIsInstance(result, DialogueEvent)
         self.assertEqual(result.text, "Transfer confirmed: Water.")
-        self.assertNotIn("Pulse Blaster online", result.text)
+        self.assertNotIn("Bow online", result.text)
 
     def test_policy_mismatch_returns_typed_error(self):
         payload = copy.deepcopy(self.valid)

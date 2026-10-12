@@ -10,22 +10,22 @@ def quest_answer(role: str, question: str, inventory: list[str], npc_inventory: 
         'what do you want', 'what do you need', 'what do you want from me',
         'what do you need from me', 'what should i bring', 'what materials do you need',
     }
-    component_request = bool(re.fullmatch(r'(?:can|could|will|would) you (?:please )?(?:give|share) (?:me )?(?:a |some )?circuit board(?: please)?', text))
-    if not needs and not component_request:
+    wood_request = bool(re.fullmatch(r'(?:can|could|will|would) you (?:please )?(?:give|share) (?:me )?(?:some )?wood(?: please)?', text))
+    if not needs and not wood_request:
         return None
     if role == 'craftsman':
-        if component_request:
-            dialogue = "I don't stock spare circuit boards. Ask the Data Broker in Byte Alley, then bring it to my neon bench."
-        elif 'circuit_board' in (npc_inventory or []):
-            dialogue = "I have the circuit board you brought. I still need fiber cable from the power junction before assembly."
-        elif 'circuit_board' in inventory:
-            dialogue = "You already have the circuit board I need. Bring it to me after you collect fiber cable."
-        elif 'pulse_blaster' in inventory:
-            dialogue = "You already have your Pulse Blaster. Keep it synced and stay sharp in the grid."
+        if wood_request:
+            dialogue = "I don't supply wood. Ask the Gatherer by the forest, then bring the wood to me and I can craft an axe."
+        elif 'wood' in (npc_inventory or []):
+            dialogue = "I have the wood you brought. Ask me to craft an axe when you're ready."
+        elif 'wood' in inventory:
+            dialogue = "You already have the wood I need. Ask me to craft an axe when you're ready."
+        elif 'axe' in inventory:
+            dialogue = "You already have your axe. I don't need anything else for it, but I can help with tool repairs."
         else:
-            dialogue = "I need a circuit board and fiber cable to assemble the Pulse Blaster. Ask the Data Broker for the board and check the power junction for cable."
+            dialogue = "I need wood to craft an axe. Ask the Gatherer by the forest for some, then bring it to my workshop."
     elif role == 'gatherer' and needs:
-        dialogue = "I don't need payment. I can share a circuit board for the Techsmith's build; just ask me for it."
+        dialogue = "I don't need anything in return. I can share wood for the Craftsman's axe; just ask me for some."
     else:
         return None
     return LLMResponse(intent='inform', emotion='calm', dialogue=dialogue, action='speak',

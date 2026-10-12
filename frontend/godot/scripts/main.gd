@@ -29,10 +29,6 @@ var last_saved_position := Vector2.INF
 var sent_position := Vector2.ZERO
 var quitting := false
 var world_busy := false
-var district: Node3D
-var pause_menu: Control
-var paused := false
-var restart_queued := false
 
 
 func _ready() -> void:
@@ -43,59 +39,68 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	player.set_physics_process(false)
-	restart_button.disabled = not world_loaded or quitting or restart_queued
-	if restart_queued and not _operations_pending(): _restart_game()
+	player.set_physics_process(world_loaded and not quitting and not restart_dialog.visible)
+	restart_button.disabled = not world_loaded or _operations_pending() or quitting
 	if quitting and not _operations_pending(): _save_position()
 	_update_current_npc()
-	interaction_label.text = "E  Talk to " + current_npc.display_name if current_npc != null else "Approach an operator to talk"
+	interaction_label.text = "E  Talk to " + current_npc.display_name if current_npc != null else "Approach a villager to talk"
 	_update_give_action()
 	if string_pickup.visible and player.position.distance_to(string_pickup.position) < 64:
-		interaction_label.text = "F  Pick up fiber cable"
+		interaction_label.text = "F  Pick up string"
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not world_loaded or quitting or restart_dialog.visible: return
 	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_ESCAPE:
-			_set_paused(not paused)
-			get_viewport().set_input_as_handled()
-			return
-		if paused: return
 		if event.keycode == KEY_E:
 			_open_dialogue()
 		elif event.keycode == KEY_F and string_pickup.visible and player.position.distance_to(string_pickup.position) < 64:
 			_quest_call("pickup-string", {"x": player.position.x, "y": player.position.y})
 		elif event.keycode == KEY_I:
 			inventory_drawer.visible = not inventory_drawer.visible
+		elif event.keycode == KEY_ESCAPE:
+			inventory_drawer.hide()
+			quest_panel.hide()
+			for window in chat_windows.values():
+				window.close_chat()
 
 
 func _build_world() -> void:
+	add_child(preload("res://scripts/village.gd").new())
 	string_pickup = Sprite2D.new()
-	string_pickup.texture = preload("res://assets/items/fiber_cable.svg")
+	string_pickup.texture = preload("res://assets/items/string.svg")
 	string_pickup.position = Vector2(-70, 240)
 	string_pickup.scale = Vector2(0.65, 0.65)
 	string_pickup.hide()
-	string_pickup.modulate.a = 0.0
 	add_child(string_pickup)
 	pickup_hint = Label.new()
-	pickup_hint.text = "FIBER CABLE"
-	pickup_hint.position = Vector2(-58, -72)
-	_apply_holo_label(pickup_hint, 14, Color("19f6ff"))
+	pickup_hint.text = "String • F to pick up"
+	pickup_hint.position = Vector2(-80, -65)
+	pickup_hint.add_theme_color_override("font_color", Color("f5df9a"))
 	string_pickup.add_child(pickup_hint)
+	var workshop := StaticBody2D.new()
+	workshop.position = Vector2(195, -160)
+	var walls := CollisionShape2D.new()
+	var footprint := RectangleShape2D.new()
+	footprint.size = Vector2(230, 125)
+	walls.shape = footprint
+	workshop.add_child(walls)
+	add_child(workshop)
 
 	player = preload("res://scripts/player.gd").new()
 	player.position = Vector2(0, 0)
 	add_child(player)
 	player.set_physics_process(false)
-	player.hide()
+	_add_world_marker(player, Color(0.25, 0.70, 0.90), "Player")
+	var camera := Camera2D.new()
+	camera.zoom = Vector2(1.0, 1.0)
+	camera.position_smoothing_enabled = true
+	camera.position = Vector2(290, 0)
+	player.add_child(camera)
+	camera.make_current()
 
-	_add_npc(1, "Neon Techsmith", "craftsman", Vector2(360, -120), Color("ffb84a"), 0.65, 0.10, 0.05, 0.30)
-	_add_npc(2, "Data Broker", "gatherer", Vector2(-430, -140), Color("ff3df2"), 0.50, 0.25, 0.05, 0.70)
-	for npc in npc_nodes.values(): npc.hide()
-	district = preload("res://scripts/district_3d.gd").new()
-	district.controller = self
-	add_child(district)
+	_add_npc(1, "Craftsman", "craftsman", Vector2(180, -20), Color(0.80, 0.55, 0.20), 0.65, 0.10, 0.05, 0.30)
+	_add_npc(2, "Gatherer", "gatherer", Vector2(-170, 35), Color(0.28, 0.75, 0.35), 0.50, 0.25, 0.05, 0.70)
 
 
 func _build_ui() -> void:
@@ -111,40 +116,31 @@ func _build_ui() -> void:
 		chat_windows[id] = window
 	var heading := Label.new()
 	heading.position = Vector2(26, 22)
-	heading.text = "NEON DISTRICT"
-	_apply_holo_label(heading, 22, Color("e9fbff"))
+	heading.text = "WILLOWBROOK\nThe forest & the forge"
+	heading.add_theme_font_size_override("font_size", 26)
+	heading.add_theme_color_override("font_color", Color("f4e7c9"))
 	hud.add_child(heading)
 	quest_panel = preload("res://scripts/quest_panel.gd").new()
 	hud.add_child(quest_panel)
 	quest_panel.start_requested.connect(func(): _quest_call("start"))
-	var pause_button := Button.new()
-	pause_button.text = "Pause"
-	pause_button.position = Vector2(26, 70)
-	pause_button.custom_minimum_size = Vector2(110, 36)
-	pause_button.pressed.connect(func(): _set_paused(true))
-	hud.add_child(pause_button)
-	var pause_layer := CanvasLayer.new()
-	pause_layer.layer = 10
-	add_child(pause_layer)
-	pause_menu = preload("res://scripts/pause_menu.gd").new()
-	pause_layer.add_child(pause_menu)
-	restart_button = pause_menu.restart_button
-	pause_menu.resume_requested.connect(func(): _set_paused(false))
-	pause_menu.missions_requested.connect(func(): _set_paused(false); quest_panel.show())
-	pause_menu.inventory_requested.connect(func(): _set_paused(false); inventory_drawer.show())
-	pause_menu.zoom_changed.connect(func(value): district.camera_distance = value)
-	pause_menu.fullscreen_changed.connect(func(enabled):
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if enabled else DisplayServer.WINDOW_MODE_WINDOWED))
-	pause_menu.quit_requested.connect(func(): _notification(NOTIFICATION_WM_CLOSE_REQUEST))
+	var quests_button := Button.new()
+	quests_button.text = "Quests"
+	quests_button.position = Vector2(26, 108)
+	quests_button.custom_minimum_size = Vector2(150, 34)
+	quests_button.pressed.connect(func(): quest_panel.visible = not quest_panel.visible; inventory_drawer.hide())
+	hud.add_child(quests_button)
+	restart_button = Button.new()
+	restart_button.text = "Restart Game"
+	restart_button.position = Vector2(190, 108)
+	restart_button.custom_minimum_size = Vector2(150, 34)
+	hud.add_child(restart_button)
 	restart_dialog = ConfirmationDialog.new()
 	restart_dialog.title = "Restart Game"
-	restart_dialog.dialog_text = "Start again? This clears missions, inventories, chats and NPC memories."
+	restart_dialog.dialog_text = "Start again? This clears quests, inventories, chats and NPC memories."
 	restart_dialog.ok_button_text = "Restart"
 	restart_dialog.confirmed.connect(_restart_game)
 	hud.add_child(restart_dialog)
-	restart_button.pressed.connect(func():
-		_set_paused(true)
-		restart_dialog.popup_centered())
+	restart_button.pressed.connect(func(): restart_dialog.popup_centered())
 	position_request = HTTPRequest.new()
 	position_request.timeout = 5
 	add_child(position_request)
@@ -161,16 +157,14 @@ func _build_ui() -> void:
 	var crafting_timer := Timer.new()
 	crafting_timer.wait_time = 0.5
 	crafting_timer.timeout.connect(func():
-		if bow_state.get("phase") == "crafting" and not quest_busy and not restart_queued: _quest_call("advance"))
+		if bow_state.get("phase") == "crafting" and not quest_busy: _quest_call("advance"))
 	add_child(crafting_timer)
 	crafting_timer.start()
 	var bag := PanelContainer.new()
 	bag.position = Vector2(24, 544)
 	bag.custom_minimum_size = Vector2(606, 152)
 	var style := StyleBoxFlat.new()
-	style.bg_color = _ca("090d19", 0.92)
-	style.border_color = _ca("19f6ff", 0.70)
-	style.set_border_width_all(1)
+	style.bg_color = Color("202a27")
 	style.set_corner_radius_all(10)
 	style.content_margin_left = 16
 	style.content_margin_right = 16
@@ -183,16 +177,17 @@ func _build_ui() -> void:
 	inventory_label = Label.new()
 	inventory_label.text = "Loading supplies..."
 	inventory_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_apply_holo_label(inventory_label, 18, Color("e9fbff"))
+	inventory_label.add_theme_font_size_override("font_size", 19)
 	layout.add_child(inventory_label)
 	bag_button = Button.new()
-	bag_button.hide()
+	bag_button.text = "Open inventory  •  I"
+	bag_button.pressed.connect(func(): inventory_drawer.visible = not inventory_drawer.visible; quest_panel.hide())
 	layout.add_child(bag_button)
 	inventory_drawer = PanelContainer.new()
 	inventory_drawer.position = Vector2(24, 266)
 	inventory_drawer.size = Vector2(606, 266)
 	var drawer_style := style.duplicate()
-	drawer_style.border_color = Color("ff3df2")
+	drawer_style.border_color = Color("b49e6b")
 	drawer_style.set_border_width_all(1)
 	inventory_drawer.add_theme_stylebox_override("panel", drawer_style)
 	hud.add_child(inventory_drawer)
@@ -200,8 +195,9 @@ func _build_ui() -> void:
 	contents.add_theme_constant_override("separation", 10)
 	inventory_drawer.add_child(contents)
 	var bag_heading := Label.new()
-	bag_heading.text = "RUNNER LOADOUT"
-	_apply_holo_label(bag_heading, 20, Color("19f6ff"))
+	bag_heading.text = "YOUR SATCHEL"
+	bag_heading.add_theme_color_override("font_color", Color("ead5a4"))
+	bag_heading.add_theme_font_size_override("font_size", 22)
 	contents.add_child(bag_heading)
 	var item_scroll := ScrollContainer.new()
 	item_scroll.custom_minimum_size.y = 136
@@ -216,11 +212,9 @@ func _build_ui() -> void:
 	contents.add_child(give_button)
 	inventory_drawer.hide()
 	interaction_label = Label.new()
-	_apply_holo_label(interaction_label, 16, Color("e9fbff"))
 	layout.add_child(interaction_label)
 	var help := Label.new()
-	help.text = "WASD Move • E Talk • F Pick up • I Bag • Esc Pause"
-	_apply_holo_label(help, 13, Color("9fb8c9"))
+	help.text = "WASD Move • E Talk • F Pick up • I Bag • Esc Close"
 	layout.add_child(help)
 	world_request = HTTPRequest.new()
 	hud.add_child(world_request)
@@ -241,17 +235,6 @@ func _open_dialogue() -> void:
 	chat_windows[current_npc.npc_id].open_chat()
 
 
-func _set_paused(value: bool) -> void:
-	paused = value
-	pause_menu.visible = value
-	pause_menu.zoom.set_value_no_signal(district.camera_distance)
-	if value:
-		inventory_drawer.hide()
-		quest_panel.hide()
-		for window in chat_windows.values(): window.close_chat()
-	get_viewport().gui_release_focus()
-
-
 func _load_world() -> void:
 	# Avoid replacing a conversation while its request is in flight.
 	for window in chat_windows.values():
@@ -266,7 +249,7 @@ func _load_world() -> void:
 func _world_completed(result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	world_busy = false
 	if result != HTTPRequest.RESULT_SUCCESS or code != 200:
-		inventory_label.text = "Connecting to the grid..."
+		inventory_label.text = "Connecting to the village..."
 		return
 	var parsed: Variant = JSON.parse_string(body.get_string_from_utf8())
 	if not parsed is Dictionary:
@@ -300,7 +283,7 @@ func _update_player(data: Dictionary) -> void:
 	player_items = items.duplicate()
 	if player_grid.items != items:
 		player_grid.populate(items)
-	inventory_label.text = "LOADOUT  •  %s items" % items.size()
+	inventory_label.text = "SATCHEL  •  %s items" % items.size()
 	bag_button.text = "Open inventory  •  I"
 
 
@@ -324,8 +307,11 @@ func _add_npc(npc_id: int, npc_name: String, role_name: String, position: Vector
 	npc.add_child(collider)
 
 	var name_label := Label.new()
-	name_label.position = Vector2(-70, -104)
-	_apply_holo_label(name_label, 14, Color("e9fbff"))
+	name_label.position = Vector2(-65, -83)
+	name_label.add_theme_font_size_override("font_size", 16)
+	name_label.add_theme_color_override("font_shadow_color", Color.BLACK)
+	name_label.add_theme_constant_override("shadow_offset_x", 1)
+	name_label.add_theme_constant_override("shadow_offset_y", 1)
 	npc.add_child(name_label)
 	npc.label = name_label
 	npc.refresh_label(trust, fear, aggression, curiosity)
@@ -339,9 +325,8 @@ func _add_world_marker(target: Node2D, color: Color, text: String) -> void:
 	target.add_child(marker)
 
 	var label := Label.new()
-	label.position = Vector2(-32, -92)
+	label.position = Vector2(-20, -72)
 	label.text = text
-	_apply_holo_label(label, 13, Color("19f6ff"))
 	target.add_child(label)
 
 	var collider := CollisionShape2D.new()
@@ -353,10 +338,6 @@ func _add_world_marker(target: Node2D, color: Color, text: String) -> void:
 
 func _update_current_npc() -> void:
 	current_npc = null
-	var shop_id: int = district.shop_for_position(player.position * 0.025)
-	if shop_id != 0:
-		current_npc = npc_nodes[shop_id]
-		return
 	var nearest_distance := 99999.0
 	for npc in npc_nodes.values():
 		var distance := player.global_position.distance_to(npc.global_position)
@@ -407,7 +388,7 @@ func _quest_call(action: String, payload: Dictionary = {}) -> void:
 	if error != OK:
 		quest_busy = false
 		quest_panel.start_button.disabled = false
-		quest_panel.objective.text = "Could not reach the grid. Try again."
+		quest_panel.objective.text = "Could not reach the village. Try again."
 
 
 func _quest_completed(result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
@@ -430,7 +411,7 @@ func _quest_completed(result: int, code: int, _headers: PackedStringArray, body:
 		quest_panel.show()
 		for id in chat_windows:
 			if npc_nodes[id].role_name == "craftsman":
-				chat_windows[id].append_dialogue("Neon Techsmith", str(data.reward_dialogue))
+				chat_windows[id].append_dialogue("Craftsman", str(data.reward_dialogue))
 
 
 func _operations_pending() -> bool:
@@ -441,13 +422,7 @@ func _operations_pending() -> bool:
 
 
 func _restart_game() -> void:
-	if not world_loaded: return
-	if _operations_pending():
-		restart_queued = true
-		return
-	restart_queued = false
-	_set_paused(false)
-	district.reset_patrols()
+	if _operations_pending() or not world_loaded: return
 	world_loaded = false
 	world_busy = true
 	inventory_drawer.hide()
@@ -495,67 +470,3 @@ func _notification(what: int) -> void:
 			inventory_drawer.hide()
 			quest_panel.hide()
 			for window in chat_windows.values(): window.close_chat()
-
-
-func _build_collision() -> void:
-	# Map edge blockers.
-	_add_wall_rect(Vector2(0, -548), Vector2(2100, 120))
-	_add_wall_rect(Vector2(0, 548), Vector2(2100, 120))
-	_add_wall_rect(Vector2(-1048, 0), Vector2(160, 1180))
-	_add_wall_rect(Vector2(1048, 0), Vector2(160, 1180))
-
-	# Rooftops and dense background architecture. Doorways/interiors stay open.
-	_add_wall_rect(Vector2(0, -405), Vector2(1620, 130))
-	_add_wall_rect(Vector2(-662, -190), Vector2(260, 230))
-	_add_wall_rect(Vector2(664, -135), Vector2(230, 350))
-	_add_wall_rect(Vector2(300, -270), Vector2(500, 95))
-	_add_wall_rect(Vector2(-835, 120), Vector2(190, 360))
-	_add_wall_rect(Vector2(818, 238), Vector2(210, 450))
-
-	# Foreground buildings and railings; these stop the player from walking over structures.
-	_add_wall_poly(PackedVector2Array([
-		Vector2(-836, 470), Vector2(-836, 270), Vector2(-638, 318), Vector2(-608, 470)
-	]))
-	_add_wall_poly(PackedVector2Array([
-		Vector2(520, 470), Vector2(836, 470), Vector2(836, 184), Vector2(650, 244)
-	]))
-	_add_wall_rect(Vector2(-42, 382), Vector2(272, 124))
-
-
-func _add_wall_rect(center: Vector2, size: Vector2) -> void:
-	var body := StaticBody2D.new()
-	body.position = center
-	var collider := CollisionShape2D.new()
-	var rect := RectangleShape2D.new()
-	rect.size = size
-	collider.shape = rect
-	body.add_child(collider)
-	add_child(body)
-
-
-func _add_wall_poly(points: PackedVector2Array) -> void:
-	var body := StaticBody2D.new()
-	var collider := CollisionPolygon2D.new()
-	collider.polygon = points
-	body.add_child(collider)
-	add_child(body)
-
-
-func _apply_holo_label(label: Label, size: int, color: Color) -> void:
-	label.add_theme_font_override("font", _cyber_font())
-	label.add_theme_font_size_override("font_size", size)
-	label.add_theme_color_override("font_color", color)
-	label.add_theme_color_override("font_outline_color", Color("02050a"))
-	label.add_theme_constant_override("outline_size", 5)
-
-
-func _cyber_font() -> SystemFont:
-	var font := SystemFont.new()
-	font.font_names = PackedStringArray(["Orbitron", "Rajdhani", "Eurostile", "Avenir Next Condensed", "Menlo"])
-	return font
-
-
-func _ca(hex: String, alpha: float) -> Color:
-	var color := Color(hex)
-	color.a = alpha
-	return color

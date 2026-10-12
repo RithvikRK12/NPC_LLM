@@ -66,7 +66,7 @@ class RolesPermissionsContractTests(unittest.TestCase):
                 with self.subTest(key=key, field=field), self.assertRaises(ValidationError):
                     model.model_validate(payload)
         proposal = copy.deepcopy(self.valid["proposal"])
-        proposal["required_material_ids"].append("item:circuit_board")
+        proposal["required_material_ids"].append("item:wood")
         with self.assertRaises(ValidationError):
             RoleProposal.model_validate(proposal)
         profile = copy.deepcopy(self.valid["profile"])
@@ -204,7 +204,7 @@ class RolesPermissionsInvariantTests(unittest.TestCase):
         self.assertEqual(result.reasons, (PermissionReason.MISSING_WORKSHOP,))
 
         payload = copy.deepcopy(self.valid)
-        payload["world"]["available_material_ids"] = ["item:circuit_board"]
+        payload["world"]["available_material_ids"] = ["item:wood"]
         result = self._evaluate(payload)
         self.assertIsInstance(result, RolePermission)
         self.assertEqual(result.reasons, (PermissionReason.MISSING_MATERIALS,))

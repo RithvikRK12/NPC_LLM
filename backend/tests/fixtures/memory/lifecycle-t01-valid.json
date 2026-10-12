@@ -29,7 +29,7 @@
         "timeline_id": "timeline:main",
         "npc_id": "npc:gatherer",
         "actor_id": "player:hero",
-        "target_id": "item:scrap_alloy",
+        "target_id": "item:rope",
         "created_at": "2026-10-10T10:00:00Z",
         "source_ids": [
           "memory-decision:temp"
@@ -93,7 +93,7 @@
         "timeline_id": "timeline:main",
         "npc_id": "npc:gatherer",
         "actor_id": "player:hero",
-        "target_id": "item:data_shard",
+        "target_id": "item:fruits",
         "created_at": "2026-09-01T10:00:00Z",
         "source_ids": [
           "memory-decision:transfer"

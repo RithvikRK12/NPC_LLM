@@ -2,11 +2,7 @@
 import re
 from app.services.validation.models import LLMResponse, StateUpdate
 
-ITEMS = {
-    'diagnostic_tool', 'nano_solder', 'scrap_alloy',
-    'scanner', 'circuit_board', 'data_shard',
-    'energy_cell', 'med_patch', 'fiber_cable', 'pulse_blaster',
-}
+ITEMS = {'saw', 'hammer', 'rope', 'axe', 'wood', 'fruits', 'water', 'food', 'string', 'bow'}
 
 
 def requested_transfer(question: str) -> tuple[str, str] | None:
@@ -14,18 +10,14 @@ def requested_transfer(question: str) -> tuple[str, str] | None:
     if re.search(r"\b(?:don't|do not|never|not|if)\b", text):
         return None
     # Requests transfer exactly one named item. Ambiguous/multiple-item requests need clarification.
-    spoken = text.replace("_", " ")
-    items = {
-        item for item in ITEMS
-        if re.search(rf"\b{re.escape(item)}\b", text)
-        or re.search(rf"\b{re.escape(item.replace('_', ' '))}\b", spoken)
-    }
+    words = set(re.findall(r'\b[a-z]+\b', text))
+    items = words & ITEMS
     if len(items) != 1:
         return None
     item = items.pop()
     if re.search(r"\b(?:i give you|i offer you|take my|here is|here's|give you)\b", text):
         return 'receive_item', item
-    if re.search(r"\b(?:give me|give us|share|can i have|could i have|may i have|i need|i want|please give|give some|give circuit|give data)\b", text):
+    if re.search(r"\b(?:give me|give us|share|can i have|could i have|may i have|i need|i want|please give|give some|give wood|give fruits)\b", text):
         return 'give_item', item
     return None
 
@@ -34,8 +26,12 @@ def transfer_answer(question: str, npc_inventory: list[str], player_inventory: l
     transfer = requested_transfer(question)
     text = question.lower().strip().rstrip('.!?')
     has_purpose = bool(re.search(r"\b(?:for|to|because|so)\b", text)) and len(text.split()) >= 3 and '?' not in question
-    explaining_same_item = pending_item and transfer == ('give_item', pending_item) and has_purpose
-    if pending_item and (transfer is None or explaining_same_item):
+    explaining_pending_item = bool(pending_item and has_purpose and (
+        transfer is None
+        or transfer == ('give_item', pending_item)
+        or re.search(r"\b(?:it|that|this|them|those)\b", text)
+    ))
+    if pending_item and (transfer is None or explaining_pending_item):
         text = question.lower().strip().rstrip('.!?')
         if text in {'cancel', 'never mind', 'nevermind', 'no thanks', 'forget it'}:
             return LLMResponse(intent='cancel_transfer', emotion='calm', dialogue="All right, I'll keep it for now.",

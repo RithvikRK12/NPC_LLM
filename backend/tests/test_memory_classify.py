@@ -92,7 +92,7 @@ class MemoryClassifyContractTests(unittest.TestCase):
         self.assertEqual(classifier(source, policy), expected)
         self.assertEqual(self.valid, original)
         self.valid["source"]["object_id"] = "item:changed"
-        self.assertEqual(source.object_id, "item:data_shard")
+        self.assertEqual(source.object_id, "item:fruits")
         with self.assertRaises(ValidationError):
             source.object_id = "item:changed"
 
@@ -169,7 +169,7 @@ class MemoryClassifyBehaviourTests(unittest.TestCase):
             payload["source"]["approved_dialogue"] = "Whatever."
             payload["source"]["subject_id"] = "quest-run:pulse_001"
             payload["source"]["predicate"] = event_type
-            payload["source"]["object_id"] = "quest:pulse_blaster"
+            payload["source"]["object_id"] = "quest:bow"
             with self.subTest(event_type=event_type):
                 result = self._classify(payload, memory_id)
                 self.assertIsInstance(result, MemoryDecision)
@@ -205,7 +205,7 @@ class MemoryClassifyInvariantTests(unittest.TestCase):
         )
 
     def test_greetings_and_questions_are_not_durable(self):
-        for text in ("hello", "Can you give me the scanner?"):
+        for text in ("hello", "Can you give me the axe?"):
             payload = copy.deepcopy(self.valid)
             payload["source"]["source_kind"] = "approved_conversation"
             payload["source"]["player_text"] = text

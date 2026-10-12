@@ -5,14 +5,7 @@ from sqlalchemy.orm import Session
 from app.database.session import get_db
 from app.models import Player, NPC
 from app.schemas.npc import NPCRead
-from app.services.quests.bow import (
-    COMPONENT_FROM_BROKER,
-    STRING_POSITION,
-    WORLD_PICKUP,
-    finish_if_ready,
-    get_quest,
-    snapshot,
-)
+from app.services.quests.bow import get_quest, snapshot, finish_if_ready, STRING_POSITION
 
 router = APIRouter(prefix='/quests/bow', tags=['quests'])
 
@@ -38,11 +31,11 @@ def start(db: Session = Depends(get_db)):
     quest = get_quest(db)
     if quest.phase == 'available':
         quest.phase = 'meet'
-        # Existing saved worlds may have used the initial component. Ensure this new quest is playable once.
+        # Existing saved worlds may have used the initial wood. Ensure this new quest is playable once.
         npcs = list(db.scalars(select(NPC).order_by(NPC.id).with_for_update()))
-        if COMPONENT_FROM_BROKER not in (player.inventory or []) and not any(COMPONENT_FROM_BROKER in (n.inventory or []) for n in npcs):
+        if 'wood' not in (player.inventory or []) and not any('wood' in (n.inventory or []) for n in npcs):
             gatherer = next(n for n in npcs if n.role == 'gatherer')
-            gatherer.inventory = list(gatherer.inventory or []) + [COMPONENT_FROM_BROKER]
+            gatherer.inventory = list(gatherer.inventory or []) + ['wood']
     return payload(db, player)
 
 
@@ -56,11 +49,11 @@ def pickup(request: PickupRequest, db: Session = Depends(get_db)):
     player = lock_player(db)
     quest = get_quest(db)
     if quest.phase != 'gather' or quest.string_collected:
-        raise HTTPException(409, 'Fiber cable is not available to pick up')
+        raise HTTPException(409, 'String is not available to pick up')
     if (request.x - STRING_POSITION['x']) ** 2 + (request.y - STRING_POSITION['y']) ** 2 > 64 ** 2:
-        raise HTTPException(409, 'Move closer to the fiber cable')
+        raise HTTPException(409, 'Move closer to the string')
     quest.string_collected = True
-    player.inventory = list(player.inventory or []) + [WORLD_PICKUP]
+    player.inventory = list(player.inventory or []) + ['string']
     return payload(db, player)
 
 

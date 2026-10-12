@@ -8,7 +8,7 @@ func wait_for(condition: Callable) -> bool:
 	while not condition.call():
 		await process_frame
 		if Time.get_ticks_msec() > deadline:
-			push_error("Timed out in Pulse Blaster quest smoke test")
+			push_error("Timed out in bow quest smoke test")
 			quit(1)
 			return false
 	return true
@@ -31,23 +31,23 @@ func run_check() -> void:
 	scene.quest_panel.show()
 	scene.quest_panel.start_button.pressed.emit()
 	if not await wait_for(func(): return not scene.quest_busy): return
-	scene.player.position = Vector2(325, -120)
+	scene.player.position = Vector2(110, -20)
 	scene._update_current_npc()
 	scene._open_dialogue()
 	var craftsman = scene.chat_windows[1]
-	craftsman.message_input.text = "Can you assemble me a Pulse Blaster?"
+	craftsman.message_input.text = "Can you make me a bow?"
 	craftsman.submit()
 	if not await wait_for(func(): return not craftsman.pending): return
 	if not check(scene.bow_state.phase == "gather" and scene.string_pickup.visible, "Craftsman must request materials"): return
-	scene.player.position = Vector2(-390, -140)
+	scene.player.position = Vector2(-100, 35)
 	scene._update_current_npc()
 	scene._open_dialogue()
 	var gatherer = scene.chat_windows[2]
-	gatherer.item_grid.select_item("circuit_board")
+	gatherer.item_grid.select_item("wood")
 	gatherer.take_button.pressed.emit()
 	if not await wait_for(func(): return not gatherer.pending): return
-	if not check(not scene.player_items.has("circuit_board"), "Circuit board needs a reason before transfer"): return
-	gatherer.message_input.text = "To help the Techsmith assemble a Pulse Blaster"
+	if not check(not scene.player_items.has("wood"), "Wood needs a reason before transfer"): return
+	gatherer.message_input.text = "To help the Craftsman make a bow"
 	gatherer.submit()
 	if not await wait_for(func(): return not gatherer.pending): return
 	gatherer.close_chat()
@@ -57,24 +57,24 @@ func run_check() -> void:
 	pickup.pressed = true
 	scene._unhandled_input(pickup)
 	if not await wait_for(func(): return not scene.quest_busy): return
-	if not check(scene.player_items.has("circuit_board") and scene.player_items.has("fiber_cable") and not scene.string_pickup.visible, "Components must be real inventory items"): return
-	scene.player.position = Vector2(325, -120)
+	if not check(scene.player_items.has("wood") and scene.player_items.has("string") and not scene.string_pickup.visible, "Materials must be real inventory items"): return
+	scene.player.position = Vector2(110, -20)
 	scene._update_current_npc()
-	for item in ["circuit_board", "fiber_cable"]:
+	for item in ["wood", "string"]:
 		scene.player_grid.select_item(item)
 		scene._give_selected_item()
 		if not await wait_for(func(): return not craftsman.pending): return
-	if not check(scene.bow_state.phase == "crafting" and not scene.player_items.has("pulse_blaster"), "Pulse Blaster must not be granted instantly"): return
+	if not check(scene.bow_state.phase == "crafting" and not scene.player_items.has("bow"), "Bow must not be granted instantly"): return
 	if not await wait_for(func(): return scene.quest_panel.progress.value > 10): return
 	if DisplayServer.get_name() != "headless":
 		await RenderingServer.frame_post_draw
-		root.get_texture().get_image().save_png("/tmp/npc-pulse-blaster-crafting.png")
+		root.get_texture().get_image().save_png("/tmp/npc-bow-crafting.png")
 	if not await wait_for(func(): return scene.bow_state.phase == "completed"): return
-	if not check(scene.player_items.count("pulse_blaster") == 1, "Quest must award exactly one Pulse Blaster"): return
+	if not check(scene.player_items.count("bow") == 1, "Quest must award exactly one bow"): return
 	scene.inventory_drawer.show()
 	await process_frame
 	if DisplayServer.get_name() != "headless":
 		await RenderingServer.frame_post_draw
-		root.get_texture().get_image().save_png("/tmp/npc-pulse-blaster-completed.png")
-	print("PASS: free roam -> mission -> component dialogue -> confirmed circuit board -> F pickup -> gifts -> timed progress -> one Pulse Blaster")
+		root.get_texture().get_image().save_png("/tmp/npc-bow-completed.png")
+	print("PASS: free roam → quest → material dialogue → confirmed wood → F pickup → gifts → timed progress → one bow")
 	quit()

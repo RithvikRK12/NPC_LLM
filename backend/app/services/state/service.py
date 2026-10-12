@@ -44,7 +44,7 @@ class StateService:
                 raise ValueError("The requested item is no longer available")
             source.remove(output.item)
             destination.append(output.item)
-            if output.action == "give_item" and output.item == "circuit_board" and quest_status != "completed":
+            if output.action == "give_item" and output.item == "wood" and quest_status != "completed":
                 quest_status = "active"
                 quest_progress = max(quest_progress, 50)
         npc.inventory = npc_inventory

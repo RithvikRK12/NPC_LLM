@@ -14,7 +14,7 @@ class NPC(Base):
     fear: Mapped[float] = mapped_column(Float, default=0.1)
     aggression: Mapped[float] = mapped_column(Float, default=0.05)
     curiosity: Mapped[float] = mapped_column(Float, default=0.5)
-    location: Mapped[str] = mapped_column(String(128), default="jit_cyber_grid")
+    location: Mapped[str] = mapped_column(String(128), default="village_square")
     current_state: Mapped[str] = mapped_column(String(128), default="idle")
 
     memory_revision: Mapped[str] = mapped_column(String(36), default="initial", server_default="initial")

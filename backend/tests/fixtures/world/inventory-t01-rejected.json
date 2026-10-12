@@ -21,7 +21,7 @@
     ],
     "request_id": "inventory-request:bad",
     "operation": "teleport",
-    "item_id": "item:data_shard",
+    "item_id": "item:fruits",
     "quantity": 1,
     "from_owner_id": "npc:gatherer",
     "to_owner_id": "player:hero",

@@ -73,7 +73,7 @@ class QuestRecoveryContractTests(unittest.TestCase):
         with self.assertRaises(ValidationError):
             RecoveryPolicy.model_validate(policy)
         route = copy.deepcopy(self.valid["policy"]["routes"][1])
-        route["costs"].append({"item_id": "item:data_shard", "quantity": 2})
+        route["costs"].append({"item_id": "item:fruits", "quantity": 2})
         with self.assertRaises(ValidationError):
             RecoveryRoute.model_validate(route)
 
@@ -130,7 +130,7 @@ class QuestRecoveryBehaviourTests(unittest.TestCase):
 
     def test_attainable_prerequisites_filter_unavailable_routes(self):
         payload = copy.deepcopy(self.valid)
-        payload["world"]["available_item_ids"] = ["item:diagnostic_tool"]
+        payload["world"]["available_item_ids"] = ["item:saw"]
         result = self._offers(payload)
         self.assertIsInstance(result, RecoveryOfferSet)
         self.assertEqual(tuple(offer.route_id for offer in result.offers), ("route:diagnostic_favour",))

@@ -22,8 +22,8 @@
     "proposal_id": "proposal:craft_blaster",
     "action": "craft_item",
     "required_material_ids": [
-      "item:circuit_board",
-      "item:fiber_cable"
+      "item:wood",
+      "item:string"
     ]
   },
   "world": {
@@ -57,9 +57,9 @@
       }
     ],
     "available_material_ids": [
-      "item:circuit_board",
-      "item:fiber_cable",
-      "item:scrap_alloy"
+      "item:wood",
+      "item:string",
+      "item:rope"
     ],
     "active_grants": [
       {

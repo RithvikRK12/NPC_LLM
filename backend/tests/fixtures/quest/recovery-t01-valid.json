@@ -47,8 +47,8 @@
       }
     ],
     "available_item_ids": [
-      "item:data_shard",
-      "item:diagnostic_tool"
+      "item:fruits",
+      "item:saw"
     ],
     "consumed_offer_ids": [],
     "completed_offer_ids": [],
@@ -87,7 +87,7 @@
         "blocked_step": "crafting_access",
         "costs": [],
         "required_available_item_ids": [
-          "item:diagnostic_tool"
+          "item:saw"
         ],
         "completion_event_type": "event:diagnostic_complete",
         "grant_effect_id": "effect:grant_crafting_access",
@@ -101,12 +101,12 @@
         "blocked_step": "crafting_access",
         "costs": [
           {
-            "item_id": "item:data_shard",
+            "item_id": "item:fruits",
             "quantity": 1
           }
         ],
         "required_available_item_ids": [
-          "item:data_shard"
+          "item:fruits"
         ],
         "completion_event_type": "event:trade_completed",
         "grant_effect_id": "effect:grant_crafting_access",
@@ -175,7 +175,7 @@
         "blocked_step": "crafting_access",
         "costs": [
           {
-            "item_id": "item:data_shard",
+            "item_id": "item:fruits",
             "quantity": 1
           }
         ],

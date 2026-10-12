@@ -117,7 +117,7 @@ class WorldInventoryBehaviourTests(unittest.TestCase):
         payload = copy.deepcopy(self.valid)
         payload["request"]["operation"] = "consume"
         payload["request"]["request_id"] = "inventory-request:consume_energy"
-        payload["request"]["item_id"] = "item:energy_cell"
+        payload["request"]["item_id"] = "item:water"
         payload["request"]["quantity"] = 2
         payload["request"]["from_owner_id"] = "player:hero"
         payload["request"]["to_owner_id"] = None
@@ -183,7 +183,7 @@ class WorldInventoryInvariantTests(unittest.TestCase):
 
     def test_repeated_effect_identity_is_rejected_before_second_transfer(self):
         payload = copy.deepcopy(self.valid)
-        payload["view"]["applied_effect_ids"] = ["inventory-effect:give_data_shard_001"]
+        payload["view"]["applied_effect_ids"] = ["inventory-effect:give_fruits_001"]
         result = self._plan(payload)
         self.assertIsInstance(result, DomainError)
         self.assertEqual(result.code, ErrorCode.IDEMPOTENCY_CONFLICT)
@@ -268,7 +268,7 @@ class WorldInventoryHandoffTests(unittest.TestCase):
         effect = self._effect()
         handoff = accept_application_effect(effect, "timeline:main", effect.policy)
         self.assertIsInstance(handoff, ApprovedEffect)
-        self.assertEqual(handoff.effect_id, "inventory-effect:give_data_shard_001")
+        self.assertEqual(handoff.effect_id, "inventory-effect:give_fruits_001")
         self.assertEqual(sum(delta["delta"] for delta in handoff.owner_deltas), 0)
         with self.assertRaises(ValidationError):
             handoff.effect_id = "inventory-effect:other"

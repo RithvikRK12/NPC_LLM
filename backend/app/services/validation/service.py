@@ -48,7 +48,7 @@ class ValidationService:
             raise ValidationError("Item transfers require an explicit player request naming an owned item")
         if output.action not in {"speak", "idle", "ask_question", "share_memory"}:
             raise ValidationError("The model cannot trigger crafting, transfers, or quest rewards")
-        if re.search(r"\b(?:circuit board|circuit_board|data shard|data_shard|diagnostic tool|diagnostic_tool|energy cell|energy_cell|fiber cable|fiber_cable|med patch|med_patch|nano solder|nano_solder|pulse blaster|pulse_blaster|scanner|scrap alloy|scrap_alloy|axe|bow|food|fruits|hammer|rope|saw|string|water|wood|quest|reward|crafted|crafting|assembled|assembling|completed|finished|inventory|loadout)\b|\bi (?:have|own|carry|give|gave|made|assembled)\b|\byou (?:have|received|earned)\b", output.dialogue, re.I):
+        if re.search(r"\b(?:axe|bow|food|fruits|hammer|rope|saw|string|water|wood|quest|reward|crafted|crafting|completed|finished|inventory)\b|\bi (?:have|own|carry|give|gave|made)\b|\byou (?:have|received|earned)\b", output.dialogue, re.I):
             raise ValidationError("Inventory and quest claims must come from authoritative game rules")
         self._validate_ranges(output)
         self._validate_action(output.action, npc, context)
@@ -77,7 +77,6 @@ class ValidationService:
             "receive_item",
             "repair_tool",
             "craft_axe",
-            "craft_pulse_blaster",
             "request_materials",
             "ask_question",
             "share_memory",
@@ -86,18 +85,16 @@ class ValidationService:
         if action not in allowed_actions:
             raise ValidationError(f"Unsupported action '{action}'")
 
-        if action in {"craft_axe", "craft_pulse_blaster"}:
+        if action == "craft_axe":
             inventory = []
             if context is not None and hasattr(context, "inventory"):
                 inventory = list(getattr(context, "inventory") or [])
-            if action == "craft_axe" and "wood" not in inventory and "wood" not in (npc.inventory or []):
+            if "wood" not in inventory and "wood" not in (npc.inventory or []):
                 raise ValidationError("Crafting an axe requires wood in the inventory")
-            if action == "craft_pulse_blaster" and "circuit_board" not in inventory and "circuit_board" not in (npc.inventory or []):
-                raise ValidationError("Assembling a Pulse Blaster requires a circuit board in the inventory")
 
     def _validate_contradictions(self, output: LLMResponse) -> None:
         hostile_tokens = {"kill", "attack", "destroy", "burn", "war"}
-        friendly_tokens = {"friend", "help", "safe", "gift", "repair", "craft", "assemble"}
+        friendly_tokens = {"friend", "help", "safe", "gift", "repair", "craft"}
         dialogue_tokens = set(output.dialogue.lower().replace(".", " ").replace(",", " ").split())
 
         if output.emotion in {"friendly", "calm"} and hostile_tokens.intersection(dialogue_tokens):
