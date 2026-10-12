@@ -1,0 +1,403 @@
+NPC 1 output rejected: Inventory and quest claims must come from authoritative game rules
+{"npc_id": 1, "state": "helpful", "message": "Hello", "passed": false, "dialogue": "I can help with workshop supplies. Open Quests if you would like me to make a bow."}
+{"npc_id": 1, "state": "helpful", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 1, "state": "helpful", "message": "Can I have rope?", "passed": true, "dialogue": "Glad to help. Before I give you the rope, why do you need it?"}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 1, "state": "helpful", "message": "For my work in the village", "passed": true, "dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now."}
+NPC 1 output rejected: Inventory and quest claims must come from authoritative game rules
+{"npc_id": 1, "state": "cautious", "message": "Hello", "passed": false, "dialogue": "I can help with workshop supplies. Open Quests if you would like me to make a bow."}
+{"npc_id": 1, "state": "cautious", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 1, "state": "cautious", "message": "Can I have rope?", "passed": true, "dialogue": "Let's be careful. Before I give you the rope, why do you need it?"}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 1, "state": "cautious", "message": "For my work in the village", "passed": true, "dialogue": "Let's be careful. Thanks for explaining. Here, take my rope. It's yours now."}
+NPC 1 output rejected: Inventory and quest claims must come from authoritative game rules
+{"npc_id": 1, "state": "distrustful", "message": "Hello", "passed": false, "dialogue": "I can help with workshop supplies. Open Quests if you would like me to make a bow."}
+{"npc_id": 1, "state": "distrustful", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 1, "state": "distrustful", "message": "Can I have rope?", "passed": true, "dialogue": "I'd rather keep my rope for now. You can still ask me questions."}
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+{"npc_id": 2, "state": "helpful", "message": "Hello", "passed": false, "dialogue": "I can tell you about the forest. Ask me about the supplies I have."}
+{"npc_id": 2, "state": "helpful", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 2, "state": "helpful", "message": "Can I have fruits?", "passed": true, "dialogue": "Glad to help. Before I give you the fruits, why do you need it?"}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 2, "state": "helpful", "message": "For my work in the village", "passed": true, "dialogue": "Glad to help. Thanks for explaining. Here, take my fruits. It's yours now."}
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+{"npc_id": 2, "state": "cautious", "message": "Hello", "passed": false, "dialogue": "I can tell you about the forest. Ask me about the supplies I have."}
+{"npc_id": 2, "state": "cautious", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 2, "state": "cautious", "message": "Can I have fruits?", "passed": true, "dialogue": "Let's be careful. Before I give you the fruits, why do you need it?"}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 2, "state": "cautious", "message": "For my work in the village", "passed": true, "dialogue": "Let's be careful. Thanks for explaining. Here, take my fruits. It's yours now."}
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+{"npc_id": 2, "state": "distrustful", "message": "Hello", "passed": false, "dialogue": "I can tell you about the forest. Ask me about the supplies I have."}
+{"npc_id": 2, "state": "distrustful", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 2, "state": "distrustful", "message": "Can I have fruits?", "passed": true, "dialogue": "I'd rather keep my fruits for now. You can still ask me questions."}
+{"npc_id": 1, "state": "helpful", "message": "Good morning", "passed": true, "dialogue": "Glad to help. Good morning to you too! It's a lovely day in the village."}
+{"npc_id": 1, "state": "helpful", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 1, "state": "helpful", "message": "Please give me rope", "passed": true, "dialogue": "Glad to help. Before I give you the rope, why do you need it?"}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 1, "state": "helpful", "message": "For my work in the village", "passed": true, "dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now."}
+{"npc_id": 1, "state": "cautious", "message": "Good morning", "passed": true, "dialogue": "Let's be careful. Good morning! It's a beautiful day in the village."}
+{"npc_id": 1, "state": "cautious", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 1, "state": "cautious", "message": "Please give me rope", "passed": true, "dialogue": "Let's be careful. Before I give you the rope, why do you need it?"}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 1, "state": "cautious", "message": "For my work in the village", "passed": true, "dialogue": "Let's be careful. Thanks for explaining. Here, take my rope. It's yours now."}
+{"npc_id": 1, "state": "distrustful", "message": "Good morning", "passed": true, "dialogue": "Let's be careful. Good morning! It's a lovely day in the village."}
+{"npc_id": 1, "state": "distrustful", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 1, "state": "distrustful", "message": "Please give me rope", "passed": true, "dialogue": "I'd rather keep my rope for now. You can still ask me questions."}
+{"npc_id": 2, "state": "helpful", "message": "Good morning", "passed": true, "dialogue": "Glad to help. Good morning to you too! How can I help you today?"}
+{"npc_id": 2, "state": "helpful", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 2, "state": "helpful", "message": "Please give me fruits", "passed": true, "dialogue": "Glad to help. Before I give you the fruits, why do you need it?"}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 2, "state": "helpful", "message": "For my work in the village", "passed": true, "dialogue": "Glad to help. Thanks for explaining. Here, take my fruits. It's yours now."}
+{"npc_id": 2, "state": "cautious", "message": "Good morning", "passed": true, "dialogue": "Let's be careful. Good morning to you as well, friend! How can I help you today?"}
+{"npc_id": 2, "state": "cautious", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 2, "state": "cautious", "message": "Please give me fruits", "passed": true, "dialogue": "Let's be careful. Before I give you the fruits, why do you need it?"}
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+{"npc_id": 2, "state": "cautious", "message": "For my work in the village", "passed": true, "dialogue": "Let's be careful. Thanks for explaining. Here, take my fruits. It's yours now."}
+{"npc_id": 2, "state": "distrustful", "message": "Good morning", "passed": true, "dialogue": "Let's be careful. Good morning! It's a lovely day in the village."}
+{"npc_id": 2, "state": "distrustful", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 2, "state": "distrustful", "message": "Please give me fruits", "passed": true, "dialogue": "I'd rather keep my fruits for now. You can still ask me questions."}
+Passed 38/44; evidence: docs/evidence/behavior-live-v2.json

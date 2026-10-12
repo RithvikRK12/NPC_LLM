@@ -1,0 +1,14 @@
+{
+  "people": [
+    {"id": "person.craftsman", "name": "Craftsman", "role": "craftsman", "usual_place": "place.workshop", "work": "The Craftsman makes the bow from wood and string.", "source": "database/seed.py; services/quests/bow.py"},
+    {"id": "person.gatherer", "name": "Gatherer", "role": "gatherer", "usual_place": "place.forest_edge", "work": "The Gatherer gathers supplies and can share wood when it is in stock.", "source": "database/seed.py; services/validation/items.py"}
+  ],
+  "places": [
+    {"id": "place.workshop", "name": "workshop"},
+    {"id": "place.forest_edge", "name": "forest edge"},
+    {"id": "place.village_square", "name": "village square"},
+    {"id": "place.well", "name": "well"}
+  ],
+  "routes": [],
+  "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd"
+}

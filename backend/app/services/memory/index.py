@@ -1,6 +1,6 @@
 """Bounded cache of immutable, transaction-versioned FAISS HNSW indexes."""
 from collections import OrderedDict
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from threading import RLock
 
 import faiss
@@ -11,16 +11,20 @@ import numpy as np
 class CandidateIndex:
     ids: list[int]
     index: object
+    # Retain a bounded sample for honest lexical retrieval of malformed vectors.
+    rejected_ids: list[int] = field(default_factory=list)
 
     @classmethod
     def build(cls, rows, dimensions):
-        ids, vectors = [], []
+        ids, vectors, rejected = [], [], []
         for memory_id, vector in rows:
             try:
                 value = np.asarray(vector, dtype='float32')
             except (TypeError, ValueError):
+                rejected.append(memory_id)
                 continue
             if value.shape != (dimensions,) or not np.isfinite(value).all() or np.linalg.norm(value) <= 0:
+                rejected.append(memory_id)
                 continue
             ids.append(memory_id)
             vectors.append(value)
@@ -31,7 +35,7 @@ class CandidateIndex:
             matrix = np.ascontiguousarray(vectors, dtype='float32')
             faiss.normalize_L2(matrix)
             index.add(matrix)
-        return cls(ids, index)
+        return cls(ids, index, sorted(rejected)[:50])
 
     def search(self, vector, count):
         if not self.ids:

@@ -85,14 +85,25 @@ def finish_if_ready(db, player):
     if quest.phase != 'crafting' or time.time() < (quest.ready_at or float('inf')):
         return None
     craftsman = db.scalar(select(NPC).where(NPC.role == 'craftsman').with_for_update())
-    player.inventory = list(player.inventory or []) + ['bow']
+    inventory_before = list(player.inventory or [])
+    player.inventory = inventory_before + ['bow']
     quest.phase = 'completed'
     craftsman.current_state = 'available'
     output = reply('Your bow is ready. Here you are! Get a bow is complete.')
     from app.services.memory.service import MemoryService
-    classification = {'important': True, 'importance': 1.0, 'category': 'quest_completion',
-                      'reason': 'Server completed crafting and granted one bow.', 'stored': True, 'version': 1}
-    MemoryService(db).store_memory(craftsman, 'Bow quest completed. Craftsman gave the player one bow.', 1.0, 'calm', event_type='quest_completion', quest_id='get_bow')
-    db.add(Conversation(npc_id=craftsman.id, player_input='[Bow crafting finished]', llm_output={},
-                        validated_output=output.model_dump() | {"memory_classification": classification}, final_dialogue=output.dialogue))
+    from app.services.memory.importance import MemoryDecision
+    classification = MemoryDecision(1., 'quest_completion', 'Authoritative timed reward executed.',
+                                    'Bow quest completed. Craftsman gave the player one bow.').payload()
+    outcome = {'quest_before': 'crafting', 'quest_after': 'completed', 'reward': 'bow',
+               'inventory_before': {'player': inventory_before}, 'inventory_after': {'player': list(player.inventory)}}
+    conversation = Conversation(npc_id=craftsman.id, game_scope=player.game_scope,
+        player_input='[Bow crafting finished]', llm_output={},
+        validated_output=output.model_dump() | {'memory_classification': classification,
+                          'behavior_trace': {'verified_outcome': outcome}}, final_dialogue=output.dialogue)
+    db.add(conversation)
+    db.flush()
+    conversation.validated_output = conversation.validated_output | {'behavior_trace': {
+        'verified_outcome': outcome | {'event_id': conversation.source_event_id, 'conversation_id': conversation.id}}}
+    write = MemoryService(db).store_conversation(craftsman, conversation)
+    conversation.validated_output = conversation.validated_output | {'memory_classification': classification | write.payload()}
     return output.dialogue

@@ -1,0 +1,25 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PASS Fresh isolated world
+PASS Displayed parsed response: Where is the Gatherer?
+PASS Controls recovered: Where is the Gatherer?
+PASS Zero inventory/quest/NPC effects: Where is the Gatherer?
+PASS Parsed scoped decision trace: Where is the Gatherer?
+PASS Parsed durable outcome identity: Where is the Gatherer?
+PASS Parsed eligible FSEC selection: Where is the Gatherer?
+PASS Parsed bounded retrieval diagnostics: Where is the Gatherer?
+PASS Parsed provider failure trace with no authorized action
+PASS Provider failure produces rejected zero-effect fallback
+PASS Provider failure stores no important memory
+PASS Displayed parsed response: Where is the Gatherer?
+PASS Controls recovered: Where is the Gatherer?
+PASS Zero inventory/quest/NPC effects: Where is the Gatherer?
+PASS Parsed scoped decision trace: Where is the Gatherer?
+PASS Parsed durable outcome identity: Where is the Gatherer?
+PASS Parsed eligible FSEC selection: Where is the Gatherer?
+PASS Parsed bounded retrieval diagnostics: Where is the Gatherer?
+PASS Parsed provider failure trace with no authorized action
+PASS Provider failure produces rejected zero-effect fallback
+PASS Provider failure stores no important memory
+PASS Saved rendered snapshot: provider-failure

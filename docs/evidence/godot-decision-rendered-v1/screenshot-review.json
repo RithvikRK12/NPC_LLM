@@ -1,0 +1,85 @@
+{
+  "review_date_local": "2026-10-13",
+  "timezone": "Asia/Kolkata",
+  "artifact_type": "rendered automated Godot screenshots, not continuous video",
+  "screenshots": {
+    "godot-decision-rendered-v1/completed.png": {
+      "sha256": "c0a2ce144b8f46cdd98ccb89f0cd495a54d975bc10586d56769f68d354d1c078",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "godot-decision-rendered-v1/crafting.png": {
+      "sha256": "18a07c8556f5c386694b0f25c0c8fa20d2426de3964ca14f2e401e4deb98ecb6",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "godot-decision-rendered-v1/optional-cooperation.png": {
+      "sha256": "7008b96ac1f4d0a9c5a6ff94103fe4887b579a007b964f81e35471ac20e26517",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "godot-decision-rendered-v1/optional-refusal.png": {
+      "sha256": "c6f5c1edc6a4501555622a68a321a805db03faad0a8a3ae85c5e595f22a66ffe",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "godot-decision-rendered-v1/partial-delivery.png": {
+      "sha256": "f0b92c297fbbe17afa7b6b3b06758c9496c5a4cc98cd4b98cb17e0ea4777f91b",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "godot-decision-rendered-v1/reset.png": {
+      "sha256": "aa3b4deab406a898d4eec5c4f434c154ff3fa624998c69b82c047b3172c5fdb6",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "godot-decision-rendered-v1/route-npc-1.png": {
+      "sha256": "3aba49ca207ab42c7b20a7fc3aa983ee64734abac52b3d78944962221376e391",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "godot-decision-rendered-v1/route-npc-2.png": {
+      "sha256": "3fd32493998edbea30cc96126858d164d786cfb8b6111c6f65ed63257829af59",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    "godot-decision-provider-failure-v1/provider-failure.png": {
+      "sha256": "de328807f512e49c764e413a7513783d108749a53b3390d92ee7e6f1f171fa0b",
+      "visually_inspected": true,
+      "dimensions": [
+        1280,
+        720
+      ]
+    }
+  },
+  "observations": "All nine captures render the actual scene and legible relevant UI. Optional behavior, missing directions, partial delivery, crafting, completed inventory, reset and provider fallback are visible.",
+  "limitations": [
+    "Automated controls and controlled initial NPC states, not manual play.",
+    "Decision traces verified in parsed HTTP and persisted evidence; no in-game trace panel added.",
+    "No continuous or narrated video; final presentation format and release-quality threshold unagreed."
+  ]
+}

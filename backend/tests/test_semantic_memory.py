@@ -4,13 +4,13 @@ from unittest.mock import patch
 
 import httpx
 import numpy as np
-from sqlalchemy import create_engine, inspect, select, text
+from sqlalchemy import create_engine, event, inspect, select, text
 from sqlalchemy.orm import Session
 
 from app.database.base import Base
 from app.database.memory_migration import upgrade_memory_schema
 from app.database.seed import seed_world, reset_world
-from app.models import Memory, NPC
+from app.models import Memory, NPC, Player
 from app.services.memory.embedding import EmbeddingService, EmbeddingUnavailable
 from app.services.memory.index import CandidateIndex
 from app.services.memory.reindex import reindex_memories
@@ -45,6 +45,7 @@ class SemanticMemoryTests(unittest.TestCase):
     def add(self, event, *, npc_id=1, vector=None, importance=.8, kind='preference',
             quest=None, timestamp=None, model='test:semantic:v1:3'):
         row = Memory(npc_id=npc_id, event=event, importance=importance, emotion='calm',
+                     game_scope=self.db.get(Player, 1).game_scope,
                      semantic_embedding=vector if vector is not None else [1., 0., 0.],
                      embedding_model=model, event_type=kind, quest_id=quest,
                      timestamp=timestamp or datetime.now(timezone.utc).replace(tzinfo=None))
@@ -91,7 +92,8 @@ class SemanticMemoryTests(unittest.TestCase):
         with patch.object(CandidateIndex, 'build', wraps=CandidateIndex.build) as build:
             result = self.service.retrieve_relevant_memories(self.npc, 'query',
                 event_types=['quest_progress'], quest_id='get_bow', since=now-timedelta(days=1), until=now)
-        self.assertEqual([r.id for r in result], [wanted.id])
+        self.assertEqual([r.id for r in result], [wanted.id, wanted.id - 1])
+        self.assertEqual([r.retrieval_mode for r in result], ['semantic', 'lexical'])
         self.assertEqual(len(build.call_args.args[0]), 1)
         with self.assertRaises(ValueError):
             self.service.retrieve_relevant_memories(self.npc, 'q', since=now, until=now-timedelta(days=1))
@@ -145,7 +147,10 @@ class SemanticMemoryTests(unittest.TestCase):
         self.db.commit()
         self.assertIsNone(row.semantic_embedding)
         self.assertIsNone(row.embedding_model)
-        self.assertEqual(self.service.retrieve_relevant_memories(self.npc, 'q'), [])
+        result = self.service.retrieve_relevant_memories(self.npc, 'wood')
+        self.assertEqual([m.id for m in result], [row.id])
+        self.assertEqual(result[0].to_payload()['score_kind'], 'lexical_importance_recency')
+        self.assertEqual(self.service.last_retrieval_trace['reason'], 'no_eligible_indexed_vectors')
         self.assertEqual(reindex_memories(self.db, embedder=FixedEmbedder()), 1)
         self.assertEqual(len(self.service.retrieve_relevant_memories(self.npc, 'q')), 1)
         self.assertEqual(reindex_memories(self.db, embedder=FixedEmbedder()), 0)
@@ -158,7 +163,8 @@ class SemanticMemoryTests(unittest.TestCase):
         reindex_memories(self.db, batch_size=1, embedder=FixedEmbedder())
         self.assertEqual(len(row.embedding), 1536)
         self.assertEqual(row.semantic_embedding, [1., 0., 0.])
-        self.assertEqual(len(self.service.retrieve_relevant_memories(self.npc, 'q')), 1)
+        self.assertEqual(self.service.retrieve_relevant_memories(self.npc, 'q'), [])
+        self.assertIsNone(row.game_scope)  # reindex must not invent missing provenance
 
     def test_reindex_failure_rolls_back_batch(self):
         row = self.add('legacy', model='old')
@@ -173,7 +179,130 @@ class SemanticMemoryTests(unittest.TestCase):
         self.add('zero vector', vector=[0., 0., 0.])
         self.add('malformed vector', vector=['not a number'])
         self.db.commit()
-        self.assertEqual(self.service.retrieve_relevant_memories(self.npc, 'q'), [])
+        result = self.service.retrieve_relevant_memories(self.npc, 'vector')
+        self.assertEqual(len(result), 3)
+        self.assertTrue(all(m.retrieval_mode == 'lexical' for m in result))
+        self.assertEqual(self.service.last_retrieval_trace['reason'], 'no_eligible_indexed_vectors')
+
+    def test_query_outage_and_recovery_with_existing_vectors(self):
+        wanted = self.add('quiet forest preference', importance=.9)
+        self.add('unrelated history', importance=1.)
+        self.db.commit()
+        with patch.object(FixedEmbedder, 'embed', side_effect=EmbeddingUnavailable('offline')):
+            with self.assertLogs('app.services.memory.service', level='INFO') as logs:
+                result = self.service.retrieve_relevant_memories(self.npc, 'quiet forest', top_k=1)
+        self.assertEqual(result[0].id, wanted.id)
+        self.assertEqual(result[0].retrieval_mode, 'lexical')
+        self.assertIn('query_embedding_unavailable', '\n'.join(logs.output))
+        self.assertEqual(self.service.last_retrieval_trace['selected_ids'], [wanted.id])
+        self.assertTrue(all(m.retrieval_mode == 'semantic' for m in
+                            self.service.retrieve_relevant_memories(self.npc, 'forest')))
+
+    def test_vectorless_mixed_path_keeps_separate_rankings_and_provenance(self):
+        for i in range(8):
+            self.add(f'indexed experience {i}')
+        row = self.add('quiet forest preference', model=None)
+        row.semantic_embedding = None
+        row.epistemic_status, row.authority = 'claim', 'player_report'
+        row.source_event_id = 'accepted-source'
+        self.db.commit()
+        result = self.service.retrieve_relevant_memories(self.npc, 'quiet forest', top_k=5)
+        self.assertEqual(result[1].id, row.id)
+        self.assertEqual(result[1].retrieval_mode, 'lexical')
+        self.assertEqual(result[1].to_payload()['epistemic_status'], 'claim')
+        self.assertEqual(result[1].source_event_id, 'accepted-source')
+        self.assertEqual(self.service.last_retrieval_trace['mode'], 'mixed')
+        reindex_memories(self.db, embedder=FixedEmbedder())
+        self.service.retrieve_relevant_memories(self.npc, 'quiet forest')
+        self.assertEqual(self.service.last_retrieval_trace['mode'], 'semantic')
+
+    def test_fallback_filters_scope_lifecycle_and_dates_before_limit(self):
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
+        wanted = self.add('quiet forest', kind='quest_progress', quest='get_bow', timestamp=now)
+        unwanted = [self.add('quiet forest ' + str(i), kind='quest_progress', quest='get_bow',
+                             timestamp=now) for i in range(65)]
+        for i, row in enumerate(unwanted):
+            field, value = [('npc_id', 2), ('game_scope', 'old'), ('game_scope', None),
+                ('lifecycle', 'retracted'), ('lifecycle', 'archived'), ('importance', .64),
+                ('event_type', 'routine'), ('event_type', 'excluded'), ('event_type', 'preference'),
+                ('quest_id', 'other'), ('timestamp', now - timedelta(days=5)),
+                ('timestamp', now + timedelta(days=5))][i % 12]
+            setattr(row, field, value)
+        self.db.commit()
+        with patch.object(FixedEmbedder, 'embed', side_effect=EmbeddingUnavailable('offline')):
+            result = self.service.retrieve_relevant_memories(self.npc, 'quiet forest',
+                event_types=['quest_progress'], quest_id='get_bow',
+                since=now-timedelta(days=1), until=now+timedelta(days=1))
+        self.assertEqual([m.id for m in result], [wanted.id])
+        self.assertEqual(self.service.last_retrieval_trace['lexical_candidates'], 1)
+        wanted.semantic_embedding = None
+        wanted.embedding_model = None
+        self.db.commit()
+        result = self.service.retrieve_relevant_memories(self.npc, 'quiet forest',
+            event_types=['quest_progress'], quest_id='get_bow',
+            since=now-timedelta(days=1), until=now+timedelta(days=1))
+        self.assertEqual([m.id for m in result], [wanted.id])
+
+    def test_fallback_sql_bounds_ties_and_exact_dedup(self):
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
+        for i in range(90):
+            self.add(f'forest memory {i}', model=None, timestamp=now)
+        wanted = self.add('quiet forest', model=None, timestamp=now)
+        duplicate = self.add(' QUIET  FOREST! ', model=None, timestamp=now)
+        self.db.commit()
+        statements = []
+        def capture(conn, cursor, statement, parameters, context, executemany):
+            if 'memories.event,' in statement:
+                statements.append(statement)
+        event.listen(self.engine, 'before_cursor_execute', capture)
+        try:
+            first = self.service.retrieve_relevant_memories(self.npc, 'quiet forest', top_k=10000)
+            second = self.service.retrieve_relevant_memories(self.npc, 'quiet forest', top_k=10000)
+        finally:
+            event.remove(self.engine, 'before_cursor_execute', capture)
+        self.assertEqual([m.id for m in first], [m.id for m in second])
+        self.assertEqual(first[0].id, duplicate.id)
+        self.assertNotIn(wanted.id, [m.id for m in first])
+        self.assertLessEqual(len(first), 40)
+        self.assertEqual(self.service.last_retrieval_trace['lexical_candidates'], 40)
+        self.assertTrue(statements)
+        self.assertTrue(all('LIMIT' in stmt for stmt in statements))
+        # With no terms, importance, recency and stable ID still yield bounded results.
+        self.assertLessEqual(len(self.service.retrieve_relevant_memories(self.npc, '!!!', top_k=10000)), 40)
+
+    def test_fallback_importance_recency_and_outside_world_backstop(self):
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
+        old = self.add('forest old', model=None, importance=.8, timestamp=now-timedelta(days=20))
+        fresh = self.add('forest recent', model=None, importance=.8, timestamp=now)
+        important = self.add('forest important', model=None, importance=1., timestamp=now)
+        self.add('forest software', model=None, importance=1., timestamp=now)
+        self.db.commit()
+        rows = self.service.retrieve_relevant_memories(self.npc, 'forest')
+        self.assertEqual([m.id for m in rows], [important.id, fresh.id, old.id])
+
+    def test_malformed_vector_alongside_valid_index_is_lexical(self):
+        self.add('indexed')
+        row = self.add('quiet forest malformed', vector=[0., 0., 0.])
+        self.db.commit()
+        result = self.service.retrieve_relevant_memories(self.npc, 'quiet forest')
+        self.assertEqual([m.retrieval_mode for m in result], ['semantic', 'lexical'])
+        self.assertEqual(result[1].id, row.id)
+
+    def test_empty_retrieval_diagnostics_replace_previous_call(self):
+        self.add('kept')
+        self.db.commit()
+        self.service.retrieve_relevant_memories(self.npc, 'kept')
+        for kwargs, reason in [({'event_types': []}, 'empty_event_types'),
+                               ({'top_k': 0}, 'nonpositive_top_k'),
+                               ({'quest_id': 'absent'}, 'no_eligible_indexed_vectors')]:
+            with self.assertLogs('app.services.memory.service', level='INFO'):
+                self.assertEqual(self.service.retrieve_relevant_memories(self.npc, 'q', **kwargs), [])
+            self.assertEqual(self.service.last_retrieval_trace['reason'], reason)
+            self.assertEqual(self.service.last_retrieval_trace['selected_ids'], [])
+        self.add('OpenAI software', model=None)
+        self.db.commit()
+        self.assertEqual(self.service.retrieve_relevant_memories(self.npc, 'software',
+            event_types=['preference'], quest_id='absent'), [])
 
 
 class EmbeddingContractTests(unittest.TestCase):
@@ -191,6 +320,17 @@ class EmbeddingContractTests(unittest.TestCase):
                 post.return_value.json.return_value = {'embeddings': vectors}
                 with self.assertRaises(EmbeddingUnavailable):
                     embedder.embed('forest')
+
+    def test_missing_model_diagnostic_does_not_mask_other_404s(self):
+        embedder = EmbeddingService()
+        request = httpx.Request('POST', 'http://test/api/embed')
+        for body, expected in [({'error': 'model "nomic-embed-text" not found, try pulling it first'}, 'not installed'),
+                               ({'error': 'unknown endpoint'}, '404'),
+                               ({'error': ['invalid server response']}, '404')]:
+            response = httpx.Response(404, json=body, request=request)
+            with patch('app.services.memory.embedding.httpx.post', return_value=response):
+                with self.assertRaisesRegex(EmbeddingUnavailable, expected):
+                    embedder.embed('A useful conversation.')
 
     def test_schema_upgrade_is_additive_and_repeatable(self):
         engine = create_engine('sqlite://')

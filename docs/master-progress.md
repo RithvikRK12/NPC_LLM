@@ -1,5 +1,23 @@
 # Master Progress
 
+> **Historical architecture tracking — superseded 2026-10-12.** The 59-module checklist is no longer the project goal or active work queue. Use the [NPC AI delivery plan](ai-delivery-plan.md) for current scope, priorities and acceptance criteria. The records below are preserved as evidence of completed work; their next-task guidance is historical.
+
+## Active delivery checkpoint — rendered Godot evidence (2026-10-13)
+
+Fresh native Godot integration against current code passes **334/334 live-flow assertions** and **22/22 actual provider-connection-failure assertions**. The full existing bow path, scene relaunch, backend/Godot process restart, unique reward and disposable reset pass; **42/42 decision-trace source links** and **9/9 memory provenance links** are valid. All captured source fingerprints match. **424 deterministic tests** and `git diff --check` pass. See the [recorded screenshot walkthrough](evidence/godot-decision-rendered-v1/walkthrough.md), [live summary](evidence/godot-decision-rendered-v1/summary.json), [failure summary](evidence/godot-decision-provider-failure-v1/summary.json), [runbook](demo-runbook.md) and [active plan](ai-delivery-plan.md).
+
+The backup comprises nine inspected rendered screenshots, not continuous/narrated video or a manual playthrough. Next checkpoint needs agreement on presentation format and a live-quality threshold. D3 influence and authored mandatory recovery remain deferred; historical D1 social failures remain recorded. No player save or port-8001 service was used; nothing was staged or committed.
+
+## Active delivery checkpoint — E trace/API demonstration (2026-10-12)
+
+The current delivery slice adds persisted/API decision evidence with safe proposal projection, explicit generation failure/bypass status and durable effect receipt IDs. **8 focused trace tests** and **424 full deterministic tests** pass. Final real-provider [demonstration evidence](evidence/decision-demo-live-v3/evidence.json): **26/26 scenarios**, **262/262 trace checks**, two attempts; zero authority failures, rejected replies or observed unsupported factual/outcome statements in the scoped answer review. Final implementation fingerprints match. The [runbook](demo-runbook.md) and clearly labeled [recorded API transcript](evidence/decision-demo-live-v3/transcript.md) provide a repeatable demonstration/backup. See the [active plan](ai-delivery-plan.md) for full details and limitations.
+
+Next: fresh rendered/Godot evidence for current code. Rendered recording and an agreed release-quality threshold remain outstanding; D3 state influence and authored mandatory recovery stay deferred. Historical D1 social failures and prior artifacts are preserved. No player save or port-8001 service was used; nothing was staged or committed.
+
+## Active delivery checkpoint — D2 (2026-10-12)
+
+D2 bounded outage/vectorless memory retrieval is complete; see the [active delivery plan](ai-delivery-plan.md#d2-checkpoint--bounded-retrieval-during-embedding-outages-2026-10-12) for exact behavior, changed files, evidence and limits. Final deterministic regression: **416 passed** (20 semantic/embedding, 14 provenance/integration focused tests). Real-provider outage/recovery: **18/18 checks passed** in [memory-retrieval-live-v3](evidence/memory-retrieval-live-v3.json); synthetic accepted sources are disclosed and no generation-quality or fresh Godot claim is made. Existing D1/Godot failures and historical evidence remain preserved. No player database or port-8001 service was used, and no changes were staged or committed. Next authorized slice is E decision-trace/demo evidence; D3 state influence remains deferred.
+
 ## Overall status
 
 **Target architecture implementation underway; contracts.core, ports.core, domain.world.eligibility, perception.normalize, memory.reconcile, reasoning.proposal_check, state.merge, fuzzy.membership, roles.permissions, control.fallback, domain.quest.recovery, dialogue.compose, domain.world.inventory, memory.classify, memory.lifecycle, policy.registry and gateway.contract_codec complete; adapters.persistence / T01 is next.** The current game has working foundations, and the common contract, port, world eligibility, perception normalization, memory reconciliation, proposal-check, state-merge, membership, role-permission, fallback, quest-recovery, dialogue composition, inventory planning, memory classification, lifecycle, policy registry and gateway codec layers are now complete against their detailed-design packets.

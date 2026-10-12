@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-10-12T17:25:10.465314+00:00",
+  "diagnosis": "Configured model missing, not an unsupported embedding endpoint",
+  "before": {
+    "ollama_version": "0.34.2",
+    "installed_models": [
+      "llama3:latest"
+    ],
+    "http_status": 404,
+    "error": "model \"nomic-embed-text\" not found, try pulling it first"
+  },
+  "remedy": "Pulled configured nomic-embed-text using local Ollama /api/pull; saved world untouched",
+  "after": {
+    "version": {
+      "version": "0.34.2"
+    },
+    "model": {
+      "name": "nomic-embed-text:latest",
+      "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+      "size": 274302450
+    },
+    "dimensions": [
+      768,
+      768
+    ],
+    "query_dimensions": 768,
+    "norms": [
+      1.000000017532104,
+      0.9999999660339385,
+      1.000000072272404
+    ],
+    "similarities": [
+      0.8053520433281997,
+      0.620893362773807
+    ]
+  }
+}

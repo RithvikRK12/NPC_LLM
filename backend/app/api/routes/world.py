@@ -47,7 +47,8 @@ class PlayerPosition(BaseModel):
 @router.put('/world/player-position')
 def save_position(position: PlayerPosition, db: Session = Depends(get_db)):
     from fastapi import HTTPException
-    player = db.scalar(select(Player).where(Player.id == 1).with_for_update())
+    from app.services.state.locking import lock_player
+    player = lock_player(db)
     if player is None:
         raise HTTPException(status_code=404, detail='Player not found')
     player.position = position.model_dump()

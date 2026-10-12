@@ -141,7 +141,7 @@ class NPCPipelineTests(unittest.TestCase):
             self.assertEqual(context.memories, [])
 
     def test_quest_question_cannot_repeat_greeting_or_change_inventory(self):
-        for inventory, expected in [([], 'open Quests'), (['wood'], 'open Quests'), (['axe'], 'open Quests')]:
+        for inventory, expected in [([], 'Open Quests'), (['wood'], 'Open Quests'), (['axe'], 'Open Quests')]:
             player = self.db.get(Player, 1)
             player.inventory = inventory
             self.db.commit()
@@ -440,20 +440,21 @@ class NPCPipelineTests(unittest.TestCase):
         self.db.commit()
         self.assertEqual(MemoryService(self.db).retrieve_relevant_memories(self.db.get(NPC, 1), 'hello'), [])
 
-    def test_chat_returns_model_dialogue_and_persists_signed_state(self):
+    def test_unsupported_opening_hours_cannot_become_world_facts(self):
         raw = self.output()
         raw['dialogue'] = 'The workshop opens at sunrise.'
         with patch.object(OpenAICompatibleProvider, 'generate', return_value=json.dumps(raw)):
             response = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'When do you open?'})
         self.assertEqual(response.status_code, 200, response.text)
         data = response.json()
-        self.assertEqual(data['final_dialogue'], raw['dialogue'])
-        self.assertAlmostEqual(data['npc']['fear'], 0.09)
+        self.assertNotEqual(data['final_dialogue'], raw['dialogue'])
+        self.assertTrue(data['grounding_trace']['rejected'])
+        self.assertAlmostEqual(data['npc']['fear'], 0.10)
         self.assertEqual(data['memories'], [])
         self.assertFalse(data['memory_classification']['important'])
         saved = self.db.scalar(select(Conversation))
         self.assertEqual(saved.llm_output, raw)
-        self.assertEqual(saved.final_dialogue, raw['dialogue'])
+        self.assertEqual(saved.final_dialogue, data['final_dialogue'])
 
     def test_provider_failure_is_logged_and_falls_back(self):
         with patch.object(OpenAICompatibleProvider, 'generate', side_effect=httpx.ConnectError('offline')):

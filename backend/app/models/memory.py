@@ -51,7 +51,19 @@ class Memory(Base):
     event_type: Mapped[str] = mapped_column(String(64), default='legacy', server_default='legacy')
     quest_id: Mapped[str | None] = mapped_column(String(64), nullable=True)
     duplicate_key: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
-    __table_args__ = (Index('ix_memory_scope', 'npc_id', 'embedding_model', 'event_type', 'quest_id', 'timestamp'),)
+    game_scope: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    source_event_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    source_conversation_id: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    epistemic_status: Mapped[str] = mapped_column(String(24), default='interpretation', server_default='interpretation')
+    authority: Mapped[str] = mapped_column(String(24), default='inferred', server_default='inferred')
+    lifecycle: Mapped[str] = mapped_column(String(24), default='active', server_default='active')
+    claim_text: Mapped[str | None] = mapped_column(String(500), nullable=True)
+    correction_of_id: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    superseded_by_id: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    __table_args__ = (
+        Index('ix_memory_scope', 'npc_id', 'embedding_model', 'event_type', 'quest_id', 'timestamp'),
+        Index('uq_memory_source', 'game_scope', 'npc_id', 'source_event_id', unique=True),
+    )
 
     npc = relationship("NPC", back_populates="memories")
 

@@ -1,0 +1,1682 @@
+{
+  "chats": [
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\n",
+      "message": "Where is the Gatherer?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position.",
+        "grounding_trace": {
+          "answer_kind": "answer",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:01:28",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:28",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:28",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:28",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:28",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": false,
+          "rejection_reason": null,
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": [
+            "person.gatherer.location"
+          ]
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "routine",
+          "event": "",
+          "importance": 0.1,
+          "important": false,
+          "reason": "No durable player statement or authoritative event; kept in chat history only.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "speak",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "answer",
+          "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position.",
+          "emotion": "calm",
+          "fact_ids": [
+            "person.gatherer.location"
+          ],
+          "intent": "inform",
+          "item": null,
+          "reasoning": "Server resolved a catalog entity and locative facet.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 1.518
+    },
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nWhere can I find him?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\n",
+      "message": "Where can I find him?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position.",
+        "grounding_trace": {
+          "answer_kind": "answer",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:01:30",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:30",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:30",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:30",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:30",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": false,
+          "rejection_reason": null,
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": [
+            "person.gatherer.location"
+          ]
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "routine",
+          "event": "",
+          "importance": 0.1,
+          "important": false,
+          "reason": "No durable player statement or authoritative event; kept in chat history only.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "speak",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "answer",
+          "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position.",
+          "emotion": "calm",
+          "fact_ids": [
+            "person.gatherer.location"
+          ],
+          "intent": "inform",
+          "item": null,
+          "reasoning": "Server resolved a catalog entity and locative facet.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 2.214
+    },
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nWhere can I find him?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nHow do I get there?\n\nCraftsman\nI don't have verified directions to the forest edge.\n\n",
+      "message": "How do I get there?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "I don't have verified directions to the forest edge.",
+        "grounding_trace": {
+          "answer_kind": "answer",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:01:32",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:32",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:32",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:32",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:32",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": false,
+          "rejection_reason": null,
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": [
+            "person.gatherer.route"
+          ]
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "routine",
+          "event": "",
+          "importance": 0.1,
+          "important": false,
+          "reason": "No durable player statement or authoritative event; kept in chat history only.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "speak",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "answer",
+          "dialogue": "I don't have verified directions to the forest edge.",
+          "emotion": "calm",
+          "fact_ids": [
+            "person.gatherer.route"
+          ],
+          "intent": "inform",
+          "item": null,
+          "reasoning": "Server resolved a catalog entity and locative facet.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 1.832
+    },
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nWhere can I find him?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nHow do I get there?\n\nCraftsman\nI don't have verified directions to the forest edge.\n\nPlayer\nWhat does he do?\n\nCraftsman\nThe Gatherer gathers supplies and can share wood when it is in stock.\n\n",
+      "message": "What does he do?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "The Gatherer gathers supplies and can share wood when it is in stock.",
+        "grounding_trace": {
+          "answer_kind": "answer",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:01:34",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:34",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:34",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:34",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:34",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": false,
+          "rejection_reason": null,
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": [
+            "person.gatherer.work"
+          ]
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "routine",
+          "event": "",
+          "importance": 0.1,
+          "important": false,
+          "reason": "No durable player statement or authoritative event; kept in chat history only.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "speak",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "answer",
+          "dialogue": "The Gatherer gathers supplies and can share wood when it is in stock.",
+          "emotion": "calm",
+          "fact_ids": [
+            "person.gatherer.work"
+          ],
+          "intent": "inform",
+          "item": null,
+          "reasoning": "Server-rendered permitted fact selection.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 1.797
+    },
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nWhere can I find him?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nHow do I get there?\n\nCraftsman\nI don't have verified directions to the forest edge.\n\nPlayer\nWhat does he do?\n\nCraftsman\nThe Gatherer gathers supplies and can share wood when it is in stock.\n\nPlayer\nWhat materials do you need?\n\nCraftsman\nThe bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.\n\n",
+      "message": "What materials do you need?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "The bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.",
+        "grounding_trace": {
+          "answer_kind": "answer",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:01:36",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:36",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:36",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:36",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:36",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": false,
+          "rejection_reason": null,
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": [
+            "quest.bow.requirements"
+          ]
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "routine",
+          "event": "",
+          "importance": 0.1,
+          "important": false,
+          "reason": "No durable player statement or authoritative event; kept in chat history only.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "speak",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "answer",
+          "dialogue": "The bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.",
+          "emotion": "calm",
+          "fact_ids": [
+            "quest.bow.requirements"
+          ],
+          "intent": "inform",
+          "item": null,
+          "reasoning": "Server-rendered permitted fact selection.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 2.712
+    },
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nWhere can I find him?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nHow do I get there?\n\nCraftsman\nI don't have verified directions to the forest edge.\n\nPlayer\nWhat does he do?\n\nCraftsman\nThe Gatherer gathers supplies and can share wood when it is in stock.\n\nPlayer\nWhat materials do you need?\n\nCraftsman\nThe bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.\n\nPlayer\nWhy?\n\nCraftsman\nThe bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.\n\n",
+      "message": "Why?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "The bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.",
+        "grounding_trace": {
+          "answer_kind": "answer",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:01:38",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:38",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:38",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:38",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:38",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": false,
+          "rejection_reason": null,
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": [
+            "quest.bow.requirements"
+          ]
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "routine",
+          "event": "",
+          "importance": 0.1,
+          "important": false,
+          "reason": "No durable player statement or authoritative event; kept in chat history only.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "speak",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "answer",
+          "dialogue": "The bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.",
+          "emotion": "calm",
+          "fact_ids": [
+            "quest.bow.requirements"
+          ],
+          "intent": "inform",
+          "item": null,
+          "reasoning": "Server-rendered permitted fact selection.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 3.494
+    },
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nWhere can I find him?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nHow do I get there?\n\nCraftsman\nI don't have verified directions to the forest edge.\n\nPlayer\nWhat does he do?\n\nCraftsman\nThe Gatherer gathers supplies and can share wood when it is in stock.\n\nPlayer\nWhat materials do you need?\n\nCraftsman\nThe bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.\n\nPlayer\nWhy?\n\nCraftsman\nThe bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.\n\nPlayer\nWhat have I already delivered?\n\nCraftsman\nVerified bow materials delivered to the Craftsman: no materials recorded.\n\n",
+      "message": "What have I already delivered?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "Verified bow materials delivered to the Craftsman: no materials recorded.",
+        "grounding_trace": {
+          "answer_kind": "answer",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:01:42",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:42",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:42",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:42",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:42",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": false,
+          "rejection_reason": null,
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": [
+            "quest.bow.delivered"
+          ]
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "routine",
+          "event": "",
+          "importance": 0.1,
+          "important": false,
+          "reason": "No durable player statement or authoritative event; kept in chat history only.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "speak",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "answer",
+          "dialogue": "Verified bow materials delivered to the Craftsman: no materials recorded.",
+          "emotion": "calm",
+          "fact_ids": [
+            "quest.bow.delivered"
+          ],
+          "intent": "inform",
+          "item": null,
+          "reasoning": "Server-rendered permitted fact selection.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 1.923
+    },
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nWhere can I find him?\n\nCraftsman\nGatherer is usually at the forest edge. I don't have an observed current position.\n\nPlayer\nHow do I get there?\n\nCraftsman\nI don't have verified directions to the forest edge.\n\nPlayer\nWhat does he do?\n\nCraftsman\nThe Gatherer gathers supplies and can share wood when it is in stock.\n\nPlayer\nWhat materials do you need?\n\nCraftsman\nThe bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.\n\nPlayer\nWhy?\n\nCraftsman\nThe bow requires wood and string delivered to the Craftsman. Still needed: wood, string. Ask the Gatherer for wood; string is a ground pickup near the well.\n\nPlayer\nWhat have I already delivered?\n\nCraftsman\nVerified bow materials delivered to the Craftsman: no materials recorded.\n\nPlayer\nWhere is Eldric?\n\nCraftsman\nI don't have verified information about that. Which known villager, place or bow requirement do you mean?\n\n",
+      "message": "Where is Eldric?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "I don't have verified information about that. Which known villager, place or bow requirement do you mean?",
+        "grounding_trace": {
+          "answer_kind": "clarify",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:01:44",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:44",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:44",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:44",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:01:44",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": false,
+          "rejection_reason": null,
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": []
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "routine",
+          "event": "",
+          "importance": 0.1,
+          "important": false,
+          "reason": "No durable player statement or authoritative event; kept in chat history only.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "speak",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "clarify",
+          "dialogue": "I don't have verified information about that. Which known villager, place or bow requirement do you mean?",
+          "emotion": "calm",
+          "fact_ids": [],
+          "intent": "clarify",
+          "item": null,
+          "reasoning": "Server-rendered permitted fact selection.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 2.162
+    }
+  ],
+  "checks": [
+    {
+      "label": "Fresh isolated world",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Selected person.gatherer.location: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: Where is the Gatherer?",
+      "passed": false
+    },
+    {
+      "label": "Displayed parsed response: Where can I find him?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: Where can I find him?",
+      "passed": true
+    },
+    {
+      "label": "Selected person.gatherer.location: Where can I find him?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: Where can I find him?",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: How do I get there?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: How do I get there?",
+      "passed": true
+    },
+    {
+      "label": "Selected person.gatherer.route: How do I get there?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: How do I get there?",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: What does he do?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: What does he do?",
+      "passed": true
+    },
+    {
+      "label": "Selected person.gatherer.work: What does he do?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: What does he do?",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: What materials do you need?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: What materials do you need?",
+      "passed": true
+    },
+    {
+      "label": "Selected quest.bow.requirements: What materials do you need?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: What materials do you need?",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: Why?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: Why?",
+      "passed": true
+    },
+    {
+      "label": "Selected quest.bow.requirements: Why?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: Why?",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: What have I already delivered?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: What have I already delivered?",
+      "passed": true
+    },
+    {
+      "label": "Selected quest.bow.delivered: What have I already delivered?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: What have I already delivered?",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: Where is Eldric?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: Where is Eldric?",
+      "passed": true
+    },
+    {
+      "label": "Answer kind clarify: Where is Eldric?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: Where is Eldric?",
+      "passed": true
+    }
+  ],
+  "display": "macOS",
+  "engine": {
+    "build": "official",
+    "hash": "f62fdbde15035c5576dad93e586201f4d41ef0cb",
+    "hex": 263425,
+    "major": 4,
+    "minor": 5,
+    "patch": 1,
+    "status": "stable",
+    "string": "4.5.1-stable (official)",
+    "timestamp": 0
+  }
+}

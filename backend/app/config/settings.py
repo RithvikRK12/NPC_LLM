@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     llm_base_url: str = Field(default="")
     llm_api_key: str = Field(default="")
     llm_model: str = Field(default="gpt-4.1-mini")
+    llm_structured_output: bool = True
     llm_timeout_seconds: float = Field(default=120.0, gt=0)
     embedding_model: str = Field(default="nomic-embed-text")
     embedding_base_url: str = "http://127.0.0.1:11434"

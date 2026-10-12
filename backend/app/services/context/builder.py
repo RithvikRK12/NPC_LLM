@@ -16,6 +16,7 @@ from app.services.memory.service import MemoryService
 from app.services.validation.knowledge import outside_world
 from app.models.bow_quest import BowQuest
 from app.services.quests.bow import snapshot
+from app.services.context.grounding import build_facts
 
 
 class ContextBuilder:
@@ -36,14 +37,31 @@ class ContextBuilder:
         ))
         recent_dialogue = []
         for turn in reversed(recent):
+            if (turn.validated_output or {}).get('grounding_trace', {}).get('rejected'):
+                continue
             if outside_world(turn.player_input) or outside_world(turn.final_dialogue):
                 continue
             recent_dialogue.append({"role": "user", "content": turn.player_input})
-            accepted = dict(turn.validated_output or {})
-            accepted.pop("memory_classification", None)
+            accepted = {key: value for key, value in (turn.validated_output or {}).items()
+                        if key in {'answer_kind', 'fact_ids', 'action', 'item'}}
             accepted["dialogue"] = turn.final_dialogue
             recent_dialogue.append({"role": "assistant", "content": json.dumps(accepted)})
+        now = datetime.utcnow().isoformat(timespec="seconds")
+        facts = build_facts(self._db, npc, player, quest_payload, now)
+        by_id = {f['id']: f for f in facts}
+        focus = {}
+        for turn in recent:  # newest first; only server-accepted references
+            accepted = turn.validated_output or {}
+            if accepted.get('answer_kind') == 'clarify':
+                break
+            ids = accepted.get('fact_ids', [])
+            if ids and ids[0] in by_id:
+                fact = by_id[ids[0]]
+                focus = {'subject': fact['subject'], 'facet': fact['facet'], 'fact_ids': ids}
+                break
         return ConversationContext(
+            facts=facts,
+            conversation_focus=focus,
             player_input=player_input,
             npc_state={
                 "id": npc.id,
@@ -53,11 +71,13 @@ class ContextBuilder:
                 "fear": npc.fear,
                 "aggression": npc.aggression,
                 "curiosity": npc.curiosity,
-                "location": npc.location,
+                "usual_location": npc.location,
+                "observed_current_position": None,
                 "current_state": npc.current_state,
                 "inventory": list(npc.inventory or []),
             },
             memories=[memory.to_payload() for memory in memories if not outside_world(memory.event)],
+            memory_retrieval=dict(self._memory_service.last_retrieval_trace),
             recent_dialogue=recent_dialogue,
             quest=quest_payload,
             inventory=list(player.inventory or []),

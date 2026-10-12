@@ -15,6 +15,13 @@ def requested_transfer(question: str) -> tuple[str, str] | None:
     if len(items) != 1:
         return None
     item = items.pop()
+    # The existing Godot quest asks the Craftsman to make a bow. Route an
+    # explicit request through the same authoritative path as asking for one;
+    # factual questions and claims must remain on the grounding path.
+    if item == 'bow' and re.fullmatch(
+        r'(?:(?:can|could|would|will) you |please )(?:make|craft) (?:me |us )?(?:a |the )?bow(?: please)?', text
+    ):
+        return 'give_item', item
     if re.search(r"\b(?:i give you|i offer you|take my|here is|here's|give you)\b", text):
         return 'receive_item', item
     if re.search(r"\b(?:give me|give us|share|can i have|could i have|may i have|i need|i want|please give|give some|give wood|give fruits)\b", text):

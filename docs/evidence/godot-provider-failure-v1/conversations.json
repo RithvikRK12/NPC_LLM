@@ -1,0 +1,298 @@
+[
+  {
+    "npc_id": 1,
+    "player_input": "Where is the Gatherer?",
+    "proposal": {},
+    "validated": {
+      "answer_kind": "chat",
+      "fact_ids": [],
+      "intent": "assist",
+      "emotion": "calm",
+      "dialogue": "I can help with workshop supplies. Open Quests if you would like me to make a bow.",
+      "action": "speak",
+      "item": null,
+      "reasoning": "Fallback response after validation rejected the raw output.",
+      "state_update": {
+        "trust": 0.0,
+        "fear": 0.0,
+        "aggression": 0.0,
+        "curiosity": 0.0
+      },
+      "memory_classification": {
+        "importance": 0,
+        "category": "excluded",
+        "reason": "Rejected, unavailable-model or outside-world exchange.",
+        "event": "",
+        "important": false,
+        "version": 1,
+        "stored": false
+      },
+      "grounding_trace": {
+        "context_fact_ids": [
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "fact_sources": [
+          {
+            "id": "person.craftsman.location",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.work",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.location",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.work",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.workshop.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.forest_edge.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.village_square.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.well.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "quest.bow.requirements",
+            "source": "services/quests/bow.py; Craftsman quest material stock",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          },
+          {
+            "id": "quest.bow.phase",
+            "source": "BowQuest snapshot",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          },
+          {
+            "id": "quest.bow.delivered",
+            "source": "Conversation executed transfers; BowQuest",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          },
+          {
+            "id": "player.inventory",
+            "source": "Player.inventory",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          },
+          {
+            "id": "self.inventory",
+            "source": "NPC.inventory (speaker only)",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          }
+        ],
+        "retrieved_memory_ids": [],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": true,
+        "rejection_reason": "Malformed structured JSON: 6 validation errors for LLMResponse\nintent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nemotion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\ndialogue\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\naction\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nstate_update\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+        "provider": "OpenAICompatibleProvider"
+      }
+    },
+    "answer": "I can help with workshop supplies. Open Quests if you would like me to make a bow."
+  },
+  {
+    "npc_id": 2,
+    "player_input": "Where is the Gatherer?",
+    "proposal": {},
+    "validated": {
+      "answer_kind": "chat",
+      "fact_ids": [],
+      "intent": "assist",
+      "emotion": "friendly",
+      "dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "item": null,
+      "reasoning": "Fallback response after validation rejected the raw output.",
+      "state_update": {
+        "trust": 0.0,
+        "fear": 0.0,
+        "aggression": 0.0,
+        "curiosity": 0.0
+      },
+      "memory_classification": {
+        "importance": 0,
+        "category": "excluded",
+        "reason": "Rejected, unavailable-model or outside-world exchange.",
+        "event": "",
+        "important": false,
+        "version": 1,
+        "stored": false
+      },
+      "grounding_trace": {
+        "context_fact_ids": [
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "fact_sources": [
+          {
+            "id": "person.craftsman.location",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.work",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.location",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.work",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.workshop.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.forest_edge.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.village_square.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.well.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "quest.bow.requirements",
+            "source": "services/quests/bow.py; Craftsman quest material stock",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          },
+          {
+            "id": "quest.bow.phase",
+            "source": "BowQuest snapshot",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          },
+          {
+            "id": "quest.bow.delivered",
+            "source": "Conversation executed transfers; BowQuest",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          },
+          {
+            "id": "player.inventory",
+            "source": "Player.inventory",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          },
+          {
+            "id": "self.inventory",
+            "source": "NPC.inventory (speaker only)",
+            "status": "current",
+            "as_of": "2026-10-12T17:04:24"
+          }
+        ],
+        "retrieved_memory_ids": [],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": true,
+        "rejection_reason": "Malformed structured JSON: 6 validation errors for LLMResponse\nintent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nemotion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\ndialogue\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\naction\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nstate_update\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+        "provider": "OpenAICompatibleProvider"
+      }
+    },
+    "answer": "I can tell you about the forest. Ask me about the supplies I have."
+  }
+]

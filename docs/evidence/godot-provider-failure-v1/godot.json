@@ -1,0 +1,438 @@
+{
+  "chats": [
+    {
+      "displayed_text": "System\nYour conversation with Craftsman starts here.\n\nPlayer\nWhere is the Gatherer?\n\nCraftsman\nI can help with workshop supplies. Open Quests if you would like me to make a bow.\n\n",
+      "message": "Where is the Gatherer?",
+      "npc_id": 1,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "I can help with workshop supplies. Open Quests if you would like me to make a bow.",
+        "grounding_trace": {
+          "answer_kind": "chat",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": true,
+          "rejection_reason": "Malformed structured JSON: 6 validation errors for LLMResponse\nintent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nemotion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\ndialogue\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\naction\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nstate_update\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": []
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "excluded",
+          "event": "",
+          "importance": 0.0,
+          "important": false,
+          "reason": "Rejected, unavailable-model or outside-world exchange.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "current_state": "available",
+          "fear": 0.1,
+          "id": 1.0,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ],
+          "location": "workshop",
+          "name": "Craftsman",
+          "pending_item": null,
+          "role": "craftsman",
+          "trust": 0.65
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "chat",
+          "dialogue": "I can help with workshop supplies. Open Quests if you would like me to make a bow.",
+          "emotion": "calm",
+          "fact_ids": [],
+          "intent": "assist",
+          "item": null,
+          "reasoning": "Fallback response after validation rejected the raw output.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 0.076
+    },
+    {
+      "displayed_text": "System\nYour conversation with Gatherer starts here.\n\nPlayer\nWhere is the Gatherer?\n\nGatherer\nI can tell you about the forest. Ask me about the supplies I have.\n\n",
+      "message": "Where is the Gatherer?",
+      "npc_id": 2,
+      "response": {
+        "bow_quest": {
+          "craft_progress": 0.0,
+          "craft_seconds": 5.0,
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "phase": "available",
+          "remaining_seconds": 0.0,
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "title": "Get a bow"
+        },
+        "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+        "grounding_trace": {
+          "answer_kind": "chat",
+          "context_fact_ids": [
+            "person.craftsman.location",
+            "person.craftsman.work",
+            "person.craftsman.route",
+            "person.gatherer.location",
+            "person.gatherer.work",
+            "person.gatherer.route",
+            "place.workshop.route",
+            "place.forest_edge.route",
+            "place.village_square.route",
+            "place.well.route",
+            "quest.bow.requirements",
+            "quest.bow.phase",
+            "quest.bow.delivered",
+            "player.inventory",
+            "self.inventory"
+          ],
+          "fact_sources": [
+            {
+              "as_of": null,
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public"
+            },
+            {
+              "as_of": null,
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": null,
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current"
+            },
+            {
+              "as_of": "2026-10-12T17:04:24",
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current"
+            }
+          ],
+          "provider": "OpenAICompatibleProvider",
+          "rejected": true,
+          "rejection_reason": "Malformed structured JSON: 6 validation errors for LLMResponse\nintent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nemotion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\ndialogue\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\naction\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nstate_update\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+          "retrieved_memory_ids": [],
+          "selected_fact_ids": []
+        },
+        "memories": [],
+        "memory_classification": {
+          "category": "excluded",
+          "event": "",
+          "importance": 0.0,
+          "important": false,
+          "reason": "Rejected, unavailable-model or outside-world exchange.",
+          "stored": false,
+          "version": 1.0
+        },
+        "npc": {
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "current_state": "available",
+          "fear": 0.25,
+          "id": 2.0,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ],
+          "location": "forest_edge",
+          "name": "Gatherer",
+          "pending_item": null,
+          "role": "gatherer",
+          "trust": 0.5
+        },
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_progress": 0.0,
+        "quest_status": "active",
+        "validated_output": {
+          "action": "speak",
+          "answer_kind": "chat",
+          "dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+          "emotion": "friendly",
+          "fact_ids": [],
+          "intent": "assist",
+          "item": null,
+          "reasoning": "Fallback response after validation rejected the raw output.",
+          "state_update": {
+            "aggression": 0.0,
+            "curiosity": 0.0,
+            "fear": 0.0,
+            "trust": 0.0
+          }
+        }
+      },
+      "seconds": 0.041
+    }
+  ],
+  "checks": [
+    {
+      "label": "Fresh isolated world",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Provider failure produces rejected zero-effect fallback",
+      "passed": true
+    },
+    {
+      "label": "Provider failure stores no important memory",
+      "passed": true
+    },
+    {
+      "label": "Displayed parsed response: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Controls recovered: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Zero inventory/quest/NPC effects: Where is the Gatherer?",
+      "passed": true
+    },
+    {
+      "label": "Provider failure produces rejected zero-effect fallback",
+      "passed": true
+    },
+    {
+      "label": "Provider failure stores no important memory",
+      "passed": true
+    }
+  ],
+  "display": "headless",
+  "engine": {
+    "build": "official",
+    "hash": "f62fdbde15035c5576dad93e586201f4d41ef0cb",
+    "hex": 263425,
+    "major": 4,
+    "minor": 5,
+    "patch": 1,
+    "status": "stable",
+    "string": "4.5.1-stable (official)",
+    "timestamp": 0
+  }
+}

@@ -30,6 +30,18 @@ class EmbeddingService:
                 json={'model': self.settings.embedding_model, 'input': inputs, 'truncate': False},
                 timeout=httpx.Timeout(self.settings.embedding_timeout_seconds, connect=3),
             )
+            if response.status_code == 404:
+                # Distinguish absent weights from an unsupported endpoint without
+                # hiding other transport/server errors or substituting vectors.
+                try:
+                    error = response.json().get('error', '')
+                except (ValueError, AttributeError):
+                    error = ''
+                if isinstance(error, str) and 'model' in error and 'not found' in error:
+                    raise EmbeddingUnavailable(
+                        f'Configured Ollama embedding model {self.settings.embedding_model!r} is not installed. '
+                        'Install it on the configured embedding server; no substitute vectors were created.'
+                    )
             response.raise_for_status()
             vectors = np.asarray(response.json()['embeddings'], dtype='float32')
             if vectors.shape != (len(texts), self.dimensions) or not np.isfinite(vectors).all():

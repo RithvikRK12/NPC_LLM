@@ -1,0 +1,87 @@
+PASS attempt 1, NPC 1: accepted Hello
+PASS attempt 1, NPC 1: routine greeting excluded
+PASS attempt 1, NPC 1: accepted I gave you wood
+PASS attempt 1, NPC 1: claim cannot establish delivery
+PASS attempt 1, NPC 1: accepted I prefer quiet forests
+PASS attempt 1, NPC 1: accepted I prefer quiet forests
+PASS attempt 1, NPC 1: accepted I no longer prefer quiet forests
+PASS attempt 1, NPC 1: accepted Can I have rope?
+PASS attempt 1, NPC 1: accepted For my work in the village
+PASS attempt 1, NPC 1: authoritative transfer executed once
+PASS attempt 1, NPC 1: delivery statement is reported claim
+PASS attempt 1, NPC 1: repeated preference consolidates
+PASS attempt 1, NPC 1: correction preserves and links original history
+PASS attempt 1, NPC 1: transfer fact excludes unverified explanation
+PASS attempt 1, NPC 1: all memories have matching source, recipient and run
+PASS attempt 1, NPC 1: retracted claim excluded from live context
+PASS attempt 1, NPC 1: real scoped vectors stored
+PASS attempt 1, NPC 1: reprocessing after reopen creates no duplicate
+PASS attempt 1, NPC 1: other recipient cannot consume source
+PASS attempt 1, NPC 1: old source rejected after reset
+PASS attempt 1, NPC 1: reset leaves no active old memory
+PASS attempt 1, NPC 2: accepted Hello
+PASS attempt 1, NPC 2: routine greeting excluded
+PASS attempt 1, NPC 2: accepted I gave you wood
+PASS attempt 1, NPC 2: claim cannot establish delivery
+PASS attempt 1, NPC 2: accepted I prefer quiet forests
+PASS attempt 1, NPC 2: accepted I prefer quiet forests
+PASS attempt 1, NPC 2: accepted I no longer prefer quiet forests
+PASS attempt 1, NPC 2: accepted Can I have fruits?
+PASS attempt 1, NPC 2: accepted For my work in the village
+PASS attempt 1, NPC 2: authoritative transfer executed once
+PASS attempt 1, NPC 2: delivery statement is reported claim
+PASS attempt 1, NPC 2: repeated preference consolidates
+PASS attempt 1, NPC 2: correction preserves and links original history
+PASS attempt 1, NPC 2: transfer fact excludes unverified explanation
+PASS attempt 1, NPC 2: all memories have matching source, recipient and run
+PASS attempt 1, NPC 2: retracted claim excluded from live context
+PASS attempt 1, NPC 2: real scoped vectors stored
+PASS attempt 1, NPC 2: reprocessing after reopen creates no duplicate
+PASS attempt 1, NPC 2: other recipient cannot consume source
+PASS attempt 1, NPC 2: old source rejected after reset
+PASS attempt 1, NPC 2: reset leaves no active old memory
+PASS attempt 2, NPC 1: accepted Good morning
+PASS attempt 2, NPC 1: routine greeting excluded
+PASS attempt 2, NPC 1: accepted I gave you wood
+PASS attempt 2, NPC 1: claim cannot establish delivery
+PASS attempt 2, NPC 1: accepted I prefer quiet forests
+PASS attempt 2, NPC 1: accepted I prefer quiet forests
+PASS attempt 2, NPC 1: accepted I no longer prefer quiet forests
+PASS attempt 2, NPC 1: accepted Can I have rope?
+PASS attempt 2, NPC 1: accepted For my work in the village
+PASS attempt 2, NPC 1: authoritative transfer executed once
+PASS attempt 2, NPC 1: delivery statement is reported claim
+PASS attempt 2, NPC 1: repeated preference consolidates
+PASS attempt 2, NPC 1: correction preserves and links original history
+PASS attempt 2, NPC 1: transfer fact excludes unverified explanation
+PASS attempt 2, NPC 1: all memories have matching source, recipient and run
+PASS attempt 2, NPC 1: retracted claim excluded from live context
+PASS attempt 2, NPC 1: real scoped vectors stored
+PASS attempt 2, NPC 1: reprocessing after reopen creates no duplicate
+PASS attempt 2, NPC 1: other recipient cannot consume source
+PASS attempt 2, NPC 1: old source rejected after reset
+PASS attempt 2, NPC 1: reset leaves no active old memory
+PASS attempt 2, NPC 2: accepted Good morning
+PASS attempt 2, NPC 2: routine greeting excluded
+PASS attempt 2, NPC 2: accepted I gave you wood
+PASS attempt 2, NPC 2: claim cannot establish delivery
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+FAIL attempt 2, NPC 2: accepted I prefer quiet forests
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+FAIL attempt 2, NPC 2: accepted I prefer quiet forests
+PASS attempt 2, NPC 2: accepted I no longer prefer quiet forests
+PASS attempt 2, NPC 2: accepted Can I have fruits?
+PASS attempt 2, NPC 2: accepted For my work in the village
+PASS attempt 2, NPC 2: authoritative transfer executed once
+PASS attempt 2, NPC 2: delivery statement is reported claim
+FAIL attempt 2, NPC 2: repeated preference consolidates
+FAIL attempt 2, NPC 2: correction preserves and links original history
+PASS attempt 2, NPC 2: transfer fact excludes unverified explanation
+FAIL attempt 2, NPC 2: all memories have matching source, recipient and run
+FAIL attempt 2, NPC 2: retracted claim excluded from live context
+FAIL attempt 2, NPC 2: real scoped vectors stored
+PASS attempt 2, NPC 2: reprocessing after reopen creates no duplicate
+PASS attempt 2, NPC 2: other recipient cannot consume source
+PASS attempt 2, NPC 2: old source rejected after reset
+PASS attempt 2, NPC 2: reset leaves no active old memory
+Passed 77/84; evidence: docs/evidence/memory-provenance-live-v4.json

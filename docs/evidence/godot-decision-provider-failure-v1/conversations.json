@@ -1,0 +1,1054 @@
+[
+  {
+    "npc_id": 1,
+    "player_input": "Where is the Gatherer?",
+    "proposal": {},
+    "validated": {
+      "answer_kind": "chat",
+      "fact_ids": [],
+      "intent": "assist",
+      "emotion": "calm",
+      "dialogue": "I can help with workshop supplies. Open Quests if you would like me to make a bow.",
+      "action": "speak",
+      "item": null,
+      "reasoning": "Fallback response after validation rejected the raw output.",
+      "state_update": {
+        "trust": 0.0,
+        "fear": 0.0,
+        "aggression": 0.0,
+        "curiosity": 0.0
+      },
+      "memory_classification": {
+        "importance": 0,
+        "category": "excluded",
+        "reason": "Rejected, unavailable-model or outside-world exchange.",
+        "event": "",
+        "claim_text": null,
+        "retracts_claim": null,
+        "important": false,
+        "version": 2,
+        "epistemic_status": "interpretation",
+        "authority": "inferred",
+        "stored": false,
+        "memory_id": null,
+        "source_event_id": null
+      },
+      "grounding_trace": {
+        "context_fact_ids": [
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "fact_sources": [
+          {
+            "id": "person.craftsman.location",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.work",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.location",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.work",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.workshop.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.forest_edge.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.village_square.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.well.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "quest.bow.requirements",
+            "source": "services/quests/bow.py; Craftsman quest material stock",
+            "status": "current",
+            "as_of": "2026-10-12T18:35:59.940169+00:00"
+          },
+          {
+            "id": "quest.bow.phase",
+            "source": "BowQuest snapshot",
+            "status": "current",
+            "as_of": "2026-10-12T18:35:59.940169+00:00"
+          },
+          {
+            "id": "quest.bow.delivered",
+            "source": "Conversation executed transfers; BowQuest",
+            "status": "current",
+            "as_of": "2026-10-12T18:35:59.940169+00:00"
+          },
+          {
+            "id": "player.inventory",
+            "source": "Player.inventory",
+            "status": "current",
+            "as_of": "2026-10-12T18:35:59.940169+00:00"
+          },
+          {
+            "id": "self.inventory",
+            "source": "NPC.inventory (speaker only)",
+            "status": "current",
+            "as_of": "2026-10-12T18:35:59.940169+00:00"
+          }
+        ],
+        "memory_retrieval": {
+          "mode": "empty",
+          "reason": "no_eligible_indexed_vectors",
+          "candidate_limit_per_path": 40,
+          "materialization_limit": 80,
+          "result_limit": 5,
+          "vector_index_build": "all_eligible_vector_pairs_on_cache_miss",
+          "malformed_vector_id_limit": 50,
+          "semantic_candidates": 0,
+          "lexical_candidates": 0,
+          "selected_ids": []
+        },
+        "retrieved_memory_ids": [],
+        "retrieved_memory_provenance": [],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": true,
+        "rejection_reason": "Malformed structured JSON",
+        "provider": "OpenAICompatibleProvider"
+      },
+      "behavior_trace": {
+        "policy": {
+          "id": "village-response",
+          "version": "1"
+        },
+        "decision_id": "fd584407-6d2d-48ac-b69b-4d55d03e538f",
+        "scope_revision": "initial",
+        "candidate_state": {
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3
+        },
+        "memberships": {
+          "trust": {
+            "low": 0.1,
+            "high": 0.7
+          },
+          "fear": {
+            "low": 1.0,
+            "high": 0.0
+          },
+          "aggression": {
+            "low": 1.0,
+            "high": 0.0
+          },
+          "curiosity": {
+            "low": 0.8,
+            "high": 0.0
+          }
+        },
+        "rule_strengths": {
+          "baseline": 1.0,
+          "trusted": 0.7,
+          "distrust": 0.1,
+          "afraid": 0.0,
+          "aggressive": 0.0,
+          "curious": 0.0
+        },
+        "outputs": {
+          "cooperation": 0.6666666666666666,
+          "caution": 0.2777777777777778,
+          "expression": 0.6666666666666666
+        },
+        "ordering": [
+          "role_conditioning",
+          "final_control_validation",
+          "fsec"
+        ],
+        "eligibility": {
+          "answer": {
+            "eligible": true,
+            "reason": "rejected proposal: zero-effect fallback only"
+          },
+          "clarify": {
+            "eligible": false,
+            "reason": "rejected proposal: zero-effect fallback only"
+          },
+          "cooperate": {
+            "eligible": false,
+            "reason": "rejected proposal: zero-effect fallback only"
+          },
+          "refuse": {
+            "eligible": false,
+            "reason": "rejected proposal: zero-effect fallback only"
+          },
+          "offer_recovery": {
+            "eligible": false,
+            "reason": "rejected proposal: zero-effect fallback only"
+          }
+        },
+        "scores": {
+          "answer": 1.0
+        },
+        "selection": "answer",
+        "required_cooperation_protected": false,
+        "mapping": {
+          "action": "speak",
+          "item": null,
+          "emotion": "calm",
+          "max_dialogue_chars": 240
+        },
+        "verified_outcome": {
+          "transfer": null,
+          "action": null,
+          "inventory_before": {
+            "player": [
+              "water",
+              "food"
+            ],
+            "npc": [
+              "saw",
+              "hammer",
+              "rope"
+            ]
+          },
+          "inventory_after": {
+            "player": [
+              "water",
+              "food"
+            ],
+            "npc": [
+              "saw",
+              "hammer",
+              "rope"
+            ]
+          },
+          "quest_before": "available",
+          "quest_after": "available",
+          "pending_before": null,
+          "pending_after": null,
+          "dialogue": "I can help with workshop supplies. Open Quests if you would like me to make a bow.",
+          "conversation_id": 1,
+          "event_id": "fd584407-6d2d-48ac-b69b-4d55d03e538f"
+        }
+      },
+      "decision_trace": {
+        "schema_version": 1,
+        "decision_id": "fd584407-6d2d-48ac-b69b-4d55d03e538f",
+        "recipient_id": 1,
+        "game_scope": "c3f19870-fa85-4d0e-8cdc-99ffad6823d4",
+        "configuration": {
+          "provider": "OpenAICompatibleProvider",
+          "model": "llama3:latest",
+          "structured_output": true,
+          "temperature": 0.2,
+          "embedding_model": "nomic-embed-text",
+          "embedding_revision": "v1",
+          "embedding_dimensions": 768,
+          "behavior_policy": {
+            "id": "village-response",
+            "version": "1"
+          }
+        },
+        "generation": {
+          "status": "provider_or_decode_failure",
+          "authoritative_override": false
+        },
+        "proposal": {
+          "answer_kind": null,
+          "fact_ids": [],
+          "unrecognized_fact_count": 0,
+          "action": null,
+          "item": null,
+          "state_update": {},
+          "state_update_invalid": false,
+          "unrecognized_field_count": 0
+        },
+        "context": {
+          "fact_sources": [
+            {
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual",
+              "as_of": null
+            },
+            {
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public",
+              "as_of": null
+            },
+            {
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual",
+              "as_of": null
+            },
+            {
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public",
+              "as_of": null
+            },
+            {
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current",
+              "as_of": "2026-10-12T18:35:59.940169+00:00"
+            },
+            {
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current",
+              "as_of": "2026-10-12T18:35:59.940169+00:00"
+            },
+            {
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current",
+              "as_of": "2026-10-12T18:35:59.940169+00:00"
+            },
+            {
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current",
+              "as_of": "2026-10-12T18:35:59.940169+00:00"
+            },
+            {
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current",
+              "as_of": "2026-10-12T18:35:59.940169+00:00"
+            }
+          ],
+          "retrieved_memory_provenance": [],
+          "memory_retrieval": {
+            "mode": "empty",
+            "reason": "no_eligible_indexed_vectors",
+            "candidate_limit_per_path": 40,
+            "materialization_limit": 80,
+            "result_limit": 5,
+            "vector_index_build": "all_eligible_vector_pairs_on_cache_miss",
+            "malformed_vector_id_limit": 50,
+            "semantic_candidates": 0,
+            "lexical_candidates": 0,
+            "selected_ids": []
+          },
+          "recent_dialogue_messages": 0
+        },
+        "validation": {
+          "rejected": true,
+          "reason": "Malformed structured JSON",
+          "selected_fact_ids": []
+        },
+        "behavior": {
+          "candidate_state": {
+            "trust": 0.65,
+            "fear": 0.1,
+            "aggression": 0.05,
+            "curiosity": 0.3
+          },
+          "memberships": {
+            "trust": {
+              "low": 0.1,
+              "high": 0.7
+            },
+            "fear": {
+              "low": 1.0,
+              "high": 0.0
+            },
+            "aggression": {
+              "low": 1.0,
+              "high": 0.0
+            },
+            "curiosity": {
+              "low": 0.8,
+              "high": 0.0
+            }
+          },
+          "rule_strengths": {
+            "baseline": 1.0,
+            "trusted": 0.7,
+            "distrust": 0.1,
+            "afraid": 0.0,
+            "aggressive": 0.0,
+            "curious": 0.0
+          },
+          "outputs": {
+            "cooperation": 0.6666666666666666,
+            "caution": 0.2777777777777778,
+            "expression": 0.6666666666666666
+          },
+          "ordering": [
+            "role_conditioning",
+            "final_control_validation",
+            "fsec"
+          ],
+          "eligibility": {
+            "answer": {
+              "eligible": true,
+              "reason": "rejected proposal: zero-effect fallback only"
+            },
+            "clarify": {
+              "eligible": false,
+              "reason": "rejected proposal: zero-effect fallback only"
+            },
+            "cooperate": {
+              "eligible": false,
+              "reason": "rejected proposal: zero-effect fallback only"
+            },
+            "refuse": {
+              "eligible": false,
+              "reason": "rejected proposal: zero-effect fallback only"
+            },
+            "offer_recovery": {
+              "eligible": false,
+              "reason": "rejected proposal: zero-effect fallback only"
+            }
+          },
+          "scores": {
+            "answer": 1.0
+          },
+          "selection": "answer",
+          "mapping": {
+            "action": "speak",
+            "item": null,
+            "max_dialogue_chars": 240,
+            "emotion": "calm"
+          }
+        },
+        "outcome": {
+          "event_id": "fd584407-6d2d-48ac-b69b-4d55d03e538f",
+          "conversation_id": 1,
+          "action": null,
+          "transfer": null,
+          "quest_before": "available",
+          "quest_after": "available"
+        },
+        "memory_write": {
+          "important": false,
+          "stored": false,
+          "memory_id": null,
+          "source_event_id": null,
+          "epistemic_status": "interpretation",
+          "authority": "inferred"
+        },
+        "timings_seconds": {
+          "context": 0.004854,
+          "generation": 0.02071,
+          "through_memory_write": 0.035914
+        }
+      }
+    },
+    "answer": "I can help with workshop supplies. Open Quests if you would like me to make a bow."
+  },
+  {
+    "npc_id": 2,
+    "player_input": "Where is the Gatherer?",
+    "proposal": {},
+    "validated": {
+      "answer_kind": "chat",
+      "fact_ids": [],
+      "intent": "assist",
+      "emotion": "friendly",
+      "dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "item": null,
+      "reasoning": "Fallback response after validation rejected the raw output.",
+      "state_update": {
+        "trust": 0.0,
+        "fear": 0.0,
+        "aggression": 0.0,
+        "curiosity": 0.0
+      },
+      "memory_classification": {
+        "importance": 0,
+        "category": "excluded",
+        "reason": "Rejected, unavailable-model or outside-world exchange.",
+        "event": "",
+        "claim_text": null,
+        "retracts_claim": null,
+        "important": false,
+        "version": 2,
+        "epistemic_status": "interpretation",
+        "authority": "inferred",
+        "stored": false,
+        "memory_id": null,
+        "source_event_id": null
+      },
+      "grounding_trace": {
+        "context_fact_ids": [
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "fact_sources": [
+          {
+            "id": "person.craftsman.location",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.work",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.location",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.work",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.workshop.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.forest_edge.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.village_square.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.well.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "quest.bow.requirements",
+            "source": "services/quests/bow.py; Craftsman quest material stock",
+            "status": "current",
+            "as_of": "2026-10-12T18:36:00.017685+00:00"
+          },
+          {
+            "id": "quest.bow.phase",
+            "source": "BowQuest snapshot",
+            "status": "current",
+            "as_of": "2026-10-12T18:36:00.017685+00:00"
+          },
+          {
+            "id": "quest.bow.delivered",
+            "source": "Conversation executed transfers; BowQuest",
+            "status": "current",
+            "as_of": "2026-10-12T18:36:00.017685+00:00"
+          },
+          {
+            "id": "player.inventory",
+            "source": "Player.inventory",
+            "status": "current",
+            "as_of": "2026-10-12T18:36:00.017685+00:00"
+          },
+          {
+            "id": "self.inventory",
+            "source": "NPC.inventory (speaker only)",
+            "status": "current",
+            "as_of": "2026-10-12T18:36:00.017685+00:00"
+          }
+        ],
+        "memory_retrieval": {
+          "mode": "empty",
+          "reason": "no_eligible_indexed_vectors",
+          "candidate_limit_per_path": 40,
+          "materialization_limit": 80,
+          "result_limit": 5,
+          "vector_index_build": "all_eligible_vector_pairs_on_cache_miss",
+          "malformed_vector_id_limit": 50,
+          "semantic_candidates": 0,
+          "lexical_candidates": 0,
+          "selected_ids": []
+        },
+        "retrieved_memory_ids": [],
+        "retrieved_memory_provenance": [],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": true,
+        "rejection_reason": "Malformed structured JSON",
+        "provider": "OpenAICompatibleProvider"
+      },
+      "behavior_trace": {
+        "policy": {
+          "id": "village-response",
+          "version": "1"
+        },
+        "decision_id": "57680c25-dcba-42a9-9858-2fd56036e083",
+        "scope_revision": "initial",
+        "candidate_state": {
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7
+        },
+        "memberships": {
+          "trust": {
+            "low": 0.4,
+            "high": 0.4
+          },
+          "fear": {
+            "low": 0.9,
+            "high": 0.0
+          },
+          "aggression": {
+            "low": 1.0,
+            "high": 0.0
+          },
+          "curiosity": {
+            "low": 0.0,
+            "high": 0.8
+          }
+        },
+        "rule_strengths": {
+          "baseline": 1.0,
+          "trusted": 0.4,
+          "distrust": 0.4,
+          "afraid": 0.0,
+          "aggressive": 0.0,
+          "curious": 0.8
+        },
+        "outputs": {
+          "cooperation": 0.5307692307692307,
+          "caution": 0.4307692307692308,
+          "expression": 0.5615384615384615
+        },
+        "ordering": [
+          "role_conditioning",
+          "final_control_validation",
+          "fsec"
+        ],
+        "eligibility": {
+          "answer": {
+            "eligible": true,
+            "reason": "rejected proposal: zero-effect fallback only"
+          },
+          "clarify": {
+            "eligible": false,
+            "reason": "rejected proposal: zero-effect fallback only"
+          },
+          "cooperate": {
+            "eligible": false,
+            "reason": "rejected proposal: zero-effect fallback only"
+          },
+          "refuse": {
+            "eligible": false,
+            "reason": "rejected proposal: zero-effect fallback only"
+          },
+          "offer_recovery": {
+            "eligible": false,
+            "reason": "rejected proposal: zero-effect fallback only"
+          }
+        },
+        "scores": {
+          "answer": 1.0
+        },
+        "selection": "answer",
+        "required_cooperation_protected": false,
+        "mapping": {
+          "action": "speak",
+          "item": null,
+          "emotion": "friendly",
+          "max_dialogue_chars": 240
+        },
+        "verified_outcome": {
+          "transfer": null,
+          "action": null,
+          "inventory_before": {
+            "player": [
+              "water",
+              "food"
+            ],
+            "npc": [
+              "axe",
+              "wood",
+              "fruits"
+            ]
+          },
+          "inventory_after": {
+            "player": [
+              "water",
+              "food"
+            ],
+            "npc": [
+              "axe",
+              "wood",
+              "fruits"
+            ]
+          },
+          "quest_before": "available",
+          "quest_after": "available",
+          "pending_before": null,
+          "pending_after": null,
+          "dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+          "conversation_id": 2,
+          "event_id": "57680c25-dcba-42a9-9858-2fd56036e083"
+        }
+      },
+      "decision_trace": {
+        "schema_version": 1,
+        "decision_id": "57680c25-dcba-42a9-9858-2fd56036e083",
+        "recipient_id": 2,
+        "game_scope": "c3f19870-fa85-4d0e-8cdc-99ffad6823d4",
+        "configuration": {
+          "provider": "OpenAICompatibleProvider",
+          "model": "llama3:latest",
+          "structured_output": true,
+          "temperature": 0.2,
+          "embedding_model": "nomic-embed-text",
+          "embedding_revision": "v1",
+          "embedding_dimensions": 768,
+          "behavior_policy": {
+            "id": "village-response",
+            "version": "1"
+          }
+        },
+        "generation": {
+          "status": "provider_or_decode_failure",
+          "authoritative_override": false
+        },
+        "proposal": {
+          "answer_kind": null,
+          "fact_ids": [],
+          "unrecognized_fact_count": 0,
+          "action": null,
+          "item": null,
+          "state_update": {},
+          "state_update_invalid": false,
+          "unrecognized_field_count": 0
+        },
+        "context": {
+          "fact_sources": [
+            {
+              "id": "person.craftsman.location",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "usual",
+              "as_of": null
+            },
+            {
+              "id": "person.craftsman.work",
+              "source": "database/seed.py; services/quests/bow.py",
+              "status": "public",
+              "as_of": null
+            },
+            {
+              "id": "person.craftsman.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "person.gatherer.location",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "usual",
+              "as_of": null
+            },
+            {
+              "id": "person.gatherer.work",
+              "source": "database/seed.py; services/validation/items.py",
+              "status": "public",
+              "as_of": null
+            },
+            {
+              "id": "person.gatherer.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "place.workshop.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "place.forest_edge.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "place.village_square.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "place.well.route",
+              "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+              "status": "unknown",
+              "as_of": null
+            },
+            {
+              "id": "quest.bow.requirements",
+              "source": "services/quests/bow.py; Craftsman quest material stock",
+              "status": "current",
+              "as_of": "2026-10-12T18:36:00.017685+00:00"
+            },
+            {
+              "id": "quest.bow.phase",
+              "source": "BowQuest snapshot",
+              "status": "current",
+              "as_of": "2026-10-12T18:36:00.017685+00:00"
+            },
+            {
+              "id": "quest.bow.delivered",
+              "source": "Conversation executed transfers; BowQuest",
+              "status": "current",
+              "as_of": "2026-10-12T18:36:00.017685+00:00"
+            },
+            {
+              "id": "player.inventory",
+              "source": "Player.inventory",
+              "status": "current",
+              "as_of": "2026-10-12T18:36:00.017685+00:00"
+            },
+            {
+              "id": "self.inventory",
+              "source": "NPC.inventory (speaker only)",
+              "status": "current",
+              "as_of": "2026-10-12T18:36:00.017685+00:00"
+            }
+          ],
+          "retrieved_memory_provenance": [],
+          "memory_retrieval": {
+            "mode": "empty",
+            "reason": "no_eligible_indexed_vectors",
+            "candidate_limit_per_path": 40,
+            "materialization_limit": 80,
+            "result_limit": 5,
+            "vector_index_build": "all_eligible_vector_pairs_on_cache_miss",
+            "malformed_vector_id_limit": 50,
+            "semantic_candidates": 0,
+            "lexical_candidates": 0,
+            "selected_ids": []
+          },
+          "recent_dialogue_messages": 0
+        },
+        "validation": {
+          "rejected": true,
+          "reason": "Malformed structured JSON",
+          "selected_fact_ids": []
+        },
+        "behavior": {
+          "candidate_state": {
+            "trust": 0.5,
+            "fear": 0.25,
+            "aggression": 0.05,
+            "curiosity": 0.7
+          },
+          "memberships": {
+            "trust": {
+              "low": 0.4,
+              "high": 0.4
+            },
+            "fear": {
+              "low": 0.9,
+              "high": 0.0
+            },
+            "aggression": {
+              "low": 1.0,
+              "high": 0.0
+            },
+            "curiosity": {
+              "low": 0.0,
+              "high": 0.8
+            }
+          },
+          "rule_strengths": {
+            "baseline": 1.0,
+            "trusted": 0.4,
+            "distrust": 0.4,
+            "afraid": 0.0,
+            "aggressive": 0.0,
+            "curious": 0.8
+          },
+          "outputs": {
+            "cooperation": 0.5307692307692307,
+            "caution": 0.4307692307692308,
+            "expression": 0.5615384615384615
+          },
+          "ordering": [
+            "role_conditioning",
+            "final_control_validation",
+            "fsec"
+          ],
+          "eligibility": {
+            "answer": {
+              "eligible": true,
+              "reason": "rejected proposal: zero-effect fallback only"
+            },
+            "clarify": {
+              "eligible": false,
+              "reason": "rejected proposal: zero-effect fallback only"
+            },
+            "cooperate": {
+              "eligible": false,
+              "reason": "rejected proposal: zero-effect fallback only"
+            },
+            "refuse": {
+              "eligible": false,
+              "reason": "rejected proposal: zero-effect fallback only"
+            },
+            "offer_recovery": {
+              "eligible": false,
+              "reason": "rejected proposal: zero-effect fallback only"
+            }
+          },
+          "scores": {
+            "answer": 1.0
+          },
+          "selection": "answer",
+          "mapping": {
+            "action": "speak",
+            "item": null,
+            "max_dialogue_chars": 240,
+            "emotion": "friendly"
+          }
+        },
+        "outcome": {
+          "event_id": "57680c25-dcba-42a9-9858-2fd56036e083",
+          "conversation_id": 2,
+          "action": null,
+          "transfer": null,
+          "quest_before": "available",
+          "quest_after": "available"
+        },
+        "memory_write": {
+          "important": false,
+          "stored": false,
+          "memory_id": null,
+          "source_event_id": null,
+          "epistemic_status": "interpretation",
+          "authority": "inferred"
+        },
+        "timings_seconds": {
+          "context": 0.001974,
+          "generation": 0.003282,
+          "through_memory_write": 0.007624
+        }
+      }
+    },
+    "answer": "I can tell you about the forest. Ask me about the supplies I have."
+  }
+]

@@ -11,7 +11,8 @@ router = APIRouter(prefix='/quests/bow', tags=['quests'])
 
 
 def lock_player(db):
-    player = db.scalar(select(Player).where(Player.id == 1).with_for_update())
+    from app.services.state.locking import lock_player as acquire_player
+    player = acquire_player(db)
     if player is None: raise HTTPException(404, 'Player not found')
     return player
 

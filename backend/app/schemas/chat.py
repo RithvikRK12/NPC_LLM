@@ -17,6 +17,8 @@ class StateUpdatePayload(BaseModel):
 
 
 class StructuredNPCOutput(BaseModel):
+    answer_kind: str = "chat"
+    fact_ids: list[str] = Field(default_factory=list)
     intent: str
     emotion: str
     dialogue: str
@@ -27,6 +29,9 @@ class StructuredNPCOutput(BaseModel):
 
 
 class ChatResponse(BaseModel):
+    decision_trace: dict = Field(default_factory=dict)
+    behavior_trace: dict = Field(default_factory=dict)
+    grounding_trace: dict = Field(default_factory=dict)
     memory_classification: dict = Field(default_factory=dict)
     bow_quest: dict = Field(default_factory=dict)
     npc: NPCRead

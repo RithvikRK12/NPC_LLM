@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends
 from pydantic import BaseModel, Field
 from app.api.deps import get_pipeline
 from app.schemas.chat import ChatResponse
-from app.services.pipeline import ConversationPipeline
+from app.services.pipeline import ConversationPipeline, StaleConversationError
 
 router = APIRouter(prefix='/inventory', tags=['inventory'])
 
@@ -20,5 +20,7 @@ def transfer(request: TransferRequest, pipeline: ConversationPipeline = Depends(
     message = f'give me {request.item}' if request.direction == 'to_player' else f'I give you {request.item}'
     try:
         return pipeline.chat(request.npc_id, message)
+    except StaleConversationError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
     except ValueError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc

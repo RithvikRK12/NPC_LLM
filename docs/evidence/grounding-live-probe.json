@@ -1,0 +1,80 @@
+{
+  "started_at": "2026-10-12T14:55:45.314308+00:00",
+  "model": "llama3:latest",
+  "temperature": 0.2,
+  "provider": "OpenAICompatibleProvider",
+  "attempts": 1,
+  "world": "disposable in-memory SQLite",
+  "cases": [
+    {
+      "attempt": 1,
+      "npc_id": 1,
+      "message": "Where is the Gatherer?",
+      "seconds": 0.033,
+      "passed": false,
+      "safe": true,
+      "actual_answer": "I can help with workshop supplies. Open Quests if you would like me to make a bow.",
+      "proposal": {},
+      "trace": {
+        "context_fact_ids": [
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": true,
+        "rejection_reason": "Malformed structured JSON: 6 validation errors for LLMResponse\nintent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nemotion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\ndialogue\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\naction\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nstate_update\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+        "provider": "OpenAICompatibleProvider"
+      }
+    },
+    {
+      "attempt": 1,
+      "npc_id": 2,
+      "message": "Where is the Gatherer?",
+      "seconds": 0.02,
+      "passed": false,
+      "safe": true,
+      "actual_answer": "I can tell you about the forest. Ask me about the supplies I have.",
+      "proposal": {},
+      "trace": {
+        "context_fact_ids": [
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": true,
+        "rejection_reason": "Malformed structured JSON: 6 validation errors for LLMResponse\nintent\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nemotion\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\ndialogue\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\naction\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nreasoning\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nstate_update\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+        "provider": "OpenAICompatibleProvider"
+      }
+    }
+  ],
+  "passed": 0,
+  "total": 2
+}

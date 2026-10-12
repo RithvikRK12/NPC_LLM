@@ -16,7 +16,8 @@ def reindex_memories(db, *, npc_id=None, batch_size=32, embedder=None):
     # Same lock order as dialogue and reset. Failure rolls back the current batch.
     last_id, total = 0, 0
     while True:
-        db.scalar(select(Player).where(Player.id == 1).with_for_update())
+        from app.services.state.locking import lock_player
+        lock_player(db)
         conditions = [Memory.id > last_id, Memory.importance >= MIN_IMPORTANCE,
                       Memory.event_type.notin_(['excluded', 'routine']),
                       or_(Memory.embedding_model.is_(None), Memory.embedding_model != embedder.model_key,

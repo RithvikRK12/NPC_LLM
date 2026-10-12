@@ -53,12 +53,15 @@ def reset_world(db: Session) -> None:
     from sqlalchemy import delete
     from app.models import BowQuest
 
-    player = db.scalar(select(Player).where(Player.id == 1).with_for_update())
+    from app.services.state.locking import lock_player
+    player = lock_player(db)
     if player is None:
         raise ValueError('The world must be initialized before starting a game')
     npcs = list(db.scalars(select(NPC).order_by(NPC.id).with_for_update()))
     db.execute(delete(Conversation))
     db.execute(delete(Memory))
+    from uuid import uuid4
+    player.game_scope = str(uuid4())
     player.position = {'x': 0.0, 'y': 0.0}
     player.inventory = ['water', 'food']
     player.current_location = 'village_square'

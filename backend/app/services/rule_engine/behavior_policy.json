@@ -1,0 +1,25 @@
+{
+  "id": "village-response", "version": "1",
+  "memberships": {
+    "low": {"kind": "trapezoid", "a": 0.0, "b": 0.0, "c": 0.2, "d": 0.7},
+    "high": {"kind": "trapezoid", "a": 0.3, "b": 0.8, "c": 1.0, "d": 1.0}
+  },
+  "rules": [
+    {"id": "baseline", "when": [], "outputs": {"cooperation": 0.5, "caution": 0.4, "expression": 0.5}},
+    {"id": "trusted", "when": [["trust", "high"], ["fear", "low"]], "outputs": {"cooperation": 1.0, "caution": 0.0, "expression": 1.0}},
+    {"id": "distrust", "when": [["trust", "low"]], "outputs": {"cooperation": 0.0, "caution": 1.0, "expression": 0.0}},
+    {"id": "afraid", "when": [["fear", "high"]], "outputs": {"cooperation": 0.1, "caution": 1.0, "expression": 0.1}},
+    {"id": "aggressive", "when": [["aggression", "high"]], "outputs": {"cooperation": 0.0, "caution": 1.0, "expression": 0.0}},
+    {"id": "curious", "when": [["curiosity", "high"]], "outputs": {"cooperation": 0.6, "caution": 0.4, "expression": 0.7}}
+  ],
+  "scores": {
+    "answer": {"bias": 1.0},
+    "clarify": {"bias": 0.05, "caution": 0.8},
+    "cooperate": {"cooperation": 1.0},
+    "refuse": {"bias": 0.0, "caution": 1.0, "cooperation": -0.3}
+  },
+  "refusal_cooperation_max": 0.3,
+  "required_items": ["wood", "string", "bow"],
+  "expression_threshold": 0.6,
+  "max_dialogue_chars": 240
+}

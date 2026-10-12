@@ -1,0 +1,179 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+PASS real indexed memory has configured vector
+PASS normal semantic retrieval uses real provider
+PASS isolated endpoint produces actual embedding transport failure
+Semantic query embedding unavailable; using bounded lexical retrieval
+PASS query outage retrieves existing memory lexically
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 28, in embed_many
+    response = httpx.post(
+               ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_api.py", line 304, in post
+    return request(
+           ^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_api.py", line 109, in request
+    return client.request(
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 111, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 57, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 54, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: timed out
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 28, in embed_many
+    response = httpx.post(
+               ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_api.py", line 304, in post
+    return request(
+           ^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_api.py", line 109, in request
+    return client.request(
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 111, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 57, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 54, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: timed out
+PASS outage write has no fake vector or model
+Semantic query embedding unavailable; using bounded lexical retrieval
+PASS vectorless write retrievable during outage
+PASS recipient isolation during outage
+PASS provenance and reported claim preserved
+Semantic query embedding unavailable; using bounded lexical retrieval
+PASS repeat outage deterministic
+PASS empty result has selected-ID trace
+Semantic query embedding unavailable; using bounded lexical retrieval
+PASS current authoritative delivery state remains supplied
+PASS context captures outage diagnostics
+PASS healthy path includes vectorless memory with honest lexical score
+PASS explicit real reindex repairs only disposable vectorless data
+PASS semantic recovery with real configured vectors
+PASS retrieval creates no inventory effects
+PASS old-run retracted and other recipient excluded
+PASS production search response remains a list
+18/18 checks passed
