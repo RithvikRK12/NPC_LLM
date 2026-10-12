@@ -8,14 +8,14 @@ def upgrade_inventory_schema(engine) -> None:
         return
     with engine.begin() as connection:
         connection.execute(text("ALTER TABLE npcs ADD COLUMN inventory JSON NOT NULL DEFAULT '[]'"))
-        for role, items in [('craftsman', ['saw', 'hammer', 'rope']), ('gatherer', ['axe', 'wood', 'fruits'])]:
+        for role, items in [('craftsman', ['diagnostic_tool', 'nano_solder', 'scrap_alloy']), ('gatherer', ['scanner', 'circuit_board', 'data_shard'])]:
             # Use an explicit JSON cast on PostgreSQL; SQLite stores JSON as text.
             value = 'CAST(:items AS JSON)' if engine.dialect.name == 'postgresql' else ':items'
             connection.execute(text(f'UPDATE npcs SET inventory = {value} WHERE role = :role'),
                                {'items': json.dumps(items), 'role': role})
         for player_id, inventory in connection.execute(text('SELECT id, inventory FROM players')):
             items = json.loads(inventory) if isinstance(inventory, str) else list(inventory or [])
-            items += [item for item in ['water', 'food'] if item not in items]
+            items += [item for item in ['energy_cell', 'med_patch'] if item not in items]
             value = 'CAST(:items AS JSON)' if engine.dialect.name == 'postgresql' else ':items'
             connection.execute(text(f'UPDATE players SET inventory = {value} WHERE id = :id'),
                                {'items': json.dumps(items), 'id': player_id})

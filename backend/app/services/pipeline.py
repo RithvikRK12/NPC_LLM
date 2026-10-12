@@ -57,7 +57,7 @@ class ConversationPipeline:
         grounded = None
         if not outside_world(player_message):
             request = requested_transfer(player_message)
-            if request == ('give_item', 'bow') and not npc.pending_item and 'bow' not in (npc.inventory or []):
+            if request == ('give_item', 'pulse_blaster') and not npc.pending_item and 'pulse_blaster' not in (npc.inventory or []):
                 grounded = bow_dialogue(self._db, npc, player_message, player)
             if grounded is None:
                 grounded = transfer_answer(player_message, list(npc.inventory or []), list(player.inventory or []), npc.pending_item)
@@ -143,7 +143,7 @@ class ConversationPipeline:
             return LLMResponse(
                 intent="assist",
                 emotion="friendly",
-                dialogue="I can tell you about the forest. Ask me about the supplies I have.",
+                dialogue="I can share street intel from Byte Alley. Ask me about the supplies I have.",
                 action="speak",
                 reasoning="Fallback response after validation rejected the raw output.",
                 state_update=StateUpdate(trust=0.03, fear=0.0, aggression=0.0, curiosity=0.02),
@@ -152,7 +152,7 @@ class ConversationPipeline:
         return LLMResponse(
             intent="assist",
             emotion="calm",
-            dialogue="I can help with workshop supplies. Open Quests if you would like me to make a bow.",
+            dialogue="I can help with bench supplies. Open Missions if you want me to assemble a Pulse Blaster.",
             action="speak",
             reasoning="Fallback response after validation rejected the raw output.",
             state_update=StateUpdate(trust=0.03, fear=0.0, aggression=0.0, curiosity=0.02),

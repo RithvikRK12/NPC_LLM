@@ -21,8 +21,8 @@ func _ready() -> void:
 	custom_minimum_size = Vector2(586, 672)
 	size = custom_minimum_size
 	var style := StyleBoxFlat.new()
-	style.bg_color = Color("202a27")
-	style.border_color = Color("7f8c69")
+	style.bg_color = _ca("090d19", 0.94)
+	style.border_color = Color("ff3df2")
 	style.set_border_width_all(2)
 	style.set_corner_radius_all(12)
 	style.content_margin_left = 22
@@ -36,11 +36,12 @@ func _ready() -> void:
 	var title := Label.new()
 	title.text = npc_name
 	title.add_theme_font_size_override("font_size", 26)
-	title.add_theme_color_override("font_color", Color("ead5a4"))
+	title.add_theme_color_override("font_color", Color("19f6ff"))
 	layout.add_child(title)
 	npc_inventory_label = Label.new()
 	npc_inventory_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	npc_inventory_label.text = "SUPPLIES • Select an item to request it"
+	npc_inventory_label.add_theme_color_override("font_color", Color("e9fbff"))
 	layout.add_child(npc_inventory_label)
 	var supply_scroll := ScrollContainer.new()
 	supply_scroll.custom_minimum_size.y = 108
@@ -48,7 +49,7 @@ func _ready() -> void:
 	layout.add_child(supply_scroll)
 	item_grid = preload("res://scripts/item_grid.gd").new()
 	supply_scroll.add_child(item_grid)
-	item_grid.item_selected.connect(func(item: String): take_button.text = "Request " + item.capitalize(); take_button.disabled = pending)
+	item_grid.item_selected.connect(func(item: String): take_button.text = "Request " + item.replace("_", " ").capitalize(); take_button.disabled = pending)
 	take_button = Button.new()
 	take_button.text = "Select a supply above"
 	take_button.disabled = true
@@ -63,7 +64,7 @@ func _ready() -> void:
 	dialogue_log.add_theme_constant_override("line_separation", 5)
 	layout.add_child(dialogue_log)
 	message_input = LineEdit.new()
-	message_input.placeholder_text = "Try: Can you give me wood?"
+	message_input.placeholder_text = "Try: Can you give me a circuit board?"
 	message_input.custom_minimum_size.y = 48
 	message_input.max_length = 500
 	message_input.add_theme_font_size_override("font_size", 18)
@@ -108,7 +109,7 @@ func set_inventory(items: Array) -> void:
 	if item_grid.items != items:
 		item_grid.populate(items)
 	take_button.disabled = pending or item_grid.selected_item.is_empty()
-	take_button.text = "Request " + item_grid.selected_item.capitalize() if not item_grid.selected_item.is_empty() else "Select a supply above"
+	take_button.text = "Request " + item_grid.selected_item.replace("_", " ").capitalize() if not item_grid.selected_item.is_empty() else "Select a supply above"
 
 
 func load_history(turns: Array) -> void:
@@ -121,7 +122,7 @@ func load_history(turns: Array) -> void:
 
 
 func append_dialogue(speaker: String, text: String) -> void:
-	dialogue_log.push_color(Color("b3c3ad") if speaker == "System" else Color("ead5a4"))
+	dialogue_log.push_color(Color("19f6ff") if speaker == "System" else Color("ffeb6e"))
 	dialogue_log.add_text(speaker + "\n")
 	dialogue_log.pop()
 	dialogue_log.add_text(text + "\n\n")
@@ -207,3 +208,9 @@ func clear_chat() -> void:
 	if error != OK:
 		finish()
 		append_dialogue("System", "Could not clear chat. Please retry.")
+
+
+func _ca(hex: String, alpha: float) -> Color:
+	var color := Color(hex)
+	color.a = alpha
+	return color

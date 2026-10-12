@@ -1,0 +1,39 @@
+{
+  "payload": {
+    "record_id": "command-result:bad",
+    "command": {
+      "schema_version": 2,
+      "record_id": "gateway-command:bad",
+      "trace_id": "trace:codec-001",
+      "causation_id": "approval:001",
+      "game_id": "game:demo",
+      "timeline_id": "timeline:main",
+      "npc_id": "npc:gatherer",
+      "actor_id": "player:hero",
+      "target_id": "npc:gatherer",
+      "created_at": "2026-10-12T10:00:00Z",
+      "source_ids": ["approval:001"],
+      "policy_versions": [],
+      "command_id": "command:bad",
+      "approval_id": "approval:001",
+      "controller_revision": 8,
+      "kind": "approach_target",
+      "position": null,
+      "parameters": {
+        "max_speed": 120.0,
+        "arrival_distance": 24.0,
+        "animation_speed": null
+      },
+      "issued_at": "2026-10-12T10:00:00Z",
+      "expires_at": "2026-10-12T10:01:00Z",
+      "dialogue": []
+    }
+  },
+  "error": {
+    "code": "INVALID_CONTRACT",
+    "stage": "gateway.contract_codec",
+    "retryable": false,
+    "source_ids": ["gateway-command:bad"],
+    "public_message": "Command payload version is unsupported."
+  }
+}

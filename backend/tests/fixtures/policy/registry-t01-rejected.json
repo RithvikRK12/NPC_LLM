@@ -1,0 +1,45 @@
+{
+  "requested": {
+    "schema_version": 1,
+    "record_id": "policy-version-set:bad",
+    "trace_id": "trace:policy-001",
+    "causation_id": "decision-trigger:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:hero",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": ["decision-trigger:001"],
+    "policy_versions": [],
+    "required_versions": [{"policy_id": "profile:gatherer", "version": "v1"}]
+  },
+  "catalog": {
+    "schema_version": 1,
+    "record_id": "policy-catalog:bad",
+    "trace_id": "trace:policy-001",
+    "causation_id": "policy-publication:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": null,
+    "target_id": null,
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": ["policy-publication:001"],
+    "policy_versions": [],
+    "policies": [
+      {
+        "policy": {"policy_id": "profile:gatherer", "version": "v1"},
+        "kind": "alchemy",
+        "payload": {"allowed_actions": ["speak"]}
+      }
+    ]
+  },
+  "error": {
+    "code": "UNKNOWN_ENUM",
+    "stage": "policy.registry",
+    "retryable": false,
+    "source_ids": [],
+    "public_message": "Unsupported policy kind."
+  }
+}

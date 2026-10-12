@@ -1,0 +1,32 @@
+{
+  "new_record": {
+    "schema_version": 1,
+    "record_id": "memory-record:bad-status",
+    "trace_id": "trace:reconcile:bad",
+    "causation_id": "dialogue:bad",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": "item:wood",
+    "created_at": "2026-09-29T10:00:00Z",
+    "source_ids": ["dialogue:bad"],
+    "policy_versions": [{"policy_id": "memory:reconcile", "version": "v1"}],
+    "memory_id": "memory:bad",
+    "subject_id": "player:local",
+    "predicate": "has_item",
+    "object_id": "item:wood",
+    "object_text": null,
+    "status": "rumor",
+    "authority": "reported",
+    "confidence": 0.2,
+    "occurred_at": "2026-09-29T10:00:00Z"
+  },
+  "error": {
+    "code": "INVALID_CONTRACT",
+    "stage": "memory.reconcile",
+    "retryable": false,
+    "source_ids": ["memory-record:bad-status"],
+    "public_message": "Memory status is unsupported."
+  }
+}

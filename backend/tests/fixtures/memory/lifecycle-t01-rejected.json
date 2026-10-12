@@ -1,0 +1,64 @@
+{
+  "records": {
+    "schema_version": 1,
+    "record_id": "memory-record-set:bad",
+    "trace_id": "trace:lifecycle-001",
+    "causation_id": "memory-review:scheduled",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": null,
+    "target_id": null,
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "memory-review:scheduled"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "memory:lifecycle",
+        "version": "v1"
+      }
+    ],
+    "records": [
+      {
+        "schema_version": 1,
+        "record_id": "memory-view:bad",
+        "trace_id": "trace:lifecycle-001",
+        "causation_id": "memory-decision:bad",
+        "game_id": "game:demo",
+        "timeline_id": "timeline:main",
+        "npc_id": "npc:gatherer",
+        "actor_id": "player:hero",
+        "target_id": null,
+        "created_at": "2026-10-12T10:00:00Z",
+        "source_ids": [
+          "memory-decision:bad"
+        ],
+        "policy_versions": [
+          {
+            "policy_id": "memory:lifecycle",
+            "version": "v1"
+          }
+        ],
+        "memory_id": "memory:bad",
+        "category": "routine",
+        "status": "interpretation",
+        "authority": "inferred",
+        "lifecycle": "lost",
+        "importance": 0.7,
+        "salience": 0.8,
+        "occurred_at": "2026-10-12T10:00:00Z",
+        "last_accessed_at": null,
+        "superseded_by_memory_id": null,
+        "protected_provenance": false
+      }
+    ]
+  },
+  "error": {
+    "code": "UNKNOWN_ENUM",
+    "stage": "memory.lifecycle",
+    "retryable": false,
+    "source_ids": [],
+    "public_message": "Unsupported memory lifecycle state."
+  }
+}

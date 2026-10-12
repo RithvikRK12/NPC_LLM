@@ -25,13 +25,12 @@ class MockLLMProvider(LLMProvider):
             return json.dumps(response)
 
         if npc_role == "gatherer":
-            has_wood = "wood" in inventory
             response = {
                 "intent": "assist",
                 "emotion": "friendly",
-                "dialogue": "The forest is peaceful today. How are you doing?",
+                "dialogue": "Byte Alley is humming tonight. What signal are you chasing?",
                 "action": "speak",
-                "reasoning": "The Gatherer shares resources and talks about the forest.",
+                "reasoning": "The Data Broker shares street resources and grid rumors.",
                 "state_update": {"trust": 0.05, "fear": -0.02, "aggression": 0.0, "curiosity": 0.02},
             }
             return json.dumps(response)
@@ -39,9 +38,9 @@ class MockLLMProvider(LLMProvider):
         response = {
             "intent": "assist",
             "emotion": "calm",
-            "dialogue": "Welcome to my workshop. It is a fine day in the village.",
+            "dialogue": "Welcome to the neon bench. Keep your comms clean and your gear grounded.",
             "action": "speak",
-            "reasoning": "The Craftsman offers safe trade and crafting support.",
+            "reasoning": "The Neon Techsmith offers safe trade and assembly support.",
             "state_update": {"trust": 0.04, "fear": -0.01, "aggression": 0.0, "curiosity": 0.01},
         }
         return json.dumps(response)

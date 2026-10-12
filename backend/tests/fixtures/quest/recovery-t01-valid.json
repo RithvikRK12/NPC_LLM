@@ -1,0 +1,196 @@
+{
+  "blocker": {
+    "schema_version": 1,
+    "record_id": "quest-blocker:001",
+    "trace_id": "trace:recovery-001",
+    "causation_id": "role-permission:refusal",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "role-permission:refusal"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "quest:recovery",
+        "version": "v1"
+      }
+    ],
+    "blocker_id": "blocker:crafting_refusal",
+    "quest_run_id": "quest-run:pulse_001",
+    "blocked_step": "crafting_access",
+    "refusing_npc_id": "npc:craftsman",
+    "player_id": "player:hero",
+    "discretionary": true
+  },
+  "world": {
+    "schema_version": 1,
+    "record_id": "recovery-world:001",
+    "trace_id": "trace:recovery-001",
+    "causation_id": "role-permission:refusal",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "role-permission:refusal"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "quest:recovery",
+        "version": "v1"
+      }
+    ],
+    "available_item_ids": [
+      "item:data_shard",
+      "item:diagnostic_tool"
+    ],
+    "consumed_offer_ids": [],
+    "completed_offer_ids": [],
+    "completion_evidence": []
+  },
+  "policy": {
+    "schema_version": 1,
+    "record_id": "recovery-policy:001",
+    "trace_id": "trace:recovery-001",
+    "causation_id": "role-permission:refusal",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "role-permission:refusal"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "quest:recovery",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "quest:recovery",
+      "version": "v1"
+    },
+    "routes": [
+      {
+        "route_id": "route:diagnostic_favour",
+        "version": "v1",
+        "kind": "favour",
+        "npc_id": "npc:craftsman",
+        "blocked_step": "crafting_access",
+        "costs": [],
+        "required_available_item_ids": [
+          "item:diagnostic_tool"
+        ],
+        "completion_event_type": "event:diagnostic_complete",
+        "grant_effect_id": "effect:grant_crafting_access",
+        "expires_at": "2026-10-12T11:00:00Z"
+      },
+      {
+        "route_id": "route:data_trade",
+        "version": "v1",
+        "kind": "trade",
+        "npc_id": "npc:craftsman",
+        "blocked_step": "crafting_access",
+        "costs": [
+          {
+            "item_id": "item:data_shard",
+            "quantity": 1
+          }
+        ],
+        "required_available_item_ids": [
+          "item:data_shard"
+        ],
+        "completion_event_type": "event:trade_completed",
+        "grant_effect_id": "effect:grant_crafting_access",
+        "expires_at": "2026-10-12T11:00:00Z"
+      }
+    ]
+  },
+  "offers": {
+    "schema_version": 1,
+    "record_id": "recovery-offers:001",
+    "trace_id": "trace:recovery-001",
+    "causation_id": "quest-blocker:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "quest-blocker:001",
+      "recovery-world:001",
+      "recovery-policy:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "quest:recovery",
+        "version": "v1"
+      }
+    ],
+    "blocker_id": "blocker:crafting_refusal",
+    "policy": {
+      "policy_id": "quest:recovery",
+      "version": "v1"
+    },
+    "offers": [
+      {
+        "offer_id": "offer:pulse_001:crafting_access:diagnostic_favour",
+        "route_id": "route:diagnostic_favour",
+        "route_version": "v1",
+        "kind": "favour",
+        "status": "offered",
+        "npc_id": "npc:craftsman",
+        "quest_run_id": "quest-run:pulse_001",
+        "blocked_step": "crafting_access",
+        "costs": [],
+        "completion_event_type": "event:diagnostic_complete",
+        "grant": {
+          "grant_id": "grant:diagnostic_favour",
+          "quest_run_id": "quest-run:pulse_001",
+          "blocked_step": "crafting_access",
+          "player_id": "player:hero",
+          "npc_id": "npc:craftsman",
+          "source_offer_id": "offer:pulse_001:crafting_access:diagnostic_favour",
+          "fulfilled": false
+        },
+        "expires_at": "2026-10-12T11:00:00Z"
+      },
+      {
+        "offer_id": "offer:pulse_001:crafting_access:data_trade",
+        "route_id": "route:data_trade",
+        "route_version": "v1",
+        "kind": "trade",
+        "status": "offered",
+        "npc_id": "npc:craftsman",
+        "quest_run_id": "quest-run:pulse_001",
+        "blocked_step": "crafting_access",
+        "costs": [
+          {
+            "item_id": "item:data_shard",
+            "quantity": 1
+          }
+        ],
+        "completion_event_type": "event:trade_completed",
+        "grant": {
+          "grant_id": "grant:data_trade",
+          "quest_run_id": "quest-run:pulse_001",
+          "blocked_step": "crafting_access",
+          "player_id": "player:hero",
+          "npc_id": "npc:craftsman",
+          "source_offer_id": "offer:pulse_001:crafting_access:data_trade",
+          "fulfilled": false
+        },
+        "expires_at": "2026-10-12T11:00:00Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "source": {
+    "schema_version": 1,
+    "record_id": "classified-source:001",
+    "trace_id": "trace:classify-001",
+    "causation_id": "inventory-effect-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:hero",
+    "target_id": "item:data_shard",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "inventory-effect-record:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "memory:classify",
+        "version": "v1"
+      }
+    ],
+    "source_kind": "verified_event",
+    "player_text": "I need it for the pulse blaster.",
+    "approved_dialogue": "Transfer confirmed: Data Shard.",
+    "verified_event_type": "item_transferred",
+    "subject_id": "player:hero",
+    "predicate": "received_item",
+    "object_id": "item:data_shard",
+    "object_text": null,
+    "grounded": true
+  },
+  "policy": {
+    "schema_version": 1,
+    "record_id": "importance-policy:001",
+    "trace_id": "trace:classify-001",
+    "causation_id": "policy-publication:classify",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": null,
+    "target_id": null,
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "policy-publication:classify"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "memory:classify",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "memory:classify",
+      "version": "v1"
+    },
+    "minimum_importance": 0.65,
+    "authoritative_event_importance": 0.9,
+    "player_claim_importance": 0.75,
+    "request_change_importance": 0.7,
+    "routine_importance": 0.1,
+    "exclude_greetings": true
+  },
+  "decision": {
+    "schema_version": 1,
+    "record_id": "memory-decision:001",
+    "trace_id": "trace:classify-001",
+    "causation_id": "classified-source:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:hero",
+    "target_id": "item:data_shard",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "classified-source:001",
+      "importance-policy:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "memory:classify",
+        "version": "v1"
+      }
+    ],
+    "memory_id": "memory:item-transfer-001",
+    "category": "item_transfer",
+    "important": true,
+    "importance": 0.9,
+    "reason": "memory:verified_event",
+    "summary": "Verified ownership-checked item transfer.",
+    "subject_id": "player:hero",
+    "predicate": "received_item",
+    "object_id": "item:data_shard",
+    "object_text": null,
+    "status": "fact",
+    "authority": "authoritative",
+    "policy": {
+      "policy_id": "memory:classify",
+      "version": "v1"
+    }
+  }
+}

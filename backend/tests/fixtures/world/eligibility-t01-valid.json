@@ -171,10 +171,25 @@
         ]
       },
       {
-        "name": "in_range",
+        "name": "actor_position_accepted",
         "passed": true,
         "evidence_ids": [
           "world-view:001"
+        ]
+      },
+      {
+        "name": "target_position_accepted",
+        "passed": true,
+        "evidence_ids": [
+          "world-view:001"
+        ]
+      },
+      {
+        "name": "in_range",
+        "passed": true,
+        "evidence_ids": [
+          "world-view:001",
+          "interaction-policy:001"
         ]
       },
       {
@@ -188,6 +203,7 @@
         "name": "operation_permitted",
         "passed": true,
         "evidence_ids": [
+          "world-view:001",
           "interaction-policy:001"
         ]
       }

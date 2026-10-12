@@ -2,7 +2,11 @@
 import re
 from app.services.validation.models import LLMResponse, StateUpdate
 
-ITEMS = {'saw', 'hammer', 'rope', 'axe', 'wood', 'fruits', 'water', 'food', 'string', 'bow'}
+ITEMS = {
+    'diagnostic_tool', 'nano_solder', 'scrap_alloy',
+    'scanner', 'circuit_board', 'data_shard',
+    'energy_cell', 'med_patch', 'fiber_cable', 'pulse_blaster',
+}
 
 
 def requested_transfer(question: str) -> tuple[str, str] | None:
@@ -10,14 +14,18 @@ def requested_transfer(question: str) -> tuple[str, str] | None:
     if re.search(r"\b(?:don't|do not|never|not|if)\b", text):
         return None
     # Requests transfer exactly one named item. Ambiguous/multiple-item requests need clarification.
-    words = set(re.findall(r'\b[a-z]+\b', text))
-    items = words & ITEMS
+    spoken = text.replace("_", " ")
+    items = {
+        item for item in ITEMS
+        if re.search(rf"\b{re.escape(item)}\b", text)
+        or re.search(rf"\b{re.escape(item.replace('_', ' '))}\b", spoken)
+    }
     if len(items) != 1:
         return None
     item = items.pop()
     if re.search(r"\b(?:i give you|i offer you|take my|here is|here's|give you)\b", text):
         return 'receive_item', item
-    if re.search(r"\b(?:give me|give us|share|can i have|could i have|may i have|i need|i want|please give|give some|give wood|give fruits)\b", text):
+    if re.search(r"\b(?:give me|give us|share|can i have|could i have|may i have|i need|i want|please give|give some|give circuit|give data)\b", text):
         return 'give_item', item
     return None
 

@@ -1,0 +1,38 @@
+{
+  "context": {
+    "schema_version": 1,
+    "record_id": "failure-context:rejected",
+    "trace_id": "trace:fallback-001",
+    "causation_id": "role-permission:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "role-permission:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "control:fallback",
+        "version": "v1"
+      }
+    ],
+    "failure_id": "failure:bad",
+    "kind": "database_corruption",
+    "failed_stage": "unknown",
+    "allowed_target_ids": [],
+    "fallback_depth": 0,
+    "max_fallback_depth": 2
+  },
+  "error": {
+    "code": "UNKNOWN_ENUM",
+    "stage": "control.fallback",
+    "retryable": false,
+    "source_ids": [
+      "failure-context:rejected"
+    ],
+    "public_message": "Failure context contains an unsupported failure kind."
+  }
+}

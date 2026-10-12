@@ -1,0 +1,41 @@
+{
+  "request": {
+    "schema_version": 1,
+    "record_id": "inventory-request:bad",
+    "trace_id": "trace:inventory-001",
+    "causation_id": "eligibility-result:request-item",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:hero",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "eligibility-result:request-item"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "inventory:plan",
+        "version": "v1"
+      }
+    ],
+    "request_id": "inventory-request:bad",
+    "operation": "teleport",
+    "item_id": "item:data_shard",
+    "quantity": 1,
+    "from_owner_id": "npc:gatherer",
+    "to_owner_id": "player:hero",
+    "expected_revisions": {
+      "npc_id": "npc:gatherer",
+      "base_npc_state_revision": 4
+    },
+    "idempotency_key": "bad_001"
+  },
+  "error": {
+    "code": "UNKNOWN_ENUM",
+    "stage": "domain.world.inventory",
+    "retryable": false,
+    "source_ids": [],
+    "public_message": "Unsupported inventory operation."
+  }
+}

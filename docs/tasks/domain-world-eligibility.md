@@ -6,7 +6,7 @@
 
 Source: [Detailed design](../detailed-design.md), 4.1 Application, world and quest modules; [proposal](../proposal.md). The confirmed detailed-design ordering overrides conflicting proposal examples.
 
-**Status:** T01 complete; T02–T04 pending; target module not complete. **Owner:** Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
+**Status:** T01–T04 complete; target module complete. **Owner:** Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
 
 ## Dependencies and sequencing
 
@@ -28,17 +28,17 @@ Keep domain calculations pure where applicable; external adapters receive fake c
   - **Tests:** Round-trip or construct the valid fixture, reject missing required fields and unsupported variants, and prove input fixtures are not mutated. Import and exercise the module with fake dependencies only.
   - **Depends on:** Start contracts above. Do not wait for full runtime integration.
 
-- [ ] **T02 — Implement the primary behaviour.**
+- [x] **T02 — Implement the primary behaviour.**
   - **Acceptance:** Evaluate target existence, accepted position, range, visibility and permitted interaction type from a WorldView; return named predicate results.
   - **Tests:** Use the valid T01 fixture and a focused fixture for each successful branch named in this acceptance criterion; assert exact result/state/effect identity rather than generated prose. Use a fixed clock and IDs where relevant.
   - **Depends on:** T01; use immutable upstream result fixtures.
 
-- [ ] **T03 — Enforce failures and invariants.**
+- [x] **T03 — Enforce failures and invariants.**
   - **Acceptance:** Keep reported position and claimed ownership untrusted; fail missing evidence and unsupported remote interaction rather than assuming eligibility.
   - **Tests:** Forged ownership/location, distance boundary, supported remote channel absent, missing entities. Assert typed rejection/fallback and absence of unintended effects, not merely that an exception occurred.
   - **Depends on:** T02. Failure injection must remain local to this module and its ports.
 
-- [ ] **T04 — Verify adjacent handoff and publish evidence.**
+- [x] **T04 — Verify adjacent handoff and publish evidence.**
   - **Acceptance:** Consume fixtures produced by each direct dependency and show this module's result satisfies the next documented handoff without changing upstream policy or schema implicitly. Record test evidence and unsupported capabilities.
   - **Tests:** One focused adjacent-module contract check plus the module regression suite; include a mismatched source version/timeline where applicable. Do not run the full game unless this is an engine adapter check.
   - **Depends on:** T01–T03 and the direct Integration gate above. Until those dependencies are ready, record this task as waiting without blocking local unit work.
@@ -49,7 +49,13 @@ Check the whole-module box in master-progress only when every applicable uncheck
 
 ## Execution record
 
-- Assigned task/owner: T01 / Main Agent.
-- Current task state: T01 accepted by Main Agent (2026-09-13). C01/C02/C03 and ports.core are accepted; this packet starts a pure values-only domain boundary.
+- Assigned task/owner: complete / Main Agent.
+- Current task state: T04 accepted by Main Agent (2026-09-29). C01/C02/C03 and ports.core are accepted; this packet completed a pure values-only domain boundary.
 - T01 files: `backend/app/domain/world/__init__.py`, `backend/app/domain/world/eligibility.py`, `backend/tests/test_world_eligibility.py`, `backend/tests/fixtures/world/eligibility-t01-{valid,rejected}.json`.
 - T01 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_world_eligibility.py'` — 8 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 134 passed, exit 0; existing Starlette/httpx deprecation warning remains. Valid/rejected fixtures cover immutable event/world/policy/result handoffs, unsupported interaction kinds, strict scalar fields, duplicate target/rule/predicate rejection, fake protocol execution and infrastructure-free import. No live world service or eligibility algorithm claimed until T02.
+- T02 files: `backend/app/domain/world/eligibility.py`, `backend/tests/test_world_eligibility.py`, `backend/tests/fixtures/world/eligibility-t01-valid.json`.
+- T02 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_world_eligibility.py'` — 15 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 141 passed, exit 0; existing Starlette/httpx deprecation warning remains and the baseline NPC rejection diagnostic still prints. Primary behaviour now emits stable named predicate results for target existence, accepted actor/target positions, range, visibility and permitted interaction type from the immutable `WorldView`; reported client position remains diagnostic and does not affect range.
+- T03 files: `backend/app/domain/world/eligibility.py`, `backend/tests/test_world_eligibility.py`.
+- T03 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_world_eligibility.py'` — 22 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 148 passed, exit 0; existing Starlette/httpx deprecation warning remains and the baseline NPC rejection diagnostic still prints. Forged actor/location evidence, missing actor/target evidence and policy mismatch now return typed `INVALID_CONTRACT` values; missing target, no supported remote channel and range boundary failures remain ineligible predicate fallbacks with no effects.
+- T04 files: `backend/app/domain/world/eligibility.py`, `backend/tests/test_world_eligibility.py`.
+- T04 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_world_eligibility.py'` — 26 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 152 passed, exit 0; existing Starlette/httpx deprecation warning remains and the baseline NPC rejection diagnostic still prints. The result handoff validates against C01 envelope fields without schema changes, a test-local application handoff consumes immutable eligibility identity/status/policy values, and mismatched policy version/timeline cases return typed `INVALID_CONTRACT`. Unsupported capability: no live runtime or engine adapter integration is claimed by this pure module gate.

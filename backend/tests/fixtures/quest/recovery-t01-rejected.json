@@ -1,0 +1,52 @@
+{
+  "policy": {
+    "schema_version": 1,
+    "record_id": "recovery-policy:rejected",
+    "trace_id": "trace:recovery-001",
+    "causation_id": "role-permission:refusal",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "role-permission:refusal"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "quest:recovery",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "quest:recovery",
+      "version": "v1"
+    },
+    "routes": [
+      {
+        "route_id": "route:bad",
+        "version": "v1",
+        "kind": "self_service",
+        "npc_id": "npc:craftsman",
+        "blocked_step": "crafting_access",
+        "costs": [],
+        "required_available_item_ids": [],
+        "completion_event_type": "event:bad",
+        "grant_effect_id": "effect:grant",
+        "expires_at": null
+      }
+    ]
+  },
+  "error": {
+    "code": "INVALID_CONTRACT",
+    "stage": "domain.quest.recovery",
+    "retryable": false,
+    "source_ids": [
+      "quest-blocker:001",
+      "recovery-world:001",
+      "recovery-policy:rejected"
+    ],
+    "public_message": "Recovery policy contains an unsupported route kind."
+  }
+}

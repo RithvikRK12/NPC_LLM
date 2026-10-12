@@ -1,0 +1,123 @@
+{
+  "payload": {
+    "record_id": "command-result:001",
+    "command": {
+      "schema_version": 1,
+      "record_id": "gateway-command:001",
+      "trace_id": "trace:codec-001",
+      "causation_id": "approval:001",
+      "game_id": "game:demo",
+      "timeline_id": "timeline:main",
+      "npc_id": "npc:gatherer",
+      "actor_id": "player:hero",
+      "target_id": "npc:gatherer",
+      "created_at": "2026-10-12T10:00:00Z",
+      "source_ids": ["approval:001"],
+      "policy_versions": [{"policy_id": "fsec:mapping", "version": "v1"}],
+      "command_id": "command:001",
+      "approval_id": "approval:001",
+      "controller_revision": 8,
+      "kind": "approach_target",
+      "position": null,
+      "parameters": {
+        "max_speed": 120.0,
+        "arrival_distance": 24.0,
+        "animation_speed": null
+      },
+      "issued_at": "2026-10-12T10:00:00Z",
+      "expires_at": "2026-10-12T10:01:00Z",
+      "dialogue": [
+        {
+          "kind": "commitment",
+          "timing": "on_command_accepted",
+          "verified_outcome_id": null
+        }
+      ]
+    },
+    "displays": [
+      {
+        "display_id": "dialogue:commitment:001",
+        "text": "I will meet you by the relay.",
+        "condition": {
+          "kind": "commitment",
+          "timing": "on_command_accepted",
+          "verified_outcome_id": null
+        }
+      }
+    ],
+    "outcomes": [
+      {
+        "outcome_id": "outcome:arrival:001",
+        "command_id": "command:001",
+        "success": true,
+        "occurred_at": "2026-10-12T10:00:30Z"
+      }
+    ]
+  },
+  "result": {
+    "schema_version": 1,
+    "record_id": "command-result:001",
+    "trace_id": "trace:codec-001",
+    "causation_id": "gateway-command:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:hero",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": ["gateway-command:001"],
+    "policy_versions": [{"policy_id": "fsec:mapping", "version": "v1"}],
+    "command": {
+      "schema_version": 1,
+      "record_id": "gateway-command:001",
+      "trace_id": "trace:codec-001",
+      "causation_id": "approval:001",
+      "game_id": "game:demo",
+      "timeline_id": "timeline:main",
+      "npc_id": "npc:gatherer",
+      "actor_id": "player:hero",
+      "target_id": "npc:gatherer",
+      "created_at": "2026-10-12T10:00:00Z",
+      "source_ids": ["approval:001"],
+      "policy_versions": [{"policy_id": "fsec:mapping", "version": "v1"}],
+      "command_id": "command:001",
+      "approval_id": "approval:001",
+      "controller_revision": 8,
+      "kind": "approach_target",
+      "position": null,
+      "parameters": {
+        "max_speed": 120.0,
+        "arrival_distance": 24.0,
+        "animation_speed": null
+      },
+      "issued_at": "2026-10-12T10:00:00Z",
+      "expires_at": "2026-10-12T10:01:00Z",
+      "dialogue": [
+        {
+          "kind": "commitment",
+          "timing": "on_command_accepted",
+          "verified_outcome_id": null
+        }
+      ]
+    },
+    "displays": [
+      {
+        "display_id": "dialogue:commitment:001",
+        "text": "I will meet you by the relay.",
+        "condition": {
+          "kind": "commitment",
+          "timing": "on_command_accepted",
+          "verified_outcome_id": null
+        }
+      }
+    ],
+    "outcomes": [
+      {
+        "outcome_id": "outcome:arrival:001",
+        "command_id": "command:001",
+        "success": true,
+        "occurred_at": "2026-10-12T10:00:30Z"
+      }
+    ]
+  }
+}

@@ -10,7 +10,11 @@ router = APIRouter(prefix='/inventory', tags=['inventory'])
 
 class TransferRequest(BaseModel):
     npc_id: int = Field(ge=1)
-    item: Literal['wood', 'axe', 'saw', 'hammer', 'rope', 'water', 'food', 'fruits', 'string', 'bow']
+    item: Literal[
+        'diagnostic_tool', 'nano_solder', 'scrap_alloy',
+        'scanner', 'circuit_board', 'data_shard',
+        'energy_cell', 'med_patch', 'fiber_cable', 'pulse_blaster',
+    ]
     direction: Literal['to_player', 'to_npc']
 
 

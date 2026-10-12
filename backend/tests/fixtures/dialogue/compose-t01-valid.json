@@ -1,0 +1,112 @@
+{
+  "source": {
+    "schema_version": 1,
+    "record_id": "approved-dialogue:001",
+    "trace_id": "trace:dialogue-001",
+    "causation_id": "event:quest_reward_001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "event:quest_reward_001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "dialogue:compose",
+        "version": "v1"
+      }
+    ],
+    "source_id": "event:quest_reward_001",
+    "kind": "verified_event",
+    "expression": "reassuring",
+    "approved_text": null,
+    "verified_event_id": "event:quest_reward_001",
+    "verified_event_kind": "quest_reward_granted",
+    "event_fields": {
+      "item_name": "Pulse Blaster"
+    }
+  },
+  "policy": {
+    "schema_version": 1,
+    "record_id": "dialogue-policy:001",
+    "trace_id": "trace:dialogue-001",
+    "causation_id": "event:quest_reward_001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "event:quest_reward_001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "dialogue:compose",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "dialogue:compose",
+      "version": "v1"
+    },
+    "max_text_chars": 180,
+    "safe_ambiguous_success_text": "I will wait for the system to verify that before I claim it happened.",
+    "outcome_templates": [
+      {
+        "event_kind": "quest_reward_granted",
+        "template_id": "template:pulse_reward",
+        "text": "{item_name} online. Sync complete.",
+        "required_fields": [
+          "item_name"
+        ]
+      },
+      {
+        "event_kind": "item_transferred",
+        "template_id": "template:item_transfer",
+        "text": "Transfer confirmed: {item_name}.",
+        "required_fields": [
+          "item_name"
+        ]
+      }
+    ]
+  },
+  "event": {
+    "schema_version": 1,
+    "record_id": "dialogue-event:001",
+    "trace_id": "trace:dialogue-001",
+    "causation_id": "approved-dialogue:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "approved-dialogue:001",
+      "dialogue-policy:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "dialogue:compose",
+        "version": "v1"
+      }
+    ],
+    "display_id": "dialogue:001",
+    "source_id": "event:quest_reward_001",
+    "text": "Pulse Blaster online. Sync complete.",
+    "expression": "reassuring",
+    "condition": {
+      "kind": "outcome",
+      "timing": "on_interaction_success",
+      "verified_outcome_id": "event:quest_reward_001"
+    },
+    "policy": {
+      "policy_id": "dialogue:compose",
+      "version": "v1"
+    }
+  }
+}

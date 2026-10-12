@@ -1,0 +1,231 @@
+{
+  "records": {
+    "schema_version": 1,
+    "record_id": "memory-record-set:001",
+    "trace_id": "trace:lifecycle-001",
+    "causation_id": "memory-review:scheduled",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": null,
+    "target_id": null,
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "memory-review:scheduled"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "memory:lifecycle",
+        "version": "v1"
+      }
+    ],
+    "records": [
+      {
+        "schema_version": 1,
+        "record_id": "memory-view:temp",
+        "trace_id": "trace:lifecycle-001",
+        "causation_id": "memory-decision:temp",
+        "game_id": "game:demo",
+        "timeline_id": "timeline:main",
+        "npc_id": "npc:gatherer",
+        "actor_id": "player:hero",
+        "target_id": "item:scrap_alloy",
+        "created_at": "2026-10-10T10:00:00Z",
+        "source_ids": [
+          "memory-decision:temp"
+        ],
+        "policy_versions": [
+          {
+            "policy_id": "memory:lifecycle",
+            "version": "v1"
+          }
+        ],
+        "memory_id": "memory:temporary-request",
+        "category": "routine",
+        "status": "interpretation",
+        "authority": "inferred",
+        "lifecycle": "active",
+        "importance": 0.7,
+        "salience": 0.8,
+        "occurred_at": "2026-10-10T10:00:00Z",
+        "last_accessed_at": null,
+        "superseded_by_memory_id": null,
+        "protected_provenance": false
+      },
+      {
+        "schema_version": 1,
+        "record_id": "memory-view:preference",
+        "trace_id": "trace:lifecycle-001",
+        "causation_id": "memory-decision:preference",
+        "game_id": "game:demo",
+        "timeline_id": "timeline:main",
+        "npc_id": "npc:gatherer",
+        "actor_id": "player:hero",
+        "target_id": null,
+        "created_at": "2026-10-10T10:00:00Z",
+        "source_ids": [
+          "memory-decision:preference"
+        ],
+        "policy_versions": [
+          {
+            "policy_id": "memory:lifecycle",
+            "version": "v1"
+          }
+        ],
+        "memory_id": "memory:quiet-route",
+        "category": "preference",
+        "status": "claim",
+        "authority": "reported",
+        "lifecycle": "active",
+        "importance": 0.75,
+        "salience": 0.5,
+        "occurred_at": "2026-10-10T10:00:00Z",
+        "last_accessed_at": null,
+        "superseded_by_memory_id": null,
+        "protected_provenance": false
+      },
+      {
+        "schema_version": 1,
+        "record_id": "memory-view:old-transfer",
+        "trace_id": "trace:lifecycle-001",
+        "causation_id": "memory-decision:transfer",
+        "game_id": "game:demo",
+        "timeline_id": "timeline:main",
+        "npc_id": "npc:gatherer",
+        "actor_id": "player:hero",
+        "target_id": "item:data_shard",
+        "created_at": "2026-09-01T10:00:00Z",
+        "source_ids": [
+          "memory-decision:transfer"
+        ],
+        "policy_versions": [
+          {
+            "policy_id": "memory:lifecycle",
+            "version": "v1"
+          }
+        ],
+        "memory_id": "memory:old-transfer",
+        "category": "item_transfer",
+        "status": "fact",
+        "authority": "authoritative",
+        "lifecycle": "active",
+        "importance": 0.9,
+        "salience": 0.9,
+        "occurred_at": "2026-09-01T10:00:00Z",
+        "last_accessed_at": null,
+        "superseded_by_memory_id": null,
+        "protected_provenance": true
+      }
+    ]
+  },
+  "now": "2026-10-12T10:00:00Z",
+  "policy": {
+    "schema_version": 1,
+    "record_id": "lifecycle-policy:001",
+    "trace_id": "trace:lifecycle-001",
+    "causation_id": "policy-publication:lifecycle",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": null,
+    "target_id": null,
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "policy-publication:lifecycle"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "memory:lifecycle",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "memory:lifecycle",
+      "version": "v1"
+    },
+    "default_retrieval_ttl_hours": null,
+    "default_archive_after_hours": null,
+    "default_delete_after_hours": null,
+    "allow_deletion": false,
+    "protect_authoritative_provenance": true,
+    "rules": [
+      {
+        "category": "routine",
+        "retrieval_ttl_hours": 24,
+        "archive_after_hours": 72,
+        "delete_after_hours": null,
+        "salience_decay_per_day": 0.1
+      },
+      {
+        "category": "preference",
+        "retrieval_ttl_hours": null,
+        "archive_after_hours": null,
+        "delete_after_hours": null,
+        "salience_decay_per_day": 0.05
+      },
+      {
+        "category": "item_transfer",
+        "retrieval_ttl_hours": null,
+        "archive_after_hours": 168,
+        "delete_after_hours": 720,
+        "salience_decay_per_day": 0.01
+      }
+    ]
+  },
+  "plan": {
+    "schema_version": 1,
+    "record_id": "lifecycle-plan:001",
+    "trace_id": "trace:lifecycle-001",
+    "causation_id": "memory-record-set:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": null,
+    "target_id": null,
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "memory-record-set:001",
+      "lifecycle-policy:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "memory:lifecycle",
+        "version": "v1"
+      }
+    ],
+    "reviewed_at": "2026-10-12T10:00:00Z",
+    "policy": {
+      "policy_id": "memory:lifecycle",
+      "version": "v1"
+    },
+    "mutations": [
+      {
+        "memory_id": "memory:temporary-request",
+        "action": "expire_for_retrieval",
+        "from_lifecycle": "active",
+        "to_lifecycle": "retrieval_expired",
+        "from_salience": 0.8,
+        "to_salience": 0.6000000000000001,
+        "reason": "memory:retrieval_expired"
+      },
+      {
+        "memory_id": "memory:quiet-route",
+        "action": "decay_salience",
+        "from_lifecycle": "active",
+        "to_lifecycle": "active",
+        "from_salience": 0.5,
+        "to_salience": 0.4,
+        "reason": "memory:salience_decay"
+      },
+      {
+        "memory_id": "memory:old-transfer",
+        "action": "protect",
+        "from_lifecycle": "active",
+        "to_lifecycle": "archived",
+        "from_salience": 0.9,
+        "to_salience": 0.49,
+        "reason": "memory:protected_provenance"
+      }
+    ]
+  }
+}

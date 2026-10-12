@@ -1,0 +1,125 @@
+{
+  "context": {
+    "schema_version": 1,
+    "record_id": "failure-context:001",
+    "trace_id": "trace:fallback-001",
+    "causation_id": "role-permission:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "role-permission:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "control:fallback",
+        "version": "v1"
+      }
+    ],
+    "failure_id": "failure:role_denied",
+    "kind": "role_denied",
+    "failed_stage": "roles.permissions",
+    "allowed_target_ids": [
+      "player:hero"
+    ],
+    "fallback_depth": 0,
+    "max_fallback_depth": 2
+  },
+  "policy": {
+    "schema_version": 1,
+    "record_id": "fallback-policy:001",
+    "trace_id": "trace:fallback-001",
+    "causation_id": "role-permission:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "role-permission:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "control:fallback",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "control:fallback",
+      "version": "v1"
+    },
+    "role_allowed_actions": [
+      "speak",
+      "idle",
+      "face_target"
+    ],
+    "options": [
+      {
+        "fallback_id": "fallback:safe_boundary",
+        "failure_kinds": [
+          "role_denied",
+          "model_invalid_output"
+        ],
+        "action": "speak",
+        "target_id": "player:hero",
+        "public_message": "I cannot do that, but I can explain what is safe to try next.",
+        "effect_ids": [],
+        "required_evidence_ids": [
+          "role-permission:001"
+        ]
+      },
+      {
+        "fallback_id": "fallback:idle",
+        "failure_kinds": [
+          "path_blocked",
+          "unsupported_capability"
+        ],
+        "action": "idle",
+        "target_id": null,
+        "public_message": "I will hold position and avoid claiming success.",
+        "effect_ids": [],
+        "required_evidence_ids": []
+      }
+    ]
+  },
+  "candidate": {
+    "schema_version": 1,
+    "record_id": "fallback-candidate:001",
+    "trace_id": "trace:fallback-001",
+    "causation_id": "failure-context:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "failure-context:001",
+      "fallback-policy:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "control:fallback",
+        "version": "v1"
+      }
+    ],
+    "failure_id": "failure:role_denied",
+    "fallback_id": "fallback:safe_boundary",
+    "policy": {
+      "policy_id": "control:fallback",
+      "version": "v1"
+    },
+    "status": "selected",
+    "action": "speak",
+    "public_message": "I cannot do that, but I can explain what is safe to try next.",
+    "effect_ids": [],
+    "evidence_ids": [
+      "role-permission:001"
+    ],
+    "fallback_depth": 1
+  }
+}

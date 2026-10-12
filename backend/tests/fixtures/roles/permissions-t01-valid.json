@@ -1,0 +1,165 @@
+{
+  "proposal": {
+    "schema_version": 1,
+    "record_id": "role-proposal:001",
+    "trace_id": "trace:roles-001",
+    "causation_id": "decision-proposal-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "decision-proposal-record:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "roles:permissions",
+        "version": "v1"
+      }
+    ],
+    "proposal_id": "proposal:craft_blaster",
+    "action": "craft_item",
+    "required_material_ids": [
+      "item:circuit_board",
+      "item:fiber_cable"
+    ]
+  },
+  "world": {
+    "schema_version": 1,
+    "record_id": "role-world:001",
+    "trace_id": "trace:roles-001",
+    "causation_id": "decision-proposal-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "decision-proposal-record:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "roles:permissions",
+        "version": "v1"
+      }
+    ],
+    "entity_ids": [
+      "player:hero",
+      "npc:craftsman"
+    ],
+    "workshops": [
+      {
+        "workshop_id": "workshop:neon_forge",
+        "available": true
+      }
+    ],
+    "available_material_ids": [
+      "item:circuit_board",
+      "item:fiber_cable",
+      "item:scrap_alloy"
+    ],
+    "active_grants": [
+      {
+        "grant_id": "grant:craft_help",
+        "action": "craft_item",
+        "target_id": "player:hero"
+      }
+    ]
+  },
+  "profile": {
+    "schema_version": 1,
+    "record_id": "role-profile:craftsman",
+    "trace_id": "trace:roles-001",
+    "causation_id": "decision-proposal-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "decision-proposal-record:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "roles:permissions",
+        "version": "v1"
+      }
+    ],
+    "profile": {
+      "policy_id": "roles:permissions",
+      "version": "v1"
+    },
+    "role_id": "role:craftsman",
+    "known_role_ids": [
+      "role:craftsman",
+      "role:gatherer"
+    ],
+    "peaceful": true,
+    "allowed_actions": [
+      "speak",
+      "request_materials",
+      "craft_item",
+      "refuse"
+    ],
+    "denied_actions": [
+      "attack",
+      "declare_war"
+    ],
+    "allowed_target_ids": [
+      "player:hero",
+      "npc:craftsman"
+    ],
+    "workshop_required_actions": [
+      "craft_item"
+    ],
+    "material_required_actions": [
+      "craft_item"
+    ],
+    "duties": [
+      "duty:keep_workshop_safe",
+      "duty:honor_grants"
+    ]
+  },
+  "permission": {
+    "schema_version": 1,
+    "record_id": "role-permission:001",
+    "trace_id": "trace:roles-001",
+    "causation_id": "role-proposal:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "role-proposal:001",
+      "role-world:001",
+      "role-profile:craftsman"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "roles:permissions",
+        "version": "v1"
+      }
+    ],
+    "proposal_id": "proposal:craft_blaster",
+    "profile": {
+      "policy_id": "roles:permissions",
+      "version": "v1"
+    },
+    "role_id": "role:craftsman",
+    "status": "allowed",
+    "action": "craft_item",
+    "target_id": "player:hero",
+    "reasons": [
+      "role.permission:allowed"
+    ],
+    "grant_ids": [
+      "grant:craft_help"
+    ]
+  }
+}

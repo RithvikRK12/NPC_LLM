@@ -6,25 +6,25 @@ from app.models import NPC, Memory, Conversation, Player, Quest
 
 NPC_SEEDS = [
     {
-        "name": "Craftsman",
+        "name": "Neon Techsmith",
         "role": "craftsman",
-        "inventory": ["saw", "hammer", "rope"],
+        "inventory": ["diagnostic_tool", "nano_solder", "scrap_alloy"],
         "trust": 0.65,
         "fear": 0.10,
         "aggression": 0.05,
         "curiosity": 0.30,
-        "location": "workshop",
+        "location": "neon_workshop",
         "current_state": "available",
     },
     {
-        "name": "Gatherer",
+        "name": "Data Broker",
         "role": "gatherer",
-        "inventory": ["axe", "wood", "fruits"],
+        "inventory": ["scanner", "circuit_board", "data_shard"],
         "trust": 0.50,
         "fear": 0.25,
         "aggression": 0.05,
         "curiosity": 0.70,
-        "location": "forest_edge",
+        "location": "byte_alley",
         "current_state": "available",
     },
 ]
@@ -33,7 +33,7 @@ NPC_SEEDS = [
 def seed_world(db: Session) -> None:
     player = db.scalar(select(Player).where(Player.id == 1))
     if player is None:
-        player = Player(id=1, inventory=["water", "food"], current_location="village_square")
+        player = Player(id=1, inventory=["energy_cell", "med_patch"], current_location="jit_cyber_grid")
         db.add(player)
         db.flush()
 
@@ -60,8 +60,8 @@ def reset_world(db: Session) -> None:
     db.execute(delete(Conversation))
     db.execute(delete(Memory))
     player.position = {'x': 0.0, 'y': 0.0}
-    player.inventory = ['water', 'food']
-    player.current_location = 'village_square'
+    player.inventory = ['energy_cell', 'med_patch']
+    player.current_location = 'jit_cyber_grid'
     for npc in npcs:
         initial = next((values for values in NPC_SEEDS if values['name'] == npc.name), None)
         if initial is not None:
