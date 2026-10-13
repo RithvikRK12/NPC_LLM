@@ -11,18 +11,38 @@ A Godot 4 village backed by FastAPI, SQLAlchemy, and a local or compatible LLM. 
 5. From `backend`, run `../.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000`.
 6. Open `frontend/godot/project.godot` in Godot 4 and press F5, or run the Godot executable with `--path frontend/godot` from the project root.
 
+Before launching directly from the command line on a fresh checkout, import the
+assets once from the project root:
+
+```sh
+/private/tmp/npc-godot-runtime/Godot.app/Contents/MacOS/Godot \
+  --headless --path frontend/godot --editor --import
+```
+
+Wait for import to finish, then launch normally. This builds the local `.godot`
+texture cache required by SVG preloads. Opening the project in the editor also
+imports assets; direct game launch alone can fail with a missing `.ctex` error.
+
 The backend loads `backend/.env` regardless of working directory. Relative SQLite paths are still relative to the working directory. An empty LLM base URL selects the mock provider. Generation and validation failures are logged in the backend terminal.
 
 ## Get a bow
 
 1. Click **Quests → Begin • Get a bow**.
-2. Approach the Craftsman, press **E**, and ask for a bow. He needs **wood and string**.
-3. Request wood from the Gatherer. He asks why; answer with a purpose such as “I need wood to make a bow.”
+2. Walk into the workshop doorway (or press **E** at the door), approach the Craftsman inside, and press **E** to ask for a bow. He needs **wood and string**.
+3. Follow the path west into the forest to find the Gatherer in a clearing. Request wood from him. He asks why; answer with a purpose such as “I need wood to make a bow.”
 4. Find the fallen string near the well. Walk close and press **F** to pick it up.
 5. Return to the Craftsman. Open your satchel with **I** or its button, select each material, and click **Give [item] to Craftsman**.
 6. He consumes one wood and one string and crafts for **five seconds**, with a progress bar. A bow is added to your satchel, completing the quest.
 
 Use WASD to walk and Escape to close panels. Each NPC has a separate chat and supplies panel. Item cards show names, icons and stack counts. Click an NPC item and Request to begin its purpose-confirmation conversation. Say “cancel” to cancel. Player gifts transfer immediately and receive a thank-you.
+
+The workshop and both cottages have furnished interiors. Walk up into a front door
+to enter, then walk down through the marked exit to return outside. You can also
+press **E** at an exterior doorway. Saved games resume inside the room you left.
+
+UI text, buttons and item slots are enlarged for readability; the menu's
+**Larger text** option increases text further. NPC location answers give brief
+approximations such as “I think the Craftsman is in the workshop.”
 
 Clear chat removes that NPC's transcript, dialogue memories and pending request. It does not reset inventory or quest progress.
 
@@ -39,7 +59,7 @@ The backend controls quest steps, crafting deadlines, material consumption, and 
 From `backend`:
 
 ```bash
-../.venv/bin/python -m unittest discover -s tests -v
+PYTHONPATH=.. ../.venv/bin/python -m unittest discover -s tests -v
 ```
 
 For the full Godot quest check, start a **fresh disposable SQLite backend on port 8001**, then run Godot from the project root with:
@@ -49,6 +69,10 @@ Godot --path frontend/godot --script res://tests/bow_quest_smoke.gd
 ```
 
 This uses game HTTP handlers, tests the pickup and real crafting delay, and saves preview images under `/tmp`. Do not point the test backend at your saved world.
+
+With the same disposable backend, run `res://tests/building_interiors_smoke.gd`
+to check all three doorways, walls, furniture, interior saves and workshop
+interaction. A rendered run also saves previews under `/tmp/willowbrook-interiors`.
 
 ## API
 

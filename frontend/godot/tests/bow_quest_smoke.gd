@@ -31,7 +31,7 @@ func run_check() -> void:
 	scene.quest_panel.show()
 	scene.quest_panel.start_button.pressed.emit()
 	if not await wait_for(func(): return not scene.quest_busy): return
-	scene.player.position = Vector2(110, -20)
+	scene.player.position = Vector2(10064, 10032)
 	scene._update_current_npc()
 	scene._open_dialogue()
 	var craftsman = scene.chat_windows[1]
@@ -39,7 +39,7 @@ func run_check() -> void:
 	craftsman.submit()
 	if not await wait_for(func(): return not craftsman.pending): return
 	if not check(scene.bow_state.phase == "gather" and scene.string_pickup.visible, "Craftsman must request materials"): return
-	scene.player.position = Vector2(-100, 35)
+	scene.player.position = Vector2(-650, 134)
 	scene._update_current_npc()
 	scene._open_dialogue()
 	var gatherer = scene.chat_windows[2]
@@ -58,7 +58,7 @@ func run_check() -> void:
 	scene._unhandled_input(pickup)
 	if not await wait_for(func(): return not scene.quest_busy): return
 	if not check(scene.player_items.has("wood") and scene.player_items.has("string") and not scene.string_pickup.visible, "Materials must be real inventory items"): return
-	scene.player.position = Vector2(110, -20)
+	scene.player.position = Vector2(10064, 10032)
 	scene._update_current_npc()
 	for item in ["wood", "string"]:
 		scene.player_grid.select_item(item)

@@ -31,6 +31,24 @@ class GroundedChatTests(unittest.TestCase):
         return (n.trust, n.fear, n.aggression, n.curiosity, n.current_state,
                 list(n.inventory), list(self.db.get(Player, 1).inventory))
 
+    def test_location_answers_are_brief_approximations_without_tracking_disclaimers(self):
+        before = self.state()
+        for speaker, target, place in ((1, 'Gatherer', 'forest clearing'), (2, 'Craftsman', 'workshop')):
+            with self.subTest(speaker=speaker, target=target):
+                identity = 'person.' + target.lower() + '.location'
+                result = self.chat('Where is the ' + target + '?', self.answer([identity]), speaker)
+                reply = result['final_dialogue']
+                self.assertIn('I think', reply)
+                self.assertIn(place, reply)
+                self.assertLessEqual(len(reply), 80)
+                for disclaimer in ("don't have", 'precise', 'observed', 'current position'):
+                    self.assertNotIn(disclaimer, reply)
+                self.assertFalse(result['grounding_trace']['rejected'])
+                after = self.state()
+                # Talking changes activity to "speak", but has no game rewards.
+                self.assertEqual(after[:4], before[:4])
+                self.assertEqual(after[5:], before[5:])
+
     def test_directory_is_shared_private_data_excluded_and_positions_distinct(self):
         other = self.db.get(NPC, 2)
         other.inventory = ['PRIVATE_ITEM']
@@ -41,7 +59,7 @@ class GroundedChatTests(unittest.TestCase):
             context = ContextBuilder(self.db).build(self.db.get(NPC, npc_id), self.db.get(Player, 1), 'Where is the Gatherer?')
             facts = {f['id']: f for f in context.facts}
             self.assertEqual(facts['person.gatherer.location']['status'], 'usual')
-            self.assertIn('observed current position', facts['person.gatherer.location']['text'])
+            self.assertIn('I think', facts['person.gatherer.location']['text'])
             self.assertIn('person.craftsman.work', facts)
             self.assertNotIn('PRIVATE_STATE', json.dumps(context.facts))
             self.assertNotIn('PRIVATE_MEMORY', json.dumps(context.as_dict()))
@@ -49,8 +67,8 @@ class GroundedChatTests(unittest.TestCase):
                 self.assertNotIn('PRIVATE_ITEM', json.dumps(context.as_dict()))
 
     def test_multiturn_selected_subject_persists_and_prose_cannot_override_fact(self):
-        scenarios = [('Where is the Gatherer?', 'person.gatherer.location', 'forest edge'),
-                     ('Where can I find him?', 'person.gatherer.location', 'forest edge'),
+        scenarios = [('Where is the Gatherer?', 'person.gatherer.location', 'forest clearing'),
+                     ('Where can I find him?', 'person.gatherer.location', 'forest clearing'),
                      ('How do I get there?', 'person.gatherer.route', 'verified directions'),
                      ('What does he do?', 'person.gatherer.work', 'gathers supplies'),
                      ('What materials do you need?', 'quest.bow.requirements', 'wood and string'),
@@ -68,7 +86,7 @@ class GroundedChatTests(unittest.TestCase):
     def test_compact_selection_contract_has_no_effect_fields_and_renders_only_server_facts(self):
         result = self.chat('Where is the Gatherer?', {'answer_kind': 'answer', 'fact_ids': ['person.gatherer.location']})
         self.assertFalse(result['grounding_trace']['rejected'])
-        self.assertIn('forest edge', result['final_dialogue'])
+        self.assertIn('forest clearing', result['final_dialogue'])
         result = self.chat('Unknown person?', {'answer_kind': 'clarify', 'fact_ids': []})
         self.assertIn("don't have verified information", result['final_dialogue'])
         for extra in ({'reward': 'bow'}, {'action': 'give_item'}, {'state_update': {'trust': .2}}):
@@ -182,7 +200,7 @@ class GroundedChatTests(unittest.TestCase):
                                   directions='Synthetic route fixture.', source='test fixture only')]
         with patch('app.services.context.grounding.CATALOG', Catalog.model_validate(payload)):
             result = self.chat('How do I get there?', self.answer(['person.gatherer.route']))
-        self.assertEqual(result['final_dialogue'], 'From the well to the forest edge: Synthetic route fixture.')
+        self.assertEqual(result['final_dialogue'], 'From the well to the forest clearing: Synthetic route fixture.')
 
     def test_malformed_provider_json_is_zero_effect(self):
         before = self.state()
@@ -262,13 +280,13 @@ class GroundedChatTests(unittest.TestCase):
         self.chat('Where is the Gatherer?', self.answer(['person.gatherer.location']))
         result = self.chat('How can I travel there?', self.answer(kind='clarify'))
         self.assertEqual(result['validated_output']['fact_ids'], ['person.gatherer.route'])
-        self.assertIn('forest edge', result['final_dialogue'])
+        self.assertIn('forest clearing', result['final_dialogue'])
         result = self.chat('Where can I locate him?', self.answer(['person.craftsman.location']))
         self.assertEqual(result['validated_output']['fact_ids'], ['person.gatherer.location'])
         for question in ('How can I reach Moon Castle?', 'where is eldric?', 'Where is Eldric near the Gatherer?'):
             result = self.chat(question, self.answer(['person.gatherer.route']))
             self.assertEqual(result['validated_output']['answer_kind'], 'clarify')
-            self.assertNotIn('forest edge', result['final_dialogue'])
+            self.assertNotIn('forest clearing', result['final_dialogue'])
 
 
 if __name__ == '__main__':

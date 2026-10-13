@@ -5,7 +5,7 @@
   ],
   "places": [
     {"id": "place.workshop", "name": "workshop"},
-    {"id": "place.forest_edge", "name": "forest edge"},
+    {"id": "place.forest_edge", "name": "forest clearing"},
     {"id": "place.village_square", "name": "village square"},
     {"id": "place.well", "name": "well"}
   ],

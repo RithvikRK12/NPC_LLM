@@ -107,7 +107,7 @@ def build_facts(db, npc, player, quest, now):
 
     for person in CATALOG.people:
         add(person.id + '.location', person.id, 'location',
-            f"{person.name} is usually at the {places[person.usual_place]}. I don't have an observed current position.",
+            f"I think the {person.name} is in the {places[person.usual_place]}.",
             person.source, 'usual')
         add(person.id + '.work', person.id, 'work', person.work, person.source, 'public')
         route_fact(person.id + '.route', person.id, person.usual_place)

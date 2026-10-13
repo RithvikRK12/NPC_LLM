@@ -1,0 +1,41 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+Native display scale: 2.0 • render method: forward_plus
+PASS Authored warm dirt path is visible above background
+PASS Whole 2x2 source-pixel blocks: core at 960
+PASS Rendering preserves simulation position
+PASS Whole 2x2 source-pixel blocks: market at 960
+PASS Rendering preserves simulation position
+PASS Portrait texture persists through draw submission
+PASS Dialogue tail uses actual viewport transform at 960
+PASS Authored warm dirt path is visible above background
+PASS Whole 2x2 source-pixel blocks: core at 1280
+PASS Rendering preserves simulation position
+PASS Whole 2x2 source-pixel blocks: market at 1280
+PASS Rendering preserves simulation position
+PASS Portrait texture persists through draw submission
+PASS Dialogue tail uses actual viewport transform at 1280
+PASS Authored warm dirt path is visible above background
+PASS Whole 3x3 source-pixel blocks: core at 1920
+PASS Rendering preserves simulation position
+PASS Whole 3x3 source-pixel blocks: market at 1920
+PASS Rendering preserves simulation position
+PASS Portrait texture persists through draw submission
+PASS Dialogue tail uses actual viewport transform at 1920
+PASS Authored warm dirt path is visible above background
+PASS Whole 2x2 source-pixel blocks: core at 1001
+PASS Rendering preserves simulation position
+PASS Whole 2x2 source-pixel blocks: market at 1001
+PASS Rendering preserves simulation position
+PASS Portrait texture persists through draw submission
+PASS Dialogue tail uses actual viewport transform at 1001
+PASS Keyboard-driven slow diagonal advances real physics
+PASS Rendered feet remain on integer source pixels while physics stays fractional
+PASS Slow movement exercises all four walk frames
+PASS Real directional walk: right
+PASS Real directional walk: up
+PASS Real directional walk: left
+PASS Real directional walk: down
+PASS Keyboard movement stops at cottage foot collision
+Rendered graphics failures: 0

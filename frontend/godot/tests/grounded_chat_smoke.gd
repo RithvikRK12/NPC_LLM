@@ -74,8 +74,8 @@ func ask(id: int, message: String, facts: Array = [], kind := "", safe := true) 
 	var response := last_response.duplicate(true)
 	var output: Dictionary = response.get("validated_output", {})
 	var answer: String = response.get("final_dialogue", "")
-	chats.append({"npc_id": id, "message": message, "seconds": (Time.get_ticks_msec() - started) / 1000.0, "response": response, "displayed_text": window.dialogue_log.get_parsed_text()})
-	record(not response.is_empty() and not answer.is_empty() and window.dialogue_log.get_parsed_text().contains(answer), "Displayed parsed response: " + message)
+	chats.append({"npc_id": id, "message": message, "seconds": (Time.get_ticks_msec() - started) / 1000.0, "response": response, "displayed_text": window.conversation_text()})
+	record(not response.is_empty() and not answer.is_empty() and window.conversation_text().contains(answer), "Displayed parsed response: " + message)
 	record(not window.send_button.disabled and not window.clear_button.disabled, "Controls recovered: " + message)
 	for fact in facts:
 		record(fact in output.get("fact_ids", []) and not response.get("grounding_trace", {}).get("rejected", true), "Selected " + fact + ": " + message)
@@ -111,8 +111,8 @@ func run_check() -> void:
 	if not await wait_for(func(): return scene.world_loaded): return
 	if resume_mode:
 		record(scene.bow_state.phase == "completed" and scene.player_items.count("bow") == 1, "Backend and Godot restart preserve completed quest and one reward")
-		record(scene.player.position == Vector2(110, -20), "Backend restart preserves saved position")
-		record(scene.chat_windows[1].dialogue_log.get_parsed_text().contains("Verified bow materials delivered"), "Backend restart preserves grounded history")
+		record(scene.player.position == Vector2(10064, 10032), "Backend restart preserves saved interior position")
+		record(scene.chat_windows[1].conversation_text().contains("Verified bow materials delivered"), "Backend restart preserves grounded history")
 		for attempt in range(2):
 			scene._quest_call("advance")
 			if not await wait_for(func(): return not scene.quest_busy): return
@@ -124,7 +124,7 @@ func run_check() -> void:
 		scene.restart_dialog.confirmed.emit()
 		if not await wait_for(func(): return scene.world_loaded): return
 		record(scene.bow_state.phase == "available" and scene.player_items == ["water", "food"] and scene.player.position == Vector2.ZERO, "Disposable restart resets phase, inventory and position")
-		record(not scene.chat_windows[1].dialogue_log.get_parsed_text().contains("Verified bow materials delivered"), "Disposable restart clears old dialogue")
+		record(not scene.chat_windows[1].conversation_text().contains("Verified bow materials delivered"), "Disposable restart clears old dialogue")
 		await snapshot("reset")
 		finish_check()
 		return
@@ -168,6 +168,7 @@ func run_check() -> void:
 	record(not scene.player_items.has("wood"), "Wood request waits for purpose")
 	await ask(2, "To help the Craftsman make a bow", [], "", false)
 	record(scene.player_items.has("wood"), "Confirmed transfer grants owned wood")
+	for window in scene.chat_windows.values(): window.close_chat()
 	scene.player.position = Vector2(-70, 240)
 	var pickup := InputEventKey.new()
 	pickup.keycode = KEY_F
@@ -175,7 +176,7 @@ func run_check() -> void:
 	scene._unhandled_input(pickup)
 	if not await wait_for(func(): return not scene.quest_busy): return
 	record(scene.player_items.has("string"), "F pickup grants real string")
-	scene.player.position = Vector2(110, -20)
+	scene.player.position = Vector2(10064, 10032)
 	scene._update_current_npc()
 	scene.player_grid.select_item("wood")
 	scene._give_selected_item()
@@ -193,8 +194,8 @@ func run_check() -> void:
 	await process_frame
 	new_scene()
 	if not await wait_for(func(): return scene.world_loaded): return
-	record(scene.player.position == Vector2(110, -20) and scene.bow_state.phase == "gather" and scene.player_items.has("string") and not scene.player_items.has("wood"), "Scene relaunch resumes saved position, phase and transfers")
-	record(scene.chat_windows[1].dialogue_log.get_parsed_text().contains("Still needed: string."), "Scene relaunch restores grounded dialogue")
+	record(scene.player.position == Vector2(10064, 10032) and scene.bow_state.phase == "gather" and scene.player_items.has("string") and not scene.player_items.has("wood"), "Scene relaunch resumes saved interior position, phase and transfers")
+	record(scene.chat_windows[1].conversation_text().contains("Still needed: string."), "Scene relaunch restores grounded dialogue")
 	await ask(1, "What have I already delivered?", ["quest.bow.delivered"])
 	scene._update_current_npc()
 	scene.player_grid.select_item("string")

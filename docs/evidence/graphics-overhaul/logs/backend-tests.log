@@ -1,0 +1,61 @@
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: Malformed structured JSON
+LLM generation failed or could not be decoded for NPC 1; using zero-effect fallback
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: Factual answers cannot propose effects or state rewards
+LLM generation failed or could not be decoded for NPC 1; using zero-effect fallback
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: World questions require a constrained answer or clarification
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: Unknown or private fact reference
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: Factual answers cannot propose effects or state rewards
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: World questions require a constrained answer or clarification
+NPC 1 output rejected: Malformed structured JSON
+LLM generation failed or could not be decoded for NPC 1; using zero-effect fallback
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 1 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 1 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 1 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 1 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 2 output rejected: Inventory and quest claims must come from authoritative game rules
+NPC 1 output rejected: World questions require a constrained answer or clarification
+Semantic query embedding unavailable; using bounded lexical retrieval
+Semantic query embedding unavailable; using bounded lexical retrieval
+Semantic query embedding unavailable; using bounded lexical retrieval
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 111, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py", line 1198, in _execute_mock_call
+    raise effect
+app.services.memory.embedding.EmbeddingUnavailable: offline
+NPC 1 output rejected: Malformed structured JSON
+LLM generation failed or could not be decoded for NPC 1; using zero-effect fallback
+NPC 1 output rejected: Malformed structured JSON
+NPC 1 output rejected: The model cannot trigger crafting, transfers, or quest rewards
+NPC 1 output rejected: Item transfers require an explicit player request naming an owned item
+NPC 1 output rejected: Item transfers require an explicit player request naming an owned item
+NPC 1 output rejected: Item transfers require an explicit player request naming an owned item
+NPC 1 output rejected: The model cannot trigger crafting, transfers, or quest rewards
+NPC 1 output rejected: World questions require a constrained answer or clarification
+Semantic query embedding unavailable; using bounded lexical retrieval
+----------------------------------------------------------------------
+Ran 424 tests in 4.537s
+
+OK

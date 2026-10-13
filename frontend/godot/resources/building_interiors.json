@@ -1,0 +1,43 @@
+{
+  "workshop": {
+    "name": "Craftsman's Workshop",
+    "origin": [10000, 10000],
+    "floor_art": "interior-workshop",
+    "spawn": [0, 128],
+    "craftsman": [64, -32],
+    "furniture": [
+      {"art": "interior-workbench", "at": [-176, -32], "pivot": [32, 44], "footprint": [-52, -32, 104, 32]},
+      {"art": "interior-workbench", "at": [64, -96], "pivot": [32, 44], "footprint": [-52, -32, 104, 32]},
+      {"art": "interior-stove", "at": [-224, -128], "pivot": [24, 60], "footprint": [-34, -40, 68, 40]},
+      {"art": "interior-shelf", "at": [224, -128], "pivot": [24, 60], "footprint": [-40, -24, 80, 24]},
+      {"art": "logs", "at": [224, 96], "pivot": [24, 50], "footprint": [-32, -14, 64, 14]},
+      {"art": "barrel", "at": [-240, 128], "pivot": [24, 50], "footprint": [-12, -12, 24, 12]}
+    ]
+  },
+  "cottage-a": {
+    "name": "Hearth Cottage",
+    "origin": [12000, 10000],
+    "floor_art": "interior-hearth",
+    "spawn": [0, 128],
+    "furniture": [
+      {"art": "interior-bed", "at": [-224, 0], "pivot": [24, 60], "footprint": [-40, -96, 80, 96]},
+      {"art": "interior-table", "at": [48, -16], "pivot": [32, 44], "footprint": [-52, -48, 104, 48]},
+      {"art": "interior-stove", "at": [-224, -128], "pivot": [24, 60], "footprint": [-34, -40, 68, 40]},
+      {"art": "interior-shelf", "at": [224, -128], "pivot": [24, 60], "footprint": [-40, -24, 80, 24]},
+      {"art": "barrel", "at": [240, 112], "pivot": [24, 50], "footprint": [-12, -12, 24, 12]}
+    ]
+  },
+  "cottage-b": {
+    "name": "Weaver's Cottage",
+    "origin": [14000, 10000],
+    "floor_art": "interior-weaver",
+    "spawn": [0, 128],
+    "furniture": [
+      {"art": "interior-bed-blue", "at": [224, 0], "pivot": [24, 60], "footprint": [-40, -96, 80, 96]},
+      {"art": "interior-loom", "at": [-192, -32], "pivot": [32, 60], "footprint": [-48, -64, 96, 64]},
+      {"art": "interior-shelf", "at": [-224, -128], "pivot": [24, 60], "footprint": [-40, -24, 80, 24]},
+      {"art": "interior-table", "at": [16, -112], "pivot": [32, 44], "footprint": [-52, -48, 104, 48]},
+      {"art": "crate", "at": [224, 128], "pivot": [24, 50], "footprint": [-20, -14, 40, 14]}
+    ]
+  }
+}

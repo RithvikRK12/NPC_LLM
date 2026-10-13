@@ -48,7 +48,7 @@ func run_check() -> void:
 	if not check(scene.player.position == Vector2(95, 105), "Launch must restore position"): return
 	if not check(scene.bow_state.phase == "meet", "Launch must preserve quest"): return
 	if not check(not scene.player_items.has("water"), "Launch must preserve inventory"): return
-	if not check(scene.chat_windows[1].dialogue_log.get_parsed_text().contains("Thank you"), "Launch must restore chats"): return
+	if not check(scene.chat_windows[1].conversation_text().contains("Thank you"), "Launch must restore chats"): return
 	if not await wait_for(func(): return not scene._operations_pending()): return
 	scene.restart_button.pressed.emit()
 	if not check(scene.restart_dialog.visible, "Restart must show confirmation"): return
@@ -58,6 +58,6 @@ func run_check() -> void:
 	if not check(scene.player.position == Vector2.ZERO, "Restart must reset position"): return
 	if not check(scene.bow_state.phase == "available", "Restart must reset quest"): return
 	if not check(scene.player_items == ["water", "food"], "Restart must restore starter inventory"): return
-	if not check(not scene.chat_windows[1].dialogue_log.get_parsed_text().contains("Thank you"), "Restart must clear chat"): return
+	if not check(not scene.chat_windows[1].conversation_text().contains("Thank you"), "Restart must clear chat"): return
 	print("PASS persistence across launches and explicit restart")
 	quit(0)

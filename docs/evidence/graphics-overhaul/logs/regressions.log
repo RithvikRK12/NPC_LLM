@@ -1,0 +1,5 @@
+PASS bow_quest_smoke
+PASS persistence_smoke
+PASS graphics_state_smoke
+PASS contract_fixture_smoke
+PASS gateway_contract_codec_smoke

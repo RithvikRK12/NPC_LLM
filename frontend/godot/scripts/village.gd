@@ -1,62 +1,81 @@
 extends Node2D
-
-
+const Layout = preload("res://resources/village_layout.tres")
+var layout := Layout
+var ground: Sprite2D
+var props: Array[Node2D] = []
+var debug_geometry := false
+var reduced_motion := false
+const PATH = [Vector2(-850,70),Vector2(-170,70),Vector2(0,0),Vector2(210,32),Vector2(384,32),Vector2(576,64),Vector2(800,128),Vector2(960,192)]
+func _ready() -> void:
+	ground = Sprite2D.new()
+	ground.texture = _terrain()
+	ground.centered = false
+	ground.position = Vector2(-1408,-1120)
+	ground.scale = Vector2(2,2)
+	ground.z_index = 1
+	add_child(ground)
+	# Props are direct siblings of actors so all share the same ground-Y sort.
+	for entry in layout.objects():
+		var prop := preload("res://scenes/world/PlacedProp.tscn").instantiate()
+		prop.entry = entry
+		prop.layout = layout
+		prop.name = entry.id
+		get_parent().add_child.call_deferred(prop)
+		props.append(prop)
+	z_index = -30
+func _exit_tree() -> void:
+	for prop in props:
+		if is_instance_valid(prop): prop.queue_free()
+func set_debug(enabled: bool) -> void:
+	debug_geometry = enabled
+	for prop in props:
+		prop.debug_geometry = enabled
+		prop.queue_redraw()
+func set_reduced_motion(enabled: bool) -> void:
+	reduced_motion = enabled
+	for prop in props:
+		prop.reduced_motion = enabled
+		if prop.entry.get("smoke",false): prop.sprite.visible = not enabled
 func _draw() -> void:
-	draw_rect(Rect2(-1400, -1100, 2800, 2200), Color("405d3c"))
-	var rng := RandomNumberGenerator.new()
-	rng.seed = 42
-	for i in range(2200):
-		var p := Vector2(rng.randf_range(-1300, 1300), rng.randf_range(-1000, 1000))
-		draw_line(p, p + Vector2(2, -5), Color("526d45"), 1.0)
-	# Worn footpaths link the forest, square and workshop.
-	draw_polyline(PackedVector2Array([Vector2(-800, 70), Vector2(-170, 70), Vector2(0, 0), Vector2(210, 0), Vector2(750, 180)]), Color("827659"), 76.0, true)
-	draw_polyline(PackedVector2Array([Vector2(-800, 70), Vector2(-170, 70), Vector2(0, 0), Vector2(210, 0), Vector2(750, 180)]), Color("a18e67"), 56.0, true)
-	for i in range(100):
-		var p := Vector2(rng.randf_range(-650, 650), rng.randf_range(-24, 24))
-		draw_circle(p + Vector2(0, 45), 2, Color("b3a07a"))
-	# Timber workshop with roof tiles, stone base, doorway and lit windows.
-	draw_rect(Rect2(88, -222, 235, 148), Color(0, 0, 0, 0.2))
-	draw_rect(Rect2(80, -230, 230, 144), Color("84745e"))
-	draw_rect(Rect2(88, -222, 214, 123), Color("bd9a69"))
-	for x in range(90, 305, 34):
-		draw_line(Vector2(x, -220), Vector2(x, -100), Color("5d4432"), 7)
-	draw_rect(Rect2(174, -170, 46, 74), Color("382e28"))
-	for x in [108, 244]:
-		draw_rect(Rect2(x, -181, 32, 36), Color("e6bd69"))
-		draw_line(Vector2(x + 16, -181), Vector2(x + 16, -145), Color("604932"), 4)
-	draw_colored_polygon(PackedVector2Array([Vector2(60, -214), Vector2(190, -307), Vector2(331, -214)]), Color("70493a"))
-	for y in range(-280, -212, 16):
-		var width := float(y + 307) * 1.42
-		draw_line(Vector2(190 - width, y), Vector2(190 + width, y), Color("97644b"), 4)
-	draw_rect(Rect2(259, -296, 24, 59), Color("72655a"))
-	# Workbench, logs and anvil beside the craftsman.
-	draw_rect(Rect2(250, -45, 62, 27), Color("624833"))
-	draw_rect(Rect2(246, -55, 70, 23), Color("b18a56"))
-	draw_colored_polygon(PackedVector2Array([Vector2(264, -71), Vector2(303, -71), Vector2(291, -62), Vector2(288, -51), Vector2(271, -51)]), Color("4e565b"))
-	for i in range(5):
-		draw_line(Vector2(330, -111 + i * 12), Vector2(382, -111 + i * 12), Color("65462f"), 11)
-		draw_circle(Vector2(330, -111 + i * 12), 5, Color("c29861"))
-	# Village well.
-	draw_circle(Vector2(-10, 180), 39, Color(0, 0, 0, 0.18))
-	draw_circle(Vector2(-15, 172), 33, Color("9a9b8d"))
-	draw_circle(Vector2(-15, 172), 23, Color("344d54"))
-	draw_line(Vector2(-47, 172), Vector2(-47, 110), Color("694c34"), 7)
-	draw_line(Vector2(17, 172), Vector2(17, 110), Color("694c34"), 7)
-	draw_colored_polygon(PackedVector2Array([Vector2(-60, 117), Vector2(-15, 88), Vector2(31, 117)]), Color("845841"))
-	for i in range(25):
-		var p := Vector2(rng.randf_range(-650, -290), rng.randf_range(-360, 360))
-		_tree(p, rng.randf_range(0.8, 1.3))
-	for i in range(10):
-		_tree(Vector2(rng.randf_range(-200, 650), rng.randf_range(330, 470)), 1.0)
-	for x in range(65, 400, 35):
-		draw_line(Vector2(x, 208), Vector2(x + 35, 208), Color("8c7350"), 5)
-		draw_line(Vector2(x, 221), Vector2(x + 35, 221), Color("8c7350"), 5)
-		draw_line(Vector2(x, 199), Vector2(x, 235), Color("c1a477"), 7)
-
-
-func _tree(p: Vector2, scale_factor: float) -> void:
-	draw_circle(p + Vector2(8, 12), 35 * scale_factor, Color(0, 0, 0, 0.15))
-	draw_line(p, p + Vector2(0, -43 * scale_factor), Color("664934"), 12 * scale_factor)
-	draw_circle(p + Vector2(0, -50 * scale_factor), 34 * scale_factor, Color("274b35"))
-	draw_circle(p + Vector2(-12, -61) * scale_factor, 25 * scale_factor, Color("376346"))
-	draw_circle(p + Vector2(10, -69) * scale_factor, 21 * scale_factor, Color("4c7950"))
+	# Old saved positions remain usable beyond the authored district.
+	draw_rect(Rect2(-100000,-100000,200000,200000),Color("72934f"))
+func path_distance(at: Vector2) -> float:
+	var result := INF
+	for i in range(PATH.size()-1):result = minf(result,Geometry2D.get_closest_point_to_segment(at,PATH[i],PATH[i+1]).distance_to(at))
+	# A quiet southern clearing leads to the authoritative string pickup.
+	for segment in [[Vector2.ZERO,Vector2(-112,128)],[Vector2(-112,128),Vector2(-70,288)]]:
+		result = minf(result,Geometry2D.get_closest_point_to_segment(at,segment[0],segment[1]).distance_to(at)+12)
+	# Clear cottage aprons connect to the market rather than dead-end behind stalls.
+	for segment in [[Vector2(496,-48),Vector2(496,64)],[Vector2(720,-80),Vector2(720,112)],[Vector2(496,-48),Vector2(560,-48)]]:
+		result=minf(result,Geometry2D.get_closest_point_to_segment(at,segment[0],segment[1]).distance_to(at)+16)
+	return result
+func _terrain() -> ImageTexture:
+	var tiles := {}
+	for kind in ["grass","shade","path","soil","edge","moss"]:
+		tiles[kind]=[]
+		for i in range(4):
+			var image: Image = load("res://assets/world/%s-%s.svg" % [kind,i]).get_image()
+			image.convert(Image.FORMAT_RGBA8)
+			tiles[kind].append(image)
+	var canvas := Image.create(1408,1120,false,Image.FORMAT_RGBA8)
+	for y in range(0,1120,16):
+		for x in range(0,1408,16):
+			var world_y := float(y*2-1120)
+			var forest_edge := -340.0 + sin(world_y/90.0)*42.0 + cos(world_y/140.0)*24.0
+			var distance := float(x*2-1408)-forest_edge
+			var kind := "shade" if distance< -24 else ("moss" if distance<24 else "grass")
+			var variation := posmod(x/16*7+y/16*13,4)
+			canvas.blit_rect(tiles[kind][variation],Rect2i(0,0,16,16),Vector2i(x,y))
+	for y in range(496,720,4):
+		for x in range(256,1200,4):
+			var at := Vector2(x*2-1408+4,y*2-1120+4)
+			var distance := path_distance(at)
+			if distance<52:
+				var kind := "path" if distance<46 else "edge"
+				var variation := posmod(x/16+y/16,4)
+				canvas.blit_rect(tiles[kind][variation],Rect2i(x%16,y%16,4,4),Vector2i(x,y))
+	# Cottage garden soil, away from the clear door aprons.
+	for at in [Vector2i(900,450),Vector2i(1100,440)]:
+		for y in range(at.y,at.y+24,16):
+			for x in range(at.x,at.x+32,16):canvas.blit_rect(tiles.soil[0],Rect2i(0,0,16,16),Vector2i(x,y))
+	return ImageTexture.create_from_image(canvas)
