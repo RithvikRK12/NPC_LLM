@@ -1,0 +1,6 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Full-footprint route crosses dressed chunks without collision
+PASS Direct route 3662.307 wu / 20.346 s at unchanged 180 wu/s
+PASS Persistent chunk dressing exists
+PASS Scenery identical after chunk unload/reload

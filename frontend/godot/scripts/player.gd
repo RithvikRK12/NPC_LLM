@@ -1,9 +1,17 @@
 extends CharacterBody2D
 
 @export var speed: float = 180.0
+var control_enabled := true
+
+func set_control_enabled(enabled: bool) -> void:
+	control_enabled=enabled
+	velocity=Vector2.ZERO
 
 
 func _physics_process(_delta: float) -> void:
+	if not control_enabled:
+		velocity=Vector2.ZERO
+		return
 	if get_viewport().gui_get_focus_owner() is LineEdit:
 		velocity = Vector2.ZERO
 		return

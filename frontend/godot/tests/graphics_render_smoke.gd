@@ -23,11 +23,15 @@ func wait_for(condition: Callable) -> bool:
 			return false
 	return true
 func run_check() -> void:
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--evidence="): directory=arg.trim_prefix("--evidence=")
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(directory))
 	print("Native display scale: ",DisplayServer.screen_get_scale()," • render method: ",RenderingServer.get_current_rendering_method())
 	scene=load("res://scenes/Main.tscn").instantiate()
 	scene.backend_url="http://127.0.0.1:8001"
 	root.add_child(scene)
 	if not await wait_for(func(): return scene.world_loaded and not scene._operations_pending()): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene.village.set_reduced_motion(true)
 	for dimensions in [Vector2i(960,540),Vector2i(1280,720),Vector2i(1920,1080),Vector2i(1001,701)]:
 		root.content_scale_size=dimensions

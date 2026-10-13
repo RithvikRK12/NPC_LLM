@@ -14,3 +14,8 @@ class Player(Base):
     inventory: Mapped[list[str]] = mapped_column(JSON, default=list)
     position: Mapped[dict] = mapped_column(JSON, default=lambda: {"x": 0.0, "y": 0.0})
     current_location: Mapped[str] = mapped_column(String(128), default="village_square")
+    opening_version: Mapped[int] = mapped_column(Integer, default=1, server_default="1")
+    opening_state: Mapped[str] = mapped_column(String(16), default="complete", server_default="complete")
+    map_version: Mapped[int] = mapped_column(Integer, default=2, server_default="0")
+    salvage_ids: Mapped[list[str]] = mapped_column(JSON, default=list)
+    map_recovery_notice: Mapped[str] = mapped_column(String(255), default="", server_default="")

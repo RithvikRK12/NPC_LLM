@@ -24,9 +24,11 @@ func run_check() -> void:
 	scene.backend_url = "http://127.0.0.1:8001"
 	root.add_child(scene)
 	if not await wait_for(func(): return scene.world_loaded): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	if not await wait_for(func(): return not scene._operations_pending()): return
 	scene._restart_game()
 	if not await wait_for(func(): return scene.world_loaded): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	if not check(scene.bow_state.phase == "available" and not scene.quest_panel.visible, "Must begin in free roam"): return
 	scene.quest_panel.show()
 	scene.quest_panel.start_button.pressed.emit()

@@ -1,4 +1,5 @@
 extends Node2D
+var scripted_mode := false
 var identity := "player"
 var sprite: AnimatedSprite2D
 var facing := "down"
@@ -27,10 +28,18 @@ func rebuild_frames() -> void:
 				frame.atlas = sheet
 				frame.region = Rect2(f*24,d*32,24,32)
 				frames.add_frame(animation,frame)
+	if identity=="player":
+		var recovery: Texture2D=load("res://assets/cutscene/opening/recovery.svg")
+		var poses=["recover","brace","stand","climb_out","fall","look"]
+		for i in range(poses.size()):
+			frames.add_animation(poses[i])
+			var frame:=AtlasTexture.new(); frame.atlas=recovery; frame.region=Rect2(i*24,0,24,32)
+			frames.add_frame(poses[i],frame)
 	sprite.sprite_frames = frames
 	last_animation = ""
 	sprite.play("idle_"+facing)
 func _process(_delta: float) -> void:
+	if scripted_mode: return
 	var parent := get_parent()
 	var velocity: Vector2 = parent.velocity if parent is CharacterBody2D else Vector2.ZERO
 	var moving := velocity.length_squared()>1
@@ -47,3 +56,15 @@ func _draw() -> void:
 	if debug_geometry:
 		draw_rect(Rect2(-12,-8,24,16),Color("ed7364"),false,2)
 		draw_circle(Vector2.ZERO,3,Color.CYAN)
+
+func set_scripted_mode(enabled: bool) -> void:
+	scripted_mode=enabled
+	if enabled and sprite: sprite.pause()
+	if not enabled: last_animation=""; position=Vector2.ZERO
+func play_scripted(animation: StringName, frame_index: int=0) -> void:
+	if not sprite: return
+	var selected: StringName=animation if sprite.sprite_frames.has_animation(animation) else &"idle_up"
+	sprite.animation=selected
+	sprite.frame=posmod(frame_index,sprite.sprite_frames.get_frame_count(selected))
+	sprite.pause()
+func set_facing(direction: StringName) -> void: facing=String(direction)

@@ -337,6 +337,8 @@ class NPCPipelineTests(unittest.TestCase):
 
     def test_saved_world_survives_new_sessions_and_read_requests(self):
         from app.models import Memory
+        snapshot = self.client.get('/world').json()
+        self.client.post('/world/opening/complete', json={'game_scope': snapshot['game_scope'], 'opening_version': 1})
         self.client.post('/quests/bow/start')
         self.client.post('/inventory/transfer', json={'npc_id': 1, 'item': 'water', 'direction': 'to_npc'})
         self.assertEqual(self.client.put('/world/player-position', json={'x': 123.5, 'y': -82}).status_code, 200)
@@ -351,6 +353,8 @@ class NPCPipelineTests(unittest.TestCase):
             self.assertEqual(len(list(reopened.scalars(select(Memory)))), count)
             reset = self.client.post('/world/new-game').json()
             self.assertEqual(reset['player_position'], {'x': 0., 'y': 0.})
+            self.assertEqual(reset['opening_state'], 'pending')
+            self.assertNotEqual(reset['game_scope'], before['game_scope'])
             self.assertEqual(reset['bow_quest']['phase'], 'available')
             self.assertEqual(reset['histories']['1'], [])
             self.assertEqual(reset['player_inventory'], ['water', 'food'])

@@ -1,0 +1,7 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Gatherer cannot be reached for conversation from village
+PASS Walking west through forest reaches Gatherer
+PASS E opens Gatherer's conversation in forest
+PASS Walking back returns to village away from Gatherer
+Forest Gatherer failures: 0

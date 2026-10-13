@@ -37,11 +37,13 @@ func set_reduced_motion(enabled: bool) -> void:
 		prop.reduced_motion = enabled
 		if prop.entry.get("smoke",false): prop.sprite.visible = not enabled
 func _draw() -> void:
-	# Old saved positions remain usable beyond the authored district.
-	draw_rect(Rect2(-100000,-100000,200000,200000),Color("72934f"))
+	pass # IslandWorld owns all exterior land and ocean.
 func path_distance(at: Vector2) -> float:
 	var result := INF
 	for i in range(PATH.size()-1):result = minf(result,Geometry2D.get_closest_point_to_segment(at,PATH[i],PATH[i+1]).distance_to(at))
+	# Join the shared southern approach across this locally owned terrain patch.
+	for segment in [[Vector2(0,1120),Vector2(0,600)],[Vector2(0,600),Vector2(-112,300)],[Vector2(-112,300),Vector2(-112,128)]]:
+		result=minf(result,Geometry2D.get_closest_point_to_segment(at,segment[0],segment[1]).distance_to(at))
 	# A quiet southern clearing leads to the authoritative string pickup.
 	for segment in [[Vector2.ZERO,Vector2(-112,128)],[Vector2(-112,128),Vector2(-70,288)]]:
 		result = minf(result,Geometry2D.get_closest_point_to_segment(at,segment[0],segment[1]).distance_to(at)+12)
@@ -66,7 +68,7 @@ func _terrain() -> ImageTexture:
 			var kind := "shade" if distance< -24 else ("moss" if distance<24 else "grass")
 			var variation := posmod(x/16*7+y/16*13,4)
 			canvas.blit_rect(tiles[kind][variation],Rect2i(0,0,16,16),Vector2i(x,y))
-	for y in range(496,720,4):
+	for y in range(496,1120,4):
 		for x in range(256,1200,4):
 			var at := Vector2(x*2-1408+4,y*2-1120+4)
 			var distance := path_distance(at)

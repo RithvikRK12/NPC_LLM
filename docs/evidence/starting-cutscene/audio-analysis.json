@@ -1,0 +1,42 @@
+{
+  "normal": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "peak_dbfs": -16.92,
+    "silence_probe_seconds": [
+      70.7,
+      71.8
+    ],
+    "silence_peak": 0.0
+  },
+  "fast": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "peak_dbfs": -16.63,
+    "silence_probe_seconds": [
+      35.4,
+      35.8
+    ],
+    "silence_peak": 0.0
+  },
+  "mixed": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "peak_dbfs": -16.39,
+    "silence_probe_seconds": [
+      47.4,
+      47.9
+    ],
+    "silence_peak": 0.0
+  },
+  "reduced": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "peak_dbfs": -16.92,
+    "silence_probe_seconds": [
+      70.7,
+      71.8
+    ],
+    "silence_peak": 0.0
+  }
+}

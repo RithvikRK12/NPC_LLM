@@ -1,3 +1,4 @@
+from app.services.island import MAP_VERSION
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -33,7 +34,7 @@ NPC_SEEDS = [
 def seed_world(db: Session) -> None:
     player = db.scalar(select(Player).where(Player.id == 1))
     if player is None:
-        player = Player(id=1, inventory=["water", "food"], current_location="village_square")
+        player = Player(id=1, inventory=["water", "food"], current_location="village_square", opening_state="pending", map_version=MAP_VERSION)
         db.add(player)
         db.flush()
 
@@ -65,6 +66,11 @@ def reset_world(db: Session) -> None:
     player.position = {'x': 0.0, 'y': 0.0}
     player.inventory = ['water', 'food']
     player.current_location = 'village_square'
+    player.opening_state = 'pending'
+    player.opening_version = 1
+    player.map_version = MAP_VERSION
+    player.salvage_ids = []
+    player.map_recovery_notice = ''
     for npc in npcs:
         initial = next((values for values in NPC_SEEDS if values['name'] == npc.name), None)
         if initial is not None:

@@ -12,3 +12,9 @@ window/size/window_height_override=720
 window/stretch/mode="disabled"
 window/size/min_width=960
 window/size/min_height=540
+
+[input]
+cutscene_fast_forward={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":32)]
+}

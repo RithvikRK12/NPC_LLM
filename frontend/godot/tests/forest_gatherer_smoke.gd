@@ -25,14 +25,17 @@ func key(code: int, pressed: bool) -> void:
 	event.keycode = code
 	event.pressed = pressed
 	Input.parse_input_event(event)
+	Input.flush_buffered_events()
 
 func run_check() -> void:
 	scene = load("res://scenes/Main.tscn").instantiate()
 	scene.backend_url = "http://127.0.0.1:8001"
 	root.add_child(scene)
 	if not await wait_for(func(): return scene.world_loaded and not scene._operations_pending()): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene._restart_game()
 	if not await wait_for(func(): return scene.world_loaded): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene.player.position = Vector2(0,70)
 	scene._update_current_npc()
 	check(scene.current_npc == null,"Gatherer cannot be reached for conversation from village")

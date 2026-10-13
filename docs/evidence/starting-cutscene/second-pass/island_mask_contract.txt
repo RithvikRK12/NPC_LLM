@@ -1,0 +1,3 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS All 196608 land cells match shared mask contract: f6c382908beb25a962ea6aeca9e818ca1b4c29f2ea6d88e350958fcb655afea4

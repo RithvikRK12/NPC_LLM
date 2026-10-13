@@ -1,0 +1,23 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Opaque coast mask through 0.0
+PASS Opaque coast mask through 3.0
+PASS Opaque coast mask through 6.0
+PASS Opaque coast mask through 22.0
+PASS Opaque coast mask through 27.99
+PASS Coast fully uncovered at 29.5
+PASS Shore inside minimum-height safe frame by 29.5
+PASS Failed turn before contact
+PASS Damage staged at 33.0
+PASS Damage staged at 34.2
+PASS Damage staged at 35.4
+PASS Reduced motion suppresses impact shake
+PASS Restart clears damage and crash effects
+PASS Ambience loops cover the authored sample frames
+PASS Intentional blackout silence
+PASS Surf returns at 42
+PASS Pause freezes opening audio
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2514)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:795)

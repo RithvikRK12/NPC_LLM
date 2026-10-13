@@ -264,21 +264,21 @@ func _process(_delta: float) -> void:
 	# from the bottom margin so the reply and Send button remain on screen.
 	offset_top = -maxf(preferred_height, get_combined_minimum_size().y + 24)
 	item_grid.fit_columns(supplies_panel.size.x - 48)
-	var compact := get_viewport_rect().size.y < 640
+	var compact: bool = get_parent().size.y < 640
 	# The selected name is already present on Request and in each slot tooltip.
 	npc_inventory_label.visible = not compact
 	for panel in [history_panel, supplies_panel]:
 		var overlay_theme: Theme = compact_overlay_theme if compact else null
 		if panel.theme != overlay_theme: panel.theme = overlay_theme
-		panel.offset_left = global_position.x + 16
-		panel.offset_right = -global_position.x - 16
-		panel.offset_top = maxf(16 if compact else 24, global_position.y - 320)
-		panel.offset_bottom = global_position.y - (12 if compact else 16)
+		panel.offset_left = position.x + 16
+		panel.offset_right = -position.x - 16
+		panel.offset_top = maxf(16 if compact else 24, position.y - 320)
+		panel.offset_bottom = position.y - (12 if compact else 16)
 	queue_redraw()
 
 func _draw() -> void:
 	if active_speaker == "System" or not speaker_visible: return
-	var x := clampf(speaker_screen.x - global_position.x, 36, size.x - 36)
+	var x := clampf((get_global_transform().affine_inverse() * speaker_screen).x, 36, size.x - 36)
 	draw_colored_polygon(PackedVector2Array([Vector2(x - 16, 3), Vector2(x, -18), Vector2(x + 16, 3)]), Color("70482c"))
 	draw_colored_polygon(PackedVector2Array([Vector2(x - 10, 4), Vector2(x, -10), Vector2(x + 10, 4)]), Styles.PARCHMENT)
 

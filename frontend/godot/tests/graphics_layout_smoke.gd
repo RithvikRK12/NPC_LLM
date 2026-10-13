@@ -15,7 +15,7 @@ func run_check() -> void:
 		view.resize_world(size)
 		check(view.enlargement == (3 if size.x==1920 else 2),"Integer enlargement at %s" % size)
 		check(view.world_viewport.size * view.enlargement + Vector2i(view.remainder) == size,"Viewport covers window with only integer remainder at %s" % size)
-		check(view.world_camera.zoom == Vector2(0.5,0.5),"World units retained at %s" % size)
+		check(view.world_camera.zoom == Vector2(0.75,0.75),"World magnification is 1.5 times the previous framing at %s" % size)
 	var layout = load("res://resources/village_layout.tres")
 	var village = load("res://scripts/village.gd").new()
 	view.world.add_child(village)
@@ -83,7 +83,7 @@ func run_check() -> void:
 	for role in ["player","craftsman","gatherer"]:
 		person.identity = role
 		person.rebuild_frames()
-		check(person.sprite.sprite_frames.get_animation_names().size()==8,"Four idle/walk directions for %s" % role)
+		check(Array(person.sprite.sprite_frames.get_animation_names()).filter(func(animation): return String(animation).begins_with("idle_") or String(animation).begins_with("walk_")).size()==8,"Four idle/walk directions for %s" % role)
 		check(person.sprite.position==Vector2(-24,-60) and person.sprite.scale==Vector2(2,2),"Stable (12,30) foot pivot for %s" % role)
 	view.follow(Vector2(13.25,20.75))
 	check(view.world_camera.position == Vector2(14,20),"Camera snaps presentation without modifying simulation")

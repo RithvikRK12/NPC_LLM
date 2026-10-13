@@ -1,0 +1,12 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+Movie Maker mode enabled, recording movie at 30 FPS...
+PASS Native route: 3662.30724215508 wu / 20.346151345306 s; frames=612 endpoint=(0.0, -0.0) peak chunks=24 peak props=846 max update us=15182 generation ms=10616
+--------------------------------------------------------------------------------
+Done recording movie at path: /tmp/second-walk-large.avi
+630 frames at 30 FPS (movie length: 00:00:21:00), recorded in 00:00:11 (190% of real-time speed).
+CPU render time: 0.01 seconds (average: 0.01 ms/frame)
+GPU render time: 0.00 seconds (average: 0.00 ms/frame)
+Encoding time: 5.06 seconds (average: 8.04 ms/frame)
+--------------------------------------------------------------------------------

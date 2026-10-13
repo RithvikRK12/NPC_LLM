@@ -1,0 +1,20 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PASS Real backend checkpoint adapter
+CHECKPOINT time=59.8 focused=true paused=false error=
+PASS Durable checkpoint acknowledged
+PASS Final step releases control at exact shared marker
+PASS No residual cinematic velocity
+PASS Fade releases gameplay
+PASS Single camera aligns at handoff
+PASS Animation returns to gameplay
+PASS Handoff does not open hidden dialogue windows
+PASS Normal player physics restored
+SURF playing=true paused=false same voice=true released=true loop end=88200
+PASS Playing surf ownership transfers to persistent beach
+PASS HUD appears without automatic panels
+PASS Salvage adds exactly one rope
+PASS Completed run resumes exact float position
+PASS Completed beach reload resumes persistent ambience
+PASS Pickup persists across reload

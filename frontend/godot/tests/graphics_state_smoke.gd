@@ -22,8 +22,10 @@ func new_scene():
 func run_check() -> void:
 	var scene=new_scene()
 	if not await wait_for(func(): return scene.world_loaded and not scene._operations_pending()): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene._restart_game()
 	if not await wait_for(func(): return scene.world_loaded): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene._quest_call("start")
 	if not await wait_for(func(): return not scene.quest_busy): return
 	scene.chat_windows[1].open_chat()
@@ -38,6 +40,7 @@ func run_check() -> void:
 	await process_frame
 	scene=new_scene()
 	if not await wait_for(func(): return scene.world_loaded and not scene.position_busy): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	check(scene.village.layout.is_walkable(scene.player.position) and scene.player.position!=Vector2(496.25,-160.75),"Old position inside new cottage recovers to clear ground")
 	check(not scene.recovery_notice.is_empty(),"Recovery explained to player")
 	check(scene.last_saved_position==scene.player.position,"Recovered position saved through existing save path")
@@ -59,6 +62,7 @@ func run_check() -> void:
 	await process_frame
 	scene=new_scene()
 	if not await wait_for(func(): return scene.world_loaded): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	check(scene.player.position==float_position,"Old save outside detailed district retains exact floating-point position")
 	print("Graphics state failures: ",failures)
 	quit(1 if failures else 0)

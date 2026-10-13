@@ -84,3 +84,45 @@ interaction. A rendered run also saves previews under `/tmp/willowbrook-interior
 The game calls `advance` only while crafting. Context, prompts, validation, role conditioning, state updates and memory are organized under `backend/app/services`.
 
 Godot loads `GET /world` before enabling gameplay. Player position autosaves once per second through `PUT /world/player-position` and saves again on normal window close; gameplay transactions save immediately. A forced process termination can lose the most recent unsaved movement. The Restart Game button asks for confirmation and calls `POST /world/new-game`, clearing chats and memories and resetting inventories, position, NPC states, pending requests, pickups and crafting timers without changing NPC IDs. Pending operations finish before restart is allowed. On save failure, normal close keeps the window open to let you retry. This demo still uses one shared save, not separate player profiles; restart affects that shared world.
+
+## Shipwreck opening and island
+
+Fresh games begin with a 60-second opening on the island's southern coast. Hold
+**Space** for 2× playback and release for normal speed; press **L** to skip
+straight to the beach, or **Esc** for pause/settings.
+Older saves resume without replaying it. Offshore legacy positions recover to
+reachable land while preserving progress. After arrival, inspect the hull with
+**E**, collect the nearby rope with **F**, and follow the path north.
+
+Preview any shot/effect without a backend or real save:
+
+```sh
+/private/tmp/npc-godot-runtime/Godot.app/Contents/MacOS/Godot \
+  --path frontend/godot res://scenes/cutscenes/opening/OpeningPreview.tscn
+```
+
+Import assets first as described above. The preview supports shot/effect selection,
+seek, restart, pause, 2×, reduced motion/flashes, captions and markers.
+[Implementation, launch/test instructions and recorded evidence](docs/evidence/starting-cutscene/walkthrough.md)
+include the island capacity review, save migration and remaining review items.
+
+## Old fisherman
+
+Rowan sits on the fallen log east of the southern approach path. Within 10 meters,
+the player automatically walks to the front of the log, then a one-time look-up
+introduction opens his fixed dialogue. On later visits,
+approach and press **E**. Each branch has three selections, then a final response;
+**Continue** closes the dialogue. Press **E** again to hear the opening. **Close / Back** or **Esc** releases movement.
+HUD, dialogue and menu controls scale up automatically on larger fullscreen
+displays. [Implementation and verification](docs/evidence/old-fisherman/walkthrough.md).
+
+At the first gameplay handoff, a large controls card pauses movement until you
+select **Let's go** (or press **Esc**). “Find someone to get help.” then appears
+near the center before shrinking into the upper-left HUD. The card is shown once
+per saved run; later launches resume with the objective already docked.
+[Onboarding behavior and verification](docs/evidence/onboarding/walkthrough.md).
+
+The help objective displays a check mark and fades away when Rowan's introduction
+starts. Press **E** near the broken hull or the north-pointing wooden sign to
+open an inspection text panel; the sign reads **Willowbrook**. Use **Close** or
+**Esc** to return to play.

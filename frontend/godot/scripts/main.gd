@@ -2,6 +2,17 @@ extends Node2D
 
 @export var backend_url := "http://127.0.0.1:8000"
 
+var gameplay_visibility: Dictionary = {}
+var cinematic := false
+var opening: Node
+var fisherman: Node2D
+var onboarding: Control
+var inspection: PanelContainer
+var island: Node2D
+var beach: Node2D
+var game_scope := ""
+var salvage_request: HTTPRequest
+var salvage_busy := false
 var world_view: Node
 var village: Node2D
 var interiors: Array[Node2D] = []
@@ -49,6 +60,8 @@ var back_button: Button
 var previous_focus: Control
 var active_npc_id := 0
 var save_error := false
+var reduced_flashes := false
+var sound_captions := false
 var large_text := false
 var restart_in_flight := false
 const Styles = preload("res://scripts/medieval_theme.gd")
@@ -59,11 +72,26 @@ func _ready() -> void:
 	get_tree().auto_accept_quit = false
 	_build_world()
 	_build_ui()
+	fisherman.build_ui(ui)
+	ui.move_child(fisherman.panel,menu_layer.get_index())
+	inspection = preload("res://scripts/inspection_popup.gd").new()
+	ui.add_child(inspection)
+	ui.move_child(inspection,menu_layer.get_index())
+	onboarding = preload("res://scripts/onboarding.gd").new()
+	ui.add_child(onboarding)
+	ui.move_child(onboarding,menu_layer.get_index())
+	get_viewport().size_changed.connect(_resize_ui)
+	_resize_ui()
+	salvage_request=HTTPRequest.new(); salvage_request.timeout=8; add_child(salvage_request)
+	salvage_request.request_completed.connect(_salvage_completed)
 	_load_world()
 
 
 func _process(_delta: float) -> void:
-	player.set_physics_process(world_loaded and not quitting and not travelling and not ui_owns_input())
+	if not cinematic and not menu_layer.visible and not quitting:
+		onboarding.advance(_delta,village.reduced_motion)
+		onboarding.set_obscured(quest_panel.visible or inventory_drawer.visible)
+	player.set_physics_process(world_loaded and not cinematic and not quitting and not travelling and not ui_owns_input())
 	restart_button.disabled = not world_loaded or _operations_pending() or quitting
 	resume_button.disabled = quitting
 	quit_button.disabled = quitting
@@ -78,9 +106,27 @@ func _process(_delta: float) -> void:
 		if not _operations_pending():
 			if not world_loaded: get_tree().quit()
 			else: _save_position()
+	if cinematic:
+		opening.director.set_paused(menu_layer.visible or quitting)
+		for npc in npc_nodes.values(): npc.label.hide()
+		for child in ui.get_children():
+			if child is CanvasItem and child!=menu_layer and child!=restart_dialog: child.hide()
+		return
+	island.view_half_extent=Vector2(world_view.world_viewport.size)
+	island.update_active_chunks(player.position)
 	var room: String = village.layout.interior_at(player.position)
+	beach.set_ambience(world_loaded and room.is_empty() and player.position.distance_to(beach.marker("ControlHandoff"))<1600)
 	world_view.follow(player.position if room.is_empty() else village.layout.interior_origin(room) + Vector2(0,-16))
 	_update_current_npc()
+	if world_loaded and not quitting and not ui_owns_input():
+		if fisherman.try_introduction(player.position):
+			onboarding.complete_objective()
+			player.velocity = Vector2.ZERO
+			player.set_physics_process(false)
+			fisherman.begin_approach(player,village.layout)
+	if fisherman.introducing and not menu_layer.visible and not quitting:
+		fisherman.advance_intro(_delta)
+		world_view.follow(player.position.lerp(fisherman.position,0.5))
 	interaction_label.text = "E  Talk to " + current_npc.display_name if current_npc != null else "Approach a villager to talk"
 	if not room.is_empty():
 		interaction_label.text = village.layout.interiors()[room].name + " • Walk down to leave" if current_npc == null else interaction_label.text
@@ -89,14 +135,18 @@ func _process(_delta: float) -> void:
 	_update_give_action()
 	if string_pickup.visible and player.position.distance_to(string_pickup.position) < 64:
 		interaction_label.text = "F  Pick up string"
-	var conversation_open := false
+	if player.position.distance_to(fisherman.position) <= fisherman.TALK_RADIUS:
+		interaction_label.text = "E  Talk to Rowan"
+	var conversation_open: bool = fisherman.owns_input() or inspection.visible
 	var dialogue_top := ui.size.y
 	for window in chat_windows.values():
 		if window.visible:
 			conversation_open = true
-			dialogue_top = minf(dialogue_top,window.global_position.y)
+			dialogue_top = minf(dialogue_top,window.position.y)
 	interaction_label.visible = not conversation_open
 	help_label.visible = not conversation_open
+	if player.position.distance_to(beach.marker("SupplyApproach"))<64 and beach.salvage_available: interaction_label.text="F  Collect washed-up rope"
+	elif not _inspection_at(player.position).is_empty(): interaction_label.text="E  Inspect " + str(_inspection_at(player.position).title).to_lower()
 	if not recovery_notice.is_empty(): interaction_label.text = recovery_notice
 	inventory_drawer.offset_left = -minf(310, ui.size.x * 0.285)
 	inventory_drawer.offset_right = minf(310, ui.size.x * 0.285)
@@ -114,14 +164,14 @@ func _process(_delta: float) -> void:
 		window.modal_blocked = menu_layer.visible or quitting or restart_dialog.visible
 		var target: Node2D = player if window.active_speaker == "Player" else npc_nodes[id]
 		window.speaker_screen = world_view.world_to_screen(target.global_position - Vector2(0,48))
-		window.speaker_visible = Rect2(Vector2.ZERO, ui.size).has_point(window.speaker_screen)
+		window.speaker_visible = get_viewport_rect().has_point(window.speaker_screen)
 	for npc in npc_nodes.values():
-		npc.label.position = world_view.world_to_screen(npc.position - Vector2(0,92)) - Vector2(80,0)
+		npc.label.position = world_view.world_to_screen(npc.position - Vector2(0,92)) / ui.scale - Vector2(80,0)
 		npc.label.visible = Rect2(Vector2.ZERO,ui.size).has_point(npc.label.position+Vector2(80,0)) and not conversation_open
 
 
 func ui_owns_input() -> bool:
-	if travelling: return true
+	if cinematic or travelling or fisherman.owns_input() or onboarding.owns_input() or inspection.visible: return true
 	if menu_layer.visible or restart_dialog.visible or inventory_drawer.visible or quest_panel.visible: return true
 	for window in chat_windows.values():
 		if window.visible: return true
@@ -129,6 +179,10 @@ func ui_owns_input() -> bool:
 
 func _input(event: InputEvent) -> void:
 	if travelling: return
+	if cinematic and not quitting and not menu_layer.visible and not restart_dialog.visible and event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_L:
+		get_viewport().set_input_as_handled()
+		opening.skip()
+		return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_F3:
 		village.set_debug(not village.debug_geometry)
 		for interior in interiors: interior.set_debug(village.debug_geometry)
@@ -141,7 +195,8 @@ func _input(event: InputEvent) -> void:
 		if event.keycode in [KEY_TAB, KEY_UP, KEY_DOWN]:
 			get_viewport().set_input_as_handled()
 			if event.echo or quitting: return
-			var controls: Array[Control] = [resume_button, restart_button, quit_button, menu_panel.get_child(0).get_child(4), retry_button, back_button, menu_panel.get_child(0).get_child(menu_panel.get_child(0).get_child_count()-1)]
+			var controls: Array[Control] = []
+			for button in menu_panel.find_children("*","BaseButton",true,false): controls.append(button)
 			var available: Array[Control] = []
 			for control in controls:
 				if control.is_visible_in_tree() and not control.disabled: available.append(control)
@@ -156,15 +211,25 @@ func _input(event: InputEvent) -> void:
 			restart_dialog.hide()
 			restart_button.grab_focus()
 		elif menu_layer.visible: _resume_game()
+		elif inspection.visible: inspection.close()
+		elif onboarding.owns_input(): onboarding.dismiss()
+		elif fisherman.owns_input(): fisherman.close_dialogue()
 		else: _open_menu()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not world_loaded or quitting or travelling or menu_layer.visible or restart_dialog.visible: return
+	if cinematic or not world_loaded or quitting or travelling or menu_layer.visible or restart_dialog.visible or onboarding.owns_input(): return
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_I:
 			_toggle_bag()
 		elif not ui_owns_input():
+			if event.keycode == KEY_F and player.position.distance_to(beach.marker("SupplyApproach"))<64 and beach.salvage_available:
+				_collect_salvage()
+				return
 			if event.keycode == KEY_E:
+				var inspected := _inspection_at(player.position)
+				if not inspected.is_empty():
+					_open_inspection(inspected)
+					return
 				var door: String = village.layout.doorway_at(player.position)
 				if not door.is_empty(): _enter_building(door)
 				else: _open_dialogue()
@@ -174,8 +239,14 @@ func _unhandled_input(event: InputEvent) -> void:
 func _build_world() -> void:
 	world_view = preload("res://scripts/world_view.gd").new()
 	add_child(world_view)
+	island=preload("res://scripts/island_world.gd").new()
+	world_view.world.add_child(island)
+	beach=preload("res://scripts/shipwreck_beach.gd").new()
+	world_view.world.add_child(beach)
 	village = preload("res://scripts/village.gd").new()
 	world_view.world.add_child(village)
+	fisherman = preload("res://scripts/fisherman_encounter.gd").new()
+	world_view.world.add_child(fisherman)
 	for id in village.layout.interiors():
 		var interior := preload("res://scripts/building_interior.gd").new()
 		interior.room_id = id
@@ -214,7 +285,11 @@ func _build_world() -> void:
 	travel_fade.hide()
 
 func _physics_process(_delta: float) -> void:
-	if not world_loaded or quitting or travelling or ui_owns_input(): return
+	if fisherman.approaching:
+		if not menu_layer.visible and not quitting: fisherman.advance_approach(player,_delta)
+		else: player.velocity = Vector2.ZERO
+		return
+	if cinematic or not world_loaded or quitting or travelling or ui_owns_input(): return
 	var room: String = village.layout.interior_at(player.position)
 	if room.is_empty():
 		var door: String = village.layout.doorway_at(player.position)
@@ -282,6 +357,7 @@ func _build_ui() -> void:
 	hud_row.offset_top = 16
 	bag_button = make_button("Bag • I", _toggle_bag, hud_row)
 	make_button("Quests", func():
+		if cinematic: return
 		var opening := not quest_panel.visible
 		_close_overlays()
 		quest_panel.visible = opening, hud_row)
@@ -367,7 +443,7 @@ func _build_ui() -> void:
 	menu_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	menu.add_child(menu_title)
 	resume_button = make_button("Resume", _resume_game, menu)
-	restart_button = make_button("Restart Game", func(): restart_dialog.popup_centered(Vector2i(520, 180)), menu)
+	restart_button = make_button("Restart Game", func(): restart_dialog.popup_centered(Vector2i(Vector2(520,180)*ui.scale.x)), menu)
 	quit_button = make_button("Quit Game", _begin_shutdown, menu)
 	var larger := CheckButton.new()
 	larger.text = "Larger text"
@@ -390,8 +466,19 @@ func _build_ui() -> void:
 	back_button.hide()
 	var motion := CheckButton.new()
 	motion.text = "Reduced scenery motion"
-	motion.toggled.connect(func(enabled): village.set_reduced_motion(enabled))
-	menu.add_child(motion)
+	motion.toggled.connect(func(enabled):
+		village.set_reduced_motion(enabled)
+		if is_instance_valid(opening): opening.reduced_motion=enabled)
+	var access:=HBoxContainer.new(); menu.add_child(access)
+	access.add_child(motion)
+	var flashes:=CheckButton.new(); flashes.text="Soft light"; access.add_child(flashes)
+	flashes.toggled.connect(func(value):
+		reduced_flashes=value
+		if is_instance_valid(opening): opening.reduced_flashes=value)
+	var captions_button:=CheckButton.new(); captions_button.text="Captions"; access.add_child(captions_button)
+	captions_button.toggled.connect(func(value):
+		sound_captions=value
+		if is_instance_valid(opening): opening.captions=value)
 	menu_layer.hide()
 	restart_dialog = ConfirmationDialog.new()
 	restart_dialog.theme = ui.theme
@@ -434,12 +521,14 @@ func _build_ui() -> void:
 
 
 func _close_overlays() -> void:
+	inspection.close()
+	fisherman.close_dialogue()
 	inventory_drawer.hide()
 	quest_panel.hide()
 	for window in chat_windows.values(): window.close_overlays()
 
 func _toggle_bag() -> void:
-	if quitting or menu_layer.visible: return
+	if cinematic or quitting or menu_layer.visible or onboarding.owns_input(): return
 	var opening := not inventory_drawer.visible
 	_close_overlays()
 	inventory_drawer.visible = opening
@@ -473,7 +562,12 @@ func _begin_shutdown() -> void:
 			world_busy = false
 
 func _open_dialogue() -> void:
-	if current_npc == null or not world_loaded:
+	if world_loaded and not cinematic and player.position.distance_to(fisherman.position) <= fisherman.TALK_RADIUS:
+		_close_overlays()
+		for window in chat_windows.values(): window.close_chat()
+		fisherman.open_dialogue()
+		return
+	if cinematic or current_npc == null or not world_loaded:
 		return
 	_close_overlays()
 	for window in chat_windows.values():
@@ -520,7 +614,25 @@ func _world_completed(result: int, code: int, _headers: PackedStringArray, body:
 	_update_player(data)
 	_update_quest(data.get("bow_quest", {}))
 	world_loaded = true
-	if player.position != last_saved_position: _save_position()
+	game_scope=str(data.get("game_scope",""))
+	fisherman.set_scope(game_scope)
+	onboarding.set_scope(game_scope)
+	if fisherman.intro_seen: onboarding.complete_objective(false)
+	beach.salvage_available=data.get("opening_capability",0)==1 and not data.get("salvage_ids",[]).has("southern_rope")
+	beach.queue_redraw()
+	if data.get("opening_capability",0)==1 and data.get("opening_state","complete")=="pending":
+		_start_opening()
+	else:
+		if is_instance_valid(opening): opening.cancel(); opening.queue_free(); opening=null
+		cinematic=false
+		_restore_gameplay_view()
+		player.show(); player.set_control_enabled(true); player.get_child(0).set_scripted_mode(false)
+		if not str(data.get("map_recovery_notice","")).is_empty():
+			recovery_notice=data.map_recovery_notice
+			last_saved_position=Vector2.INF # Same-position save acknowledges the one-time migration notice.
+			get_tree().create_timer(8).timeout.connect(func(): recovery_notice="")
+		if player.position != last_saved_position: _save_position()
+		onboarding.begin()
 
 
 func _apply_chat_state(response: Dictionary) -> void:
@@ -619,6 +731,7 @@ func _give_recipient():
 	return current_npc
 
 func _give_selected_item() -> void:
+	if cinematic: return
 	var recipient = _give_recipient()
 	if recipient == null or not player_items.has(player_grid.selected_item) or quitting or menu_layer.visible: return
 	var window = chat_windows[recipient.npc_id]
@@ -641,7 +754,7 @@ func _update_quest(data: Dictionary) -> void:
 
 
 func _quest_call(action: String, payload: Dictionary = {}) -> void:
-	if quest_busy or not world_loaded or quitting or restart_dialog.visible: return
+	if cinematic or quest_busy or not world_loaded or quitting or restart_dialog.visible: return
 	quest_busy = true
 	quest_panel.start_button.disabled = true
 	var error := quest_request.request(backend_url + "/quests/bow/" + action, PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_POST, JSON.stringify(payload))
@@ -675,7 +788,7 @@ func _quest_completed(result: int, code: int, _headers: PackedStringArray, body:
 
 
 func _operations_pending() -> bool:
-	if travelling or quest_busy or position_busy or world_busy: return true
+	if travelling or quest_busy or position_busy or world_busy or salvage_busy or (is_instance_valid(opening) and opening.busy): return true
 	for window in chat_windows.values():
 		if window.pending: return true
 	return false
@@ -683,6 +796,14 @@ func _operations_pending() -> bool:
 
 func _restart_game() -> void:
 	if _operations_pending() or not world_loaded or quitting: return
+	onboarding.reset_presentation()
+	inspection.close()
+	if is_instance_valid(opening): opening.cancel(); opening.queue_free(); opening=null
+	cinematic=false
+	fisherman.close_dialogue()
+	_restore_gameplay_view()
+	player.show(); player.get_child(0).set_scripted_mode(false)
+	player.set_control_enabled(false); player.set_physics_process(false)
 	menu_layer.hide()
 	restart_in_flight = true
 	world_loaded = false
@@ -697,13 +818,16 @@ func _restart_game() -> void:
 
 
 func _save_position() -> void:
+	if cinematic:
+		if quitting and not _operations_pending(): get_tree().quit()
+		return
 	if not world_loaded or position_busy or world_busy or restart_dialog.visible or save_error: return
 	if player.position == last_saved_position:
 		if quitting and not _operations_pending(): get_tree().quit()
 		return
 	sent_position = player.position
 	position_busy = true
-	var error := position_request.request(backend_url + "/world/player-position", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_PUT, JSON.stringify({"x": sent_position.x, "y": sent_position.y}))
+	var error := position_request.request(backend_url + "/world/player-position", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_PUT, JSON.stringify({"x": sent_position.x, "y": sent_position.y, "game_scope": game_scope if not game_scope.is_empty() else null}))
 	if error != OK:
 		position_busy = false
 		_save_failed()
@@ -732,3 +856,76 @@ func _save_failed() -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST: _begin_shutdown()
+
+func _start_opening() -> void:
+	onboarding.reset_presentation()
+	inspection.close()
+	if is_instance_valid(opening): opening.cancel(); opening.queue_free()
+	_restore_gameplay_view()
+	cinematic=true
+	beach.set_ambience(false)
+	ui.get_parent().layer=30
+	_close_overlays()
+	gameplay_visibility.clear()
+	for child in ui.get_children():
+		if child is CanvasItem: gameplay_visibility[child.get_instance_id()]=child.visible
+	player.velocity=Vector2.ZERO
+	player.set_physics_process(false)
+	island.prepare_region(&"south")
+	opening=preload("res://scenes/cutscenes/opening/opening_session.gd").new()
+	opening.fake=false; opening.backend_url=backend_url; opening.game_scope=game_scope
+	opening.reduced_motion=village.reduced_motion; opening.reduced_flashes=reduced_flashes; opening.captions=sound_captions
+	opening.configure(world_view,player,beach,travel_fade)
+	opening.completed.connect(_opening_finished)
+	add_child(opening)
+func _restore_gameplay_view() -> void:
+	ui.get_parent().layer=0
+	for child in ui.get_children():
+		if child is CanvasItem and child!=menu_layer and child!=restart_dialog and gameplay_visibility.has(child.get_instance_id()):
+			child.visible=gameplay_visibility[child.get_instance_id()]
+	gameplay_visibility.clear()
+func _opening_finished() -> void:
+	cinematic=false
+	_restore_gameplay_view()
+	player.set_physics_process(false)
+	last_saved_position=beach.marker("ControlHandoff") # Checkpoint spawn; a rare fallback still needs its own position save.
+	beach.adopt_ambience(opening.audio.take_ambience())
+	_close_overlays(); menu_layer.hide(); restart_dialog.hide()
+	help_label.text="WASD Move • E Inspect / Talk • F Pick up • I Bag • Esc Menu"
+	onboarding.begin()
+func _collect_salvage() -> void:
+	if cinematic or salvage_busy or game_scope.is_empty(): return
+	salvage_busy=true
+	var error:=salvage_request.request(backend_url+"/world/beach/salvage",PackedStringArray(["Content-Type: application/json"]),HTTPClient.METHOD_POST,JSON.stringify({"game_scope":game_scope,"x":player.position.x,"y":player.position.y}))
+	if error!=OK: salvage_busy=false
+func _salvage_completed(result: int,code: int,_headers: PackedStringArray,body: PackedByteArray) -> void:
+	salvage_busy=false
+	var data: Variant=JSON.parse_string(body.get_string_from_utf8())
+	if result==HTTPRequest.RESULT_SUCCESS and code==200 and data is Dictionary:
+		_update_player(data); beach.salvage_available=false; beach.queue_redraw()
+	else:
+		recovery_notice="Could not collect rope. Move closer and try again."
+		get_tree().create_timer(6).timeout.connect(func(): recovery_notice="")
+
+func _resize_ui() -> void:
+	# Keep a readable 1280×720 logical canvas while the world renderer retains
+	# its own pixel scaling and camera. Wide windows gain horizontal room.
+	var window := get_viewport_rect().size
+	var factor: float = preload("res://scripts/ui_scaling.gd").factor(window)
+	ui.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	ui.scale = Vector2.ONE * factor
+	ui.size = window / factor
+	restart_dialog.content_scale_factor = factor
+
+func _inspection_at(at: Vector2) -> Dictionary:
+	if at.distance_to(beach.marker("HullExit")) < 140:
+		return {"title":"Broken hull","text":"Splintered planks open a breach through the hull. The fallen mast lies across the deck."}
+	if at.distance_to(island.SCENERY.SIGN_POSITION) < 100:
+		return {"title":"Wooden sign","text":"Willowbrook"}
+	return {}
+
+func _open_inspection(item: Dictionary) -> void:
+	_close_overlays()
+	for window in chat_windows.values(): window.close_chat()
+	player.velocity = Vector2.ZERO
+	inspection.present(item.title,item.text)

@@ -1,0 +1,18 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Pending snapshot takes cinematic ownership
+PASS Held gameplay keys cannot move body
+PASS Gameplay input cannot open panels or mutate world
+PASS Clickable gameplay callbacks stay gated
+PASS Position autosaves suppressed
+PASS HUD hidden
+PASS Voyage uses visual proxy
+PASS Gameplay follow cannot overwrite cinematic camera
+PASS New Game during voyage preserves baseline HUD at replacement handoff
+PASS Failed reset reconnect restores completed-run gameplay ownership
+PASS Failed reset reconnect restores normal HUD
+PASS Older backend snapshot follows gameplay without opening requests
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2514)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:795)

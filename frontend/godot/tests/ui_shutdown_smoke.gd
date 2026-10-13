@@ -18,8 +18,15 @@ func run_check() -> void:
 		print("PASS initial loading repeated quit entered shutdown")
 		return
 	while not scene.world_loaded or scene._operations_pending(): await process_frame
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene._restart_game()
 	while not scene.world_loaded: await process_frame
+	if mode=="opening":
+		if not scene.cinematic: push_error("Fresh run must own cinematic input"); quit(1); return
+		scene._begin_shutdown()
+		print("PASS quitting unfinished opening without a position save")
+		return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene.player.position = Vector2(73, 83)
 	if mode == "pending":
 		var chat = scene.chat_windows[1]

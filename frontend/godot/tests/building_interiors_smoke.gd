@@ -47,8 +47,10 @@ func run_check() -> void:
 	DirAccess.make_dir_recursive_absolute(EVIDENCE)
 	new_scene()
 	if not await wait_for(func(): return scene.world_loaded and not scene._operations_pending()): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene._restart_game()
 	if not await wait_for(func(): return scene.world_loaded): return
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	var count := 0
 	for entry in layout.objects():
 		if entry.art not in ["workshop", "cottage-a", "cottage-b"]: continue
@@ -104,6 +106,7 @@ func run_check() -> void:
 		await process_frame
 		new_scene()
 		if not await wait_for(func(): return scene.world_loaded): return
+		if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 		check(scene.player.position == origin + Vector2(0.25, 128.75), "Save resumes exact interior position: " + entry.id)
 		key(KEY_S, true)
 		if not await wait_for(func(): return layout.interior_at(scene.player.position).is_empty()): return

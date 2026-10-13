@@ -36,13 +36,16 @@ func escape() -> void:
 	Input.parse_input_event(event)
 
 func run_check() -> void:
+	root.size=Vector2i(1280,720)
 	DirAccess.make_dir_recursive_absolute(evidence)
 	scene = load("res://scenes/Main.tscn").instantiate()
 	scene.backend_url = "http://127.0.0.1:8001"
 	root.add_child(scene)
 	await wait_for(func(): return scene.world_loaded and not scene._operations_pending())
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	scene._restart_game()
 	await wait_for(func(): return scene.world_loaded)
+	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	check(scene.npc_nodes[2].position.x < -500, "Gatherer works deeper in the forest, away from village")
 	check(scene.village.layout.route_exists(Vector2.ZERO, scene.npc_nodes[2].position + Vector2(0,64)), "Forest Gatherer remains reachable from village")
 	await snapshot("exploration-1280")

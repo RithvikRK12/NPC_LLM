@@ -1,5 +1,8 @@
 extends Resource
 @export_file("*.json") var data_file: String
+const BEACH = preload("res://resources/shipwreck_beach.tres")
+const SCENERY = preload("res://resources/south_scenery.tres")
+const ISLAND = preload("res://resources/island_layout.tres")
 var _objects: Array = []
 var _interiors: Dictionary = {}
 const INTERIOR_FLOOR := Rect2(-320, -176, 640, 384)
@@ -65,6 +68,10 @@ func is_walkable(at: Vector2) -> bool:
 		for rect in interior_obstacles(room):
 			if rect.grow_individual(12,8,12,8).has_point(at): return false
 		return true
+	if not ISLAND.is_exterior_walkable(at) or SCENERY.blocked(at): return false
+	var beach: Dictionary = BEACH.data()
+	for solid in beach.solids:
+		if Rect2(solid[0],solid[1],solid[2],solid[3]).grow_individual(12,8,12,8).has_point(at): return false
 	for entry in objects():
 		var f := local_footprint(entry)
 		if f.size == Vector2.ZERO: continue
@@ -78,7 +85,7 @@ func recover_position(at: Vector2) -> Vector2:
 	if not room.is_empty():
 		var spawn: Array = interiors()[room].spawn
 		return interior_origin(room) + Vector2(spawn[0],spawn[1])
-	# No global map bounds: old saves outside the detailed district remain valid.
+	if not ISLAND.is_exterior_walkable(at): return ISLAND.recover_exterior_position(at)
 	for radius in range(8,513,8):
 		var best := Vector2.INF
 		var distance := INF

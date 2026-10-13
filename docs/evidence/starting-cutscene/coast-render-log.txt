@@ -1,0 +1,11 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+COAST north window=(960, 540) chunks=24 static memory MiB=14.157374382019 terrain texture budget MiB=24
+COAST east window=(960, 540) chunks=28 static memory MiB=16.6902513504028 terrain texture budget MiB=28
+COAST south window=(960, 540) chunks=24 static memory MiB=19.094612121582 terrain texture budget MiB=24
+COAST west window=(960, 540) chunks=28 static memory MiB=19.6234130859375 terrain texture budget MiB=28
+COAST north window=(1920, 1080) chunks=28 static memory MiB=19.8755187988281 terrain texture budget MiB=28
+COAST east window=(1920, 1080) chunks=32 static memory MiB=20.1556930541992 terrain texture budget MiB=32
+COAST south window=(1920, 1080) chunks=28 static memory MiB=20.3768920898438 terrain texture budget MiB=28
+COAST west window=(1920, 1080) chunks=28 static memory MiB=20.3766479492188 terrain texture budget MiB=28

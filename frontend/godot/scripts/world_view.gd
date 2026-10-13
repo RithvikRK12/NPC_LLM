@@ -20,7 +20,7 @@ func _ready() -> void:
 	world.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	world_viewport.add_child(world)
 	world_camera = Camera2D.new()
-	world_camera.zoom = Vector2(0.5,0.5)
+	world_camera.zoom = Vector2(0.75,0.75)
 	world_camera.position_smoothing_enabled = false
 	world_camera.process_callback = Camera2D.CAMERA2D_PROCESS_IDLE
 	world.add_child(world_camera)
