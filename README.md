@@ -8,7 +8,7 @@ A Godot 4 village backed by FastAPI, SQLAlchemy, and a local or compatible LLM. 
 2. Start Ollama (`open -a Ollama` on macOS). Install the model once with `ollama pull llama3`.
 3. If your `DATABASE_URL` uses PostgreSQL, start Docker Desktop and run `docker compose up -d`. SQLite also works for local use.
 4. Install `backend/requirements.txt` in a Python virtual environment.
-5. From `backend`, run `../.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000`.
+5. From `backend`, run `../.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload`. Automatic reload keeps encounter APIs in sync while developing.
 6. Open `frontend/godot/project.godot` in Godot 4 and press F5, or run the Godot executable with `--path frontend/godot` from the project root.
 
 Before launching directly from the command line on a fresh checkout, import the
@@ -126,3 +126,36 @@ The help objective displays a check mark and fades away when Rowan's introductio
 starts. Press **E** near the broken hull or the north-pointing wooden sign to
 open an inspection text panel; the sign reads **Willowbrook**. Use **Close** or
 **Esc** to return to play.
+
+## Craftsman and A Way Home
+
+Enter the workshop for a one-time introduction: the player walks toward the
+Craftsman, then **Continue** opens normal conversation. **Skip** finishes the
+introduction; **Esc** interrupts it without marking it complete. He otherwise
+walks between his benches, shelf and timber, pausing to work. Talking pauses his
+routine or travel.
+
+Tell him “The storm broke my ship,” then “Could you help me fix it?” (or ask for
+wreck help in one message). He responds sympathetically and follows after you
+close chat. A report alone waits for agreement. Use “wait here,” “let's go,”
+“not now,” or “go back to your workshop” to manage the outing. He walks to the
+workshop exit before your shared fade, waits outside unrelated cottages, and
+follows the southern path around obstacles. If blocked, return to him and ask
+him to resume; he does not teleport to catch up.
+
+Lead him to the southern wreck. Both actors must arrive before the inspection
+starts. Continue through recognition, a closer physical approach, damage,
+hope, requirements and farewell. After staging, **Skip** saves the same outcome.
+The confirmed inspection starts **A Way Home**: 12 sound timber planks, 3 coils
+of rope, 2 bundles of sailcloth and 2 pots of pitch. The quest panel shows it
+alongside the independently playable bow quest. The Craftsman walks back to the
+workshop without the player and resumes his routine.
+
+The quest currently stops at material gathering: acquisition of the new
+materials, deliveries, actual repair, sailing and the ending remain future
+work. Conversation cannot contribute materials or complete either quest.
+Encounter flags, physical checkpoints, waiting/return modes and inspection
+beats survive reload; Retry is available if an outcome cannot be confirmed.
+Restart Game resets this story with the existing world reset.
+
+[Verification, limitations and captured gameplay](docs/evidence/craftsman/walkthrough.md).

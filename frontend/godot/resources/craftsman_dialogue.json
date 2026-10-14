@@ -1,0 +1,13 @@
+{
+ "intro": [
+  {"id":"welcome","text":"Oh—hello there. Come in. Mind the timber by the door."},
+  {"id":"journey","text":"You've had a difficult journey, by the look of you. Take a moment. What can I do for you?"}
+ ],
+ "inspection": [
+  {"id":"recognition","text":"There she is. Let's have a closer look."},
+  {"id":"damage","text":"The planking's split, and those seams won't keep the sea out. But there's something here worth saving."},
+  {"id":"hope","text":"I think I can make her seaworthy again. It'll take sound timber, rope, and something to seal the hull."},
+  {"id":"requirements","text":""}
+ ],
+ "farewell":"I'll head back to my workshop now. Bring what you find there—we'll take this one step at a time."
+}

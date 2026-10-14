@@ -1,6 +1,7 @@
 extends Node2D
 const LAYOUT = preload("res://resources/island_layout.tres")
 const SCENERY = preload("res://resources/south_scenery.tres")
+var forest: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://resources/forest_layout.json"))
 var dressing_chunks: Dictionary = {}
 var chunks: Dictionary = {}
 var focus := Vector2.ZERO
@@ -75,12 +76,15 @@ func _load_chunk(id: Vector2i) -> void:
 		for x in range(32):
 			var cell:=id*32+Vector2i(x,y)
 			if not LAYOUT.land_cell(cell): continue
-			image.blit_rect((shade_tiles if cell.y*32>1900 and cell.y*32<2650 and abs(cell.x)<60 else tiles)[posmod(cell.x*7+cell.y*13,4)],Rect2i(0,0,16,16),Vector2i(x*16,y*16))
+			var wooded: bool=Rect2(forest.bounds[0],forest.bounds[1],forest.bounds[2],forest.bounds[3]).has_point(Vector2(cell*32))
+			image.blit_rect((shade_tiles if wooded or (cell.y*32>1900 and cell.y*32<2650 and abs(cell.x)<60) else tiles)[posmod(cell.x*7+cell.y*13,4)],Rect2i(0,0,16,16),Vector2i(x*16,y*16))
 			var coast := false
 			for d in [Vector2i.UP,Vector2i.DOWN,Vector2i.LEFT,Vector2i.RIGHT]:
 				if not LAYOUT.land_cell(cell+d) or not LAYOUT.land_cell(cell+d*2): coast=true
 			if coast or (cell.y>=109 and abs(cell.x)<26): image.blit_rect(sand_tiles[posmod(cell.x+cell.y,4)],Rect2i(0,0,16,16),Vector2i(x*16,y*16))
 			var at:=Vector2(cell*32)+Vector2(16,16)
+			if Rect2(forest.clearing[0],forest.clearing[1],forest.clearing[2],forest.clearing[3]).has_point(at):
+				image.blit_rect(shade_tiles[posmod(cell.x+cell.y,4)],Rect2i(0,0,16,16),Vector2i(x*16,y*16))
 			for route in LAYOUT.data().routes:
 				for i in range(route.size()-1):
 					var a:=Vector2(route[i][0],route[i][1]); var b:=Vector2(route[i+1][0],route[i+1][1])

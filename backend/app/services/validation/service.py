@@ -60,7 +60,9 @@ class ValidationService:
         except Exception as exc:
             raise ValidationError("Malformed structured JSON") from exc
 
-        if len(output.dialogue) > self._settings.max_dialogue_chars:
+        story = npc.role == 'craftsman' and re.search(r'\b(?:story|explain|tell me more)\b', getattr(context,'player_input',''),re.I)
+        dialogue_limit = 600 if story else self._settings.max_dialogue_chars
+        if len(output.dialogue) > dialogue_limit:
             raise ValidationError("Dialogue exceeds maximum length")
 
         if output.action in {"give_item", "receive_item"}:
@@ -109,7 +111,15 @@ class ValidationService:
         if speaker:
             introduction = r"(?:^|(?<=[.!?,]))\s*I(?: am|'m|’m) (?:the |a )?" + re.escape(speaker) + r"(?=[,.!?](?:\s|$)|$)"
             social_prose = re.sub(introduction, '', social_prose, flags=re.I)
-        if re.search(r"\b(?:gatherer|craftsman|castle|north|south|east|west|opening|opens|axe|bow|food|fruits|hammer|rope|saw|string|water|wood|quest|reward|crafted|crafting|completed|finished|inventory)\b|\bi (?:have|own|carry|give|gave|made)\b|\byou (?:have|received|earned)\b", social_prose, re.I):
+        unsupported = r"\b(?:gatherer|craftsman|castle|north|south|east|west|opening|opens|quest|reward|crafted|completed|finished|inventory)\b|\bi (?:have|own|carry|give|gave|made)\b|\byou (?:have|received|earned)\b"
+        if npc.role != 'craftsman':
+            unsupported += r"|\b(?:craftsman|axe|bow|food|fruits|hammer|rope|saw|string|water|wood|crafting)\b"
+        else:
+            unsupported += r"|\b(?:I|we|you) (?:already )?(?:repaired|completed|finished|delivered|received|gave|brought|collected|crafted|granted|own|possess)\b|\bI make bows? from\b|\b(?:ship|boat|bow) (?:is |has been )?(?:repaired|ready|complete|seaworthy)\b|\b(?:I'll|I will|I am|I'm) (?:follow|coming|repair|give|craft)\b|\b(?:my|our) (?:father|mother|wife|husband|son|daughter|brother|sister)\b"
+        if npc.role == 'gatherer':
+            # Encounter claims use the authoritative outcome fact, never free prose.
+            unsupported += r"|\b(?:boars?|rescu(?:e|ed)|saved me|defeated|borrowed knife)\b"
+        if re.search(unsupported, social_prose, re.I):
             raise ValidationError("Inventory and quest claims must come from authoritative game rules")
         self._validate_ranges(output)
         self._validate_action(output.action, npc, context)

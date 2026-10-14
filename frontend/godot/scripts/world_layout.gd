@@ -47,7 +47,9 @@ func exterior_spawn(id: String) -> Vector2:
 	return Vector2.ZERO
 
 func objects() -> Array:
-	if _objects.is_empty(): _objects = JSON.parse_string(FileAccess.get_file_as_string(data_file))
+	if _objects.is_empty():
+		_objects = JSON.parse_string(FileAccess.get_file_as_string(data_file))
+		_objects.append_array(JSON.parse_string(FileAccess.get_file_as_string("res://resources/forest_layout.json")).scenery)
 	return _objects
 
 func anchor(entry: Dictionary) -> Vector2: return Vector2(entry.at[0],entry.at[1])

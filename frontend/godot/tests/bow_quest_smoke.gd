@@ -41,7 +41,19 @@ func run_check() -> void:
 	craftsman.submit()
 	if not await wait_for(func(): return not craftsman.pending): return
 	if not check(scene.bow_state.phase == "gather" and scene.string_pickup.visible, "Craftsman must request materials"): return
-	scene.player.position = Vector2(-650, 134)
+	craftsman.close_chat()
+	scene.player.position = scene.gatherer_encounter.mark("IntroCheckpoint")+Vector2(-40,0)
+	if not await wait_for(func(): return scene.gatherer_encounter.phase == "choice"): return
+	scene.gatherer_encounter.decline()
+	if not await wait_for(func(): return scene.gatherer_encounter.phase == "refusal"): return
+	scene.gatherer_encounter.continue_scene()
+	if not await wait_for(func(): return scene.gatherer_encounter.status() == "declined_return_pending"): return
+	scene.player.position = scene.gatherer_encounter.mark("IntroCheckpoint")+Vector2(-40,0)
+	if not await wait_for(func(): return scene.gatherer_encounter.phase == "confrontation"): return
+	scene.gatherer_encounter.continue_scene()
+	scene.gatherer_encounter.continue_scene()
+	if not await wait_for(func(): return scene.gatherer_encounter.status() == "resolved_declined"): return
+	scene.player.position = scene.gatherer_encounter.mark("GathererMark")+Vector2(0,64)
 	scene._update_current_npc()
 	scene._open_dialogue()
 	var gatherer = scene.chat_windows[2]

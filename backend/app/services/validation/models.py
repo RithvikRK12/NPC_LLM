@@ -36,7 +36,7 @@ class LLMResponse(BaseModel):
     fact_ids: list[str] = Field(default_factory=list, max_length=2)
     intent: str = Field(min_length=1)
     emotion: str = Field(min_length=1)
-    dialogue: str = Field(min_length=1, max_length=240)
+    dialogue: str = Field(min_length=1, max_length=600)
     action: str = Field(min_length=1)
     item: str | None = None
     reasoning: str = Field(min_length=1)

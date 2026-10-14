@@ -21,7 +21,9 @@ def world(db: Session = Depends(get_db)) -> dict:
                                .order_by(Conversation.id.desc()).limit(50)))
         histories[str(npc.id)] = [{'player': turn.player_input, 'npc': turn.final_dialogue}
                                   for turn in reversed(turns)]
-    return {'opening_capability': 1, 'game_scope': player.game_scope if player else '',
+    from app.services.craftsman import snapshot as craftsman_snapshot
+    from app.services.gatherer import snapshot as gatherer_snapshot
+    return {**gatherer_snapshot(db, player), **craftsman_snapshot(db, player), 'opening_capability': 1, 'game_scope': player.game_scope if player else '',
             'opening_state': player.opening_state if player else 'complete',
             'opening_version': player.opening_version if player else 1,
             'map_version': player.map_version if player else 1,

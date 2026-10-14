@@ -1,0 +1,12 @@
+{
+  "work_points": [[64,-48],[-176,16],[224,-64],[176,96]],
+  "greeting": [64,32],
+  "interior_exit": [0,176],
+  "interior_arrival": [48,128],
+  "InspectionArrival": [0,3504],
+  "arrival_radius": 176,
+  "InspectionPlayerMark": [-32,3632],
+  "InspectionCraftsmanMark": [32,3632],
+  "ReturnRouteStart": [0,3504],
+  "return_route": [[0,3504],[0,3264],[0,2944],[0,2624],[0,2304],[0,1984],[0,1664],[0,1344],[0,1024],[0,704],[0,384],[195,96],[195,-53.5]]
+}

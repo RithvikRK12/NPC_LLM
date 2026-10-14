@@ -1,0 +1,4059 @@
+{
+  "bounds": [
+    -3200,
+    -1080,
+    2700,
+    2160
+  ],
+  "clearing": [
+    -2140,
+    -180,
+    670,
+    410
+  ],
+  "trail": [
+    [
+      -2600,
+      120
+    ],
+    [
+      -2100,
+      70
+    ],
+    [
+      -1800,
+      70
+    ],
+    [
+      -1580,
+      90
+    ],
+    [
+      -1350,
+      -30
+    ],
+    [
+      -1100,
+      70
+    ],
+    [
+      -850,
+      70
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "scenery": [
+    {
+      "id": "deep-forest-0-0",
+      "art": "tree-0-0",
+      "at": [
+        -3088,
+        -944
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-0",
+      "art": "tree-2-0",
+      "at": [
+        -2927,
+        -939
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-0",
+      "art": "tree-1-0",
+      "at": [
+        -2766,
+        -933
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-0",
+      "art": "tree-0-0",
+      "at": [
+        -2605,
+        -928
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-0",
+      "art": "tree-2-0",
+      "at": [
+        -2444,
+        -922
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-0",
+      "art": "tree-1-0",
+      "at": [
+        -2283,
+        -916
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-0",
+      "art": "tree-0-0",
+      "at": [
+        -2181,
+        -911
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-0",
+      "art": "tree-2-0",
+      "at": [
+        -2020,
+        -905
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-0",
+      "art": "tree-1-0",
+      "at": [
+        -1859,
+        -899
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-0",
+      "art": "tree-0-0",
+      "at": [
+        -1698,
+        -943
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-0",
+      "art": "tree-2-0",
+      "at": [
+        -1537,
+        -937
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-0",
+      "art": "tree-1-0",
+      "at": [
+        -1435,
+        -931
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-0",
+      "art": "tree-0-0",
+      "at": [
+        -1274,
+        -926
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-0",
+      "art": "tree-2-0",
+      "at": [
+        -1113,
+        -920
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-0",
+      "art": "tree-1-0",
+      "at": [
+        -952,
+        -914
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-1",
+      "art": "tree-2-0",
+      "at": [
+        -3065,
+        -773
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-1",
+      "art": "tree-0-0",
+      "at": [
+        -2882,
+        -772
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-1",
+      "art": "tree-1-0",
+      "at": [
+        -2767,
+        -805
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-1",
+      "art": "tree-0-0",
+      "at": [
+        -2611,
+        -785
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-1",
+      "art": "tree-2-0",
+      "at": [
+        -2476,
+        -814
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-1",
+      "art": "tree-1-0",
+      "at": [
+        -2285,
+        -786
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-1",
+      "art": "tree-1-0",
+      "at": [
+        -2154,
+        -802
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-1",
+      "art": "tree-2-0",
+      "at": [
+        -1980,
+        -786
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-1",
+      "art": "tree-2-0",
+      "at": [
+        -1872,
+        -789
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-1",
+      "art": "tree-2-0",
+      "at": [
+        -1717,
+        -766
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-1",
+      "art": "tree-1-0",
+      "at": [
+        -1585,
+        -787
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-1",
+      "art": "tree-1-0",
+      "at": [
+        -1407,
+        -800
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-1",
+      "art": "tree-1-0",
+      "at": [
+        -1252,
+        -777
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-1",
+      "art": "tree-1-0",
+      "at": [
+        -1136,
+        -813
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-1",
+      "art": "tree-0-0",
+      "at": [
+        -975,
+        -770
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-2",
+      "art": "tree-1-0",
+      "at": [
+        -3042,
+        -651
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-2",
+      "art": "tree-1-0",
+      "at": [
+        -2933,
+        -651
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-2",
+      "art": "tree-0-0",
+      "at": [
+        -2735,
+        -648
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-2",
+      "art": "tree-0-0",
+      "at": [
+        -2585,
+        -668
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-2",
+      "art": "tree-2-0",
+      "at": [
+        -2446,
+        -665
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-2",
+      "art": "tree-1-0",
+      "at": [
+        -2325,
+        -673
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-2",
+      "art": "tree-0-0",
+      "at": [
+        -2134,
+        -674
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-2",
+      "art": "tree-0-0",
+      "at": [
+        -1991,
+        -648
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-2",
+      "art": "tree-1-0",
+      "at": [
+        -1864,
+        -684
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-2",
+      "art": "tree-0-0",
+      "at": [
+        -1699,
+        -655
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-2",
+      "art": "tree-2-0",
+      "at": [
+        -1541,
+        -677
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-2",
+      "art": "tree-0-0",
+      "at": [
+        -1406,
+        -662
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-2",
+      "art": "tree-2-0",
+      "at": [
+        -1279,
+        -660
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-2",
+      "art": "tree-0-0",
+      "at": [
+        -1096,
+        -664
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-2",
+      "art": "tree-1-0",
+      "at": [
+        -931,
+        -677
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-3",
+      "art": "tree-0-0",
+      "at": [
+        -3078,
+        -528
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-3",
+      "art": "tree-0-0",
+      "at": [
+        -2932,
+        -514
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-3",
+      "art": "tree-0-0",
+      "at": [
+        -2751,
+        -513
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-3",
+      "art": "tree-0-0",
+      "at": [
+        -2585,
+        -530
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-3",
+      "art": "tree-0-0",
+      "at": [
+        -2457,
+        -544
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-3",
+      "art": "tree-0-0",
+      "at": [
+        -2291,
+        -511
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-3",
+      "art": "tree-2-0",
+      "at": [
+        -2160,
+        -545
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-3",
+      "art": "tree-1-0",
+      "at": [
+        -1983,
+        -519
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-3",
+      "art": "tree-1-0",
+      "at": [
+        -1835,
+        -546
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-3",
+      "art": "tree-2-0",
+      "at": [
+        -1720,
+        -530
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-3",
+      "art": "tree-0-0",
+      "at": [
+        -1562,
+        -542
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-3",
+      "art": "tree-0-0",
+      "at": [
+        -1395,
+        -525
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-3",
+      "art": "tree-0-0",
+      "at": [
+        -1253,
+        -517
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-3",
+      "art": "tree-1-0",
+      "at": [
+        -1080,
+        -541
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-3",
+      "art": "tree-0-0",
+      "at": [
+        -965,
+        -533
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-4",
+      "art": "tree-2-0",
+      "at": [
+        -3055,
+        -406
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-4",
+      "art": "tree-2-0",
+      "at": [
+        -2900,
+        -407
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-4",
+      "art": "tree-2-0",
+      "at": [
+        -2778,
+        -406
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-4",
+      "art": "tree-1-0",
+      "at": [
+        -2608,
+        -384
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-4",
+      "art": "tree-0-0",
+      "at": [
+        -2441,
+        -401
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-4",
+      "art": "tree-0-0",
+      "at": [
+        -2336,
+        -399
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-4",
+      "art": "tree-0-0",
+      "at": [
+        -2141,
+        -391
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-4",
+      "art": "tree-0-0",
+      "at": [
+        -1982,
+        -411
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-4",
+      "art": "tree-1-0",
+      "at": [
+        -1863,
+        -386
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-4",
+      "art": "tree-1-0",
+      "at": [
+        -1704,
+        -407
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-4",
+      "art": "tree-2-0",
+      "at": [
+        -1562,
+        -402
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-4",
+      "art": "tree-0-0",
+      "at": [
+        -1418,
+        -415
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-4",
+      "art": "tree-0-0",
+      "at": [
+        -1239,
+        -404
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-4",
+      "art": "tree-0-0",
+      "at": [
+        -1099,
+        -393
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-4",
+      "art": "tree-0-0",
+      "at": [
+        -953,
+        -400
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-5",
+      "art": "tree-1-0",
+      "at": [
+        -3032,
+        -283
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-5",
+      "art": "tree-2-0",
+      "at": [
+        -2931,
+        -265
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-5",
+      "art": "tree-0-0",
+      "at": [
+        -2763,
+        -261
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-5",
+      "art": "tree-1-0",
+      "at": [
+        -2601,
+        -292
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-5",
+      "art": "tree-0-0",
+      "at": [
+        -2470,
+        -253
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-5",
+      "art": "tree-1-0",
+      "at": [
+        -2309,
+        -254
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-5",
+      "art": "tree-2-0",
+      "at": [
+        -2154,
+        -274
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-5",
+      "art": "tree-2-0",
+      "at": [
+        -2015,
+        -260
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-5",
+      "art": "tree-2-0",
+      "at": [
+        -1865,
+        -279
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-5",
+      "art": "tree-1-0",
+      "at": [
+        -1691,
+        -272
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-5",
+      "art": "tree-1-0",
+      "at": [
+        -1545,
+        -253
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-5",
+      "art": "tree-2-0",
+      "at": [
+        -1401,
+        -260
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-5",
+      "art": "tree-0-0",
+      "at": [
+        -1238,
+        -287
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-5",
+      "art": "tree-0-0",
+      "at": [
+        -1082,
+        -272
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-5",
+      "art": "tree-2-0",
+      "at": [
+        -967,
+        -265
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-6",
+      "art": "tree-0-0",
+      "at": [
+        -3068,
+        -161
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-6",
+      "art": "tree-1-0",
+      "at": [
+        -2916,
+        -127
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-6",
+      "art": "tree-0-0",
+      "at": [
+        -2776,
+        -133
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-6",
+      "art": "tree-0-0",
+      "at": [
+        -2627,
+        -144
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-6",
+      "art": "tree-0-0",
+      "at": [
+        -2473,
+        -131
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-6",
+      "art": "tree-0-0",
+      "at": [
+        -2297,
+        -158
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-6",
+      "art": "tree-0-0",
+      "at": [
+        -2141,
+        -164
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-6",
+      "art": "tree-0-0",
+      "at": [
+        -2019,
+        -118
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-6",
+      "art": "tree-0-0",
+      "at": [
+        -1885,
+        -143
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-6",
+      "art": "tree-2-0",
+      "at": [
+        -1685,
+        -137
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-6",
+      "art": "tree-0-0",
+      "at": [
+        -1553,
+        -126
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-6",
+      "art": "tree-1-0",
+      "at": [
+        -1232,
+        -145
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-6",
+      "art": "tree-0-0",
+      "at": [
+        -1136,
+        -159
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-6",
+      "art": "tree-2-0",
+      "at": [
+        -937,
+        -143
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-7",
+      "art": "tree-2-0",
+      "at": [
+        -3045,
+        11
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-7",
+      "art": "tree-0-0",
+      "at": [
+        -2885,
+        4
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-7",
+      "art": "tree-2-0",
+      "at": [
+        -2751,
+        -30
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-7",
+      "art": "tree-2-0",
+      "at": [
+        -2615,
+        5
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-8",
+      "art": "tree-1-0",
+      "at": [
+        -3081,
+        133
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-8",
+      "art": "tree-0-0",
+      "at": [
+        -2903,
+        110
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-8",
+      "art": "tree-1-0",
+      "at": [
+        -2771,
+        130
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-9",
+      "art": "tree-0-0",
+      "at": [
+        -3058,
+        256
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-9",
+      "art": "tree-1-0",
+      "at": [
+        -2927,
+        269
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-9",
+      "art": "tree-2-0",
+      "at": [
+        -2747,
+        258
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-9",
+      "art": "tree-0-0",
+      "at": [
+        -2631,
+        245
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-9",
+      "art": "tree-1-0",
+      "at": [
+        -2432,
+        266
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-9",
+      "art": "tree-1-0",
+      "at": [
+        -2316,
+        238
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-9",
+      "art": "tree-2-0",
+      "at": [
+        -2170,
+        241
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-9",
+      "art": "tree-2-0",
+      "at": [
+        -1839,
+        249
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-9",
+      "art": "tree-0-0",
+      "at": [
+        -1723,
+        236
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-9",
+      "art": "tree-2-0",
+      "at": [
+        -1381,
+        266
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-9",
+      "art": "tree-0-0",
+      "at": [
+        -1252,
+        230
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-9",
+      "art": "tree-2-0",
+      "at": [
+        -1124,
+        236
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-9",
+      "art": "tree-1-0",
+      "at": [
+        -950,
+        274
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-10",
+      "art": "tree-2-0",
+      "at": [
+        -3035,
+        378
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-10",
+      "art": "tree-0-0",
+      "at": [
+        -2884,
+        362
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-10",
+      "art": "tree-1-0",
+      "at": [
+        -2774,
+        365
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-10",
+      "art": "tree-0-0",
+      "at": [
+        -2606,
+        391
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-10",
+      "art": "tree-0-0",
+      "at": [
+        -2438,
+        374
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-10",
+      "art": "tree-0-0",
+      "at": [
+        -2313,
+        400
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-10",
+      "art": "tree-2-0",
+      "at": [
+        -2173,
+        361
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-10",
+      "art": "tree-2-0",
+      "at": [
+        -1989,
+        386
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-10",
+      "art": "tree-0-0",
+      "at": [
+        -1852,
+        389
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-10",
+      "art": "tree-0-0",
+      "at": [
+        -1681,
+        375
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-10",
+      "art": "tree-2-0",
+      "at": [
+        -1530,
+        388
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-10",
+      "art": "tree-2-0",
+      "at": [
+        -1404,
+        376
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-10",
+      "art": "tree-1-0",
+      "at": [
+        -1279,
+        396
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-10",
+      "art": "tree-0-0",
+      "at": [
+        -1106,
+        399
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-10",
+      "art": "tree-1-0",
+      "at": [
+        -942,
+        375
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-11",
+      "art": "tree-1-0",
+      "at": [
+        -3071,
+        501
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-11",
+      "art": "tree-2-0",
+      "at": [
+        -2896,
+        509
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-11",
+      "art": "tree-1-0",
+      "at": [
+        -2773,
+        495
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-11",
+      "art": "tree-2-0",
+      "at": [
+        -2586,
+        500
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-11",
+      "art": "tree-1-0",
+      "at": [
+        -2472,
+        516
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-11",
+      "art": "tree-2-0",
+      "at": [
+        -2315,
+        494
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-11",
+      "art": "tree-1-0",
+      "at": [
+        -2146,
+        504
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-11",
+      "art": "tree-1-0",
+      "at": [
+        -2006,
+        520
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-11",
+      "art": "tree-0-0",
+      "at": [
+        -1869,
+        518
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-11",
+      "art": "tree-2-0",
+      "at": [
+        -1702,
+        501
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-11",
+      "art": "tree-2-0",
+      "at": [
+        -1550,
+        519
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-11",
+      "art": "tree-2-0",
+      "at": [
+        -1435,
+        507
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-11",
+      "art": "tree-0-0",
+      "at": [
+        -1255,
+        524
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-11",
+      "art": "tree-1-0",
+      "at": [
+        -1113,
+        493
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-11",
+      "art": "tree-2-0",
+      "at": [
+        -939,
+        486
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-12",
+      "art": "tree-0-0",
+      "at": [
+        -3048,
+        623
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-12",
+      "art": "tree-2-0",
+      "at": [
+        -2914,
+        663
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-12",
+      "art": "tree-2-0",
+      "at": [
+        -2744,
+        642
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-12",
+      "art": "tree-1-0",
+      "at": [
+        -2605,
+        626
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-12",
+      "art": "tree-0-0",
+      "at": [
+        -2464,
+        630
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-12",
+      "art": "tree-2-0",
+      "at": [
+        -2300,
+        625
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-12",
+      "art": "tree-0-0",
+      "at": [
+        -2166,
+        657
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-12",
+      "art": "tree-0-0",
+      "at": [
+        -2018,
+        637
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-12",
+      "art": "tree-0-0",
+      "at": [
+        -1858,
+        633
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-12",
+      "art": "tree-2-0",
+      "at": [
+        -1710,
+        645
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-12",
+      "art": "tree-0-0",
+      "at": [
+        -1565,
+        629
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-12",
+      "art": "tree-0-0",
+      "at": [
+        -1437,
+        636
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-12",
+      "art": "tree-0-0",
+      "at": [
+        -1253,
+        617
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-12",
+      "art": "tree-2-0",
+      "at": [
+        -1095,
+        656
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-12",
+      "art": "tree-0-0",
+      "at": [
+        -950,
+        659
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-13",
+      "art": "tree-2-0",
+      "at": [
+        -3084,
+        746
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-13",
+      "art": "tree-2-0",
+      "at": [
+        -2909,
+        766
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-13",
+      "art": "tree-2-0",
+      "at": [
+        -2763,
+        750
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-13",
+      "art": "tree-1-0",
+      "at": [
+        -2588,
+        767
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-13",
+      "art": "tree-1-0",
+      "at": [
+        -2444,
+        748
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-13",
+      "art": "tree-2-0",
+      "at": [
+        -2291,
+        780
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-13",
+      "art": "tree-0-0",
+      "at": [
+        -2149,
+        785
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-13",
+      "art": "tree-0-0",
+      "at": [
+        -1985,
+        760
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-13",
+      "art": "tree-2-0",
+      "at": [
+        -1830,
+        783
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-13",
+      "art": "tree-2-0",
+      "at": [
+        -1725,
+        758
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-13",
+      "art": "tree-0-0",
+      "at": [
+        -1531,
+        749
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-13",
+      "art": "tree-1-0",
+      "at": [
+        -1423,
+        782
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-13",
+      "art": "tree-2-0",
+      "at": [
+        -1278,
+        783
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-13",
+      "art": "tree-0-0",
+      "at": [
+        -1128,
+        791
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-13",
+      "art": "tree-1-0",
+      "at": [
+        -957,
+        784
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-0-14",
+      "art": "tree-1-0",
+      "at": [
+        -3061,
+        917
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-1-14",
+      "art": "tree-0-0",
+      "at": [
+        -2927,
+        915
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-2-14",
+      "art": "tree-0-0",
+      "at": [
+        -2741,
+        904
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-3-14",
+      "art": "tree-2-0",
+      "at": [
+        -2634,
+        918
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-4-14",
+      "art": "tree-1-0",
+      "at": [
+        -2473,
+        884
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-5-14",
+      "art": "tree-2-0",
+      "at": [
+        -2294,
+        920
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-6-14",
+      "art": "tree-1-0",
+      "at": [
+        -2142,
+        906
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-7-14",
+      "art": "tree-0-0",
+      "at": [
+        -2028,
+        923
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-8-14",
+      "art": "tree-0-0",
+      "at": [
+        -1885,
+        918
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-9-14",
+      "art": "tree-1-0",
+      "at": [
+        -1731,
+        893
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-10-14",
+      "art": "tree-0-0",
+      "at": [
+        -1539,
+        901
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-11-14",
+      "art": "tree-0-0",
+      "at": [
+        -1383,
+        921
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-12-14",
+      "art": "tree-1-0",
+      "at": [
+        -1252,
+        922
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-13-14",
+      "art": "tree-1-0",
+      "at": [
+        -1102,
+        918
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "deep-forest-14-14",
+      "art": "tree-2-0",
+      "at": [
+        -953,
+        895
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-0",
+      "art": "tree-0-0",
+      "at": [
+        -2120,
+        -70
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-1",
+      "art": "tree-1-0",
+      "at": [
+        -2120,
+        0
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-2",
+      "art": "tree-2-0",
+      "at": [
+        -2120,
+        240
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-3",
+      "art": "tree-0-0",
+      "at": [
+        -2120,
+        390
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-4",
+      "art": "tree-1-0",
+      "at": [
+        -1470,
+        -70
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-5",
+      "art": "tree-2-0",
+      "at": [
+        -1470,
+        20
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-6",
+      "art": "tree-0-0",
+      "at": [
+        -1470,
+        250
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-7",
+      "art": "tree-1-0",
+      "at": [
+        -1470,
+        390
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-8",
+      "art": "tree-2-0",
+      "at": [
+        -2040,
+        -70
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-9",
+      "art": "tree-0-0",
+      "at": [
+        -1900,
+        -70
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-10",
+      "art": "tree-1-0",
+      "at": [
+        -1760,
+        -70
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    },
+    {
+      "id": "clearing-frame-11",
+      "art": "tree-2-0",
+      "at": [
+        -1620,
+        -70
+      ],
+      "pivot": [
+        24,
+        68
+      ],
+      "footprint": [
+        -10,
+        -12,
+        20,
+        18
+      ],
+      "ambient": false
+    }
+  ]
+}

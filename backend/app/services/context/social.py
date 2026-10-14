@@ -4,6 +4,12 @@ import re
 
 
 def is_social_message(text):
+    # Character reflection is distinct from requests for authoritative quantities or effects.
+    if not re.search(r"\b(?:inventory|materials|delivered|requirements|how many|give me|quest|finish my|repair my)\b", text, re.I):
+        if re.search(r"^\s*(?:what makes|what do you (?:think|believe|hope|dream|care)|do you ever|how do you (?:cope|spend)|why do you|what(?: is|\x27s) it like|any hobbies)\b",text,re.I):
+            return True
+        if re.search(r"\b(?:tell me a story|tell me about yourself|village life|living here|enjoy|interests?|lonely|loneliness|patience|uncertain|miss|scared|afraid|ever get home|not working|careful work|repairing useful|what do you do for fun)\b", text, re.I):
+            return True
     return bool(re.search(
         r"^\s*(?:(?:hello|hi|hey|thanks|thank you|good morning|good evening)[.!\s]*$|"
         r"(?:i (?:like|prefer|feel|no longer (?:prefer|like|love))|how are you|what do you (?:like|prefer)|"

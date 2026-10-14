@@ -5,7 +5,7 @@ var ground: Sprite2D
 var props: Array[Node2D] = []
 var debug_geometry := false
 var reduced_motion := false
-const PATH = [Vector2(-850,70),Vector2(-170,70),Vector2(0,0),Vector2(210,32),Vector2(384,32),Vector2(576,64),Vector2(800,128),Vector2(960,192)]
+const PATH = [Vector2(-1408,70),Vector2(-170,70),Vector2(0,0),Vector2(210,32),Vector2(384,32),Vector2(576,64),Vector2(800,128),Vector2(960,192)]
 func _ready() -> void:
 	ground = Sprite2D.new()
 	ground.texture = _terrain()
@@ -69,7 +69,7 @@ func _terrain() -> ImageTexture:
 			var variation := posmod(x/16*7+y/16*13,4)
 			canvas.blit_rect(tiles[kind][variation],Rect2i(0,0,16,16),Vector2i(x,y))
 	for y in range(496,1120,4):
-		for x in range(256,1200,4):
+		for x in range(0,1200,4):
 			var at := Vector2(x*2-1408+4,y*2-1120+4)
 			var distance := path_distance(at)
 			if distance<52:

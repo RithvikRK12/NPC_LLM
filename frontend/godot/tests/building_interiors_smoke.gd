@@ -69,6 +69,11 @@ func run_check() -> void:
 		if not await wait_for(func(): return not layout.interior_at(scene.player.position).is_empty()): return
 		key(KEY_W, false)
 		if not await wait_for(func(): return not scene.travelling): return
+		if entry.id == "workshop" and not scene.craftsman_activity.intro_seen:
+			if not await wait_for(func(): return scene.craftsman_encounter.phase == "intro_dialogue"): return
+			scene.craftsman_encounter.skip()
+			if not await wait_for(func(): return scene.craftsman_activity.intro_seen and not scene.craftsman_gateway.busy): return
+			scene.chat_windows[1].close_chat()
 		check(layout.interior_at(scene.player.position) == entry.id, "Walking into correct interior: " + entry.id)
 		check(layout.is_walkable(scene.player.position), "Arrival leaves feet clear of furniture: " + entry.id)
 		await capture(entry.id)

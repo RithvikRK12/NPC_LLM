@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
 
 import httpx
@@ -41,7 +42,7 @@ class OpenAICompatibleProvider(LLMProvider):
                         'answer_kind': {'type': 'string', 'enum': ['chat'] if social else ['answer', 'clarify', 'chat']},
                         'fact_ids': {'type': 'array', 'maxItems': 0 if social else 2, 'items': {
                             'type': 'string', 'enum': [fact['id'] for fact in context['facts']]}},
-                        'dialogue': {'type': 'string', 'maxLength': 240},
+                        'dialogue': {'type': 'string', 'maxLength': 600 if context.get('npc_role')=='craftsman' and re.search(r'\b(?:story|explain|tell me more)\b',context.get('player_input',''),re.I) else 240},
                     },
                     'required': ['answer_kind', 'fact_ids', 'dialogue'],
                 }},

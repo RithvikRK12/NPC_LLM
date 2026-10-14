@@ -11,7 +11,7 @@ func check(ok: bool, label: String) -> void:
 	if not ok: failures += 1
 
 func wait_for(condition: Callable) -> bool:
-	var deadline := Time.get_ticks_msec() + 15000
+	var deadline := Time.get_ticks_msec() + 25000
 	while not condition.call():
 		await process_frame
 		if Time.get_ticks_msec() > deadline:
@@ -40,11 +40,24 @@ func run_check() -> void:
 	scene._update_current_npc()
 	check(scene.current_npc == null,"Gatherer cannot be reached for conversation from village")
 	key(KEY_A,true)
-	if not await wait_for(func(): return scene.player.position.x < -600): return
+	if not await wait_for(func(): return scene.gatherer_encounter.phase == "choice"): return
 	key(KEY_A,false)
 	await physics_frame
+	check(scene.gatherer_encounter.boars.size()==2,"Walking west triggers Gatherer encounter with two boars")
+	scene.gatherer_encounter.decline()
+	if not await wait_for(func(): return scene.gatherer_encounter.phase=="refusal"): return
+	scene.gatherer_encounter.continue_scene()
+	if not await wait_for(func(): return scene.gatherer_encounter.phase.is_empty()): return
+	check(not scene.gatherer_encounter.bounds("ForestEntryRegion").has_point(scene.player.position),"Refusal automatically returns toward village")
+	key(KEY_A,true)
+	if not await wait_for(func(): return scene.gatherer_encounter.phase=="confrontation"): return
+	key(KEY_A,false)
+	check(scene.gatherer_encounter.boars.all(func(b): return b.health==0),"Return reveals two dead boars")
+	scene.gatherer_encounter.continue_scene()
+	scene.gatherer_encounter.continue_scene()
+	if not await wait_for(func(): return scene.gatherer_encounter.phase.is_empty()): return
 	scene._update_current_npc()
-	check(scene.current_npc == scene.npc_nodes[2],"Walking west through forest reaches Gatherer")
+	check(scene.current_npc == scene.npc_nodes[2],"Resolving introduction unlocks Gatherer")
 	if DisplayServer.get_name() != "headless":
 		for i in range(6): await process_frame
 		await RenderingServer.frame_post_draw

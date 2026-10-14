@@ -1,0 +1,11 @@
+{
+  "request": "You—over here! These two won't back off. Can you help me?",
+  "help": "I'll help. Give me something to fight with.",
+  "decline": "I can't help. I'm going back.",
+  "handoff": "Take my knife. Keep your distance when they lower their heads.",
+  "tutorial": "WASD to move • J to attack\nStep aside when a boar prepares to strike.",
+  "thanks": ["They're down… Thank you. I don't think I could have kept them off much longer.", "You could have walked away. I'll remember that you stayed.", "You return the borrowed knife.\nThe Gatherer trusts you much more."],
+  "refusal": "You're leaving? They're right here!",
+  "confrontation": ["Now you come back. I asked for help, and you left me with them.", "I dealt with it. Don't expect me to trust you."],
+  "defeat": "You fell beneath the boars' tusks.\nRetry from the start of the encounter with three hearts. You can choose again."
+}

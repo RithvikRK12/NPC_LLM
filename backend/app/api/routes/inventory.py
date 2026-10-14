@@ -9,6 +9,7 @@ router = APIRouter(prefix='/inventory', tags=['inventory'])
 
 
 class TransferRequest(BaseModel):
+    game_scope: str | None = None
     npc_id: int = Field(ge=1)
     item: Literal['wood', 'axe', 'saw', 'hammer', 'rope', 'water', 'food', 'fruits', 'string', 'bow']
     direction: Literal['to_player', 'to_npc']
@@ -19,7 +20,7 @@ def transfer(request: TransferRequest, pipeline: ConversationPipeline = Depends(
     from fastapi import HTTPException
     message = f'give me {request.item}' if request.direction == 'to_player' else f'I give you {request.item}'
     try:
-        return pipeline.chat(request.npc_id, message)
+        return pipeline.chat(request.npc_id, message, game_scope=request.game_scope)
     except StaleConversationError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
     except ValueError as exc:

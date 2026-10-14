@@ -47,7 +47,7 @@ def dialogue(db, npc, message, player):
     if not relevant:
         return None
     if quest.phase == 'available':
-        return reply('If you want a bow, open Quests and begin Get a bow. For now, feel free to explore the village.')
+        return reply('If you want a bow, Open Quests and begin Get a bow. For now, feel free to explore the village.')
     if quest.phase == 'completed':
         return reply('Your bow quest is complete. The bow is in your satchel.' if 'bow' in (player.inventory or []) else 'Your bow quest is complete. You have since given the bow away; check the villagers supplies.')
     if quest.phase == 'crafting':
@@ -65,6 +65,10 @@ def dialogue(db, npc, message, player):
 def maybe_start(db, player, npc, output):
     quest = get_quest(db, player.id)
     if npc.role != 'craftsman' or quest.phase != 'gather':
+        return
+    from app.models import CraftsmanEncounter
+    encounter = db.get(CraftsmanEncounter, player.id)
+    if encounter and (encounter.state.get('mode') != 'workshop_routine' or encounter.state.get('navigation_space') != 'workshop'):
         return
     stock = list(npc.inventory or [])
     if not all(item in stock for item in ('wood', 'string')):

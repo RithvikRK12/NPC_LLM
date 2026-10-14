@@ -83,6 +83,11 @@ def reset_world(db: Session) -> None:
     if quest is not None:
         quest.status = 'not_started'
         quest.progress = 0
+    from app.models import CraftsmanEncounter, ShipRepairQuest, StoryEvent, GathererEncounter
+    db.execute(delete(GathererEncounter).where(GathererEncounter.player_id == player.id))
+    db.execute(delete(CraftsmanEncounter).where(CraftsmanEncounter.player_id == player.id))
+    db.execute(delete(ShipRepairQuest).where(ShipRepairQuest.player_id == player.id))
+    db.execute(delete(StoryEvent))
     bow = db.get(BowQuest, player.id)
     if bow is None:
         bow = BowQuest(player_id=player.id)

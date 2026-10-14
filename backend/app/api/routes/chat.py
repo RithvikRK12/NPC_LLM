@@ -12,7 +12,7 @@ router = APIRouter(prefix="/chat", tags=["chat"])
 @router.post("", response_model=ChatResponse)
 def chat(request: ChatRequest, pipeline: ConversationPipeline = Depends(get_pipeline)) -> ChatResponse:
     try:
-        return pipeline.chat(request.npc_id, request.player_message)
+        return pipeline.chat(request.npc_id, request.player_message, game_scope=request.game_scope)
     except StaleConversationError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
     except ValueError as exc:

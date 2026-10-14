@@ -11,6 +11,12 @@ var inspection: PanelContainer
 var island: Node2D
 var beach: Node2D
 var game_scope := ""
+var craftsman_activity: RefCounted
+var craftsman_portals: RefCounted
+var craftsman_gateway: Node
+var craftsman_encounter: Node
+var gatherer_gateway: Node
+var gatherer_encounter: Node
 var salvage_request: HTTPRequest
 var salvage_busy := false
 var world_view: Node
@@ -21,7 +27,7 @@ var travel_fade: ColorRect
 var recovery_notice := ""
 var player: CharacterBody2D
 var npc_nodes: Dictionary = {}
-var current_npc: Area2D
+var current_npc: Node2D
 var chat_windows: Dictionary = {}
 var inventory_label: Label
 var interaction_label: Label
@@ -72,6 +78,21 @@ func _ready() -> void:
 	get_tree().auto_accept_quit = false
 	_build_world()
 	_build_ui()
+	craftsman_gateway = preload("res://scripts/craftsman_gateway.gd").new()
+	craftsman_gateway.backend_url = backend_url
+	add_child(craftsman_gateway)
+	craftsman_gateway.checkpoint_provider = craftsman_activity.checkpoint
+	craftsman_gateway.updated.connect(_craftsman_updated)
+	craftsman_gateway.failed.connect(_craftsman_save_failed)
+	craftsman_encounter = preload("res://scripts/craftsman_encounter.gd").new()
+	add_child(craftsman_encounter)
+	craftsman_encounter.configure(self,craftsman_activity,craftsman_gateway)
+	gatherer_gateway=preload("res://scripts/gatherer_gateway.gd").new()
+	gatherer_gateway.backend_url=backend_url
+	add_child(gatherer_gateway)
+	gatherer_encounter=preload("res://scripts/gatherer_encounter.gd").new()
+	add_child(gatherer_encounter)
+	gatherer_encounter.configure(self,gatherer_gateway)
 	fisherman.build_ui(ui)
 	ui.move_child(fisherman.panel,menu_layer.get_index())
 	inspection = preload("res://scripts/inspection_popup.gd").new()
@@ -91,7 +112,7 @@ func _process(_delta: float) -> void:
 	if not cinematic and not menu_layer.visible and not quitting:
 		onboarding.advance(_delta,village.reduced_motion)
 		onboarding.set_obscured(quest_panel.visible or inventory_drawer.visible)
-	player.set_physics_process(world_loaded and not cinematic and not quitting and not travelling and not ui_owns_input())
+	player.set_physics_process(world_loaded and not cinematic and not quitting and not travelling and (not ui_owns_input() or (gatherer_encounter.allows_movement() and not menu_layer.visible and not restart_dialog.visible)))
 	restart_button.disabled = not world_loaded or _operations_pending() or quitting
 	resume_button.disabled = quitting
 	quit_button.disabled = quitting
@@ -116,7 +137,11 @@ func _process(_delta: float) -> void:
 	island.update_active_chunks(player.position)
 	var room: String = village.layout.interior_at(player.position)
 	beach.set_ambience(world_loaded and room.is_empty() and player.position.distance_to(beach.marker("ControlHandoff"))<1600)
-	world_view.follow(player.position if room.is_empty() else village.layout.interior_origin(room) + Vector2(0,-16))
+	world_view.world_camera.zoom=Vector2(0.6,0.6) if craftsman_encounter.owns_input() and craftsman_encounter.is_ship_frame() else Vector2(0.75,0.75)
+	world_view.follow(craftsman_encounter.camera_target() if craftsman_encounter.owns_input() else (player.position if room.is_empty() else village.layout.interior_origin(room) + Vector2(0,-16)))
+	if gatherer_encounter.owns_input():
+		world_view.world_camera.zoom=Vector2(0.65,0.65)
+		world_view.follow(gatherer_encounter.camera_target())
 	_update_current_npc()
 	if world_loaded and not quitting and not ui_owns_input():
 		if fisherman.try_introduction(player.position):
@@ -137,14 +162,15 @@ func _process(_delta: float) -> void:
 		interaction_label.text = "F  Pick up string"
 	if player.position.distance_to(fisherman.position) <= fisherman.TALK_RADIUS:
 		interaction_label.text = "E  Talk to Rowan"
-	var conversation_open: bool = fisherman.owns_input() or inspection.visible
+	if not craftsman_activity.hint.is_empty(): interaction_label.text = craftsman_activity.hint
+	var conversation_open: bool = fisherman.owns_input() or inspection.visible or craftsman_encounter.owns_input() or gatherer_encounter.owns_input()
 	var dialogue_top := ui.size.y
 	for window in chat_windows.values():
 		if window.visible:
 			conversation_open = true
 			dialogue_top = minf(dialogue_top,window.position.y)
-	interaction_label.visible = not conversation_open
-	help_label.visible = not conversation_open
+	interaction_label.visible = not conversation_open and not quest_panel.visible
+	help_label.visible = not conversation_open and not quest_panel.visible
 	if player.position.distance_to(beach.marker("SupplyApproach"))<64 and beach.salvage_available: interaction_label.text="F  Collect washed-up rope"
 	elif not _inspection_at(player.position).is_empty(): interaction_label.text="E  Inspect " + str(_inspection_at(player.position).title).to_lower()
 	if not recovery_notice.is_empty(): interaction_label.text = recovery_notice
@@ -171,6 +197,8 @@ func _process(_delta: float) -> void:
 
 
 func ui_owns_input() -> bool:
+	if is_instance_valid(gatherer_encounter) and gatherer_encounter.owns_input(): return true
+	if is_instance_valid(craftsman_encounter) and craftsman_encounter.owns_input(): return true
 	if cinematic or travelling or fisherman.owns_input() or onboarding.owns_input() or inspection.visible: return true
 	if menu_layer.visible or restart_dialog.visible or inventory_drawer.visible or quest_panel.visible: return true
 	for window in chat_windows.values():
@@ -211,8 +239,10 @@ func _input(event: InputEvent) -> void:
 			restart_dialog.hide()
 			restart_button.grab_focus()
 		elif menu_layer.visible: _resume_game()
+		elif gatherer_encounter.owns_input(): _open_menu()
 		elif inspection.visible: inspection.close()
 		elif onboarding.owns_input(): onboarding.dismiss()
+		elif craftsman_encounter.owns_input(): craftsman_encounter.cancel()
 		elif fisherman.owns_input(): fisherman.close_dialogue()
 		else: _open_menu()
 
@@ -273,7 +303,10 @@ func _build_world() -> void:
 	_add_world_marker(player,Color("3c8592"),"Player")
 	var craftsman_at: Array = village.layout.interiors().workshop.craftsman
 	_add_npc(1,"Craftsman","craftsman",village.layout.interior_origin("workshop") + Vector2(craftsman_at[0],craftsman_at[1]),Color("c38a45"),0.65,0.10,0.05,0.30)
-	_add_npc(2,"Gatherer","gatherer",Vector2(-650,70),Color("648954"),0.50,0.25,0.05,0.70)
+	_add_npc(2,"Gatherer","gatherer",Vector2(-1800,70),Color("648954"),0.50,0.25,0.05,0.70)
+	craftsman_portals = preload("res://scripts/actor_portals.gd").new(village.layout)
+	craftsman_activity = preload("res://scripts/craftsman_activity.gd").new()
+	craftsman_activity.configure(npc_nodes[1],player,village.layout,craftsman_portals)
 	var fade_layer := CanvasLayer.new()
 	fade_layer.layer = 20
 	add_child(fade_layer)
@@ -285,6 +318,13 @@ func _build_world() -> void:
 	travel_fade.hide()
 
 func _physics_process(_delta: float) -> void:
+	if is_instance_valid(gatherer_encounter): gatherer_encounter.advance(_delta)
+	if craftsman_activity != null and world_loaded:
+		craftsman_activity.set_conversation_open(chat_windows.has(1) and chat_windows[1].visible)
+		craftsman_activity.bow_busy = bow_state.get("phase","") == "crafting"
+		craftsman_activity.advance(_delta, gatherer_encounter.owns_input() or cinematic or menu_layer.visible or quitting or (travelling and craftsman_activity.portal_target == Vector2.INF))
+		craftsman_encounter.advance(_delta)
+		craftsman_gateway.tick(_delta)
 	if fisherman.approaching:
 		if not menu_layer.visible and not quitting: fisherman.advance_approach(player,_delta)
 		else: player.velocity = Vector2.ZERO
@@ -307,6 +347,17 @@ func _enter_building(id: String) -> void:
 func _travel_to(at: Vector2, facing: String) -> void:
 	if travelling or ui_owns_input() or not world_loaded or quitting: return
 	travelling = true
+	var leaving_workshop: bool = village.layout.interior_at(player.position) == "workshop" and village.layout.interior_at(at).is_empty()
+	var shared: bool = leaving_workshop and craftsman_activity.mode in ["following_player","departure_pending"] and craftsman_activity.outing_active and craftsman_activity.space == "workshop" and not craftsman_activity.bow_busy
+	if shared:
+		player.set_physics_process(false)
+		craftsman_activity.portal_target = village.layout.interior_origin("workshop") + Vector2(0,176)
+		var deadline := Time.get_ticks_msec()+12000
+		while npc_nodes[1].position.distance_to(craftsman_activity.portal_target)>8 and Time.get_ticks_msec()<deadline:
+			await get_tree().physics_frame
+		craftsman_activity.portal_target = Vector2.INF
+		if npc_nodes[1].position.distance_to(village.layout.interior_origin("workshop")+Vector2(0,176))>16:
+			travelling=false; recovery_notice="The Craftsman cannot reach the door. Return to him."; return
 	travel_fade.show()
 	player.velocity = Vector2.ZERO
 	player.set_physics_process(false)
@@ -314,6 +365,10 @@ func _travel_to(at: Vector2, facing: String) -> void:
 	fade_out.tween_property(travel_fade,"color:a",1.0,0.12)
 	await fade_out.finished
 	player.position = at
+	if shared and craftsman_portals.traverse_actor(npc_nodes[1],"workshop",false):
+		craftsman_activity.space="exterior"
+		craftsman_activity.router.stop(npc_nodes[1])
+		craftsman_activity.breadcrumbs.clear()
 	player.get_child(0).facing = facing
 	_update_current_npc()
 	_save_position()
@@ -357,7 +412,7 @@ func _build_ui() -> void:
 	hud_row.offset_top = 16
 	bag_button = make_button("Bag • I", _toggle_bag, hud_row)
 	make_button("Quests", func():
-		if cinematic: return
+		if cinematic or (is_instance_valid(gatherer_encounter) and gatherer_encounter.owns_input()): return
 		var opening := not quest_panel.visible
 		_close_overlays()
 		quest_panel.visible = opening, hud_row)
@@ -528,6 +583,7 @@ func _close_overlays() -> void:
 	for window in chat_windows.values(): window.close_overlays()
 
 func _toggle_bag() -> void:
+	if gatherer_encounter.owns_input(): return
 	if cinematic or quitting or menu_layer.visible or onboarding.owns_input(): return
 	var opening := not inventory_drawer.visible
 	_close_overlays()
@@ -539,6 +595,8 @@ func _open_menu() -> void:
 	player.set_physics_process(false)
 	for window in chat_windows.values(): window.modal_blocked = true
 	menu_layer.show()
+	if gatherer_encounter.owns_input():
+		menu_status.text="Resume from the start of the encounter" if gatherer_encounter.status()=="intro_pending" else "Your encounter outcome is saved; its scene resumes when you return."
 	resume_button.grab_focus()
 
 func _resume_game() -> void:
@@ -555,6 +613,7 @@ func _begin_shutdown() -> void:
 	retry_button.hide()
 	back_button.hide()
 	quitting = true
+	if world_loaded and not craftsman_gateway.busy: craftsman_gateway.save_checkpoint(craftsman_activity.checkpoint())
 	# Initial GET is safe to cancel; dispatched mutations must finish.
 	if not world_loaded and world_busy:
 		if not restart_in_flight:
@@ -562,6 +621,7 @@ func _begin_shutdown() -> void:
 			world_busy = false
 
 func _open_dialogue() -> void:
+	if gatherer_encounter.owns_input() or (current_npc==npc_nodes[2] and gatherer_encounter.blocks_chat()): return
 	if world_loaded and not cinematic and player.position.distance_to(fisherman.position) <= fisherman.TALK_RADIUS:
 		_close_overlays()
 		for window in chat_windows.values(): window.close_chat()
@@ -615,9 +675,16 @@ func _world_completed(result: int, code: int, _headers: PackedStringArray, body:
 	_update_quest(data.get("bow_quest", {}))
 	world_loaded = true
 	game_scope=str(data.get("game_scope",""))
+	for window in chat_windows.values(): window.game_scope=game_scope
+	craftsman_gateway.restore(data)
+	if data.has("craftsman_encounter"):
+		craftsman_activity.restore(data.craftsman_encounter)
+		craftsman_encounter.restore(data)
+		quest_panel.set_ship_state(data.get("ship_repair",{}),data.craftsman_encounter)
+	gatherer_encounter.restore(data)
 	fisherman.set_scope(game_scope)
 	onboarding.set_scope(game_scope)
-	if fisherman.intro_seen: onboarding.complete_objective(false)
+	if fisherman.intro_seen or craftsman_activity.intro_seen: onboarding.complete_objective(false)
 	beach.salvage_available=data.get("opening_capability",0)==1 and not data.get("salvage_ids",[]).has("southern_rope")
 	beach.queue_redraw()
 	if data.get("opening_capability",0)==1 and data.get("opening_state","complete")=="pending":
@@ -636,6 +703,7 @@ func _world_completed(result: int, code: int, _headers: PackedStringArray, body:
 
 
 func _apply_chat_state(response: Dictionary) -> void:
+	_craftsman_updated(response,"chat")
 	_update_player(response)
 	_update_quest(response.get("bow_quest", {}))
 	var npc: Dictionary = response.get("npc", {})
@@ -654,7 +722,7 @@ func _update_player(data: Dictionary) -> void:
 
 
 func _add_npc(npc_id: int, npc_name: String, role_name: String, position: Vector2, color: Color, trust: float, fear: float, aggression: float, curiosity: float) -> void:
-	var npc := preload("res://scripts/npc.gd").new()
+	var npc = preload("res://scripts/craftsman_actor.gd").new() if role_name == "craftsman" else preload("res://scripts/npc.gd").new()
 	npc.npc_id = npc_id
 	npc.display_name = npc_name
 	npc.role_name = role_name
@@ -686,6 +754,9 @@ func _add_npc(npc_id: int, npc_name: String, role_name: String, position: Vector
 
 
 func _add_world_marker(target: Node2D, color: Color, text: String) -> void:
+	if target is CharacterBody2D:
+		target.collision_layer = 2
+		target.collision_mask = 1
 	var marker := preload("res://scripts/person.gd").new()
 	marker.identity = "player"
 	target.add_child(marker)
@@ -700,7 +771,9 @@ func _add_world_marker(target: Node2D, color: Color, text: String) -> void:
 func _update_current_npc() -> void:
 	current_npc = null
 	var nearest_distance := 99999.0
+	if is_instance_valid(gatherer_encounter) and gatherer_encounter.owns_input(): return
 	for npc in npc_nodes.values():
+		if npc.npc_id==2 and is_instance_valid(gatherer_encounter) and gatherer_encounter.blocks_chat(): continue
 		var distance := player.global_position.distance_to(npc.global_position)
 		if distance < 96.0 and distance < nearest_distance:
 			nearest_distance = distance
@@ -731,6 +804,7 @@ func _give_recipient():
 	return current_npc
 
 func _give_selected_item() -> void:
+	if gatherer_encounter.owns_input(): return
 	if cinematic: return
 	var recipient = _give_recipient()
 	if recipient == null or not player_items.has(player_grid.selected_item) or quitting or menu_layer.visible: return
@@ -754,6 +828,7 @@ func _update_quest(data: Dictionary) -> void:
 
 
 func _quest_call(action: String, payload: Dictionary = {}) -> void:
+	if gatherer_encounter.owns_input(): return
 	if cinematic or quest_busy or not world_loaded or quitting or restart_dialog.visible: return
 	quest_busy = true
 	quest_panel.start_button.disabled = true
@@ -788,6 +863,8 @@ func _quest_completed(result: int, code: int, _headers: PackedStringArray, body:
 
 
 func _operations_pending() -> bool:
+	if is_instance_valid(gatherer_gateway) and gatherer_gateway.busy: return true
+	if is_instance_valid(craftsman_gateway) and craftsman_gateway.busy: return true
 	if travelling or quest_busy or position_busy or world_busy or salvage_busy or (is_instance_valid(opening) and opening.busy): return true
 	for window in chat_windows.values():
 		if window.pending: return true
@@ -796,6 +873,8 @@ func _operations_pending() -> bool:
 
 func _restart_game() -> void:
 	if _operations_pending() or not world_loaded or quitting: return
+	gatherer_encounter.dispose()
+	craftsman_encounter.cancel()
 	onboarding.reset_presentation()
 	inspection.close()
 	if is_instance_valid(opening): opening.cancel(); opening.queue_free(); opening=null
@@ -856,8 +935,11 @@ func _save_failed() -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST: _begin_shutdown()
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and is_instance_valid(gatherer_encounter) and gatherer_encounter.owns_input() and not menu_layer.visible: _open_menu()
 
 func _start_opening() -> void:
+	gatherer_encounter.dispose()
+	craftsman_encounter.cancel()
 	onboarding.reset_presentation()
 	inspection.close()
 	if is_instance_valid(opening): opening.cancel(); opening.queue_free()
@@ -929,3 +1011,17 @@ func _open_inspection(item: Dictionary) -> void:
 	for window in chat_windows.values(): window.close_chat()
 	player.velocity = Vector2.ZERO
 	inspection.present(item.title,item.text)
+
+func _craftsman_updated(data: Dictionary, operation: String) -> void:
+	if data.get("game_scope",game_scope) != game_scope: return
+	if data.has("craftsman_encounter"):
+		quest_panel.set_ship_state(data.get("ship_repair",{}),data.craftsman_encounter)
+		craftsman_gateway.ingest(data)
+		if operation != "checkpoint":
+			var was_inspected: bool=craftsman_activity.inspection_complete
+			craftsman_activity.apply_encounter(craftsman_gateway.state)
+			if not was_inspected and craftsman_activity.inspection_complete: recovery_notice="A Way Home — Gather the ship-repair materials."
+
+func _craftsman_save_failed(message: String) -> void:
+	if quitting: _save_failed()
+	else: recovery_notice=message

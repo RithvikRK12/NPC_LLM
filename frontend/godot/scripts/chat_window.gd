@@ -16,6 +16,8 @@ var clear_button: Button
 var operation := "chat"
 var request: HTTPRequest
 var pending := false
+var game_scope := ""
+var sent_game_scope := ""
 var modal_blocked := false
 var active_text: RichTextLabel
 var speaker_label: Label
@@ -304,7 +306,7 @@ func submit() -> void:
 	failed_message = message
 	append_dialogue("Player", message)
 	start_request()
-	var error := request.request(backend_url + "/chat", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_POST, JSON.stringify({"npc_id": npc_id, "player_message": message}))
+	var error := request.request(backend_url + "/chat", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_POST, JSON.stringify({"npc_id": npc_id, "player_message": message, "game_scope": game_scope if not game_scope.is_empty() else null}))
 	if error != OK:
 		finish()
 		append_dialogue("System", "Could not send: " + error_string(error))
@@ -323,6 +325,7 @@ func finish() -> void:
 
 func _completed(result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	finish()
+	if sent_game_scope != game_scope: return
 	if result != HTTPRequest.RESULT_SUCCESS or code != 200:
 		if operation == "chat" and message_input.text.is_empty(): message_input.text = failed_message
 		append_dialogue("System", "Request failed (%s). Check the backend and try again." % code)
@@ -352,6 +355,7 @@ func _completed(result: int, code: int, _headers: PackedStringArray, body: Packe
 
 
 func start_request() -> void:
+	sent_game_scope=game_scope
 	pending = true
 	send_button.disabled = true
 	clear_button.disabled = true
@@ -365,7 +369,7 @@ func transfer_item(item: String, direction: String) -> void:
 		return
 	operation = "transfer"
 	start_request()
-	var error := request.request(backend_url + "/inventory/transfer", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_POST, JSON.stringify({"npc_id": npc_id, "item": item, "direction": direction}))
+	var error := request.request(backend_url + "/inventory/transfer", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_POST, JSON.stringify({"npc_id": npc_id, "item": item, "direction": direction, "game_scope": game_scope if not game_scope.is_empty() else null}))
 	if error != OK:
 		finish()
 		append_dialogue("System", "Transfer could not be sent. Please retry.")

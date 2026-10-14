@@ -95,6 +95,13 @@ def build_facts(db, npc, player, quest, now):
         facts.append(dict(id=identity, subject=subject, facet=facet, text=text,
                           source=source, status=status, as_of=now if status == 'current' else None))
 
+    if npc.role == 'gatherer':
+        from app.services.gatherer import encounter_snapshot
+        gatherer = encounter_snapshot(db, player)
+        if gatherer['outcome_fact']:
+            add('self.gatherer_encounter.outcome', 'self.gatherer_encounter', 'outcome',
+                gatherer['outcome_fact'], 'Authoritative Gatherer encounter outcome')
+
     places = {p.id: p.name for p in CATALOG.places}
     routes = {r.destination: r for r in CATALOG.routes}
 
@@ -113,6 +120,19 @@ def build_facts(db, npc, player, quest, now):
         route_fact(person.id + '.route', person.id, person.usual_place)
     for place in CATALOG.places:
         route_fact(place.id + '.route', place.id, place.id)
+    from app.models import CraftsmanEncounter
+    encounter=db.get(CraftsmanEncounter,player.id)
+    if encounter and encounter.game_scope==player.game_scope and encounter.state.get('mode')!='workshop_routine':
+        mode=encounter.state.get('mode')
+        place='the workshop' if encounter.state.get('navigation_space')=='workshop' else ('the beach' if encounter.state.get('position',{}).get('y',0)>3000 else 'the island path')
+        location=next(f for f in facts if f['id']=='person.craftsman.location')
+        location.update(text=f'The Craftsman is at {place}, '+('returning to the workshop.' if mode=='returning_to_workshop' else 'waiting for you.' if mode=='waiting_for_player' else 'preparing to inspect your ship.'),source='Craftsman encounter checkpoint',status='current')
+    from app.services.quests.ship_repair import ship_snapshot, material_list
+    ship=ship_snapshot(db,player)
+    counts=material_list(ship['materials'],remaining=True)
+    add('quest.ship.requirements','quest.ship','requirements','For the ship, still needed: '+counts+'.' if ship['phase']!='not_started' else 'The ship needs an inspection before its requirements are known.','ShipRepairQuest recipe and contributions')
+    add('quest.ship.phase','quest.ship','phase',f"A Way Home: {ship['phase']}. Gathering and repair are deferred in this version.",'ShipRepairQuest')
+    add('quest.ship.delivered','quest.ship','delivered','Verified ship contributions: none recorded.','ShipRepairQuest contributions')
     craftsman = db.scalar(select(NPC).where(NPC.role == 'craftsman'))
     consumed = quest['phase'] in {'crafting', 'completed'}
     missing = [item for item in ('wood', 'string') if not craftsman or item not in (craftsman.inventory or [])]

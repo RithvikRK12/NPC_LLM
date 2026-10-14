@@ -9,6 +9,7 @@ from typing import Any
 class ConversationContext:
     player_input: str
     npc_state: dict[str, Any]
+    encounter: dict[str, Any] = field(default_factory=dict)
     conversation_focus: dict[str, Any] = field(default_factory=dict)
     facts: list[dict[str, Any]] = field(default_factory=list)
     memories: list[dict[str, Any]] = field(default_factory=list)
@@ -24,6 +25,7 @@ class ConversationContext:
     def as_dict(self) -> dict[str, Any]:
         return {
             "player_input": self.player_input,
+            "encounter": self.encounter,
             "npc_state": self.npc_state,
             "facts": self.facts,
             "conversation_focus": self.conversation_focus,

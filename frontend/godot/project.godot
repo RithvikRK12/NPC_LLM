@@ -18,3 +18,7 @@ cutscene_fast_forward={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"physical_keycode":32)]
 }
+melee_attack={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":74)]
+}

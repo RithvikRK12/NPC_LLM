@@ -18,3 +18,8 @@ api_router.include_router(inventory_router)
 
 from app.api.routes.quests import router as quests_router
 api_router.include_router(quests_router)
+from app.api.routes.craftsman import router as craftsman_router
+api_router.include_router(craftsman_router)
+
+from app.api.routes.gatherer import router as gatherer_router
+api_router.include_router(gatherer_router)

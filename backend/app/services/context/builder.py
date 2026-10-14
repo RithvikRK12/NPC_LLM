@@ -59,7 +59,11 @@ class ContextBuilder:
                 fact = by_id[ids[0]]
                 focus = {'subject': fact['subject'], 'facet': fact['facet'], 'fact_ids': ids}
                 break
+        from app.services.craftsman import encounter_snapshot
+        from app.services.gatherer import encounter_snapshot as gatherer_snapshot
         return ConversationContext(
+            encounter=(encounter_snapshot(self._db,player) if npc.role=="craftsman" else
+                       gatherer_snapshot(self._db,player) if npc.role=="gatherer" else {}),
             facts=facts,
             conversation_focus=focus,
             player_input=player_input,

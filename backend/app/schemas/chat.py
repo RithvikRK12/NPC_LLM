@@ -5,6 +5,7 @@ from app.schemas.npc import NPCRead
 
 
 class ChatRequest(BaseModel):
+    game_scope: str | None = None
     npc_id: int = Field(ge=1)
     player_message: str = Field(min_length=1, max_length=500)
 
@@ -29,6 +30,9 @@ class StructuredNPCOutput(BaseModel):
 
 
 class ChatResponse(BaseModel):
+    game_scope: str = ""
+    craftsman_encounter: dict = Field(default_factory=dict)
+    ship_repair: dict = Field(default_factory=dict)
     decision_trace: dict = Field(default_factory=dict)
     behavior_trace: dict = Field(default_factory=dict)
     grounding_trace: dict = Field(default_factory=dict)
