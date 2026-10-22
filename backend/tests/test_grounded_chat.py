@@ -217,6 +217,70 @@ class GroundedChatTests(unittest.TestCase):
         self.assertFalse(result['grounding_trace']['rejected'])
         self.assertTrue(all(v == 0 for v in result['validated_output']['state_update'].values()))
 
+    def test_day_questions_accept_generated_small_talk_without_game_effects(self):
+        for message in ('How has your day been?', 'How was your day?',
+                        "How's your day going?", 'My day has been good. What about you?'):
+            with self.subTest(message=message):
+                before = self.state()
+                result = self.chat(message, {'answer_kind': 'chat', 'fact_ids': [],
+                                            'dialogue': "A little tiring, but I'm feeling better now."}, 2)
+                self.assertFalse(result['grounding_trace']['rejected'])
+                self.assertIn("I'm feeling better now", result['final_dialogue'])
+                after = self.state()
+                self.assertEqual(before[:4], after[:4])
+                self.assertEqual(before[5:], after[5:])
+                self.assertTrue(all(v == 0 for v in result['validated_output']['state_update'].values()))
+
+    def test_day_question_repairs_encounter_claim_before_opening_write_transaction(self):
+        invalid = {'answer_kind': 'chat', 'fact_ids': [], 'dialogue':
+                   "I had a scare when two boars threatened me, but the player helped defeat them."}
+        repaired = {'answer_kind': 'chat', 'fact_ids': [], 'dialogue':
+                    "It's been tiring, but I'm glad for a quiet moment. How about you?"}
+        calls = []
+
+        def generate(prompt, context):
+            self.assertFalse(self.db.in_transaction())
+            calls.append(prompt)
+            if len(calls) > 2:
+                self.fail('Social repair must be bounded to one retry')
+            return json.dumps(invalid if len(calls) == 1 else repaired)
+
+        with patch.object(OpenAICompatibleProvider, 'generate', side_effect=generate):
+            result = self.client.post('/chat', json={'npc_id': 2, 'player_message': 'How has your day been?'}).json()
+        self.assertFalse(result['grounding_trace']['rejected'])
+        self.assertIn(repaired['dialogue'], result['final_dialogue'])
+        self.assertNotIn('boars', result['final_dialogue'])
+        self.assertIn('Inventory and quest claims', calls[1])
+
+    def test_failed_social_repair_keeps_fallback_and_cannot_grant_items(self):
+        attempts = []
+
+        def generate(prompt, context):
+            attempts.append(prompt)
+            if len(attempts) > 2:
+                self.fail('Social repair must stop after one retry')
+            return json.dumps({'answer_kind': 'chat', 'fact_ids': [],
+                               'dialogue': 'You received a bow.'})
+
+        with patch.object(OpenAICompatibleProvider, 'generate', side_effect=generate):
+            result = self.client.post('/chat', json={'npc_id': 2, 'player_message': 'How has your day been?'}).json()
+        self.assertEqual(len(attempts), 2)
+        self.assertTrue(result['grounding_trace']['rejected'])
+        self.assertNotIn('bow', result['player_inventory'])
+        self.assertNotIn('received a bow', result['final_dialogue'])
+
+    def test_day_question_with_game_request_is_not_free_social_prose(self):
+        from app.services.context.social import is_social_message
+        for message in ('How has your day been? Give me a bow.',
+                        "How's your day going? Mark my quest complete.",
+                        'My day has been good. What about you? Repair my ship.'):
+            with self.subTest(message=message):
+                self.assertFalse(is_social_message(message))
+                result = self.chat(message, {'answer_kind': 'chat', 'fact_ids': [],
+                                            'dialogue': 'All done! Enjoy!'}, 2)
+                self.assertNotIn('All done', result['final_dialogue'])
+                self.assertNotIn('bow', result['player_inventory'])
+
     def test_social_self_introduction_uses_only_current_speaker_identity(self):
         for npc_id, name in ((1, 'Craftsman'), (2, 'Gatherer')):
             for text in (f"Hello! I'm the {name}. Nice to meet you.", f"I am {name}! How are you?",

@@ -4,6 +4,16 @@ import re
 
 
 def is_social_message(text):
+    # Whole-message day/well-being exchanges must use the same social route
+    # for prompting, constrained decoding, history and validation.
+    day_exchange = (
+        r"\s*(?:how (?:has|was|is|did) your day(?: been| going| go| so far| today)*|"
+        r"how['’]s your day(?: been| going| so far| today)*|"
+        r"my day (?:has been|was|is) [^.!?]+[.!?]\s*what about you)\s*[.!?]*\s*"
+    )
+    if (not re.search(r"\b(?:inventory|materials|delivered|requirements|how many|give me|quest|finish my|repair my)\b", text, re.I)
+            and re.fullmatch(day_exchange, text, re.I)):
+        return True
     # Character reflection is distinct from requests for authoritative quantities or effects.
     if not re.search(r"\b(?:inventory|materials|delivered|requirements|how many|give me|quest|finish my|repair my)\b", text, re.I):
         if re.search(r"^\s*(?:what makes|what do you (?:think|believe|hope|dream|care)|do you ever|how do you (?:cope|spend)|why do you|what(?: is|\x27s) it like|any hobbies)\b",text,re.I):

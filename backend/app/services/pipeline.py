@@ -17,6 +17,7 @@ from app.schemas.memory import MemoryRead
 from app.schemas.npc import NPCRead
 from app.services.decision_trace import build_decision_trace
 from app.services.context.builder import ContextBuilder
+from app.services.context.social import is_social_message
 from app.services.llm.service import GenerationResult, LLMService
 from app.services.memory.service import MemoryService
 from app.services.memory.importance import classify
@@ -74,6 +75,10 @@ class ConversationPipeline:
         needs_generation = not (encounter_intent or requested_transfer(player_message) or npc.pending_item or
                                 any(phrase in player_message.lower() for phrase in
                                     ('inventory', 'what do you have', 'what are you carrying')))
+        # Detached validation snapshot: provider calls, including repair, must
+        # not refresh ORM rows and reopen a transaction after rollback.
+        validation_npc = NPC(id=npc.id, role=npc.role, inventory=list(npc.inventory or []),
+                             pending_item=npc.pending_item)
         self._db.rollback()  # release the read transaction before generation
         context_seconds = monotonic() - started
         generation_started = monotonic()
@@ -81,6 +86,19 @@ class ConversationPipeline:
         try:
             generation = (self._llm_service.generate(prompt, context.as_dict()) if needs_generation
                           else GenerationResult(raw_text="", raw_json={}))
+            if needs_generation and is_social_message(player_message) and not outside_world(player_message):
+                try:
+                    self._validation_service.validate(generation.raw_json, validation_npc, context)
+                except KnowledgeBoundaryError:
+                    pass  # Preserve the explicit outside-world boundary response.
+                except ValidationError as exc:
+                    # One bounded speech repair. Final validation below still
+                    # checks the result against current authoritative state.
+                    repair_prompt = (prompt + '\nThe previous reply failed validation: ' + str(exc) +
+                                     '\nWrite a fresh social reply about feelings or well-being. '
+                                     'Do not recount encounters, combat, inventory or game outcomes. '
+                                     'Return only the same chat JSON contract with no effects.')
+                    generation = self._llm_service.generate(repair_prompt, context.as_dict())
         except Exception:
             generation_status = 'provider_or_decode_failure'
             logger.error("LLM generation failed or could not be decoded for NPC %s; using zero-effect fallback", npc_id)
