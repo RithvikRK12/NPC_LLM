@@ -78,6 +78,21 @@ class SemanticMemoryTests(unittest.TestCase):
         self.db.commit()
         self.assertEqual(self.service.retrieve_relevant_memories(self.npc, 'query', top_k=1)[0].id, close.id)
 
+    def test_embedding_query_honors_remaining_retrieval_deadline(self):
+        service = EmbeddingService()
+        service.settings = type('Settings', (), {'embedding_model':'test-model',
+            'embedding_dimensions':3, 'embedding_revision':'test-v1',
+            'embedding_base_url':'http://127.0.0.1:11434', 'embedding_timeout_seconds':30})()
+        service.dimensions = 3
+        service.model_key = 'test-model:test-v1:3'
+        response = type('Response', (), {'status_code':200,
+            'raise_for_status':lambda self: None,
+            'json':lambda self: {'embeddings': [[1.0, 0.0, 0.0]]}})()
+        with patch('app.services.memory.embedding.httpx.post', return_value=response) as post:
+            service.embed('quiet work', query=True, timeout_seconds=0.4)
+        request_timeout = post.call_args.kwargs['timeout']
+        self.assertAlmostEqual(request_timeout.read, 0.4)
+
     def test_metadata_filters_apply_before_search(self):
         old = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=10)
         self.add('other npc', npc_id=2, kind='quest_progress', quest='get_bow')

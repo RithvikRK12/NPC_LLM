@@ -1,0 +1,245 @@
+test_changed_ownership_records_rejection_and_never_substitutes (test_conversation_persistence.SQLReceiptTransactionTests.test_changed_ownership_records_rejection_and_never_substitutes) ... FAIL
+test_cross_npc_shared_item_race_rejects_loser_without_substitution (test_conversation_persistence.SQLReceiptTransactionTests.test_cross_npc_shared_item_race_rejects_loser_without_substitution) ... FAIL
+test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) ... 
+  test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) (field='request_id') ... FAIL
+  test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) (field='sequence') ... FAIL
+  test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) (field='key') ... FAIL
+test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) ... FAIL
+test_later_turn_with_forged_valid_lease_cannot_skip_earliest (test_conversation_persistence.SQLReceiptTransactionTests.test_later_turn_with_forged_valid_lease_cannot_skip_earliest) ... FAIL
+test_lost_commit_ack_recovers_receipt_before_any_new_execution (test_conversation_persistence.SQLReceiptTransactionTests.test_lost_commit_ack_recovers_receipt_before_any_new_execution) ... FAIL
+test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection (test_conversation_persistence.SQLReceiptTransactionTests.test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection) ... FAIL
+test_owner_denial_after_mutation_has_no_effect_but_durable_rejection (test_conversation_persistence.SQLReceiptTransactionTests.test_owner_denial_after_mutation_has_no_effect_but_durable_rejection) ... FAIL
+test_receipt_insert_failure_rolls_back_inventory_quest_and_phase (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_insert_failure_rolls_back_inventory_quest_and_phase) ... FAIL
+test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope) ... FAIL
+test_replaced_and_expired_fences_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_replaced_and_expired_fences_cannot_execute) ... FAIL
+test_same_turn_concurrency_commits_exactly_one_effect_and_receipt (test_conversation_persistence.SQLReceiptTransactionTests.test_same_turn_concurrency_commits_exactly_one_effect_and_receipt) ... FAIL
+test_concurrent_attempts_consume_each_purpose_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_attempts_consume_each_purpose_once) ... ok
+test_concurrent_claims_only_one_worker_owns_oldest (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_claims_only_one_worker_owns_oldest) ... ok
+test_concurrent_distinct_admissions_have_contiguous_sequences (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_distinct_admissions_have_contiguous_sequences) ... ok
+test_concurrent_duplicate_admissions_allocate_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_duplicate_admissions_allocate_once) ... ok
+test_expired_claim_retains_oldest_phase_and_rejects_old_worker (test_conversation_persistence.SQLTurnStoreTests.test_expired_claim_retains_oldest_phase_and_rejects_old_worker) ... ok
+test_expired_unreplaced_worker_cannot_write (test_conversation_persistence.SQLTurnStoreTests.test_expired_unreplaced_worker_cannot_write) ... ok
+test_failed_admission_rolls_back_sequence_allocation (test_conversation_persistence.SQLTurnStoreTests.test_failed_admission_rolls_back_sequence_allocation) ... ok
+test_failed_budget_write_leaves_no_consumed_attempt (test_conversation_persistence.SQLTurnStoreTests.test_failed_budget_write_leaves_no_consumed_attempt) ... ok
+test_final_and_invalidated_status_lookup_uses_stored_identity (test_conversation_persistence.SQLTurnStoreTests.test_final_and_invalidated_status_lookup_uses_stored_identity) ... ok
+test_lost_admission_commit_ack_recovers_same_identity (test_conversation_persistence.SQLTurnStoreTests.test_lost_admission_commit_ack_recovers_same_identity) ... ok
+test_lost_budget_commit_ack_never_resets_dispatch_consumption (test_conversation_persistence.SQLTurnStoreTests.test_lost_budget_commit_ack_never_resets_dispatch_consumption) ... ok
+test_lost_claim_commit_ack_returns_known_identity_and_keeps_lease_busy (test_conversation_persistence.SQLTurnStoreTests.test_lost_claim_commit_ack_returns_known_identity_and_keeps_lease_busy) ... ok
+test_output_is_immutable_and_proposal_phase_recovers (test_conversation_persistence.SQLTurnStoreTests.test_output_is_immutable_and_proposal_phase_recovers) ... ok
+test_outputs_and_assembly_are_durable_but_stale_output_is_rejected (test_conversation_persistence.SQLTurnStoreTests.test_outputs_and_assembly_are_durable_but_stale_output_is_rejected) ... ok
+test_ports_release_connections_before_external_dispatch_and_new_engine_recovers (test_conversation_persistence.SQLTurnStoreTests.test_ports_release_connections_before_external_dispatch_and_new_engine_recovers) ... ok
+test_receipt_payload_cannot_escape_exact_turn_scope (test_conversation_persistence.SQLTurnStoreTests.test_receipt_payload_cannot_escape_exact_turn_scope) ... /Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+ok
+test_receipt_recovery_is_scoped_and_preserves_operation_phase (test_conversation_persistence.SQLTurnStoreTests.test_receipt_recovery_is_scoped_and_preserves_operation_phase) ... ok
+test_repair_token_is_shared_and_attempt_identity_is_immutable (test_conversation_persistence.SQLTurnStoreTests.test_repair_token_is_shared_and_attempt_identity_is_immutable) ... ok
+test_reset_scope_blocks_old_recovery_and_forged_turn_identity (test_conversation_persistence.SQLTurnStoreTests.test_reset_scope_blocks_old_recovery_and_forged_turn_identity) ... ok
+test_restart_scans_pending_without_admission_or_claim (test_conversation_persistence.SQLTurnStoreTests.test_restart_scans_pending_without_admission_or_claim) ... ok
+test_scope_epoch_and_npc_are_checked_without_allocating (test_conversation_persistence.SQLTurnStoreTests.test_scope_epoch_and_npc_are_checked_without_allocating) ... ok
+test_three_stage_call_cap_and_both_repair_directions_survive_restart (test_conversation_persistence.SQLTurnStoreTests.test_three_stage_call_cap_and_both_repair_directions_survive_restart) ... ok
+test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence (test_conversation_persistence.SQLTurnStoreTests.test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence) ... ok
+
+======================================================================
+FAIL: test_changed_ownership_records_rejection_and_never_substitutes (test_conversation_persistence.SQLReceiptTransactionTests.test_changed_ownership_records_rejection_and_never_substitutes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 580, in test_changed_ownership_records_rejection_and_never_substitutes
+    receipt = self.execute(lease,decision)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_cross_npc_shared_item_race_rejects_loser_without_substitution (test_conversation_persistence.SQLReceiptTransactionTests.test_cross_npc_shared_item_race_rejects_loser_without_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 477, in test_cross_npc_shared_item_race_rejects_loser_without_substitution
+    results = self.race(lambda index:self.execute(*inputs[index],store=self.restart()),count=2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 95, in race
+    return list(pool.map(run, range(count)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 93, in run
+    return fn(index)
+           ^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 477, in <lambda>
+    results = self.race(lambda index:self.execute(*inputs[index],store=self.restart()),count=2)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) (field='request_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 554, in test_forged_turn_scope_epoch_position_and_phase_cannot_execute
+    self.assertEqual(self.execute(forged,decision).code,'INVALID_INPUT')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) (field='sequence')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 554, in test_forged_turn_scope_epoch_position_and_phase_cannot_execute
+    self.assertEqual(self.execute(forged,decision).code,'INVALID_INPUT')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) (field='key')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 554, in test_forged_turn_scope_epoch_position_and_phase_cannot_execute
+    self.assertEqual(self.execute(forged,decision).code,'INVALID_INPUT')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 557, in test_forged_turn_scope_epoch_position_and_phase_cannot_execute
+    self.assertEqual(self.execute(lease,decision).code,'TURN_INVALIDATED')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_later_turn_with_forged_valid_lease_cannot_skip_earliest (test_conversation_persistence.SQLReceiptTransactionTests.test_later_turn_with_forged_valid_lease_cannot_skip_earliest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 572, in test_later_turn_with_forged_valid_lease_cannot_skip_earliest
+    self.assertEqual(self.execute(forged,decision).code,'LEASE_LOST')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_lost_commit_ack_recovers_receipt_before_any_new_execution (test_conversation_persistence.SQLReceiptTransactionTests.test_lost_commit_ack_recovers_receipt_before_any_new_execution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 514, in test_lost_commit_ack_recovers_receipt_before_any_new_execution
+    error = self.execute(lease,decision)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection (test_conversation_persistence.SQLReceiptTransactionTests.test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 617, in test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection
+    receipt=self.execute(lease,decision)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_owner_denial_after_mutation_has_no_effect_but_durable_rejection (test_conversation_persistence.SQLReceiptTransactionTests.test_owner_denial_after_mutation_has_no_effect_but_durable_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 596, in test_owner_denial_after_mutation_has_no_effect_but_durable_rejection
+    receipt = self.execute(lease,decision)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_receipt_insert_failure_rolls_back_inventory_quest_and_phase (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_insert_failure_rolls_back_inventory_quest_and_phase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 497, in test_receipt_insert_failure_rolls_back_inventory_quest_and_phase
+    error = self.execute(lease,decision)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 528, in test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope
+    receipt = self.execute(lease,decision)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_replaced_and_expired_fences_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_replaced_and_expired_fences_cannot_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 542, in test_replaced_and_expired_fences_cannot_execute
+    self.assertEqual(self.execute(lease,decision).code,'LEASE_LOST')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+======================================================================
+FAIL: test_same_turn_concurrency_commits_exactly_one_effect_and_receipt (test_conversation_persistence.SQLReceiptTransactionTests.test_same_turn_concurrency_commits_exactly_one_effect_and_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 463, in test_same_turn_concurrency_commits_exactly_one_effect_and_receipt
+    results = self.race(lambda _: self.execute(lease,decision,self.restart()))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 95, in race
+    return list(pool.map(run, range(count)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 93, in run
+    return fn(index)
+           ^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 463, in <lambda>
+    results = self.race(lambda _: self.execute(lease,decision,self.restart()))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 451, in execute
+    self.assertTrue(callable(getattr(gateway,'execute_once',None)), 'T03 execute_once is not implemented')
+AssertionError: False is not true : T03 execute_once is not implemented
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.979s
+
+FAILED (failures=14)

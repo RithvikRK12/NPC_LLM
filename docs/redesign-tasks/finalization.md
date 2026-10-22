@@ -1,7 +1,7 @@
 # finalization implementation tasks
 
 **Goal:** Deliver the `finalization` responsibility in the NPC conversation redesign.
-**Status:** Not started; no redesign implementation verified in this planning pass.
+**Status:** finalization/T01–T02 locally accepted; downstream coordinator integration remains open.
 **Sources:** [Proposal](../npc-conversation-redesign-proposal.md), [Detailed design](../npc-conversation-redesign-detailed-design.md). Relevant sections: Detailed design §§4,5.3–5.4,6.7.
 **Owned files / integration targets:** backend/app/services/conversation/finalization.py; backend/tests/test_conversation_finalization.py.
 **Architecture:** In-process modules with injected narrow contracts. Mechanical authority remains in existing deterministic game services; conversational narrative never grants gameplay permissions.
@@ -20,29 +20,29 @@
 
 ### finalization/T01: Build prevalidated publication plan and rechecks
 
-- [ ] **Task complete**
+- [x] **Task complete**
 
 **Depends on:** contracts/T03; ports/T02; canon/T02; memory/T01; interactions/T02.
 **Acceptance criteria:** Finalizer.commit(turn, fence, reply, continuity_plan) checks active key/fence/stream position, exact evidence dependencies, canon heads and interaction revisions. Refresh/reassemble outside transaction on relevant change; unrelated churn is not blanket rejection.
 **Test expectations:** Fake store rejects stale fence/epoch/canon/evidence; current activity may invalidate progress speech while historical receipt remains valid; no provider invocation under lock.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
+- [x] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
 
 ### finalization/T02: Publish final result and continuity atomically
 
-- [ ] **Task complete**
+- [x] **Task complete** — Main Agent accepted 2026-10-18 after persistence-adapters/T07 closed the SQL integration defects.
 
 **Depends on:** finalization/T01; persistence-adapters/T04.
 **Acceptance criteria:** Single publication transaction writes exact final text, lossless beats, accepted canon/memory, interaction transitions and terminal result. Read committed fulfilled negotiation status so stale plans cannot reactivate it; replay exact stored dialogue.
 **Test expectations:** Inject failure between transcript and canon writes: all rollback; final retry byte-for-byte identical; fulfilled interaction preserved; persistent evidence churn returns recoverable conflict without false finalization.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing SQL integration tests; REDs reproduced on SQLite and PostgreSQL.
+- [x] Verify the SQL publication boundary with persistence-adapters/T07; no facade change was needed.
+- [x] Run SQLite/PostgreSQL acceptance and the full backend suite.
+- [x] Review acceptance criteria and record handoff/output changes.
 
 ## Verification and handoff
 
@@ -50,5 +50,5 @@ Backend deterministic checks use `PYTHONPATH=backend .venv/bin/python -m unittes
 
 | Task | Owner / state | Verification command and evidence | Handoff / blockers |
 | --- | --- | --- | --- |
-| T01 | Unassigned / not started | Not run | None recorded |
-| T02 | Unassigned / not started | Not run | None recorded |
+| T01 | finalization_t01 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | [Handoff](../evidence/conversation-redesign-finalization/t01-handoff.md); focused 16/16, contracts 70/70, canon 15/15, interactions 18/18, store ports 32/32, memory 5/5; `git diff --check` exit 0 | Facade verified with doubles only; durable SQL publication remains T02 after persistence-adapters/T04 |
+| T02 | finalization_t02 / Main Agent accepted 2026-10-18; gpt-6.1-sol / high | [Handoff](../evidence/conversation-redesign-finalization/t02-handoff.md); after T07, SQL suite 22/22 SQLite and PostgreSQL 16.15; adjacent 36/36; full backend 975/975 | Atomic publication, rollback, exact replay, bounded refresh and operation-fulfilled interaction preservation verified |

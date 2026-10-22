@@ -1,0 +1,18 @@
+test_deep_immutability_and_input_isolation (test_contract_values.ContractValueTests.test_deep_immutability_and_input_isolation) ... ok
+test_error_is_typed_value_with_no_exception_payload (test_contract_values.ContractValueTests.test_error_is_typed_value_with_no_exception_payload) ... ok
+test_golden_round_trips (test_contract_values.ContractValueTests.test_golden_round_trips) ... ok
+test_import_does_not_load_infrastructure (test_contract_values.ContractValueTests.test_import_does_not_load_infrastructure) ... ok
+test_position_rejects_nonfinite_and_coerced_coordinates (test_contract_values.ContractValueTests.test_position_rejects_nonfinite_and_coerced_coordinates) ... ok
+test_reject_invalid_ids (test_contract_values.ContractValueTests.test_reject_invalid_ids) ... ok
+test_reject_invalid_revisions_and_duplicate_scopes (test_contract_values.ContractValueTests.test_reject_invalid_revisions_and_duplicate_scopes) ... ok
+test_reject_missing_or_inconsistent_provenance (test_contract_values.ContractValueTests.test_reject_missing_or_inconsistent_provenance) ... ok
+test_reject_unknown_or_coerced_versions (test_contract_values.ContractValueTests.test_reject_unknown_or_coerced_versions) ... ok
+test_revisions_keep_base_and_approved_separate (test_contract_values.ContractValueTests.test_revisions_keep_base_and_approved_separate) ... ok
+test_unapplied_policy_and_missing_input_error_need_no_fabricated_lineage (test_contract_values.ContractValueTests.test_unapplied_policy_and_missing_input_error_need_no_fabricated_lineage) ... ok
+test_unknown_fields_rejected_on_all_records (test_contract_values.ContractValueTests.test_unknown_fields_rejected_on_all_records) ... ok
+test_utc_normalization_and_invalid_timestamps (test_contract_values.ContractValueTests.test_utc_normalization_and_invalid_timestamps) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.076s
+
+OK

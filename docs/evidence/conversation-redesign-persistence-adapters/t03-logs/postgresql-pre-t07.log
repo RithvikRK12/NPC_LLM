@@ -1,0 +1,1951 @@
+PostgreSQL version: 16.15 (Debian 16.15-1.pgdg12+2)
+Disposable database: npc_test_t03_95e6495e64bb
+test_accepted_activity_receipt_never_claims_inspection_completed (test_conversation_persistence.SQLReceiptTransactionTests.test_accepted_activity_receipt_never_claims_inspection_completed) ... ERROR
+test_activity_receipt_failure_rolls_back_encounter_and_authoritative_memories (test_conversation_persistence.SQLReceiptTransactionTests.test_activity_receipt_failure_rolls_back_encounter_and_authoritative_memories) ... ERROR
+test_cancelled_persisted_consent_cannot_be_revived_by_old_binding (test_conversation_persistence.SQLReceiptTransactionTests.test_cancelled_persisted_consent_cannot_be_revived_by_old_binding) ... ERROR
+test_changed_ownership_records_rejection_and_never_substitutes (test_conversation_persistence.SQLReceiptTransactionTests.test_changed_ownership_records_rejection_and_never_substitutes) ... ERROR
+test_consent_question_and_answer_are_reloaded_from_persisted_turns (test_conversation_persistence.SQLReceiptTransactionTests.test_consent_question_and_answer_are_reloaded_from_persisted_turns) ... ERROR
+test_corrupt_receipt_digest_fails_closed_before_dispatch (test_conversation_persistence.SQLReceiptTransactionTests.test_corrupt_receipt_digest_fails_closed_before_dispatch) ... ERROR
+test_cross_npc_shared_item_race_rejects_loser_without_substitution (test_conversation_persistence.SQLReceiptTransactionTests.test_cross_npc_shared_item_race_rejects_loser_without_substitution) ... ERROR
+test_exact_persisted_consent_is_fulfilled_atomically_with_receipt (test_conversation_persistence.SQLReceiptTransactionTests.test_exact_persisted_consent_is_fulfilled_atomically_with_receipt) ... ERROR
+test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute) ... ERROR
+test_later_turn_with_forged_valid_lease_cannot_skip_earliest (test_conversation_persistence.SQLReceiptTransactionTests.test_later_turn_with_forged_valid_lease_cannot_skip_earliest) ... ERROR
+test_lost_commit_ack_recovers_receipt_before_any_new_execution (test_conversation_persistence.SQLReceiptTransactionTests.test_lost_commit_ack_recovers_receipt_before_any_new_execution) ... ERROR
+test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection (test_conversation_persistence.SQLReceiptTransactionTests.test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection) ... ERROR
+test_owner_denial_after_mutation_has_no_effect_but_durable_rejection (test_conversation_persistence.SQLReceiptTransactionTests.test_owner_denial_after_mutation_has_no_effect_but_durable_rejection) ... ERROR
+test_persisted_choice_cannot_authorize_substituted_command_direction (test_conversation_persistence.SQLReceiptTransactionTests.test_persisted_choice_cannot_authorize_substituted_command_direction) ... ERROR
+test_receipt_captures_complete_before_after_resource_revisions (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_captures_complete_before_after_resource_revisions) ... ERROR
+test_receipt_failure_also_rolls_back_consent_fulfillment (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_failure_also_rolls_back_consent_fulfillment) ... ERROR
+test_receipt_insert_failure_rolls_back_inventory_quest_and_phase (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_insert_failure_rolls_back_inventory_quest_and_phase) ... ERROR
+test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope) ... ERROR
+test_replaced_and_expired_fences_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_replaced_and_expired_fences_cannot_execute) ... ERROR
+test_same_turn_concurrency_commits_exactly_one_effect_and_receipt (test_conversation_persistence.SQLReceiptTransactionTests.test_same_turn_concurrency_commits_exactly_one_effect_and_receipt) ... ERROR
+test_concurrent_attempts_consume_each_purpose_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_attempts_consume_each_purpose_once) ... ok
+test_concurrent_claims_only_one_worker_owns_oldest (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_claims_only_one_worker_owns_oldest) ... ok
+test_concurrent_distinct_admissions_have_contiguous_sequences (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_distinct_admissions_have_contiguous_sequences) ... ok
+test_concurrent_duplicate_admissions_allocate_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_duplicate_admissions_allocate_once) ... ok
+test_expired_claim_retains_oldest_phase_and_rejects_old_worker (test_conversation_persistence.SQLTurnStoreTests.test_expired_claim_retains_oldest_phase_and_rejects_old_worker) ... ok
+test_expired_unreplaced_worker_cannot_write (test_conversation_persistence.SQLTurnStoreTests.test_expired_unreplaced_worker_cannot_write) ... ok
+test_failed_admission_rolls_back_sequence_allocation (test_conversation_persistence.SQLTurnStoreTests.test_failed_admission_rolls_back_sequence_allocation) ... ok
+test_failed_budget_write_leaves_no_consumed_attempt (test_conversation_persistence.SQLTurnStoreTests.test_failed_budget_write_leaves_no_consumed_attempt) ... ok
+test_final_and_invalidated_status_lookup_uses_stored_identity (test_conversation_persistence.SQLTurnStoreTests.test_final_and_invalidated_status_lookup_uses_stored_identity) ... ok
+test_lost_admission_commit_ack_recovers_same_identity (test_conversation_persistence.SQLTurnStoreTests.test_lost_admission_commit_ack_recovers_same_identity) ... ok
+test_lost_budget_commit_ack_never_resets_dispatch_consumption (test_conversation_persistence.SQLTurnStoreTests.test_lost_budget_commit_ack_never_resets_dispatch_consumption) ... ok
+test_lost_claim_commit_ack_returns_known_identity_and_keeps_lease_busy (test_conversation_persistence.SQLTurnStoreTests.test_lost_claim_commit_ack_returns_known_identity_and_keeps_lease_busy) ... ok
+test_output_is_immutable_and_proposal_phase_recovers (test_conversation_persistence.SQLTurnStoreTests.test_output_is_immutable_and_proposal_phase_recovers) ... ok
+test_outputs_and_assembly_are_durable_but_stale_output_is_rejected (test_conversation_persistence.SQLTurnStoreTests.test_outputs_and_assembly_are_durable_but_stale_output_is_rejected) ... ok
+test_ports_release_connections_before_external_dispatch_and_new_engine_recovers (test_conversation_persistence.SQLTurnStoreTests.test_ports_release_connections_before_external_dispatch_and_new_engine_recovers) ... ok
+test_receipt_payload_cannot_escape_exact_turn_scope (test_conversation_persistence.SQLTurnStoreTests.test_receipt_payload_cannot_escape_exact_turn_scope) ... ok
+test_receipt_recovery_is_scoped_and_preserves_operation_phase (test_conversation_persistence.SQLTurnStoreTests.test_receipt_recovery_is_scoped_and_preserves_operation_phase) ... ok
+test_repair_token_is_shared_and_attempt_identity_is_immutable (test_conversation_persistence.SQLTurnStoreTests.test_repair_token_is_shared_and_attempt_identity_is_immutable) ... ok
+test_reset_scope_blocks_old_recovery_and_forged_turn_identity (test_conversation_persistence.SQLTurnStoreTests.test_reset_scope_blocks_old_recovery_and_forged_turn_identity) ... ok
+test_restart_scans_pending_without_admission_or_claim (test_conversation_persistence.SQLTurnStoreTests.test_restart_scans_pending_without_admission_or_claim) ... ok
+test_scope_epoch_and_npc_are_checked_without_allocating (test_conversation_persistence.SQLTurnStoreTests.test_scope_epoch_and_npc_are_checked_without_allocating) ... ok
+test_three_stage_call_cap_and_both_repair_directions_survive_restart (test_conversation_persistence.SQLTurnStoreTests.test_three_stage_call_cap_and_both_repair_directions_survive_restart) ... ok
+test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence (test_conversation_persistence.SQLTurnStoreTests.test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence) ... ok
+
+======================================================================
+ERROR: test_accepted_activity_receipt_never_claims_inspection_completed (test_conversation_persistence.SQLReceiptTransactionTests.test_accepted_activity_receipt_never_claims_inspection_completed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_activity_receipt_failure_rolls_back_encounter_and_authoritative_memories (test_conversation_persistence.SQLReceiptTransactionTests.test_activity_receipt_failure_rolls_back_encounter_and_authoritative_memories)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_cancelled_persisted_consent_cannot_be_revived_by_old_binding (test_conversation_persistence.SQLReceiptTransactionTests.test_cancelled_persisted_consent_cannot_be_revived_by_old_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_changed_ownership_records_rejection_and_never_substitutes (test_conversation_persistence.SQLReceiptTransactionTests.test_changed_ownership_records_rejection_and_never_substitutes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_consent_question_and_answer_are_reloaded_from_persisted_turns (test_conversation_persistence.SQLReceiptTransactionTests.test_consent_question_and_answer_are_reloaded_from_persisted_turns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_corrupt_receipt_digest_fails_closed_before_dispatch (test_conversation_persistence.SQLReceiptTransactionTests.test_corrupt_receipt_digest_fails_closed_before_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_cross_npc_shared_item_race_rejects_loser_without_substitution (test_conversation_persistence.SQLReceiptTransactionTests.test_cross_npc_shared_item_race_rejects_loser_without_substitution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_exact_persisted_consent_is_fulfilled_atomically_with_receipt (test_conversation_persistence.SQLReceiptTransactionTests.test_exact_persisted_consent_is_fulfilled_atomically_with_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_forged_turn_scope_epoch_position_and_phase_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_forged_turn_scope_epoch_position_and_phase_cannot_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_later_turn_with_forged_valid_lease_cannot_skip_earliest (test_conversation_persistence.SQLReceiptTransactionTests.test_later_turn_with_forged_valid_lease_cannot_skip_earliest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_lost_commit_ack_recovers_receipt_before_any_new_execution (test_conversation_persistence.SQLReceiptTransactionTests.test_lost_commit_ack_recovers_receipt_before_any_new_execution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection (test_conversation_persistence.SQLReceiptTransactionTests.test_operation_uses_real_player_writer_lock_before_reads_and_closes_connection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_owner_denial_after_mutation_has_no_effect_but_durable_rejection (test_conversation_persistence.SQLReceiptTransactionTests.test_owner_denial_after_mutation_has_no_effect_but_durable_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_persisted_choice_cannot_authorize_substituted_command_direction (test_conversation_persistence.SQLReceiptTransactionTests.test_persisted_choice_cannot_authorize_substituted_command_direction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_receipt_captures_complete_before_after_resource_revisions (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_captures_complete_before_after_resource_revisions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_receipt_failure_also_rolls_back_consent_fulfillment (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_failure_also_rolls_back_consent_fulfillment)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_receipt_insert_failure_rolls_back_inventory_quest_and_phase (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_insert_failure_rolls_back_inventory_quest_and_phase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope (test_conversation_persistence.SQLReceiptTransactionTests.test_receipt_recovery_survives_clear_but_never_crosses_new_game_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_replaced_and_expired_fences_cannot_execute (test_conversation_persistence.SQLReceiptTransactionTests.test_replaced_and_expired_fences_cannot_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+======================================================================
+ERROR: test_same_turn_concurrency_commits_exactly_one_effect_and_receipt (test_conversation_persistence.SQLReceiptTransactionTests.test_same_turn_concurrency_commits_exactly_one_effect_and_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedObject: type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 413, in setUp
+    Base.metadata.create_all(self.engine)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5929, in create_all
+    bind._run_ddl_visitor(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3270, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2469, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 985, in visit_metadata
+    self.traverse_single(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 1023, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 322, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/ddl.py", line 188, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1532, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedObject) type "vector" does not exist
+LINE 9:  embedding VECTOR(1536), 
+                   ^
+
+[SQL: 
+CREATE TABLE memories (
+	id SERIAL NOT NULL, 
+	npc_id INTEGER NOT NULL, 
+	event VARCHAR(512) NOT NULL, 
+	importance FLOAT NOT NULL, 
+	emotion VARCHAR(64) NOT NULL, 
+	timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL, 
+	embedding VECTOR(1536), 
+	semantic_embedding JSON, 
+	embedding_model VARCHAR(255), 
+	event_type VARCHAR(64) DEFAULT 'legacy' NOT NULL, 
+	quest_id VARCHAR(64), 
+	duplicate_key VARCHAR(64), 
+	game_scope VARCHAR(36), 
+	source_event_id VARCHAR(36), 
+	source_conversation_id INTEGER, 
+	conversation_epoch INTEGER, 
+	source_turn_id VARCHAR(64), 
+	epistemic_status VARCHAR(24) DEFAULT 'interpretation' NOT NULL, 
+	authority VARCHAR(24) DEFAULT 'inferred' NOT NULL, 
+	lifecycle VARCHAR(24) DEFAULT 'active' NOT NULL, 
+	claim_text VARCHAR(500), 
+	correction_of_id INTEGER, 
+	superseded_by_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(npc_id) REFERENCES npcs (id)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+----------------------------------------------------------------------
+Ran 43 tests in 1.523s
+
+FAILED (errors=20)
+Dropped disposable database: npc_test_t03_95e6495e64bb

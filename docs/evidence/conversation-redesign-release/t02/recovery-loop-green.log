@@ -1,0 +1,12 @@
+test_application_restart_enumerates_durable_pending_keys (test_conversation_worker.WorkerTests.test_application_restart_enumerates_durable_pending_keys) ... ok
+test_application_waits_for_durable_completion_within_delivery_budget (test_conversation_worker.WorkerTests.test_application_waits_for_durable_completion_within_delivery_budget) ... ok
+test_busy_oldest_turn_is_not_bypassed_or_processed (test_conversation_worker.WorkerTests.test_busy_oldest_turn_is_not_bypassed_or_processed) ... ok
+test_delivery_and_worker_limits_reject_nonfinite_values (test_conversation_worker.WorkerTests.test_delivery_and_worker_limits_reject_nonfinite_values) ... ok
+test_delivery_timeout_returns_pending_while_durable_work_continues (test_conversation_worker.WorkerTests.test_delivery_timeout_returns_pending_while_durable_work_continues) ... ok
+test_recovery_loop_wakes_a_late_pending_stream_without_another_post (test_conversation_worker.WorkerTests.test_recovery_loop_wakes_a_late_pending_stream_without_another_post) ... ok
+test_restart_scan_claims_durable_oldest_turn (test_conversation_worker.WorkerTests.test_restart_scan_claims_durable_oldest_turn) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.028s
+
+OK

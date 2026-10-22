@@ -1,0 +1,12 @@
+======================================================================
+FAIL: test_player_ownership_and_reoffering_a_completed_inspection_are_blocking (test_conversation_post_inspection.PostInspectionTests.test_player_ownership_and_reoffering_a_completed_inspection_are_blocking)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_post_inspection.py", line 57, in test_player_ownership_and_reoffering_a_completed_inspection_are_blocking
+    self.assertIn(code, {item.code for item in findings}, text)
+AssertionError: 'COMPLETED_ACTIVITY_REOFFERED' not found in set() : We can take a look at the damage together.
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+FAILED (failures=1)

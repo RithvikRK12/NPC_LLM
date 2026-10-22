@@ -1,0 +1,22 @@
+{
+  "origin": "dialogue_shadow_generated",
+  "mode": "closed_loop",
+  "sample_count": 24,
+  "generated": 24,
+  "missing_or_error": 0,
+  "cutoff_suspected": 2,
+  "cutoff_suspected_refs": [
+    "craftsman-02:t1",
+    "craftsman-04:t1"
+  ],
+  "elapsed_wall_seconds": 183.685570333153,
+  "python_process_peak_rss_platform_units": 48381952,
+  "ollama_model_size_bytes": 8049225890,
+  "ollama_model_size_vram_bytes": 8049225890,
+  "ollama_active_context_size": 4096,
+  "initial_state_digest": "0923445346c7ce556f4514078120a88861b9b1f33e58d8b4fb7387a3fda77d3b",
+  "final_state_digest": "0923445346c7ce556f4514078120a88861b9b1f33e58d8b4fb7387a3fda77d3b",
+  "run_id": "400fb159-6255-4949-9565-2d54e7e8637f",
+  "prompt_variant": "t04",
+  "note": "Dialogue shadow only; this is not the structured production path."
+}

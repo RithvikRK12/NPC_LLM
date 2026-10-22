@@ -4,7 +4,7 @@ extends SceneTree
 func _initialize() -> void: call_deferred("run_check")
 
 func wait_for(condition: Callable) -> bool:
-	var deadline := Time.get_ticks_msec() + 20000
+	var deadline := Time.get_ticks_msec() + 150000 # Three bounded provider stages, including a cold load.
 	while not condition.call():
 		await process_frame
 		if Time.get_ticks_msec() > deadline:
@@ -51,7 +51,7 @@ func run_check() -> void:
 	if not check(scene.player.position == Vector2(95, 105), "Launch must restore position"): return
 	if not check(scene.bow_state.phase == "meet", "Launch must preserve quest"): return
 	if not check(not scene.player_items.has("water"), "Launch must preserve inventory"): return
-	if not check(scene.chat_windows[1].conversation_text().contains("Thank you"), "Launch must restore chats"): return
+	if not check(scene.chat_windows[1].conversation_text().contains("You gave me 1 water."), "Launch must restore chats"): return
 	if not await wait_for(func(): return not scene._operations_pending()): return
 	scene.restart_button.pressed.emit()
 	if not check(scene.restart_dialog.visible, "Restart must show confirmation"): return
@@ -62,6 +62,9 @@ func run_check() -> void:
 	if not check(scene.player.position == Vector2.ZERO, "Restart must reset position"): return
 	if not check(scene.bow_state.phase == "available", "Restart must reset quest"): return
 	if not check(scene.player_items == ["water", "food"], "Restart must restore starter inventory"): return
-	if not check(not scene.chat_windows[1].conversation_text().contains("Thank you"), "Restart must clear chat"): return
+	if not check(not scene.chat_windows[1].conversation_text().contains("You gave me 1 water."), "Restart must clear chat"): return
 	print("PASS persistence across launches and explicit restart")
+	scene.queue_free()
+	await process_frame
+	await process_frame
 	quit(0)

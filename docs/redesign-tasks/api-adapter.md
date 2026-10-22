@@ -1,7 +1,7 @@
 # api-adapter implementation tasks
 
 **Goal:** Deliver the `api-adapter` responsibility in the NPC conversation redesign.
-**Status:** Not started; no redesign implementation verified in this planning pass.
+**Status:** api-adapter/T01–T03 locally accepted by Main Agent on 2026-10-18; lifecycle and durable final-response integration verified.
 **Sources:** [Proposal](../npc-conversation-redesign-proposal.md), [Detailed design](../npc-conversation-redesign-detailed-design.md). Relevant sections: Detailed design §§7.1,8–10; Proposal §17.
 **Owned files / integration targets:** backend/app/api/routes/{chat,world}.py; backend/app/schemas/chat.py; backend/app/api/router.py; backend/tests/test_conversation_api.py.
 **Architecture:** In-process modules with injected narrow contracts. Mechanical authority remains in existing deterministic game services; conversational narrative never grants gameplay permissions.
@@ -20,42 +20,42 @@
 
 ### api-adapter/T01: Add versioned submit and status transport
 
-- [ ] **Task complete**
+- [x] **Task complete locally**
 
 **Depends on:** contracts/T03; ports/T02.
 **Acceptance criteria:** POST /chat redesigned request requires schema_version/request_id/game_scope/epoch plus NPC/message, keeps 500-character input bound and server-resolved player. 200 carries only durable final result and preserved legacy fields; 202 carries identity/status URL without draft. Scoped GET /chat/turns/{turn_id} never executes.
 **Test expectations:** FastAPI fakes test 422 invalid/bounds, 404 NPC/save, 409 stale key/payload conflict, pending/final/invalidated lookup, immutable dialogue and revision-labelled snapshots; missing ID stays legacy rather than gaining false retry guarantee.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral/contract tests for the cases above.
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and adjacent dependency conformance cases; record passing evidence.
+- [x] Review acceptance criteria and record handoff/output changes.
 
 ### api-adapter/T02: Add lifecycle endpoints and scoped world projection
 
-- [ ] **Task complete**
+- [x] **Task complete** — Main Agent accepted 2026-10-18 after API, scoped-history and full backend acceptance.
 
 **Depends on:** api-adapter/T01; lifecycle/T02.
 **Acceptance criteria:** DELETE /chat/{npc_id} requires expected scope/epoch and returns new epoch plus preservation explanation; POST /world/new-game requires expected scope and returns replacement. /world exposes active key/revisions and terminal/invalidated sequence info, excludes old history.
 **Test expectations:** Clear/reset stale request conflicts; history scope isolation; old turn inaccessible; client refresh has enough terminal sequence information to advance past invalidated result; response keeps existing world fields.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add failing route and scoped-history/projection tests.
+- [x] Implement versioned clear/reset endpoints and active-key world projection while preserving legacy paths.
+- [x] Run focused API, conversation and full backend suites; record passing evidence.
+- [x] Review acceptance criteria and record handoff/output changes.
 
 ### api-adapter/T03: Wire shared application service and safe error mapping
 
-- [ ] **Task complete**
+- [x] **Task complete locally** — Main Agent accepted 2026-10-18 after durable compatibility projection and degraded exact-retry verification.
 
 **Depends on:** api-adapter/T02; coordinator/T03.
 **Acceptance criteria:** Synchronous delivery budget falls back to durable 202 continuation. Map stable ConversationError codes/stage/retryability/turn/safe detail to §8 outcomes; storage uncertainty stays recoverable 503/connection failure, never fabricated 200. Preserve versioned legacy compatibility.
 **Test expectations:** Disconnect/poll/retry never reexecutes; provider outage yields validated degraded 200 only after persistence; DB unavailable/internal errors map safely; error details exclude internal exception context and credentials.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral/contract tests for the cases above.
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
+- [x] Review acceptance criteria and close output compatibility gate.
 
 ## Verification and handoff
 
@@ -63,6 +63,6 @@ Backend deterministic checks use `PYTHONPATH=backend .venv/bin/python -m unittes
 
 | Task | Owner / state | Verification command and evidence | Handoff / blockers |
 | --- | --- | --- | --- |
-| T01 | Unassigned / not started | Not run | None recorded |
-| T02 | Unassigned / not started | Not run | None recorded |
-| T03 | Unassigned / not started | Not run | None recorded |
+| T01 | api_adapter_t01 / locally accepted 2026-10-15; gpt-6.1-sol / medium; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-api-adapter/t01-handoff.md); focused 13/13, conversation 269/269, ports 58/58, full backend 732/732 pass; diff check clean | Versioned submit/status transport; unwired durable service returns 503 pending coordinator/T03; missing request ID remains legacy |
+| T02 | Main Agent / accepted 2026-10-18 | [Handoff](../evidence/conversation-redesign-api-adapter/t02-handoff.md); API focused 18/18, conversation 516/516, backend 984/984; diff check clean | Versioned clear/reset lifecycle transport and active-scope world projection; legacy paths remain available during migration |
+| T03 | Main Agent / accepted 2026-10-18; model identifier unavailable in current runtime | [Handoff](../evidence/conversation-redesign-api-adapter/t03-handoff.md); focused integration 146/146, conversation 580/580, full backend 1,048/1,048; `git diff --check` exit 0 | Durable finalization stores a validated legacy projection and fallback origin; provider outage returned 200 after SQLite receipt commit; identical retry preserved dialogue/receipt and did not repeat the effect. |

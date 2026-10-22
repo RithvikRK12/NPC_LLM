@@ -1,5 +1,6 @@
 extends Node
 signal updated(data: Dictionary, operation: String)
+signal snapshot_received(data: Dictionary, operation: String)
 signal failed(message: String)
 var backend_url := "http://127.0.0.1:8000"
 var game_scope := ""
@@ -14,6 +15,8 @@ var last_checkpoint: Dictionary = {}
 var sent_checkpoint: Dictionary = {}
 var save_elapsed := 0.0
 var retry_payload: Dictionary = {}
+var snapshot_filter: Callable
+var activity_events = preload("res://scripts/revisioned_state.gd").new()
 func _ready() -> void:
 	request=HTTPRequest.new(); request.timeout=10; add_child(request)
 	request.request_completed.connect(_completed)
@@ -23,6 +26,7 @@ func restore(data: Dictionary) -> void:
 	last_checkpoint={}; pending_command={}; retry_payload={}
 func ingest(data: Dictionary) -> void:
 	if data.get("game_scope",game_scope)!=game_scope: return
+	if snapshot_filter.is_valid(): data = snapshot_filter.call(data)
 	var incoming: Dictionary=data.get("craftsman_encounter",{})
 	if int(incoming.get("revision",-1))>=int(state.get("revision",0)): state=incoming
 func send_command(command: String, payload: Dictionary={}, request_id: String="") -> void:
@@ -30,6 +34,9 @@ func send_command(command: String, payload: Dictionary={}, request_id: String=""
 		failed.emit("The backend has not loaded the Craftsman encounter. Restart the backend, then reopen the game to continue. Your save will be kept.")
 		return
 	if not pending_command.is_empty(): return
+	if not request_id.is_empty() and retry_payload.get("request_id", "") == request_id:
+		if not busy: _send("command", retry_payload.duplicate(true))
+		return
 	if request_id.is_empty(): request_id=game_scope+":"+command+":"+str(Time.get_ticks_usec())
 	pending_command={"command":command,"payload":payload,"request_id":request_id}
 	if busy: return
@@ -78,12 +85,15 @@ func _completed(result: int, code: int, _headers: PackedStringArray, body: Packe
 		return
 	if data.get("game_scope",game_scope)!=game_scope: return
 	var kind := operation
+	if snapshot_filter.is_valid(): data = snapshot_filter.call(data)
+	if int(data.get("craftsman_encounter", {}).get("revision", -1)) < int(state.get("revision", 0)): return
 	ingest(data)
 	if kind=="checkpoint":
 		# Acknowledge exactly what was sent. JSON decodes integer fields as
 		# floats; reconstructed dictionaries do not compare equal in Godot.
 		last_checkpoint=sent_checkpoint.duplicate(true)
-	updated.emit(data,kind)
+	snapshot_received.emit(data, kind)
+	if kind == "checkpoint" or activity_events.consume_activity("activity:ship_inspection", game_scope, state): updated.emit(data,kind)
 	if kind=="checkpoint" and not pending_command.is_empty():
 		if checkpoint_provider.is_valid(): save_checkpoint(checkpoint_provider.call())
 		else: _send_pending()

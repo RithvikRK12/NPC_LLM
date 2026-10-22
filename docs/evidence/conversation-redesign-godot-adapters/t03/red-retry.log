@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: revisioned_state_smoke: FAIL Craftsman retry preserves exact payload and expected revision after disconnect
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:145)
+       [1] run (res://tests/revisioned_state_smoke.gd:130)
+revisioned_state_smoke: 21 passed, 1 failed

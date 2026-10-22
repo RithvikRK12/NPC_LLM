@@ -1,0 +1,13 @@
+...........F.................
+======================================================================
+FAIL: test_personal_question_schema_has_no_game_operation_or_new_canon (test_conversation_generation_adapter.GenerationAdapterTests.test_personal_question_schema_has_no_game_operation_or_new_canon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_generation_adapter.py", line 170, in test_personal_question_schema_has_no_game_operation_or_new_canon
+    self.assertEqual(schema['properties']['operation_candidates'].get('maxItems'),0)
+AssertionError: None != 0
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.105s
+
+FAILED (failures=1)

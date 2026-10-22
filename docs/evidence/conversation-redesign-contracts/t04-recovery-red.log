@@ -1,0 +1,104 @@
+test_all_interface_values_roundtrip_and_reject_extra_fields (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_all_interface_values_roundtrip_and_reject_extra_fields) ... FAIL
+test_continuity_rechecks_only_dependencies_and_exact_final_spans (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_continuity_rechecks_only_dependencies_and_exact_final_spans) ... FAIL
+test_interaction_plan_cannot_overwrite_a_committed_transition (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_interaction_plan_cannot_overwrite_a_committed_transition) ... FAIL
+test_lease_rejects_replaced_fence_expiry_and_wrong_stream_position (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_lease_rejects_replaced_fence_expiry_and_wrong_stream_position) ... FAIL
+test_memory_corrections_require_link_and_expected_head (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_memory_corrections_require_link_and_expected_head) ... FAIL
+test_nested_data_is_detached_and_immutable (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_nested_data_is_detached_and_immutable) ... FAIL
+test_optional_success_none_is_distinct_from_failure_and_missing_branch (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_optional_success_none_is_distinct_from_failure_and_missing_branch) ... FAIL
+test_recovery_clears_invalidated_payload_and_retains_only_scoped_receipt (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_recovery_clears_invalidated_payload_and_retains_only_scoped_receipt) ... FAIL
+test_recovery_preserves_consumed_attempt_and_single_repair_budget (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_recovery_preserves_consumed_attempt_and_single_repair_budget) ... FAIL
+test_rejected_shared_fixtures (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_rejected_shared_fixtures) ... FAIL
+test_summary_rechecks_epoch_correction_revisions_and_source_range (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_summary_rechecks_epoch_correction_revisions_and_source_range) ... FAIL
+
+======================================================================
+FAIL: test_all_interface_values_roundtrip_and_reject_extra_fields (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_all_interface_values_roundtrip_and_reject_extra_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_continuity_rechecks_only_dependencies_and_exact_final_spans (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_continuity_rechecks_only_dependencies_and_exact_final_spans)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_interaction_plan_cannot_overwrite_a_committed_transition (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_interaction_plan_cannot_overwrite_a_committed_transition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_lease_rejects_replaced_fence_expiry_and_wrong_stream_position (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_lease_rejects_replaced_fence_expiry_and_wrong_stream_position)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_memory_corrections_require_link_and_expected_head (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_memory_corrections_require_link_and_expected_head)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_nested_data_is_detached_and_immutable (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_nested_data_is_detached_and_immutable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_optional_success_none_is_distinct_from_failure_and_missing_branch (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_optional_success_none_is_distinct_from_failure_and_missing_branch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_recovery_clears_invalidated_payload_and_retains_only_scoped_receipt (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_recovery_clears_invalidated_payload_and_retains_only_scoped_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_recovery_preserves_consumed_attempt_and_single_repair_budget (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_recovery_preserves_consumed_attempt_and_single_repair_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_rejected_shared_fixtures (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_rejected_shared_fixtures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+======================================================================
+FAIL: test_summary_rechecks_epoch_correction_revisions_and_source_range (test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_summary_rechecks_epoch_correction_revisions_and_source_range)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 25, in setUp
+    self.assertTrue(hasattr(c, name), f'T04 public interface value {name} is absent')
+AssertionError: False is not true : T04 public interface value ProviderAttempt is absent
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+FAILED (failures=11)

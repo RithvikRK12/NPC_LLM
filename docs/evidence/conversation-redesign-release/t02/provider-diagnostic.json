@@ -1,0 +1,52 @@
+[
+  {
+    "id": "chatcmpl-508",
+    "object": "chat.completion",
+    "created": 1792475419,
+    "model": "llama3:willowbrook",
+    "system_fingerprint": "fp_ollama",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n\"concerns\": [\n    {\n        \"concern_id\": \"turn:1\",\n        \"kind\": \"emotion\",\n        \"message_spans\": [\n            {\n                \"text_id\": \"turn:1\",\n                \"start\": 0,\n                \"end\": 34\n            }\n        ]\n    }\n],\n\"references\": [],\n\"reports\": [],\n\"correction_candidates\": [],\n\"operation_candidates\": [\n    {\n        \"candidate_id\": \"offer_item\",\n        \"command_id\": \"give_item\",\n        \"arguments\": {\n            \"item\": \"saw\"\n        },\n        \"target\": {\n            \"reference_id\": \"npc:1\",\n            \"entity_kind\": \"npc\",\n            \"entity_id\": \"1\"\n        },\n        \"source_spans\": [\n            {\n                \"text_id\": \"turn:1\",\n                \"start\": 0,\n                \"end\": 34\n            }\n        ],\n        \"modality\": \"direct\",\n        \"pending_question_id\": null\n    }\n],\n\"interaction_links\": [],\n\"reply\": [\n    {\n        \"kind\": \"expressive\",\n        \"segment_id\": \"turn:1\",\n        \"text\": \"I'm glad you asked. I find joy in the process of crafting and creating something new. It's a sense of accomplishment and pride in my work that I enjoy the most.\",\n        \"addressed_concern_ids\": [\n            \"turn:1\"\n        ]\n    }\n],\n\"canon_candidates\": []\n}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2795,
+      "prompt_tokens_details": {
+        "cached_tokens": 491
+      },
+      "completion_tokens": 319,
+      "total_tokens": 3114
+    }
+  },
+  {
+    "id": "chatcmpl-892",
+    "object": "chat.completion",
+    "created": 1792475432,
+    "model": "llama3:willowbrook",
+    "system_fingerprint": "fp_ollama",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n\"segments\": [\n{\n\"kind\": \"expressive\",\n\"segment_id\": \"candidate_reply:1\",\n\"text\": \"I'm glad you asked! I've been thinking about my work a lot lately. I enjoy the sense of accomplishment when I finish a project, and the feeling of pride when I see something I've made being used by others. It's also nice to have a routine and know what I'm doing each day. But I have to admit, sometimes I get a bit anxious about making mistakes or not being good enough. It's a constant balance between confidence and self-doubt.\",\n\"addressed_concern_ids\": [\"turn:1\"]\n}\n],\n\"source\": {\n\"origin\": \"generated\",\n\"source_id\": \"candidate_reply:1\",\n\"schema_version\": 1,\n\"policy_versions\": {\"authoritative\": \"3e4cf395a5a45863\"}\n},\n\"canon_candidates\": []\n}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3060,
+      "prompt_tokens_details": {
+        "cached_tokens": 1499
+      },
+      "completion_tokens": 198,
+      "total_tokens": 3258
+    }
+  }
+]

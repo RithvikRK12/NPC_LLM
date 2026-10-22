@@ -1,0 +1,5 @@
+backend/app/services/conversation/composition.py: compiles; terminal newline; no trailing whitespace
+backend/tests/test_conversation_composition.py: compiles; terminal newline; no trailing whitespace
+backend/tests/test_conversation_composition_service.py: compiles; terminal newline; no trailing whitespace
+backend/tests/fixtures/conversation/composition-t01-golden.json: valid JSON; terminal newline; no trailing whitespace
+backend/tests/fixtures/conversation/composition-t03-history.json: valid JSON; terminal newline; no trailing whitespace

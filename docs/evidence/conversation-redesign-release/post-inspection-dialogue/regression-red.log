@@ -1,0 +1,78 @@
+======================================================================
+ERROR: test_prompt_names_current_completed_state_and_separates_player_from_npc (test_conversation_post_inspection.PostInspectionTests.test_prompt_names_current_completed_state_and_separates_player_from_npc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_post_inspection.py", line 40, in test_prompt_names_current_completed_state_and_separates_player_from_npc
+    self.assertEqual(data['speaker_knowledge']['ship_inspection'], 'completed')
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'ship_inspection'
+
+======================================================================
+ERROR: test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata) (message='Thanks for looking at my ship!')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/llm/structured.py", line 135, in generate
+    draft = wire_contract.model_validate(_json_arrays_to_tuples(decoded), strict=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/pydantic/main.py", line 732, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 9 validation errors for TurnProposal
+concerns
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+references
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+reports
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+correction_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+operation_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+interaction_links
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+reply
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+canon_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+dialogue
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Quiet work suits me.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_generation_adapter.py", line 305, in test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata
+    result = self.adapter(transport).generate('proposal', context, self.deadline, 600)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/llm/structured.py", line 154, in generate
+    raise GenerationMalformed('provider output does not match the contract') from exc
+app.services.conversation.generation_errors.GenerationMalformed: provider output does not match the contract
+
+======================================================================
+FAIL: test_gratitude_uses_dialogue_but_mixed_requests_keep_the_action_contract (test_conversation_post_inspection.PostInspectionTests.test_gratitude_uses_dialogue_but_mixed_requests_keep_the_action_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_post_inspection.py", line 30, in test_gratitude_uses_dialogue_but_mixed_requests_keep_the_action_contract
+    self.assertTrue(is_social_message(text), text)
+AssertionError: False is not true : Thanks for looking at my ship!
+
+======================================================================
+FAIL: test_player_ownership_and_reoffering_a_completed_inspection_are_blocking (test_conversation_post_inspection.PostInspectionTests.test_player_ownership_and_reoffering_a_completed_inspection_are_blocking)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_post_inspection.py", line 51, in test_player_ownership_and_reoffering_a_completed_inspection_are_blocking
+    self.assertIn(code, {item.code for item in findings}, text)
+AssertionError: 'SPEAKER_PERSPECTIVE_MISMATCH' not found in set() : Thanks for looking at my ship!
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.103s
+
+FAILED (failures=2, errors=2)

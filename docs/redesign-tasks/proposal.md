@@ -1,7 +1,7 @@
 # proposal implementation tasks
 
 **Goal:** Deliver the `proposal` responsibility in the NPC conversation redesign.
-**Status:** Not started; no redesign implementation verified in this planning pass.
+**Status:** T01–T02 locally verified; 2/2 local tasks complete. Provider/coordinator runtime wiring remains downstream.
 **Sources:** [Proposal](../npc-conversation-redesign-proposal.md), [Detailed design](../npc-conversation-redesign-detailed-design.md). Relevant sections: Detailed design §§4,6.2; Proposal §16.
 **Owned files / integration targets:** backend/app/services/conversation/proposal.py; backend/app/services/prompts/builder.py; backend/app/services/llm/*; backend/tests/test_conversation_proposal.py.
 **Architecture:** In-process modules with injected narrow contracts. Mechanical authority remains in existing deterministic game services; conversational narrative never grants gameplay permissions.
@@ -20,29 +20,29 @@
 
 ### proposal/T01: Implement shared prompt and strict proposal decoding
 
-- [ ] **Task complete**
+- [x] **Task complete locally** — frozen typed generation boundary honored; prompt/provider adaptation remains T02.
 
 **Depends on:** ports/T01; contracts/T03.
-**Acceptance criteria:** ProposalService.propose(context, deadline) makes exactly one stage attempt; shared character-data prompt preserves multiple concerns, references, reports, corrections, modalities, interaction links and canon candidates. Validate IDs/spans against supplied context.
-**Test expectations:** Scripted outputs cover mixed emotion/request, direct/quoted/hypothetical/negated/ambiguous intent, unknown IDs, invalid Unicode spans, unsupported commands and extra fields.
+**Acceptance criteria:** ProposalService.propose(context, deadline) makes exactly one call through the frozen `GenerationPort` and validates its typed `TurnProposal` against the supplied context, including T05 cue references. The shared character-data prompt contract is implemented by the generation/provider adapter in proposal/T02, whose tests cover multiple concerns, references, reports, corrections, modalities, interaction links and canon candidates for both NPC profiles. Do not add raw-JSON/provider seams to this domain task.
+**Test expectations:** Typed scripted outputs cover mixed emotion/request, direct/quoted/hypothetical/negated/ambiguous intent, unknown IDs, invalid Unicode spans, unsupported commands and extra fields; assert one frozen-port call. Provider prompt parity, malformed JSON, timeout and mock/outage mapping are proposal/T02 checks.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral tests and capture expected failures.
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and adjacent contract/conversation checks; record evidence.
+- [x] Review acceptance criteria and update task/master progress.
 
 ### proposal/T02: Adapt providers and author both NPC profiles
 
-- [ ] **Task complete**
+- [x] **Task complete locally** — provider adapter and shared prompt contract are implemented; runtime coordinator wiring remains downstream.
 
 **Depends on:** proposal/T01; baseline/T01.
 **Acceptance criteria:** Provider adapter accepts purpose, contract, deadline and response budget; classify timeout/cancellation/unavailable/malformed/version errors separately. Supply lightweight authored Craftsman/Gatherer traits from existing content. Explicit mock reports origin=mock; no silent outage substitution.
 **Test expectations:** Scripted transport tests exact call count, deadline and output bounds; shared prompt parity for both NPCs; provider/config diagnostics are accurate and redacted; no new authored identity requirements invented.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral tests and capture expected failures.
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused and adjacent adapter/legacy checks; record evidence.
+- [x] Review acceptance criteria and update task/master progress.
 
 ## Verification and handoff
 
@@ -50,5 +50,5 @@ Backend deterministic checks use `PYTHONPATH=backend .venv/bin/python -m unittes
 
 | Task | Owner / state | Verification command and evidence | Handoff / blockers |
 | --- | --- | --- | --- |
-| T01 | Unassigned / not started | Not run | None recorded |
-| T02 | Unassigned / not started | Not run | None recorded |
+| T01 | proposal_t01 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-proposal/t01-handoff.md); focused+adjacent 52/52, conversation 213/213, full backend 676/676; diff check clean | One call through frozen GenerationPort; typed proposal, references, operations and T05 cue spans validated against ContextPacket; raw JSON/provider/shared prompt implementation belongs to T02 |
+| T02 | proposal_t02 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-proposal/t02-handoff.md); adapter/proposal/composition/context/interface checks 66/66 pass; broad conversation/backend run currently has two independent SQLite persistence fixture errors | Shared provider prompt and typed adapter; no mock substitution on outage; T01 failure mapping added narrowly; coordinator wiring remains pending |

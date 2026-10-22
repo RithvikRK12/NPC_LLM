@@ -1,0 +1,158 @@
+{
+  "live_available": false,
+  "diagnostics_checked": 113,
+  "replay_equal": {
+    "explicit_mock": true,
+    "healthy_valid": true,
+    "healthy_rejected": true,
+    "outage": true
+  },
+  "summary": {
+    "configured": {
+      "turn_count": 1,
+      "origins": {
+        "outage_fallback": 1
+      },
+      "generated_count": 0,
+      "scripted_count": 0,
+      "fallback_count": 1,
+      "error_count": 1,
+      "explicit_mock_count": 0,
+      "routes": {
+        "ordinary": {
+          "n": 1,
+          "p50_seconds": 0.029833625070750713,
+          "p95_seconds": 0.029833625070750713
+        },
+        "action": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    },
+    "explicit_mock": {
+      "turn_count": 28,
+      "origins": {
+        "explicit_mock": 10,
+        "explicit_mock_fallback": 6,
+        "scripted": 12
+      },
+      "generated_count": 0,
+      "scripted_count": 12,
+      "fallback_count": 6,
+      "error_count": 0,
+      "explicit_mock_count": 16,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 0.005280582932755351,
+          "p95_seconds": 0.008865166921168566
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.007225915789604187,
+          "p95_seconds": 0.01914716698229313
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    },
+    "healthy_rejected": {
+      "turn_count": 28,
+      "origins": {
+        "healthy_provider_fallback": 16,
+        "scripted": 12
+      },
+      "generated_count": 0,
+      "scripted_count": 12,
+      "fallback_count": 16,
+      "error_count": 0,
+      "explicit_mock_count": 0,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 0.005034999921917915,
+          "p95_seconds": 0.007291583111509681
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.007142249960452318,
+          "p95_seconds": 0.008174041984602809
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    },
+    "healthy_valid": {
+      "turn_count": 28,
+      "origins": {
+        "generated": 10,
+        "healthy_provider_fallback": 6,
+        "scripted": 12
+      },
+      "generated_count": 10,
+      "scripted_count": 12,
+      "fallback_count": 6,
+      "error_count": 0,
+      "explicit_mock_count": 0,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 0.005288416985422373,
+          "p95_seconds": 0.008457749849185348
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.007011250127106905,
+          "p95_seconds": 0.026737499982118607
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    },
+    "outage": {
+      "turn_count": 28,
+      "origins": {
+        "outage_fallback": 16,
+        "scripted": 12
+      },
+      "generated_count": 0,
+      "scripted_count": 12,
+      "fallback_count": 16,
+      "error_count": 16,
+      "explicit_mock_count": 0,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 0.005253167124465108,
+          "p95_seconds": 0.0074970831628888845
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.00781624997034669,
+          "p95_seconds": 0.009428124874830246
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    }
+  }
+}

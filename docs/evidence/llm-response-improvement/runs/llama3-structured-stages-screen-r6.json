@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-20T05:32:02.515716+00:00",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "model_tag": "llama3:latest",
+  "model_digest": "365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+  "quantization": "Q4_0",
+  "generation_token_limit": 2048,
+  "serialized_json_character_limit": 16384,
+  "dialogue_codepoint_limit": 600,
+  "context_fixture": "backend/tests/fixtures/conversation/t05-valid.json",
+  "context_fixture_sha256": "08cabe1a98253292754463462096f9c38087a11f4ca5b022061d4dd2818e2c92",
+  "model": {
+    "provider_version": "0.34.2",
+    "model_size_bytes": 5003804671,
+    "model_size_vram_bytes": 5003804671,
+    "context_size": 4096
+  },
+  "stages": [
+    {
+      "purpose": "proposal",
+      "status": "GenerationMalformed",
+      "elapsed_seconds": 3.806285041384399,
+      "validation_issues": [
+        {
+          "type": "value_error",
+          "message": "Value error, segment refers to an unknown concern",
+          "location": []
+        }
+      ]
+    },
+    {
+      "purpose": "composition",
+      "status": "CandidateReply",
+      "segment_count": 1,
+      "elapsed_seconds": 3.6075960001908243
+    },
+    {
+      "purpose": "repair",
+      "status": "GenerationMalformed",
+      "elapsed_seconds": 7.724022792186588,
+      "validation_issues": [
+        {
+          "type": "value_error",
+          "message": "Value error, addition cannot carry revision lineage",
+          "location": [
+            "canon_candidates",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "purpose": "receipt_composition",
+      "status": "PROVIDER_INVALID_OUTPUT",
+      "stage": "composition.compose",
+      "generated_segment_kinds": [
+        "expressive"
+      ],
+      "generated_receipt_slot_count": 0,
+      "generated_source_schema_version": 1,
+      "generated_policy_versions_match": true,
+      "elapsed_seconds": 7.908521791920066
+    }
+  ],
+  "note": "Direct structured adapter screen only; no application, database, or game state ports."
+}

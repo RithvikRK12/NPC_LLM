@@ -1,7 +1,7 @@
 # fallback implementation tasks
 
 **Goal:** Deliver the `fallback` responsibility in the NPC conversation redesign.
-**Status:** Not started; no redesign implementation verified in this planning pass.
+**Status:** T01–T02 locally accepted by Main Agent on 2026-10-18; active-canon fallback publication remains fail-closed until coordinator supplies T06 comparison projections.
 **Sources:** [Proposal](../npc-conversation-redesign-proposal.md), [Detailed design](../npc-conversation-redesign-detailed-design.md). Relevant sections: Detailed design §§4,6.5; Proposal §14.
 **Owned files / integration targets:** backend/app/services/conversation/fallback.py; backend/tests/test_conversation_fallback.py.
 **Architecture:** In-process modules with injected narrow contracts. Mechanical authority remains in existing deterministic game services; conversational narrative never grants gameplay permissions.
@@ -20,29 +20,29 @@
 
 ### fallback/T01: Implement receipt-first situation fallback
 
-- [ ] **Task complete**
+- [x] **Task complete locally** — structural/grounding validation and publication-failure handling remain T02.
 
 **Depends on:** contracts/T03; composition/T01; proposal/T02.
 **Acceptance criteria:** FallbackPolicy.render(context, decision, receipt, failure) prioritizes committed receipt, then missing clarification, known unavailability, then role-specific outage speech. Both NPCs have authored fallback data; generic failure fabricates no answer.
 **Test expectations:** Transfer then provider timeout still reports actual transfer; accepted inspection remains accepted; exact missing-consent/unavailable reasons and NPC-specific voice covered.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral/contract tests and capture expected failures.
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused and adjacent contract/composition checks; record evidence.
+- [x] Review acceptance criteria and update task/master progress.
 
 ### fallback/T02: Validate fallback and mandatory rendering failure
 
-- [ ] **Task complete**
+- [x] **Task complete locally** — Main Agent accepted 2026-10-18; canon projection integration limitation recorded.
 
 **Depends on:** fallback/T01; validation/T01.
 **Acceptance criteria:** Fallback uses same assembled-response structural/grounding checks and policy limits. If mandatory receipt text cannot be safely represented, return publication failure rather than misreport outcome.
 **Test expectations:** Renderer failure, overflow and stale ongoing activity tests; successful effect survives failed speech; fallback remains recoverable and contains no invented resources or completions.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
+- [x] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
 
 ## Verification and handoff
 
@@ -50,5 +50,5 @@ Backend deterministic checks use `PYTHONPATH=backend .venv/bin/python -m unittes
 
 | Task | Owner / state | Verification command and evidence | Handoff / blockers |
 | --- | --- | --- | --- |
-| T01 | Unassigned / not started | Not run | None recorded |
-| T02 | Unassigned / not started | Not run | None recorded |
+| T01 | fallback_t01 / locally accepted by Main Agent 2026-10-18; gpt-6-luna / medium | Main Agent reproduced focused 5/5, contracts 70/70, composition 38/38, conversation 385/385 and backend 848/848; independent review approved; `git diff --check` exit 0 | [Handoff](../evidence/conversation-redesign-fallback/t01-handoff.md) |
+| T02 | fallback_t02 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | Focused 11/11, validation 13/13, composition 38/38, contracts 77/77; `git diff --check` clean | [Handoff](../evidence/conversation-redesign-fallback/t02-handoff.md) | Active canon requires coordinator-supplied T06 projections; until wired, fallback fails closed |

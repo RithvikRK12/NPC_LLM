@@ -1,0 +1,112 @@
+[
+  {
+    "npc_id": 1,
+    "message": "What do you enjoy about your work?",
+    "route": "ordinary",
+    "seconds": 3.1469,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I enjoy the quiet focus of working with my hands, and the sense of pride that comes from creating something useful. It's a feeling that's hard to explain, but it's what gets me out of bed in the morning.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "What helps you feel at ease?",
+    "route": "ordinary",
+    "seconds": 3.2656,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I find comfort in the familiar rhythms of my workshop, the smell of wood and metal, and the sense of accomplishment that comes with a job well done. It's a feeling that's hard to explain, but it's what helps me feel at ease.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "What do you enjoy about your work?",
+    "route": "ordinary",
+    "seconds": 3.1764,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I enjoy the quiet moments when I'm alone with my thoughts, counting under my breath while sorting impressions. It's a way to clear my mind and prepare for the next gathering. I find it satisfying to have a sense of control over my supplies and independence in my work.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "What helps you feel at ease?",
+    "route": "ordinary",
+    "seconds": 3.6017,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I find it helps me feel at ease when I'm surrounded by the quiet of nature, with my supplies in order and a sense of control over my work. It's a feeling that's hard to describe, but it's a mix of satisfaction and calmness that I enjoy.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "Can you make me a bow?",
+    "route": "action",
+    "seconds": 2.5102,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "A bow, you say? Well, I've made my share of bows, but I always like to think about the person who'll be using it. What's the occasion? We discussed the materials for your bow. Check your quest journal for the next steps.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "May I have wood?",
+    "route": "purpose_question",
+    "seconds": 0.0536,
+    "response_origin": "fallback",
+    "degradation_reason": "SAFE_FALLBACK",
+    "dialogue": "Before I give you the wood, why do you need it?",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "To help the Craftsman make a bow",
+    "route": "action",
+    "seconds": 2.1904,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "A bow, you want to make? I'm not sure I'm the right person to help with that. I'm more of a gatherer, not a craftsman. I gave you 1 wood.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "I give you water",
+    "route": "action",
+    "seconds": 1.5352,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "Thank you for the water, it's a kind thought. You gave me 1 water.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "How are you feeling today?",
+    "route": "provider_outage",
+    "seconds": 0.0505,
+    "response_origin": "fallback",
+    "degradation_reason": "PROVIDER_UNAVAILABLE",
+    "dialogue": "The workshop's gone quiet for a moment. Ask me again shortly.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "How are you feeling today?",
+    "route": "provider_outage",
+    "seconds": 0.0357,
+    "response_origin": "fallback",
+    "degradation_reason": "PROVIDER_UNAVAILABLE",
+    "dialogue": "I need a moment to listen to the trail. Ask me again shortly.",
+    "receipt_count": 0,
+    "exact_retry": true
+  }
+]

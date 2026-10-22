@@ -1,0 +1,37 @@
+FFFF
+======================================================================
+FAIL: test_personal_question_vocabulary_retrieves_relevant_authored_details (test_character_profiles.CharacterProfileTests.test_personal_question_vocabulary_retrieves_relevant_authored_details) (role='craftsman', message='What motivates you?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 69, in test_personal_question_vocabulary_retrieves_relevant_authored_details
+    self.assertIn(topic, [detail['id'] for detail in value['details']])
+AssertionError: 'values' not found in []
+
+======================================================================
+FAIL: test_personal_question_vocabulary_retrieves_relevant_authored_details (test_character_profiles.CharacterProfileTests.test_personal_question_vocabulary_retrieves_relevant_authored_details) (role='craftsman', message='Tell me about your values')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 69, in test_personal_question_vocabulary_retrieves_relevant_authored_details
+    self.assertIn(topic, [detail['id'] for detail in value['details']])
+AssertionError: 'values' not found in []
+
+======================================================================
+FAIL: test_personal_question_vocabulary_retrieves_relevant_authored_details (test_character_profiles.CharacterProfileTests.test_personal_question_vocabulary_retrieves_relevant_authored_details) (role='gatherer', message='What motivates you?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 69, in test_personal_question_vocabulary_retrieves_relevant_authored_details
+    self.assertIn(topic, [detail['id'] for detail in value['details']])
+AssertionError: 'values' not found in []
+
+======================================================================
+FAIL: test_personal_question_vocabulary_retrieves_relevant_authored_details (test_character_profiles.CharacterProfileTests.test_personal_question_vocabulary_retrieves_relevant_authored_details) (role='gatherer', message='Tell me about your values')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 69, in test_personal_question_vocabulary_retrieves_relevant_authored_details
+    self.assertIn(topic, [detail['id'] for detail in value['details']])
+AssertionError: 'values' not found in []
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=4)

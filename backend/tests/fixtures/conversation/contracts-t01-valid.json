@@ -1,0 +1,132 @@
+{
+  "submission": {
+    "schema_version": 1,
+    "request_id": "request:1",
+    "key": {
+      "game_scope": "run-opaque",
+      "npc_id": 1,
+      "epoch": 0
+    },
+    "player_message": "Hello 🙂"
+  },
+  "turn": {
+    "turn_id": "turn:1",
+    "request_id": "request:1",
+    "key": {
+      "game_scope": "run-opaque",
+      "npc_id": 1,
+      "epoch": 0
+    },
+    "sequence": 1
+  },
+  "evidence": [
+    {
+      "kind": "mechanical_fact",
+      "evidence_id": "evidence:mechanical_fact",
+      "content": "A scoped statement.",
+      "sources": [
+        {
+          "kind": "inventory",
+          "source_id": "source:mechanical_fact",
+          "revision": "revision:1",
+          "game_scope": "run-opaque",
+          "npc_id": 1,
+          "attribution": "npc:1",
+          "visibility": "public"
+        }
+      ],
+      "created_at": "2026-10-14T00:00:00Z"
+    },
+    {
+      "kind": "verified_event",
+      "evidence_id": "evidence:verified_event",
+      "content": "A scoped statement.",
+      "sources": [
+        {
+          "kind": "game_event",
+          "source_id": "source:verified_event",
+          "revision": "revision:1",
+          "game_scope": "run-opaque",
+          "npc_id": 1,
+          "attribution": "npc:1",
+          "visibility": "public"
+        }
+      ],
+      "created_at": "2026-10-14T00:00:00Z"
+    },
+    {
+      "kind": "authored_knowledge",
+      "evidence_id": "evidence:authored_knowledge",
+      "content": "A scoped statement.",
+      "sources": [
+        {
+          "kind": "authored_content",
+          "source_id": "source:authored_knowledge",
+          "revision": "revision:1",
+          "game_scope": "run-opaque",
+          "npc_id": 1,
+          "attribution": "npc:1",
+          "visibility": "public"
+        }
+      ],
+      "created_at": "2026-10-14T00:00:00Z"
+    },
+    {
+      "kind": "narrative_canon",
+      "evidence_id": "evidence:narrative_canon",
+      "content": "A scoped statement.",
+      "sources": [
+        {
+          "kind": "final_speech",
+          "source_id": "source:narrative_canon",
+          "revision": "revision:1",
+          "game_scope": "run-opaque",
+          "npc_id": 1,
+          "attribution": "npc:1",
+          "visibility": "public"
+        }
+      ],
+      "created_at": "2026-10-14T00:00:00Z",
+      "origin": "generated",
+      "authority": "narrative_only"
+    },
+    {
+      "kind": "player_report",
+      "evidence_id": "evidence:player_report",
+      "content": "A scoped statement.",
+      "sources": [
+        {
+          "kind": "player_message",
+          "source_id": "source:player_report",
+          "revision": "revision:1",
+          "game_scope": "run-opaque",
+          "npc_id": 1,
+          "attribution": "player:1",
+          "visibility": "public"
+        }
+      ],
+      "created_at": "2026-10-14T00:00:00Z",
+      "attribution": "player:1",
+      "uncertainty": "unverified"
+    },
+    {
+      "kind": "interpretation",
+      "evidence_id": "evidence:interpretation",
+      "content": "A scoped statement.",
+      "sources": [
+        {
+          "kind": "interpretation",
+          "source_id": "source:interpretation",
+          "revision": "revision:1",
+          "game_scope": "run-opaque",
+          "npc_id": 1,
+          "attribution": "npc:1",
+          "visibility": "public"
+        }
+      ],
+      "created_at": "2026-10-14T00:00:00Z",
+      "attribution": "npc:1",
+      "uncertainty": "tentative"
+    }
+  ]
+}

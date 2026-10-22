@@ -1,0 +1,21 @@
+FF..............
+======================================================================
+FAIL: test_beats_retain_whitespace_when_a_nonblank_partition_exists (test_conversation_composition.ReplyAssemblyTests.test_beats_retain_whitespace_when_a_nonblank_partition_exists) (text='abcdefghij   ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 164, in test_beats_retain_whitespace_when_a_nonblank_partition_exists
+    self.assertIsNone(result.error)
+AssertionError: ConversationError(code='INVALID_BOUNDS', stage='composition.assemble', retryable=False, turn=TurnRef(turn_id='turn:1', request_id='request:1', key=ConversationKey(game_scope='run:1', npc_id=1, epoch=0), sequence=1), safe_detail='The complete reply cannot fit nonblank beats within the configured limit.') is not None
+
+======================================================================
+FAIL: test_beats_retain_whitespace_when_a_nonblank_partition_exists (test_conversation_composition.ReplyAssemblyTests.test_beats_retain_whitespace_when_a_nonblank_partition_exists) (text='aaaa       b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 164, in test_beats_retain_whitespace_when_a_nonblank_partition_exists
+    self.assertIsNone(result.error)
+AssertionError: ConversationError(code='INVALID_BOUNDS', stage='composition.assemble', retryable=False, turn=TurnRef(turn_id='turn:1', request_id='request:1', key=ConversationKey(game_scope='run:1', npc_id=1, epoch=0), sequence=1), safe_detail='The complete reply cannot fit nonblank beats within the configured limit.') is not None
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.100s
+
+FAILED (failures=2)

@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS Gatherer staging resource exists
+PASS Gatherer clearing lies deep inside expanded forest
+PASS Expanded forest has dense collision-backed scenery
+PASS IntroCheckpoint clears actor feet
+PASS PlayerTalkMark clears actor feet
+PASS GathererMark clears actor feet
+PASS BoarSpawnA clears actor feet
+PASS BoarSpawnB clears actor feet
+PASS BoarThreatA clears actor feet
+PASS BoarThreatB clears actor feet
+PASS CombatStartMark clears actor feet
+PASS VillageReturnMark clears actor feet
+PASS Routed forest approach (-1401.0, 70.0)
+PASS Routed forest approach (-1800.0, -349.0)
+PASS Routed forest approach (-1800.0, 409.0)
+PASS Routed forest approach (-2249.0, 70.0)
+PASS Refusal retreat route
+Gatherer navigation failures: 0

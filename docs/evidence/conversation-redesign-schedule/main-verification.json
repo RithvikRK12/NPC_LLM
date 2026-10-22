@@ -1,0 +1,37 @@
+[
+  {
+    "command": "PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p test_craftsman_encounter.py",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "exit_code": 0,
+    "log": "craftsman_encounter.log",
+    "fixtures": "pure values or isolated in-memory SQLite; no player save"
+  },
+  {
+    "command": "PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p test_gatherer_encounter.py",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "exit_code": 0,
+    "log": "gatherer_encounter.log",
+    "fixtures": "pure values or isolated in-memory SQLite; no player save"
+  },
+  {
+    "command": "PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p test_world_inventory.py",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "exit_code": 0,
+    "log": "world_inventory.log",
+    "fixtures": "pure values or isolated in-memory SQLite; no player save"
+  },
+  {
+    "command": "PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p test_conversation_contracts.py -v",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "exit_code": 0,
+    "log": "contracts_t01.log",
+    "fixtures": "pure or measurement tooling; no player save"
+  },
+  {
+    "command": "PYTHONPATH=backend .venv/bin/python -m unittest discover -s docs/evidence/conversation-redesign-baseline/measurement -p test_measure.py -v",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "exit_code": 0,
+    "log": "measurement_tooling.log",
+    "fixtures": "pure or measurement tooling; no player save"
+  }
+]

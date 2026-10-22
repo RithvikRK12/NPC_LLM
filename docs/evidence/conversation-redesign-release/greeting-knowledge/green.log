@@ -1,0 +1,10 @@
+test_fresh_hello_has_no_global_quest_or_capability_priming (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_fresh_hello_has_no_global_quest_or_capability_priming) ... ok
+test_greeting_grammar_avoids_unneeded_extraction_and_fact_slots (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_greeting_grammar_avoids_unneeded_extraction_and_fact_slots) ... ok
+test_mixed_greeting_still_exposes_grounded_operation_context (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_mixed_greeting_still_exposes_grounded_operation_context) ... ok
+test_reported_ship_remains_available_for_contextual_questions (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_reported_ship_remains_available_for_contextual_questions) ... ok
+test_unreported_ship_is_absent_from_non_greeting_generation (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_unreported_ship_is_absent_from_non_greeting_generation) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.013s
+
+OK

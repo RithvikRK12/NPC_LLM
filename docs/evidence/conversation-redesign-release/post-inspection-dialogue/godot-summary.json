@@ -1,0 +1,9 @@
+[
+  {
+    "test": "craftsman_post_inspection_smoke",
+    "exit_code": 0,
+    "seconds": 42.744,
+    "passed": true,
+    "shutdown_resource_warning": true
+  }
+]

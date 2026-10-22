@@ -1,0 +1,285 @@
+[
+  {
+    "label": "adjacent",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles",
+      "test_conversation_context_adapter",
+      "test_conversation_context",
+      "test_conversation_generation_adapter",
+      "test_grounded_chat",
+      "test_npc_pipeline",
+      "test_behavior_pipeline"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 1,
+    "log": "adjacent.log"
+  },
+  {
+    "label": "followup-red",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles.CharacterProfileTests.test_followup_uses_visible_conversation_but_not_unrelated_old_topics"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 1,
+    "log": "followup-red.log"
+  },
+  {
+    "label": "postgres",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "docs/evidence/conversation-redesign-context/run_t03_postgres_acceptance.py"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 1,
+    "log": "postgres.log"
+  },
+  {
+    "label": "adjacent-green",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles",
+      "test_conversation_context_adapter",
+      "test_conversation_context",
+      "test_conversation_generation_adapter",
+      "test_grounded_chat",
+      "test_npc_pipeline",
+      "test_behavior_pipeline"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "adjacent-green.log"
+  },
+  {
+    "label": "postgres-driver-corrected",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "docs/evidence/conversation-redesign-context/run_t03_postgres_acceptance.py"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 1,
+    "log": "postgres-driver-corrected.log"
+  },
+  {
+    "label": "backend-suite",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "backend/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "backend-suite.log"
+  },
+  {
+    "label": "postgres-isolated",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "docs/evidence/conversation-redesign-context/run_t03_postgres_acceptance.py"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "postgres-isolated.log"
+  },
+  {
+    "label": "legacy-route",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_grounded_chat.GroundedChatTests.test_authored_personal_history_reaches_legacy_route_without_game_effects"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "legacy-route.log"
+  },
+  {
+    "label": "personal-question-red",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles.CharacterProfileTests.test_personal_questions_are_social_but_mechanical_requests_stay_constrained"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 1,
+    "log": "personal-question-red.log"
+  },
+  {
+    "label": "personal-question-green",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "personal-question-green.log"
+  },
+  {
+    "label": "topic-vocabulary-red",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles.CharacterProfileTests.test_personal_question_vocabulary_retrieves_relevant_authored_details"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 1,
+    "log": "topic-vocabulary-red.log"
+  },
+  {
+    "label": "final-adjacent",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles",
+      "test_conversation_context_adapter",
+      "test_conversation_context",
+      "test_conversation_generation_adapter",
+      "test_grounded_chat",
+      "test_npc_pipeline",
+      "test_behavior_pipeline"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "final-adjacent.log"
+  },
+  {
+    "label": "final-backend",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "backend/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "final-backend.log"
+  },
+  {
+    "label": "personal-affordance-red",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles.CharacterProfileTests.test_authored_personal_sentences_pass_without_allowing_mechanical_tails"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 1,
+    "log": "personal-affordance-red.log"
+  },
+  {
+    "label": "final-profile-boundaries",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "test_character_profiles",
+      "test_grounded_chat",
+      "test_conversation_generation_adapter",
+      "test_conversation_context_adapter"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "final-profile-boundaries.log"
+  },
+  {
+    "label": "verified-backend",
+    "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "backend/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "env": {
+      "PYTHONPATH": "backend:backend/tests",
+      "CONVERSATION_TEST_DATABASE_URL": "unset; isolated SQLite fixtures"
+    },
+    "exit_code": 0,
+    "log": "verified-backend.log"
+  }
+]

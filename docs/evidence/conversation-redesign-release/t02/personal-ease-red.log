@@ -1,0 +1,13 @@
+.......F..
+======================================================================
+FAIL: test_personal_questions_are_social_but_mechanical_requests_stay_constrained (test_character_profiles.CharacterProfileTests.test_personal_questions_are_social_but_mechanical_requests_stay_constrained) (message='What helps you feel at ease?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 130, in test_personal_questions_are_social_but_mechanical_requests_stay_constrained
+    self.assertTrue(is_social_message(message))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.019s
+
+FAILED (failures=1)

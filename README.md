@@ -4,18 +4,27 @@ A Godot 4 village backed by FastAPI, SQLAlchemy, and a local or compatible LLM. 
 
 ## Run
 
+On this Mac, **double-click [Play.command](Play.command)** (or run `./Play.command`).
+It starts the local backend with the explicit Llama 3 playtest policy, imports
+assets, opens Godot, and stops its backend when you close the game normally.
+It resumes the existing save; use Restart Game only when you want a fresh run.
+Start Ollama first. The launcher creates an 8192-context alias using the existing
+Llama 3 weights; it does not download a replacement model.
+
+For manual setup:
+
 1. Copy `backend/.env.example` to `backend/.env` if needed. Set `LLM_BASE_URL=http://localhost:11434/v1` and `LLM_MODEL=llama3:latest` for Ollama.
 2. Start Ollama (`open -a Ollama` on macOS). Install the model once with `ollama pull llama3`.
 3. If your `DATABASE_URL` uses PostgreSQL, start Docker Desktop and run `docker compose up -d`. SQLite also works for local use.
 4. Install `backend/requirements.txt` in a Python virtual environment.
-5. From `backend`, run `../.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload`. Automatic reload keeps encounter APIs in sync while developing.
+5. From the root, run `ollama create llama3:willowbrook -f config/Modelfile.playtest` once. From `backend`, export the settings in `../config/playtest.env`, then run `../.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000`. The explicit profile enables the durable conversation runtime required by the current client. Run `set -a`, then `source ../config/playtest.env`, then `set +a` before uvicorn. A backend started without that profile (or equivalent values in `backend/.env`) can return healthy status while NPC chat returns 503.
 6. Open `frontend/godot/project.godot` in Godot 4 and press F5, or run the Godot executable with `--path frontend/godot` from the project root.
 
 Before launching directly from the command line on a fresh checkout, import the
 assets once from the project root:
 
 ```sh
-/private/tmp/npc-godot-runtime/Godot.app/Contents/MacOS/Godot \
+/Users/rukithnayak/Downloads/Godot.app/Contents/MacOS/Godot \
   --headless --path frontend/godot --editor --import
 ```
 
@@ -24,6 +33,10 @@ texture cache required by SVG preloads. Opening the project in the editor also
 imports assets; direct game launch alone can fail with a missing `.ctex` error.
 
 The backend loads `backend/.env` regardless of working directory. Relative SQLite paths are still relative to the working directory. An empty LLM base URL selects the mock provider. Generation and validation failures are logged in the backend terminal.
+
+The playtest profile explicitly selects local Ollama and never substitutes mock
+speech after a provider failure. Cold replies can take tens of seconds.
+[Playtest policy, verification and receipt-safe rollback](docs/conversation-redesign-runbook.md).
 
 ## Get a bow
 
@@ -97,7 +110,7 @@ reachable land while preserving progress. After arrival, inspect the hull with
 Preview any shot/effect without a backend or real save:
 
 ```sh
-/private/tmp/npc-godot-runtime/Godot.app/Contents/MacOS/Godot \
+/Users/rukithnayak/Downloads/Godot.app/Contents/MacOS/Godot \
   --path frontend/godot res://scenes/cutscenes/opening/OpeningPreview.tscn
 ```
 

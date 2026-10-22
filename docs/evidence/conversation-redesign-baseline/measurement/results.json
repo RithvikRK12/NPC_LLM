@@ -1,0 +1,4379 @@
+{
+  "task": "baseline/T02",
+  "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+  "command": ".venv/bin/python docs/evidence/conversation-redesign-baseline/measurement/measure.py",
+  "fixture_schema_version": 1,
+  "source_revision": "83af36d1541fce21a546b058ef69df591741ec7a",
+  "fixture_sha256": "12bbcf23963e8ff3328db62c435862daba55d67027f7e48fa24872265a0c1e3a",
+  "configuration": {
+    "provider": "OpenAICompatibleProvider",
+    "model": "llama3:latest",
+    "base_url": "http://localhost:11434/v1",
+    "structured_output": true,
+    "temperature": 0.2,
+    "timeout_seconds": 120.0,
+    "connect_timeout_seconds": 5,
+    "max_tokens": null,
+    "max_dialogue_chars": 240,
+    "memory_top_k": 5,
+    "memory_candidate_count": 40,
+    "embedding": "fake one-hot in memory; configured embedding never called",
+    "embedding_dimensions": 768,
+    "model_version": "Ollama manifest sha256:365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1"
+  },
+  "live_available": true,
+  "live_gate_complete": true,
+  "configured_error_types": [],
+  "deterministic_replay_equal": {
+    "explicit_mock": true,
+    "healthy_valid": true,
+    "healthy_rejected": true,
+    "outage": true
+  },
+  "diagnostics_checked": 140,
+  "credential_check": "actual configured API key/URL password/query plus injected sentinel absent in decision_trace and grounding_trace; full export also checked",
+  "summary": {
+    "configured": {
+      "turn_count": 28,
+      "origins": {
+        "generated": 6,
+        "healthy_provider_fallback": 10,
+        "scripted": 12
+      },
+      "generated_count": 6,
+      "scripted_count": 12,
+      "fallback_count": 10,
+      "error_count": 0,
+      "explicit_mock_count": 0,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 2.2897244170308113,
+          "p95_seconds": 4.361798333004117
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.019038415979593992,
+          "p95_seconds": 0.024547125212848186
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    },
+    "explicit_mock": {
+      "turn_count": 28,
+      "origins": {
+        "explicit_mock": 10,
+        "explicit_mock_fallback": 6,
+        "scripted": 12
+      },
+      "generated_count": 0,
+      "scripted_count": 12,
+      "fallback_count": 6,
+      "error_count": 0,
+      "explicit_mock_count": 16,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 0.011310667265206575,
+          "p95_seconds": 0.015082458034157753
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.013133582659065723,
+          "p95_seconds": 0.01380108343437314
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    },
+    "healthy_rejected": {
+      "turn_count": 28,
+      "origins": {
+        "healthy_provider_fallback": 16,
+        "scripted": 12
+      },
+      "generated_count": 0,
+      "scripted_count": 12,
+      "fallback_count": 16,
+      "error_count": 0,
+      "explicit_mock_count": 0,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 0.010183124803006649,
+          "p95_seconds": 0.012864958960562944
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.012949457857757807,
+          "p95_seconds": 0.01441108388826251
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    },
+    "healthy_valid": {
+      "turn_count": 28,
+      "origins": {
+        "generated": 10,
+        "healthy_provider_fallback": 6,
+        "scripted": 12
+      },
+      "generated_count": 10,
+      "scripted_count": 12,
+      "fallback_count": 6,
+      "error_count": 0,
+      "explicit_mock_count": 0,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 0.011281915940344334,
+          "p95_seconds": 0.016483666840940714
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.013164375443011522,
+          "p95_seconds": 0.026552957948297262
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    },
+    "outage": {
+      "turn_count": 28,
+      "origins": {
+        "outage_fallback": 16,
+        "scripted": 12
+      },
+      "generated_count": 0,
+      "scripted_count": 12,
+      "fallback_count": 16,
+      "error_count": 16,
+      "explicit_mock_count": 0,
+      "routes": {
+        "ordinary": {
+          "n": 20,
+          "p50_seconds": 0.010097582824528217,
+          "p95_seconds": 0.014044125098735094
+        },
+        "action": {
+          "n": 8,
+          "p50_seconds": 0.012965542264282703,
+          "p95_seconds": 0.014337125234305859
+        },
+        "repair": {
+          "n": 0,
+          "p50_seconds": null,
+          "p95_seconds": null
+        }
+      }
+    }
+  },
+  "provider_calls": [
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 8.375383913516998e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 1.0707881301641464e-05,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 8.250121027231216e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 1.1667143553495407e-05,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 4.00003045797348e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 3.7080608308315277e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 3.2088719308376312e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 3.375113010406494e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 7.042195647954941e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 9.375158697366714e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 6.791669875383377e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 1.1208932846784592e-05,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 3.4156255424022675e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 3.3746473491191864e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 3.2079406082630157e-06,
+      "error_type": null
+    },
+    {
+      "mode": "explicit_mock",
+      "elapsed_seconds": 3.375113010406494e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.7087517082691193e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.791173756122589e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.2919848561286926e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.2496096789836884e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.1657906472682953e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.1667219698429108e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.084299921989441e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.084299921989441e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.3329630494117737e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.207700163125992e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.3329630494117737e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.250075340270996e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.1248124539852142e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 1.9581057131290436e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.1248124539852142e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_valid",
+      "elapsed_seconds": 2.2081658244132996e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 4.332978278398514e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 3.4999102354049683e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 3.125052899122238e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.8330832719802856e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.874992787837982e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.7078203856945038e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.541113644838333e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.583954483270645e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 3.082677721977234e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.9997900128364563e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.9588118195533752e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 3.0407682061195374e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.541579306125641e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.500135451555252e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.3748725652694702e-06,
+      "error_type": null
+    },
+    {
+      "mode": "healthy_rejected",
+      "elapsed_seconds": 2.582557499408722e-06,
+      "error_type": null
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 2.2081658244132996e-06,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 1.5827827155590057e-06,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 9.159557521343231e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 9.587965905666351e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 1.1669471859931946e-06,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 9.997747838497162e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 9.173527359962463e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 8.330680429935455e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 1.4579854905605316e-06,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 8.749775588512421e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 9.159557521343231e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 9.578652679920197e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 1.458916813135147e-06,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 1.3746321201324463e-06,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 1.000240445137024e-06,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "outage",
+      "elapsed_seconds": 7.906928658485413e-07,
+      "error_type": "ConnectionError"
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 5.458016500342637,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 4.333895541727543,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 4.315728791989386,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 3.2542375829070807,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 2.027375167235732,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 2.37215108377859,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 2.691124042030424,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 3.8378406250849366,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 1.346590666566044,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 2.5247648330405354,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 3.7230982091277838,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 1.595440249890089,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 1.4118510405533016,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 2.2586467913351953,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 2.952224874868989,
+      "error_type": null
+    },
+    {
+      "mode": "configured",
+      "elapsed_seconds": 2.117907041683793,
+      "error_type": null
+    }
+  ],
+  "turns": [
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.027278666850179434,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 0.009763124864548445,
+      "origin": "explicit_mock_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.011670374777168036,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.009940625168383121,
+      "origin": "explicit_mock_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.013557666912674904,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.013343042228370905,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.011194417253136635,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.015082458034157753,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I'm glad you stayed to help. How are you doing?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 0.011310667265206575,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I'm glad you stayed to help. How are you doing?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.011437667068094015,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I'm glad you stayed to help. How are you doing?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.01019216701388359,
+      "origin": "explicit_mock_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.01380108343437314,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.013076999690383673,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.011712041217833757,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.014682916924357414,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 0.009263417217880487,
+      "origin": "explicit_mock_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.011116666719317436,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010210332926362753,
+      "origin": "explicit_mock_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.013099917210638523,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012725624721497297,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.010944707784801722,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.014655082952231169,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I'm glad you stayed to help. How are you doing?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 0.011375583242624998,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I'm glad you stayed to help. How are you doing?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.011668084189295769,
+      "origin": "explicit_mock",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I'm glad you stayed to help. How are you doing?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010541916824877262,
+      "origin": "explicit_mock_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.013573375064879656,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.013133582659065723,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "explicit_mock",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.011736000422388315,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.015037749893963337,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 0.009303375147283077,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.011227375362068415,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010212250053882599,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.013191333040595055,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012670625001192093,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.010932416189461946,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.031981749925762415,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 0.011366916820406914,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.011699292343109846,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010665667243301868,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.013893791940063238,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.013164375443011522,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.011879249941557646,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.01443150034174323,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 0.009531375020742416,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.011123166885226965,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.009922875091433525,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.013058749958872795,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012614291161298752,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.011281915940344334,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.01460083294659853,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 0.011889458168298006,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.012810499873012304,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. I feel calmer with familiar work around me.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010868292301893234,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.014102333225309849,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.026552957948297262,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_valid",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.016483666840940714,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.012646457646042109,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 0.010210874956101179,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.009822250343859196,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010096083860844374,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.01441108388826251,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012949457857757807,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.011242792010307312,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.012864958960562944,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 0.00990658299997449,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.010051750112324953,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010183124803006649,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.014325332827866077,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012812499888241291,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.012047457974404097,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.03702283324673772,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 0.009612957946956158,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.00956016592681408,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.01009649969637394,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.014157291036099195,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012555167078971863,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.011201207991689444,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.012041833251714706,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 0.009641957934945822,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.010121250059455633,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010662292130291462,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.014050207566469908,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012765166349709034,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "healthy_rejected",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.01205145800486207,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.014044125098735094,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 0.009724709205329418,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.009409458376467228,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.009691457729786634,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.013666083104908466,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012694749981164932,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.010949875228106976,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.012365791946649551,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 0.009660833980888128,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.009856707882136106,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010140916798263788,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.014241666998714209,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012965542264282703,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.01185879111289978,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.012171832844614983,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 0.009237874764949083,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.009587499778717756,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010097582824528217,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.014031125232577324,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012729874812066555,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.011262374930083752,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 0.03767991624772549,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 0.00963654089719057,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 0.010039540939033031,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 0.010842000134289265,
+      "origin": "outage_fallback",
+      "provider_error_type": "ConnectionError",
+      "generation_status": "provider_or_decode_failure",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.014337125234305859,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.012902332935482264,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "outage",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.012286417186260223,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 5.500479416921735,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. Hello there! It's nice to see you. I'm Craftsman, nice to meet you too.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 4.361798333004117,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 4.349432167131454,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Ah, my childhood... Well, I grew up in this very workshop, surrounded by the sounds and smells of wood and metal. My parents were both skilled craftsmen, and I learned from them. I remember helping them with small tasks, like sanding down rough edges or assembling simple parts. It was a happy, peaceful time. I loved watching the sun set through the windows, casting a warm glow over everything. Those were good days.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 3.282262417022139,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.019707458093762398,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.019038415979593992,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.014401624910533428,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 2.0631846669130027,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. Hello there! I'm Gatherer, nice to meet you. What brings you to our village today?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 2.400582749862224,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 2.7198074590414762,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 3.869902125094086,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.024419667199254036,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.018106916453689337,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 1,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.014141667168587446,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 1.382598000112921,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Glad to help. Ah, hello! It's great to see you. How's your day been so far?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Are you happy here?",
+      "elapsed_seconds": 2.5656747086904943,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 3.7533990000374615,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 1.627841291949153,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I'm glad you stopped to talk. There's time to put the tools aside for a moment. What's on your mind?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me rope",
+      "elapsed_seconds": 0.024181250017136335,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Before I give you the rope, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer",
+        "rope"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.01742458390071988,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "craftsman-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.013213375117629766,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry saw, hammer. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "rope"
+      ],
+      "npc_inventory": [
+        "saw",
+        "hammer"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 1,
+      "route": "ordinary",
+      "message": "Hello",
+      "elapsed_seconds": 1.4475139169953763,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. Hello there! I'm Gatherer, nice to meet you. What brings you to our village today?",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 2,
+      "route": "ordinary",
+      "message": "Do you ever feel scared?",
+      "elapsed_seconds": 2.2897244170308113,
+      "origin": "generated",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": false,
+      "provider_calls": 1,
+      "final_dialogue": "Let's be careful. Ah, yes... I'd be lying if I said I never felt a shiver down my spine. But I've learned to face my fears and trust in the community's support.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 3,
+      "route": "ordinary",
+      "message": "Tell me a story about your childhood",
+      "elapsed_seconds": 2.984045499935746,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 4,
+      "route": "ordinary",
+      "message": "That isn't what I asked. How did that make you feel?",
+      "elapsed_seconds": 2.1493716249242425,
+      "origin": "healthy_provider_fallback",
+      "provider_error_type": null,
+      "generation_status": "succeeded",
+      "authoritative_override": false,
+      "rejected": true,
+      "provider_calls": 1,
+      "final_dialogue": "I can tell you about the forest. Ask me about the supplies I have.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 5,
+      "route": "action",
+      "message": "give me wood",
+      "elapsed_seconds": 0.024547125212848186,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Before I give you the wood, why do you need it?",
+      "action": "ask_question",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "npc_inventory": [
+        "axe",
+        "wood",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 6,
+      "route": "action",
+      "message": "I need it for my work in the village",
+      "elapsed_seconds": 0.017717374954372644,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "action": "give_item",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    },
+    {
+      "mode": "configured",
+      "session": "gatherer-representative",
+      "replay": 2,
+      "turn": 7,
+      "route": "ordinary",
+      "message": "what are you carrying",
+      "elapsed_seconds": 0.014302208088338375,
+      "origin": "scripted",
+      "provider_error_type": null,
+      "generation_status": "bypassed",
+      "authoritative_override": true,
+      "rejected": false,
+      "provider_calls": 0,
+      "final_dialogue": "I currently carry axe, fruits. Select an item in my supplies to request it.",
+      "action": "speak",
+      "player_inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "npc_inventory": [
+        "axe",
+        "fruits"
+      ],
+      "trace_provider": "ControlledProvider"
+    }
+  ],
+  "provider_model_metadata": {
+    "source": "Ollama API /api/tags; verified with ollama show --modelfile llama3:latest",
+    "name": "llama3:latest",
+    "digest": "sha256:365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+    "size_bytes": 4661224676,
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_0",
+    "context_length": 8192
+  },
+  "worktree_state": "dirty; source_revision identifies HEAD only"
+}

@@ -1,3 +1,4 @@
+from app.services.state.resources import versioned
 """Authoritative, restart-safe bow quest. Only these rules can craft/reward a bow."""
 import re
 import time
@@ -10,6 +11,7 @@ CRAFT_SECONDS = 5.0
 STRING_POSITION = {'x': -70.0, 'y': 240.0}
 
 
+@versioned
 def get_quest(db, player_id=1):
     quest = db.get(BowQuest, player_id)
     if quest is None:
@@ -40,6 +42,7 @@ def reply(text, intent='inform'):
                        reasoning='Authoritative village and bow quest state.', state_update=StateUpdate())
 
 
+@versioned
 def dialogue(db, npc, message, player):
     quest = get_quest(db, player.id)
     words = set(re.findall(r'[a-z]+', message.lower()))
@@ -62,6 +65,7 @@ def dialogue(db, npc, message, player):
     return reply('I have the wood and string. I will begin crafting your bow now.')
 
 
+@versioned
 def maybe_start(db, player, npc, output):
     quest = get_quest(db, player.id)
     if npc.role != 'craftsman' or quest.phase != 'gather':
@@ -84,6 +88,7 @@ def maybe_start(db, player, npc, output):
     db.flush()
 
 
+@versioned
 def finish_if_ready(db, player):
     quest = get_quest(db, player.id)
     if quest.phase != 'crafting' or time.time() < (quest.ready_at or float('inf')):

@@ -1,0 +1,955 @@
+{
+  "date": "2026-10-19",
+  "source": "task packet Depends on fields",
+  "tasks": {
+    "api-adapter/T01": {
+      "packet": "docs/redesign-tasks/api-adapter.md",
+      "depends_on": [
+        "contracts/T03",
+        "ports/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | api_adapter_t01 / locally accepted 2026-10-15; gpt-6.1-sol / medium; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-api-adapter/t01-handoff.md); focused 13/13, conversation 269/269, ports 58/58, full backend 732/732 pass; diff check clean | Versioned submit/status transport; unwired durable service returns 503 pending coordinator/T03; missing request ID remains legacy |",
+      "ownership_targets": "backend/app/api/routes/{chat,world}.py; backend/app/schemas/chat.py; backend/app/api/router.py; backend/tests/test_conversation_api.py.",
+      "next_check": "adjacent coordinator/lifecycle integration"
+    },
+    "api-adapter/T02": {
+      "packet": "docs/redesign-tasks/api-adapter.md",
+      "depends_on": [
+        "api-adapter/T01",
+        "lifecycle/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 | API 18/18, conversation 516/516, full backend 984/984; diff check clean | [Handoff](../evidence/conversation-redesign-api-adapter/t02-handoff.md) |",
+      "ownership_targets": "backend/app/api/routes/{chat,world}.py; backend/app/schemas/chat.py; backend/app/api/router.py; backend/tests/test_conversation_api.py.",
+      "next_check": "accepted evidence recorded; coordinator/T03 prerequisite pending"
+    },
+    "api-adapter/T03": {
+      "packet": "docs/redesign-tasks/api-adapter.md",
+      "depends_on": [
+        "api-adapter/T02",
+        "coordinator/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T03 | Main Agent / accepted 2026-10-18 | [Handoff](../evidence/conversation-redesign-api-adapter/t03-handoff.md); focused integration 146/146, conversation 580/580, backend 1,048/1,048; diff check exit 0 | Durable legacy projection and fallback origin; provider-degraded 200 after SQLite receipt commit; exact retry preserves dialogue/receipt and does not repeat effect |",
+      "ownership_targets": "backend/app/api/routes/{chat,world}.py; backend/app/schemas/chat.py; backend/app/api/router.py; backend/tests/test_conversation_api.py.",
+      "next_check": "accepted locally; Godot client smoke remains the next integration gate"
+    },
+    "baseline/T01": {
+      "packet": "docs/redesign-tasks/baseline.md",
+      "depends_on": [],
+      "state": "complete_local",
+      "execution_record": "| T01 | baseline_inventory / accepted by Main Agent; 2026-10-14; gpt-6.1-sol / medium | `.venv/bin/python docs/evidence/conversation-redesign-baseline/inspect_inventory.py` exit 0; 8 inspections; Main Agent reproduced. [Inventory](../redesign-policy-inventory.md), [manifest](../evidence/conversation-redesign-baseline/inspection-manifest.json); focused regressions 30 passed, 0 failed/skipped ([logs](../evidence/conversation-redesign-schedule/main-verification.json)) | Source paths/traces/limits/writers reviewed. No runtime redesign or live measurement certified. contracts/T01 ready; T02 measurement ready. |",
+      "ownership_targets": "docs/evidence/conversation-redesign-baseline/; backend/tests/fixtures/conversation/; docs/redesign-policy-inventory.md.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "baseline/T02": {
+      "packet": "docs/redesign-tasks/baseline.md",
+      "depends_on": [
+        "baseline/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent / accepted 2026-10-18 | Measurement tests 5/5; live collector exit 0; 28 configured turns and 140 credential checks; model digest recorded in measurement evidence | Two NPCs \u00d7 two replays, 6 generated / 12 scripted / 10 healthy-provider fallback / 0 errors; repair n=0 unavailable |",
+      "ownership_targets": "docs/evidence/conversation-redesign-baseline/; backend/tests/fixtures/conversation/; docs/redesign-policy-inventory.md.",
+      "next_check": "accepted evidence in docs/evidence/conversation-redesign-baseline/measurement/README.md"
+    },
+    "baseline/T03": {
+      "packet": "docs/redesign-tasks/baseline.md",
+      "depends_on": [
+        "baseline/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent / accepted 2026-10-18; model identifier unavailable in runtime | [Handoff](../evidence/conversation-redesign-baseline/t03/handoff.md); fixture suite 6/6, T02 tooling 5/5, diff check exit 0 | 44 four-turn scenarios, 22 per NPC, all required Proposal \u00a719 categories; six score denominators; nine policy controls inventoried without shipping values |",
+      "ownership_targets": "docs/evidence/conversation-redesign-baseline/; backend/tests/fixtures/conversation/; docs/redesign-policy-inventory.md.",
+      "next_check": "evaluation-release/T01 may begin; human calibration and quality scoring remain downstream"
+    },
+    "canon/T01": {
+      "packet": "docs/redesign-tasks/canon.md",
+      "depends_on": [
+        "contracts/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | canon_t01 / accepted 2026-10-14; gpt-6-luna / medium; independent review_canon_t01 approved after span-link correction | [Handoff/red-green evidence](../evidence/conversation-redesign-canon/t01-handoff.md); 6 focused, 113 conversation, 13 dependency tests pass; diff check clean | Adds only final-speech-supported narrative-only canon; semantic/affordance checks injected; revisions are T02 |",
+      "ownership_targets": "backend/app/services/conversation/canon.py; backend/tests/test_conversation_canon.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "canon/T02": {
+      "packet": "docs/redesign-tasks/canon.md",
+      "depends_on": [
+        "canon/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | canon_t02 / accepted 2026-10-14; gpt-6.1-sol / high; independent review_canon_t02 approved | [Handoff/red-green evidence](../evidence/conversation-redesign-canon/t02-handoff.md); 15/15 focused, 17/17 dependency/conformance tests pass | Accepted corrections require exact source/final spans, explicit linkage and matching generated head; durable CAS/history remains persistence responsibility |",
+      "ownership_targets": "backend/app/services/conversation/canon.py; backend/tests/test_conversation_canon.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "capabilities/T01": {
+      "packet": "docs/redesign-tasks/capabilities.md",
+      "depends_on": [
+        "ports/T01",
+        "baseline/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | capabilities_t01 / locally accepted 2026-10-15; gpt-6-luna / medium; Main Agent reproduced 52/52 combined checks | [Handoff](../evidence/conversation-redesign-capabilities/t01-handoff.md); focused and adjacent checks reproduced: exit 0, 52 pass, 0 fail/skip | Concrete rule-owner views and execution-time conformance remain game-adapters/T02 and capabilities/T02 |",
+      "ownership_targets": "backend/app/services/conversation/capabilities.py; backend/tests/test_conversation_capabilities.py.",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "capabilities/T02": {
+      "packet": "docs/redesign-tasks/capabilities.md",
+      "depends_on": [
+        "capabilities/T01",
+        "game-adapters/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | capabilities_t02 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | 13 focused, 353 conversation, and 816 backend tests pass; independent review approved; evidence `../evidence/conversation-redesign-capabilities/t02-handoff.md` | SQLite conformance verified; durable consent/receipts, PostgreSQL and resource revisions remain downstream |",
+      "ownership_targets": "backend/app/services/conversation/capabilities.py; backend/tests/test_conversation_capabilities.py.",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "composition/T01": {
+      "packet": "docs/redesign-tasks/composition.md",
+      "depends_on": [
+        "contracts/T03",
+        "baseline/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | composition_t01 / accepted 2026-10-14; gpt-6.1-sol / high; independent review_composition_t01 approved | [Handoff/red-green evidence](../evidence/conversation-redesign-composition/t01-handoff.md); 16 focused, 112 conversation, 13 dependency, 16 legacy composer, 575 backend tests pass | Exact slot assembly and lossless beats; production 240/300/600 policy remains unselected; progress fails closed |",
+      "ownership_targets": "backend/app/services/conversation/composition.py; backend/app/dialogue/compose.py (explicit compatibility adapter only); backend/tests/test_conversation_composition.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "composition/T02": {
+      "packet": "docs/redesign-tasks/composition.md",
+      "depends_on": [
+        "composition/T01",
+        "ports/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | composition_t02 / accepted 2026-10-14; gpt-6.1-sol / high; independent review_composition_t02 approved | [Handoff/red-green evidence](../evidence/conversation-redesign-composition/t02-handoff.md); 33 focused service/assembly, 139 conversation, 13 dependency, 16 legacy composer, 602 backend tests pass | One action-composition call; ordinary route bypasses generation; no execution port; historical-receipt/current-activity limitation recorded for T03 |",
+      "ownership_targets": "backend/app/services/conversation/composition.py; backend/app/dialogue/compose.py (explicit compatibility adapter only); backend/tests/test_conversation_composition.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "context/T01": {
+      "packet": "docs/redesign-tasks/context.md",
+      "depends_on": [
+        "ports/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | context_t01 / locally accepted 2026-10-15; gpt-6-luna / medium; Main Agent reproduced 52/52 combined checks | [Handoff](../evidence/conversation-redesign-context/t01-handoff.md); focused and conformance reproduced: exit 0, 52 pass, 0 fail/skip | Durable-final filtering and SQL scope remain persistence-adapter duties; budget policy is T02 |",
+      "ownership_targets": "backend/app/services/conversation/context.py; backend/app/services/context/{builder,social}.py; backend/tests/test_conversation_context.py.",
+      "next_check": "worker handoff; Main Agent acceptance and independent review"
+    },
+    "context/T02": {
+      "packet": "docs/redesign-tasks/context.md",
+      "depends_on": [
+        "context/T01",
+        "contracts/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | context_t02 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | 14 focused, 65 adjacent, 363 conversation, and 826 backend tests pass; independent review approved; evidence `../evidence/conversation-redesign-context/t02-handoff.md` | Concrete SQL scope/finality filtering and provider tokenizer integration remain open |",
+      "ownership_targets": "backend/app/services/conversation/context.py; backend/app/services/context/{builder,social}.py; backend/tests/test_conversation_context.py.",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "context/T03": {
+      "packet": "docs/redesign-tasks/context.md",
+      "depends_on": [
+        "context/T01",
+        "context/T02",
+        "persistence-adapters/T04",
+        "ports/T01",
+        "contracts/T08"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T03 | Main Agent / locally accepted 2026-10-18 | Concrete SQL ContextReadPort composes detached sources; SQLite 28/28, PostgreSQL 4/4, conversation 497/497, backend 965/965 |",
+      "ownership_targets": "backend/app/services/conversation/adapters/context_read.py; backend/tests/test_conversation_context_adapter.py",
+      "next_check": "coordinator/T01 wires accepted port into pure turn orchestration"
+    },
+    "contracts/T01": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "baseline/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | contracts_identity / accepted 2026-10-14; gpt-6.1-sol / high; independent review_contracts_t01 approved | [Handoff/red-green evidence](../evidence/conversation-redesign-contracts/t01-handoff.md); focused 16/16 pass exit 0 reproduced by Main Agent; dependency 13/13 pass; infrastructure/schema check exit 0 | Frozen T01 values; no runtime integration or shipping tuning. contracts/T02 ready. |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/tests/test_conversation_contracts.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "contracts/T02": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "contracts/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | contracts_turn_values / accepted 2026-10-14; gpt-6.1-sol / high; independent review_contracts_t02 approved | [Handoff/red-green evidence](../evidence/conversation-redesign-contracts/t02-handoff.md); 24/24 focused, 40/40 combined conversation, 13/13 dependency tests pass; schema/import and diff checks pass | Strict turn/proposal/reply/interaction/operation/receipt values; consent binds the current question TurnRef and later answer; source authenticity remains with interaction adapter |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/tests/test_conversation_contracts.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "contracts/T03": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "contracts/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T03 | contracts_t03_design / accepted 2026-10-14; gpt-6-luna / medium; independent review_contracts_t03 approved after projection immutability correction | [Handoff/red-green evidence](../evidence/conversation-redesign-contracts/t03-handoff.md); 7/7 focused, 47/47 combined conversation, 13/13 dependency tests pass; schema/import and diff checks pass | Canon, memory, validation, final-result and explicit legacy mapping values; no runtime wiring or source-authenticity proof |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/tests/test_conversation_contracts.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "coordinator/T01": {
+      "packet": "docs/redesign-tasks/coordinator.md",
+      "depends_on": [
+        "turns/T02",
+        "context/T02",
+        "capabilities/T01",
+        "proposal/T02",
+        "validation/T03",
+        "fallback/T02",
+        "finalization/T01",
+        "diagnostics/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | Main Agent / locally accepted 2026-10-18 | Focused 7/7; conversation 554/554; import boundary and diff check exit 0 | [Handoff](../evidence/conversation-redesign-coordinator/t01-handoff.md) |",
+      "ownership_targets": "backend/app/services/conversation/coordinator.py; backend/app/services/pipeline.py; backend/tests/test_conversation_coordinator.py.",
+      "next_check": "accepted locally; T02 durable recovery remains"
+    },
+    "coordinator/T02": {
+      "packet": "docs/redesign-tasks/coordinator.md",
+      "depends_on": [
+        "coordinator/T01",
+        "operations/T02",
+        "composition/T02",
+        "persistence-adapters/T04",
+        "game-adapters/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | Main Agent / accepted 2026-10-18 | Coordinator 18/18; composition 38/38; operations 24/24; turns 29/29; persistence 67/67; conversation 565/565; diff check exit 0 | [Handoff](../evidence/conversation-redesign-coordinator/t02-handoff.md) |",
+      "ownership_targets": "backend/app/services/conversation/coordinator.py; backend/app/services/pipeline.py; backend/tests/test_conversation_coordinator.py.",
+      "next_check": "accepted locally; production worker and pipeline integration remains T03"
+    },
+    "coordinator/T03": {
+      "packet": "docs/redesign-tasks/coordinator.md",
+      "depends_on": [
+        "coordinator/T02",
+        "lifecycle/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T03 | Main Agent / in progress 2026-10-18 | RED pending-key test failed as expected; worker + persistence 55/55; conversation 573/573 | [Handoff](../evidence/conversation-redesign-coordinator/t03-handoff.md); production pipeline/startup/rollback integration remains open |",
+      "ownership_targets": "backend/app/services/conversation/coordinator.py; backend/app/services/pipeline.py; backend/tests/test_conversation_coordinator.py.",
+      "next_check": "accepted evidence in execution_record; api-adapter/T03 completed the adjacent durable response projection"
+    },
+    "diagnostics/T01": {
+      "packet": "docs/redesign-tasks/diagnostics.md",
+      "depends_on": [
+        "contracts/T03",
+        "ports/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | main_agent / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reproduced full backend suite | [Handoff](../evidence/conversation-redesign-diagnostics/t01-handoff.md); focused 5/5, trace/read-port 21/21, legacy trace 8/8; full backend 655/655 pass; `git diff --check` clean | Safe projection only; coordinator event production and T02 sink isolation/export remain open |",
+      "ownership_targets": "backend/app/services/conversation/diagnostics.py; backend/app/services/decision_trace.py; backend/tests/test_conversation_diagnostics.py.",
+      "next_check": "accepted evidence recorded"
+    },
+    "diagnostics/T02": {
+      "packet": "docs/redesign-tasks/diagnostics.md",
+      "depends_on": [
+        "diagnostics/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | diagnostics_t02 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-diagnostics/t02-handoff.md); focused 9/9, adjacent 25/25, conversation 235/235 pass; `git diff --check` clean | Best-effort sink/export boundary only; coordinator wiring and retention/access enforcement remain open; no healthy-generation rate claimed |",
+      "ownership_targets": "backend/app/services/conversation/diagnostics.py; backend/app/services/decision_trace.py; backend/tests/test_conversation_diagnostics.py.",
+      "next_check": "accepted evidence recorded"
+    },
+    "evaluation-release/T01": {
+      "packet": "docs/redesign-tasks/evaluation-release.md",
+      "depends_on": [
+        "baseline/T03",
+        "proposal/T02",
+        "diagnostics/T02",
+        "validation/T02"
+      ],
+      "state": "in_progress",
+      "execution_record": "| Main Agent / in progress; started 2026-10-18; model identifier unavailable in runtime | Replay generated 176/176; Reviewer 1 completed 24/24 for the improved-character-guidance replay and all candidates/provenance match. Paired same-reviewer means: T06 4.00, current replay 3.29; continuity improved, five dimensions declined. Evidence: docs/evidence/conversation-redesign-release/t01/improved-character-guidance-600/ | Reviewer 2 same-replay score, two-reviewer agreement and rubric freeze remain pending.",
+      "ownership_targets": "backend/tests/fixtures/conversation/; backend/tests/test_conversation_replays.py (new); docs/evidence/conversation-redesign-release/; docs/conversation-redesign-runbook.md (new).",
+      "next_check": "Keep human agreement/rubric-freeze gate open: current T06 has only one valid reviewer; T05 reviewer_2 scores a different replay and is not comparable."
+    },
+    "evaluation-release/T02": {
+      "packet": "docs/redesign-tasks/evaluation-release.md",
+      "depends_on": [
+        "coordinator/T03",
+        "api-adapter/T03",
+        "godot-adapters/T03",
+        "capabilities/T02",
+        "evaluation-release/T01"
+      ],
+      "state": "not_started",
+      "execution_record": "| T02 | Unassigned / not started | Not run | None recorded |",
+      "ownership_targets": "backend/tests/fixtures/conversation/; backend/tests/test_conversation_replays.py (new); docs/evidence/conversation-redesign-release/; docs/conversation-redesign-runbook.md (new).",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "evaluation-release/T03": {
+      "packet": "docs/redesign-tasks/evaluation-release.md",
+      "depends_on": [
+        "evaluation-release/T02",
+        "baseline/T02"
+      ],
+      "state": "not_started",
+      "execution_record": "| T03 | Unassigned / not started | Not run | None recorded |",
+      "ownership_targets": "backend/tests/fixtures/conversation/; backend/tests/test_conversation_replays.py (new); docs/evidence/conversation-redesign-release/; docs/conversation-redesign-runbook.md (new).",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "evaluation-release/T04": {
+      "packet": "docs/redesign-tasks/evaluation-release.md",
+      "depends_on": [
+        "evaluation-release/T03"
+      ],
+      "state": "not_started",
+      "execution_record": "| T04 | Unassigned / not started | Not run | None recorded |",
+      "ownership_targets": "backend/tests/fixtures/conversation/; backend/tests/test_conversation_replays.py (new); docs/evidence/conversation-redesign-release/; docs/conversation-redesign-runbook.md (new).",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "fallback/T01": {
+      "packet": "docs/redesign-tasks/fallback.md",
+      "depends_on": [
+        "contracts/T03",
+        "composition/T01",
+        "proposal/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | fallback_t01 / locally accepted by Main Agent 2026-10-18; gpt-6-luna / medium | Main Agent reproduced focused 5/5, contracts 70/70, composition 38/38, conversation 385/385 and backend 848/848; independent review approved; `git diff --check` exit 0 | [Handoff](../evidence/conversation-redesign-fallback/t01-handoff.md); structural/grounding and publication-failure checks remain T02 |",
+      "ownership_targets": "backend/app/services/conversation/fallback.py; backend/tests/test_conversation_fallback.py.",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "fallback/T02": {
+      "packet": "docs/redesign-tasks/fallback.md",
+      "depends_on": [
+        "fallback/T01",
+        "validation/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 | Fallback 11/11, validation 13/13, composition 38/38, contracts 77/77; diff check clean | [Handoff](../evidence/conversation-redesign-fallback/t02-handoff.md) |",
+      "ownership_targets": "backend/app/services/conversation/fallback.py; backend/tests/test_conversation_fallback.py.",
+      "next_check": "accepted evidence recorded; downstream coordinator integration remains"
+    },
+    "finalization/T01": {
+      "packet": "docs/redesign-tasks/finalization.md",
+      "depends_on": [
+        "contracts/T03",
+        "ports/T02",
+        "canon/T02",
+        "memory/T01",
+        "interactions/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | finalization_t01 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | [Handoff](../evidence/conversation-redesign-finalization/t01-handoff.md); focused 16/16, contracts 70/70, canon 15/15, interactions 18/18, store ports 32/32, memory 5/5; `git diff --check` exit 0 | Facade verified with doubles only; durable SQL publication remains T02 after persistence-adapters/T04 |",
+      "ownership_targets": "backend/app/services/conversation/finalization.py; backend/tests/test_conversation_finalization.py.",
+      "next_check": "worker handoff; Main Agent review and focused verification"
+    },
+    "finalization/T02": {
+      "packet": "docs/redesign-tasks/finalization.md",
+      "depends_on": [
+        "finalization/T01",
+        "persistence-adapters/T04",
+        "persistence-adapters/T07"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 | SQLite/PostgreSQL finalization 22/22; adjacent 36/36; full backend 975/975; `git diff --check` clean | See task handoff for RED/GREEN evidence and scope |",
+      "ownership_targets": "backend/app/services/conversation/finalization.py; backend/tests/test_conversation_finalization.py.",
+      "next_check": "accepted evidence recorded; downstream coordinator integration"
+    },
+    "game-adapters/T01": {
+      "packet": "docs/redesign-tasks/game-adapters.md",
+      "depends_on": [
+        "ports/T02",
+        "baseline/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | game_adapters_t01 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | 15 focused, 330 conversation, and 793 backend tests pass; independent review approved after replay-result correction; evidence `../evidence/conversation-redesign-game-adapters/t01-handoff.md` | SQLite rollback verified; PostgreSQL concurrency and durable gateway receipt atomicity remain persistence-owned |",
+      "ownership_targets": "backend/app/services/conversation/adapters/game.py (new); backend/app/services/{state/service,craftsman,gatherer}.py; backend/app/services/quests/*; backend/app/api/routes/{inventory,craftsman,gatherer,world}.py; backend/tests/test_conversation_game_adapters.py.",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "game-adapters/T02": {
+      "packet": "docs/redesign-tasks/game-adapters.md",
+      "depends_on": [
+        "game-adapters/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | game_adapters_t02 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | 29 focused, 344 conversation, and 807 backend tests pass; independent review approved; evidence `../evidence/conversation-redesign-game-adapters/t02-handoff.md` | Consent loader remains an injected trusted boundary; PostgreSQL, durable gateway/receipt wiring and T03 resource revisions remain open |",
+      "ownership_targets": "backend/app/services/conversation/adapters/game.py (new); backend/app/services/{state/service,craftsman,gatherer}.py; backend/app/services/quests/*; backend/app/api/routes/{inventory,craftsman,gatherer,world}.py; backend/tests/test_conversation_game_adapters.py.",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "game-adapters/T03": {
+      "packet": "docs/redesign-tasks/game-adapters.md",
+      "depends_on": [
+        "game-adapters/T02",
+        "persistence-adapters/T01",
+        "persistence-adapters/T05",
+        "contracts/T07"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T03 | game_adapters_t03 / accepted by Main Agent 2026-10-18 | [Handoff](../evidence/conversation-redesign-game-adapters/t03-handoff.md); focused SQLite 48/48, PostgreSQL revisions 19/19, backend 935/935 | Common game writer, changed-resource revisions, coherent snapshots and reset |",
+      "ownership_targets": "backend/app/services/conversation/adapters/game.py (new); backend/app/services/{state/service,craftsman,gatherer}.py; backend/app/services/quests/*; backend/app/api/routes/{inventory,craftsman,gatherer,world}.py; backend/tests/test_conversation_game_adapters.py.",
+      "next_check": "API/Godot consumers apply the published scope and revision labels",
+      "owner": "game-service and route revision ownership only; no persistence schema/adapter edits"
+    },
+    "godot-adapters/T01": {
+      "packet": "docs/redesign-tasks/godot-adapters.md",
+      "depends_on": [
+        "contracts/T03",
+        "api-adapter/T01",
+        "api-adapter/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "Godot 4.7.2 `--version` exit 0; editor import exit 0 with no script parse/compile errors; gateway smoke exit 0, 19 passed / 0 failed. Fixed chat_window request_id type inference and smoke runner failure accounting. [Handoff](../evidence/conversation-redesign-godot-adapters/t01-handoff.md).",
+      "ownership_targets": "frontend/godot/scripts/conversation_gateway.gd (new); frontend/godot/scripts/conversation_presenter.gd (new); frontend/godot/scripts/{chat_window,main,craftsman_gateway,gatherer_gateway}.gd; frontend/godot/tests/conversation_*_smoke.gd (new).",
+      "next_check": "review T02 handoff; end-to-end HTTP mock lifecycle remains a coverage limitation",
+      "owner": "Main Agent (runtime integration/verification); prior implementer godot_t01",
+      "selected_model": "Main Agent runtime context; prior implementation gpt-6-luna",
+      "effort": "medium for prior bounded implementation",
+      "completion_date": "2026-10-18",
+      "evidence_destination": "docs/evidence/conversation-redesign-godot-adapters/t01-runtime/"
+    },
+    "godot-adapters/T02": {
+      "packet": "docs/redesign-tasks/godot-adapters.md",
+      "depends_on": [
+        "godot-adapters/T01",
+        "api-adapter/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "Main Agent independently reproduced Godot 4.7.2 presenter smoke 15/15, gateway smoke 19/19, editor import exit 0 and git diff --check exit 0. RED regressions recorded for finalized-gap and oversized-beat fixes. Broader UI smoke attempted and blocked on missing /world backend. [Handoff](../evidence/conversation-redesign-godot-adapters/t02-handoff.md).",
+      "ownership_targets": "frontend/godot/scripts/conversation_gateway.gd (new); frontend/godot/scripts/conversation_presenter.gd (new); frontend/godot/scripts/{chat_window,main,craftsman_gateway,gatherer_gateway}.gd; frontend/godot/tests/conversation_*_smoke.gd (new).",
+      "next_check": "claim and execute dependency-ready godot-adapters/T03; retain backend UI smoke as an integration limitation",
+      "owner": "Main Agent accepted; implementer /root/godot_t02_presentation",
+      "selected_model": "gpt-6-luna",
+      "effort": "medium",
+      "start_date": "2026-10-18",
+      "evidence_destination": "docs/evidence/conversation-redesign-godot-adapters/t02-handoff.md",
+      "completion_date": "2026-10-18"
+    },
+    "godot-adapters/T03": {
+      "packet": "docs/redesign-tasks/godot-adapters.md",
+      "depends_on": [
+        "godot-adapters/T02",
+        "game-adapters/T03",
+        "api-adapter/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T03 | Main Agent accepted 2026-10-18; implementer /root/godot_t03_revisions, gpt-6.1-sol / high; independently reviewed | Revisioned-state 25/25, gateway 19/19, presenter 15/15, six adjacent smokes, editor import and diff check exit 0; RED/GREEN evidence in ../evidence/conversation-redesign-godot-adapters/t03/; [Handoff](../evidence/conversation-redesign-godot-adapters/t03-handoff.md) | Local snapshot/event acceptance complete; live UI smoke unavailable because disposable backend port 8001 refused connection; legacy unlabelled transfer/salvage reconcile by read-only /world |",
+      "ownership_targets": "frontend/godot/scripts/{revisioned_state,chat_window,main,craftsman_gateway,gatherer_gateway}.gd; frontend/godot/tests/revisioned_state_smoke.gd; docs/evidence/conversation-redesign-godot-adapters/t03-handoff.md and t03/ logs",
+      "next_check": "local task accepted; live UI integration awaits disposable backend availability"
+    },
+    "interactions/T01": {
+      "packet": "docs/redesign-tasks/interactions.md",
+      "depends_on": [
+        "contracts/T03",
+        "contracts/T05"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | interactions_t01 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reran after proposal/T01 | [Handoff/red-green evidence](../evidence/conversation-redesign-interactions/t01-handoff.md); focused 11/11, adjacent 50/50, conversation 213/213 and backend 676/676 pass | Pure policy only; accepted context contract enforces one active item negotiation; consent and durable CAS remain downstream |",
+      "ownership_targets": "backend/app/services/conversation/interactions.py; backend/tests/test_conversation_interactions.py.",
+      "next_check": "accepted evidence recorded"
+    },
+    "interactions/T02": {
+      "packet": "docs/redesign-tasks/interactions.md",
+      "depends_on": [
+        "interactions/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | interactions_t02 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-interactions/t02-handoff.md); focused 18/18, adjacent 57/57, conversation 250/250, backend 713/713; diff check clean | Consent binds exact offered/current-turn operation; gateway must freshly recheck selected command; durable use and execution remain downstream |",
+      "ownership_targets": "backend/app/services/conversation/interactions.py; backend/tests/test_conversation_interactions.py.",
+      "next_check": "accepted evidence recorded"
+    },
+    "lifecycle/T01": {
+      "packet": "docs/redesign-tasks/lifecycle.md",
+      "depends_on": [
+        "ports/T02",
+        "persistence-adapters/T04"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | Main Agent / accepted 2026-10-18 | [Handoff](../evidence/conversation-redesign-lifecycle/t01-handoff.md); facade 4/4 and SQL lifecycle/publication 18/18; prior persistence-adapters/T04 SQLite/PostgreSQL 24/24 each | Atomic clear remains in SQL store; facade delegates and returns epoch transition |",
+      "ownership_targets": "backend/app/services/conversation/lifecycle.py; backend/tests/test_conversation_lifecycle.py.",
+      "next_check": "accepted evidence recorded; lifecycle/T02 may proceed after game-adapters/T03"
+    },
+    "lifecycle/T02": {
+      "packet": "docs/redesign-tasks/lifecycle.md",
+      "depends_on": [
+        "lifecycle/T01",
+        "game-adapters/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 | Lifecycle facade/SQL 22/22 SQLite and PostgreSQL 16.15; conversation 511/511; backend 979/979; diff check clean | [Handoff](../evidence/conversation-redesign-lifecycle/t02-handoff.md) |",
+      "ownership_targets": "backend/app/services/conversation/lifecycle.py; backend/tests/test_conversation_lifecycle.py.",
+      "next_check": "accepted evidence recorded; coordinator/cache integration remains"
+    },
+    "memory/T01": {
+      "packet": "docs/redesign-tasks/memory.md",
+      "depends_on": [
+        "contracts/T03",
+        "ports/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | memory_t01 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-memory/t01-handoff.md); focused 5/5, adjacent memory/contracts/port 35/35 pass; broader backend later reproduced at 843/843 during T02 review | Reports remain unverified; scoped filtering only; durable correction CAS/index/summary are adapter duties |",
+      "ownership_targets": "backend/app/services/conversation/memory.py; backend/app/services/memory/* (compatible adapters); backend/tests/test_conversation_memory.py.",
+      "next_check": "accepted evidence recorded"
+    },
+    "memory/T02": {
+      "packet": "docs/redesign-tasks/memory.md",
+      "depends_on": [
+        "memory/T01",
+        "canon/T02",
+        "ports/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | memory_t02 / locally accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | 22 focused, 32 store-port, 15 canon, 70 contracts, 380 conversation and 843 backend tests pass; independent review approved after correction-link snapshot fix; evidence `../evidence/conversation-redesign-memory/t02-handoff.md` | Concrete trusted lineage reader, durable dirty scans/source filtering/CAS and PostgreSQL behavior remain unverified |",
+      "ownership_targets": "backend/app/services/conversation/memory.py; backend/app/services/memory/* (compatible adapters); backend/tests/test_conversation_memory.py.",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "operations/T01": {
+      "packet": "docs/redesign-tasks/operations.md",
+      "depends_on": [
+        "contracts/T03",
+        "interactions/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | operations_t01 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / medium | [Handoff](../evidence/conversation-redesign-operations/t01-handoff.md); focused 14/14, interactions 18/18, contracts 70/70, conversation 305/305; `git diff --check` exit 0 | Pure policy only; gateway execution, atomic receipts and durable rechecks remain T02 |",
+      "ownership_targets": "backend/app/services/conversation/operations.py; backend/app/services/validation/items.py; backend/app/services/craftsman_intent.py; backend/tests/test_conversation_operations.py.",
+      "next_check": "worker handoff; Main Agent review and focused verification"
+    },
+    "operations/T02": {
+      "packet": "docs/redesign-tasks/operations.md",
+      "depends_on": [
+        "operations/T01",
+        "ports/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | Main Agent / accepted 2026-10-18; model identifier unavailable in current runtime | [Handoff](../evidence/conversation-redesign-operations/t02-handoff.md); focused 20/20, store-port 32/32, interactions 18/18, contracts 70/70, conversation 311/311, backend 774/774; `git diff --check` exit 0 | Injected gateway dispatch and receipt-first retry verified with doubles; concrete adapter transaction/atomicity remains outside this packet task |",
+      "ownership_targets": "backend/app/services/conversation/operations.py; backend/app/services/validation/items.py; backend/app/services/craftsman_intent.py; backend/tests/test_conversation_operations.py.",
+      "next_check": "dependencies must have accepted evidence"
+    },
+    "persistence-adapters/T01": {
+      "packet": "docs/redesign-tasks/persistence-adapters.md",
+      "depends_on": [
+        "ports/T02",
+        "baseline/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | persistence_t01 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | handoff; SQLite schema 4/4, PostgreSQL 16.15 isolated schema 4/4, adjacent semantic-memory/inventory 21/21, diff check exit 0 | Fresh/populated migration, repeatability, uniqueness, legacy mapping/provenance, and transcript-independent receipt/canon verified on both engines |",
+      "ownership_targets": "backend/app/models/conversation*.py; backend/app/models/character_canon.py (new); backend/app/models/{conversation,memory}.py; backend/app/database/conversation_migration.py (new); backend/app/services/conversation/adapters/persistence.py (new); backend/tests/test_conversation_persistence.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "persistence-adapters/T02": {
+      "packet": "docs/redesign-tasks/persistence-adapters.md",
+      "depends_on": [
+        "persistence-adapters/T01",
+        "turns/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | persistence_t02 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | [Handoff](../evidence/conversation-redesign-persistence-adapters/t02-handoff.md); SQLite 23/23, PostgreSQL 16.15 23/23, adjacent 65/65, full backend 876/876; Main Agent reproduced focused SQLite/PostgreSQL and full backend | Scoped SQLTurnStore admission/order, fenced claims, durable budgets/recovery and corrupt-receipt fail-closed validation |",
+      "ownership_targets": "backend/app/models/conversation*.py; backend/app/models/character_canon.py (new); backend/app/models/{conversation,memory}.py; backend/app/database/conversation_migration.py (new); backend/app/services/conversation/adapters/persistence.py (new); backend/tests/test_conversation_persistence.py.",
+      "next_check": "accepted evidence recorded; persistence-adapters/T03 is ready",
+      "owner": "SQL persistence adapter/models/tests only; no game-service or revision edits"
+    },
+    "persistence-adapters/T03": {
+      "packet": "docs/redesign-tasks/persistence-adapters.md",
+      "depends_on": [
+        "persistence-adapters/T02",
+        "game-adapters/T01",
+        "contracts/T07"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T03 | persistence_t03 / accepted by Main Agent 2026-10-18 | [Handoff](../evidence/conversation-redesign-persistence-adapters/t03-handoff.md); SQLite 47/47, PostgreSQL 47/47, backend 935/935 | Atomic effect/receipt/interaction transaction with persisted consent recheck |",
+      "ownership_targets": "backend/app/models/conversation*.py; backend/app/models/character_canon.py (new); backend/app/models/{conversation,memory}.py; backend/app/database/conversation_migration.py (new); backend/app/services/conversation/adapters/persistence.py (new); backend/tests/test_conversation_persistence.py.",
+      "next_check": "persistence-adapters/T04 publication and lifecycle stores"
+    },
+    "persistence-adapters/T04": {
+      "packet": "docs/redesign-tasks/persistence-adapters.md",
+      "depends_on": [
+        "persistence-adapters/T03",
+        "contracts/T07",
+        "persistence-adapters/T06"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T04 | Main Agent / accepted 2026-10-18 | [Handoff](../evidence/conversation-redesign-persistence-adapters/t04-lifecycle-tests.md); SQLite and PostgreSQL 16.15 focused suites 24/24 each; full backend 961/961; `git diff --check` clean | Atomic lifecycle/publication and summary stores, scoped finalized reads, fail-closed unsupported evidence, both lifecycle races, and external-call transaction boundaries verified; packet consumer integration is context/T03 |",
+      "ownership_targets": "backend/app/services/conversation/adapters/{persistence,summary_store,scoped_reads}.py; backend/app/models/conversation_state.py; backend/app/database/conversation_migration.py; backend/tests/test_conversation_persistence_lifecycle.py; backend/tests/test_conversation_summary_store.py; backend/tests/test_conversation_scoped_reads.py",
+      "next_check": "accepted; downstream ContextReadPort integration tracked by context/T03"
+    },
+    "ports/T01": {
+      "packet": "docs/redesign-tasks/ports.md",
+      "depends_on": [
+        "contracts/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | ports_t01 / accepted 2026-10-14; gpt-6-luna / medium; independent review_ports_t01 approved | [Handoff/red-green evidence](../evidence/conversation-redesign-ports/t01-handoff.md); 4/4 focused, 47/47 conversation and 12/12 read-port tests pass; diff check clean | Seven pure read/generation/clock/trace protocols; concrete adapters remain outside scope |",
+      "ownership_targets": "backend/app/services/conversation/ports.py; backend/tests/conversation_port_conformance.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "ports/T02": {
+      "packet": "docs/redesign-tasks/ports.md",
+      "depends_on": [
+        "ports/T01",
+        "contracts/T04"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | ports_t02 / accepted 2026-10-14; gpt-6.1-sol / high; independent review_ports_t02 approved | [Handoff/red-green evidence](../evidence/conversation-redesign-ports/t02-handoff.md); 32/32 focused, 91/91 conversation, 13/13 dependency and 554/554 backend tests pass | Five atomic write/recovery protocols and reusable fake conformance cases; SQL/database atomicity remains unproven |",
+      "ownership_targets": "backend/app/services/conversation/ports.py; backend/tests/conversation_port_conformance.py.",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "proposal/T01": {
+      "packet": "docs/redesign-tasks/proposal.md",
+      "depends_on": [
+        "ports/T01",
+        "contracts/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | proposal_t01 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-proposal/t01-handoff.md); focused+adjacent 52/52, conversation 213/213, full backend 676/676; diff check clean | One call through frozen GenerationPort; typed proposal, references, operations and T05 cue spans validated against ContextPacket; raw JSON/provider/shared prompt implementation belongs to T02 |",
+      "ownership_targets": "backend/app/services/conversation/proposal.py; backend/app/services/prompts/builder.py; backend/app/services/llm/*; backend/tests/test_conversation_proposal.py.",
+      "next_check": "accepted evidence recorded"
+    },
+    "proposal/T02": {
+      "packet": "docs/redesign-tasks/proposal.md",
+      "depends_on": [
+        "proposal/T01",
+        "baseline/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | proposal_t02 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-proposal/t02-handoff.md); adapter/proposal/composition/context/interface checks 66/66 pass; broad conversation/backend run currently has two independent SQLite persistence fixture errors | Shared provider prompt and typed adapter; no mock substitution on outage; T01 failure mapping added narrowly; coordinator wiring remains pending |",
+      "ownership_targets": "backend/app/services/conversation/proposal.py; backend/app/services/prompts/builder.py; backend/app/services/llm/*; backend/tests/test_conversation_proposal.py.",
+      "next_check": "accepted evidence recorded"
+    },
+    "turns/T01": {
+      "packet": "docs/redesign-tasks/turns.md",
+      "depends_on": [
+        "ports/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T01 | turns_t01 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reproduced focused 11/11, store-port 32/32, conversation 163/163 | [Handoff](../evidence/conversation-redesign-turns/t01-handoff.md); all reproduced checks exit 0, no failures/skips | Fake store does not prove DB atomicity/concurrency; persistence-adapters/T02 remains required |",
+      "ownership_targets": "backend/app/services/conversation/turns.py; backend/tests/test_conversation_turns.py.",
+      "next_check": "accepted evidence recorded; turns/T02 may proceed"
+    },
+    "turns/T02": {
+      "packet": "docs/redesign-tasks/turns.md",
+      "depends_on": [
+        "turns/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T02 | turns_t02 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed | [Handoff/red-green evidence](../evidence/conversation-redesign-turns/t02-handoff.md); focused 29/29, store-port 32/32, conversation 202/202, full backend 665/665 pass | Store-owned atomic claims/fencing/recovery; fake process restart does not establish SQL atomicity/crash durability; coordinator integration remains required |",
+      "ownership_targets": "backend/app/services/conversation/turns.py; backend/tests/test_conversation_turns.py.",
+      "next_check": "accepted evidence recorded"
+    },
+    "validation/T01": {
+      "packet": "docs/redesign-tasks/validation.md",
+      "depends_on": [
+        "contracts/T03",
+        "composition/T01",
+        "contracts/T06",
+        "contracts/T09"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 after contracts/T09 | Validation 13/13, contract validation 5/5, conversation 518/518, backend 986/986; diff check clean | [Handoff](../evidence/conversation-redesign-validation/t01-handoff.md) |",
+      "ownership_targets": "backend/app/services/conversation/validation.py; backend/app/services/validation/{models,service}.py; backend/tests/test_conversation_validation.py.",
+      "next_check": "accepted evidence recorded; downstream coordinator integration remains"
+    },
+    "validation/T02": {
+      "packet": "docs/redesign-tasks/validation.md",
+      "depends_on": [
+        "validation/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 | Quality hooks 6/6, validation 19/19, backend 1015/1015; diff check clean | [Handoff](../evidence/conversation-redesign-validation/t02-handoff.md) |",
+      "ownership_targets": "backend/app/services/conversation/validation.py; backend/app/services/validation/{models,service}.py; backend/tests/test_conversation_validation.py.",
+      "next_check": "accepted evidence recorded; downstream coordinator integration remains"
+    },
+    "validation/T03": {
+      "packet": "docs/redesign-tasks/validation.md",
+      "depends_on": [
+        "validation/T01",
+        "proposal/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 | Repair 17/17, adjacent 128/128, backend 1015/1015; diff check clean | [Handoff](../evidence/conversation-redesign-validation/t03-handoff.md) |",
+      "ownership_targets": "backend/app/services/conversation/validation.py; backend/app/services/validation/{models,service}.py; backend/tests/test_conversation_validation.py.",
+      "next_check": "accepted evidence recorded; downstream coordinator integration remains"
+    },
+    "contracts/T04": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "contracts/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T04 | contracts_t04 / accepted 2026-10-14; gpt-6.1-sol / high; independent review_contracts_t04 approved after shared repair-token correction | [Handoff/red-green evidence](../evidence/conversation-redesign-contracts/t04-handoff.md); 12/12 focused, 71/71 conversation, 13/13 dependency, 534/534 backend tests pass; schema/import and diff checks pass | Added explicit lease, plan, lifecycle, summary, durable attempt/recovery and optional-success envelopes; adapters still prove authority/atomicity |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/tests/test_conversation_contracts_interfaces.py; backend/tests/fixtures/conversation/",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "composition/T03": {
+      "packet": "docs/redesign-tasks/composition.md",
+      "depends_on": [
+        "composition/T02"
+      ],
+      "state": "complete",
+      "execution_record": "| T03 | Unassigned / recorded 2026-10-14 | Not run | Explicitly added after accepted-receipt/current-activity revision case showed T01 assembler fails closed |",
+      "ownership_targets": "backend/app/services/conversation/composition.py; backend/tests/test_conversation_composition.py; backend/tests/fixtures/conversation/",
+      "next_check": "accepted evidence in execution_record"
+    },
+    "contracts/T05": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "contracts/T04"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T05 | contracts_t05 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced full backend suite | [Handoff/red-green evidence](../evidence/conversation-redesign-contracts/t05-handoff.md); focused 7/7, adjacent 102/102, full backend 655/655 pass; schema/import and whitespace checks pass | Versioned explicit cancel/resume proposals and server-evaluated precondition values; lifecycle policy, server authenticity and persistence remain downstream |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/tests/test_conversation_contracts_interfaces.py; backend/tests/fixtures/conversation/",
+      "next_check": "accepted evidence recorded"
+    },
+    "contracts/T06": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "contracts/T05"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T06 | contracts_t06 / locally accepted 2026-10-15; gpt-6-luna / medium; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-contracts/t06-handoff.md); focused 4/4, contract suite 70/70, validation 6/6 pass; imports, compile and diff check clean | Typed claim/evidence/comparison values are versioned and narrative-only; authoritative provenance remains an adapter duty |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/tests/test_conversation_contracts.py; validation projection fixtures.",
+      "next_check": "validation/T01 integration and adjacent module gates"
+    },
+    "persistence-adapters/T05": {
+      "packet": "docs/redesign-tasks/persistence-adapters.md",
+      "depends_on": [
+        "persistence-adapters/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T05 | persistence_t05 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / high | [Handoff](../evidence/conversation-redesign-persistence-adapters/t05-handoff.md); SQLite 5/5 and adjacent 77/77, isolated PostgreSQL 16.15 storage/schema 9/9, full backend 876/876; Main Agent reproduced focused SQLite/PostgreSQL and full backend | Additive Player JSON revision ledger and idempotent migration preserve legacy fields and caller-owned rollback; game-adapters/T03 owns updates/reset |",
+      "ownership_targets": "backend/app/models/player.py; backend/app/database/resource_revision_migration.py (new); backend/app/database/init_db.py; backend/tests/test_resource_revision_migration.py (new).",
+      "next_check": "accepted evidence recorded; game-adapters/T03 may proceed",
+      "owner": "Player model and additive schema initialization/tests only; no game service writes/reset implementation or SQL turn store edits"
+    },
+    "contracts/T07": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "contracts/T06",
+        "interactions/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T07 | contracts_t07 / accepted by Main Agent 2026-10-18 | [Handoff](../evidence/conversation-redesign-contracts/t07-handoff.md); full backend 935/935 and PostgreSQL persistence 47/47 | Exact stored single-offer terms; current answer identity/span preserved |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/app/services/conversation/interactions.py; backend/app/services/conversation/operations.py; backend/tests/test_conversation_contracts.py; backend/tests/test_conversation_interactions.py; backend/tests/test_conversation_operations.py.",
+      "next_check": "dependent persistence/API lifecycle integration",
+      "owner": "Consent-bearing interaction operation binding only; no game or persistence adapter edits"
+    },
+    "memory/T03": {
+      "packet": "docs/redesign-tasks/memory.md",
+      "depends_on": [
+        "game-adapters/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T03 | Main Agent / locally accepted 2026-10-18 | [Handoff](../evidence/conversation-redesign-memory/t03-handoff.md); memory provenance 14/14, behavior pipeline 13/13, game adapters 48/48; full backend 937 passed plus one open T04 publication error | Both callers embed after commit/writer release; failures preserve attributed rows |",
+      "ownership_targets": "backend/app/services/memory/service.py; backend/app/services/memory/provenance.py; backend/app/services/pipeline.py; backend/app/services/quests/bow.py; backend/app/api/routes/quests.py; backend/tests/test_memory_provenance.py and bow quest tests.",
+      "next_check": "dependent persistence summary/index integration",
+      "owner": "Timed bow completion authoritative memory and embedding boundary only; no gameplay rule changes"
+    },
+    "persistence-adapters/T06": {
+      "packet": "docs/redesign-tasks/persistence-adapters.md",
+      "depends_on": [
+        "persistence-adapters/T01",
+        "contracts/T03",
+        "memory/T02"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T06 | Main Agent / accepted 2026-10-18 | [Handoff](../evidence/conversation-redesign-persistence-adapters/t06-handoff.md); schema/migration suite SQLite 6/6 and PostgreSQL 16.15 6/6; diff check clean | Additive contract-memory revision and durable summary CAS metadata; T04 owns transactional behavior |",
+      "ownership_targets": "backend/app/models/conversation_state.py; backend/app/database/conversation_migration.py; backend/app/database/init_db.py; backend/tests/test_conversation_persistence_schema.py; backend/tests/test_conversation_persistence.py.",
+      "next_check": "persistence-adapters/T04 memory revision CAS, scoped reads, summary CAS/dirty scan",
+      "owner": "Durable storage prerequisites for contract memory writes and summary CAS; no policy/runtime changes"
+    },
+    "contracts/T08": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "contracts/T07"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T08 | Main Agent / locally accepted 2026-10-18 | GameScope supports safe literal slash-prefixed scope values; RED reproduced /world rejection; GREEN contract and context SQLite/PostgreSQL checks pass |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/tests/test_conversation_game_scope.py",
+      "next_check": "none; context/T03 integration accepted"
+    },
+    "persistence-adapters/T07": {
+      "packet": "docs/redesign-tasks/persistence-adapters.md",
+      "depends_on": [
+        "persistence-adapters/T04",
+        "contracts/T03",
+        "finalization/T01"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 | SQLite/PostgreSQL finalization 22/22; adjacent 36/36; full backend 975/975; `git diff --check` clean | See task handoff for RED/GREEN evidence and scope |",
+      "ownership_targets": "backend/app/services/conversation/adapters/persistence.py; backend/tests/test_conversation_persistence_lifecycle.py; backend/tests/test_conversation_finalization.py (coordinate finalization owner)",
+      "next_check": "accepted evidence recorded; downstream coordinator integration"
+    },
+    "contracts/T09": {
+      "packet": "docs/redesign-tasks/contracts.md",
+      "depends_on": [
+        "contracts/T06"
+      ],
+      "state": "complete_local",
+      "execution_record": "| Main Agent accepted 2026-10-18 | Contracts 5/5, validation 13/13, conversation 518/518, backend 986/986; diff check clean | [Handoff](../evidence/conversation-redesign-contracts/t09-handoff.md) |",
+      "ownership_targets": "backend/app/services/conversation/contracts.py; backend/app/services/conversation/validation.py; backend/tests/test_conversation_contracts_validation.py; backend/tests/test_conversation_validation.py",
+      "next_check": "accepted evidence recorded; downstream coordinator integration remains"
+    },
+    "evaluation-release/T05": {
+      "packet": "docs/redesign-tasks/evaluation-release.md",
+      "depends_on": [
+        "baseline/T03"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T05 | Main Agent / accepted 2026-10-18 | [Alternate replay evidence and reviewer instructions](../evidence/conversation-redesign-release/t01/alternate-limit-600/README.md); 176/176 generated; unchanged state digest; six denominators preserved; conversation replay tests 15/15; diff check clean | 600-character ordinary-dialogue measurement only; maximum observed 536; frozen 240 baseline preserved |",
+      "ownership_targets": "docs/evidence/conversation-redesign-release/t01/configured_replay.py; backend/tests/test_conversation_replays.py; docs/evidence/conversation-redesign-release/t01/alternate-limit-600/.",
+      "next_check": "accepted evidence recorded; use alternate blind forms for T01 human calibration"
+    },
+    "context/T04": {
+      "packet": "docs/redesign-tasks/context.md",
+      "depends_on": [
+        "context/T03",
+        "proposal/T02"
+      ],
+      "state": "complete_local",
+      "owner": "Main Agent; runtime model/effort identifier unavailable",
+      "execution_record": "Main Agent accepted 2026-10-19 after explicit user design approval, RED/GREEN changes and independent review. 1,079 backend tests, 106 broader adjacent, 48 final affected, 5 PostgreSQL context/scoped-read checks passed; no failures/skips. Evidence: docs/evidence/conversation-redesign-context/t04/handoff.md.",
+      "ownership_targets": "backend/app/services/context/characters/{craftsman,gatherer}.json; context/character_profiles.py; context/craftsman_profile.py; context/social.py; prompts/builder.py; conversation/adapters/context_read.py; validation/service.py; focused profile and adjacent tests; docs/evidence/conversation-redesign-context/t04/",
+      "next_check": "Locally accepted; live profile-aware dialogue quality remains separate evaluation-release work."
+    },
+    "evaluation-release/T06": {
+      "packet": "docs/redesign-tasks/evaluation-release.md",
+      "depends_on": [
+        "baseline/T03",
+        "context/T04",
+        "evaluation-release/T05"
+      ],
+      "state": "complete_local",
+      "execution_record": "| T06 | Main Agent / accepted locally 2026-10-19 | Replay frozen 44-scenario/176-turn suite with context/T04 topic-selected profiles and shared anti-repetition direction; same T05 model/configuration/600-character policy | [Replay, provenance and fresh reviewer forms](docs/evidence/conversation-redesign-release/t01/updated-character-guidance-600/README.md); profile prompt test 16/16; conversation suite 603/603; matching state digests; 176/176 generated | Two fresh independent human reviews remain pending under evaluation-release/T01 |",
+      "ownership_targets": "docs/evidence/conversation-redesign-release/t01/configured_replay.py; backend/tests/test_conversation_replays.py; docs/evidence/conversation-redesign-release/t01/updated-character-guidance-600/.",
+      "next_check": "Reviewer 1 completed 24/24 updated-profile samples and provenance/candidates match; analyze as a single-reviewer result. No second independent T06 review is available; T05 reviewer_2 cannot be paired."
+    },
+    "context/T05": {
+      "packet": "docs/redesign-tasks/context.md",
+      "depends_on": [
+        "context/T04",
+        "evaluation-release/T06"
+      ],
+      "state": "complete_local",
+      "owner": "Main Agent; runtime model/effort identifier unavailable",
+      "execution_record": "Locally verified 2026-10-19: prompt/policy 164/164; backend 1,083/1,083; fingerprint-matched 176-turn replay complete; human scoring pending.",
+      "ownership_targets": "backend/app/services/context/character_profiles.py; backend/app/services/prompts/builder.py; backend/app/services/conversation/contracts.py; focused tests; docs/evidence/conversation-redesign-release/t01/configured_replay.py; docs/evidence/conversation-redesign-release/t01/improved-character-guidance-600/.",
+      "next_check": "add failing tests for current-turn focus, non-authoritative prior NPC speech, explicit complete-under-limit instructions, and ConversationPolicy output_char_limit <=600; then implement and replay 176 frozen turns"
+    }
+  },
+  "topological_batches": [
+    [
+      "baseline/T01"
+    ],
+    [
+      "baseline/T02",
+      "contracts/T01"
+    ],
+    [
+      "baseline/T03",
+      "contracts/T02"
+    ],
+    [
+      "contracts/T03",
+      "evaluation-release/T05"
+    ],
+    [
+      "canon/T01",
+      "composition/T01",
+      "contracts/T04",
+      "ports/T01"
+    ],
+    [
+      "canon/T02",
+      "capabilities/T01",
+      "composition/T02",
+      "context/T01",
+      "contracts/T05",
+      "diagnostics/T01",
+      "memory/T01",
+      "ports/T02",
+      "proposal/T01"
+    ],
+    [
+      "api-adapter/T01",
+      "composition/T03",
+      "context/T02",
+      "contracts/T06",
+      "diagnostics/T02",
+      "game-adapters/T01",
+      "interactions/T01",
+      "memory/T02",
+      "persistence-adapters/T01",
+      "proposal/T02",
+      "turns/T01"
+    ],
+    [
+      "contracts/T09",
+      "fallback/T01",
+      "game-adapters/T02",
+      "interactions/T02",
+      "persistence-adapters/T05",
+      "persistence-adapters/T06",
+      "turns/T02"
+    ],
+    [
+      "capabilities/T02",
+      "contracts/T07",
+      "finalization/T01",
+      "operations/T01",
+      "persistence-adapters/T02",
+      "validation/T01"
+    ],
+    [
+      "contracts/T08",
+      "fallback/T02",
+      "game-adapters/T03",
+      "operations/T02",
+      "persistence-adapters/T03",
+      "validation/T02",
+      "validation/T03"
+    ],
+    [
+      "coordinator/T01",
+      "evaluation-release/T01",
+      "memory/T03",
+      "persistence-adapters/T04"
+    ],
+    [
+      "context/T03",
+      "coordinator/T02",
+      "lifecycle/T01",
+      "persistence-adapters/T07"
+    ],
+    [
+      "context/T04",
+      "finalization/T02",
+      "lifecycle/T02"
+    ],
+    [
+      "evaluation-release/T06"
+    ],
+    [
+      "api-adapter/T02",
+      "coordinator/T03"
+    ],
+    [
+      "api-adapter/T03",
+      "godot-adapters/T01"
+    ],
+    [
+      "godot-adapters/T02"
+    ],
+    [
+      "godot-adapters/T03"
+    ],
+    [
+      "evaluation-release/T02"
+    ],
+    [
+      "evaluation-release/T03"
+    ],
+    [
+      "evaluation-release/T04"
+    ],
+    [
+      "context/T05"
+    ]
+  ],
+  "ready_unassigned": [],
+  "task_count": 73
+}

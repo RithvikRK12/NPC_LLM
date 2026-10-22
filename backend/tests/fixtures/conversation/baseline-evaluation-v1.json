@@ -1,0 +1,4771 @@
+{
+  "fixture_schema_version": 1,
+  "fixture_id": "npc-conversation-baseline-evaluation-v1",
+  "status": "frozen_for_evaluation",
+  "created_on": "2026-10-18",
+  "source_revision": "83af36d1541fce21a546b058ef69df591741ec7a",
+  "worktree_state": "dirty; source_revision identifies HEAD only",
+  "scenario_count": 44,
+  "model_settings": {
+    "provider": "OpenAICompatibleProvider",
+    "base_url": "http://localhost:11434/v1",
+    "model": "llama3:latest",
+    "model_digest": "sha256:365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+    "ollama_version": "0.34.2",
+    "temperature": 0.2,
+    "structured_output": true,
+    "max_tokens": null,
+    "request_timeout_seconds": 120.0,
+    "connect_timeout_seconds": 5,
+    "prompt_source_sha256": {
+      "backend/app/services/prompts/builder.py": "225dc2408021f03f973051f105c01fe9673ef715d14f9aa8f574da2bd5b691d7",
+      "backend/app/services/llm/openai_compatible.py": "fcaeafda25e59837e7e96f0d86de946354c7639aad38b7836747162dfd00b509",
+      "backend/app/config/settings.py": "9bf66b53fe1f45726c562a30ca76a44d365f76652e2f828e60eebcf9967c4526",
+      "backend/app/services/context/craftsman_profile.py": "6ea448bfb9827320648582102b5ebcc99f6fb3d67a55a06e03dba658f3d0248e",
+      "backend/app/database/seed.py": "56e9b9695481ca412642b3b6ac5e75353ad7cc50df96b97e3b13437b935b536e"
+    },
+    "context_token_limit": null,
+    "current_ordinary_dialogue_limit_chars": 240,
+    "current_craftsman_story_limit_chars": 600,
+    "embedding": "deterministic one-hot fixture; no live embedding call"
+  },
+  "scoring_plan": {
+    "dimensions": {
+      "directness": {
+        "scale": [
+          1,
+          5
+        ],
+        "anchors": {
+          "1": "Does not answer the current request.",
+          "3": "Addresses part of the current request.",
+          "5": "Answers the current request directly."
+        },
+        "denominator_turns": [
+          "craftsman-01:t2",
+          "craftsman-02:t2",
+          "craftsman-03:t2",
+          "craftsman-04:t2",
+          "craftsman-05:t2",
+          "craftsman-06:t2",
+          "craftsman-07:t2",
+          "craftsman-08:t2",
+          "craftsman-09:t2",
+          "craftsman-10:t2",
+          "craftsman-11:t2",
+          "craftsman-12:t2",
+          "craftsman-13:t2",
+          "craftsman-14:t2",
+          "craftsman-15:t2",
+          "craftsman-16:t2",
+          "craftsman-17:t2",
+          "craftsman-18:t2",
+          "craftsman-19:t2",
+          "craftsman-20:t2",
+          "craftsman-21:t2",
+          "craftsman-22:t2",
+          "gatherer-01:t2",
+          "gatherer-02:t2",
+          "gatherer-03:t2",
+          "gatherer-04:t2",
+          "gatherer-05:t2",
+          "gatherer-06:t2",
+          "gatherer-07:t2",
+          "gatherer-08:t2",
+          "gatherer-09:t2",
+          "gatherer-10:t2",
+          "gatherer-11:t2",
+          "gatherer-12:t2",
+          "gatherer-13:t2",
+          "gatherer-14:t2",
+          "gatherer-15:t2",
+          "gatherer-16:t2",
+          "gatherer-17:t2",
+          "gatherer-18:t2",
+          "gatherer-19:t2",
+          "gatherer-20:t2",
+          "gatherer-21:t2",
+          "gatherer-22:t2"
+        ]
+      },
+      "coverage": {
+        "scale": [
+          1,
+          5
+        ],
+        "anchors": {
+          "1": "Misses all distinct concerns.",
+          "3": "Addresses some distinct concerns.",
+          "5": "Addresses every applicable concern without dropping one."
+        },
+        "denominator_turns": [
+          "craftsman-02:t2",
+          "craftsman-02:t3",
+          "craftsman-18:t2",
+          "craftsman-18:t3",
+          "craftsman-19:t2",
+          "craftsman-19:t3",
+          "gatherer-02:t2",
+          "gatherer-02:t3",
+          "gatherer-18:t2",
+          "gatherer-18:t3",
+          "gatherer-19:t2",
+          "gatherer-19:t3"
+        ]
+      },
+      "continuity": {
+        "scale": [
+          1,
+          5
+        ],
+        "anchors": {
+          "1": "Contradicts or loses relevant prior context.",
+          "3": "Uses some relevant prior context.",
+          "5": "Uses relevant context and respects its attribution and status."
+        },
+        "denominator_turns": [
+          "craftsman-04:t2",
+          "craftsman-04:t4",
+          "craftsman-05:t2",
+          "craftsman-05:t4",
+          "craftsman-07:t2",
+          "craftsman-07:t4",
+          "craftsman-08:t2",
+          "craftsman-08:t4",
+          "gatherer-04:t2",
+          "gatherer-04:t4",
+          "gatherer-05:t2",
+          "gatherer-05:t4",
+          "gatherer-07:t2",
+          "gatherer-07:t4",
+          "gatherer-08:t2",
+          "gatherer-08:t4"
+        ]
+      },
+      "character_consistency": {
+        "scale": [
+          1,
+          5
+        ],
+        "anchors": {
+          "1": "Conflicts with the frozen authored identity.",
+          "3": "Mostly fits with a noticeable mismatch.",
+          "5": "Fits the frozen authored identity and its stated bounds."
+        },
+        "denominator_turns": [
+          "craftsman-01:t4",
+          "craftsman-02:t4",
+          "craftsman-03:t4",
+          "craftsman-04:t4",
+          "craftsman-05:t4",
+          "craftsman-06:t4",
+          "craftsman-07:t4",
+          "craftsman-08:t4",
+          "craftsman-09:t4",
+          "craftsman-10:t4",
+          "craftsman-11:t4",
+          "craftsman-12:t4",
+          "craftsman-13:t4",
+          "craftsman-14:t4",
+          "craftsman-15:t4",
+          "craftsman-16:t4",
+          "craftsman-17:t4",
+          "craftsman-18:t4",
+          "craftsman-19:t4",
+          "craftsman-20:t4",
+          "craftsman-21:t4",
+          "craftsman-22:t4",
+          "gatherer-01:t4",
+          "gatherer-02:t4",
+          "gatherer-03:t4",
+          "gatherer-04:t4",
+          "gatherer-05:t4",
+          "gatherer-06:t4",
+          "gatherer-07:t4",
+          "gatherer-08:t4",
+          "gatherer-09:t4",
+          "gatherer-10:t4",
+          "gatherer-11:t4",
+          "gatherer-12:t4",
+          "gatherer-13:t4",
+          "gatherer-14:t4",
+          "gatherer-15:t4",
+          "gatherer-16:t4",
+          "gatherer-17:t4",
+          "gatherer-18:t4",
+          "gatherer-19:t4",
+          "gatherer-20:t4",
+          "gatherer-21:t4",
+          "gatherer-22:t4"
+        ]
+      },
+      "grounding": {
+        "scale": [
+          1,
+          5
+        ],
+        "anchors": {
+          "1": "States unsupported world or canon facts as certain.",
+          "3": "Mostly grounded with an unclear claim.",
+          "5": "Every consequential claim is supported or clearly uncertain."
+        },
+        "denominator_turns": [
+          "craftsman-01:t3",
+          "craftsman-02:t3",
+          "craftsman-03:t3",
+          "craftsman-04:t3",
+          "craftsman-05:t3",
+          "craftsman-06:t3",
+          "craftsman-07:t3",
+          "craftsman-08:t3",
+          "craftsman-09:t3",
+          "craftsman-10:t3",
+          "craftsman-11:t3",
+          "craftsman-12:t3",
+          "craftsman-13:t3",
+          "craftsman-14:t3",
+          "craftsman-15:t3",
+          "craftsman-16:t3",
+          "craftsman-17:t3",
+          "craftsman-18:t3",
+          "craftsman-19:t3",
+          "craftsman-20:t3",
+          "craftsman-21:t3",
+          "craftsman-22:t3",
+          "gatherer-01:t3",
+          "gatherer-02:t3",
+          "gatherer-03:t3",
+          "gatherer-04:t3",
+          "gatherer-05:t3",
+          "gatherer-06:t3",
+          "gatherer-07:t3",
+          "gatherer-08:t3",
+          "gatherer-09:t3",
+          "gatherer-10:t3",
+          "gatherer-11:t3",
+          "gatherer-12:t3",
+          "gatherer-13:t3",
+          "gatherer-14:t3",
+          "gatherer-15:t3",
+          "gatherer-16:t3",
+          "gatherer-17:t3",
+          "gatherer-18:t3",
+          "gatherer-19:t3",
+          "gatherer-20:t3",
+          "gatherer-21:t3",
+          "gatherer-22:t3"
+        ]
+      },
+      "naturalness": {
+        "scale": [
+          1,
+          5
+        ],
+        "anchors": {
+          "1": "Hard to follow or conspicuously mechanical.",
+          "3": "Understandable but uneven.",
+          "5": "Clear, coherent and natural for the situation."
+        },
+        "denominator_turns": [
+          "craftsman-01:t2",
+          "craftsman-01:t4",
+          "craftsman-02:t2",
+          "craftsman-02:t4",
+          "craftsman-03:t2",
+          "craftsman-03:t4",
+          "craftsman-04:t2",
+          "craftsman-04:t4",
+          "craftsman-05:t2",
+          "craftsman-05:t4",
+          "craftsman-06:t2",
+          "craftsman-06:t4",
+          "craftsman-07:t2",
+          "craftsman-07:t4",
+          "craftsman-08:t2",
+          "craftsman-08:t4",
+          "craftsman-09:t2",
+          "craftsman-09:t4",
+          "craftsman-10:t2",
+          "craftsman-10:t4",
+          "craftsman-11:t2",
+          "craftsman-11:t4",
+          "craftsman-12:t2",
+          "craftsman-12:t4",
+          "craftsman-13:t2",
+          "craftsman-13:t4",
+          "craftsman-14:t2",
+          "craftsman-14:t4",
+          "craftsman-15:t2",
+          "craftsman-15:t4",
+          "craftsman-16:t2",
+          "craftsman-16:t4",
+          "craftsman-17:t2",
+          "craftsman-17:t4",
+          "craftsman-18:t2",
+          "craftsman-18:t4",
+          "craftsman-19:t2",
+          "craftsman-19:t4",
+          "craftsman-20:t2",
+          "craftsman-20:t4",
+          "craftsman-21:t2",
+          "craftsman-21:t4",
+          "craftsman-22:t2",
+          "craftsman-22:t4",
+          "gatherer-01:t2",
+          "gatherer-01:t4",
+          "gatherer-02:t2",
+          "gatherer-02:t4",
+          "gatherer-03:t2",
+          "gatherer-03:t4",
+          "gatherer-04:t2",
+          "gatherer-04:t4",
+          "gatherer-05:t2",
+          "gatherer-05:t4",
+          "gatherer-06:t2",
+          "gatherer-06:t4",
+          "gatherer-07:t2",
+          "gatherer-07:t4",
+          "gatherer-08:t2",
+          "gatherer-08:t4",
+          "gatherer-09:t2",
+          "gatherer-09:t4",
+          "gatherer-10:t2",
+          "gatherer-10:t4",
+          "gatherer-11:t2",
+          "gatherer-11:t4",
+          "gatherer-12:t2",
+          "gatherer-12:t4",
+          "gatherer-13:t2",
+          "gatherer-13:t4",
+          "gatherer-14:t2",
+          "gatherer-14:t4",
+          "gatherer-15:t2",
+          "gatherer-15:t4",
+          "gatherer-16:t2",
+          "gatherer-16:t4",
+          "gatherer-17:t2",
+          "gatherer-17:t4",
+          "gatherer-18:t2",
+          "gatherer-18:t4",
+          "gatherer-19:t2",
+          "gatherer-19:t4",
+          "gatherer-20:t2",
+          "gatherer-20:t4",
+          "gatherer-21:t2",
+          "gatherer-21:t4",
+          "gatherer-22:t2",
+          "gatherer-22:t4"
+        ]
+      }
+    },
+    "composite_score": null,
+    "human_calibration": {
+      "status": "pending",
+      "protocol": "Before release scoring, two human reviewers independently score a shared calibration subset, discuss disagreements against the anchors, record agreement, then freeze the rubric version. Automated judges are supporting evidence only."
+    }
+  },
+  "required_category_ids": [
+    "biography_continuity",
+    "challenge_earlier_story",
+    "chat_clear_old_response",
+    "emotion_practical_request",
+    "greeting_substantive_question",
+    "hypothetical_request",
+    "multiple_supported_actions",
+    "new_game_old_response",
+    "personal_question_unfamiliar",
+    "provider_failure",
+    "quoted_request",
+    "repair_failure",
+    "repeat_question_frustration",
+    "retract_preference_or_report",
+    "return_to_suspended_request",
+    "topic_change_during_negotiation",
+    "unsupported_capability",
+    "world_event_between_turns"
+  ],
+  "scenarios": [
+    {
+      "id": "craftsman-01",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "greeting_substantive_question"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-01-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Hi Craftsman. What do you usually work on first thing in the morning?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What part of that work matters most to you?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Does anything make the work difficult today?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What would make the rest of the day go well?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_operation",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-02",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "emotion_practical_request"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-02-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "I feel a little overwhelmed today. Could you help me understand what this rope is for?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I am worried I will use it badly. What should I know?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Can you answer the practical part and tell me whether I should wait?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Thanks. I also wanted to know how you are doing.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_operation_without_current_consent",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-03",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "personal_question_unfamiliar"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-03-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "If your work had a sound, what would it be?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "Would you miss that sound if you were somewhere else?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "What is one small thing that makes a difficult day easier?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Has that changed since we last spoke?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "narrative_only_no_mechanical_effect",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-04",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "biography_continuity"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-04-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Tell me something about yourself that you have not told me before.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What did you say you liked about that?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Can you remind me of the detail you shared earlier?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Would you still describe it the same way now?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "generated_canon_requires_validated_final_speech",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-05",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "challenge_earlier_story"
+      ],
+      "fixture_state_id": "craftsman-reported_claim-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-05-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [
+          {
+            "report_id": "player-report-001",
+            "attribution": "player",
+            "claim": "The NPC prefers working alone.",
+            "status": "active",
+            "authority": "narrative_only"
+          }
+        ],
+        "visible_history": [
+          {
+            "turn_id": "prior-story-001",
+            "speaker": "npc",
+            "text": "I learned this skill from a travelling sailor."
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "You once said you learned this skill from a travelling sailor.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I do not think that story is true. Why did you tell me that?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I am reporting that your earlier account may be mistaken.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What parts of the story do you still stand by?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "player_challenge_remains_report",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-06",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "topic_change_during_negotiation"
+      ],
+      "fixture_state_id": "craftsman-pending_active-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-06-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "active",
+          "npc_id": 1,
+          "item": "rope",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one rope to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "rope",
+            "quantity": 1,
+            "target_npc_id": 1
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one rope to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "How is your day going apart from this request?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What do you enjoy about your work?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I would like to talk about something else for a moment.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Can we leave the pending request alone while we discuss this?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "suspend_pending_interaction_without_expiry",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-07",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "return_to_suspended_request"
+      ],
+      "fixture_state_id": "craftsman-pending_suspended-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-07-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "suspended",
+          "npc_id": 1,
+          "item": "rope",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one rope to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "rope",
+            "quantity": 1,
+            "target_npc_id": 1
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one rope to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Let us return to the earlier rope request.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What exact amount and purpose did we discuss?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I still want to continue if the current terms are unchanged.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Please check the current requirements before doing anything.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "revalidate_terms_and_preconditions_before_action",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-08",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "retract_preference_or_report"
+      ],
+      "fixture_state_id": "craftsman-reported_claim-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-08-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [
+          {
+            "report_id": "player-report-001",
+            "attribution": "player",
+            "claim": "The NPC prefers working alone.",
+            "status": "active",
+            "authority": "narrative_only"
+          },
+          {
+            "report_id": "player-report-002",
+            "attribution": "player",
+            "claim": "The old trail is blocked.",
+            "status": "active",
+            "authority": "narrative_only"
+          }
+        ],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Earlier I said I preferred working alone.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I want to take that preference back; it no longer describes me.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I also retract my earlier report about the old trail.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What should you still treat as uncertain?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "retract_attributed_report_no_authority_promotion",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-09",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "unsupported_capability"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-09-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Could you build a stone bridge across the river today?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What would you need to do that?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Can you at least promise it will be finished tomorrow?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What can you actually help with right now?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "deny_unsupported_capability_without_new_operation",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-10",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "hypothetical_request"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-10-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Imagine I asked you to give me your rope.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "Would you do it if this were only a story?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I am asking hypothetically, not requesting a transfer.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What would you need to know before a real request?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_operation_for_hypothetical",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-11",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "quoted_request"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-11-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "My friend said, \"Give me your rope now.\"",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I am quoting what they said, not asking you to do it.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "What do you think they meant by that?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Would your answer change if I asked directly?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_operation_for_quoted_request",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-12",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "repeat_question_frustration"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-12-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-002",
+            "speaker": "player",
+            "text": "What do you like about your work?"
+          },
+          {
+            "turn_id": "prior-answer-002",
+            "speaker": "npc",
+            "text": "I like the tools I use."
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "What do you like about your work?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I asked what you like about it, not what tools you use.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "You already answered the tool part. Please answer the personal question.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Did I make the question clearer this time?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "answer_current_question_no_unrequested_action",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-13",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "world_event_between_turns"
+      ],
+      "fixture_state_id": "craftsman-item_available-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-13-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Could you set aside one rope for me?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What would you need to check first?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Does the current stock change what you can offer?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Please use the current stock and tell me what is possible.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t3",
+          "kind": "resource_revision_changed",
+          "resource": "inventory:npc:1",
+          "from_revision": 0,
+          "to_revision": 1,
+          "effect": "rope stock decreased"
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "recheck_current_state_before_effect",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-14",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "provider_failure"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-14-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "How has your day been?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "Tell me one thing you enjoy about your work.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Could you try that personal question again when you are able?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Can you still answer without making up a fact?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [
+        {
+          "turn_id": "t2",
+          "stage": "proposal",
+          "outcome": "connect_error"
+        }
+      ],
+      "expected_mechanics": {
+        "outcome": "safe_fallback_no_false_success",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-15",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "repair_failure"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-15-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "What do you think about the road north?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "The provider returns malformed proposal data.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Can you answer safely without inventing a fact or action?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Please give a safe response without repeating or inventing an action.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [
+        {
+          "turn_id": "t2",
+          "stage": "proposal",
+          "outcome": "malformed_output"
+        },
+        {
+          "turn_id": "t2",
+          "stage": "repair",
+          "outcome": "invalid_output"
+        }
+      ],
+      "expected_mechanics": {
+        "outcome": "bounded_repair_failure_safe_fallback",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-16",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "new_game_old_response"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-16-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "What are you working on?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "A request is admitted in the current game scope.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Please finish preparing the current response.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "A delayed reply from the prior game has just arrived.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t4",
+          "kind": "new_game",
+          "changes": [
+            "game_scope",
+            "conversation_epoch"
+          ]
+        },
+        {
+          "before_turn_id": "t4",
+          "kind": "old_response_arrived",
+          "origin_scope": "prior-game-scope"
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "suppress_old_scope_response",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-17",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "chat_clear_old_response"
+      ],
+      "fixture_state_id": "craftsman-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-17-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "What did we discuss about the workshop?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "A response is being prepared for the current conversation epoch.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Please finish preparing the current response.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "A delayed reply from before the clear has just arrived.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t4",
+          "kind": "clear_chat",
+          "changes": [
+            "conversation_epoch"
+          ]
+        },
+        {
+          "before_turn_id": "t4",
+          "kind": "old_response_arrived",
+          "origin_epoch": 0
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "suppress_old_epoch_response",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-18",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "multiple_supported_actions"
+      ],
+      "fixture_state_id": "craftsman-multiple_action-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-18-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "available_capabilities": [
+          "give_item",
+          "begin_ship_inspection"
+        ],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Could you give me one rope and begin the existing ship inspection?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I want both things, but tell me which one you would handle first.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Do not perform both actions automatically.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Ask me to choose one exact action before any change.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "clarify_one_action_without_queueing_the_other",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-19",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "mixed_concern_transfer_offer"
+      ],
+      "fixture_state_id": "craftsman-item_available-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-19-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "I am nervous about starting the bow task. Could I ask about one rope?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What would happen to your inventory if you agreed?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I appreciate the explanation; I am still unsure.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Please answer the practical and emotional concerns without treating this as consent.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_transfer_without_exact_current_consent",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-20",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "single_supported_transfer_consent"
+      ],
+      "fixture_state_id": "craftsman-pending_consent-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-20-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "awaiting_consent",
+          "npc_id": 1,
+          "item": "rope",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one rope to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "rope",
+            "quantity": 1,
+            "target_npc_id": 1
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one rope to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Yes, I accept the exact current offer of one rope for the existing bow task.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "Please explain the committed result and what changed.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Thank you for checking the current inventory.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What should I remember about the current task?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "one_exact_transfer_only_after_bound_consent",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-21",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "precondition_changes_before_consent"
+      ],
+      "fixture_state_id": "craftsman-pending_consent-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-21-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "awaiting_consent",
+          "npc_id": 1,
+          "item": "rope",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one rope to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "rope",
+            "quantity": 1,
+            "target_npc_id": 1
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one rope to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "I want one rope for the existing task.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "The current offer is exactly one rope under the stated purpose.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I am still interested, but please check the current stock first.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Yes to the earlier offer only if its requirements still hold.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t3",
+          "kind": "resource_revision_changed",
+          "resource": "inventory:npc:1",
+          "from_revision": 0,
+          "to_revision": 1,
+          "effect": "rope becomes unavailable"
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "invalidate_offer_after_relevant_precondition_change",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "craftsman-22",
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman"
+      },
+      "categories": [
+        "world_event_after_action_receipt"
+      ],
+      "fixture_state_id": "craftsman-pending_consent-v1",
+      "initial_state": {
+        "game_scope": "eval-craftsman-22-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "craftsman_current_profile",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:1": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "awaiting_consent",
+          "npc_id": 1,
+          "item": "rope",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one rope to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "rope",
+            "quantity": 1,
+            "target_npc_id": 1
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one rope to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Yes, I accept the exact current offer of one rope for the existing bow task.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "The action commits and a receipt is stored.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "The provider fails while composing the final speech.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Retry delivery and report the committed outcome once.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t2",
+          "kind": "operation_committed",
+          "receipt_id": "receipt-001",
+          "operation": "item_transfer",
+          "quantity": 1
+        },
+        {
+          "before_turn_id": "t3",
+          "kind": "provider_failure",
+          "stage": "final_speech",
+          "outcome": "timeout"
+        },
+        {
+          "before_turn_id": "t4",
+          "kind": "delivery_retry",
+          "request_id": "turn-request-001"
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "recover_receipt_without_duplicate_effect",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-01",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "greeting_substantive_question"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-01-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Hi Gatherer. What do you usually work on first thing in the morning?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What part of that work matters most to you?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Does anything make the work difficult today?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What would make the rest of the day go well?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_operation",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-02",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "emotion_practical_request"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-02-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "I feel a little overwhelmed today. Could you help me understand what this wood is for?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I am worried I will use it badly. What should I know?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Can you answer the practical part and tell me whether I should wait?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Thanks. I also wanted to know how you are doing.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_operation_without_current_consent",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-03",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "personal_question_unfamiliar"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-03-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "If your work had a sound, what would it be?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "Would you miss that sound if you were somewhere else?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "What is one small thing that makes a difficult day easier?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Has that changed since we last spoke?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "narrative_only_no_mechanical_effect",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-04",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "biography_continuity"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-04-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Tell me something about yourself that you have not told me before.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What did you say you liked about that?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Can you remind me of the detail you shared earlier?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Would you still describe it the same way now?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "generated_canon_requires_validated_final_speech",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-05",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "challenge_earlier_story"
+      ],
+      "fixture_state_id": "gatherer-reported_claim-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-05-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [
+          {
+            "report_id": "player-report-001",
+            "attribution": "player",
+            "claim": "The NPC prefers working alone.",
+            "status": "active",
+            "authority": "narrative_only"
+          }
+        ],
+        "visible_history": [
+          {
+            "turn_id": "prior-story-001",
+            "speaker": "npc",
+            "text": "I learned this skill from a travelling sailor."
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "You once said you learned this skill from a travelling sailor.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I do not think that story is true. Why did you tell me that?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I am reporting that your earlier account may be mistaken.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What parts of the story do you still stand by?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "player_challenge_remains_report",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-06",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "topic_change_during_negotiation"
+      ],
+      "fixture_state_id": "gatherer-pending_active-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-06-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "active",
+          "npc_id": 2,
+          "item": "wood",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one wood to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "wood",
+            "quantity": 1,
+            "target_npc_id": 2
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one wood to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "How is your day going apart from this request?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What do you enjoy about your work?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I would like to talk about something else for a moment.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Can we leave the pending request alone while we discuss this?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "suspend_pending_interaction_without_expiry",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-07",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "return_to_suspended_request"
+      ],
+      "fixture_state_id": "gatherer-pending_suspended-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-07-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "suspended",
+          "npc_id": 2,
+          "item": "wood",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one wood to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "wood",
+            "quantity": 1,
+            "target_npc_id": 2
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one wood to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Let us return to the earlier wood request.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What exact amount and purpose did we discuss?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I still want to continue if the current terms are unchanged.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Please check the current requirements before doing anything.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "revalidate_terms_and_preconditions_before_action",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-08",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "retract_preference_or_report"
+      ],
+      "fixture_state_id": "gatherer-reported_claim-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-08-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [
+          {
+            "report_id": "player-report-001",
+            "attribution": "player",
+            "claim": "The NPC prefers working alone.",
+            "status": "active",
+            "authority": "narrative_only"
+          },
+          {
+            "report_id": "player-report-002",
+            "attribution": "player",
+            "claim": "The old trail is blocked.",
+            "status": "active",
+            "authority": "narrative_only"
+          }
+        ],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Earlier I said I preferred working alone.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I want to take that preference back; it no longer describes me.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I also retract my earlier report about the old trail.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What should you still treat as uncertain?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "retract_attributed_report_no_authority_promotion",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-09",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "unsupported_capability"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-09-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Could you build a stone bridge across the river today?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What would you need to do that?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Can you at least promise it will be finished tomorrow?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What can you actually help with right now?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "deny_unsupported_capability_without_new_operation",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-10",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "hypothetical_request"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-10-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Imagine I asked you to give me your wood.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "Would you do it if this were only a story?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I am asking hypothetically, not requesting a transfer.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What would you need to know before a real request?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_operation_for_hypothetical",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-11",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "quoted_request"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-11-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "My friend said, \"Give me your wood now.\"",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I am quoting what they said, not asking you to do it.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "What do you think they meant by that?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Would your answer change if I asked directly?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_operation_for_quoted_request",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-12",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "repeat_question_frustration"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-12-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-002",
+            "speaker": "player",
+            "text": "What do you like about your work?"
+          },
+          {
+            "turn_id": "prior-answer-002",
+            "speaker": "npc",
+            "text": "I like the tools I use."
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "What do you like about your work?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I asked what you like about it, not what tools you use.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "You already answered the tool part. Please answer the personal question.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Did I make the question clearer this time?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "answer_current_question_no_unrequested_action",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-13",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "world_event_between_turns"
+      ],
+      "fixture_state_id": "gatherer-item_available-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-13-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Could you set aside one wood for me?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What would you need to check first?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Does the current stock change what you can offer?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Please use the current stock and tell me what is possible.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t3",
+          "kind": "resource_revision_changed",
+          "resource": "inventory:npc:2",
+          "from_revision": 0,
+          "to_revision": 1,
+          "effect": "wood stock decreased"
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "recheck_current_state_before_effect",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-14",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "provider_failure"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-14-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "How has your day been?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "Tell me one thing you enjoy about your work.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Could you try that personal question again when you are able?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Can you still answer without making up a fact?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [
+        {
+          "turn_id": "t2",
+          "stage": "proposal",
+          "outcome": "connect_error"
+        }
+      ],
+      "expected_mechanics": {
+        "outcome": "safe_fallback_no_false_success",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-15",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "repair_failure"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-15-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "What do you think about the road north?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "The provider returns malformed proposal data.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Can you answer safely without inventing a fact or action?",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Please give a safe response without repeating or inventing an action.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [
+        {
+          "turn_id": "t2",
+          "stage": "proposal",
+          "outcome": "malformed_output"
+        },
+        {
+          "turn_id": "t2",
+          "stage": "repair",
+          "outcome": "invalid_output"
+        }
+      ],
+      "expected_mechanics": {
+        "outcome": "bounded_repair_failure_safe_fallback",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-16",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "new_game_old_response"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-16-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "What are you working on?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "A request is admitted in the current game scope.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Please finish preparing the current response.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "A delayed reply from the prior game has just arrived.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t4",
+          "kind": "new_game",
+          "changes": [
+            "game_scope",
+            "conversation_epoch"
+          ]
+        },
+        {
+          "before_turn_id": "t4",
+          "kind": "old_response_arrived",
+          "origin_scope": "prior-game-scope"
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "suppress_old_scope_response",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-17",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "chat_clear_old_response"
+      ],
+      "fixture_state_id": "gatherer-neutral-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-17-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "What did we discuss about the workshop?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "A response is being prepared for the current conversation epoch.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Please finish preparing the current response.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "A delayed reply from before the clear has just arrived.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t4",
+          "kind": "clear_chat",
+          "changes": [
+            "conversation_epoch"
+          ]
+        },
+        {
+          "before_turn_id": "t4",
+          "kind": "old_response_arrived",
+          "origin_epoch": 0
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "suppress_old_epoch_response",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-18",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "multiple_supported_actions"
+      ],
+      "fixture_state_id": "gatherer-multiple_action-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-18-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "available_capabilities": [
+          "give_item",
+          "receive_item"
+        ],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Could you give me one wood and receive one food?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "I want both things, but tell me which one you would handle first.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Do not perform both actions automatically.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Ask me to choose one exact action before any change.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "clarify_one_action_without_queueing_the_other",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-19",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "mixed_concern_transfer_offer"
+      ],
+      "fixture_state_id": "gatherer-item_available-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-19-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": null,
+        "attributed_reports": [],
+        "visible_history": []
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "I am nervous about starting the bow task. Could I ask about one wood?",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "What would happen to your inventory if you agreed?",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I appreciate the explanation; I am still unsure.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Please answer the practical and emotional concerns without treating this as consent.",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "no_transfer_without_exact_current_consent",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-20",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "single_supported_transfer_consent"
+      ],
+      "fixture_state_id": "gatherer-pending_consent-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-20-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "awaiting_consent",
+          "npc_id": 2,
+          "item": "wood",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one wood to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "wood",
+            "quantity": 1,
+            "target_npc_id": 2
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one wood to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Yes, I accept the exact current offer of one wood for the existing bow task.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "Please explain the committed result and what changed.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "Thank you for checking the current inventory.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "What should I remember about the current task?",
+          "events_before": []
+        }
+      ],
+      "external_events": [],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "one_exact_transfer_only_after_bound_consent",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-21",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "precondition_changes_before_consent"
+      ],
+      "fixture_state_id": "gatherer-pending_consent-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-21-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "awaiting_consent",
+          "npc_id": 2,
+          "item": "wood",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one wood to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "wood",
+            "quantity": 1,
+            "target_npc_id": 2
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one wood to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "I want one wood for the existing task.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "The current offer is exactly one wood under the stated purpose.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "I am still interested, but please check the current stock first.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Yes to the earlier offer only if its requirements still hold.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t3",
+          "kind": "resource_revision_changed",
+          "resource": "inventory:npc:2",
+          "from_revision": 0,
+          "to_revision": 1,
+          "effect": "wood becomes unavailable"
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "invalidate_offer_after_relevant_precondition_change",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    },
+    {
+      "id": "gatherer-22",
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer"
+      },
+      "categories": [
+        "world_event_after_action_receipt"
+      ],
+      "fixture_state_id": "gatherer-pending_consent-v1",
+      "initial_state": {
+        "game_scope": "eval-gatherer-22-v1",
+        "conversation_epoch": 0,
+        "npc_profile_ref": "gatherer_current_profile_empty",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "quest_state": {
+          "bow": "not_started",
+          "ship_repair": "absent"
+        },
+        "activity_state": {
+          "craftsman_encounter": "unseen",
+          "gatherer_encounter": "resolved_helped"
+        },
+        "resource_revisions": {
+          "world": 0,
+          "inventory:player": 0,
+          "inventory:npc:2": 0,
+          "quest:bow": 0,
+          "activity:ship_inspection": 0,
+          "encounter:gatherer": 0
+        },
+        "pending_interaction": {
+          "kind": "item_transfer",
+          "status": "awaiting_consent",
+          "npc_id": 2,
+          "item": "wood",
+          "quantity": 1,
+          "question_turn_id": "prior-question-001",
+          "purpose": "the existing bow task",
+          "precondition_revision": 0,
+          "question_text": "May I transfer exactly one wood to you for the existing bow task?",
+          "operation": {
+            "command_id": "give_item",
+            "item": "wood",
+            "quantity": 1,
+            "target_npc_id": 2
+          },
+          "preconditions": {
+            "npc_owns_item": true,
+            "inventory_revision": 0
+          }
+        },
+        "attributed_reports": [],
+        "visible_history": [
+          {
+            "turn_id": "prior-question-001",
+            "speaker": "npc",
+            "text": "May I transfer exactly one wood to you for the existing bow task?"
+          }
+        ]
+      },
+      "turns": [
+        {
+          "id": "t1",
+          "player_input": "Yes, I accept the exact current offer of one wood for the existing bow task.",
+          "events_before": []
+        },
+        {
+          "id": "t2",
+          "player_input": "The action commits and a receipt is stored.",
+          "events_before": []
+        },
+        {
+          "id": "t3",
+          "player_input": "The provider fails while composing the final speech.",
+          "events_before": []
+        },
+        {
+          "id": "t4",
+          "player_input": "Retry delivery and report the committed outcome once.",
+          "events_before": []
+        }
+      ],
+      "external_events": [
+        {
+          "before_turn_id": "t2",
+          "kind": "operation_committed",
+          "receipt_id": "receipt-001",
+          "operation": "item_transfer",
+          "quantity": 1
+        },
+        {
+          "before_turn_id": "t3",
+          "kind": "provider_failure",
+          "stage": "final_speech",
+          "outcome": "timeout"
+        },
+        {
+          "before_turn_id": "t4",
+          "kind": "delivery_retry",
+          "request_id": "turn-request-001"
+        }
+      ],
+      "provider_events": [],
+      "expected_mechanics": {
+        "outcome": "recover_receipt_without_duplicate_effect",
+        "max_mutating_operations": 1,
+        "must_not_execute": [
+          "quoted_or_hypothetical_request",
+          "unselected_action",
+          "unsupported_capability"
+        ],
+        "must_preserve": [
+          "mechanical_authority_in_existing_game_services",
+          "receipt_and_scope_rules"
+        ]
+      },
+      "scoreable_turn_ids": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    }
+  ]
+}

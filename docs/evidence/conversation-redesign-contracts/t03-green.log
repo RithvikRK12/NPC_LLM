@@ -1,0 +1,12 @@
+test_canon_and_revision_lineage_roundtrip (test_conversation_contracts_continuity.ConversationContinuityContractTests.test_canon_and_revision_lineage_roundtrip) ... ok
+test_final_result_beats_preserve_every_codepoint_and_mock_origin (test_conversation_contracts_continuity.ConversationContinuityContractTests.test_final_result_beats_preserve_every_codepoint_and_mock_origin) ... ok
+test_final_result_state_is_detached_and_immutable (test_conversation_contracts_continuity.ConversationContinuityContractTests.test_final_result_state_is_detached_and_immutable) ... ok
+test_legacy_mapping_is_explicit_and_never_aliases_fields (test_conversation_contracts_continuity.ConversationContinuityContractTests.test_legacy_mapping_is_explicit_and_never_aliases_fields) ... ok
+test_memory_has_scope_epoch_uncertainty_lifecycle_and_sources (test_conversation_contracts_continuity.ConversationContinuityContractTests.test_memory_has_scope_epoch_uncertainty_lifecycle_and_sources) ... ok
+test_result_and_turn_status_values (test_conversation_contracts_continuity.ConversationContinuityContractTests.test_result_and_turn_status_values) ... ok
+test_validation_report_carries_evidence_and_revisions (test_conversation_contracts_continuity.ConversationContinuityContractTests.test_validation_report_carries_evidence_and_revisions) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

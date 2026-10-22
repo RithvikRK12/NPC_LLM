@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: revisioned_state_smoke: FAIL late world cannot restore an obsolete game scope
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:129)
+       [1] run (res://tests/revisioned_state_smoke.gd:55)
+ERROR: revisioned_state_smoke: FAIL retained snapshots keep their actual authoritative labels
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:129)
+       [1] run (res://tests/revisioned_state_smoke.gd:62)
+revisioned_state_smoke: 19 passed, 2 failed

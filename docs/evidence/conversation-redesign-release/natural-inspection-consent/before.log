@@ -1,0 +1,84 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+======================================================================
+FAIL: test_natural_affirmative_replies_accept_the_pending_offer (test_craftsman_acceptance.CraftsmanAcceptanceTests.test_natural_affirmative_replies_accept_the_pending_offer) (message='Sure! That would be helpful.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_craftsman_acceptance.py", line 18, in test_natural_affirmative_replies_accept_the_pending_offer
+    self.assertEqual(self.intent(message), {'command': 'begin_ship_inspection'})
+AssertionError: {} != {'command': 'begin_ship_inspection'}
+- {}
++ {'command': 'begin_ship_inspection'}
+
+======================================================================
+FAIL: test_natural_affirmative_replies_accept_the_pending_offer (test_craftsman_acceptance.CraftsmanAcceptanceTests.test_natural_affirmative_replies_accept_the_pending_offer) (message='Yes, thank you!')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_craftsman_acceptance.py", line 18, in test_natural_affirmative_replies_accept_the_pending_offer
+    self.assertEqual(self.intent(message), {'command': 'begin_ship_inspection'})
+AssertionError: {} != {'command': 'begin_ship_inspection'}
+- {}
++ {'command': 'begin_ship_inspection'}
+
+======================================================================
+FAIL: test_natural_affirmative_replies_accept_the_pending_offer (test_craftsman_acceptance.CraftsmanAcceptanceTests.test_natural_affirmative_replies_accept_the_pending_offer) (message='That would be great, thanks.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_craftsman_acceptance.py", line 18, in test_natural_affirmative_replies_accept_the_pending_offer
+    self.assertEqual(self.intent(message), {'command': 'begin_ship_inspection'})
+AssertionError: {} != {'command': 'begin_ship_inspection'}
+- {}
++ {'command': 'begin_ship_inspection'}
+
+======================================================================
+FAIL: test_natural_affirmative_replies_accept_the_pending_offer (test_craftsman_acceptance.CraftsmanAcceptanceTests.test_natural_affirmative_replies_accept_the_pending_offer) (message="I'd appreciate that.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_craftsman_acceptance.py", line 18, in test_natural_affirmative_replies_accept_the_pending_offer
+    self.assertEqual(self.intent(message), {'command': 'begin_ship_inspection'})
+AssertionError: {} != {'command': 'begin_ship_inspection'}
+- {}
++ {'command': 'begin_ship_inspection'}
+
+======================================================================
+FAIL: test_natural_affirmative_replies_accept_the_pending_offer (test_craftsman_acceptance.CraftsmanAcceptanceTests.test_natural_affirmative_replies_accept_the_pending_offer) (message='Absolutely, please do.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_craftsman_acceptance.py", line 18, in test_natural_affirmative_replies_accept_the_pending_offer
+    self.assertEqual(self.intent(message), {'command': 'begin_ship_inspection'})
+AssertionError: {} != {'command': 'begin_ship_inspection'}
+- {}
++ {'command': 'begin_ship_inspection'}
+
+======================================================================
+FAIL: test_natural_affirmative_replies_accept_the_pending_offer (test_craftsman_acceptance.CraftsmanAcceptanceTests.test_natural_affirmative_replies_accept_the_pending_offer) (message='Sounds good to me.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_craftsman_acceptance.py", line 18, in test_natural_affirmative_replies_accept_the_pending_offer
+    self.assertEqual(self.intent(message), {'command': 'begin_ship_inspection'})
+AssertionError: {} != {'command': 'begin_ship_inspection'}
+- {}
++ {'command': 'begin_ship_inspection'}
+
+======================================================================
+FAIL: test_natural_affirmative_replies_accept_the_pending_offer (test_craftsman_acceptance.CraftsmanAcceptanceTests.test_natural_affirmative_replies_accept_the_pending_offer) (message="Okay, let's go.")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_craftsman_acceptance.py", line 18, in test_natural_affirmative_replies_accept_the_pending_offer
+    self.assertEqual(self.intent(message), {'command': 'begin_ship_inspection'})
+AssertionError: {} != {'command': 'begin_ship_inspection'}
+- {}
++ {'command': 'begin_ship_inspection'}
+
+======================================================================
+FAIL: test_natural_acceptance_starts_inspection_and_replays_the_same_receipt (test_conversation_playtest.PlaytestRuntimeTests.test_natural_acceptance_starts_inspection_and_replays_the_same_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_playtest.py", line 127, in test_natural_acceptance_starts_inspection_and_replays_the_same_receipt
+    self.assertEqual(len(accepted.response.receipt_refs), 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.111s
+
+FAILED (failures=8)

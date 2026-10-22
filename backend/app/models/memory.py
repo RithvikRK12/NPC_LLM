@@ -54,6 +54,8 @@ class Memory(Base):
     game_scope: Mapped[str | None] = mapped_column(String(36), nullable=True)
     source_event_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
     source_conversation_id: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    conversation_epoch: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    source_turn_id: Mapped[str | None] = mapped_column(String(64), nullable=True)
     epistemic_status: Mapped[str] = mapped_column(String(24), default='interpretation', server_default='interpretation')
     authority: Mapped[str] = mapped_column(String(24), default='inferred', server_default='inferred')
     lifecycle: Mapped[str] = mapped_column(String(24), default='active', server_default='active')

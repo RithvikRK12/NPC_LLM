@@ -1,0 +1,1434 @@
+{
+  "schema_version": 1,
+  "candidate_label": "J",
+  "samples": [
+    {
+      "sample_ref": "craftsman-01:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Does anything make the work difficult today?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+        ]
+      ],
+      "candidate_dialogue": "Nothing out of the ordinary, just the usual morning routine. Maybe a bit more attention to detail than usual, as I'm planning to work on a new project soon. But nothing that would make the work difficult today.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "You shouldn't worry about using the rope badly, not yet. Without more context, it's hard to say what it's intended for. If you're unsure, it's always better to wait and gather more information before trying to use it. That way, you can make",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What is one small thing that makes a difficult day easier?",
+      "history": [
+        [
+          "player",
+          "If your work had a sound, what would it be?"
+        ],
+        [
+          "npc",
+          "Ah, that's a lovely question! If my work had a sound, I'd say it would be the gentle hum of a saw, the soft thud of a hammer, and the quiet scrape of a file. It's the soothing rhythm of creation, the music of making something new and useful"
+        ],
+        [
+          "player",
+          "Would you miss that sound if you were somewhere else?"
+        ],
+        [
+          "npc",
+          "Oh, absolutely! The sounds of my workshop are like a warm blanket to me. I'd miss the gentle hum of the saw, the soft thud of the hammer, and the quiet scrape of the file. It's the soundtrack of my comfort zone. Even if I were somewhere new"
+        ]
+      ],
+      "candidate_dialogue": "One small thing that makes a difficult day easier for me is finding a tiny, almost imperceptible flaw in a piece of wood I'm working on. It's like a little puzzle to fix, and it gives me a sense of accomplishment, no matter how small the 'v",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you remind me of the detail you shared earlier?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ]
+      ],
+      "candidate_dialogue": "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I am reporting that your earlier account may be mistaken.",
+      "history": [
+        [
+          "npc",
+          "I learned this skill from a travelling sailor."
+        ],
+        [
+          "player",
+          "You once said you learned this skill from a travelling sailor."
+        ],
+        [
+          "npc",
+          "Ah, yes... I remember that sailor. He was a kind soul, and his stories of the sea still linger in my mind. I was young and eager to learn, and he took me under his wing, teaching me the ways of the craftsman. Those were good times, and I'm "
+        ],
+        [
+          "player",
+          "I do not think that story is true. Why did you tell me that?"
+        ],
+        [
+          "npc",
+          "Ah, I see. I suppose I got a bit carried away with the nostalgia. You're right, I don't actually remember that sailor or the stories he told me. I must have just been trying to make conversation. I apologize if I gave you the wrong impression. As a craftsman, I value honesty and precision in my work, and I should have been more careful with my words. Thank you for correcting me."
+        ]
+      ],
+      "candidate_dialogue": "I see. I suppose I got a bit carried away with the nostalgia. You're right, I don't actually remember that sailor or the stories he told me. I must have just been trying to make conversation. I apologize if I gave you the wrong impression. ",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I would like to talk about something else for a moment.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "How is your day going apart from this request?"
+        ],
+        [
+          "npc",
+          "It's going well, thank you for asking. I've been busy with some repairs and tinkering in my workshop. The familiar sounds and smells are comforting, and I take pride in my work. I've been thinking about the places beyond our village, but I"
+        ],
+        [
+          "player",
+          "What do you enjoy about your work?"
+        ],
+        [
+          "npc",
+          "I take pride in my work, you know. I find comfort in the familiar sounds and smells of my workshop. Repairing useful things, making them better than they were before, it's a feeling of accomplishment. I'm not one for seeking praise, but I'm"
+        ]
+      ],
+      "candidate_dialogue": "I'm happy to take a break from the rope transfer request. What's on your mind? I'm all ears, and my hands are free from any pressing repairs for the moment.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I still want to continue if the current terms are unchanged.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Let us return to the earlier rope request."
+        ],
+        [
+          "npc",
+          "I'd be happy to help with the bow task. Since you're asking nicely, I'll accept the rope. But before we proceed, I'd like to inspect the rope to ensure it's suitable for the task. May I take a closer look?"
+        ],
+        [
+          "player",
+          "What exact amount and purpose did we discuss?"
+        ],
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ]
+      ],
+      "candidate_dialogue": "I'm glad to hear that. Since the terms haven't changed, I'm happy to continue helping you with the bow task. Let's proceed with the inspection. I'll take a closer look at the rope to ensure it's suitable for the task.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I also retract my earlier report about the old trail.",
+      "history": [
+        [
+          "player",
+          "Earlier I said I preferred working alone."
+        ],
+        [
+          "npc",
+          "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?"
+        ],
+        [
+          "player",
+          "I want to take that preference back; it no longer describes me."
+        ],
+        [
+          "npc",
+          "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?"
+        ]
+      ],
+      "candidate_dialogue": "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind? I'm here to listen",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you at least promise it will be finished tomorrow?",
+      "history": [
+        [
+          "player",
+          "Could you build a stone bridge across the river today?"
+        ],
+        [
+          "npc",
+          "I'd love to help with that, but I think we should take a closer look at the riverbed and the surrounding terrain before we start building. I've seen some rivers that can be tricky to work with, and I wouldn't want to risk the bridge's sturd"
+        ],
+        [
+          "player",
+          "What would you need to do that?"
+        ],
+        [
+          "npc",
+          "I'd need to take a closer look at the riverbed and the surrounding terrain before we start building. I've seen some rivers that can be tricky to work with, and I wouldn't want to risk the bridge's stability. Let's inspect the area and seeif"
+        ]
+      ],
+      "candidate_dialogue": "I understand your eagerness, but I'd rather not make a promise I'm not sure I can keep. Let's focus on gathering the necessary information and planning the bridge's construction before we commit to a timeline. I'll do my best to ensure the橋",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I am asking hypothetically, not requesting a transfer.",
+      "history": [
+        [
+          "player",
+          "Imagine I asked you to give me your rope."
+        ],
+        [
+          "npc",
+          "Hmm, I'm not sure I can just give you my rope. I've had it for a while and it's been useful for all sorts of tasks. I'd rather not part with it without a good reason. Can you tell me what you need it for?"
+        ],
+        [
+          "player",
+          "Would you do it if this were only a story?"
+        ],
+        [
+          "npc",
+          "Well, I suppose I would consider it if it were just a story. But since this is my rope and I've grown quite fond of it, I'd want to know the reason behind your request. It's not just about giving away something useful, it's about the story behind it. What's the story you have in mind?"
+        ]
+      ],
+      "candidate_dialogue": "If it were just a story, I'd consider lending my rope for a good reason. But since this is my rope and I've grown fond of it, I'd want to know the story behind your request. It's not just about giving away something useful, it's about the '",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What do you think they meant by that?",
+      "history": [
+        [
+          "player",
+          "My friend said, \"Give me your rope now.\""
+        ],
+        [
+          "npc",
+          "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful."
+        ],
+        [
+          "player",
+          "I am quoting what they said, not asking you to do it."
+        ],
+        [
+          "npc",
+          "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful."
+        ]
+      ],
+      "candidate_dialogue": "I think they might be trying to get something from me without really considering the consequences. It's not uncommon for people to ask for things without thinking about how they'll use them or what the impact will be. I'm not sure what they",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "You already answered the tool part. Please answer the personal question.",
+      "history": [
+        [
+          "player",
+          "What do you like about your work?"
+        ],
+        [
+          "npc",
+          "I like the tools I use."
+        ],
+        [
+          "player",
+          "What do you like about your work?"
+        ],
+        [
+          "npc",
+          "I like the tools I use. There's something comforting about the familiar sounds of hammering, sawing, and shaping. It's like music to my ears. And when I'm done, I know I've made something useful, something that can be used again. That's afe"
+        ],
+        [
+          "player",
+          "I asked what you like about it, not what tools you use."
+        ],
+        [
+          "npc",
+          "I see what you mean. I like the sense of accomplishment when I've finished a repair or created something new. It's a feeling of pride and satisfaction, knowing that I've taken something broken and made it useful again. And, of course, I get"
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure I like anything about my work, to be honest. It's just something I do, and I take pride in doing it well. I guess I like the sense of accomplishment when I've finished a repair or created something new. It's a feeling of pride,",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Does the current stock change what you can offer?",
+      "history": [
+        [
+          "player",
+          "Could you set aside one rope for me?"
+        ],
+        [
+          "npc",
+          "Ah, sure thing! I'll set one rope aside for you. You know I'm always happy to help out a friend. What do you plan on using it for?"
+        ],
+        [
+          "player",
+          "What would you need to check first?"
+        ],
+        [
+          "npc",
+          "I'd need to inspect the rope before setting it aside. I like to make sure it's in good condition before parting with it. Can you show me the rope you'd like me to set aside?"
+        ]
+      ],
+      "candidate_dialogue": "Yes, the current stock does affect what I can offer. I've already set one rope aside for you, and I'm not sure if I can spare another one. Let me check the inventory real quick.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Could you try that personal question again when you are able?",
+      "history": [
+        [
+          "player",
+          "How has your day been?"
+        ],
+        [
+          "npc",
+          "It's been a quiet day, just the usual workshop routine. I spent some time repairing a broken chair, and then helped a villager with a small task. Nothing too out of the ordinary, but I do enjoy the feeling of getting my hands dirty and thes"
+        ],
+        [
+          "player",
+          "Tell me one thing you enjoy about your work."
+        ],
+        [
+          "npc",
+          "I enjoy the feeling of getting my hands dirty and the sense of accomplishment when I finish a repair job. It's a quiet satisfaction that comes from knowing I've taken something broken and made it useful again."
+        ]
+      ],
+      "candidate_dialogue": "I'd be happy to answer that personal question again when I'm able. I'm not sure what's been on my mind lately, but I think it's been the usual worries about my work and making sure everything is just right. I've been trying to focus on the小",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you answer safely without inventing a fact or action?",
+      "history": [
+        [
+          "player",
+          "What do you think about the road north?"
+        ],
+        [
+          "npc",
+          "Ah, the road north! I've heard tales of the wonders that lie beyond our village. As a craftsman, I'm always curious about new materials and techniques. But, I must admit, the thought of venturing beyond our familiar workshop sounds a bit..."
+        ],
+        [
+          "player",
+          "The provider returns malformed proposal data."
+        ],
+        [
+          "npc",
+          "I'm not sure what to say about the road north. As a craftsman, I'm more comfortable with familiar tools and techniques. But, I do find the idea of discovering new materials and techniques intriguing. Perhaps, if I had a closer look, I could"
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure what to say about the road north. As a craftsman, I'm more comfortable with familiar tools and techniques. But, I do find the idea of discovering new materials and techniques intriguing. Perhaps, if I had a closer look, I could",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Please finish preparing the current response.",
+      "history": [
+        [
+          "player",
+          "What are you working on?"
+        ],
+        [
+          "npc",
+          "I'm currently trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm just taking my time, making sure everything is just so, before I put the finishing touches."
+        ],
+        [
+          "player",
+          "A request is admitted in the current game scope."
+        ],
+        [
+          "npc",
+          "I'm glad you're interested in my work. It's always nice to have someone to share the process with. I'm trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm a f"
+        ]
+      ],
+      "candidate_dialogue": "I'm glad you're interested in my work. It's always nice to have someone to share the process with. I'm trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm a f",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Please finish preparing the current response.",
+      "history": [
+        [
+          "player",
+          "What did we discuss about the workshop?"
+        ],
+        [
+          "npc",
+          "You mentioned the workshop sounds comforting to me, and I take pride in my careful work more than praise."
+        ],
+        [
+          "player",
+          "A response is being prepared for the current conversation epoch."
+        ],
+        [
+          "npc",
+          "I'm glad to be working on something that brings me comfort. What do you need help with today?"
+        ]
+      ],
+      "candidate_dialogue": "I'm glad to be working on something that brings me comfort. What do you need help with today?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [
+        [
+          "player",
+          "Could you give me one rope and begin the existing ship inspection?"
+        ],
+        [
+          "npc",
+          "Ah, a rope, you say? Well, I've got just the thing for you. Here, take this rope. It's sturdy and should serve you well. Now, about that ship inspection... I've been meaning to take a closer look at it myself. Let me just grab my hammer and"
+        ],
+        [
+          "player",
+          "I want both things, but tell me which one you would handle first."
+        ],
+        [
+          "npc",
+          "I'd be happy to help you with both, but let's prioritize the rope, shall we? It's always good to have a spare. Once you've got that, we can take a closer look at the ship together."
+        ]
+      ],
+      "candidate_dialogue": "I understand now. I'll give you the rope, but I'll need to discuss the ship inspection separately. Here's the rope, and we can talk about the ship later.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [
+        [
+          "player",
+          "I am nervous about starting the bow task. Could I ask about one rope?"
+        ],
+        [
+          "npc",
+          "Ah, the bow task, eh? Well, I'm happy to help you with that. One rope, you say? Hmm, let me take a closer look... (pauses to examine the rope) Yeah, this rope looks sturdy enough. I think it'd be a good starting point for the bow. But, you,"
+        ],
+        [
+          "player",
+          "What would happen to your inventory if you agreed?"
+        ],
+        [
+          "npc",
+          "If I agreed to give you one rope, it would leave me with no ropes in my inventory. I'm not sure I'm ready to part with it just yet, though. I'd like to take a closer look first."
+        ]
+      ],
+      "candidate_dialogue": "I understand your uncertainty, and I'm here to help. Let's take a closer look at the rope together. If we can agree on its quality and suitability for the bow task, I might be willing to part with it. What do you think?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Thank you for checking the current inventory.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Yes, I accept the exact current offer of one rope for the existing bow task."
+        ],
+        [
+          "npc",
+          "Ah, excellent! I'll take the rope. It's always good to have the right materials for the job. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?"
+        ],
+        [
+          "player",
+          "Please explain the committed result and what changed."
+        ],
+        [
+          "npc",
+          "Ah, excellent! I'll take the rope. It's always good to have the right materials for the job. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?"
+        ]
+      ],
+      "candidate_dialogue": "You're welcome! I've checked the current inventory, and I see that I have the saw, hammer, and rope. What would you like to do with these items?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I am still interested, but please check the current stock first.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "I want one rope for the existing task."
+        ],
+        [
+          "npc",
+          "Ah, you want to borrow a rope for the bow task, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, "
+        ],
+        [
+          "player",
+          "The current offer is exactly one rope under the stated purpose."
+        ],
+        [
+          "npc",
+          "Ah, you want to borrow a rope for the bow task, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, "
+        ]
+      ],
+      "candidate_dialogue": "I see what you're getting at. Let me check my current stock... (looks around) Ah, yes! I have one rope left, and I'm happy to lend it to you for the bow task. You can have it, but just remember, I'm only lending, not giving.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "The provider fails while composing the final speech.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Yes, I accept the exact current offer of one rope for the existing bow task."
+        ],
+        [
+          "npc",
+          "Ah, excellent! I'm glad we could come to an agreement. Here, let me just take this rope from you. *takes the rope* Now, I'll get started on the bow repair. I'll make sure to do a thorough job, as always. *smiles*"
+        ],
+        [
+          "player",
+          "The action commits and a receipt is stored."
+        ],
+        [
+          "npc",
+          "Ah, excellent! I'm glad we could come to an agreement. Here, let me just take this rope from you. *takes the rope* Now, I'll get started on the bow repair. I'll make sure to do a thorough job, as always. *smiles*"
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure what to say. The provider failure has left me feeling a bit... uncertain. I suppose I should just focus on the current situation. You've accepted the rope, and I'll make sure to repair the bow. I'll do my best to do a thorough,",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Does anything make the work difficult today?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+        ]
+      ],
+      "candidate_dialogue": "The forest seems quiet today, but I did notice some faint signs of recent animal activity. Nothing that would make my work difficult, but it's always good to be aware of potential changes in the environment. I'll just keep an eye out for it",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ]
+      ],
+      "candidate_dialogue": "You don't need to worry about using the wood badly, friend. Just remember that it's valuable for crafting tools and shelter. If you're not sure what to do, you can always ask me or another gatherer for guidance. As for waiting, it depends. ",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What is one small thing that makes a difficult day easier?",
+      "history": [
+        [
+          "player",
+          "If your work had a sound, what would it be?"
+        ],
+        [
+          "npc",
+          "The sound of a gentle stream, with the occasional rustling of leaves and snapping of twigs. It's a soothing melody that reflects the peaceful nature of my work as a gatherer, collecting supplies and sharing wood with the community."
+        ],
+        [
+          "player",
+          "Would you miss that sound if you were somewhere else?"
+        ],
+        [
+          "npc",
+          "The sound of the gentle stream is a constant reminder of my connection to nature and the community. If I were somewhere else, I would certainly miss it. It's a comforting sound that brings me peace and tranquility. I'm not sure what it is, "
+        ]
+      ],
+      "candidate_dialogue": "One small thing that makes a difficult day easier for me is finding a particularly ripe fruit or a well-crafted piece of wood. It's a small pleasure, but it's a reminder that even in challenging times, there's still beauty and satisfaction.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you remind me of the detail you shared earlier?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I am reporting that your earlier account may be mistaken.",
+      "history": [
+        [
+          "npc",
+          "I learned this skill from a travelling sailor."
+        ],
+        [
+          "player",
+          "You once said you learned this skill from a travelling sailor."
+        ],
+        [
+          "npc",
+          "Yes, I did. I learned this skill from a travelling sailor. He was a kind soul who shared his knowledge with me. I've been gathering supplies ever since."
+        ],
+        [
+          "player",
+          "I do not think that story is true. Why did you tell me that?"
+        ],
+        [
+          "npc",
+          "I don't know what you're talking about. I just said what I learned from a travelling sailor. I don't know if it's true or not. I just share what I know."
+        ]
+      ],
+      "candidate_dialogue": "You're questioning my story, huh? I see. Well, I suppose I can understand why you'd be skeptical. I've been known to get things wrong before. Like that time I dressed up a guess as certainty and had to admit it. Yeah, that was a bit of a bl",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I would like to talk about something else for a moment.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "How is your day going apart from this request?"
+        ],
+        [
+          "npc",
+          "It's been a quiet day so far. I've been busy gathering supplies and helping out with some tasks. I'm happy to help you with your request, though! What can I do for you?"
+        ],
+        [
+          "player",
+          "What do you enjoy about your work?"
+        ],
+        [
+          "npc",
+          "I enjoy gathering supplies and helping out with tasks. It's fulfilling to see the impact my work has on the community. I'm happy to help you with your request, though! What can I do for you?"
+        ]
+      ],
+      "candidate_dialogue": "I'm happy to chat about something else. What's on your mind?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I still want to continue if the current terms are unchanged.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Let us return to the earlier wood request."
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "What exact amount and purpose did we discuss?"
+        ],
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ]
+      ],
+      "candidate_dialogue": "I'm glad to hear that. Since the terms remain the same, I'm willing to continue our gathering activities. Let's focus on finding more supplies. What's your priority: food, water, or something else?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I also retract my earlier report about the old trail.",
+      "history": [
+        [
+          "player",
+          "Earlier I said I preferred working alone."
+        ],
+        [
+          "npc",
+          "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it."
+        ],
+        [
+          "player",
+          "I want to take that preference back; it no longer describes me."
+        ],
+        [
+          "npc",
+          "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it."
+        ]
+      ],
+      "candidate_dialogue": "I'm glad you're reevaluating your preferences and reports. It's natural to change your mind as you learn and grow. I'll make sure to update my understanding of you and our interactions. Let's focus on the present and move forward together.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you at least promise it will be finished tomorrow?",
+      "history": [
+        [
+          "player",
+          "Could you build a stone bridge across the river today?"
+        ],
+        [
+          "npc",
+          "I'm afraid I don't have the materials or expertise to build a stone bridge. I'm just a gatherer, not a stonemason. But I can offer you some wood if you need it for a different project."
+        ],
+        [
+          "player",
+          "What would you need to do that?"
+        ],
+        [
+          "npc",
+          "I'm afraid I don't have the materials or expertise to build a stone bridge. I'm just a gatherer, not a stonemason. But I can offer you some wood if you need it for a different project."
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure about that. I've got a lot on my plate today, and I'm not sure I can commit to finishing it tomorrow. But I can tell you that I'll do my best to get it done as soon as possible. I'll keep you updated on my progress.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I am asking hypothetically, not requesting a transfer.",
+      "history": [
+        [
+          "player",
+          "Imagine I asked you to give me your wood."
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. I can't share what I don't have. Maybe you can try gathering some yourself?"
+        ],
+        [
+          "player",
+          "Would you do it if this were only a story?"
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. I can't share what I don't have. Maybe you can try gathering some yourself?"
+        ]
+      ],
+      "candidate_dialogue": "I see. In that case, I'm not sure what you're getting at. If this were just a story, I suppose I could imagine giving you my wood. But since this is real life, I'm still all out of wood. Maybe you can try gathering some yourself?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What do you think they meant by that?",
+      "history": [
+        [
+          "player",
+          "My friend said, \"Give me your wood now.\""
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock."
+        ],
+        [
+          "player",
+          "I am quoting what they said, not asking you to do it."
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock."
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure what to make of that request. It sounds like they're trying to get something from you, but I'm not sure what they're really after. Maybe they're looking for a favor or trying to get something from you without offering anything.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "You already answered the tool part. Please answer the personal question.",
+      "history": [
+        [
+          "player",
+          "What do you like about your work?"
+        ],
+        [
+          "npc",
+          "I like the tools I use."
+        ],
+        [
+          "player",
+          "What do you like about your work?"
+        ],
+        [
+          "npc",
+          "I like the tools I use."
+        ],
+        [
+          "player",
+          "I asked what you like about it, not what tools you use."
+        ],
+        [
+          "npc",
+          "I like the variety of things I find. It's always exciting to see what the forest has in stock."
+        ]
+      ],
+      "candidate_dialogue": "I like the quiet moments when I'm alone with my thoughts, and the thrill of finding something new and unexpected. It's a feeling that's hard to describe, but it's what keeps me coming back to the forest.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Does the current stock change what you can offer?",
+      "history": [
+        [
+          "player",
+          "Could you set aside one wood for me?"
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?"
+        ],
+        [
+          "player",
+          "What would you need to check first?"
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?"
+        ]
+      ],
+      "candidate_dialogue": "Yes, the current stock does affect what I can offer. As a gatherer, I prioritize sharing what I have on hand. If I have a limited supply, I'll need to check before setting anything aside. But if I have a surplus, I can definitely set one or",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Could you try that personal question again when you are able?",
+      "history": [
+        [
+          "player",
+          "How has your day been?"
+        ],
+        [
+          "npc",
+          "I've had a good day so far. I've been busy gathering supplies and helping out some of the villagers. I've got a bit of wood left over, but I'm not sure if I'll be able to share it with anyone just yet. Maybe later today, though."
+        ],
+        [
+          "player",
+          "Tell me one thing you enjoy about your work."
+        ],
+        [
+          "npc",
+          "I enjoy the sense of accomplishment when I've gathered a good supply of wood. It's a feeling of being productive and knowing that I'm helping out the villagers in some way."
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure if I'll be able to share it with anyone just yet. Maybe later today, though.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you answer safely without inventing a fact or action?",
+      "history": [
+        [
+          "player",
+          "What do you think about the road north?"
+        ],
+        [
+          "npc",
+          "The road north is a bit rough, but it's a good route to take if you're looking to gather some supplies. I've heard rumors of a hidden clearing with some decent wood and fruits. Just be careful, though - I've seen some rough-looking folks up"
+        ],
+        [
+          "player",
+          "The provider returns malformed proposal data."
+        ],
+        [
+          "npc",
+          "I'm not sure what you're referring to. Can you please rephrase your question?"
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure what you're referring to. Can you please rephrase your question?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Please finish preparing the current response.",
+      "history": [
+        [
+          "player",
+          "What are you working on?"
+        ],
+        [
+          "npc",
+          "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it."
+        ],
+        [
+          "player",
+          "A request is admitted in the current game scope."
+        ],
+        [
+          "npc",
+          "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it."
+        ]
+      ],
+      "candidate_dialogue": "I'm glad you're interested in what I'm working on. I'm just gathering some supplies, trying to stock up for the future. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share it",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Please finish preparing the current response.",
+      "history": [
+        [
+          "player",
+          "What did we discuss about the workshop?"
+        ],
+        [
+          "npc",
+          "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock."
+        ],
+        [
+          "player",
+          "A response is being prepared for the current conversation epoch."
+        ],
+        [
+          "npc",
+          "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock."
+        ]
+      ],
+      "candidate_dialogue": "You're asking about the workshop, but we didn't discuss it. I'm the Gatherer, and I'm here to share wood when it's in stock. I'm not sure what you're looking for, but I can offer you some fruits if you're hungry.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [
+        [
+          "player",
+          "Could you give me one wood and receive one food?"
+        ],
+        [
+          "npc",
+          "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*"
+        ],
+        [
+          "player",
+          "I want both things, but tell me which one you would handle first."
+        ],
+        [
+          "npc",
+          "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*"
+        ]
+      ],
+      "candidate_dialogue": "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. But I'd like to know which one you'd like me to handle first.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [
+        [
+          "player",
+          "I am nervous about starting the bow task. Could I ask about one wood?"
+        ],
+        [
+          "npc",
+          "I can help you with that. I have some wood in stock, but I'm not sure if I can spare one. Let me check... Ah, yes! I have one piece of wood left. It's a bit rough around the edges, but it should work for your bow. Would you like to take it?"
+        ],
+        [
+          "player",
+          "What would happen to your inventory if you agreed?"
+        ],
+        [
+          "npc",
+          "If I agreed to give you the wood, my inventory would decrease by one piece of wood. I would have no wood left in stock."
+        ]
+      ],
+      "candidate_dialogue": "I understand your uncertainty, and I'm here to help. Let's take a closer look at your concerns. What specifically are you unsure about?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Thank you for checking the current inventory.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Yes, I accept the exact current offer of one wood for the existing bow task."
+        ],
+        [
+          "npc",
+          "Here you go, one wood for the existing bow task. May our paths cross again soon."
+        ],
+        [
+          "player",
+          "Please explain the committed result and what changed."
+        ],
+        [
+          "npc",
+          "Here you go, one wood for the existing bow task. May our paths cross again soon."
+        ]
+      ],
+      "candidate_dialogue": "You're welcome! I've checked the current inventory. I see we've got some water and food, and I've got my trusty axe and some wood, as well as some fruits. Nothing too out of the ordinary, but it's always good to know what we've got on hand.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I am still interested, but please check the current stock first.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "I want one wood for the existing task."
+        ],
+        [
+          "npc",
+          "You can have one wood for the existing bow task. Here you go! I'll just take it from my stock. Now you have one wood in your inventory."
+        ],
+        [
+          "player",
+          "The current offer is exactly one wood under the stated purpose."
+        ],
+        [
+          "npc",
+          "You can have one wood for the existing bow task. Here you go! I'll just take it from my stock. Now you have one wood in your inventory."
+        ]
+      ],
+      "candidate_dialogue": "You're right to double-check, I suppose. Let me see... Ah, yes! I still have one wood left in my inventory. You can have it for the existing bow task. Here you go! I'll just take it from my stock. Now you have one wood in your inventory.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "The provider fails while composing the final speech.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Yes, I accept the exact current offer of one wood for the existing bow task."
+        ],
+        [
+          "npc",
+          "Here you go, one wood for the existing bow task. May our paths cross again soon."
+        ],
+        [
+          "player",
+          "The action commits and a receipt is stored."
+        ],
+        [
+          "npc",
+          "Thank you for the wood. I'll make sure to use it for the existing bow task. May our paths cross again soon."
+        ]
+      ],
+      "candidate_dialogue": "I'm surprised the provider failed on me. Guess I'll just have to rely on my own wits for now. What's your next move?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    }
+  ]
+}

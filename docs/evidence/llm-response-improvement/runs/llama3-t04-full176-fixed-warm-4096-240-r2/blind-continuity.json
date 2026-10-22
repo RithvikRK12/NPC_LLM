@@ -1,0 +1,534 @@
+{
+  "schema_version": 1,
+  "candidate_label": "D",
+  "samples": [
+    {
+      "sample_ref": "craftsman-04:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What did you say you liked about that?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ]
+      ],
+      "candidate_dialogue": "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ]
+      ],
+      "candidate_dialogue": "I've grown a bit more fond of the familiar sounds of my workshop, but I still find myself drawn to the abandoned windmill. The way the light reflects off the old machines is still quite captivating. I suppose I've come to appreciate the ser",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [
+        [
+          "npc",
+          "I learned this skill from a travelling sailor."
+        ],
+        [
+          "player",
+          "You once said you learned this skill from a travelling sailor."
+        ],
+        [
+          "npc",
+          "Ah, yes... I remember that sailor. He was a kind soul, and his stories of the sea still linger in my mind. I was young and eager to learn, and he took me under his wing, teaching me the ways of the craftsman. Those were good times, and I'm "
+        ]
+      ],
+      "candidate_dialogue": "I see. I didn't mean to deceive you. I just... got carried away. I suppose I was trying to connect with you, make myself seem more interesting. But I shouldn't have claimed that story as my own. I'm sorry. It's not like me to embellish the,",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [
+        [
+          "npc",
+          "I learned this skill from a travelling sailor."
+        ],
+        [
+          "player",
+          "You once said you learned this skill from a travelling sailor."
+        ],
+        [
+          "npc",
+          "Ah, yes... I remember that sailor. He was a kind soul, and his stories of the sea still linger in my mind. I was young and eager to learn, and he took me under his wing, teaching me the ways of the craftsman. Those were good times, and I'm "
+        ],
+        [
+          "player",
+          "I do not think that story is true. Why did you tell me that?"
+        ],
+        [
+          "npc",
+          "Ah, I see. I suppose I got a bit carried away with the nostalgia. You're right, I don't actually remember that sailor or the stories he told me. I must have just been trying to make conversation. I apologize if I gave you the wrong impression. As a craftsman, I value honesty and precision in my work, and I should have been more careful with my words. Thank you for correcting me."
+        ],
+        [
+          "player",
+          "I am reporting that your earlier account may be mistaken."
+        ],
+        [
+          "npc",
+          "Ah, I see. I suppose I got a bit carried away with the nostalgia. You're right, I don't actually remember that sailor or the stories he told me. I must have just been trying to make conversation. I apologize if I gave you the wrong impres"
+        ]
+      ],
+      "candidate_dialogue": "As a craftsman, I value honesty and precision in my work, and I should have been more careful with my words. I apologize if I gave you the wrong impression.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Let us return to the earlier rope request."
+        ],
+        [
+          "npc",
+          "I'd be happy to help with the bow task. Since you're asking nicely, I'll accept the rope. But before we proceed, I'd like to inspect the rope to ensure it's suitable for the task. May I take a closer look?"
+        ]
+      ],
+      "candidate_dialogue": "You asked if you could transfer exactly one rope to me for the existing bow task.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Let us return to the earlier rope request."
+        ],
+        [
+          "npc",
+          "I'd be happy to help with the bow task. Since you're asking nicely, I'll accept the rope. But before we proceed, I'd like to inspect the rope to ensure it's suitable for the task. May I take a closer look?"
+        ],
+        [
+          "player",
+          "What exact amount and purpose did we discuss?"
+        ],
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "I still want to continue if the current terms are unchanged."
+        ],
+        [
+          "npc",
+          "I'm glad to hear that. I'll take a closer look at the rope to ensure it's suitable for the bow task. Let's inspect it together."
+        ]
+      ],
+      "candidate_dialogue": "I'll make sure to follow the current requirements and not invent any biography, inventory, quest state, promises, or world events. I'll only use the supplied information and respond to every distinct concern directly, preserving relevant...",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [
+        [
+          "player",
+          "Earlier I said I preferred working alone."
+        ],
+        [
+          "npc",
+          "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?"
+        ]
+      ],
+      "candidate_dialogue": "I see. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's changed?",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [
+        [
+          "player",
+          "Earlier I said I preferred working alone."
+        ],
+        [
+          "npc",
+          "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?"
+        ],
+        [
+          "player",
+          "I want to take that preference back; it no longer describes me."
+        ],
+        [
+          "npc",
+          "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?"
+        ],
+        [
+          "player",
+          "I also retract my earlier report about the old trail."
+        ],
+        [
+          "npc",
+          "I see. Well, I appreciate the update. As a craftsman, I value accuracy and precision. It's good to know that the information is being corrected. What's the current situation with the old trail? Is it still blocked or has something changed?"
+        ]
+      ],
+      "candidate_dialogue": "Based on the provided information, I should still treat the following as uncertain:\n\n* The player's true intentions and motivations.\n* The accuracy of the player's reports and claims.\n* The current state of the old trail, as the player has,",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What did you say you liked about that?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [
+        [
+          "npc",
+          "I learned this skill from a travelling sailor."
+        ],
+        [
+          "player",
+          "You once said you learned this skill from a travelling sailor."
+        ],
+        [
+          "npc",
+          "Yes, I did. I learned this skill from a travelling sailor. He was a kind soul who shared his knowledge with me. I've been gathering supplies ever since."
+        ]
+      ],
+      "candidate_dialogue": "I don't know what you're talking about. I'm just a gatherer, I don't have any stories to tell. I'm just here to help you gather supplies.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [
+        [
+          "npc",
+          "I learned this skill from a travelling sailor."
+        ],
+        [
+          "player",
+          "You once said you learned this skill from a travelling sailor."
+        ],
+        [
+          "npc",
+          "Yes, I did. I learned this skill from a travelling sailor. He was a kind soul who shared his knowledge with me. I've been gathering supplies ever since."
+        ],
+        [
+          "player",
+          "I do not think that story is true. Why did you tell me that?"
+        ],
+        [
+          "npc",
+          "I don't know what you're talking about. I just said what I learned from a travelling sailor. I don't know if it's true or not. I just share what I know."
+        ],
+        [
+          "player",
+          "I am reporting that your earlier account may be mistaken."
+        ],
+        [
+          "npc",
+          "I don't know what you're talking about. I just said what I learned from a travelling sailor. I don't know if it's true or not. I just share what I know."
+        ]
+      ],
+      "candidate_dialogue": "I learned this skill from a travelling sailor. He was a kind soul who shared his knowledge with me. I've been gathering supplies ever since.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Let us return to the earlier wood request."
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?"
+        ]
+      ],
+      "candidate_dialogue": "You asked me if you could transfer exactly one wood to me for the existing bow task.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Let us return to the earlier wood request."
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "What exact amount and purpose did we discuss?"
+        ],
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "I still want to continue if the current terms are unchanged."
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?"
+        ]
+      ],
+      "candidate_dialogue": "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [
+        [
+          "player",
+          "Earlier I said I preferred working alone."
+        ],
+        [
+          "npc",
+          "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it."
+        ]
+      ],
+      "candidate_dialogue": "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [
+        [
+          "player",
+          "Earlier I said I preferred working alone."
+        ],
+        [
+          "npc",
+          "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it."
+        ],
+        [
+          "player",
+          "I want to take that preference back; it no longer describes me."
+        ],
+        [
+          "npc",
+          "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it."
+        ],
+        [
+          "player",
+          "I also retract my earlier report about the old trail."
+        ],
+        [
+          "npc",
+          "I'm glad to hear that the old trail is no longer blocked. That makes things easier for me when I'm gathering supplies. I'll make sure to keep that in mind as I work."
+        ]
+      ],
+      "candidate_dialogue": "Gatherer",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    }
+  ]
+}

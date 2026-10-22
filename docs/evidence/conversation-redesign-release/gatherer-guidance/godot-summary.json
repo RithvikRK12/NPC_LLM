@@ -1,0 +1,30 @@
+[
+  {
+    "test": "gatherer_integration_smoke",
+    "exit_code": 0,
+    "seconds": 29.522,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "gatherer_combat_smoke",
+    "exit_code": 0,
+    "seconds": 0.343,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_guidance_smoke",
+    "exit_code": 0,
+    "seconds": 0.945,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "onboarding_smoke",
+    "exit_code": 0,
+    "seconds": 4.052,
+    "passed": true,
+    "shutdown_resource_warning": true
+  }
+]

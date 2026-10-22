@@ -1,0 +1,122 @@
+test_action_repair_cannot_omit_or_replace_exact_committed_receipt (test_conversation_repair.RepairServiceTests.test_action_repair_cannot_omit_or_replace_exact_committed_receipt) ... FAIL
+test_approved_repair_rebuilds_unicode_spans_and_preserves_receipt_operation_turn (test_conversation_repair.RepairServiceTests.test_approved_repair_rebuilds_unicode_spans_and_preserves_receipt_operation_turn) ... FAIL
+test_blocking_whole_reply_findings_release_no_reply_or_canon (test_conversation_repair.RepairServiceTests.test_blocking_whole_reply_findings_release_no_reply_or_canon) ... FAIL
+test_deadline_checked_before_dispatch_and_after_late_output (test_conversation_repair.RepairServiceTests.test_deadline_checked_before_dispatch_and_after_late_output) ... FAIL
+test_format_recovery_spends_the_same_repair_token_across_restart (test_conversation_repair.RepairServiceTests.test_format_recovery_spends_the_same_repair_token_across_restart) ... FAIL
+test_invalid_grant_fence_and_wrong_turn_never_reach_repair_hook (test_conversation_repair.RepairServiceTests.test_invalid_grant_fence_and_wrong_turn_never_reach_repair_hook) ... FAIL
+test_mismatched_turn_or_receipt_fails_before_dispatch (test_conversation_repair.RepairServiceTests.test_mismatched_turn_or_receipt_fails_before_dispatch) ... FAIL
+test_operation_bearing_output_and_forged_candidate_fail_strictly (test_conversation_repair.RepairServiceTests.test_operation_bearing_output_and_forged_candidate_fail_strictly) ... FAIL
+test_provider_failure_consumes_allowance_and_returns_safe_typed_failure (test_conversation_repair.RepairServiceTests.test_provider_failure_consumes_allowance_and_returns_safe_typed_failure) ... FAIL
+test_stale_allowance_snapshot_cannot_bypass_durable_shared_budget (test_conversation_repair.RepairServiceTests.test_stale_allowance_snapshot_cannot_bypass_durable_shared_budget) ... FAIL
+test_ungranted_allowance_and_second_use_do_not_dispatch (test_conversation_repair.RepairServiceTests.test_ungranted_allowance_and_second_use_do_not_dispatch) ... FAIL
+test_unrepairable_findings_fail_before_token_reservation (test_conversation_repair.RepairServiceTests.test_unrepairable_findings_fail_before_token_reservation) ... FAIL
+test_validator_failure_and_stale_report_fail_closed (test_conversation_repair.RepairServiceTests.test_validator_failure_and_stale_report_fail_closed) ... FAIL
+
+======================================================================
+FAIL: test_action_repair_cannot_omit_or_replace_exact_committed_receipt (test_conversation_repair.RepairServiceTests.test_action_repair_cannot_omit_or_replace_exact_committed_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_approved_repair_rebuilds_unicode_spans_and_preserves_receipt_operation_turn (test_conversation_repair.RepairServiceTests.test_approved_repair_rebuilds_unicode_spans_and_preserves_receipt_operation_turn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_blocking_whole_reply_findings_release_no_reply_or_canon (test_conversation_repair.RepairServiceTests.test_blocking_whole_reply_findings_release_no_reply_or_canon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_deadline_checked_before_dispatch_and_after_late_output (test_conversation_repair.RepairServiceTests.test_deadline_checked_before_dispatch_and_after_late_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_format_recovery_spends_the_same_repair_token_across_restart (test_conversation_repair.RepairServiceTests.test_format_recovery_spends_the_same_repair_token_across_restart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_invalid_grant_fence_and_wrong_turn_never_reach_repair_hook (test_conversation_repair.RepairServiceTests.test_invalid_grant_fence_and_wrong_turn_never_reach_repair_hook)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_mismatched_turn_or_receipt_fails_before_dispatch (test_conversation_repair.RepairServiceTests.test_mismatched_turn_or_receipt_fails_before_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_operation_bearing_output_and_forged_candidate_fail_strictly (test_conversation_repair.RepairServiceTests.test_operation_bearing_output_and_forged_candidate_fail_strictly)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_provider_failure_consumes_allowance_and_returns_safe_typed_failure (test_conversation_repair.RepairServiceTests.test_provider_failure_consumes_allowance_and_returns_safe_typed_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_stale_allowance_snapshot_cannot_bypass_durable_shared_budget (test_conversation_repair.RepairServiceTests.test_stale_allowance_snapshot_cannot_bypass_durable_shared_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_ungranted_allowance_and_second_use_do_not_dispatch (test_conversation_repair.RepairServiceTests.test_ungranted_allowance_and_second_use_do_not_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_unrepairable_findings_fail_before_token_reservation (test_conversation_repair.RepairServiceTests.test_unrepairable_findings_fail_before_token_reservation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+======================================================================
+FAIL: test_validator_failure_and_stale_report_fail_closed (test_conversation_repair.RepairServiceTests.test_validator_failure_and_stale_report_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_repair.py", line 18, in setUp
+    self.assertIsNotNone(spec, 'T03 speech-only RepairService is absent')
+AssertionError: unexpectedly None : T03 speech-only RepairService is absent
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+FAILED (failures=13)

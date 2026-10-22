@@ -1,7 +1,7 @@
 # operations implementation tasks
 
 **Goal:** Deliver the `operations` responsibility in the NPC conversation redesign.
-**Status:** Not started; no redesign implementation verified in this planning pass.
+**Status:** operations/T01–T02 accepted locally; 2/2 task deliverables verified; concrete gateway/game-adapter integration remains pending.
 **Sources:** [Proposal](../npc-conversation-redesign-proposal.md), [Detailed design](../npc-conversation-redesign-detailed-design.md). Relevant sections: Detailed design §§4,6.3–6.4.
 **Owned files / integration targets:** backend/app/services/conversation/operations.py; backend/app/services/validation/items.py; backend/app/services/craftsman_intent.py; backend/tests/test_conversation_operations.py.
 **Architecture:** In-process modules with injected narrow contracts. Mechanical authority remains in existing deterministic game services; conversational narrative never grants gameplay permissions.
@@ -20,16 +20,16 @@
 
 ### operations/T01: Implement pure operation decision policy
 
-- [ ] **Task complete**
+- [x] **Task complete**
 
 **Depends on:** contracts/T03; interactions/T02.
 **Acceptance criteria:** OperationPolicy.decide(proposal, interaction_plan, context) returns NoOperation/ClarificationRequired/Denied/ReadyToRecheck; reject ineligible modalities, invalid commands/targets/parameters and ambiguous consent. Retire heuristic interception in redesigned path.
 **Test expectations:** Quotes, negations, hypotheticals and ambiguous answers do not execute; multiple supported actions clarify; unrelated purpose words do not transfer; confidence values confer no permission.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
+- [x] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
 
 ### operations/T02: Dispatch only typed audited operations
 
@@ -50,5 +50,5 @@ Backend deterministic checks use `PYTHONPATH=backend .venv/bin/python -m unittes
 
 | Task | Owner / state | Verification command and evidence | Handoff / blockers |
 | --- | --- | --- | --- |
-| T01 | Unassigned / not started | Not run | None recorded |
-| T02 | Unassigned / not started | Not run | None recorded |
+| T01 | operations_t01 / accepted by Main Agent 2026-10-18; gpt-6.1-sol / medium | [Handoff](../evidence/conversation-redesign-operations/t01-handoff.md); focused 14/14, interactions 18/18, contracts 70/70, conversation 305/305; `git diff --check` exit 0 | Pure policy only; gateway execution, atomic receipts and durable rechecks remain T02 |
+| T02 | Main Agent / accepted 2026-10-18; model identifier unavailable in current runtime | [Handoff](../evidence/conversation-redesign-operations/t02-handoff.md); focused 20/20, store-port 32/32, interactions 18/18, contracts 70/70, conversation 311/311, backend 774/774; `git diff --check` exit 0 | Injected gateway dispatch and receipt-first retry verified with doubles; concrete adapter transaction/atomicity remains outside this packet task |

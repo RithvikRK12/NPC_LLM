@@ -1,3 +1,4 @@
+from app.services.state.resources import versioned
 from app.services.island import MAP_VERSION
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -49,6 +50,7 @@ def seed_world(db: Session) -> None:
             db.add(NPC(**payload))
     db.commit()
 
+@versioned
 def reset_world(db: Session) -> None:
     """Start a new single-player run without deleting schema or changing NPC IDs."""
     from sqlalchemy import delete
@@ -63,6 +65,7 @@ def reset_world(db: Session) -> None:
     db.execute(delete(Memory))
     from uuid import uuid4
     player.game_scope = str(uuid4())
+    player.resource_revisions = {}
     player.position = {'x': 0.0, 'y': 0.0}
     player.inventory = ['water', 'food']
     player.current_location = 'village_square'

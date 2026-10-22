@@ -1,0 +1,13 @@
+ERROR: Failed to open 'user://logs/godot2026-10-20T11.49.04.log'.
+   at: copy (core/io/dir_access.cpp:429)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: A boar warning emits an observable event
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/gatherer_combat_smoke.gd:5)
+       [1] run (res://tests/gatherer_combat_smoke.gd:29)

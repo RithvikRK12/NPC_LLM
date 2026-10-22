@@ -1,0 +1,39 @@
+test_concurrent_attempts_consume_each_purpose_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_attempts_consume_each_purpose_once) ... ok
+test_concurrent_claims_only_one_worker_owns_oldest (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_claims_only_one_worker_owns_oldest) ... ok
+test_concurrent_distinct_admissions_have_contiguous_sequences (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_distinct_admissions_have_contiguous_sequences) ... ok
+test_concurrent_duplicate_admissions_allocate_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_duplicate_admissions_allocate_once) ... ok
+test_expired_claim_retains_oldest_phase_and_rejects_old_worker (test_conversation_persistence.SQLTurnStoreTests.test_expired_claim_retains_oldest_phase_and_rejects_old_worker) ... ok
+test_expired_unreplaced_worker_cannot_write (test_conversation_persistence.SQLTurnStoreTests.test_expired_unreplaced_worker_cannot_write) ... ok
+test_failed_admission_rolls_back_sequence_allocation (test_conversation_persistence.SQLTurnStoreTests.test_failed_admission_rolls_back_sequence_allocation) ... ok
+test_failed_budget_write_leaves_no_consumed_attempt (test_conversation_persistence.SQLTurnStoreTests.test_failed_budget_write_leaves_no_consumed_attempt) ... ok
+test_final_and_invalidated_status_lookup_uses_stored_identity (test_conversation_persistence.SQLTurnStoreTests.test_final_and_invalidated_status_lookup_uses_stored_identity) ... ok
+test_lost_admission_commit_ack_recovers_same_identity (test_conversation_persistence.SQLTurnStoreTests.test_lost_admission_commit_ack_recovers_same_identity) ... ok
+test_lost_budget_commit_ack_never_resets_dispatch_consumption (test_conversation_persistence.SQLTurnStoreTests.test_lost_budget_commit_ack_never_resets_dispatch_consumption) ... ok
+test_lost_claim_commit_ack_returns_known_identity_and_keeps_lease_busy (test_conversation_persistence.SQLTurnStoreTests.test_lost_claim_commit_ack_returns_known_identity_and_keeps_lease_busy) ... ok
+test_output_is_immutable_and_proposal_phase_recovers (test_conversation_persistence.SQLTurnStoreTests.test_output_is_immutable_and_proposal_phase_recovers) ... ok
+test_outputs_and_assembly_are_durable_but_stale_output_is_rejected (test_conversation_persistence.SQLTurnStoreTests.test_outputs_and_assembly_are_durable_but_stale_output_is_rejected) ... ok
+test_ports_release_connections_before_external_dispatch_and_new_engine_recovers (test_conversation_persistence.SQLTurnStoreTests.test_ports_release_connections_before_external_dispatch_and_new_engine_recovers) ... ok
+test_receipt_payload_cannot_escape_exact_turn_scope (test_conversation_persistence.SQLTurnStoreTests.test_receipt_payload_cannot_escape_exact_turn_scope) ... /Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+FAIL
+test_receipt_recovery_is_scoped_and_preserves_operation_phase (test_conversation_persistence.SQLTurnStoreTests.test_receipt_recovery_is_scoped_and_preserves_operation_phase) ... ok
+test_repair_token_is_shared_and_attempt_identity_is_immutable (test_conversation_persistence.SQLTurnStoreTests.test_repair_token_is_shared_and_attempt_identity_is_immutable) ... ok
+test_reset_scope_blocks_old_recovery_and_forged_turn_identity (test_conversation_persistence.SQLTurnStoreTests.test_reset_scope_blocks_old_recovery_and_forged_turn_identity) ... ok
+test_restart_scans_pending_without_admission_or_claim (test_conversation_persistence.SQLTurnStoreTests.test_restart_scans_pending_without_admission_or_claim) ... ok
+test_scope_epoch_and_npc_are_checked_without_allocating (test_conversation_persistence.SQLTurnStoreTests.test_scope_epoch_and_npc_are_checked_without_allocating) ... ok
+test_three_stage_call_cap_and_both_repair_directions_survive_restart (test_conversation_persistence.SQLTurnStoreTests.test_three_stage_call_cap_and_both_repair_directions_survive_restart) ... ok
+test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence (test_conversation_persistence.SQLTurnStoreTests.test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence) ... ok
+
+======================================================================
+FAIL: test_receipt_payload_cannot_escape_exact_turn_scope (test_conversation_persistence.SQLTurnStoreTests.test_receipt_payload_cannot_escape_exact_turn_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 403, in test_receipt_payload_cannot_escape_exact_turn_scope
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.662s
+
+FAILED (failures=1)

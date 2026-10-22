@@ -1,0 +1,141 @@
+FFFFFFFFFFFFFFFFF
+======================================================================
+FAIL: test_accepted_inspection_never_supports_completed_or_progress_slots (test_conversation_composition_service.CompositionServiceTests.test_accepted_inspection_never_supports_completed_or_progress_slots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_action_reply_requires_exact_committed_receipt_slot (test_conversation_composition_service.CompositionServiceTests.test_action_reply_requires_exact_committed_receipt_slot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_cancelled_current_activity_is_preserved_as_exact_fact (test_conversation_composition_service.CompositionServiceTests.test_cancelled_current_activity_is_preserved_as_exact_fact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_current_activity_does_not_upgrade_immutable_receipt (test_conversation_composition_service.CompositionServiceTests.test_current_activity_does_not_upgrade_immutable_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_denied_receipt_uses_rejected_slot_and_hides_reason (test_conversation_composition_service.CompositionServiceTests.test_denied_receipt_uses_rejected_slot_and_hides_reason)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_expired_deadline_dispatches_no_call (test_conversation_composition_service.CompositionServiceTests.test_expired_deadline_dispatches_no_call)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_invalid_output_type_versions_and_concern_references_never_retry (test_conversation_composition_service.CompositionServiceTests.test_invalid_output_type_versions_and_concern_references_never_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_late_output_is_discarded_at_stage_deadline (test_conversation_composition_service.CompositionServiceTests.test_late_output_is_discarded_at_stage_deadline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_ordinary_receipt_slots_and_policy_mismatch_fail_without_calls (test_conversation_composition_service.CompositionServiceTests.test_ordinary_receipt_slots_and_policy_mismatch_fail_without_calls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_ordinary_reply_keeps_all_segments_and_canon_with_zero_calls (test_conversation_composition_service.CompositionServiceTests.test_ordinary_reply_keeps_all_segments_and_canon_with_zero_calls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_provider_timeout_has_no_retry_or_repair (test_conversation_composition_service.CompositionServiceTests.test_provider_timeout_has_no_retry_or_repair)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_receipt_scope_npc_turn_mismatch_fails_before_generation (test_conversation_composition_service.CompositionServiceTests.test_receipt_scope_npc_turn_mismatch_fails_before_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_service_dependencies_cannot_execute_operations (test_conversation_composition_service.CompositionServiceTests.test_service_dependencies_cannot_execute_operations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_stage_deadline_never_outlives_parent (test_conversation_composition_service.CompositionServiceTests.test_stage_deadline_never_outlives_parent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_stale_current_activity_fails_before_generation (test_conversation_composition_service.CompositionServiceTests.test_stale_current_activity_fails_before_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_success_projects_safe_receipt_and_keeps_context_immutable (test_conversation_composition_service.CompositionServiceTests.test_success_projects_safe_receipt_and_keeps_context_immutable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+======================================================================
+FAIL: test_unknown_fact_and_renderer_fail_closed (test_conversation_composition_service.CompositionServiceTests.test_unknown_fact_and_renderer_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition_service.py", line 34, in setUp
+    self.assertTrue(hasattr(self.module, 'CompositionService'), 'CompositionService is not implemented')
+AssertionError: False is not true : CompositionService is not implemented
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.004s
+
+FAILED (failures=17)

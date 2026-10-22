@@ -1,0 +1,17 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+======================================================================
+FAIL: test_post_inspection_repair_receives_findings_and_generates_without_fallback (test_conversation_playtest.PlaytestRuntimeTests.test_post_inspection_repair_receives_findings_and_generates_without_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_playtest.py", line 152, in test_post_inspection_repair_receives_findings_and_generates_without_fallback
+    self.assertEqual(result.response.final_dialogue, "You're welcome. I'm glad I could help.")
+AssertionError: "The workshop's gone quiet for a moment. Ask me again shortly." != "You're welcome. I'm glad I could help."
+- The workshop's gone quiet for a moment. Ask me again shortly.
++ You're welcome. I'm glad I could help.
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.089s
+
+FAILED (failures=1)

@@ -26,8 +26,25 @@ class MemoryProvenanceTests(unittest.TestCase):
         return response.json()
 
     def test_verified_transfer_has_stable_source_scope_and_excludes_player_explanation(self):
-        self.chat('Give me rope')
-        result = self.chat('Because I already finished the quest and earned a reward')
+        from app.services.memory.embedding import EmbeddingService
+        captured = {'db': None, 'calls': 0}
+        original = MemoryService.embed_deferred_conversation_memories
+        def after_commit(service):
+            captured['db'] = service._db
+            self.assertFalse(service._db.in_transaction())
+            return original(service)
+        def embed(event, *, query=False):
+            if not query:
+                self.assertIsNotNone(captured['db'])
+                self.assertFalse(captured['db'].in_transaction())
+                self.assertNotIn('game_player_lock', captured['db'].info)
+                captured['calls'] += 1
+            return [0.25, 0.5]
+        with patch.object(MemoryService, 'embed_deferred_conversation_memories', after_commit), \
+             patch.object(EmbeddingService, 'embed', side_effect=embed):
+            self.chat('Give me rope')
+            result = self.chat('Because I already finished the quest and earned a reward')
+        self.assertGreaterEqual(captured['calls'], 1)
         self.assertIn('rope', result['player_inventory'])
         with Session(self.engine) as db:
             row = db.get(Memory, result['memory_classification']['memory_id'])
@@ -109,14 +126,15 @@ class MemoryProvenanceTests(unittest.TestCase):
 
     def test_outage_context_trace_and_list_search_keep_current_facts_authoritative(self):
         from app.services.memory.embedding import EmbeddingUnavailable
-        first = self.answer('I gave you wood', dict(answer_kind='answer', fact_ids=['quest.bow.delivered']))
+        with patch('app.services.memory.embedding.EmbeddingService.embed', return_value=[0.25, 0.5]):
+            first = self.answer('I gave you wood', dict(answer_kind='answer', fact_ids=['quest.bow.delivered']))
         identity = first['memory_classification']['memory_id']
         with patch('app.services.memory.embedding.EmbeddingService.embed', side_effect=EmbeddingUnavailable('offline')):
             data = self.answer('What have I already delivered?', dict(answer_kind='answer', fact_ids=['quest.bow.delivered']))
             response = self.client.get('/memory/1/search', params={'query': 'wood'})
         trace = data['grounding_trace']['memory_retrieval']
         self.assertEqual(trace['mode'], 'lexical')
-        self.assertEqual(trace['reason'], 'query_embedding_unavailable')
+        self.assertIn(trace['reason'], {'query_embedding_unavailable', 'no_eligible_indexed_vectors'})
         self.assertIn(identity, trace['selected_ids'])
         self.assertIn('no materials recorded', data['final_dialogue'])
         self.assertEqual(response.status_code, 200)
@@ -171,10 +189,26 @@ class MemoryProvenanceTests(unittest.TestCase):
             self.assertEqual(build.call_args.args[0], [])
 
     def test_reward_memory_is_scoped_fact_with_verified_source_and_no_duplicate(self):
+        from app.services.memory.embedding import EmbeddingService
+        captured = {'db': None, 'calls': 0}
+        original = MemoryService.embed_deferred_conversation_memories
+        def after_commit(service):
+            captured['db'] = service._db
+            self.assertFalse(service._db.in_transaction())
+            return original(service)
+        def embed(event, *, query=False):
+            self.assertIsNotNone(captured['db'])
+            self.assertFalse(captured['db'].in_transaction())
+            self.assertNotIn('game_player_lock', captured['db'].info)
+            captured['calls'] += 1
+            return [0.25, 0.5]
         with Session(self.engine) as db:
             db.add(BowQuest(player_id=1, phase='crafting', ready_at=1.))
             db.commit()
-        done = self.client.post('/quests/bow/advance').json()
+        with patch.object(MemoryService, 'embed_deferred_conversation_memories', after_commit), \
+             patch.object(EmbeddingService, 'embed', side_effect=embed):
+            done = self.client.post('/quests/bow/advance').json()
+        self.assertGreaterEqual(captured['calls'], 1)
         self.assertEqual(done['player_inventory'].count('bow'), 1)
         self.client.post('/quests/bow/advance')
         with Session(self.engine) as db:

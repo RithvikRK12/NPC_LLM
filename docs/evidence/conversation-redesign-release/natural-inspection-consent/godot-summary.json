@@ -1,0 +1,9 @@
+[
+  {
+    "test": "craftsman_guidance_natural_smoke",
+    "exit_code": 0,
+    "seconds": 35.126,
+    "passed": true,
+    "shutdown_resource_warning": false
+  }
+]

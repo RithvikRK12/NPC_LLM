@@ -1,0 +1,13 @@
+Command: PYTHONPATH=backend .venv/bin/python - <<'PY'
+import sys
+from pydantic import TypeAdapter
+from app.services.conversation import contracts as c
+for name in ['CanonRecord','AddCanonChange','ReviseCanonChange','MemoryRecord','ValidationFinding','ValidationReport','FinalTurnResult','LegacyConversationMapping','TurnStatus','Result']:
+    getattr(c, name).model_json_schema()
+TypeAdapter(c.CanonChange).json_schema()
+assert not any(name.split('.')[0] in {'sqlalchemy','fastapi','httpx'} for name in sys.modules)
+print('T03 public model and union schemas build; import is infrastructure-free.')
+PY
+
+Exit code: 0
+Result: T03 public model and union schemas build; import is infrastructure-free.

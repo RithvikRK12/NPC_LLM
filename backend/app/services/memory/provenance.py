@@ -43,12 +43,16 @@ def store_conversation(service, npc, conversation):
     prior = db.scalar(select(Memory).where(Memory.game_scope == player.game_scope,
                       Memory.npc_id == npc.id, Memory.source_event_id == source.source_event_id))
     if prior:
+        if prior.semantic_embedding is None:
+            db.info.setdefault('deferred_conversation_memory_ids', set()).add(prior.id)
         return MemoryWrite(prior)
     # Repeated consolidated claims still point to their first source; each
     # subsequent accepted conversation records the same memory identity.
     prior_id = accepted.get('memory_classification', {}).get('memory_id')
     prior = db.get(Memory, prior_id) if prior_id else None
     if prior and prior.npc_id == npc.id and prior.game_scope == player.game_scope:
+        if prior.semantic_embedding is None:
+            db.info.setdefault('deferred_conversation_memory_ids', set()).add(prior.id)
         return MemoryWrite(prior)
     output = LLMResponse.model_validate({k: v for k, v in accepted.items() if k in LLMResponse.model_fields})
     outcome = accepted.get('behavior_trace', {}).get('verified_outcome', {})
@@ -76,7 +80,10 @@ def store_conversation(service, npc, conversation):
         event_type=decision.category, quest_id='get_bow' if decision.category.startswith('quest_') else None,
         game_scope=source.game_scope, source_event_id=source.source_event_id,
         source_conversation_id=source.id, epistemic_status=metadata['epistemic_status'],
-        authority=metadata['authority'], claim_text=decision.claim_text)
+        authority=metadata['authority'], claim_text=decision.claim_text,
+        defer_embedding=True)
+    if row is not None and row.semantic_embedding is None:
+        db.info.setdefault('deferred_conversation_memory_ids', set()).add(row.id)
     if row is None:
         # Consolidation preserves the first provenance and original text.
         from app.services.memory.service import duplicate_key

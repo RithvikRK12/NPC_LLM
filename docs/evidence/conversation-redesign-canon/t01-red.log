@@ -1,0 +1,4 @@
+Command: PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_conversation_canon.py' -v
+Exit: 1 (before implementation)
+Observed: test import failed with ModuleNotFoundError: No module named 'app.services.conversation.canon'.
+The test file had been added first, confirming the expected RED state before canon.py was created.

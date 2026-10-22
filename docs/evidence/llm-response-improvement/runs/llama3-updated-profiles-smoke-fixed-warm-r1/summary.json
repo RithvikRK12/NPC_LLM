@@ -1,0 +1,14 @@
+{
+  "origin": "dialogue_shadow_generated",
+  "mode": "fixed_context",
+  "sample_count": 20,
+  "generated": 20,
+  "missing_or_error": 0,
+  "elapsed_wall_seconds": 58.93183358386159,
+  "python_process_peak_rss_platform_units": 48136192,
+  "initial_state_digest": "a786660b3c782005b76902688ccb10eb20a913bb1f741c148d2906da6ab45ade",
+  "final_state_digest": "a786660b3c782005b76902688ccb10eb20a913bb1f741c148d2906da6ab45ade",
+  "run_id": "a811e744-4a60-4b89-b6e2-5af227400225",
+  "prompt_variant": "updated_profiles",
+  "note": "Dialogue shadow only; this is not the structured production path."
+}

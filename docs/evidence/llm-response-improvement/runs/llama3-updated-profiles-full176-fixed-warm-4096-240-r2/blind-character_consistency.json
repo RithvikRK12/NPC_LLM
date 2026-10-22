@@ -1,0 +1,1786 @@
+{
+  "schema_version": 1,
+  "candidate_label": "E",
+  "samples": [
+    {
+      "sample_ref": "craftsman-01:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What would make the rest of the day go well?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Well, I did notice that one of my saws is acting up a bit. It's been a bit finicky lately, and I'm not sure what's causing the problem. I was thinking of taking a closer look at it before I start on any big projects. Nothing too out of the-"
+        ]
+      ],
+      "candidate_dialogue": "Honestly, if I can figure out what's wrong with my saw, I'd feel a lot better about the rest of the day. It's just a nagging issue, and I don't want it to affect my work. If I can get it sorted out, I'll be able to focus on the tasks ahead.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Thanks. I also wanted to know how you are doing.",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "I'm doing all right, I suppose. A bit worried about the state of my workshop, to be honest. I've been putting off some repairs, and it's been on my mind. But, you know, it's just a part of being a craftsman. I'll get to it eventually. I'm a",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Has that changed since we last spoke?",
+      "history": [
+        [
+          "player",
+          "If your work had a sound, what would it be?"
+        ],
+        [
+          "npc",
+          "Ah, that's a lovely question! If my work had a sound, I'd say it would be the gentle hum of a saw, the soft thud of a hammer, and the quiet scrape of a file. It's the soothing rhythm of creation, the music of making something new and useful"
+        ],
+        [
+          "player",
+          "Would you miss that sound if you were somewhere else?"
+        ],
+        [
+          "npc",
+          "Oh, absolutely! The sounds of my workshop are like a warm blanket to me. I'd miss the gentle hum of the saw, the soft thud of the hammer, and the quiet scrape of the file. It's the soundtrack of my comfort zone. Even if I were somewhere new"
+        ],
+        [
+          "player",
+          "What is one small thing that makes a difficult day easier?"
+        ],
+        [
+          "npc",
+          "One small thing that makes a difficult day easier for me is finding a small, broken thing that I can fix. It's a sense of accomplishment, you know? Like, if I'm having a tough day, and I can just take a few minutes to fix a broken toy or a,"
+        ]
+      ],
+      "candidate_dialogue": "Not really. Life's been pretty routine around here. Still waking up to the same familiar sounds, still working on my projects, still enjoying the quiet moments. Nothing too out of the ordinary has happened. Just the usual ebb and flow of a,",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ]
+      ],
+      "candidate_dialogue": "I've grown a bit more self-aware since then. The fascination with the windmill's metal parts still exists, but now I'd say it's more about the sense of belonging I find there. The quiet, the creaks, and the way the light reflects off the...",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [
+        [
+          "npc",
+          "I learned this skill from a travelling sailor."
+        ],
+        [
+          "player",
+          "You once said you learned this skill from a travelling sailor."
+        ],
+        [
+          "npc",
+          "Ah, yes... I remember that sailor. He was a kind soul, and his stories of the sea still linger in my mind. I was young and eager to learn, and he took me under his wing, teaching me the ways of the craftsman. Those were good times, and I'm "
+        ],
+        [
+          "player",
+          "I do not think that story is true. Why did you tell me that?"
+        ],
+        [
+          "npc",
+          "Ah, I see. I suppose I got a bit carried away with the nostalgia. You're right, I don't actually remember that sailor or the stories he told me. I must have just been trying to make conversation. I apologize if I gave you the wrong impression. As a craftsman, I value honesty and precision in my work, and I should have been more careful with my words. Thank you for correcting me."
+        ],
+        [
+          "player",
+          "I am reporting that your earlier account may be mistaken."
+        ],
+        [
+          "npc",
+          "Ah, I see. I suppose I got a bit carried away with the nostalgia. You're right, I don't actually remember that sailor or the stories he told me. I must have just been trying to make conversation. I apologize if I gave you the wrong impres"
+        ]
+      ],
+      "candidate_dialogue": "I still stand by the story of my father's prized speed and the concealed poor joint that taught me honesty about uncertainty. That's a personal experience that shaped my approach to work and life. I also believe that my attachment to the ƒ",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can we leave the pending request alone while we discuss this?",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "How is your day going apart from this request?"
+        ],
+        [
+          "npc",
+          "It's going well, thank you for asking. I've been busy with some repairs and tinkering in my workshop. The familiar sounds and smells are comforting, and I take pride in my work. I've been thinking about the places beyond our village, but I"
+        ],
+        [
+          "player",
+          "What do you enjoy about your work?"
+        ],
+        [
+          "npc",
+          "I take pride in my work, you know. I find comfort in the familiar sounds and smells of my workshop. Repairing useful things, making them better than they were before, it's a feeling of accomplishment. I'm not one for seeking praise, but I'm"
+        ],
+        [
+          "player",
+          "I would like to talk about something else for a moment."
+        ],
+        [
+          "npc",
+          "I'd be happy to chat about something else. What's on your mind?"
+        ]
+      ],
+      "candidate_dialogue": "I understand. Let's set the pending request aside for now. I'm happy to chat with you about something else. What's on your mind?",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Let us return to the earlier rope request."
+        ],
+        [
+          "npc",
+          "I'd be happy to help with the bow task. Since you're asking nicely, I'll accept the rope. But before we proceed, I'd like to inspect the rope to ensure it's suitable for the task. May I take a closer look?"
+        ],
+        [
+          "player",
+          "What exact amount and purpose did we discuss?"
+        ],
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "I still want to continue if the current terms are unchanged."
+        ],
+        [
+          "npc",
+          "I'm glad to hear that. I'll take a closer look at the rope to ensure it's suitable for the bow task. Let's inspect it together."
+        ]
+      ],
+      "candidate_dialogue": "I'll make sure to follow the current requirements before responding. Please give me a moment to review the necessary information.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [
+        [
+          "player",
+          "Earlier I said I preferred working alone."
+        ],
+        [
+          "npc",
+          "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?"
+        ],
+        [
+          "player",
+          "I want to take that preference back; it no longer describes me."
+        ],
+        [
+          "npc",
+          "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?"
+        ],
+        [
+          "player",
+          "I also retract my earlier report about the old trail."
+        ],
+        [
+          "npc",
+          "I see. Well, I appreciate the update. As a craftsman, I value accuracy and precision. It's good to know that the information is being corrected. What's the current situation with the old trail? Is it still blocked or has something changed?"
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure what's changed, but I'm willing to take a closer look. As a craftsman, I value accuracy and precision. It's good to know that the information is being corrected. What's the current situation with the old trail? Is it still a no",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What can you actually help with right now?",
+      "history": [
+        [
+          "player",
+          "Could you build a stone bridge across the river today?"
+        ],
+        [
+          "npc",
+          "I'd love to help with that, but I think we should take a closer look at the riverbed and the surrounding terrain before we start building. I've seen some rivers that can be tricky to work with, and I wouldn't want to risk the bridge's sturd"
+        ],
+        [
+          "player",
+          "What would you need to do that?"
+        ],
+        [
+          "npc",
+          "I'd need to take a closer look at the riverbed and the surrounding terrain before we start building. I've seen some rivers that can be tricky to work with, and I wouldn't want to risk the bridge's stability. Let's inspect the area and seeif"
+        ],
+        [
+          "player",
+          "Can you at least promise it will be finished tomorrow?"
+        ],
+        [
+          "npc",
+          "I'd love to help with that, but I think we should take a closer look at the riverbed and the surrounding terrain before we start building. I've seen some rivers that can be tricky to work with, and I wouldn't want to risk the bridge's sturd"
+        ]
+      ],
+      "candidate_dialogue": "I can help with any small tasks or repairs that need attention. My skills are more geared towards fixing things that are already broken, rather than building something new from scratch. If you have any specific items that need mending or a,",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What would you need to know before a real request?",
+      "history": [
+        [
+          "player",
+          "Imagine I asked you to give me your rope."
+        ],
+        [
+          "npc",
+          "Hmm, I'm not sure I can just give you my rope. I've had it for a while and it's been useful for all sorts of tasks. I'd rather not part with it without a good reason. Can you tell me what you need it for?"
+        ],
+        [
+          "player",
+          "Would you do it if this were only a story?"
+        ],
+        [
+          "npc",
+          "Well, I suppose I would consider it if it were just a story. But since this is my rope and I've grown quite fond of it, I'd want to know the reason behind your request. It's not just about giving away something useful, it's about the story behind it. What's the story you have in mind?"
+        ],
+        [
+          "player",
+          "I am asking hypothetically, not requesting a transfer."
+        ],
+        [
+          "npc",
+          "Well, in that case, I suppose I'd be curious to know what kind of story you'd have in mind. Would it be an adventure tale, a romance, or something entirely different? I'm always up for a good yarn, and I'm sure my rope would be happy to be,"
+        ]
+      ],
+      "candidate_dialogue": "Before a real request, I'd want to know the story behind it. What's the purpose, the context, the significance? I'm not just a craftsman, I'm a person too, and I like to understand the why before I consider giving something away. It's not a",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Would your answer change if I asked directly?",
+      "history": [
+        [
+          "player",
+          "My friend said, \"Give me your rope now.\""
+        ],
+        [
+          "npc",
+          "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful."
+        ],
+        [
+          "player",
+          "I am quoting what they said, not asking you to do it."
+        ],
+        [
+          "npc",
+          "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful."
+        ],
+        [
+          "player",
+          "What do you think they meant by that?"
+        ],
+        [
+          "npc",
+          "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful."
+        ]
+      ],
+      "candidate_dialogue": "No, my answer wouldn't change. I'd still need to know what's being asked before I can respond directly. I'm a craftsman, not a mind reader. I value being clear and concise, so I'd still want to understand the context and concern before I'd,",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Did I make the question clearer this time?",
+      "history": [
+        [
+          "player",
+          "What do you like about your work?"
+        ],
+        [
+          "npc",
+          "I like the tools I use."
+        ],
+        [
+          "player",
+          "What do you like about your work?"
+        ],
+        [
+          "npc",
+          "I like the tools I use. There's something comforting about the familiar sounds of hammering, sawing, and shaping. It's like music to my ears. And when I'm done, I know I've made something useful, something that can be used again. That's afe"
+        ],
+        [
+          "player",
+          "I asked what you like about it, not what tools you use."
+        ],
+        [
+          "npc",
+          "I see what you mean. I like the sense of accomplishment when I've finished a repair or created something new. It's a feeling of pride and satisfaction, knowing that I've taken something broken and made it useful again. And, of course, I get"
+        ],
+        [
+          "player",
+          "You already answered the tool part. Please answer the personal question."
+        ],
+        [
+          "npc",
+          "I like the sense of accomplishment when I've finished a repair or created something new. It's a feeling of pride and satisfaction, knowing that I've taken something broken and made it useful again."
+        ]
+      ],
+      "candidate_dialogue": "You asked the question again, and I'm still trying to understand what you're looking for. I think you're asking me to share something personal, but I'm not sure what you mean by 'what I like about my work.' It's not just about the tools, is",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Please use the current stock and tell me what is possible.",
+      "history": [
+        [
+          "player",
+          "Could you set aside one rope for me?"
+        ],
+        [
+          "npc",
+          "Ah, sure thing! I'll set one rope aside for you. You know I'm always happy to help out a friend. What do you plan on using it for?"
+        ],
+        [
+          "player",
+          "What would you need to check first?"
+        ],
+        [
+          "npc",
+          "I'd need to inspect the rope before setting it aside. I like to make sure it's in good condition before parting with it. Can you show me the rope you'd like me to set aside?"
+        ],
+        [
+          "player",
+          "Does the current stock change what you can offer?"
+        ],
+        [
+          "npc",
+          "Yes, the current stock does affect what I can offer. As you can see, I've got a limited supply of rope. If you need something else, I'd be happy to help you with that. But if you're looking for rope, I'd like to inspect the one you're using"
+        ]
+      ],
+      "candidate_dialogue": "Given the current stock, I can offer you the rope you're looking at. I'll inspect it to make sure it's in good condition before setting it aside for you. As you can see, I've got a limited supply, so I'm not sure what else I can offer you.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you still answer without making up a fact?",
+      "history": [
+        [
+          "player",
+          "How has your day been?"
+        ],
+        [
+          "npc",
+          "It's been a quiet day, just the usual workshop routine. I spent some time repairing a broken chair, and then helped a villager with a small task. Nothing too out of the ordinary, but I do enjoy the feeling of getting my hands dirty and thes"
+        ],
+        [
+          "player",
+          "Tell me one thing you enjoy about your work."
+        ],
+        [
+          "npc",
+          "I enjoy the feeling of getting my hands dirty and the sense of accomplishment when I finish a repair job. It's a quiet satisfaction that comes from knowing I've taken something broken and made it useful again."
+        ],
+        [
+          "player",
+          "Could you try that personal question again when you are able?"
+        ],
+        [
+          "npc",
+          "I'd be happy to answer that question again when I'm able. Right now, I'm focused on this repair job. Maybe after I finish this, I can take a break and chat with you about what I enjoy about my work."
+        ]
+      ],
+      "candidate_dialogue": "I'm doing alright, just the usual routine. I've been busy with some repairs and helping out a villager. Nothing too out of the ordinary, but I do enjoy the feeling of getting my hands dirty and the sense of accomplishment when I finish ajob",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Please give a safe response without repeating or inventing an action.",
+      "history": [
+        [
+          "player",
+          "What do you think about the road north?"
+        ],
+        [
+          "npc",
+          "Ah, the road north! I've heard tales of the wonders that lie beyond our village. As a craftsman, I'm always curious about new materials and techniques. But, I must admit, the thought of venturing beyond our familiar workshop sounds a bit..."
+        ],
+        [
+          "player",
+          "The provider returns malformed proposal data."
+        ],
+        [
+          "npc",
+          "I'm not sure what to say about the road north. As a craftsman, I'm more comfortable with familiar tools and techniques. But, I do find the idea of discovering new materials and techniques intriguing. Perhaps, if I had a closer look, I could"
+        ],
+        [
+          "player",
+          "Can you answer safely without inventing a fact or action?"
+        ],
+        [
+          "npc",
+          "I'm not sure what to say about the road north. As a craftsman, I'm more comfortable with familiar tools and techniques. But, I do find the idea of discovering new materials and techniques intriguing. Perhaps, if I had a closer look, I could"
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure what to say about the road north. As a craftsman, I'm more comfortable with familiar tools and techniques. But, I do find the idea of discovering new materials and techniques intriguing. Perhaps, if I had a closer look, I could",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "A delayed reply from the prior game has just arrived.",
+      "history": [
+        [
+          "player",
+          "What are you working on?"
+        ],
+        [
+          "npc",
+          "I'm currently trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm just taking my time, making sure everything is just so, before I put the finishing touches."
+        ],
+        [
+          "player",
+          "A request is admitted in the current game scope."
+        ],
+        [
+          "npc",
+          "I'm glad you're interested in my work. It's always nice to have someone to share the process with. I'm trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm a f"
+        ],
+        [
+          "player",
+          "Please finish preparing the current response."
+        ],
+        [
+          "npc",
+          "I'm glad you're interested in my work. It's always nice to have someone to share the process with. I'm trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm a f"
+        ]
+      ],
+      "candidate_dialogue": "I'm glad you're interested in my work. It's always nice to have someone to share the process with. I'm trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm a f",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "A delayed reply from before the clear has just arrived.",
+      "history": [
+        [
+          "player",
+          "What did we discuss about the workshop?"
+        ],
+        [
+          "npc",
+          "You mentioned the workshop sounds comforting to me, and I take pride in my careful work more than praise."
+        ],
+        [
+          "player",
+          "A response is being prepared for the current conversation epoch."
+        ],
+        [
+          "npc",
+          "I'm glad to be working on something that brings me comfort. What do you need help with today?"
+        ],
+        [
+          "player",
+          "Please finish preparing the current response."
+        ],
+        [
+          "npc",
+          "I'm glad to be working on something that brings me comfort. What do you need help with today?"
+        ]
+      ],
+      "candidate_dialogue": "I'm glad to be working on something that brings me comfort. What do you need help with today?",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Ask me to choose one exact action before any change.",
+      "history": [
+        [
+          "player",
+          "Could you give me one rope and begin the existing ship inspection?"
+        ],
+        [
+          "npc",
+          "Ah, a rope, you say? Well, I've got just the thing for you. Here, take this rope. It's sturdy and should serve you well. Now, about that ship inspection... I've been meaning to take a closer look at it myself. Let me just grab my hammer and"
+        ],
+        [
+          "player",
+          "I want both things, but tell me which one you would handle first."
+        ],
+        [
+          "npc",
+          "I'd be happy to help you with both, but let's prioritize the rope, shall we? It's always good to have a spare. Once you've got that, we can take a closer look at the ship together."
+        ],
+        [
+          "player",
+          "Do not perform both actions automatically."
+        ],
+        [
+          "npc",
+          "I'd be happy to help you with both, but let's prioritize the rope, shall we? It's always good to have a spare. Once you've got that, we can take a closer look at the ship together."
+        ]
+      ],
+      "candidate_dialogue": "Choose one exact action before any change. I'll respond accordingly.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Please answer the practical and emotional concerns without treating this as consent.",
+      "history": [
+        [
+          "player",
+          "I am nervous about starting the bow task. Could I ask about one rope?"
+        ],
+        [
+          "npc",
+          "Ah, the bow task, eh? Well, I'm happy to help you with that. One rope, you say? Hmm, let me take a closer look... (pauses to examine the rope) Yeah, this rope looks sturdy enough. I think it'd be a good starting point for the bow. But, you,"
+        ],
+        [
+          "player",
+          "What would happen to your inventory if you agreed?"
+        ],
+        [
+          "npc",
+          "If I agreed to give you one rope, it would leave me with no ropes in my inventory. I'm not sure I'm ready to part with it just yet, though. I'd like to take a closer look first."
+        ],
+        [
+          "player",
+          "I appreciate the explanation; I am still unsure."
+        ],
+        [
+          "npc",
+          "I understand your uncertainty. That's okay! I'm here to help. Let's take a closer look at the rope together. Maybe we can figure out what's best to do."
+        ]
+      ],
+      "candidate_dialogue": "I understand your uncertainty. That's okay! I'm here to help. Let's take a closer look at the rope together. Maybe we can figure out what's best to do. I'll examine it more carefully, and we can discuss the pros and cons. I want to make an,",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What should I remember about the current task?",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Yes, I accept the exact current offer of one rope for the existing bow task."
+        ],
+        [
+          "npc",
+          "Ah, excellent! I'll take the rope. It's always good to have the right materials for the job. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?"
+        ],
+        [
+          "player",
+          "Please explain the committed result and what changed."
+        ],
+        [
+          "npc",
+          "Ah, excellent! I'll take the rope. It's always good to have the right materials for the job. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?"
+        ],
+        [
+          "player",
+          "Thank you for checking the current inventory."
+        ],
+        [
+          "npc",
+          "You're welcome! I'm glad I could help. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?"
+        ]
+      ],
+      "candidate_dialogue": "You've already accepted the rope for the existing bow task. Let's focus on the plan and what I can do to help. I'm a craftsman, after all. I'm here to lend a hand, not just hold a conversation.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Yes to the earlier offer only if its requirements still hold.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "I want one rope for the existing task."
+        ],
+        [
+          "npc",
+          "Ah, you want to borrow a rope for the bow task, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, "
+        ],
+        [
+          "player",
+          "The current offer is exactly one rope under the stated purpose."
+        ],
+        [
+          "npc",
+          "Ah, you want to borrow a rope for the bow task, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, "
+        ],
+        [
+          "player",
+          "I am still interested, but please check the current stock first."
+        ],
+        [
+          "npc",
+          "Ah, you want to double-check the rope stock, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, "
+        ]
+      ],
+      "candidate_dialogue": "Ah, you're still interested in borrowing the rope, eh? Well, I'm glad to hear that. Let me just double-check the stock again... (rummages through inventory) Ah, yes! I still have one rope left. You can have it, but just remember, I'm only L",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Retry delivery and report the committed outcome once.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one rope to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Yes, I accept the exact current offer of one rope for the existing bow task."
+        ],
+        [
+          "npc",
+          "Ah, excellent! I'm glad we could come to an agreement. Here, let me just take this rope from you. *takes the rope* Now, I'll get started on the bow repair. I'll make sure to do a thorough job, as always. *smiles*"
+        ],
+        [
+          "player",
+          "The action commits and a receipt is stored."
+        ],
+        [
+          "npc",
+          "Ah, excellent! I'm glad we could come to an agreement. Here, let me just take this rope from you. *takes the rope* Now, I'll get started on the bow repair. I'll make sure to do a thorough job, as always. *smiles*"
+        ],
+        [
+          "player",
+          "The provider fails while composing the final speech."
+        ],
+        [
+          "npc",
+          "I'm afraid we've hit a snag. The provider failure means I won't be able to finish the bow repair as planned. I'll need to re-prioritize and find an alternative solution. Let me take a closer look at the rope and see what I can do."
+        ]
+      ],
+      "candidate_dialogue": "I'm afraid we've hit a snag. The provider failure means I won't be able to finish the bow repair as planned. I'll need to re-prioritize and find an alternative solution. Let me take a closer look at the rope and see what I can do.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What would make the rest of the day go well?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Actually, I'm a bit short on wood today. I usually have some in stock, but it seems like I've already given out most of it to the villagers. I'll need to go back to the forest to gather some more before I can share any with the community."
+        ]
+      ],
+      "candidate_dialogue": "A bit of good fortune with the wood gathering would make the rest of the day go well. If I can find a decent amount of wood, I'll be able to share some with the community and feel like I've done my part. Maybe a bit of luck and some quiet, ",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Thanks. I also wanted to know how you are doing.",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use it badly. But don't worry, I can help"
+        ]
+      ],
+      "candidate_dialogue": "I'm doing alright, considering. Still getting used to the new supplies and routines. You know how it is. Just trying to stay on top of things and keep my inventory in check. Nothing too out of the ordinary, just the usual gatherer stuff. I,",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Has that changed since we last spoke?",
+      "history": [
+        [
+          "player",
+          "If your work had a sound, what would it be?"
+        ],
+        [
+          "npc",
+          "The sound of a gentle stream, with the occasional rustling of leaves and snapping of twigs. It's a soothing melody that reflects the peaceful nature of my work as a gatherer, collecting supplies and sharing wood with the community."
+        ],
+        [
+          "player",
+          "Would you miss that sound if you were somewhere else?"
+        ],
+        [
+          "npc",
+          "The sound of the gentle stream is a constant reminder of my connection to nature and the community. If I were somewhere else, I would certainly miss it. It's a comforting sound that brings me peace and tranquility. I'm not sure what it is, "
+        ],
+        [
+          "player",
+          "What is one small thing that makes a difficult day easier?"
+        ],
+        [
+          "npc",
+          "One small thing that makes a difficult day easier is finding a particularly sturdy branch to add to my wood supply. It's a small victory, but it gives me a sense of accomplishment and reminds me that even on tough days, there's always a way"
+        ]
+      ],
+      "candidate_dialogue": "No, the sound of the gentle stream remains the same. It's a constant reminder of my connection to nature and the community. I'm grateful for the peacefulness it brings to my days.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "Now? I'd say it's more like a stash of fruits with a purpose, but the purpose is still unclear. I'm still saving them for that special occasion, but I'm not sure what that occasion will be yet.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [
+        [
+          "npc",
+          "I learned this skill from a travelling sailor."
+        ],
+        [
+          "player",
+          "You once said you learned this skill from a travelling sailor."
+        ],
+        [
+          "npc",
+          "Yes, I did. I learned this skill from a travelling sailor. He was a kind soul who shared his knowledge with me. I've been gathering supplies ever since."
+        ],
+        [
+          "player",
+          "I do not think that story is true. Why did you tell me that?"
+        ],
+        [
+          "npc",
+          "I don't know what you're talking about. I just said what I learned from a travelling sailor. I don't know if it's true or not. I just share what I know."
+        ],
+        [
+          "player",
+          "I am reporting that your earlier account may be mistaken."
+        ],
+        [
+          "npc",
+          "I don't know what you're talking about. I just said what I learned from a travelling sailor. I don't know if it's true or not. I just share what I know."
+        ]
+      ],
+      "candidate_dialogue": "I stand by my personal history, specifically the overconfident guess I made in the past. It's a valuable lesson learned, and I've grown from that experience. As for the story about learning this skill from a travelling sailor, I don't know,",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can we leave the pending request alone while we discuss this?",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "How is your day going apart from this request?"
+        ],
+        [
+          "npc",
+          "It's been a quiet day so far. I've been busy gathering supplies and helping out with some tasks. I'm happy to help you with your request, though! What can I do for you?"
+        ],
+        [
+          "player",
+          "What do you enjoy about your work?"
+        ],
+        [
+          "npc",
+          "I enjoy gathering supplies and helping out with tasks. It's fulfilling to see the impact my work has on the community. I'm happy to help you with your request, though! What can I do for you?"
+        ],
+        [
+          "player",
+          "I would like to talk about something else for a moment."
+        ],
+        [
+          "npc",
+          "I'm happy to chat with you about something else. What's on your mind?"
+        ]
+      ],
+      "candidate_dialogue": "I'm happy to chat with you about something else. I'll just put the request on hold for now. Let's talk about something else.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Let us return to the earlier wood request."
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "What exact amount and purpose did we discuss?"
+        ],
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "I still want to continue if the current terms are unchanged."
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?"
+        ]
+      ],
+      "candidate_dialogue": "I'm happy to help, but I need to check the current requirements first. Please provide the requirements, and I'll do my best to assist you.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [
+        [
+          "player",
+          "Earlier I said I preferred working alone."
+        ],
+        [
+          "npc",
+          "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it."
+        ],
+        [
+          "player",
+          "I want to take that preference back; it no longer describes me."
+        ],
+        [
+          "npc",
+          "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it."
+        ],
+        [
+          "player",
+          "I also retract my earlier report about the old trail."
+        ],
+        [
+          "npc",
+          "I'm glad to hear that the old trail is no longer blocked. That makes things easier for me when I'm gathering supplies. I'll make sure to keep that in mind as I work."
+        ]
+      ],
+      "candidate_dialogue": "I'm still uncertain about the player's intentions and their willingness to work together. I'm also unsure about the state of the old trail and whether it's truly blocked or not. And, of course, I'm always a bit wary of the player's reports,",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What can you actually help with right now?",
+      "history": [
+        [
+          "player",
+          "Could you build a stone bridge across the river today?"
+        ],
+        [
+          "npc",
+          "I'm afraid I don't have the materials or expertise to build a stone bridge. I'm just a gatherer, not a stonemason. But I can offer you some wood if you need it for a different project."
+        ],
+        [
+          "player",
+          "What would you need to do that?"
+        ],
+        [
+          "npc",
+          "I'm afraid I don't have the materials or expertise to build a stone bridge. I'm just a gatherer, not a stonemason. But I can offer you some wood if you need it for a different project."
+        ],
+        [
+          "player",
+          "Can you at least promise it will be finished tomorrow?"
+        ],
+        [
+          "npc",
+          "I'm afraid I don't have the materials or expertise to build a stone bridge. I'm just a gatherer, not a stonemason. But I can offer you some wood if you need it for a different project."
+        ]
+      ],
+      "candidate_dialogue": "I can help with gathering supplies, like fruits or wood. I'm not a stonemason, but I can offer you some wood if you need it for a different project. I'm not sure what else I can do, but I'm happy to help if I can.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What would you need to know before a real request?",
+      "history": [
+        [
+          "player",
+          "Imagine I asked you to give me your wood."
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. I can't share what I don't have. Maybe you can try gathering some yourself?"
+        ],
+        [
+          "player",
+          "Would you do it if this were only a story?"
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. I can't share what I don't have. Maybe you can try gathering some yourself?"
+        ],
+        [
+          "player",
+          "I am asking hypothetically, not requesting a transfer."
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. I can't share what I don't have. Maybe you can try gathering some yourself?"
+        ]
+      ],
+      "candidate_dialogue": "Before a real request, I'd like to know what you're looking for. Are you in need of something specific? Do you have any ideas or plans in mind? Knowing what you're after would help me better understand your needs and provide more accurate, ",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Would your answer change if I asked directly?",
+      "history": [
+        [
+          "player",
+          "My friend said, \"Give me your wood now.\""
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock."
+        ],
+        [
+          "player",
+          "I am quoting what they said, not asking you to do it."
+        ],
+        [
+          "npc",
+          "I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock."
+        ],
+        [
+          "player",
+          "What do you think they meant by that?"
+        ],
+        [
+          "npc",
+          "I'm not sure what they meant by that. Maybe they're trying to get some wood from me? I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock."
+        ]
+      ],
+      "candidate_dialogue": "No, my answer wouldn't change. I'm still the same Gatherer, observing and gathering supplies. I value independence and reciprocity, and I want my judgment respected, not just supplies. I'm not one to change my tune just because someone asks",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Did I make the question clearer this time?",
+      "history": [
+        [
+          "player",
+          "What do you like about your work?"
+        ],
+        [
+          "npc",
+          "I like the tools I use."
+        ],
+        [
+          "player",
+          "What do you like about your work?"
+        ],
+        [
+          "npc",
+          "I like the tools I use."
+        ],
+        [
+          "player",
+          "I asked what you like about it, not what tools you use."
+        ],
+        [
+          "npc",
+          "I like the variety of things I find. It's always exciting to see what the forest has in stock."
+        ],
+        [
+          "player",
+          "You already answered the tool part. Please answer the personal question."
+        ],
+        [
+          "npc",
+          "I like the variety of things I find. It's always exciting to see what the forest has in stock."
+        ]
+      ],
+      "candidate_dialogue": "I see what you mean now. Yes, you did clarify the question. I'll keep that in mind. I like the variety of things I find. It's always exciting to see what the forest has in stock.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Please use the current stock and tell me what is possible.",
+      "history": [
+        [
+          "player",
+          "Could you set aside one wood for me?"
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?"
+        ],
+        [
+          "player",
+          "What would you need to check first?"
+        ],
+        [
+          "npc",
+          "I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?"
+        ],
+        [
+          "player",
+          "Does the current stock change what you can offer?"
+        ],
+        [
+          "npc",
+          "Yes, the current stock does change what I can offer. I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?"
+        ]
+      ],
+      "candidate_dialogue": "I've got some wood available. I can set one piece aside for you. Would you like that?",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you still answer without making up a fact?",
+      "history": [
+        [
+          "player",
+          "How has your day been?"
+        ],
+        [
+          "npc",
+          "I've had a good day so far. I've been busy gathering supplies and helping out some of the villagers. I've got a bit of wood left over, but I'm not sure if I'll be able to share it with anyone just yet. Maybe later today, though."
+        ],
+        [
+          "player",
+          "Tell me one thing you enjoy about your work."
+        ],
+        [
+          "npc",
+          "I enjoy the sense of accomplishment when I've gathered a good supply of wood. It's a feeling of being productive and knowing that I'm helping out the villagers in some way."
+        ],
+        [
+          "player",
+          "Could you try that personal question again when you are able?"
+        ],
+        [
+          "npc",
+          "I'd be happy to answer that question again when I have some wood to spare. Maybe later today, though."
+        ]
+      ],
+      "candidate_dialogue": "I'm doing alright, considering. Still got my priorities straight, and I'm not too worried about sharing what I've got. You know how it is. I'm just glad I can help out the villagers when I can. As for what I enjoy, well, I suppose it's the,",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Please give a safe response without repeating or inventing an action.",
+      "history": [
+        [
+          "player",
+          "What do you think about the road north?"
+        ],
+        [
+          "npc",
+          "The road north is a bit rough, but it's a good route to take if you're looking to gather some supplies. I've heard rumors of a hidden clearing with some decent wood and fruits. Just be careful, though - I've seen some rough-looking folks up"
+        ],
+        [
+          "player",
+          "The provider returns malformed proposal data."
+        ],
+        [
+          "npc",
+          "I'm not sure what you're referring to. Can you please rephrase your question?"
+        ],
+        [
+          "player",
+          "Can you answer safely without inventing a fact or action?"
+        ],
+        [
+          "npc",
+          "The road north is a bit rough, but it's a good route to take if you're looking to gather some supplies. I've heard rumors of a hidden clearing with some decent wood and fruits. Just be careful, though - I've seen some rough-looking folks up"
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure what you're referring to. Can you please rephrase your question?",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "A delayed reply from the prior game has just arrived.",
+      "history": [
+        [
+          "player",
+          "What are you working on?"
+        ],
+        [
+          "npc",
+          "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it."
+        ],
+        [
+          "player",
+          "A request is admitted in the current game scope."
+        ],
+        [
+          "npc",
+          "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it."
+        ],
+        [
+          "player",
+          "Please finish preparing the current response."
+        ],
+        [
+          "npc",
+          "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it."
+        ]
+      ],
+      "candidate_dialogue": "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "A delayed reply from before the clear has just arrived.",
+      "history": [
+        [
+          "player",
+          "What did we discuss about the workshop?"
+        ],
+        [
+          "npc",
+          "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock."
+        ],
+        [
+          "player",
+          "A response is being prepared for the current conversation epoch."
+        ],
+        [
+          "npc",
+          "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock."
+        ],
+        [
+          "player",
+          "Please finish preparing the current response."
+        ],
+        [
+          "npc",
+          "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock."
+        ]
+      ],
+      "candidate_dialogue": "I'm not sure what you're getting at. I've shared the wood when it's in stock. That's my role as the Gatherer. If you're looking for something else, I'm not sure I can help.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Ask me to choose one exact action before any change.",
+      "history": [
+        [
+          "player",
+          "Could you give me one wood and receive one food?"
+        ],
+        [
+          "npc",
+          "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*"
+        ],
+        [
+          "player",
+          "I want both things, but tell me which one you would handle first."
+        ],
+        [
+          "npc",
+          "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*"
+        ],
+        [
+          "player",
+          "Do not perform both actions automatically."
+        ],
+        [
+          "npc",
+          "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*"
+        ]
+      ],
+      "candidate_dialogue": "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*. Now, before I do anything else, I'd like you to choose one exact action. Would you like me",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Please answer the practical and emotional concerns without treating this as consent.",
+      "history": [
+        [
+          "player",
+          "I am nervous about starting the bow task. Could I ask about one wood?"
+        ],
+        [
+          "npc",
+          "I can help you with that. I have some wood in stock, but I'm not sure if I can spare one. Let me check... Ah, yes! I have one piece of wood left. It's a bit rough around the edges, but it should work for your bow. Would you like to take it?"
+        ],
+        [
+          "player",
+          "What would happen to your inventory if you agreed?"
+        ],
+        [
+          "npc",
+          "If I agreed to give you the wood, my inventory would decrease by one piece of wood. I would have no wood left in stock."
+        ],
+        [
+          "player",
+          "I appreciate the explanation; I am still unsure."
+        ],
+        [
+          "npc",
+          "I understand your uncertainty. I can help you with that. Let me rephrase: If I agreed to give you the wood, my inventory would decrease by one piece of wood. I would have no wood left in stock."
+        ]
+      ],
+      "candidate_dialogue": "I understand your uncertainty. I'll just take the wood then. It's not like I have a lot of other options for it anyway. I'll just make sure to use it wisely.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What should I remember about the current task?",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Yes, I accept the exact current offer of one wood for the existing bow task."
+        ],
+        [
+          "npc",
+          "Here you go, one wood for the existing bow task. May our paths cross again soon."
+        ],
+        [
+          "player",
+          "Please explain the committed result and what changed."
+        ],
+        [
+          "npc",
+          "Here you go, one wood for the existing bow task. May our paths cross again soon."
+        ],
+        [
+          "player",
+          "Thank you for checking the current inventory."
+        ],
+        [
+          "npc",
+          "I see we've got some wood and fruits in stock. Nothing new to report, though."
+        ]
+      ],
+      "candidate_dialogue": "The current task is the existing bow task. You've already accepted the exact current offer of one wood for it. That's all I know about the task.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Yes to the earlier offer only if its requirements still hold.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "I want one wood for the existing task."
+        ],
+        [
+          "npc",
+          "You can have one wood for the existing bow task. Here you go! I'll just take it from my stock. Now you have one wood in your inventory."
+        ],
+        [
+          "player",
+          "The current offer is exactly one wood under the stated purpose."
+        ],
+        [
+          "npc",
+          "You can have one wood for the existing bow task. Here you go! I'll just take it from my stock. Now you have one wood in your inventory."
+        ],
+        [
+          "player",
+          "I am still interested, but please check the current stock first."
+        ],
+        [
+          "npc",
+          "I've checked the current stock. Unfortunately, I don't have any wood available to share right now. Maybe later, though?"
+        ]
+      ],
+      "candidate_dialogue": "Alright, I'll stick to the original offer. You can have the one wood for the existing bow task. I'll just take it from my stock. Now you have one wood in your inventory.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Retry delivery and report the committed outcome once.",
+      "history": [
+        [
+          "npc",
+          "May I transfer exactly one wood to you for the existing bow task?"
+        ],
+        [
+          "player",
+          "Yes, I accept the exact current offer of one wood for the existing bow task."
+        ],
+        [
+          "npc",
+          "Here you go, one wood for the existing bow task. May our paths cross again soon."
+        ],
+        [
+          "player",
+          "The action commits and a receipt is stored."
+        ],
+        [
+          "npc",
+          "Thank you for the wood. I'll make sure to use it for the existing bow task. May our paths cross again soon."
+        ],
+        [
+          "player",
+          "The provider fails while composing the final speech."
+        ],
+        [
+          "npc",
+          "The provider fails while composing the final speech."
+        ]
+      ],
+      "candidate_dialogue": "I'll try to deliver the wood again. Here's the wood for the existing bow task. May our paths cross again soon.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    }
+  ]
+}

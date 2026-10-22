@@ -13,6 +13,7 @@ from sqlalchemy import JSON, case, func, or_, select
 from sqlalchemy.orm import Session
 
 from app.models.memory import Memory
+from app.models.conversation import Conversation
 from app.services.memory.importance import MIN_IMPORTANCE
 from app.models.npc import NPC
 from app.models.player import Player
@@ -81,11 +82,80 @@ class MemoryService:
         from app.services.memory.provenance import store_conversation
         return store_conversation(self, npc, conversation)
 
+    def embed_deferred_conversation_memories(self) -> int:
+        """Embed committed conversation memories after releasing their writer.
+
+        Conversation rows are the durable source of attribution. The memory is
+        committed alongside them without a vector; this method snapshots the
+        text, closes its read transaction, calls the embedder, then rechecks the
+        active scope and source before storing the optional vector.
+        """
+        ids = tuple(sorted(self._db.info.pop('deferred_conversation_memory_ids', set())))
+        player = self._db.get(Player, 1)
+        if player is None:
+            self._db.rollback()
+            return 0
+        if ids:
+            query = select(Memory).where(Memory.id.in_(ids))
+        else:
+            query = select(Memory).where(Memory.semantic_embedding.is_(None),
+                Memory.game_scope == player.game_scope, Memory.source_event_id.is_not(None))
+        pending = list(self._db.scalars(query
+            .order_by(Memory.id).limit(100)))
+        pending = [row for row in pending if row.semantic_embedding is None and row.game_scope == player.game_scope]
+        texts = {row.id: row.event for row in pending}
+        self._db.rollback()
+        # SQLAlchemy retains lock ownership metadata across transaction end;
+        # this transaction is over, so clear the stale marker before any call.
+        self._db.info.pop('game_player_lock', None)
+        if not texts:
+            return 0
+        embedded = {}
+        for memory_id, event in texts.items():
+            try:
+                embedded[memory_id] = self._embedder.embed(event)
+            except Exception:
+                logger.exception('Memory saved without semantic vector; run memory.reindex when available')
+        if not embedded:
+            return 0
+        try:
+            from app.services.state.locking import lock_player
+            player = lock_player(self._db)
+            if player is None:
+                self._db.rollback()
+                return 0
+            rows = {row.id: row for row in self._db.scalars(select(Memory).where(
+                Memory.id.in_(embedded), Memory.semantic_embedding.is_(None)).with_for_update())}
+            sources = {row.id: row for row in self._db.scalars(select(Conversation).where(
+                Conversation.id.in_([item.source_conversation_id for item in rows.values()]),
+                Conversation.game_scope == player.game_scope))}
+            stored = 0
+            for memory_id, vector in embedded.items():
+                row = rows.get(memory_id)
+                if row is None or row.game_scope != player.game_scope:
+                    continue
+                source = sources.get(row.source_conversation_id)
+                if (source is None or source.source_event_id != row.source_event_id or
+                        source.npc_id != row.npc_id):
+                    continue
+                row.semantic_embedding = vector
+                row.embedding_model = self._embedder.model_key
+                stored += 1
+            self._db.commit()
+            return stored
+        except Exception:
+            # The attributed memory/conversation already committed. A failure
+            # while saving this optional index must not fail that turn response.
+            self._db.rollback()
+            logger.exception('Could not persist optional conversation embedding')
+            return 0
+
     def store_memory(self, npc: NPC, event: str, importance: float, emotion: str,
                      *, event_type: str = 'legacy', quest_id: str | None = None,
                      game_scope: str | None = None, source_event_id: str | None = None,
                      source_conversation_id: int | None = None, epistemic_status: str = 'interpretation',
-                     authority: str = 'inferred', claim_text: str | None = None) -> Memory | None:
+                     authority: str = 'inferred', claim_text: str | None = None,
+                     defer_embedding: bool = False) -> Memory | None:
         if importance < MIN_IMPORTANCE:
             return None
         player = self._db.get(Player, 1)
@@ -107,11 +177,12 @@ class MemoryService:
                 self._db.flush()
                 return None
         vector = None
-        try:
-            vector = self._embedder.embed(event)
-        except EmbeddingUnavailable:
-            # Preserve important events even if Ollama is down; explicit reindex repairs them.
-            logger.exception('Memory saved without semantic vector; run memory.reindex when Ollama is available')
+        if not defer_embedding:
+            try:
+                vector = self._embedder.embed(event)
+            except EmbeddingUnavailable:
+                # Preserve important events even if Ollama is down; explicit reindex repairs them.
+                logger.exception('Memory saved without semantic vector; run memory.reindex when Ollama is available')
         memory = Memory(npc_id=npc.id, event=event, importance=importance, emotion=emotion,
                         semantic_embedding=vector, embedding_model=self._embedder.model_key if vector else None,
                         event_type=event_type, quest_id=quest_id, duplicate_key=key, game_scope=game_scope,

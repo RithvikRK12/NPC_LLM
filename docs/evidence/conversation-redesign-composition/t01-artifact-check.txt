@@ -1,0 +1,4 @@
+backend/app/services/conversation/composition.py: trailing whitespace and final newline OK
+backend/tests/test_conversation_composition.py: trailing whitespace and final newline OK
+backend/tests/fixtures/conversation/composition-t01-golden.json: trailing whitespace and final newline OK
+docs/evidence/conversation-redesign-composition/t01-handoff.md: trailing whitespace and final newline OK

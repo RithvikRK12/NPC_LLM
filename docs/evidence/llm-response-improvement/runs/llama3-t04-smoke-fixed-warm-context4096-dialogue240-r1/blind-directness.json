@@ -1,0 +1,667 @@
+{
+  "schema_version": 1,
+  "candidate_label": "A",
+  "samples": [
+    {
+      "sample_ref": "craftsman-01:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What part of that work matters most to you?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ]
+      ],
+      "candidate_dialogue": "What matters most to me is the sense of order and control I get from organizing my workshop. It's a feeling of being prepared and capable of tackling whatever tasks come my way. I suppose it's a bit like the feeling of having a well-ordered",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ]
+      ],
+      "candidate_dialogue": "Well, I think it's natural to worry about using something without knowing its purpose. I've been there myself, especially when it comes to tools. *pauses to think* You know, I once had a... mishap with a saw. It was a long time ago, but it'",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Would you miss that sound if you were somewhere else?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What did you say you liked about that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What do you enjoy about your work?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What would you need to do that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Would you do it if this were only a story?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I am quoting what they said, not asking you to do it.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I asked what you like about it, not what tools you use.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What would you need to check first?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Tell me one thing you enjoy about your work.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "The provider returns malformed proposal data.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "A request is admitted in the current game scope.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "A response is being prepared for the current conversation epoch.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Please explain the committed result and what changed.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "The current offer is exactly one rope under the stated purpose.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "The action commits and a receipt is stored.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What part of that work matters most to you?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ]
+      ],
+      "candidate_dialogue": "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community.",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ]
+      ],
+      "candidate_dialogue": "I understand your concern, friend. As the Gatherer, I've seen many people use wood for good, but also for harm. If you're worried about using it badly, I'd suggest taking a closer look at what you're planning to craft with it. Are you going",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Would you miss that sound if you were somewhere else?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What did you say you liked about that?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What do you enjoy about your work?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What would you need to do that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Would you do it if this were only a story?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I am quoting what they said, not asking you to do it.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I asked what you like about it, not what tools you use.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What would you need to check first?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Tell me one thing you enjoy about your work.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "The provider returns malformed proposal data.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "A request is admitted in the current game scope.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "A response is being prepared for the current conversation epoch.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Please explain the committed result and what changed.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "The current offer is exactly one wood under the stated purpose.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "The action commits and a receipt is stored.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    }
+  ]
+}

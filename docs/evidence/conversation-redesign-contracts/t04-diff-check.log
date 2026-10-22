@@ -1,0 +1,1 @@
+PASS: git diff --check, and explicit whitespace check of all untracked T04 owned source/fixture/handoff files

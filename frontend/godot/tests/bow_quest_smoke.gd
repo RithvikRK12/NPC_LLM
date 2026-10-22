@@ -4,7 +4,7 @@ extends SceneTree
 func _initialize() -> void: call_deferred("run_check")
 
 func wait_for(condition: Callable) -> bool:
-	var deadline := Time.get_ticks_msec() + 20000
+	var deadline := Time.get_ticks_msec() + 150000 # Three bounded provider stages, including a cold load.
 	while not condition.call():
 		await process_frame
 		if Time.get_ticks_msec() > deadline:
@@ -33,7 +33,7 @@ func run_check() -> void:
 	scene.quest_panel.show()
 	scene.quest_panel.start_button.pressed.emit()
 	if not await wait_for(func(): return not scene.quest_busy): return
-	scene.player.position = Vector2(10064, 10032)
+	scene.player.position = scene.npc_nodes[1].position + Vector2(0,48)
 	scene._update_current_npc()
 	scene._open_dialogue()
 	var craftsman = scene.chat_windows[1]
@@ -72,13 +72,19 @@ func run_check() -> void:
 	scene._unhandled_input(pickup)
 	if not await wait_for(func(): return not scene.quest_busy): return
 	if not check(scene.player_items.has("wood") and scene.player_items.has("string") and not scene.string_pickup.visible, "Materials must be real inventory items"): return
-	scene.player.position = Vector2(10064, 10032)
+	scene.player.position = scene.npc_nodes[1].position + Vector2(0,48)
 	scene._update_current_npc()
+	var last_material_at := Time.get_ticks_msec()
 	for item in ["wood", "string"]:
+		scene.player.position = scene.npc_nodes[1].position + Vector2(0,48)
+		scene._update_current_npc()
+		if item == "string": last_material_at = Time.get_ticks_msec()
 		scene.player_grid.select_item(item)
 		scene._give_selected_item()
 		if not await wait_for(func(): return not craftsman.pending): return
-	if not check(scene.bow_state.phase == "crafting" and not scene.player_items.has("bow"), "Bow must not be granted instantly"): return
+	var still_crafting: bool = scene.bow_state.phase == "crafting" and not scene.player_items.has("bow")
+	var completed_after_delay: bool = scene.bow_state.phase == "completed" and Time.get_ticks_msec() - last_material_at >= 5000
+	if not check(still_crafting or completed_after_delay, "Bow requires a real crafting delay even when speech finishes later"): return
 	if not await wait_for(func(): return scene.quest_panel.progress.value > 10): return
 	if DisplayServer.get_name() != "headless":
 		await RenderingServer.frame_post_draw
@@ -91,4 +97,6 @@ func run_check() -> void:
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png("/tmp/npc-bow-completed.png")
 	print("PASS: free roam → quest → material dialogue → confirmed wood → F pickup → gifts → timed progress → one bow")
+	scene.queue_free()
+	await process_frame
 	quit()

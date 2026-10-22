@@ -1,0 +1,12 @@
+test_explicit_legacy_id_map_only_assigns_stated_conversation_identity (backend.tests.test_conversation_persistence_schema.ConversationPersistenceSchemaTests.test_explicit_legacy_id_map_only_assigns_stated_conversation_identity) ... ok
+test_fresh_schema_has_scoped_records_and_uniqueness (backend.tests.test_conversation_persistence_schema.ConversationPersistenceSchemaTests.test_fresh_schema_has_scoped_records_and_uniqueness) ... ok
+test_populated_migration_preserves_unknown_provenance_and_adds_nullable_linkage (backend.tests.test_conversation_persistence_schema.ConversationPersistenceSchemaTests.test_populated_migration_preserves_unknown_provenance_and_adds_nullable_linkage) ... ok
+test_t06_additive_contract_memory_revisions_and_summary_dirty_state (backend.tests.test_conversation_persistence_schema.ConversationPersistenceSchemaTests.test_t06_additive_contract_memory_revisions_and_summary_dirty_state) ... ok
+test_t06_populated_upgrade_preserves_existing_stream_and_summary (backend.tests.test_conversation_persistence_schema.ConversationPersistenceSchemaTests.test_t06_populated_upgrade_preserves_existing_stream_and_summary) ... ok
+test_transcript_deletion_does_not_cascade_into_canon_or_operation_receipt (backend.tests.test_conversation_persistence_schema.ConversationPersistenceSchemaTests.test_transcript_deletion_does_not_cascade_into_canon_or_operation_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.357s
+
+OK
+PostgreSQL version: 16.15 (Debian 16.15-1.pgdg12+2); disposable database prefix: npc_test_t01_

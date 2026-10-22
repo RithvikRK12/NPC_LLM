@@ -3,7 +3,7 @@
   "greeting": [64,32],
   "interior_exit": [0,176],
   "interior_arrival": [48,128],
-  "InspectionArrival": [0,3504],
+  "InspectionArrival": [0,3696],
   "arrival_radius": 176,
   "InspectionPlayerMark": [-32,3632],
   "InspectionCraftsmanMark": [32,3632],

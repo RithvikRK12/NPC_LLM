@@ -1,0 +1,49 @@
+ERROR: Failed to open 'user://logs/godot2026-10-18T17.59.18.log'.
+   at: copy (core/io/dir_access.cpp:429)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: revisioned_state_smoke: FAIL different NPC old chat cannot rewind shared inventory
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:71)
+       [1] run (res://tests/revisioned_state_smoke.gd:20)
+ERROR: revisioned_state_smoke: FAIL old chat cannot rewind quest
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:71)
+       [1] run (res://tests/revisioned_state_smoke.gd:21)
+ERROR: revisioned_state_smoke: FAIL old chat cannot rewind verified activity
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:71)
+       [1] run (res://tests/revisioned_state_smoke.gd:22)
+ERROR: revisioned_state_smoke: FAIL accepted chat snapshot updates NPC supply UI centrally
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:71)
+       [1] run (res://tests/revisioned_state_smoke.gd:23)
+ERROR: revisioned_state_smoke: FAIL late quest response shares the chat revision gate
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:71)
+       [1] run (res://tests/revisioned_state_smoke.gd:25)
+ERROR: revisioned_state_smoke: FAIL narrative alone changes no inventory or movement
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:71)
+       [1] run (res://tests/revisioned_state_smoke.gd:29)
+ERROR: revisioned_state_smoke: FAIL foreign scope cannot advance the current resource labels
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:71)
+       [1] run (res://tests/revisioned_state_smoke.gd:33)
+ERROR: revisioned_state_smoke: FAIL duplicate verified encounter identity cannot start an animation twice
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:71)
+       [1] run (res://tests/revisioned_state_smoke.gd:46)
+revisioned_state_smoke: 2 passed, 8 failed

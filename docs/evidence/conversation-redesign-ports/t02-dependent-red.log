@@ -1,0 +1,245 @@
+FFFFFFFFFFFFFFFFFFFFFFF.FFFFFFF.
+======================================================================
+FAIL: test_canon_creation_collision_rolls_back_all_publication (test_conversation_store_ports.FakeWriteRepositoryTests.test_canon_creation_collision_rolls_back_all_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_claim_next_only_oldest_and_independent_npc_streams (test_conversation_store_ports.FakeWriteRepositoryTests.test_claim_next_only_oldest_and_independent_npc_streams)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_clear_deletes_publication_and_preserves_canon_and_receipt (test_conversation_store_ports.FakeWriteRepositoryTests.test_clear_deletes_publication_and_preserves_canon_and_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_clear_tombstone_replays_identity_without_erased_payload (test_conversation_store_ports.FakeWriteRepositoryTests.test_clear_tombstone_replays_identity_without_erased_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_cleared_turn_cannot_execute_or_recover_in_new_epoch (test_conversation_store_ports.FakeWriteRepositoryTests.test_cleared_turn_cannot_execute_or_recover_in_new_epoch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_committed_receipt_survives_clear_but_old_execution_is_invalidated (test_conversation_store_ports.FakeWriteRepositoryTests.test_committed_receipt_survives_clear_but_old_execution_is_invalidated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_existing_receipt_is_recovered_without_a_second_effect (test_conversation_store_ports.FakeWriteRepositoryTests.test_existing_receipt_is_recovered_without_a_second_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_expired_claim_increments_fence_without_skipping_pending_turn (test_conversation_store_ports.FakeWriteRepositoryTests.test_expired_claim_increments_fence_without_skipping_pending_turn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_fake_claim_control_models_oldest_turn_and_independent_npcs (test_conversation_store_ports.FakeWriteRepositoryTests.test_fake_claim_control_models_oldest_turn_and_independent_npcs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_fake_structurally_conforms_to_available_protocols (test_conversation_store_ports.FakeWriteRepositoryTests.test_fake_structurally_conforms_to_available_protocols)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_final_retry_is_exact_and_releases_next_turn (test_conversation_store_ports.FakeWriteRepositoryTests.test_final_retry_is_exact_and_releases_next_turn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_finalization_failure_rolls_back_transcript_continuity_and_status (test_conversation_store_ports.FakeWriteRepositoryTests.test_finalization_failure_rolls_back_transcript_continuity_and_status)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_lookup_is_scoped_and_does_not_admit_or_execute (test_conversation_store_ports.FakeWriteRepositoryTests.test_lookup_is_scoped_and_does_not_admit_or_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_new_game_replaces_scope_and_prevents_old_recovery_and_writes (test_conversation_store_ports.FakeWriteRepositoryTests.test_new_game_replaces_scope_and_prevents_old_recovery_and_writes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_operation_committed_interaction_cannot_be_overwritten (test_conversation_store_ports.FakeWriteRepositoryTests.test_operation_committed_interaction_cannot_be_overwritten)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_pending_scan_is_scoped_durable_and_read_only (test_conversation_store_ports.FakeWriteRepositoryTests.test_pending_scan_is_scoped_durable_and_read_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_publication_rejects_replaced_fence_and_relevant_revision_change (test_conversation_store_ports.FakeWriteRepositoryTests.test_publication_rejects_replaced_fence_and_relevant_revision_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_receipt_failure_rolls_back_effect_and_phase (test_conversation_store_ports.FakeWriteRepositoryTests.test_receipt_failure_rolls_back_effect_and_phase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_receipt_lookup_is_exact_scoped_and_does_not_execute (test_conversation_store_ports.FakeWriteRepositoryTests.test_receipt_lookup_is_exact_scoped_and_does_not_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_replaced_fence_cannot_execute (test_conversation_store_ports.FakeWriteRepositoryTests.test_replaced_fence_cannot_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_same_id_replays_and_different_payload_conflicts (test_conversation_store_ports.FakeWriteRepositoryTests.test_same_id_replays_and_different_payload_conflicts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_summary_cas_and_source_revisions_survive_restart (test_conversation_store_ports.FakeWriteRepositoryTests.test_summary_cas_and_source_revisions_survive_restart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_summary_publication_after_clear_is_rejected_and_old_summary_removed (test_conversation_store_ports.FakeWriteRepositoryTests.test_summary_publication_after_clear_is_rejected_and_old_summary_removed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 76, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake claim_next is absent
+
+======================================================================
+FAIL: test_remaining_protocols_expose_frozen_envelopes (test_conversation_store_ports.FrozenWriteProtocolTests.test_remaining_protocols_expose_frozen_envelopes) (interface='TurnStore', method='claim_next')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 48, in test_remaining_protocols_expose_frozen_envelopes
+    self.assertTrue(hasattr(getattr(p, interface), method), f'T02 {method} is absent')
+AssertionError: False is not true : T02 claim_next is absent
+
+======================================================================
+FAIL: test_remaining_protocols_expose_frozen_envelopes (test_conversation_store_ports.FrozenWriteProtocolTests.test_remaining_protocols_expose_frozen_envelopes) (interface='TurnStore', method='recover')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 48, in test_remaining_protocols_expose_frozen_envelopes
+    self.assertTrue(hasattr(getattr(p, interface), method), f'T02 {method} is absent')
+AssertionError: False is not true : T02 recover is absent
+
+======================================================================
+FAIL: test_remaining_protocols_expose_frozen_envelopes (test_conversation_store_ports.FrozenWriteProtocolTests.test_remaining_protocols_expose_frozen_envelopes) (interface='OperationGateway', method='lookup_receipt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 48, in test_remaining_protocols_expose_frozen_envelopes
+    self.assertTrue(hasattr(getattr(p, interface), method), f'T02 {method} is absent')
+AssertionError: False is not true : T02 lookup_receipt is absent
+
+======================================================================
+FAIL: test_remaining_protocols_expose_frozen_envelopes (test_conversation_store_ports.FrozenWriteProtocolTests.test_remaining_protocols_expose_frozen_envelopes) (interface='FinalizationStore', method='commit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 47, in test_remaining_protocols_expose_frozen_envelopes
+    self.assertTrue(hasattr(p, interface), f'T02 {interface} is absent')
+AssertionError: False is not true : T02 FinalizationStore is absent
+
+======================================================================
+FAIL: test_remaining_protocols_expose_frozen_envelopes (test_conversation_store_ports.FrozenWriteProtocolTests.test_remaining_protocols_expose_frozen_envelopes) (interface='LifecycleStore', method='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 47, in test_remaining_protocols_expose_frozen_envelopes
+    self.assertTrue(hasattr(p, interface), f'T02 {interface} is absent')
+AssertionError: False is not true : T02 LifecycleStore is absent
+
+======================================================================
+FAIL: test_remaining_protocols_expose_frozen_envelopes (test_conversation_store_ports.FrozenWriteProtocolTests.test_remaining_protocols_expose_frozen_envelopes) (interface='LifecycleStore', method='new_game')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 47, in test_remaining_protocols_expose_frozen_envelopes
+    self.assertTrue(hasattr(p, interface), f'T02 {interface} is absent')
+AssertionError: False is not true : T02 LifecycleStore is absent
+
+======================================================================
+FAIL: test_remaining_protocols_expose_frozen_envelopes (test_conversation_store_ports.FrozenWriteProtocolTests.test_remaining_protocols_expose_frozen_envelopes) (interface='SummaryStore', method='publish')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 47, in test_remaining_protocols_expose_frozen_envelopes
+    self.assertTrue(hasattr(p, interface), f'T02 {interface} is absent')
+AssertionError: False is not true : T02 SummaryStore is absent
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.002s
+
+FAILED (failures=30)

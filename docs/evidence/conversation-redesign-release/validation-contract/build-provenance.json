@@ -1,0 +1,16 @@
+{
+  "prompt_version": "conversation-prompt-v8",
+  "speech_wire_version": 1,
+  "public_contract_version": 2,
+  "model": "llama3:willowbrook",
+  "source_sha256": {
+    "backend/app/services/llm/structured.py": "107711f64ee3d7296b5d0b7336e4e8aef419a0b810f4e15a9b4407db88745aa1",
+    "backend/app/services/llm/speech_contract.py": "1b4c52e2a7fd6089cf9f8c38c8ac6dd87b5af681f9d0ee6de9e945d2fe80da3c",
+    "backend/app/services/prompts/builder.py": "2c448efd4439095eae4893cebaaf7ef26a13599abb12ed5e92f9b9cf3b264b1b",
+    "backend/app/services/prompts/knowledge.py": "716815db87e1e2d7e54aa7c7ca89177e45f90de10bfd7896d8834195a8c97870",
+    "backend/app/services/conversation/composition.py": "6804ca02166e3093b1d55d64b399dc29e9ec9be7609441897534dfab4cc6a6d6",
+    "backend/app/services/conversation/generation_errors.py": "389bb0dec595008b6be19092540b79246ad2d56eb3b8b4fb054d21b36b4129ec",
+    "backend/app/services/conversation/proposal.py": "4438f5f30f81c230176efb9dd6fc4333d98d811eb87378eebd0c4e6e24b4ab59",
+    "config/playtest.env": "2f2c2113c6f06d8cec8f88af838a25f59fc8c4504b921f6bd24e6250f6b14d96"
+  }
+}

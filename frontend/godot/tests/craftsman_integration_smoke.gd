@@ -1,6 +1,8 @@
 extends SceneTree
 var scene
 var failures := 0
+var acceptance_message := "yes"
+var check_post_inspection := false
 var evidence := "/tmp/craftsman-evidence"
 var lifecycle := OS.get_environment("CRAFTSMAN_RECOVERY_RUN")=="1"
 func _initialize() -> void: call_deferred("run")
@@ -8,7 +10,7 @@ func check(ok: bool, message: String) -> bool:
 	print("PASS " if ok else "FAIL ",message)
 	if not ok: failures+=1
 	return ok
-func wait_for(condition: Callable, seconds: float=20) -> bool:
+func wait_for(condition: Callable, seconds: float=150) -> bool:
 	var deadline := Time.get_ticks_msec()+int(seconds*1000)
 	while not condition.call():
 		await process_frame
@@ -24,6 +26,9 @@ func say(message: String) -> bool:
 	var chat=scene.chat_windows[1]
 	chat.open_chat(); chat.message_input.text=message; chat.submit()
 	if not await wait_for(func(): return not chat.pending): return false
+	if message==acceptance_message:
+		check(not chat.visible,"Accepted inspection automatically closes chat")
+		check(scene.craftsman_objective.objective.visible,"Accepted inspection shows boat guidance")
 	print("Talked: ",message)
 	chat.close_chat(); return true
 func walk(target: Vector2) -> bool:
@@ -77,8 +82,8 @@ func run() -> void:
 	if not await say("Do you enjoy working here?"): return
 	if not await say("The storm broke my ship."): return
 	check(not scene.craftsman_activity.outing_active,"Report alone waits for agreement")
-	if not await say("Could you help me fix it?"): return
-	check(scene.craftsman_activity.outing_active,"Contextual help request accepts outing")
+	if not await say(acceptance_message): return
+	check(scene.craftsman_activity.outing_active,"Inspection acceptance starts outing")
 	if not await say("Wait here"): return
 	var stopped: Vector2=scene.npc_nodes[1].position
 	for i in range(20): await physics_frame
@@ -128,6 +133,14 @@ func run() -> void:
 	check(scene.bow_state.phase=="available" and not scene.player_items.has("bow"),"Ship quest leaves bow and inventory independent")
 	await capture("06-farewell")
 	scene.craftsman_encounter.continue_scene()
+	if check_post_inspection:
+		if not await say("Thanks for looking at my ship!"): return
+		var answer: String = scene.chat_windows[1].active_message.to_lower()
+		print("Post-inspection answer: ",answer)
+		check(not answer.contains("my ship") and not answer.contains("if you'd like"),"Thanks keeps NPC perspective and does not reopen inspection")
+		check(scene.craftsman_activity.inspection_complete and not scene.craftsman_activity.outing_active,"Gratitude preserves completed inspection")
+		scene.craftsman_objective.advance(scene.craftsman_objective.COMPLETION_END)
+		check(not scene.craftsman_objective.objective.visible,"Gratitude does not replay escort guidance")
 	scene.quest_panel.show(); await capture("07-main-quest"); scene.quest_panel.hide()
 	var player_at: Vector2=scene.player.position
 	if lifecycle:

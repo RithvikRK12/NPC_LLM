@@ -1,0 +1,2593 @@
+[
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:695128006999047212",
+      "key": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "Do you enjoy working here?"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "81e20efd-7527-4729-a807-8e996cfb6a29",
+          "request_id": "godot:695128006999047212",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 1
+        },
+        "attempt_id": "81e20efd-7527-4729-a807-8e996cfb6a29:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T14:59:53.940404Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "I do enjoy working here, but I've always been curious about what lies beyond the village. It's a good thing I have my work to keep me grounded, or I might get too restless.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "81e20efd-7527-4729-a807-8e996cfb6a29",
+        "request_id": "godot:695128006999047212",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 1
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:81e20efd-7527-4729-a807-8e996cfb6a29",
+        "final_text": "I do enjoy working here, but I've always been curious about what lies beyond the village. It's a good thing I have my work to keep me grounded, or I might get too restless.",
+        "beats": [
+          "I do enjoy working here, but I've always been curious about what lies beyond the village. It's a good thing I have my work to keep me grounded, or I might get too restless."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:81e20efd-7527-4729-a807-8e996cfb6a29",
+            "start": 0,
+            "end": 172
+          }
+        },
+        "evidence_dependencies": [],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "81e20efd-7527-4729-a807-8e996cfb6a29",
+        "request_id": "godot:695128006999047212",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 1
+      },
+      "final_dialogue": "I do enjoy working here, but I've always been curious about what lies beyond the village. It's a good thing I have my work to keep me grounded, or I might get too restless.",
+      "dialogue_beats": [
+        "I do enjoy working here, but I've always been curious about what lies beyond the village. It's a good thing I have my work to keep me grounded, or I might get too restless."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 10064.0,
+            "y": 10040.0
+          },
+          "current_location": "workshop",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "available",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": true,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 2
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 3,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 4
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "craftsman_encounter": {
+          "intro_seen": true,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "revision": 2
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "available",
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "I do enjoy working here, but I've always been curious about what lies beyond the village. It's a good thing I have my work to keep me grounded, or I might get too restless.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "I do enjoy working here, but I've always been curious about what lies beyond the village. It's a good thing I have my work to keep me grounded, or I might get too restless.",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": []
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:4311573597538029132",
+      "key": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "The storm broke my ship."
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "7adafccd-0e9d-4adb-9b35-0b43e05f33e9",
+          "request_id": "godot:4311573597538029132",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 2
+        },
+        "attempt_id": "7adafccd-0e9d-4adb-9b35-0b43e05f33e9:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T14:59:56.734634Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "report_wreck",
+              "arguments": {},
+              "target": {
+                "reference_id": "npc:1",
+                "entity_kind": "npc",
+                "entity_id": "1"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:2",
+                  "start": 0,
+                  "end": 24
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "7adafccd-0e9d-4adb-9b35-0b43e05f33e9",
+          "request_id": "godot:4311573597538029132",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 2
+        },
+        "attempt_id": "7adafccd-0e9d-4adb-9b35-0b43e05f33e9:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T14:59:56.747722Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "I'm sorry to hear that. Losing something precious can be a real blow. It's good you're safe, though.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:a5074156-7fca-4026-af04-84de250e0a73",
+              "receipt_id": "a5074156-7fca-4026-af04-84de250e0a73",
+              "speech_act": "completed",
+              "renderer_id": "receipt.completed"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "7adafccd-0e9d-4adb-9b35-0b43e05f33e9",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "memory_candidate_limit": "40",
+              "memory_candidates_truncated": "false",
+              "memory_preselection": "memory_id_desc",
+              "summary_candidates_truncated": "false",
+              "summary_preselection": "summary_id_desc",
+              "history_turn_limit": "12",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "7adafccd-0e9d-4adb-9b35-0b43e05f33e9",
+        "request_id": "godot:4311573597538029132",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:7adafccd-0e9d-4adb-9b35-0b43e05f33e9",
+        "final_text": "I'm sorry to hear that. Losing something precious can be a real blow. It's good you're safe, though. I'm glad you made it ashore. I can take a look at the damage with you, if you'd like.",
+        "beats": [
+          "I'm sorry to hear that. Losing something precious can be a real blow. It's good you're safe, though. I'm glad you made it ashore. I can take a look at the damage with you, if you'd like."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:7adafccd-0e9d-4adb-9b35-0b43e05f33e9",
+            "start": 0,
+            "end": 100
+          },
+          "receipt-slot:a5074156-7fca-4026-af04-84de250e0a73": {
+            "text_id": "final:7adafccd-0e9d-4adb-9b35-0b43e05f33e9",
+            "start": 101,
+            "end": 186
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "a5074156-7fca-4026-af04-84de250e0a73",
+            "revision": "46d25ea0bc50b3d61d934fc9d0d0ec1230e597ea16213ee71e2af26878684a42",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "7adafccd-0e9d-4adb-9b35-0b43e05f33e9",
+        "request_id": "godot:4311573597538029132",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "final_dialogue": "I'm sorry to hear that. Losing something precious can be a real blow. It's good you're safe, though. I'm glad you made it ashore. I can take a look at the damage with you, if you'd like.",
+      "dialogue_beats": [
+        "I'm sorry to hear that. Losing something precious can be a real blow. It's good you're safe, though. I'm glad you made it ashore. I can take a look at the damage with you, if you'd like."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "a5074156-7fca-4026-af04-84de250e0a73"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 10064.0,
+            "y": 10040.0
+          },
+          "current_location": "workshop",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "available",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": true,
+            "wreck_reported": true,
+            "offer_pending": true,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0,
+            "topic": "ship"
+          },
+          "revision": 3
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 4,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 4
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "craftsman_encounter": {
+          "intro_seen": true,
+          "wreck_reported": true,
+          "offer_pending": true,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "revision": 3
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "available",
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "I'm sorry to hear that. Losing something precious can be a real blow. It's good you're safe, though. I'm glad you made it ashore. I can take a look at the damage with you, if you'd like.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "I'm sorry to hear that. Losing something precious can be a real blow. It's good you're safe, though. I'm glad you made it ashore. I can take a look at the damage with you, if you'd like.",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": [
+          {
+            "id": 1,
+            "npc_id": 1,
+            "event": "Player reported a wreck (unverified): the Craftsman has not inspected the damage.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:56.744803",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "15cb90c2-a9e7-4dca-827a-303ccb2c39c9",
+            "source_conversation_id": null,
+            "epistemic_status": "claim",
+            "authority": "reported",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:6406786327087300044",
+      "key": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "Sure! That would be helpful."
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "01430a6e-c73f-4271-a5f1-d3cb47e3f018",
+          "request_id": "godot:6406786327087300044",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 3
+        },
+        "attempt_id": "01430a6e-c73f-4271-a5f1-d3cb47e3f018:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T14:59:58.636680Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "begin_ship_inspection",
+              "arguments": {},
+              "target": {
+                "reference_id": "npc:1",
+                "entity_kind": "npc",
+                "entity_id": "1"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:3",
+                  "start": 0,
+                  "end": 28
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "01430a6e-c73f-4271-a5f1-d3cb47e3f018",
+          "request_id": "godot:6406786327087300044",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 3
+        },
+        "attempt_id": "01430a6e-c73f-4271-a5f1-d3cb47e3f018:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T14:59:58.644990Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "Your willingness to ask for help means you're willing to learn, and that's something to be proud of.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:27c58846-084f-4aa8-9f1f-5abcefba577b",
+              "receipt_id": "27c58846-084f-4aa8-9f1f-5abcefba577b",
+              "speech_act": "accepted",
+              "renderer_id": "receipt.accepted"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "01430a6e-c73f-4271-a5f1-d3cb47e3f018",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "memory_candidate_limit": "40",
+              "memory_candidates_truncated": "false",
+              "memory_preselection": "memory_id_desc",
+              "summary_candidates_truncated": "false",
+              "summary_preselection": "summary_id_desc",
+              "history_turn_limit": "12",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "01430a6e-c73f-4271-a5f1-d3cb47e3f018",
+        "request_id": "godot:6406786327087300044",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 3
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:01430a6e-c73f-4271-a5f1-d3cb47e3f018",
+        "final_text": "Your willingness to ask for help means you're willing to learn, and that's something to be proud of. I agreed to inspect the ship.",
+        "beats": [
+          "Your willingness to ask for help means you're willing to learn, and that's something to be proud of. I agreed to inspect the ship."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:01430a6e-c73f-4271-a5f1-d3cb47e3f018",
+            "start": 0,
+            "end": 100
+          },
+          "receipt-slot:27c58846-084f-4aa8-9f1f-5abcefba577b": {
+            "text_id": "final:01430a6e-c73f-4271-a5f1-d3cb47e3f018",
+            "start": 101,
+            "end": 130
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "27c58846-084f-4aa8-9f1f-5abcefba577b",
+            "revision": "a1f0fa60280b350eb2b3084d9a8bbe0929f4712fc232e72ab30ea38db932f8ee",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "01430a6e-c73f-4271-a5f1-d3cb47e3f018",
+        "request_id": "godot:6406786327087300044",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 3
+      },
+      "final_dialogue": "Your willingness to ask for help means you're willing to learn, and that's something to be proud of. I agreed to inspect the ship.",
+      "dialogue_beats": [
+        "Your willingness to ask for help means you're willing to learn, and that's something to be proud of. I agreed to inspect the ship."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "27c58846-084f-4aa8-9f1f-5abcefba577b"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 10064.0,
+            "y": 10040.0
+          },
+          "current_location": "workshop",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "available",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": true,
+            "wreck_reported": true,
+            "offer_pending": false,
+            "outing_active": true,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "departure_pending",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0,
+            "topic": "ship"
+          },
+          "revision": 4
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 5,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 4
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "craftsman_encounter": {
+          "intro_seen": true,
+          "wreck_reported": true,
+          "offer_pending": false,
+          "outing_active": true,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "departure_pending",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "revision": 4
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "available",
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "Your willingness to ask for help means you're willing to learn, and that's something to be proud of. I agreed to inspect the ship.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "Your willingness to ask for help means you're willing to learn, and that's something to be proud of. I agreed to inspect the ship.",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": [
+          {
+            "id": 1,
+            "npc_id": 1,
+            "event": "Player reported a wreck (unverified): the Craftsman has not inspected the damage.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:56.744803",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "15cb90c2-a9e7-4dca-827a-303ccb2c39c9",
+            "source_conversation_id": null,
+            "epistemic_status": "claim",
+            "authority": "reported",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          },
+          {
+            "id": 2,
+            "npc_id": 1,
+            "event": "Craftsman agreed to inspect the player\u2019s wreck. Damage is not yet firsthand knowledge.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:58.643066",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "fbf2c719-c2e0-4dd8-bf43-eb6731933474",
+            "source_conversation_id": null,
+            "epistemic_status": "fact",
+            "authority": "authoritative",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:2358586471430939076",
+      "key": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "Wait here"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "d2c8f245-f82e-492a-b21e-2b8d4e744315",
+          "request_id": "godot:2358586471430939076",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 4
+        },
+        "attempt_id": "d2c8f245-f82e-492a-b21e-2b8d4e744315:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T15:00:00.290505Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "wait",
+              "arguments": {},
+              "target": {
+                "reference_id": "npc:1",
+                "entity_kind": "npc",
+                "entity_id": "1"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:4",
+                  "start": 0,
+                  "end": 9
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "d2c8f245-f82e-492a-b21e-2b8d4e744315",
+          "request_id": "godot:2358586471430939076",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 4
+        },
+        "attempt_id": "d2c8f245-f82e-492a-b21e-2b8d4e744315:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T15:00:00.300444Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "I understand the wait, but it's hard not to wonder what's taking so long.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:92a45fdd-5d82-43a7-8fce-8940f7b10400",
+              "receipt_id": "92a45fdd-5d82-43a7-8fce-8940f7b10400",
+              "speech_act": "completed",
+              "renderer_id": "receipt.completed"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "d2c8f245-f82e-492a-b21e-2b8d4e744315",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "memory_candidate_limit": "40",
+              "memory_candidates_truncated": "false",
+              "memory_preselection": "memory_id_desc",
+              "summary_candidates_truncated": "false",
+              "summary_preselection": "summary_id_desc",
+              "history_turn_limit": "12",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "d2c8f245-f82e-492a-b21e-2b8d4e744315",
+        "request_id": "godot:2358586471430939076",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 4
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:d2c8f245-f82e-492a-b21e-2b8d4e744315",
+        "final_text": "I understand the wait, but it's hard not to wonder what's taking so long. I began waiting.",
+        "beats": [
+          "I understand the wait, but it's hard not to wonder what's taking so long. I began waiting."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:d2c8f245-f82e-492a-b21e-2b8d4e744315",
+            "start": 0,
+            "end": 73
+          },
+          "receipt-slot:92a45fdd-5d82-43a7-8fce-8940f7b10400": {
+            "text_id": "final:d2c8f245-f82e-492a-b21e-2b8d4e744315",
+            "start": 74,
+            "end": 90
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "92a45fdd-5d82-43a7-8fce-8940f7b10400",
+            "revision": "7d3b5f963a958685c3600e46f99ce8296a1767cf90346b0d7269249677313a0c",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "d2c8f245-f82e-492a-b21e-2b8d4e744315",
+        "request_id": "godot:2358586471430939076",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 4
+      },
+      "final_dialogue": "I understand the wait, but it's hard not to wonder what's taking so long. I began waiting.",
+      "dialogue_beats": [
+        "I understand the wait, but it's hard not to wonder what's taking so long. I began waiting."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "92a45fdd-5d82-43a7-8fce-8940f7b10400"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 10064.0,
+            "y": 10040.0
+          },
+          "current_location": "workshop",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "available",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": true,
+            "wreck_reported": true,
+            "offer_pending": false,
+            "outing_active": true,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "waiting_for_player",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "requested",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0,
+            "topic": "ship"
+          },
+          "revision": 6
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 7,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 4
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "craftsman_encounter": {
+          "intro_seen": true,
+          "wreck_reported": true,
+          "offer_pending": false,
+          "outing_active": true,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "waiting_for_player",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "requested",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "revision": 6
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "available",
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "I understand the wait, but it's hard not to wonder what's taking so long. I began waiting.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "I understand the wait, but it's hard not to wonder what's taking so long. I began waiting.",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": [
+          {
+            "id": 1,
+            "npc_id": 1,
+            "event": "Player reported a wreck (unverified): the Craftsman has not inspected the damage.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:56.744803",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "15cb90c2-a9e7-4dca-827a-303ccb2c39c9",
+            "source_conversation_id": null,
+            "epistemic_status": "claim",
+            "authority": "reported",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          },
+          {
+            "id": 2,
+            "npc_id": 1,
+            "event": "Craftsman agreed to inspect the player\u2019s wreck. Damage is not yet firsthand knowledge.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:58.643066",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "fbf2c719-c2e0-4dd8-bf43-eb6731933474",
+            "source_conversation_id": null,
+            "epistemic_status": "fact",
+            "authority": "authoritative",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:6758254494920994174",
+      "key": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "Let's go"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "f044b963-b4e8-40b0-8480-5260c950da5d",
+          "request_id": "godot:6758254494920994174",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 5
+        },
+        "attempt_id": "f044b963-b4e8-40b0-8480-5260c950da5d:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T15:00:02.520100Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "resume",
+              "arguments": {},
+              "target": {
+                "reference_id": "npc:1",
+                "entity_kind": "npc",
+                "entity_id": "1"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:5",
+                  "start": 0,
+                  "end": 8
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "f044b963-b4e8-40b0-8480-5260c950da5d",
+          "request_id": "godot:6758254494920994174",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 5
+        },
+        "attempt_id": "f044b963-b4e8-40b0-8480-5260c950da5d:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T15:00:02.529776Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "I'm glad you're willing to go, but I hope you're not expecting me to rush through it like Father did. I like to take my time and make sure everything is just right.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:e9be885a-3ea6-46fe-8c4d-31d167ea7d50",
+              "receipt_id": "e9be885a-3ea6-46fe-8c4d-31d167ea7d50",
+              "speech_act": "completed",
+              "renderer_id": "receipt.completed"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "f044b963-b4e8-40b0-8480-5260c950da5d",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "memory_candidate_limit": "40",
+              "memory_candidates_truncated": "false",
+              "memory_preselection": "memory_id_desc",
+              "summary_candidates_truncated": "false",
+              "summary_preselection": "summary_id_desc",
+              "history_turn_limit": "12",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "f044b963-b4e8-40b0-8480-5260c950da5d",
+        "request_id": "godot:6758254494920994174",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 5
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:f044b963-b4e8-40b0-8480-5260c950da5d",
+        "final_text": "I'm glad you're willing to go, but I hope you're not expecting me to rush through it like Father did. I like to take my time and make sure everything is just right. I resumed the outing.",
+        "beats": [
+          "I'm glad you're willing to go, but I hope you're not expecting me to rush through it like Father did. I like to take my time and make sure everything is just right. I resumed the outing."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:f044b963-b4e8-40b0-8480-5260c950da5d",
+            "start": 0,
+            "end": 164
+          },
+          "receipt-slot:e9be885a-3ea6-46fe-8c4d-31d167ea7d50": {
+            "text_id": "final:f044b963-b4e8-40b0-8480-5260c950da5d",
+            "start": 165,
+            "end": 186
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "e9be885a-3ea6-46fe-8c4d-31d167ea7d50",
+            "revision": "c5953ce5fbfd47729075a63854bb95b88dbc640dfaeb5d9bb9fe0fe64b8a9e88",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "f044b963-b4e8-40b0-8480-5260c950da5d",
+        "request_id": "godot:6758254494920994174",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 5
+      },
+      "final_dialogue": "I'm glad you're willing to go, but I hope you're not expecting me to rush through it like Father did. I like to take my time and make sure everything is just right. I resumed the outing.",
+      "dialogue_beats": [
+        "I'm glad you're willing to go, but I hope you're not expecting me to rush through it like Father did. I like to take my time and make sure everything is just right. I resumed the outing."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "e9be885a-3ea6-46fe-8c4d-31d167ea7d50"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 10064.0,
+            "y": 10040.0
+          },
+          "current_location": "workshop",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "available",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": true,
+            "wreck_reported": true,
+            "offer_pending": false,
+            "outing_active": true,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "departure_pending",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0,
+            "topic": "ship"
+          },
+          "revision": 8
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 9,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 4
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "craftsman_encounter": {
+          "intro_seen": true,
+          "wreck_reported": true,
+          "offer_pending": false,
+          "outing_active": true,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "departure_pending",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "revision": 8
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "available",
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "I'm glad you're willing to go, but I hope you're not expecting me to rush through it like Father did. I like to take my time and make sure everything is just right. I resumed the outing.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "I'm glad you're willing to go, but I hope you're not expecting me to rush through it like Father did. I like to take my time and make sure everything is just right. I resumed the outing.",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": [
+          {
+            "id": 1,
+            "npc_id": 1,
+            "event": "Player reported a wreck (unverified): the Craftsman has not inspected the damage.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:56.744803",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "15cb90c2-a9e7-4dca-827a-303ccb2c39c9",
+            "source_conversation_id": null,
+            "epistemic_status": "claim",
+            "authority": "reported",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          },
+          {
+            "id": 2,
+            "npc_id": 1,
+            "event": "Craftsman agreed to inspect the player\u2019s wreck. Damage is not yet firsthand knowledge.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:58.643066",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "fbf2c719-c2e0-4dd8-bf43-eb6731933474",
+            "source_conversation_id": null,
+            "epistemic_status": "fact",
+            "authority": "authoritative",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:2369211117321198721",
+      "key": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "Thanks for looking at my ship!"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "312ca0f3-a7e1-4083-8514-26832ef7061e",
+          "request_id": "godot:2369211117321198721",
+          "key": {
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 6
+        },
+        "attempt_id": "312ca0f3-a7e1-4083-8514-26832ef7061e:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T15:00:19.018598Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "You're welcome, glad I could help with the inspection.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "312ca0f3-a7e1-4083-8514-26832ef7061e",
+        "request_id": "godot:2369211117321198721",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 6
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:312ca0f3-a7e1-4083-8514-26832ef7061e",
+        "final_text": "You're welcome, glad I could help with the inspection.",
+        "beats": [
+          "You're welcome, glad I could help with the inspection."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:312ca0f3-a7e1-4083-8514-26832ef7061e",
+            "start": 0,
+            "end": 54
+          }
+        },
+        "evidence_dependencies": [],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "312ca0f3-a7e1-4083-8514-26832ef7061e",
+        "request_id": "godot:2369211117321198721",
+        "key": {
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 6
+      },
+      "final_dialogue": "You're welcome, glad I could help with the inspection.",
+      "dialogue_beats": [
+        "You're welcome, glad I could help with the inspection."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": -32.0,
+            "y": 3632.0
+          },
+          "current_location": "shipwreck_beach",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "shipwreck_beach",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "available",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": {
+          "phase": "gathering_materials",
+          "contributions": {},
+          "outcome_id": "066ad6d9-a401-48ff-a963-5895631f70d5"
+        },
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": true,
+            "wreck_reported": true,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": true,
+            "outcome_id": "066ad6d9-a401-48ff-a963-5895631f70d5",
+            "mode": "returning_to_workshop",
+            "navigation_space": "exterior",
+            "position": {
+              "x": 32.0,
+              "y": 3632.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 4,
+            "topic": "ship"
+          },
+          "revision": 42
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 43,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 2,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 1,
+          "world": 35
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+        "craftsman_encounter": {
+          "intro_seen": true,
+          "wreck_reported": true,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": true,
+          "outcome_id": "066ad6d9-a401-48ff-a963-5895631f70d5",
+          "mode": "returning_to_workshop",
+          "navigation_space": "exterior",
+          "position": {
+            "x": 32.0,
+            "y": 3632.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 4,
+          "topic": "ship",
+          "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+          "revision": 42
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "gathering_materials",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "available",
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "shipwreck_beach",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "You're welcome, glad I could help with the inspection.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "You're welcome, glad I could help with the inspection.",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": [
+          {
+            "id": 1,
+            "npc_id": 1,
+            "event": "Player reported a wreck (unverified): the Craftsman has not inspected the damage.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:56.744803",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "15cb90c2-a9e7-4dca-827a-303ccb2c39c9",
+            "source_conversation_id": null,
+            "epistemic_status": "claim",
+            "authority": "reported",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          },
+          {
+            "id": 2,
+            "npc_id": 1,
+            "event": "Craftsman agreed to inspect the player\u2019s wreck. Damage is not yet firsthand knowledge.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T14:59:58.643066",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "fbf2c719-c2e0-4dd8-bf43-eb6731933474",
+            "source_conversation_id": null,
+            "epistemic_status": "fact",
+            "authority": "authoritative",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          },
+          {
+            "id": 3,
+            "npc_id": 1,
+            "event": "Craftsman inspected the ship: split planking and leaking seams. A Way Home started.",
+            "importance": 0.9,
+            "emotion": "calm",
+            "timestamp": "2026-10-20T15:00:18.954550",
+            "event_type": "ship_encounter",
+            "quest_id": "ship_repair",
+            "game_scope": "0170eab7-3ee1-403b-b0bb-38605b9230dc",
+            "source_event_id": "1f52b4e7-728f-4100-86cf-e97d82ed7427",
+            "source_conversation_id": null,
+            "epistemic_status": "fact",
+            "authority": "authoritative",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          }
+        ]
+      }
+    }
+  }
+]

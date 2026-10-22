@@ -1,7 +1,7 @@
 # canon implementation tasks
 
 **Goal:** Deliver the `canon` responsibility in the NPC conversation redesign.
-**Status:** Not started; no redesign implementation verified in this planning pass.
+**Status:** T01–T02 verified; 2/2 local tasks complete; module acceptance awaits persistence/integration gates.
 **Sources:** [Proposal](../npc-conversation-redesign-proposal.md), [Detailed design](../npc-conversation-redesign-detailed-design.md). Relevant sections: Detailed design §§3.4,6.6; Proposal §8.
 **Owned files / integration targets:** backend/app/services/conversation/canon.py; backend/tests/test_conversation_canon.py.
 **Architecture:** In-process modules with injected narrow contracts. Mechanical authority remains in existing deterministic game services; conversational narrative never grants gameplay permissions.
@@ -20,16 +20,16 @@
 
 ### canon/T01: Plan final-speech narrative additions
 
-- [ ] **Task complete**
+- [x] **Task complete**
 
 **Depends on:** contracts/T03.
 **Acceptance criteria:** CanonPolicy.plan(reply, active_canon, authored_constraints) admits meaningful claims only from exact validated final-speech spans. Generated authority is narrative_only and authored identity wins; no game-entity creation.
 **Test expectations:** Draft/failed-repair/unsupported spans rejected; accepted biography retained; relatives/historical places permitted while practical shop/cache/recipe implications require grounding.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
+- [x] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
 
 ### canon/T02: Plan explicit accepted corrections with lineage
 
@@ -50,5 +50,5 @@ Backend deterministic checks use `PYTHONPATH=backend .venv/bin/python -m unittes
 
 | Task | Owner / state | Verification command and evidence | Handoff / blockers |
 | --- | --- | --- | --- |
-| T01 | Unassigned / not started | Not run | None recorded |
-| T02 | Unassigned / not started | Not run | None recorded |
+| T01 | canon_t01 / accepted 2026-10-14; gpt-6-luna / medium; independent review_canon_t01 approved after span-link correction | [Handoff/red-green evidence](../evidence/conversation-redesign-canon/t01-handoff.md); 6 focused, 113 conversation, 13 dependency tests pass; diff check clean | Adds only final-speech-supported narrative-only canon; semantic/affordance checks injected; revisions are T02 |
+| T02 | canon_t02 / accepted 2026-10-14; gpt-6.1-sol / high; independent review_canon_t02 approved | [Handoff/red-green evidence](../evidence/conversation-redesign-canon/t02-handoff.md); 15/15 focused, 17/17 dependency/conformance tests pass | Accepted corrections require exact source/final spans, explicit linkage and matching generated head; durable CAS/history remains persistence responsibility |

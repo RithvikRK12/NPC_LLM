@@ -14,6 +14,7 @@ func run() -> void:
 		quit(1)
 		return
 	var main = load("res://tests/fisherman_test_main.gd").new()
+	main.backend_url="http://127.0.0.1:1"
 	root.add_child(main)
 	main.world_loaded = true
 	main.player.position = main.beach.marker("ControlHandoff")
@@ -69,9 +70,12 @@ func run() -> void:
 	check(main.onboarding.modal.visible,"Fresh game gets controls again")
 	main.onboarding.reset_presentation()
 	check(not main.onboarding.modal.visible and not main.onboarding.objective.visible,"Restart clears presentation")
-	var world := {"game_scope":"handoff-test","opening_capability":1,"opening_state":"pending","player_position":{"x":0,"y":0}}
+	var world := {"game_scope":"handoff-test","state_revisions":{"world":1},"opening_version":1,"map_version":2,"opening_capability":1,"opening_state":"pending","player_position":{"x":0,"y":0}}
+	main.restart_in_flight=true # This fixture intentionally replaces the saved run.
 	main._world_completed(HTTPRequest.RESULT_SUCCESS,200,PackedStringArray(),JSON.stringify(world).to_utf8_buffer())
 	check(main.cinematic and not main.onboarding.modal.visible,"Controls remain hidden throughout cinematic")
+	if main.opening == null:
+		main.queue_free(); await process_frame; quit(1); return
 	main.opening.fake = true
 	main.opening.director.checkpoint_ready = true
 	main.opening.director.advance_clock(60.0,false)
@@ -80,10 +84,13 @@ func run() -> void:
 	check(not main.player.is_physics_processing(),"Actual handoff blocks movement until dismissal")
 	main.onboarding.dismiss()
 	world.opening_state = "complete"
+	world.state_revisions.world = 2 # Changed world state requires a new server revision.
+	main.world_loaded = false # A reload starts without a loaded world; refresh preserves active presentation.
+	main.restart_in_flight=true # This fixture intentionally replaces the saved run.
 	main._world_completed(HTTPRequest.RESULT_SUCCESS,200,PackedStringArray(),JSON.stringify(world).to_utf8_buffer())
 	await frames()
 	check(not main.onboarding.modal.visible and main.onboarding.objective.visible,"Completed saved run restores docked objective")
-	check(main.onboarding.objective.position == Vector2(24,100),"Reload does not replay center animation")
+	check(main.onboarding.objective.position == Vector2(24,100),"Reload does not replay center animation: pos="+str(main.onboarding.objective.position)+" elapsed="+str(main.onboarding.elapsed)+" acknowledged="+str(main.onboarding.acknowledged)+" animating="+str(main.onboarding.animating))
 	main.onboarding.set_scope("reduced-motion")
 	main.onboarding.begin()
 	main.onboarding.dismiss()

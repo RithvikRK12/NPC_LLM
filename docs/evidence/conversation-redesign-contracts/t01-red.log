@@ -1,0 +1,149 @@
+test_all_six_evidence_tags_roundtrip_and_limit_mechanical_eligibility (test_conversation_contracts.ConversationContractsTests.test_all_six_evidence_tags_roundtrip_and_limit_mechanical_eligibility) ... FAIL
+test_deadline_is_immutable_and_rejects_invalid_clock_during_use (test_conversation_contracts.ConversationContractsTests.test_deadline_is_immutable_and_rejects_invalid_clock_during_use) ... FAIL
+test_deadline_uses_only_injected_monotonic_clock (test_conversation_contracts.ConversationContractsTests.test_deadline_uses_only_injected_monotonic_clock) ... FAIL
+test_error_roundtrip_has_safe_detail_and_optional_known_turn (test_conversation_contracts.ConversationContractsTests.test_error_roundtrip_has_safe_detail_and_optional_known_turn) ... FAIL
+test_identity_integer_bounds_and_opaque_identifiers (test_conversation_contracts.ConversationContractsTests.test_identity_integer_bounds_and_opaque_identifiers) ... FAIL
+test_identity_rejects_player_selector_legacy_mapping_and_unknown_fields (test_conversation_contracts.ConversationContractsTests.test_identity_rejects_player_selector_legacy_mapping_and_unknown_fields) ... FAIL
+test_identity_roundtrip_preserves_scope_epoch_and_sequence (test_conversation_contracts.ConversationContractsTests.test_identity_roundtrip_preserves_scope_epoch_and_sequence) ... FAIL
+test_nested_values_cannot_mutate (test_conversation_contracts.ConversationContractsTests.test_nested_values_cannot_mutate) ... FAIL
+test_policy_requires_explicit_finite_positive_tuning (test_conversation_contracts.ConversationContractsTests.test_policy_requires_explicit_finite_positive_tuning) ... FAIL
+test_reports_and_generated_canon_cannot_inhabit_mechanical_tags (test_conversation_contracts.ConversationContractsTests.test_reports_and_generated_canon_cannot_inhabit_mechanical_tags) ... FAIL
+test_request_bound_counts_unicode_codepoints_and_keeps_exact_text (test_conversation_contracts.ConversationContractsTests.test_request_bound_counts_unicode_codepoints_and_keeps_exact_text) ... FAIL
+test_resources_are_detached_immutable_and_json_roundtrippable (test_conversation_contracts.ConversationContractsTests.test_resources_are_detached_immutable_and_json_roundtrippable) ... FAIL
+test_source_scope_visibility_and_attribution_are_explicit (test_conversation_contracts.ConversationContractsTests.test_source_scope_visibility_and_attribution_are_explicit) ... FAIL
+test_timestamps_are_aware_utc_and_reject_numeric_or_naive_values (test_conversation_contracts.ConversationContractsTests.test_timestamps_are_aware_utc_and_reject_numeric_or_naive_values) ... FAIL
+test_unicode_span_resolves_codepoints_and_exact_reference (test_conversation_contracts.ConversationContractsTests.test_unicode_span_resolves_codepoints_and_exact_reference) ... FAIL
+test_unknown_or_coerced_versions_are_rejected (test_conversation_contracts.ConversationContractsTests.test_unknown_or_coerced_versions_are_rejected) ... FAIL
+
+======================================================================
+FAIL: test_all_six_evidence_tags_roundtrip_and_limit_mechanical_eligibility (test_conversation_contracts.ConversationContractsTests.test_all_six_evidence_tags_roundtrip_and_limit_mechanical_eligibility)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_deadline_is_immutable_and_rejects_invalid_clock_during_use (test_conversation_contracts.ConversationContractsTests.test_deadline_is_immutable_and_rejects_invalid_clock_during_use)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_deadline_uses_only_injected_monotonic_clock (test_conversation_contracts.ConversationContractsTests.test_deadline_uses_only_injected_monotonic_clock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_error_roundtrip_has_safe_detail_and_optional_known_turn (test_conversation_contracts.ConversationContractsTests.test_error_roundtrip_has_safe_detail_and_optional_known_turn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_identity_integer_bounds_and_opaque_identifiers (test_conversation_contracts.ConversationContractsTests.test_identity_integer_bounds_and_opaque_identifiers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_identity_rejects_player_selector_legacy_mapping_and_unknown_fields (test_conversation_contracts.ConversationContractsTests.test_identity_rejects_player_selector_legacy_mapping_and_unknown_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_identity_roundtrip_preserves_scope_epoch_and_sequence (test_conversation_contracts.ConversationContractsTests.test_identity_roundtrip_preserves_scope_epoch_and_sequence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_nested_values_cannot_mutate (test_conversation_contracts.ConversationContractsTests.test_nested_values_cannot_mutate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_policy_requires_explicit_finite_positive_tuning (test_conversation_contracts.ConversationContractsTests.test_policy_requires_explicit_finite_positive_tuning)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_reports_and_generated_canon_cannot_inhabit_mechanical_tags (test_conversation_contracts.ConversationContractsTests.test_reports_and_generated_canon_cannot_inhabit_mechanical_tags)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_request_bound_counts_unicode_codepoints_and_keeps_exact_text (test_conversation_contracts.ConversationContractsTests.test_request_bound_counts_unicode_codepoints_and_keeps_exact_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_resources_are_detached_immutable_and_json_roundtrippable (test_conversation_contracts.ConversationContractsTests.test_resources_are_detached_immutable_and_json_roundtrippable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_source_scope_visibility_and_attribution_are_explicit (test_conversation_contracts.ConversationContractsTests.test_source_scope_visibility_and_attribution_are_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_timestamps_are_aware_utc_and_reject_numeric_or_naive_values (test_conversation_contracts.ConversationContractsTests.test_timestamps_are_aware_utc_and_reject_numeric_or_naive_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_unicode_span_resolves_codepoints_and_exact_reference (test_conversation_contracts.ConversationContractsTests.test_unicode_span_resolves_codepoints_and_exact_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+======================================================================
+FAIL: test_unknown_or_coerced_versions_are_rejected (test_conversation_contracts.ConversationContractsTests.test_unknown_or_coerced_versions_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts.py", line 26, in setUp
+    self.assertIsNotNone(c, 'T01 conversation contracts implementation is absent')
+AssertionError: unexpectedly None : T01 conversation contracts implementation is absent
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.001s
+
+FAILED (failures=16)

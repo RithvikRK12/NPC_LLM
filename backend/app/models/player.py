@@ -11,6 +11,8 @@ class Player(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     game_scope: Mapped[str] = mapped_column(String(36), default=lambda: str(uuid4()), server_default="legacy")
+    # Active-scope counters only; writers replace the map inside their player transaction.
+    resource_revisions: Mapped[dict[str, int]] = mapped_column(JSON, default=dict, server_default="{}", nullable=False)
     inventory: Mapped[list[str]] = mapped_column(JSON, default=list)
     position: Mapped[dict] = mapped_column(JSON, default=lambda: {"x": 0.0, "y": 0.0})
     current_location: Mapped[str] = mapped_column(String(128), default="village_square")

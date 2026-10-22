@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PASS Craftsman guidance reuses an objective presenter
+PASS Wreck report alone keeps chat open and does not prompt travel
+PASS Foreign scope cannot close chat or create guidance
+PASS Confirmed inspection acceptance closes chat automatically
+PASS Acceptance begins the objective animation
+PASS Objective names the next player action
+PASS Arrival and Craftsman objectives share the same style and animation code
+PASS Travel prompt does not block player movement
+PASS Replayed acceptance neither closes later chat nor replays the popup
+PASS Menu pauses the objective animation
+PASS Objective docks using the arrival transition
+PASS Docked guidance fits (960, 540)
+PASS Docked guidance fits (1920, 1080)
+PASS Reloaded accepted outing restores docked guidance without replay
+PASS Reaching the boat completes guidance with the existing checkmark animation
+PASS Completed guidance fades away
+Craftsman guidance failures: 0

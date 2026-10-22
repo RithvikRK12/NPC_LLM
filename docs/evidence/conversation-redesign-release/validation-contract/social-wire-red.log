@@ -1,0 +1,187 @@
+test_contract_version_mismatch_is_distinct (test_conversation_generation_adapter.GenerationAdapterTests.test_contract_version_mismatch_is_distinct) ... ok
+test_diagnostics_redact_credentials_and_query_values (test_conversation_generation_adapter.GenerationAdapterTests.test_diagnostics_redact_credentials_and_query_values) ... ok
+test_expired_deadline_makes_no_transport_call (test_conversation_generation_adapter.GenerationAdapterTests.test_expired_deadline_makes_no_transport_call) ... ok
+test_json_character_limit_is_independent_of_dialogue_codepoint_limit (test_conversation_generation_adapter.GenerationAdapterTests.test_json_character_limit_is_independent_of_dialogue_codepoint_limit) ... ok
+test_json_object_transport_keeps_contract_in_prompt (test_conversation_generation_adapter.GenerationAdapterTests.test_json_object_transport_keeps_contract_in_prompt) ... ok
+test_live_port_sends_one_bounded_request_with_remaining_deadline_and_typed_contract (test_conversation_generation_adapter.GenerationAdapterTests.test_live_port_sends_one_bounded_request_with_remaining_deadline_and_typed_contract) ... ok
+test_malformed_json_maps_to_distinct_malformed_output (test_conversation_generation_adapter.GenerationAdapterTests.test_malformed_json_maps_to_distinct_malformed_output) ... ok
+test_missing_structured_generation_bounds_fail_without_dispatch (test_conversation_generation_adapter.GenerationAdapterTests.test_missing_structured_generation_bounds_fail_without_dispatch) ... ok
+test_mock_generation_checks_dialogue_budget_separately_from_json_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_mock_generation_checks_dialogue_budget_separately_from_json_metadata) ... ok
+test_mock_mode_is_explicit_and_reports_mock_origin (test_conversation_generation_adapter.GenerationAdapterTests.test_mock_mode_is_explicit_and_reports_mock_origin) ... ok
+test_personal_question_schema_has_no_game_operation_or_new_canon (test_conversation_generation_adapter.GenerationAdapterTests.test_personal_question_schema_has_no_game_operation_or_new_canon) ... ok
+test_prompt_projects_capability_terms_without_repeating_server_fingerprints (test_conversation_generation_adapter.GenerationAdapterTests.test_prompt_projects_capability_terms_without_repeating_server_fingerprints) ... ok
+test_provider_cancellation_maps_to_distinct_cancellation (test_conversation_generation_adapter.GenerationAdapterTests.test_provider_cancellation_maps_to_distinct_cancellation) ... ok
+test_provider_outage_never_substitutes_mock (test_conversation_generation_adapter.GenerationAdapterTests.test_provider_outage_never_substitutes_mock) ... ok
+test_provider_rejection_of_schema_version_is_distinct (test_conversation_generation_adapter.GenerationAdapterTests.test_provider_rejection_of_schema_version_is_distinct) ... ok
+test_provider_schema_cannot_suggest_operations_or_questions_absent_from_context (test_conversation_generation_adapter.GenerationAdapterTests.test_provider_schema_cannot_suggest_operations_or_questions_absent_from_context) ... ok
+test_provider_timeout_maps_to_distinct_timeout (test_conversation_generation_adapter.GenerationAdapterTests.test_provider_timeout_maps_to_distinct_timeout) ... ok
+test_receipt_composition_prompt_requires_exact_receipt_slot (test_conversation_generation_adapter.GenerationAdapterTests.test_receipt_composition_prompt_requires_exact_receipt_slot) ... ok
+test_replyless_proposal_is_rejected_by_the_live_contract_adapter (test_conversation_generation_adapter.GenerationAdapterTests.test_replyless_proposal_is_rejected_by_the_live_contract_adapter) ... ok
+test_response_returned_after_deadline_is_discarded (test_conversation_generation_adapter.GenerationAdapterTests.test_response_returned_after_deadline_is_discarded) ... ok
+test_same_prompt_contract_supplies_authored_traits_for_both_supported_npcs (test_conversation_generation_adapter.GenerationAdapterTests.test_same_prompt_contract_supplies_authored_traits_for_both_supported_npcs) ... ok
+test_schema_transport_does_not_duplicate_large_contract_in_model_prompt (test_conversation_generation_adapter.GenerationAdapterTests.test_schema_transport_does_not_duplicate_large_contract_in_model_prompt) ... ok
+test_serialized_json_larger_than_contract_json_limit_is_malformed (test_conversation_generation_adapter.GenerationAdapterTests.test_serialized_json_larger_than_contract_json_limit_is_malformed) ... ok
+test_shared_prompt_includes_source_concerns_references_reports_corrections_modalities_and_links (test_conversation_generation_adapter.GenerationAdapterTests.test_shared_prompt_includes_source_concerns_references_reports_corrections_modalities_and_links) ... ok
+test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata) ... 
+  test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata) (message='hello') ... ERROR
+  test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata) (message='What do you enjoy about your work?') ... ERROR
+  test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata) (message='What helps you feel at ease?') ... ERROR
+test_speech_wire_never_requests_or_accepts_server_owned_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_speech_wire_never_requests_or_accepts_server_owned_metadata) ... ok
+test_speech_wire_rejects_blank_nontext_and_oversized_dialogue (test_conversation_generation_adapter.GenerationAdapterTests.test_speech_wire_rejects_blank_nontext_and_oversized_dialogue) ... ok
+test_speech_wire_rejects_forged_metadata_and_actions_instead_of_dropping_them (test_conversation_generation_adapter.GenerationAdapterTests.test_speech_wire_rejects_forged_metadata_and_actions_instead_of_dropping_them) ... ok
+test_structured_json_character_count_handles_unicode_codepoints (test_conversation_generation_adapter.GenerationAdapterTests.test_structured_json_character_count_handles_unicode_codepoints) ... ok
+test_unconfigured_live_adapter_is_unavailable (test_conversation_generation_adapter.GenerationAdapterTests.test_unconfigured_live_adapter_is_unavailable) ... ok
+test_unstructured_provider_mode_still_validates_the_typed_contract (test_conversation_generation_adapter.GenerationAdapterTests.test_unstructured_provider_mode_still_validates_the_typed_contract) ... ok
+test_valid_structured_metadata_can_exceed_dialogue_limit_under_separate_bounds (test_conversation_generation_adapter.GenerationAdapterTests.test_valid_structured_metadata_can_exceed_dialogue_limit_under_separate_bounds) ... ok
+
+======================================================================
+ERROR: test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata) (message='hello')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/llm/structured.py", line 132, in generate
+    draft = wire_contract.model_validate(_json_arrays_to_tuples(decoded), strict=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/pydantic/main.py", line 732, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 9 validation errors for TurnProposal
+concerns
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+references
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+reports
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+correction_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+operation_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+interaction_links
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+reply
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+canon_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+dialogue
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Quiet work suits me.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_generation_adapter.py", line 305, in test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata
+    result = self.adapter(transport).generate('proposal', context, self.deadline, 600)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/llm/structured.py", line 146, in generate
+    raise GenerationMalformed('provider output does not match the contract') from exc
+app.services.conversation.generation_errors.GenerationMalformed: provider output does not match the contract
+
+======================================================================
+ERROR: test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata) (message='What do you enjoy about your work?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/llm/structured.py", line 132, in generate
+    draft = wire_contract.model_validate(_json_arrays_to_tuples(decoded), strict=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/pydantic/main.py", line 732, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 9 validation errors for TurnProposal
+concerns
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+references
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+reports
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+correction_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+operation_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+interaction_links
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+reply
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+canon_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+dialogue
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Quiet work suits me.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_generation_adapter.py", line 305, in test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata
+    result = self.adapter(transport).generate('proposal', context, self.deadline, 600)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/llm/structured.py", line 146, in generate
+    raise GenerationMalformed('provider output does not match the contract') from exc
+app.services.conversation.generation_errors.GenerationMalformed: provider output does not match the contract
+
+======================================================================
+ERROR: test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata (test_conversation_generation_adapter.GenerationAdapterTests.test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata) (message='What helps you feel at ease?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/llm/structured.py", line 132, in generate
+    draft = wire_contract.model_validate(_json_arrays_to_tuples(decoded), strict=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/pydantic/main.py", line 732, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 9 validation errors for TurnProposal
+concerns
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+references
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+reports
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+correction_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+operation_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+interaction_links
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+reply
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+canon_candidates
+  Field required [type=missing, input_value={'dialogue': 'Quiet work suits me.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+dialogue
+  Extra inputs are not permitted [type=extra_forbidden, input_value='Quiet work suits me.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_generation_adapter.py", line 305, in test_social_conversation_uses_speech_wire_without_fabricated_proposal_metadata
+    result = self.adapter(transport).generate('proposal', context, self.deadline, 600)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/llm/structured.py", line 146, in generate
+    raise GenerationMalformed('provider output does not match the contract') from exc
+app.services.conversation.generation_errors.GenerationMalformed: provider output does not match the contract
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.104s
+
+FAILED (errors=3)

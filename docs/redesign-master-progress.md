@@ -1,65 +1,80 @@
 # NPC conversation redesign — master progress
 
-Updated: 2026-10-14 (Asia/Kolkata).
+Updated: 2026-10-20 (Asia/Kolkata).
 
 ## Overall status
 
-**Planning complete; redesign implementation not started/verified in this pass. 0/23 packets complete, 0/21 design modules complete.** The 21 modules in Detailed design §2 each have a packet; baseline and evaluation-release are two supporting workstreams. All implementation checkboxes deliberately remain unchecked. Existing working-tree Craftsman/Gatherer and earlier architecture changes are not proof of completion against this redesign.
+**Ready for local playtesting.** Run [`../Play.command`](../Play.command), or double-click it in Finder. It starts the enabled conversation backend and Godot against the existing save. Closing the game normally saves and stops the backend. See the [play and rollback runbook](conversation-redesign-runbook.md) for controls and settings.
 
-Sources: [Proposal](npc-conversation-redesign-proposal.md), [Detailed design](npc-conversation-redesign-detailed-design.md). The detailed design's confirmed decisions govern: per-NPC queues, no timer/turn negotiation expiry, and clarification before choosing among multiple supported actions.
+The engineering integration is complete: **1,150 backend tests pass, all eight isolated PostgreSQL runners have passing recorded results (153 test executions), and 21 Godot scenarios have passing recorded results.** The final live screen and configuration are recorded in the [release evidence](evidence/conversation-redesign-release/t03/). These checks cover both NPCs, crafting, purpose-bound stock requests, gifts, encounter progression, persistence, durable retries, recovery, clear/reset and revision-aware UI delivery.
+
+**71/73 task gates are closed or explicitly waived.** T01's human-scoring requirement is waived by the user's previously recorded instruction; T02 passes. T03 remains open for the numerical dialogue-quality and product-latency gate. T04's runbook and receipt-safe rollback tests are complete, but its broad rollout approval depends on T03. Local play does not depend on broad rollout approval. No semantic scores or release acceptance have been invented.
+
+The 21 design modules are integrated and mechanically verified; the table below records that engineering status separately from quality acceptance. The baseline supporting packet is complete; evaluation-release is open. Historical local handoffs and the previous 69/73 tracker are preserved in the [pre-closeout archive](evidence/conversation-redesign-release/t02/master-progress-before-closeout.md).
+
+Sources: [Proposal](npc-conversation-redesign-proposal.md), [Detailed design](npc-conversation-redesign-detailed-design.md), [mechanical handoff](evidence/conversation-redesign-release/t02/handoff.md). Confirmed design decisions still govern: per-NPC queues, no timer/turn negotiation expiry, and clarification before selecting among multiple supported actions.
+
+Proposed follow-up: [FAISS memory retrieval implementation plan](superpowers/plans/2026-10-20-faiss-memory-retrieval.md). The active runtime still lacks the FAISS adapter connection; existing selector/component tests do not establish production semantic retrieval. This integration remains proposed, not completed.
 
 ## Module status
 
-Check a module only after every packet task, acceptance criterion, test expectation and adjacent integration gate has evidence. An unchecked module can have completed local tasks; report those separately. Supporting packets are labelled to avoid inflating design-module completion.
+The rows describe integration evidence, not an assertion that live language meets the shipping quality thresholds.
 
-- [ ] **[baseline](redesign-tasks/baseline.md)** — supporting workstream; not started; 0/3 tasks complete.
-- [ ] **[contracts](redesign-tasks/contracts.md)** — design module; not started; 0/3 tasks complete.
-- [ ] **[ports](redesign-tasks/ports.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[turns](redesign-tasks/turns.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[context](redesign-tasks/context.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[capabilities](redesign-tasks/capabilities.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[proposal](redesign-tasks/proposal.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[interactions](redesign-tasks/interactions.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[operations](redesign-tasks/operations.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[composition](redesign-tasks/composition.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[validation](redesign-tasks/validation.md)** — design module; not started; 0/3 tasks complete.
-- [ ] **[fallback](redesign-tasks/fallback.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[canon](redesign-tasks/canon.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[memory](redesign-tasks/memory.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[finalization](redesign-tasks/finalization.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[lifecycle](redesign-tasks/lifecycle.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[diagnostics](redesign-tasks/diagnostics.md)** — design module; not started; 0/2 tasks complete.
-- [ ] **[persistence-adapters](redesign-tasks/persistence-adapters.md)** — design module; not started; 0/4 tasks complete.
-- [ ] **[game-adapters](redesign-tasks/game-adapters.md)** — design module; not started; 0/3 tasks complete.
-- [ ] **[coordinator](redesign-tasks/coordinator.md)** — design module; not started; 0/3 tasks complete.
-- [ ] **[api-adapter](redesign-tasks/api-adapter.md)** — design module; not started; 0/3 tasks complete.
-- [ ] **[godot-adapters](redesign-tasks/godot-adapters.md)** — design module; not started; 0/3 tasks complete.
-- [ ] **[evaluation-release](redesign-tasks/evaluation-release.md)** — supporting workstream; not started; 0/4 tasks complete.
+| Module | Engineering status |
+| --- | --- |
+| [contracts](redesign-tasks/contracts.md) | Integrated; pure, API and SQL gates pass |
+| [ports](redesign-tasks/ports.md) | Integrated; pure, API and SQL gates pass |
+| [turns](redesign-tasks/turns.md) | Integrated; pure, API and SQL gates pass |
+| [context](redesign-tasks/context.md) | Integrated; authored profiles and bounded live context pass; semantic quality gate open |
+| [capabilities](redesign-tasks/capabilities.md) | Integrated; pure, API and SQL gates pass |
+| [proposal](redesign-tasks/proposal.md) | Integrated; pure, API and SQL gates pass |
+| [interactions](redesign-tasks/interactions.md) | Integrated; pure, API and SQL gates pass |
+| [operations](redesign-tasks/operations.md) | Integrated; pure, API and SQL gates pass |
+| [composition](redesign-tasks/composition.md) | Integrated; pure, API and SQL gates pass |
+| [validation](redesign-tasks/validation.md) | Integrated; fail-closed authority/receipt checks pass; measured semantic quality gate open |
+| [fallback](redesign-tasks/fallback.md) | Integrated; pure, API and SQL gates pass |
+| [canon](redesign-tasks/canon.md) | Integrated; pure, API and SQL gates pass |
+| [memory](redesign-tasks/memory.md) | Integrated; pure, API and SQL gates pass |
+| [finalization](redesign-tasks/finalization.md) | Integrated; pure, API and SQL gates pass |
+| [lifecycle](redesign-tasks/lifecycle.md) | Integrated; pure, API and SQL gates pass |
+| [diagnostics](redesign-tasks/diagnostics.md) | Integrated; pure, API and SQL gates pass |
+| [persistence-adapters](redesign-tasks/persistence-adapters.md) | Integrated; pure, API and SQL gates pass |
+| [game-adapters](redesign-tasks/game-adapters.md) | Integrated; pure, API and SQL gates pass |
+| [coordinator](redesign-tasks/coordinator.md) | Integrated; pure, API and SQL gates pass |
+| [api-adapter](redesign-tasks/api-adapter.md) | Integrated; pure, API and SQL gates pass |
+| [godot-adapters](redesign-tasks/godot-adapters.md) | Integrated; 21 recorded Godot scenarios pass; latest full inspection/gratitude flow passes |
 
 ## Completed work
 
-- [x] Read proposal and detailed design and map all 21 module boundaries to task packets.
-- [x] Create per-task acceptance criteria, test expectations, dependencies, sequencing and execution-record templates.
-- [x] Create separate baseline/release workstreams and a master implementation checklist.
-- [ ] Verify any runtime redesign module complete. No runtime acceptance was performed by this documentation task.
+- [x] Post-inspection gratitude now uses compact dialogue/current-state context; perspective, copied offers, completed-inspection reoffers and unfinished-repair contradictions are checked. Repair receives the actual findings. [Evidence](evidence/conversation-redesign-release/post-inspection-dialogue/README.md): 1,150 backend tests, six live generated variants, real Llama correction and complete Godot escort/gratitude flow.
+- [x] Natural inspection consent such as “Sure! That would be helpful.” now accepts the pending offer and triggers the existing chat-close/escort objective. [Evidence](evidence/conversation-redesign-release/natural-inspection-consent/README.md): 1,144 backend tests and the exact-phrase full Godot escort pass.
+- [x] Fixed this Mac’s terminal-launch NPC chat 503 by persisting the existing pilot policy in ignored `backend/.env`; ordinary startup now enables the required conversation runtime. [Evidence](evidence/conversation-redesign-release/chat-service-startup/README.md).
+- [x] Gatherer help now shows the shared animated boar objective only after accepting; both dead boars trigger its checkmark immediately. Declining never shows guidance, including the later corpse scene. [Evidence](evidence/conversation-redesign-release/gatherer-guidance/README.md): four fresh Gatherer combat/integration and Craftsman/arrival regression scenarios pass.
+- [x] Accepted ship inspection now automatically closes Craftsman chat and shows “Lead the Craftsman to the boat.” through the original arrival objective presenter. [Evidence](evidence/conversation-redesign-release/craftsman-guidance/README.md): four fresh Godot scenarios, both yes/follow-me physical flows, original onboarding, replay safety and native centered/docked visual checks.
+
+- [x] Provider validation contract corrected: speech-only wire for composition/repair/social chat; server-owned provenance and structural IDs; unchanged authority/receipt checks. [Evidence](evidence/conversation-redesign-release/validation-contract/README.md): backend 1,140/1,140; eight PostgreSQL runners; three fresh Godot scenarios; 8/8 sampled ordinary/action replies generated in 1.3–3.2 seconds, with purpose clarification and deliberate outages reported separately. Broad semantic release quality remains open.
+
+- [x] Wreck-disclosure fallback now uses the authored Craftsman reaction instead of internal report-bookkeeping text. Exact-message regression verifies no automatic inspection and consent on the next turn. [Evidence](evidence/conversation-redesign-release/wreck-reaction/README.md); full backend 1,135/1,135.
+
+- [x] Fresh-save greeting correction: undisclosed ship state is excluded from speaker generation, and greetings use a compact typed prompt. [Evidence](evidence/conversation-redesign-release/greeting-knowledge/README.md): five regressions; backend 1,134/1,134; four isolated real-model greetings in 5.3–6.8 seconds. Wider dialogue quality/latency remains unproven.
+
+- [x] All 69 previously accepted implementation/replay tasks remain accepted; packet-level handoffs preserve their evidence.
+- [x] evaluation-release/T01: frozen read-only replay and dependency isolation complete; human calibration waived on 2026-10-20. Scores remain unmeasured.
+- [x] evaluation-release/T02: full mechanical adoption gate complete. Fresh logs, executable runners and the detailed-design crash/error coverage map are in [T02](evidence/conversation-redesign-release/t02/handoff.md).
+- [x] Play launcher, explicit local policy, both NPC profiles, deterministic request/consent adapters and receipt-safe rollback runbook delivered.
+- [x] Actual integration defects fixed: final-reply signal wiring, typed revision envelopes, clear sequence continuation, saved-pending startup bootstrap, durable gift path, stock-purpose producer, current-answer choice provenance, Craftsman activity projection, context-overflow completion and queued-work recovery.
 
 ## In-progress work
 
-No implementation task is assigned or in progress. Planning artifacts are ready for review and task assignment. When work starts, record `module/Txx`, owner, start date, next verification and evidence link here and in that packet; leave its completion checkbox unchecked until verified.
+- [ ] evaluation-release/T03: prove the final configuration's relevance ≥90%, mixed-concern coverage ≥90%, canon consistency ≥95%, healthy-provider fallback <5%, accidental repetition <2%, and accepted latency/readability. The small live functionality screen does not establish these proportions. The user waived human review and retained Llama 3; do not request a second reviewer or substitute another model on that basis.
+- [ ] evaluation-release/T04: approve broader rollout after T03. Runbook and deterministic rollback/replay checks are delivered; broad rollout remains gated.
 
 ## Dependencies and sequencing
 
-Task IDs in packets are the authoritative prerequisites. This order permits pure work against frozen contracts and delays production wiring until atomic adapters pass:
-
-1. **Baseline and boundaries:** baseline/T01 → contracts/T01–T03 → ports/T01–T02. baseline/T02–T03 adds measurement and frozen evaluation fixtures; provider availability may block measurement without blocking pure contract work.
-2. **Independent domain slices:** turns, context, capabilities/T01, proposal, interactions, canon, memory/T01 and diagnostics/T01 after their contract gates. operations follows interactions; composition follows renderer inventory; validation follows composition; fallback follows composition/profile data/validation. No concrete DB/provider needed for pure tests.
-3. **Persistence and game boundary:** persistence-adapters/T01–T02 and game-adapters/T01 can proceed after contracts/ports. Then persistence-adapters/T03 → T04 and game-adapters/T02–T03. Finish capabilities/T02 conformance. Finalization/T01 can use doubles earlier; T02 requires the real publication store. Lifecycle and summary publication use atomic store ports.
-4. **Application and transport:** coordinator/T01 uses fakes; T02 integrates receipt/recovery; T03 wires durable workers. API contract tests start with fakes after ports; API lifecycle/wiring follows lifecycle/coordinator. Godot request/presentation work follows frozen HTTP fixtures; shared revision application follows game/API integration.
-5. **Adoption:** evaluation-release/T01 can begin with scripted/read-only outputs before wiring. T02 requires the complete adapter/client graph; T03 requires passing invariants and measured quality; T04 records cohort enablement and receipt-safe rollback. Do not enable action conversation before atomic receipt and retry gates pass.
-
-Use direct dependency contracts rather than asking each worker to inspect the whole system. Coordinator and final release are the intentional cross-system tasks. Persistence owns SQL transactions/models/migrations; game adapters own game-service transaction/revision changes; API owns transport; Godot owns presentation/state application. Any shared-file edit must coordinate with its packet owner.
+Play locally now. Before any wider release, evaluate the final prompt/model/policy against the frozen scenario denominators, record results and product acceptance, then close T03 and approve T04. Historical replays used earlier prompt/settings and cannot certify the final runtime. [Task graph: 73 tasks / 23 packets](evidence/conversation-redesign-schedule/task-graph.json).
 
 ## Shared implementation rules
+
 
 - Domain modules depend on contracts/ports and pure policies, never FastAPI, ORM sessions or concrete provider constructors. Reuse existing immutable values only through explicit semantic adapters; do not assume game_id/timeline_id equals scope/epoch.
 - Only deterministic services authorize gameplay. Generated canon is narrative_only; player reports and interpretations retain attribution/uncertainty. Current state and authored constraints override stale memories/generated conflicts.
@@ -77,26 +92,16 @@ Use direct dependency contracts rather than asking each worker to inspect the wh
 
 ## Blockers and risks
 
-**Confirmed execution blockers:** None established by this documentation pass. Provider health, database availability and runtime readiness were not tested; do not treat them as passing.
+- Broad release quality is unproven. Live dialogue may fall back and provider processing may take tens of seconds. A completed mechanical turn is not proof of natural or relevant prose.
+- Three Godot fixtures report resources still in use during test shutdown; all functional assertions pass. They are explicitly marked in `godot-summary.json`; teardown cleanup remains a minor follow-up, not a concealed invariant failure.
+- Generated canon remains fail-closed without a trusted semantic claim producer. The conservative deterministic request adapter can request clarification for unsupported phrasing.
+- A Way Home currently stops at material gathering. Ship repair, sailing and an ending are beyond the conversation redesign, as documented in README.
+- Existing user changes and saves were preserved. All acceptance worlds/databases are disposable. The launcher resumes the configured existing save; it does not reset progress.
 
-- Baseline response-origin proportions, numeric policy values and playable latency/readable-length acceptance remain unmeasured or unaccepted for this redesign. Owner: baseline/T02–T03 and evaluation-release/T03.
-- Existing inventory/encounter/quest services may commit internally; effects without atomic receipts break retries. Owner: game-adapters/T01 and persistence-adapters/T03.
-- Every non-chat shared-state writer needs revision discipline; otherwise publication and delayed client snapshots can be wrong. Owner: game-adapters/T03 and godot-adapters/T03.
-- SQLite does not enforce FOR UPDATE; writer-lock ordering, uniqueness and CAS need tests on both engines. Owner: persistence-adapters/T02–T04.
-- Existing 240/300-character policies and client presentation can conflict. Owner: baseline/T01, composition/T01, proposal/T02 and godot-adapters/T02.
-- Legacy histories/provenance and ID semantics cannot be relabelled automatically. Owner: contracts/T03 and persistence-adapters/T01.
-- Concurrent in-flight generation, clear/reset, summary refresh and lease replacement can resurrect erased/stale state. Owner: turns, finalization, lifecycle and persistence-adapters race suites.
-- Existing unrelated uncommitted changes are present. This plan does not modify or certify them; packet owners must inspect current neighboring contracts before implementation and avoid overwriting ongoing work.
-- Shadow evaluation and rollback must never bypass mutation/receipt boundaries. Owner: evaluation-release/T01/T04 and coordinator/T03.
+## Next action
 
-## Next recommended task
-
-**[baseline/T01 — Inventory current contracts and mechanical authority](redesign-tasks/baseline.md#baselinet01-inventory-current-contracts-and-mechanical-authority).** It needs no implementation dependencies and identifies exact limit conflicts, existing rule owners, internal commits, revision writers and legacy mappings before contracts harden. Deliver the inventory and regression-command list with inspected paths; then start contracts/T01. Provider measurement can continue independently after baseline/T01.
+**Play the game with `Play.command`.** T03/T04 are broader release follow-ups, not local launch prerequisites. Record awkward dialogue or blocked interactions with the NPC and exact wording so the next change can address a reproducible case.
 
 ## Progress update procedure
 
-1. Claim a task in its packet execution table and the in-progress section here.
-2. Implement only its bounded deliverable and direct prerequisites; report dependency conflicts rather than silently expanding scope.
-3. Record acceptance and verification evidence, then check subtasks and task completion. Count only verified tasks in the module row.
-4. When all module tasks and adjacent integration pass, check the entire module and update totals/completed work here. Keep quality and mechanical evidence separate.
-5. Update blockers/risks and nominate the next unblocked task by exact ID. Do not carry historical test counts forward as fresh redesign evidence.
+Attach fresh evidence before changing a gate. Keep local play readiness, mechanical integration and numerical release-quality acceptance distinct. Never count a waiver as a measured quality pass.

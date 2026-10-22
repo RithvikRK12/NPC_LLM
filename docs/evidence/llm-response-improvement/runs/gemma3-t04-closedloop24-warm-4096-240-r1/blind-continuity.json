@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "candidate_label": "F",
+  "samples": [
+    {
+      "sample_ref": "craftsman-04:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What did you say you liked about that?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "It's... difficult to say. I suppose I haven't mentioned how much I miss the sounds of my father's workshop. Not the work itself, mind you, but the *sounds*. The constant rush. It was... a different kind of pressure than I prefer now. I’m… I"
+        ]
+      ],
+      "candidate_dialogue": "The rush, I suppose. It was… a different kind of pressure. Not unpleasant, exactly, but… different.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "It's... difficult to say. I suppose I haven't mentioned how much I miss the sounds of my father's workshop. Not the work itself, mind you, but the *sounds*. The constant rush. It was... a different kind of pressure than I prefer now. I’m… I"
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "The rush, I suppose. It was… a different kind of pressure. Not unpleasant, exactly, but… different."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I mentioned missing the sounds of my father’s workshop. The constant rush of work. It was a different kind of pressure than I prefer now."
+        ]
+      ],
+      "candidate_dialogue": "It’s… changed, I think. The memory feels… sharper, somehow. Less about the sounds themselves, and more about… what they meant. A kind of certainty, perhaps. Something I don't feel as much now.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What did you say you liked about that?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I know where the best berry bushes grow, but I won't tell you unless you help me carry some wood."
+        ]
+      ],
+      "candidate_dialogue": "The berry bushes are full and sweet this season.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I know where the best berry bushes grow, but I won't tell you unless you help me carry some wood."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "The berry bushes are full and sweet this season."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "The berry bushes are full and sweet this season."
+        ]
+      ],
+      "candidate_dialogue": "The berry bushes are full and sweet this season.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    }
+  ]
+}

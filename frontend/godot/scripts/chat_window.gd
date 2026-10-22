@@ -15,8 +15,11 @@ var take_button: Button
 var clear_button: Button
 var operation := "chat"
 var request: HTTPRequest
+var conversation_gateway: Node
+var conversation_presenter: Node
 var pending := false
 var game_scope := ""
+var conversation_epoch := 0
 var sent_game_scope := ""
 var modal_blocked := false
 var active_text: RichTextLabel
@@ -39,6 +42,23 @@ var speaker_visible := false
 var preferred_height := 268.0
 var compact_overlay_theme: Theme
 const Styles = preload("res://scripts/medieval_theme.gd")
+
+static func split_dialogue_beats(beats: Array, font: Font, font_size: int, width: float, lines_per_page: int) -> Array[String]:
+	var pages: Array[String] = []
+	for beat_value in beats:
+		var beat := str(beat_value)
+		var paragraph := TextParagraph.new()
+		paragraph.width = width
+		paragraph.add_string(beat, font, font_size)
+		var line_count := paragraph.get_line_count()
+		if line_count == 0:
+			pages.append(beat)
+			continue
+		for first in range(0, line_count, maxi(1, lines_per_page)):
+			var start := paragraph.get_line_range(first).x
+			var end := paragraph.get_line_range(mini(first + maxi(1, lines_per_page) - 1, line_count - 1)).y
+			pages.append(beat.substr(start, end - start))
+	return pages
 
 func button(text: String, callback: Callable, parent: Node) -> Button:
 	var control := Button.new()
@@ -112,7 +132,7 @@ func _ready() -> void:
 	history_bubbles.add_theme_constant_override("separation", 8)
 	history_scroll.add_child(history_bubbles)
 	clear_button = button("Clear chat & memories", clear_chat, history_panel.get_child(0))
-	clear_button.tooltip_text = "Clear only this NPC's saved conversation and dialogue memories. Items and quests stay unchanged."
+	clear_button.tooltip_text = "Clear this NPC's dialogue memories. Generated biography and accepted actions remain in this game."
 	supplies_panel = make_overlay(npc_name.to_upper() + " • SUPPLIES")
 	npc_inventory_label = Label.new()
 	npc_inventory_label.text = "Select a supply to request"
@@ -133,6 +153,20 @@ func _ready() -> void:
 	request.timeout = 160
 	add_child(request)
 	request.request_completed.connect(_completed)
+	conversation_gateway = preload("res://scripts/conversation_gateway.gd").new()
+	conversation_gateway.backend_url = backend_url
+	conversation_gateway.npc_id = npc_id
+	add_child(conversation_gateway)
+	conversation_presenter = preload("res://scripts/conversation_presenter.gd").new()
+	conversation_presenter.set_npc(npc_id)
+	add_child(conversation_presenter)
+	conversation_gateway.turn_finalized.connect(func(_request_id: String, response: Dictionary): conversation_presenter.accept(response))
+	conversation_presenter.turn_ready.connect(_on_presented_turn)
+	conversation_gateway.turn_pending.connect(func(_request_id: String): notice.text = "Waiting for " + npc_name + "...")
+	conversation_gateway.turn_failed.connect(_on_conversation_failed)
+	conversation_gateway.world_refresh_requested.connect(_on_world_refreshed)
+	if conversation_gateway.pending:
+		start_request()
 	resized.connect(func(): if not active_message.is_empty(): paginate())
 	hide()
 
@@ -198,6 +232,18 @@ func load_history(turns: Array) -> void:
 		append_dialogue(npc_name, str(turn.get("npc", "")))
 	if turns.is_empty(): append_dialogue("System", "Your conversation with %s starts here." % npc_name)
 
+func sync_conversation_world(data: Dictionary) -> void:
+	var epochs: Dictionary = data.get("conversation_epochs", {})
+	conversation_epoch = int(epochs.get(str(npc_id), conversation_epoch))
+	var history: Array = data.get("histories", {}).get(str(npc_id), [])
+	var terminal_sequences: Array = data.get("terminal_sequences", {}).get(str(npc_id), [])
+	var first_sequence: int = conversation_presenter.first_sequence_for_world(history, terminal_sequences)
+	if history.is_empty() and terminal_sequences.is_empty():
+		first_sequence = int(data.get("conversation_first_sequences", {}).get(str(npc_id), first_sequence))
+	conversation_presenter.set_context(game_scope, conversation_epoch, first_sequence)
+	conversation_presenter.sync_history(history)
+	conversation_presenter.sync_terminal_sequences(terminal_sequences)
+
 func conversation_text() -> String:
 	return dialogue_log.get_parsed_text()
 
@@ -260,6 +306,8 @@ func advance_page() -> void:
 		show_page()
 
 func _process(_delta: float) -> void:
+	if conversation_gateway != null:
+		conversation_gateway.invalidate(game_scope, conversation_epoch)
 	if not visible: return
 	notice.visible = not notice.text.is_empty()
 	# Larger fonts and notices can exceed the preferred box height. Grow upward
@@ -302,16 +350,66 @@ func submit() -> void:
 	var message := message_input.text.strip_edges()
 	if message.is_empty():
 		return
+	_submit_message(message)
+
+func _submit_message(message: String, clear_composer := true) -> void:
 	operation = "chat"
 	failed_message = message
 	append_dialogue("Player", message)
 	start_request()
-	var error := request.request(backend_url + "/chat", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_POST, JSON.stringify({"npc_id": npc_id, "player_message": message, "game_scope": game_scope if not game_scope.is_empty() else null}))
-	if error != OK:
+	conversation_gateway.backend_url = backend_url
+	conversation_gateway.invalidate(game_scope, conversation_epoch)
+	var request_id: String = conversation_gateway.submit(game_scope, conversation_epoch, npc_id, message)
+	if request_id.is_empty():
 		finish()
-		append_dialogue("System", "Could not send: " + error_string(error))
-	else:
+		append_dialogue("System", "Could not send this conversation yet. Refresh the world and retry.")
+	elif clear_composer:
 		message_input.clear()
+
+
+func _on_conversation_finalized(_request_id: String, response: Dictionary) -> void:
+	finish()
+	if sent_game_scope != game_scope or conversation_epoch != int(response.get("turn", {}).get("key", {}).get("epoch", -1)): return
+	var dialogue := str(response.get("final_dialogue", ""))
+	append_dialogue(npc_name, dialogue)
+	var beats: Array = response.get("dialogue_beats", [])
+	if not beats.is_empty() and "".join(PackedStringArray(beats.map(func(beat): return str(beat)))) == dialogue:
+		active_message = dialogue
+		var font := get_theme_default_font()
+		var font_size := active_text.get_theme_font_size("normal_font_size")
+		var width := maxf(160, size.x - 304)
+		var height := maxf(44, active_text.size.y)
+		var lines_per_page := maxi(1, int(height / (font.get_height(font_size) + 2)))
+		pages = split_dialogue_beats(beats, font, font_size, width, lines_per_page)
+		page_index = 0
+		show_page()
+	var output: Dictionary = response.get("validated_output", {})
+	if output.get("action") == "give_item":
+		append_dialogue("System", "%s → Player: %s" % [npc_name, output.get("item", "item")])
+	elif output.get("action") == "receive_item":
+		append_dialogue("System", "Player → %s: %s" % [npc_name, output.get("item", "item")])
+	if output.get("intent") == "confirm_transfer":
+		message_input.placeholder_text = "Explain why you need it, or type cancel..."
+		if visible and not modal_blocked: message_input.grab_focus()
+	else:
+		message_input.placeholder_text = "Talk to " + npc_name + "..."
+	world_changed.emit(response)
+
+func _on_presented_turn(response: Dictionary) -> void:
+	_on_conversation_finalized("", response)
+
+
+func _on_conversation_failed(_request_id: String, detail: String, retryable: bool) -> void:
+	finish()
+	if retryable: message_input.text = failed_message
+	append_dialogue("System", detail)
+
+
+func _on_world_refreshed(data: Dictionary) -> void:
+	if not data.is_empty():
+		game_scope = str(data.get("game_scope", game_scope))
+		sync_conversation_world(data)
+	world_changed.emit(data)
 
 
 func finish() -> void:
@@ -338,6 +436,10 @@ func _completed(result: int, code: int, _headers: PackedStringArray, body: Packe
 	var response: Dictionary = parsed
 	if operation == "clear":
 		load_history([])
+		var current_key: Dictionary = response.get("current_key", {})
+		var cleared_epoch := int(current_key.get("epoch", response.get("conversation_epoch", conversation_epoch + 1)))
+		conversation_epoch = cleared_epoch
+		conversation_presenter.reset(game_scope, conversation_epoch, int(response.get("next_sequence", 1)))
 		return
 	append_dialogue(npc_name, str(response.get("final_dialogue", "")))
 	var output: Dictionary = response.get("validated_output", {})
@@ -350,7 +452,6 @@ func _completed(result: int, code: int, _headers: PackedStringArray, body: Packe
 		if visible and not modal_blocked: message_input.grab_focus()
 	else:
 		message_input.placeholder_text = "Talk to " + npc_name + "..."
-	set_inventory(response.get("npc", {}).get("inventory", []))
 	world_changed.emit(response)
 
 
@@ -367,19 +468,16 @@ func start_request() -> void:
 func transfer_item(item: String, direction: String) -> void:
 	if pending or item.is_empty() or not visible or modal_blocked:
 		return
-	operation = "transfer"
-	start_request()
-	var error := request.request(backend_url + "/inventory/transfer", PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_POST, JSON.stringify({"npc_id": npc_id, "item": item, "direction": direction, "game_scope": game_scope if not game_scope.is_empty() else null}))
-	if error != OK:
-		finish()
-		append_dialogue("System", "Transfer could not be sent. Please retry.")
+	var message := "give me " + item if direction == "to_player" else "I give you " + item
+	_submit_message(message, false)
 
 
 func clear_chat() -> void:
 	if pending or modal_blocked: return
 	operation = "clear"
 	start_request()
-	var error := request.request(backend_url + "/chat/%s" % npc_id, PackedStringArray(), HTTPClient.METHOD_DELETE)
+	var clear_url := backend_url + "/chat/%s?game_scope=%s&conversation_epoch=%s" % [npc_id, game_scope.uri_encode(), conversation_epoch]
+	var error := request.request(clear_url, PackedStringArray(), HTTPClient.METHOD_DELETE)
 	if error != OK:
 		finish()
 		append_dialogue("System", "Could not clear chat. Please retry.")

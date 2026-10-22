@@ -56,7 +56,7 @@ func _ready() -> void:
 	grid.add_theme_constant_override("h_separation",28)
 	grid.add_theme_constant_override("v_separation",8)
 	content.add_child(grid)
-	for row in [["W A S D","Move"],["E","Talk, inspect, or enter"],["F","Pick up nearby items"],["I","Open your bag"],["Esc","Menu / close panels"]]:
+	for row in [["W A S D","Move"],["Shift + direction","Sprint (1.5× speed)"],["E","Talk, inspect, or enter"],["F","Pick up nearby items"],["I","Open your bag"],["Esc","Menu / close panels"]]:
 		var key := Label.new()
 		key.text = row[0]
 		key.custom_minimum_size = Vector2(150,34)
@@ -137,6 +137,20 @@ func dismiss() -> void:
 	objective.visible = not completed
 	elapsed = 0.0
 	animating = not completed
+	_layout()
+
+# Reuse the arrival objective presentation for nonblocking gameplay guidance.
+# The owning game state restores these tasks; they do not acknowledge controls
+# or write the initial find-help objective's save flag.
+func present_objective(text: String, animate: bool = true) -> void:
+	reset_presentation()
+	objective_text.text = text
+	active = true
+	acknowledged = true
+	completed = false
+	elapsed = 0.0 if animate else HOLD_TIME+MOVE_TIME
+	animating = animate
+	objective.show()
 	_layout()
 
 func advance(delta: float, reduced_motion: bool = false) -> void:

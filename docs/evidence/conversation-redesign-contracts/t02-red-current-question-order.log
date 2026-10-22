@@ -1,0 +1,37 @@
+test_action_choice_consent_must_select_an_exact_offered_operation (test_conversation_contracts_turn_values.TurnValueContractsTests.test_action_choice_consent_must_select_an_exact_offered_operation) ... ok
+test_action_choice_options_are_detached_and_never_an_execution_queue (test_conversation_contracts_turn_values.TurnValueContractsTests.test_action_choice_options_are_detached_and_never_an_execution_queue) ... ok
+test_action_choice_options_require_direct_candidates_bound_to_current_question (test_conversation_contracts_turn_values.TurnValueContractsTests.test_action_choice_options_require_direct_candidates_bound_to_current_question) ... ok
+test_all_audited_commands_have_typed_arguments_only (test_conversation_contracts_turn_values.TurnValueContractsTests.test_all_audited_commands_have_typed_arguments_only) ... ok
+test_assembled_beats_partition_complete_text_and_span_map_is_detached (test_conversation_contracts_turn_values.TurnValueContractsTests.test_assembled_beats_partition_complete_text_and_span_map_is_detached) ... ok
+test_candidate_requires_exact_segment_support_and_explicit_revision_link (test_conversation_contracts_turn_values.TurnValueContractsTests.test_candidate_requires_exact_segment_support_and_explicit_revision_link) ... ok
+test_capability_schema_is_typed_and_is_only_a_view (test_conversation_contracts_turn_values.TurnValueContractsTests.test_capability_schema_is_typed_and_is_only_a_view) ... ok
+test_consent_answer_must_follow_current_question_not_only_origin (test_conversation_contracts_turn_values.TurnValueContractsTests.test_consent_answer_must_follow_current_question_not_only_origin) ... FAIL
+test_consent_requires_exact_current_question_answer_terms_and_preconditions (test_conversation_contracts_turn_values.TurnValueContractsTests.test_consent_requires_exact_current_question_answer_terms_and_preconditions) ... ok
+test_context_enforces_scope_visibility_and_one_active_item_negotiation (test_conversation_contracts_turn_values.TurnValueContractsTests.test_context_enforces_scope_visibility_and_one_active_item_negotiation) ... ok
+test_decision_union_carries_only_one_ready_operation_and_no_authorization (test_conversation_contracts_turn_values.TurnValueContractsTests.test_decision_union_carries_only_one_ready_operation_and_no_authorization) ... ok
+test_exact_unicode_message_references_are_validated_against_supplied_text (test_conversation_contracts_turn_values.TurnValueContractsTests.test_exact_unicode_message_references_are_validated_against_supplied_text) ... ok
+test_fixture_roundtrips_all_public_composite_values (test_conversation_contracts_turn_values.TurnValueContractsTests.test_fixture_roundtrips_all_public_composite_values) ... ok
+test_nested_values_and_policy_maps_are_detached_and_frozen (test_conversation_contracts_turn_values.TurnValueContractsTests.test_nested_values_and_policy_maps_are_detached_and_frozen) ... ok
+test_non_item_pending_and_command_result_variants_remain_typed (test_conversation_contracts_turn_values.TurnValueContractsTests.test_non_item_pending_and_command_result_variants_remain_typed) ... ok
+test_pending_all_statuses_expiry_is_only_failed_preconditions (test_conversation_contracts_turn_values.TurnValueContractsTests.test_pending_all_statuses_expiry_is_only_failed_preconditions) ... ok
+test_proposal_describes_multiple_candidates_and_every_modality_without_authorizing (test_conversation_contracts_turn_values.TurnValueContractsTests.test_proposal_describes_multiple_candidates_and_every_modality_without_authorizing) ... ok
+test_proposal_reference_and_concern_ids_are_unique_and_linked (test_conversation_contracts_turn_values.TurnValueContractsTests.test_proposal_reference_and_concern_ids_are_unique_and_linked) ... ok
+test_question_turn_cannot_precede_the_originating_turn (test_conversation_contracts_turn_values.TurnValueContractsTests.test_question_turn_cannot_precede_the_originating_turn) ... ok
+test_receipt_outcomes_cannot_promote_acceptance_to_completion (test_conversation_contracts_turn_values.TurnValueContractsTests.test_receipt_outcomes_cannot_promote_acceptance_to_completion) ... ok
+test_receipt_verifies_canonical_command_arguments_and_target (test_conversation_contracts_turn_values.TurnValueContractsTests.test_receipt_verifies_canonical_command_arguments_and_target) ... ok
+test_reply_metadata_origins_versions_and_nested_maps_are_strict (test_conversation_contracts_turn_values.TurnValueContractsTests.test_reply_metadata_origins_versions_and_nested_maps_are_strict) ... ok
+test_resumed_question_keeps_origin_and_binds_the_current_question_turn (test_conversation_contracts_turn_values.TurnValueContractsTests.test_resumed_question_keeps_origin_and_binds_the_current_question_turn) ... ok
+test_segments_strict_union_rejects_code_quantities_and_mismatched_renderer (test_conversation_contracts_turn_values.TurnValueContractsTests.test_segments_strict_union_rejects_code_quantities_and_mismatched_renderer) ... ok
+
+======================================================================
+FAIL: test_consent_answer_must_follow_current_question_not_only_origin (test_conversation_contracts_turn_values.TurnValueContractsTests.test_consent_answer_must_follow_current_question_not_only_origin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 171, in test_consent_answer_must_follow_current_question_not_only_origin
+    self.assertIn('question_turn', c.ConsentBinding.model_fields, 'current question TurnRef is absent')
+AssertionError: 'question_turn' not found in {'interaction_id': FieldInfo(annotation=str, required=True, metadata=[Strict(strict=True), MinLen(min_length=1), _PydanticGeneralMetadata(pattern='^[A-Za-z0-9][A-Za-z0-9_.:-]*$')]), 'question_id': FieldInfo(annotation=str, required=True, metadata=[Strict(strict=True), MinLen(min_length=1), _PydanticGeneralMetadata(pattern='^[A-Za-z0-9][A-Za-z0-9_.:-]*$')]), 'question_turn_id': FieldInfo(annotation=str, required=True, metadata=[Strict(strict=True), MinLen(min_length=1), _PydanticGeneralMetadata(pattern='^[A-Za-z0-9][A-Za-z0-9_.:-]*$')]), 'answering_turn': FieldInfo(annotation=TurnRef, required=True), 'answer_span': FieldInfo(annotation=TextSpan, required=True), 'operation': FieldInfo(annotation=OperationCandidate, required=True), 'checked_preconditions': FieldInfo(annotation=tuple[Precondition, ...], required=True), 'precondition_fingerprint': FieldInfo(annotation=str, required=True, metadata=[Strict(strict=True), MinLen(min_length=1), _PydanticGeneralMetadata(pattern='^[A-Za-z0-9][A-Za-z0-9_.:-]*$')])} : current question TurnRef is absent
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.004s
+
+FAILED (failures=1)

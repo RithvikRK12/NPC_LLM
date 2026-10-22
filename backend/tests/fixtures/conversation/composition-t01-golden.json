@@ -1,0 +1,19 @@
+{
+  "fact": "The ship needs 12 timber, 3 rope, 2 sailcloth, and 2 pitch.",
+  "receipts": [
+    {"label": "accepted_inspection", "command": "begin_ship_inspection", "outcome": "accepted", "result": {"kind": "activity", "activity_id": "activity:inspection", "stage": "accepted"}, "activity_id": "activity:inspection", "reason": null, "want": "I agreed to inspect the ship."},
+    {"label": "completed_inspection", "command": "begin_ship_inspection", "outcome": "completed", "result": {"kind": "activity", "activity_id": "activity:inspection", "stage": "completed"}, "activity_id": "activity:inspection", "reason": null, "want": "The ship inspection was completed."},
+    {"label": "completed_to_player", "command": "give_item", "outcome": "completed", "result": {"kind": "item_transfer", "item": "wood", "quantity": 1, "direction": "to_player"}, "activity_id": null, "reason": null, "want": "I gave you 1 wood."},
+    {"label": "completed_to_npc", "command": "receive_item", "outcome": "completed", "result": {"kind": "item_transfer", "item": "rope", "quantity": 1, "direction": "to_npc"}, "activity_id": null, "reason": null, "want": "You gave me 1 rope."},
+    {"label": "rejected_inspection", "command": "begin_ship_inspection", "outcome": "rejected", "result": {"kind": "rejection"}, "activity_id": null, "reason": "TOO_FAR_AWAY", "want": "I could not begin the ship inspection."},
+    {"label": "rejected_transfer", "command": "give_item", "outcome": "rejected", "result": {"kind": "rejection"}, "activity_id": null, "reason": "MISSING_ITEM", "want": "I could not give you the item."}
+  ],
+  "commands": [
+    {"command": "report_wreck", "changed": true, "want": "I'm glad you made it ashore. I can take a look at the damage with you, if you'd like."},
+    {"command": "wait", "changed": true, "want": "I began waiting."},
+    {"command": "resume", "changed": true, "want": "I resumed the outing."},
+    {"command": "postpone", "changed": true, "want": "I postponed the outing."},
+    {"command": "return", "changed": true, "want": "I started the return journey."},
+    {"command": "wait", "changed": false, "want": "The request made no change."}
+  ]
+}

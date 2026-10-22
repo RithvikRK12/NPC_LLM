@@ -2,6 +2,7 @@ extends Node
 # Commands retain their complete wire payload until acknowledged. A timeout
 # never manufactures a second reward request with a different identity.
 signal updated(data: Dictionary, operation: String)
+signal snapshot_received(data: Dictionary, operation: String)
 signal failed(message: String)
 var backend_url := "http://127.0.0.1:8000"
 var game_scope := ""
@@ -11,6 +12,8 @@ var request: HTTPRequest
 var pending: Dictionary = {}
 var sent_scope := ""
 var refreshing := false
+var snapshot_filter: Callable
+var activity_events = preload("res://scripts/revisioned_state.gd").new()
 func _ready() -> void:
 	request=HTTPRequest.new(); request.timeout=10; add_child(request)
 	request.request_completed.connect(_completed)
@@ -56,5 +59,10 @@ func _completed(result: int, code: int, _headers: PackedStringArray, body: Packe
 		failed.emit("The backend did not return the encounter. Reload after updating the backend."); return
 	if int(incoming.get("revision",-1))<int(state.get("revision",0)):
 		_refresh(); return
+	if snapshot_filter.is_valid():
+		data = snapshot_filter.call(data)
+		incoming = data.get("gatherer_encounter", {})
+		if incoming.is_empty(): return
 	state=incoming.duplicate(true); pending={}; refreshing=false
-	updated.emit(data,operation)
+	snapshot_received.emit(data, operation)
+	if activity_events.consume_activity("encounter:gatherer", game_scope, state): updated.emit(data,operation)

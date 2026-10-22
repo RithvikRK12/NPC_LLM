@@ -1,0 +1,11 @@
+test_admits_only_exact_validated_final_speech_additions_as_narrative (test_conversation_canon.CanonPolicyTests.test_admits_only_exact_validated_final_speech_additions_as_narrative) ... ok
+test_allows_relatives_and_historical_places_but_requires_grounding_for_affordances (test_conversation_canon.CanonPolicyTests.test_allows_relatives_and_historical_places_but_requires_grounding_for_affordances) ... ok
+test_authored_identity_wins_and_revisions_are_left_to_t02 (test_conversation_canon.CanonPolicyTests.test_authored_identity_wins_and_revisions_are_left_to_t02) ... ok
+test_rejects_candidate_missing_from_final_span_map (test_conversation_canon.CanonPolicyTests.test_rejects_candidate_missing_from_final_span_map) ... ok
+test_rejects_failed_validation_and_stale_or_mismatched_spans (test_conversation_canon.CanonPolicyTests.test_rejects_failed_validation_and_stale_or_mismatched_spans) ... ok
+test_rejects_final_ref_not_linked_to_fresh_source_segment_mapping (test_conversation_canon.CanonPolicyTests.test_rejects_final_ref_not_linked_to_fresh_source_segment_mapping) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

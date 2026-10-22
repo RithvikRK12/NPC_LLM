@@ -1,0 +1,41 @@
+{
+  "fixture_schema_version": 1,
+  "fixture_id": "npc-response-quality-focused-v1",
+  "status": "supplemental_frozen_selection",
+  "source_fixture": "backend/tests/fixtures/conversation/baseline-evaluation-v1.json",
+  "source_fixture_sha256": "a76b3c16c8be6a535af708544ad5c1ea9b3fcb7ef27ef06524c56b63f427e3bc",
+  "sample_refs": [
+    "craftsman-01:t1",
+    "craftsman-01:t2",
+    "craftsman-01:t3",
+    "craftsman-01:t4",
+    "craftsman-02:t1",
+    "craftsman-02:t2",
+    "craftsman-02:t3",
+    "craftsman-02:t4",
+    "gatherer-01:t1",
+    "gatherer-01:t2",
+    "gatherer-01:t3",
+    "gatherer-01:t4",
+    "gatherer-02:t1",
+    "gatherer-02:t2",
+    "gatherer-02:t3",
+    "gatherer-02:t4",
+    "gatherer-04:t1",
+    "gatherer-04:t2",
+    "gatherer-04:t3",
+    "gatherer-04:t4"
+  ],
+  "case_purposes": {
+    "craftsman-01": "mixed emotional and practical rope request; unsupported demonstration offer",
+    "craftsman-02": "mixed emotional and practical wood request; follow-up/topic switch; unsupported weather claim; unspecified father biography",
+    "gatherer-01": "mixed emotional and practical supplies request control",
+    "gatherer-02": "current-turn and conversation control",
+    "gatherer-04": "fruit detail recall and changed-opinion continuity failure"
+  },
+  "successful_control_refs_in_full_suite": [
+    "craftsman-04:t2",
+    "craftsman-04:t3"
+  ],
+  "scoring_denominators_source": "the frozen 44-scenario fixture scoring_plan; this focused selection does not replace or alter its six denominators"
+}

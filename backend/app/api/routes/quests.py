@@ -4,6 +4,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.database.session import get_db
 from app.models import Player, NPC
+from app.services.state.resources import game_writer, revision_labels
 from app.schemas.npc import NPCRead
 from app.services.quests.bow import get_quest, snapshot, finish_if_ready, STRING_POSITION
 
@@ -21,22 +22,26 @@ def payload(db, player, reward=None):
     db.flush()
     data = {'bow_quest': snapshot(get_quest(db)), 'player_inventory': list(player.inventory or []),
             'npcs': [NPCRead.model_validate(npc).model_dump() for npc in db.scalars(select(NPC).order_by(NPC.id))],
-            'reward_dialogue': reward}
+            'reward_dialogue': reward, 'game_scope': player.game_scope,
+            'state_revisions': revision_labels(db, player)}
     db.commit()
+    from app.services.memory.service import MemoryService
+    MemoryService(db).embed_deferred_conversation_memories()
     return data
 
 
 @router.post('/start')
 def start(db: Session = Depends(get_db)):
-    player = lock_player(db)
-    quest = get_quest(db)
-    if quest.phase == 'available':
-        quest.phase = 'meet'
-        # Existing saved worlds may have used the initial wood. Ensure this new quest is playable once.
-        npcs = list(db.scalars(select(NPC).order_by(NPC.id).with_for_update()))
-        if 'wood' not in (player.inventory or []) and not any('wood' in (n.inventory or []) for n in npcs):
-            gatherer = next(n for n in npcs if n.role == 'gatherer')
-            gatherer.inventory = list(gatherer.inventory or []) + ['wood']
+    with game_writer(db):
+        player = lock_player(db)
+        quest = get_quest(db)
+        if quest.phase == 'available':
+            quest.phase = 'meet'
+            # Existing saved worlds may have used the initial wood. Ensure this new quest is playable once.
+            npcs = list(db.scalars(select(NPC).order_by(NPC.id).with_for_update()))
+            if 'wood' not in (player.inventory or []) and not any('wood' in (n.inventory or []) for n in npcs):
+                gatherer = next(n for n in npcs if n.role == 'gatherer')
+                gatherer.inventory = list(gatherer.inventory or []) + ['wood']
     return payload(db, player)
 
 
@@ -47,19 +52,21 @@ class PickupRequest(BaseModel):
 
 @router.post('/pickup-string')
 def pickup(request: PickupRequest, db: Session = Depends(get_db)):
-    player = lock_player(db)
-    quest = get_quest(db)
-    if quest.phase != 'gather' or quest.string_collected:
-        raise HTTPException(409, 'String is not available to pick up')
-    if (request.x - STRING_POSITION['x']) ** 2 + (request.y - STRING_POSITION['y']) ** 2 > 64 ** 2:
-        raise HTTPException(409, 'Move closer to the string')
-    quest.string_collected = True
-    player.inventory = list(player.inventory or []) + ['string']
+    with game_writer(db):
+        player = lock_player(db)
+        quest = get_quest(db)
+        if quest.phase != 'gather' or quest.string_collected:
+            raise HTTPException(409, 'String is not available to pick up')
+        if (request.x - STRING_POSITION['x']) ** 2 + (request.y - STRING_POSITION['y']) ** 2 > 64 ** 2:
+            raise HTTPException(409, 'Move closer to the string')
+        quest.string_collected = True
+        player.inventory = list(player.inventory or []) + ['string']
     return payload(db, player)
 
 
 @router.post('/advance')
 def advance(db: Session = Depends(get_db)):
-    player = lock_player(db)
-    reward = finish_if_ready(db, player)
+    with game_writer(db):
+        player = lock_player(db)
+        reward = finish_if_ready(db, player)
     return payload(db, player, reward)

@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_followup_uses_visible_conversation_but_not_unrelated_old_topics (test_character_profiles.CharacterProfileTests.test_followup_uses_visible_conversation_but_not_unrelated_old_topics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 58, in test_followup_uses_visible_conversation_but_not_unrelated_old_topics
+    self.assertIn('background', [x['id'] for x in profiles.project_profile('craftsman', 'Tell me more', repeated)['details']])
+AssertionError: 'background' not found in ['story_threads']
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PASS Lost outcome response preserves original payload and request ID
+PASS Acknowledged outcome unlocks thanks
+PASS Revision conflict fetches authoritative state
+PASS Conflict recovery adopts committed branch without another reward
+PASS Old-scope callback cannot replace new game

@@ -1,0 +1,7 @@
+$ .venv/bin/python -m unittest backend.tests.test_conversation_baseline_scenarios
+exit_code=0
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

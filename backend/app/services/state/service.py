@@ -1,4 +1,5 @@
 from __future__ import annotations
+from app.services.state.resources import versioned
 
 from dataclasses import dataclass
 
@@ -22,6 +23,7 @@ class StateService:
     def __init__(self, db: Session) -> None:
         self._db = db
 
+    @versioned
     def apply(self, npc: NPC, player: Player, quest: Quest | None, output: LLMResponse) -> WorldStateSnapshot:
         npc.trust = clamp(npc.trust + output.state_update.trust)
         npc.fear = clamp(npc.fear + output.state_update.fear)

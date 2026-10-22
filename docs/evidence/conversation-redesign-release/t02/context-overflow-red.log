@@ -1,0 +1,27 @@
+test_bow_meeting_uses_the_durable_quest_operation (test_conversation_playtest.PlaytestRuntimeTests.test_bow_meeting_uses_the_durable_quest_operation) ... /Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+ok
+test_context_overflow_finishes_without_generation_or_actions (test_conversation_playtest.PlaytestRuntimeTests.test_context_overflow_finishes_without_generation_or_actions) ... Conversation continuation failed: code=CONTEXT_BUDGET_EXCEEDED stage=context.budget turn=300e8025-c2f9-41d2-9459-968e5b5e7c76
+FAIL
+test_invented_model_action_for_personal_question_cannot_move_stock (test_conversation_playtest.PlaytestRuntimeTests.test_invented_model_action_for_personal_question_cannot_move_stock) ... ok
+test_quoted_and_hypothetical_requests_never_move_stock (test_conversation_playtest.PlaytestRuntimeTests.test_quoted_and_hypothetical_requests_never_move_stock) ... ok
+test_stock_requires_exact_persisted_purpose_question_and_durable_retry (test_conversation_playtest.PlaytestRuntimeTests.test_stock_requires_exact_persisted_purpose_question_and_durable_retry) ... ok
+
+======================================================================
+FAIL: test_context_overflow_finishes_without_generation_or_actions (test_conversation_playtest.PlaytestRuntimeTests.test_context_overflow_finishes_without_generation_or_actions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_playtest.py", line 76, in test_context_overflow_finishes_without_generation_or_actions
+    result=self.say('What do you enjoy about your work?')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_playtest.py", line 50, in say
+    self.assertEqual(result.phase,'finalized',result)
+AssertionError: 'preparing' != 'finalized'
+- preparing
++ finalized
+ : turn=TurnRef(turn_id='300e8025-c2f9-41d2-9459-968e5b5e7c76', request_id='test:request:1', key=ConversationKey(game_scope='4ded6057-2da0-45a7-b18b-d8517a1aaacc', npc_id=2, epoch=0), sequence=1) phase='preparing' response=None
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.337s
+
+FAILED (failures=1)

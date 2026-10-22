@@ -80,6 +80,7 @@ func restore(world: Dictionary) -> void:
 func dispose() -> void:
 	phase=""; recovery_pending=false; corpses=false; was_paused=false
 	if main==null: return
+	if is_instance_valid(main.onboarding): main.onboarding.reset_presentation()
 	router.stop(main.player); combat.stop(); combat.reset()
 	main.player.get_child(0).set_scripted_mode(false)
 	main.npc_nodes[2].modulate=Color.WHITE
@@ -170,6 +171,8 @@ func advance(delta: float) -> void:
 			main.player.get_child(0).set_scripted_mode(true); main.player.get_child(0).play_scripted("fall")
 			_present(lines.defeat,[["Retry encounter",retry_encounter],["Quit to menu",quit_to_menu]])
 		elif boars.all(func(b): return b.health<=0):
+			# Complete only the accepted combat task, never the refusal's staged corpses.
+			if main.onboarding.active: main.onboarding.complete_objective()
 			combat.stop(); corpses=true; _command("victory",{"attempt_id":gateway.state.attempt_id})
 func _intro() -> void:
 	_actors(); hud.hide(); knife.hide()
@@ -247,8 +250,12 @@ func _updated(world: Dictionary, operation: String) -> void:
 		combat.stop(); hud.hide(); _recover(); return
 	match operation:
 		"begin_intro": _intro()
-		"restart_attempt": phase="checkpoint_fade"; elapsed=0; panel.hide(); hud.hide(); combat.reset()
-		"accept": _route(mark("CombatStartMark"),"handoff")
+		"restart_attempt":
+			main.onboarding.reset_presentation()
+			phase="checkpoint_fade"; elapsed=0; panel.hide(); hud.hide(); combat.reset()
+		"accept":
+			main.onboarding.present_objective("Help the Gatherer defeat both boars.")
+			_route(mark("CombatStartMark"),"handoff")
 		"victory": hud.hide(); _route(mark("PlayerTalkMark"),"thanks")
 		"decline": phase="refusal"; _present(lines.refusal,[["Continue",continue_scene]])
 		"complete_retreat":

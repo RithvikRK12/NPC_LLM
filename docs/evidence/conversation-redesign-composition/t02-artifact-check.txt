@@ -1,0 +1,2 @@
+backend/app/services/conversation/composition.py: syntax and whitespace OK
+backend/tests/test_conversation_composition_service.py: syntax and whitespace OK

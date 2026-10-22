@@ -37,6 +37,14 @@ func is_ship_frame() -> bool:
 	return phase.begins_with("inspection") or phase in ["outcome_pending","farewell"]
 func camera_target() -> Vector2:
 	return main.player.position.lerp(activity.actor.position,0.5)+Vector2(0,200 if is_ship_frame() else -16)
+func _nearest_clear_start(at: Vector2, router: RefCounted) -> Vector2:
+	var layout: Resource=main.village.layout
+	if router.point_clear(at,layout): return at
+	for radius in range(4,65,4):
+		for offset in [Vector2(radius,0),Vector2(-radius,0),Vector2(0,radius),Vector2(0,-radius),Vector2(radius,radius),Vector2(-radius,radius),Vector2(radius,-radius),Vector2(-radius,-radius)]:
+			var candidate: Vector2=at+offset
+			if router.point_clear(candidate,layout): return candidate
+	return Vector2.INF
 func eligible() -> bool:
 	return main.world_loaded and not main.cinematic and not main.travelling and not main.menu_layer.visible and not main.quitting and not main.ui_owns_input()
 func try_introduction() -> bool:
@@ -115,8 +123,17 @@ func try_inspection() -> bool:
 	var arrival := Vector2(at[0],at[1])
 	if main.player.position.distance_to(arrival)>176 or activity.actor.position.distance_to(arrival)>176: return false
 	var p: Array=activity.data.InspectionPlayerMark; var n: Array=activity.data.InspectionCraftsmanMark
+	# The hull leaves both actors close to its solid side colliders. Start pathing
+	# from the nearest clear foot position so the router can stage the encounter.
+	var safe_player: Vector2=_nearest_clear_start(main.village.layout.recover_position(main.player.position),player_router)
+	var safe_actor: Vector2=_nearest_clear_start(main.village.layout.recover_position(activity.actor.position),npc_router)
+	if safe_player==Vector2.INF or safe_actor==Vector2.INF: return false
+	if safe_player.distance_to(main.player.position)>48 or safe_actor.distance_to(activity.actor.position)>48: return false
+	main.player.position=safe_player
+	activity.actor.position=safe_actor
 	if not player_router.set_target(main.player.position,Vector2(p[0],p[1]),main.village.layout) or not npc_router.set_target(activity.actor.position,Vector2(n[0],n[1]),main.village.layout): return false
 	inspection_attempted=true
+	main.onboarding.complete_objective()
 	activity.overridden=true; activity.router.stop(activity.actor)
 	phase="inspection_recognition"; beat=0; route_time=0
 	main.player.set_physics_process(false); present(lines.inspection[0].text)

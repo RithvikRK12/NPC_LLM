@@ -1,0 +1,7 @@
+# NPC chat 503: missing local startup configuration
+
+The active terminal-launched backend returned HTTP 200 for `/health`, but HTTP 503 with `Conversation service unavailable` for a read-only turn lookup. It was launched directly with uvicorn from `backend/`; the ignored `backend/.env` had no durable conversation policy. The current client submits versioned conversations, whose route requires that runtime. `Play.command` already exported the correct profile, but a plain terminal launch did not.
+
+Applied the existing `config/playtest.env` values to this Mac's ignored `backend/.env`, retaining unrelated settings and the database URL. Ordinary terminal startup now assembles the complete enabled conversation runtime and uses the same local Llama alias as the launcher. No global Settings defaults, validation, model weights, admission rules or saved world were changed. Gracefully stopped the misconfigured backend and launched the game with the existing save.
+
+Verification: ordinary Settings assembly passes; seven startup/recovery tests pass; Godot conversation signal checks pass. `verify_local.py` runs a real versioned greeting and exact retry in a disposable database without exporting the playtest profile. Results are adjacent. The initial module-style unittest invocation lacked the tests import path; rerunning via discovery with `backend:backend/tests` passes. Existing dependency deprecation warnings remain.

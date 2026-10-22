@@ -1,0 +1,21 @@
+======================================================================
+ERROR: test_prompt_names_current_completed_state_and_separates_player_from_npc (test_conversation_post_inspection.PostInspectionTests.test_prompt_names_current_completed_state_and_separates_player_from_npc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_post_inspection.py", line 43, in test_prompt_names_current_completed_state_and_separates_player_from_npc
+    self.assertEqual(data['speaker_knowledge']['ship_repair'], 'gathering_materials')
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'ship_repair'
+
+======================================================================
+FAIL: test_player_ownership_and_reoffering_a_completed_inspection_are_blocking (test_conversation_post_inspection.PostInspectionTests.test_player_ownership_and_reoffering_a_completed_inspection_are_blocking)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_post_inspection.py", line 56, in test_player_ownership_and_reoffering_a_completed_inspection_are_blocking
+    self.assertIn(code, {item.code for item in findings}, text)
+AssertionError: 'UNFINISHED_REPAIR_CLAIMED_COMPLETE' not found in set() : Your ship is seaworthy now.
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.004s
+
+FAILED (failures=1, errors=1)

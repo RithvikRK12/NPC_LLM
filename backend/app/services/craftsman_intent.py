@@ -1,9 +1,30 @@
+from app.services.state.resources import versioned
 """A bounded intent adapter, separate from generated speech and inventory permissions."""
 import re
 from app.services.craftsman import record, apply_command
 from app.services.quests.ship_repair import ship_snapshot, material_list
 from app.services.quests.bow import reply
 from uuid import uuid4
+
+def accepts_inspection_offer(text: str) -> bool:
+    """Recognize affirmative clauses without accepting arbitrary text after yes.
+
+    The caller still requires an outstanding inspection offer. Every clause must
+    be assent or courtesy, so a positive word cannot authorize a mixed reply.
+    """
+    affirmative = (
+        r"(?:yes(?: please)?|yeah|yep|okay|ok|sure|absolutely|certainly|"
+        r"please do|thank you yes|show you|lead the way|let's go|lets go|"
+        r"(?:that|it) (?:would be|sounds) (?:helpful|great|good|nice)|"
+        r"sounds good(?: to me)?|(?:i'd|i would) appreciate (?:that|it))"
+    )
+    clauses = [re.sub(r"\s+", " ", clause).strip()
+               for clause in re.split(r"[,.!;]+", text) if clause.strip()]
+    return bool(clauses) and all(
+        re.fullmatch(affirmative + r"|thanks|thank you|please", clause)
+        for clause in clauses
+    ) and any(re.fullmatch(affirmative, clause) for clause in clauses)
+
 
 def resolve_craftsman_intent(message, recent_context, encounter, focus=None):
     text=message.lower().replace('’',"'").strip(' .!?')
@@ -24,7 +45,7 @@ def resolve_craftsman_intent(message, recent_context, encounter, focus=None):
     owned = bool(re.search(r'\b(?:my|our) (?:ship|boat)|\bi washed\b',text))
     damage = bool(re.search(r'\b(?:wreck\w*|broke\w*|damag\w*|storm|sank|washed)\b',text))
     help_request = bool(re.search(r'\b(?:help|repair|fix|inspect|look at|see the ship)\b',text)) and bool(re.search(r'\b(?:can|could|would|please|need|come|help me)\b',text))
-    agreement = text in {'yes','yes please','yes, please','please do','thank you, yes','okay','ok','sure','show you','lead the way'}
+    agreement = accepts_inspection_offer(text)
     if encounter['inspection_complete'] and help_request and (ship or encounter['wreck_reported']):
         return {'kind':'inspected'}
     if help_request and (ship or encounter['wreck_reported']):
@@ -35,6 +56,7 @@ def resolve_craftsman_intent(message, recent_context, encounter, focus=None):
     if ship and owned and damage: return {'command':'report_wreck'}
     return {}
 
+@versioned
 def dialogue(db,npc,message,player,context):
     if npc.role!='craftsman': return None
     row=record(db,player)

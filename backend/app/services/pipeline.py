@@ -235,6 +235,10 @@ class ConversationPipeline:
             'memory_classification': memory_classification, 'decision_trace': decision_trace}
         self._db.commit()
 
+        # The attributed memory row committed with its conversation. Semantic
+        # embedding is optional work and must happen after the game writer ends.
+        self._memory_service.embed_deferred_conversation_memories()
+
         refreshed_npc = self._db.scalar(select(NPC).where(NPC.id == npc.id)) or npc
         memories = self._memory_service.retrieve_relevant_memories(refreshed_npc, player_message, self._settings.memory_top_k)
         current_quest = self._db.scalar(select(Quest).where(Quest.player_id == player.id))

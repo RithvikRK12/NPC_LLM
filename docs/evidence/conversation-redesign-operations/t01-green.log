@@ -1,0 +1,19 @@
+test_ambiguous_answer_requires_clarification (backend.tests.test_conversation_operations.OperationPolicyTests.test_ambiguous_answer_requires_clarification) ... ok
+test_conflicting_question_or_preconditions_cannot_reuse_a_binding (backend.tests.test_conversation_operations.OperationPolicyTests.test_conflicting_question_or_preconditions_cannot_reuse_a_binding) ... ok
+test_direct_supported_request_is_only_ready_for_gateway_recheck (backend.tests.test_conversation_operations.OperationPolicyTests.test_direct_supported_request_is_only_ready_for_gateway_recheck) ... ok
+test_invalid_command_quantity_and_confidence_cannot_enter_policy (backend.tests.test_conversation_operations.OperationPolicyTests.test_invalid_command_quantity_and_confidence_cannot_enter_policy) ... ok
+test_later_choice_rechecks_only_the_exact_selected_offer (backend.tests.test_conversation_operations.OperationPolicyTests.test_later_choice_rechecks_only_the_exact_selected_offer) ... ok
+test_multiple_supported_actions_clarify_even_with_empty_plan (backend.tests.test_conversation_operations.OperationPolicyTests.test_multiple_supported_actions_clarify_even_with_empty_plan) ... ok
+test_pending_answer_requires_exact_binding_and_current_satisfied_state (backend.tests.test_conversation_operations.OperationPolicyTests.test_pending_answer_requires_exact_binding_and_current_satisfied_state) ... ok
+test_policy_does_not_mutate_inputs (backend.tests.test_conversation_operations.OperationPolicyTests.test_policy_does_not_mutate_inputs) ... ok
+test_quoted_negated_hypothetical_requests_never_become_ready (backend.tests.test_conversation_operations.OperationPolicyTests.test_quoted_negated_hypothetical_requests_never_become_ready) ... ok
+test_stale_plan_or_binding_terms_cannot_authorize (backend.tests.test_conversation_operations.OperationPolicyTests.test_stale_plan_or_binding_terms_cannot_authorize) ... ok
+test_suspended_or_terminal_question_never_authorizes (backend.tests.test_conversation_operations.OperationPolicyTests.test_suspended_or_terminal_question_never_authorizes) ... ok
+test_unrelated_purpose_words_and_generated_prose_never_transfer (backend.tests.test_conversation_operations.OperationPolicyTests.test_unrelated_purpose_words_and_generated_prose_never_transfer) ... ok
+test_unresolved_or_out_of_range_current_message_spans_are_denied (backend.tests.test_conversation_operations.OperationPolicyTests.test_unresolved_or_out_of_range_current_message_spans_are_denied) ... ok
+test_unsupported_unavailable_target_parameter_and_speech_act_are_denied (backend.tests.test_conversation_operations.OperationPolicyTests.test_unsupported_unavailable_target_parameter_and_speech_act_are_denied) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.004s
+
+OK

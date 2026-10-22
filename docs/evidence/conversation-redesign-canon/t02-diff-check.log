@@ -1,0 +1,3 @@
+tracked_diff_exit_code=0
+untracked_canon_exit_code=1
+untracked_tests_exit_code=1

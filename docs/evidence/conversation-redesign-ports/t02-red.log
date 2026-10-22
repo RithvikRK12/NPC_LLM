@@ -1,0 +1,101 @@
+FFFFFFFFFFFF
+======================================================================
+FAIL: test_clear_tombstone_replays_identity_without_erased_payload (test_conversation_store_ports.FakeWriteRepositoryTests.test_clear_tombstone_replays_identity_without_erased_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_cleared_turn_cannot_execute_or_recover_in_new_epoch (test_conversation_store_ports.FakeWriteRepositoryTests.test_cleared_turn_cannot_execute_or_recover_in_new_epoch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_committed_receipt_survives_clear_but_old_execution_is_invalidated (test_conversation_store_ports.FakeWriteRepositoryTests.test_committed_receipt_survives_clear_but_old_execution_is_invalidated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_existing_receipt_is_recovered_without_a_second_effect (test_conversation_store_ports.FakeWriteRepositoryTests.test_existing_receipt_is_recovered_without_a_second_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_fake_claim_control_models_oldest_turn_and_independent_npcs (test_conversation_store_ports.FakeWriteRepositoryTests.test_fake_claim_control_models_oldest_turn_and_independent_npcs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_fake_structurally_conforms_to_available_protocols (test_conversation_store_ports.FakeWriteRepositoryTests.test_fake_structurally_conforms_to_available_protocols)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_lookup_is_scoped_and_does_not_admit_or_execute (test_conversation_store_ports.FakeWriteRepositoryTests.test_lookup_is_scoped_and_does_not_admit_or_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_receipt_failure_rolls_back_effect_and_phase (test_conversation_store_ports.FakeWriteRepositoryTests.test_receipt_failure_rolls_back_effect_and_phase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_replaced_fence_cannot_execute (test_conversation_store_ports.FakeWriteRepositoryTests.test_replaced_fence_cannot_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_same_id_replays_and_different_payload_conflicts (test_conversation_store_ports.FakeWriteRepositoryTests.test_same_id_replays_and_different_payload_conflicts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 45, in setUp
+    self.assertIsNotNone(fakes, 'T02 bounded fake repository is absent')
+AssertionError: unexpectedly None : T02 bounded fake repository is absent
+
+======================================================================
+FAIL: test_operation_gateway_declares_fenced_typed_operation (test_conversation_store_ports.FrozenWriteProtocolTests.test_operation_gateway_declares_fenced_typed_operation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 35, in test_operation_gateway_declares_fenced_typed_operation
+    self.assertTrue(hasattr(p, 'OperationGateway'), 'T02 OperationGateway is absent')
+AssertionError: False is not true : T02 OperationGateway is absent
+
+======================================================================
+FAIL: test_turn_store_declares_exact_submission_and_lookup_values (test_conversation_store_ports.FrozenWriteProtocolTests.test_turn_store_declares_exact_submission_and_lookup_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 26, in test_turn_store_declares_exact_submission_and_lookup_values
+    self.assertTrue(hasattr(p, 'TurnStore'), 'T02 TurnStore is absent')
+AssertionError: False is not true : T02 TurnStore is absent
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+FAILED (failures=12)

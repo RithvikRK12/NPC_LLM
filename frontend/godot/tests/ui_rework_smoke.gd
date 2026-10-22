@@ -12,7 +12,7 @@ func check(ok: bool, label: String) -> void:
 	if not ok: failures += 1
 
 func wait_for(condition: Callable) -> void:
-	var deadline := Time.get_ticks_msec() + 20000
+	var deadline := Time.get_ticks_msec() + 150000 # Three bounded provider stages, including a cold load.
 	while not condition.call():
 		await process_frame
 		if Time.get_ticks_msec() > deadline:
@@ -47,7 +47,10 @@ func run_check() -> void:
 	await wait_for(func(): return scene.world_loaded)
 	if not await preload("res://tests/opening_test_support.gd").arrive(scene): return
 	check(scene.npc_nodes[2].position.x < -500, "Gatherer works deeper in the forest, away from village")
-	check(scene.village.layout.route_exists(Vector2.ZERO, scene.npc_nodes[2].position + Vector2(0,64)), "Forest Gatherer remains reachable from village")
+	var router = preload("res://scripts/actor_router.gd").new()
+	var forest_entry := Vector2(-1000, 70)
+	check(not router.find_path(Vector2.ZERO, forest_entry, scene.village.layout).is_empty()
+		and not router.find_path(forest_entry, scene.npc_nodes[2].position + Vector2(0,64), scene.village.layout).is_empty(), "Forest Gatherer remains reachable from village")
 	await snapshot("exploration-1280")
 	scene.player.position = Vector2(10064, 10032)
 	scene._update_current_npc()
@@ -56,7 +59,7 @@ func run_check() -> void:
 	chat.present("Craftsman", "A good bow begins with sound wood and a sturdy string. Bring both to my workshop, and I will see what I can make for you.")
 	chat.message_input.text = "My unsent reply: WASD"
 	await snapshot("dialogue-1280")
-	check(Rect2(Vector2.ZERO,scene.ui.size).encloses(chat.get_global_rect()), "Default dialogue panel fits viewport")
+	check(Rect2(Vector2.ZERO,root.get_visible_rect().size).encloses(chat.get_global_rect()), "Default dialogue panel fits viewport")
 	check(chat.message_input.get_global_rect().end.y <= scene.ui.size.y, "Default reply remains fully visible")
 	check(not scene.player.is_physics_processing(), "Dialogue blocks movement")
 	escape()
@@ -140,7 +143,7 @@ func run_check() -> void:
 		chat.open_chat()
 		chat.present("Craftsman", "The forest provides the wood. A string will bind it into a bow. Bring the materials to my workshop.")
 		await snapshot("dialogue-%s" % dimensions.x)
-		check(Rect2(Vector2.ZERO,scene.ui.size).encloses(chat.get_global_rect()), "Dialogue panel fits at %s" % dimensions.x)
+		check(Rect2(Vector2.ZERO,root.get_visible_rect().size).encloses(chat.get_global_rect()), "Dialogue panel fits at %s" % dimensions.x)
 		scene._toggle_bag()
 		await snapshot("inventory-with-dialogue-%s" % dimensions.x)
 		check(scene.inventory_drawer.get_global_rect().end.y < chat.message_input.global_position.y, "Inventory keeps reply visible at %s" % dimensions.x)
@@ -150,14 +153,14 @@ func run_check() -> void:
 		await snapshot("history-%s" % dimensions.x)
 		chat.toggle_overlay(chat.supplies_panel)
 		await snapshot("supplies-%s" % dimensions.x)
-		check(Rect2(Vector2.ZERO,scene.ui.size).encloses(chat.supplies_panel.get_global_rect()), "Supplies remains inside viewport at %s" % dimensions.x)
+		check(Rect2(Vector2.ZERO,root.get_visible_rect().size).encloses(chat.supplies_panel.get_global_rect()), "Supplies remains inside viewport at %s" % dimensions.x)
 		chat.close_chat()
 		scene._toggle_bag()
 		await snapshot("inventory-%s" % dimensions.x)
 		scene.inventory_drawer.hide()
 		scene._open_menu()
 		await snapshot("menu-%s" % dimensions.x)
-		check(Rect2(Vector2.ZERO,scene.ui.size).encloses(scene.menu_panel.get_global_rect()), "Menu panel fits at %s" % dimensions.x)
+		check(Rect2(Vector2.ZERO,root.get_visible_rect().size).encloses(scene.menu_panel.get_global_rect()), "Menu panel fits at %s" % dimensions.x)
 		scene.restart_button.pressed.emit()
 		await snapshot("restart-%s" % dimensions.x)
 		scene.restart_dialog.hide()
@@ -191,7 +194,7 @@ func run_check() -> void:
 			chat.close_chat()
 			scene._open_menu()
 			await snapshot("menu-960-large")
-			check(Rect2(Vector2.ZERO,scene.ui.size).encloses(scene.menu_panel.get_global_rect()), "Large-text menu fits compact viewport")
+			check(Rect2(Vector2.ZERO,root.get_visible_rect().size).encloses(scene.menu_panel.get_global_rect()), "Large-text menu fits compact viewport")
 			scene.restart_button.pressed.emit()
 			await snapshot("restart-960-large")
 			escape()
@@ -238,7 +241,7 @@ func run_check() -> void:
 	other.open_chat()
 	other.message_input.text = "Unsent to Gatherer"
 	await wait_for(func(): return not chat.pending)
-	check(not chat.visible and chat.conversation_text().contains("Thank you") and not other.conversation_text().contains("Thank you") and not scene.player_items.has("water"), "Gift response after closure updates correct NPC and world exactly once")
+	check(not chat.visible and chat.conversation_text().contains("You gave me 1 water.") and not other.conversation_text().contains("You gave me 1 water.") and not scene.player_items.has("water"), "Gift response after closure updates correct NPC and world exactly once")
 	check(other.message_input.text == "Unsent to Gatherer", "Late response preserves other NPC's reply")
 	print("UI rework failures: ", failures)
 	quit(1 if failures else 0)

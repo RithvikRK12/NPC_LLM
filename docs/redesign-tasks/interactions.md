@@ -1,7 +1,7 @@
 # interactions implementation tasks
 
 **Goal:** Deliver the `interactions` responsibility in the NPC conversation redesign.
-**Status:** Not started; no redesign implementation verified in this planning pass.
+**Status:** T01–T02 locally verified; 2/2 local tasks complete. Persistence and operation gateway integration remain downstream.
 **Sources:** [Proposal](../npc-conversation-redesign-proposal.md), [Detailed design](../npc-conversation-redesign-detailed-design.md). Relevant sections: Detailed design §§3.3,6.3.
 **Owned files / integration targets:** backend/app/services/conversation/interactions.py; backend/tests/test_conversation_interactions.py.
 **Architecture:** In-process modules with injected narrow contracts. Mechanical authority remains in existing deterministic game services; conversational narrative never grants gameplay permissions.
@@ -20,29 +20,29 @@
 
 ### interactions/T01: Implement pure negotiation transition table
 
-- [ ] **Task complete**
+- [x] **Task complete locally** — consent, persistence and execution remain downstream.
 
-**Depends on:** contracts/T03.
+**Depends on:** contracts/T03; contracts/T05.
 **Acceptance criteria:** InteractionPolicy.plan(current, proposal, context) suspends on topic shift, cancels explicitly, resumes only explicit relevant references, and expires only when relevant preconditions fail. One active item negotiation per NPC.
 **Test expectations:** Table-driven transitions include no expiry after arbitrary time/turns, unrelated revision churn, purpose-like words, changed item/quantity/ownership, cancellation and ambiguous suspended references.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral tests and capture expected failures.
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and adjacent contract/context/read-port checks; record evidence.
+- [x] Review acceptance criteria and update task/master progress.
 
 ### interactions/T02: Bind consent and compound-request selection
 
-- [ ] **Task complete**
+- [x] **Task complete locally** — store transition application, durable consent consumption and operation execution/recheck remain downstream.
 
 **Depends on:** interactions/T01.
 **Acceptance criteria:** Construct ConsentBinding from question ID/turn, answer evidence span, exact operation arguments and checked preconditions. Multiple supported requests ask which first and persist choices; selection authorizes only selected candidate for recheck.
 **Test expectations:** Bare yes after topic shift never transfers; explicit resume with missing consent asks again; stale/cancelled/expired/fulfilled confirmations fail; unselected compound actions never queue; duplicate confirmations cannot reuse consent.
 
-- [ ] Add focused failing behavioral/contract tests for the cases above (or reproducible measurement checks for baseline/release evidence).
-- [ ] Implement the bounded deliverable through the owned interface; preserve shared invariants.
-- [ ] Run focused checks and the adjacent dependency conformance cases relevant to this task; record passing evidence.
-- [ ] Review acceptance criteria, record handoff/output changes, and update this task and master progress.
+- [x] Add focused failing behavioral/contract tests and capture expected failures.
+- [x] Implement the bounded deliverable through the owned interface; preserve shared invariants.
+- [x] Run focused checks and adjacent contract/context/read-port checks; record evidence.
+- [x] Review acceptance criteria and update task/master progress.
 
 ## Verification and handoff
 
@@ -50,5 +50,5 @@ Backend deterministic checks use `PYTHONPATH=backend .venv/bin/python -m unittes
 
 | Task | Owner / state | Verification command and evidence | Handoff / blockers |
 | --- | --- | --- | --- |
-| T01 | Unassigned / not started | Not run | None recorded |
-| T02 | Unassigned / not started | Not run | None recorded |
+| T01 | interactions_t01 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reran after proposal/T01 | [Handoff/red-green evidence](../evidence/conversation-redesign-interactions/t01-handoff.md); focused 11/11, adjacent 50/50, conversation 213/213 and backend 676/676 pass | Pure policy only; accepted context contract enforces one active item negotiation; consent and durable CAS remain downstream |
+| T02 | interactions_t02 / locally accepted 2026-10-15; gpt-6.1-sol / high; Main Agent reviewed and reproduced | [Handoff/red-green evidence](../evidence/conversation-redesign-interactions/t02-handoff.md); focused 18/18, adjacent 57/57, conversation 250/250, backend 713/713; diff check clean | Consent binds exact offered/current-turn operation; gateway must freshly recheck selected command; durable use and execution remain downstream |

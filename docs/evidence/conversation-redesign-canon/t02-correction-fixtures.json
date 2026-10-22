@@ -1,0 +1,10 @@
+{
+  "old_content": "I learned smithing from my father.",
+  "accepted_speech": "You are right; I learned smithing from my aunt.",
+  "contradiction_only_speech": "You say I learned smithing from my aunt.",
+  "replacement_content": "I learned smithing from my aunt.",
+  "player_message": "Your aunt taught you smithing, not your father.",
+  "canon_id": "canon:smithing",
+  "correction_id": "correction:aunt",
+  "expected_revision": 2
+}

@@ -55,6 +55,7 @@ var last_saved_position := Vector2.INF
 var sent_position := Vector2.ZERO
 var quitting := false
 var world_busy := false
+var world_request_started_msec := 0
 var ui: Control
 var menu_layer: Control
 var menu_panel: PanelContainer
@@ -638,23 +639,39 @@ func _open_dialogue() -> void:
 
 func _load_world() -> void:
 	# Avoid replacing a conversation while its request is in flight.
-	for window in chat_windows.values():
-		if window.pending:
-			return
+	if world_loaded:
+		for window in chat_windows.values():
+			if window.pending:
+				return
 	if world_busy or quitting: return
 	world_busy = true
-	if world_request.request(backend_url + "/world") != OK:
+	world_request_started_msec = Time.get_ticks_msec()
+	var request_error := world_request.request(backend_url + "/world")
+	if request_error != OK:
 		world_busy = false
+		inventory_label.text = "Village connection failed (%s). Retrying..." % error_string(request_error)
+		push_warning("World request could not start: %s" % error_string(request_error))
+		return
+	var started_msec := world_request_started_msec
+	get_tree().create_timer(12.0).timeout.connect(func():
+		if world_busy and world_request_started_msec == started_msec:
+			world_busy = false
+			inventory_label.text = "Village request timed out. Retrying..."
+			push_warning("World request did not complete within 12 seconds")
+			world_request.cancel_request())
 
 
 func _world_completed(result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	world_busy = false
 	restart_in_flight = false
 	if result != HTTPRequest.RESULT_SUCCESS or code != 200:
-		inventory_label.text = "Connecting to the village..."
+		inventory_label.text = "Village connection failed (request %s, HTTP %s). Retrying..." % [result, code]
+		push_warning("World request failed: result=%s HTTP=%s" % [result, code])
 		return
 	var parsed: Variant = JSON.parse_string(body.get_string_from_utf8())
 	if not parsed is Dictionary:
+		inventory_label.text = "Village sent an unreadable response. Retrying..."
+		push_warning("World response was not a JSON object")
 		return
 	var data: Dictionary = parsed
 	var saved: Dictionary = data.get("player_position", {"x": 0, "y": 0})
@@ -675,7 +692,10 @@ func _world_completed(result: int, code: int, _headers: PackedStringArray, body:
 	_update_quest(data.get("bow_quest", {}))
 	world_loaded = true
 	game_scope=str(data.get("game_scope",""))
-	for window in chat_windows.values(): window.game_scope=game_scope
+	for window in chat_windows.values():
+		window.game_scope=game_scope
+		window.sync_conversation_world(data)
+		window.conversation_gateway.invalidate(game_scope, window.conversation_epoch)
 	craftsman_gateway.restore(data)
 	if data.has("craftsman_encounter"):
 		craftsman_activity.restore(data.craftsman_encounter)

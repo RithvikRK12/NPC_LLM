@@ -1,0 +1,10 @@
+{
+  "accepted": "I agreed to inspect the ship.",
+  "completed": "The ship inspection was completed.",
+  "wait": "I began waiting.",
+  "current_states": [
+    "The ship inspection was cancelled; it is not underway.",
+    "The inspector has reached the ship.",
+    "The ship inspection is now complete."
+  ]
+}

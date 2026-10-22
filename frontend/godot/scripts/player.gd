@@ -25,5 +25,8 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_key_pressed(KEY_S):
 		direction.y += 1.0
 
-	velocity = direction.normalized() * speed
+	var movement_speed := speed
+	if direction != Vector2.ZERO and Input.is_key_pressed(KEY_SHIFT):
+		movement_speed *= 1.5
+	velocity = direction.normalized() * movement_speed
 	move_and_slide()

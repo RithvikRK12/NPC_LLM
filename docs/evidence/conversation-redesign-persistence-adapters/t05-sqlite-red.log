@@ -1,0 +1,65 @@
+test_database_initialization_upgrades_populated_players_idempotently (test_resource_revision_storage.ResourceRevisionStorageTests.test_database_initialization_upgrades_populated_players_idempotently) ... ERROR
+test_fresh_model_defaults_to_an_empty_nonnullable_json_ledger (test_resource_revision_storage.ResourceRevisionStorageTests.test_fresh_model_defaults_to_an_empty_nonnullable_json_ledger) ... FAIL
+test_populated_migration_preserves_every_existing_field_and_defaults_legacy_rows (test_resource_revision_storage.ResourceRevisionStorageTests.test_populated_migration_preserves_every_existing_field_and_defaults_legacy_rows) ... ERROR
+test_repeated_migration_preserves_existing_revisions_and_scope (test_resource_revision_storage.ResourceRevisionStorageTests.test_repeated_migration_preserves_existing_revisions_and_scope) ... ERROR
+test_revision_writes_rollback_with_the_callers_player_transaction (test_resource_revision_storage.ResourceRevisionStorageTests.test_revision_writes_rollback_with_the_callers_player_transaction) ... ERROR
+
+======================================================================
+ERROR: test_database_initialization_upgrades_populated_players_idempotently (test_resource_revision_storage.ResourceRevisionStorageTests.test_database_initialization_upgrades_populated_players_idempotently)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/base.py", line 1724, in __getattr__
+    return self._index[key][1]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'resource_revisions'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_resource_revision_storage.py", line 126, in test_database_initialization_upgrades_populated_players_idempotently
+    self.assertEqual(self._ledger(), {})
+                     ^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_resource_revision_storage.py", line 49, in _ledger
+    return connection.scalar(select(players.c.resource_revisions).where(players.c.id == player_id))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/base.py", line 1726, in __getattr__
+    raise AttributeError(key) from err
+AttributeError: resource_revisions
+
+======================================================================
+ERROR: test_populated_migration_preserves_every_existing_field_and_defaults_legacy_rows (test_resource_revision_storage.ResourceRevisionStorageTests.test_populated_migration_preserves_every_existing_field_and_defaults_legacy_rows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_resource_revision_storage.py", line 69, in test_populated_migration_preserves_every_existing_field_and_defaults_legacy_rows
+    from app.database.resource_revision_migration import upgrade_resource_revision_schema
+ModuleNotFoundError: No module named 'app.database.resource_revision_migration'
+
+======================================================================
+ERROR: test_repeated_migration_preserves_existing_revisions_and_scope (test_resource_revision_storage.ResourceRevisionStorageTests.test_repeated_migration_preserves_existing_revisions_and_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_resource_revision_storage.py", line 91, in test_repeated_migration_preserves_existing_revisions_and_scope
+    from app.database.resource_revision_migration import upgrade_resource_revision_schema
+ModuleNotFoundError: No module named 'app.database.resource_revision_migration'
+
+======================================================================
+ERROR: test_revision_writes_rollback_with_the_callers_player_transaction (test_resource_revision_storage.ResourceRevisionStorageTests.test_revision_writes_rollback_with_the_callers_player_transaction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_resource_revision_storage.py", line 116, in test_revision_writes_rollback_with_the_callers_player_transaction
+    self.assertEqual(player.resource_revisions, {})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Player' object has no attribute 'resource_revisions'
+
+======================================================================
+FAIL: test_fresh_model_defaults_to_an_empty_nonnullable_json_ledger (test_resource_revision_storage.ResourceRevisionStorageTests.test_fresh_model_defaults_to_an_empty_nonnullable_json_ledger)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_resource_revision_storage.py", line 54, in test_fresh_model_defaults_to_an_empty_nonnullable_json_ledger
+    self.assertIn('resource_revisions', columns)
+AssertionError: 'resource_revisions' not found in {'id': {'name': 'id', 'type': INTEGER(), 'nullable': False, 'default': None, 'primary_key': 1}, 'game_scope': {'name': 'game_scope', 'type': VARCHAR(length=36), 'nullable': False, 'default': "'legacy'", 'primary_key': 0}, 'inventory': {'name': 'inventory', 'type': JSON(), 'nullable': False, 'default': None, 'primary_key': 0}, 'position': {'name': 'position', 'type': JSON(), 'nullable': False, 'default': None, 'primary_key': 0}, 'current_location': {'name': 'current_location', 'type': VARCHAR(length=128), 'nullable': False, 'default': None, 'primary_key': 0}, 'opening_version': {'name': 'opening_version', 'type': INTEGER(), 'nullable': False, 'default': "'1'", 'primary_key': 0}, 'opening_state': {'name': 'opening_state', 'type': VARCHAR(length=16), 'nullable': False, 'default': "'complete'", 'primary_key': 0}, 'map_version': {'name': 'map_version', 'type': INTEGER(), 'nullable': False, 'default': "'0'", 'primary_key': 0}, 'salvage_ids': {'name': 'salvage_ids', 'type': JSON(), 'nullable': False, 'default': None, 'primary_key': 0}, 'map_recovery_notice': {'name': 'map_recovery_notice', 'type': VARCHAR(length=255), 'nullable': False, 'default': "''", 'primary_key': 0}}
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.050s
+
+FAILED (failures=1, errors=4)

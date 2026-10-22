@@ -1,0 +1,30 @@
+[
+  {
+    "test": "craftsman_integration_smoke",
+    "exit_code": 0,
+    "seconds": 38.604,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_guidance_follow_smoke",
+    "exit_code": 0,
+    "seconds": 35.374,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "onboarding_smoke",
+    "exit_code": 0,
+    "seconds": 4.035,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_guidance_smoke",
+    "exit_code": 0,
+    "seconds": 1.331,
+    "passed": true,
+    "shutdown_resource_warning": false
+  }
+]

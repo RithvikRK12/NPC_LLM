@@ -1,0 +1,10 @@
+test_database_initialization_upgrades_populated_players_idempotently (test_resource_revision_storage.ResourceRevisionStorageTests.test_database_initialization_upgrades_populated_players_idempotently) ... ok
+test_fresh_model_defaults_to_an_empty_nonnullable_json_ledger (test_resource_revision_storage.ResourceRevisionStorageTests.test_fresh_model_defaults_to_an_empty_nonnullable_json_ledger) ... ok
+test_populated_migration_preserves_every_existing_field_and_defaults_legacy_rows (test_resource_revision_storage.ResourceRevisionStorageTests.test_populated_migration_preserves_every_existing_field_and_defaults_legacy_rows) ... ok
+test_repeated_migration_preserves_existing_revisions_and_scope (test_resource_revision_storage.ResourceRevisionStorageTests.test_repeated_migration_preserves_existing_revisions_and_scope) ... ok
+test_revision_writes_rollback_with_the_callers_player_transaction (test_resource_revision_storage.ResourceRevisionStorageTests.test_revision_writes_rollback_with_the_callers_player_transaction) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.401s
+
+OK

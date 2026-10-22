@@ -1,0 +1,14 @@
+test_proposal_format_repair_consumes_the_single_shared_repair_token (backend.tests.test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_proposal_format_repair_consumes_the_single_shared_repair_token) ... FAIL
+
+======================================================================
+FAIL: test_proposal_format_repair_consumes_the_single_shared_repair_token (backend.tests.test_conversation_contracts_interfaces.ConversationInterfaceContractTests.test_proposal_format_repair_consumes_the_single_shared_repair_token)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_interfaces.py", line 181, in test_proposal_format_repair_consumes_the_single_shared_repair_token
+    self.assertIn('repair_kind', c.ProviderAttempt.model_fields, 'repair attempts need an explicit output path')
+AssertionError: 'repair_kind' not found in {'turn': FieldInfo(annotation=TurnRef, required=True), 'attempt_id': FieldInfo(annotation=str, required=True, metadata=[Strict(strict=True), MinLen(min_length=1), _PydanticGeneralMetadata(pattern='^[A-Za-z0-9][A-Za-z0-9_.:-]*$')]), 'fence': FieldInfo(annotation=int, required=True, metadata=[Strict(strict=True), Gt(gt=0), Le(le=9007199254740991)]), 'purpose': FieldInfo(annotation=Literal['proposal', 'composition', 'repair'], required=True), 'dispatched_at': FieldInfo(annotation=datetime, required=True, metadata=[BeforeValidator(func=<function _timestamp_shape at 0x107c24c20>, json_schema_input_type=PydanticUndefined), AfterValidator(func=<function _utc at 0x107c24cc0>)]), 'status': FieldInfo(annotation=Literal['dispatched', 'output_persisted'], required=True), 'output': FieldInfo(annotation=Union[TurnProposal, CandidateReply, NoneType], required=True)} : repair attempts need an explicit output path
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

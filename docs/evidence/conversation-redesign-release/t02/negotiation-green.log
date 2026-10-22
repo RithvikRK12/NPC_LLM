@@ -1,0 +1,15 @@
+test_bow_meeting_uses_the_durable_quest_operation (test_conversation_playtest.PlaytestRuntimeTests.test_bow_meeting_uses_the_durable_quest_operation) ... /Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+ok
+test_cancel_ends_the_persisted_item_request_without_transfer (test_conversation_playtest.PlaytestRuntimeTests.test_cancel_ends_the_persisted_item_request_without_transfer) ... ok
+test_context_overflow_finishes_without_generation_or_actions (test_conversation_playtest.PlaytestRuntimeTests.test_context_overflow_finishes_without_generation_or_actions) ... ok
+test_contextual_wreck_help_projects_flat_craftsman_activity_for_the_game (test_conversation_playtest.PlaytestRuntimeTests.test_contextual_wreck_help_projects_flat_craftsman_activity_for_the_game) ... ok
+test_invented_model_action_for_personal_question_cannot_move_stock (test_conversation_playtest.PlaytestRuntimeTests.test_invented_model_action_for_personal_question_cannot_move_stock) ... ok
+test_multiple_stock_requests_choose_one_then_confirm_its_purpose (test_conversation_playtest.PlaytestRuntimeTests.test_multiple_stock_requests_choose_one_then_confirm_its_purpose) ... ok
+test_quoted_and_hypothetical_requests_never_move_stock (test_conversation_playtest.PlaytestRuntimeTests.test_quoted_and_hypothetical_requests_never_move_stock) ... ok
+test_stock_requires_exact_persisted_purpose_question_and_durable_retry (test_conversation_playtest.PlaytestRuntimeTests.test_stock_requires_exact_persisted_purpose_question_and_durable_retry) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.663s
+
+OK

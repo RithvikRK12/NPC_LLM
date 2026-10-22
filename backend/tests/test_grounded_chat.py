@@ -1,6 +1,7 @@
 """Enforcement via the real HTTP route; model selection is explicitly mocked."""
 import json
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 
 import test_npc_pipeline as pipeline_tests
@@ -8,6 +9,7 @@ from app.models import NPC, Player, BowQuest, Conversation, Memory
 from app.services.context.builder import ContextBuilder
 from app.services.llm.openai_compatible import OpenAICompatibleProvider
 from app.services.context.grounding import CATALOG, Catalog
+from app.services.validation.service import ValidationError, ValidationService
 
 
 class GroundedChatTests(unittest.TestCase):
@@ -30,6 +32,17 @@ class GroundedChatTests(unittest.TestCase):
         n = self.db.get(NPC, 1)
         return (n.trust, n.fear, n.aggression, n.curiosity, n.current_state,
                 list(n.inventory), list(self.db.get(Player, 1).inventory))
+
+    def test_server_render_cannot_exceed_600_even_with_larger_legacy_setting(self):
+        from app.services.validation import service as validation_service
+        context = SimpleNamespace(player_input='What is the long fact?',
+                                  facts=[{'id': 'long.fact', 'text': 'x' * 601}],
+                                  conversation_focus={})
+        raw = {'answer_kind': 'answer', 'fact_ids': ['long.fact']}
+        with patch.object(validation_service, 'get_settings', return_value=SimpleNamespace(max_dialogue_chars=1000)):
+            validator = ValidationService()
+            with self.assertRaises(ValidationError):
+                validator.validate(raw, NPC(role='craftsman', inventory=[]), context)
 
     def test_location_answers_are_brief_approximations_without_tracking_disclaimers(self):
         before = self.state()
@@ -280,6 +293,28 @@ class GroundedChatTests(unittest.TestCase):
                                             'dialogue': 'All done! Enjoy!'}, 2)
                 self.assertNotIn('All done', result['final_dialogue'])
                 self.assertNotIn('bow', result['player_inventory'])
+
+    def test_authored_personal_history_reaches_legacy_route_without_game_effects(self):
+        cases = [(1, 'Who taught you?', 'My father prized speed more than I do.', 'usefulness'),
+                 (2, 'What do you think of the Craftsman?', 'The Craftsman is more patient than I am.', 'independence')]
+        for npc_id, question, answer, marker in cases:
+            before = self.state()
+            captured = []
+            def generate(prompt, context):
+                captured.append(prompt)
+                return json.dumps({'answer_kind':'chat', 'fact_ids':[], 'dialogue':answer})
+            with self.subTest(npc_id=npc_id), patch.object(OpenAICompatibleProvider, 'generate', side_effect=generate):
+                response = self.client.post('/chat', json={'npc_id':npc_id, 'player_message':question})
+                self.assertEqual(response.status_code, 200, response.text)
+                result = response.json()
+                self.assertFalse(result['grounding_trace']['rejected'])
+                self.assertIn(answer, result['final_dialogue'])
+                self.assertIn(marker, captured[0].lower())
+                self.assertIn('narrative_only', captured[0])
+                after = self.state()
+                self.assertEqual(after[:4], before[:4])
+                self.assertEqual(after[5:], before[5:])
+                self.assertTrue(all(value == 0 for value in result['validated_output']['state_update'].values()))
 
     def test_social_self_introduction_uses_only_current_speaker_identity(self):
         for npc_id, name in ((1, 'Craftsman'), (2, 'Gatherer')):

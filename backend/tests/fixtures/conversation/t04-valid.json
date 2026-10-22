@@ -1,0 +1,658 @@
+{
+  "lease_policy": {
+    "schema_version": 1,
+    "policy_version": "lease:test-v1",
+    "lease_duration_seconds": 20.0
+  },
+  "lease": {
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "worker_id": "worker:1",
+    "fence": 2,
+    "phase": "preparing",
+    "claimed_at": "2026-10-14T10:00:00Z",
+    "expires_at": "2026-10-14T10:00:20Z"
+  },
+  "interaction_plan": {
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "transitions": [
+      {
+        "expected_revision": 1,
+        "replacement": {
+          "interaction_id": "interaction:1",
+          "key": {
+            "game_scope": "run-opaque",
+            "npc_id": 7,
+            "epoch": 3
+          },
+          "kind": "item_negotiation",
+          "originating_turn": {
+            "turn_id": "turn-1",
+            "request_id": "request-1",
+            "key": {
+              "game_scope": "run-opaque",
+              "npc_id": 7,
+              "epoch": 3
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": "wood",
+          "quantity": 1,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn-1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:1",
+          "revision": 2,
+          "status": "cancelled",
+          "status_reason": "explicit_cancellation",
+          "offered_operations": []
+        }
+      }
+    ],
+    "consent_bindings": [],
+    "clarification": null
+  },
+  "memory_plan": {
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "writes": [
+      {
+        "expected_revision": null,
+        "record": {
+          "memory_id": "memory:1",
+          "game_scope": "run-opaque",
+          "npc_id": 7,
+          "epoch": 3,
+          "kind": "player_report",
+          "attributed_subject": "player",
+          "content": "The player says they repaired the mast.",
+          "uncertainty": "unverified",
+          "sources": [
+            {
+              "kind": "player_message",
+              "source_id": "turn:3",
+              "revision": 0,
+              "game_scope": "run-opaque",
+              "npc_id": 7,
+              "attribution": "player",
+              "visibility": "public"
+            }
+          ],
+          "status": "active",
+          "revision": 0
+        },
+        "correction_link": null
+      }
+    ]
+  },
+  "continuity_plan": {
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "canon_changes": [
+      {
+        "kind": "revise",
+        "canon_id": "canon:harbor-story",
+        "expected_revision": 1,
+        "subject": "npc:7",
+        "predicate": "rescued",
+        "content": "Mira helped survivors escape the harbor.",
+        "category": "history",
+        "origin": "generated",
+        "authority": "narrative_only",
+        "supporting_span": {
+          "text_id": "final:3",
+          "start": 0,
+          "end": 48
+        },
+        "correction_link": "correction:accepted-1"
+      }
+    ],
+    "memory_plan": {
+      "turn": {
+        "turn_id": "turn-3",
+        "request_id": "request-3",
+        "key": {
+          "game_scope": "run-opaque",
+          "npc_id": 7,
+          "epoch": 3
+        },
+        "sequence": 3
+      },
+      "writes": [
+        {
+          "expected_revision": null,
+          "record": {
+            "memory_id": "memory:1",
+            "game_scope": "run-opaque",
+            "npc_id": 7,
+            "epoch": 3,
+            "kind": "player_report",
+            "attributed_subject": "player",
+            "content": "The player says they repaired the mast.",
+            "uncertainty": "unverified",
+            "sources": [
+              {
+                "kind": "player_message",
+                "source_id": "turn:3",
+                "revision": 0,
+                "game_scope": "run-opaque",
+                "npc_id": 7,
+                "attribution": "player",
+                "visibility": "public"
+              }
+            ],
+            "status": "active",
+            "revision": 0
+          },
+          "correction_link": null
+        }
+      ]
+    },
+    "interaction_plan": {
+      "turn": {
+        "turn_id": "turn-3",
+        "request_id": "request-3",
+        "key": {
+          "game_scope": "run-opaque",
+          "npc_id": 7,
+          "epoch": 3
+        },
+        "sequence": 3
+      },
+      "transitions": [
+        {
+          "expected_revision": 1,
+          "replacement": {
+            "interaction_id": "interaction:1",
+            "key": {
+              "game_scope": "run-opaque",
+              "npc_id": 7,
+              "epoch": 3
+            },
+            "kind": "item_negotiation",
+            "originating_turn": {
+              "turn_id": "turn-1",
+              "request_id": "request-1",
+              "key": {
+                "game_scope": "run-opaque",
+                "npc_id": 7,
+                "epoch": 3
+              },
+              "sequence": 1
+            },
+            "target": {
+              "reference_id": "npc:1",
+              "entity_kind": "npc",
+              "entity_id": "1"
+            },
+            "item": "wood",
+            "quantity": 1,
+            "question_text": "Would you like this wood?",
+            "question_id": "question:1",
+            "question_turn_id": "turn-1",
+            "required_response_kind": "affirmation",
+            "precondition_fingerprint": "fingerprint:1",
+            "revision": 2,
+            "status": "cancelled",
+            "status_reason": "explicit_cancellation",
+            "offered_operations": []
+          }
+        }
+      ],
+      "consent_bindings": [],
+      "clarification": null
+    },
+    "expected_revisions": {
+      "resources": {
+        "event:9": 4,
+        "canon:harbor-story": 1,
+        "interaction:1": 1
+      }
+    }
+  },
+  "clear_result": {
+    "outcome": "cleared",
+    "previous_key": {
+      "game_scope": "run-opaque",
+      "npc_id": 7,
+      "epoch": 3
+    },
+    "current_key": {
+      "game_scope": "run-opaque",
+      "npc_id": 7,
+      "epoch": 4
+    }
+  },
+  "world_result": {
+    "outcome": "reset",
+    "previous_scope": "run-opaque",
+    "game_scope": "new-run",
+    "state_projection": {
+      "health": 80,
+      "nested": {
+        "items": [
+          "wood"
+        ]
+      }
+    },
+    "state_revisions": {
+      "resources": {
+        "world": 0
+      }
+    }
+  },
+  "summary_record": {
+    "summary_id": "summary:1",
+    "key": {
+      "game_scope": "run-opaque",
+      "npc_id": 7,
+      "epoch": 3
+    },
+    "source_range": {
+      "first_sequence": 1,
+      "last_sequence": 3
+    },
+    "source_revisions": {
+      "resources": {
+        "turn:1": 0,
+        "turn:3": 0,
+        "canon:harbor-story": 1,
+        "memory:1": 0
+      }
+    },
+    "source_revision_digest": "00a26e41f4b2b56fe851114ac38003d33e9738b40fc4a74e0474d36607c1cafc",
+    "entries": [
+      {
+        "memory": {
+          "memory_id": "memory:1",
+          "game_scope": "run-opaque",
+          "npc_id": 7,
+          "epoch": 3,
+          "kind": "player_report",
+          "attributed_subject": "player",
+          "content": "The player says they repaired the mast.",
+          "uncertainty": "unverified",
+          "sources": [
+            {
+              "kind": "player_message",
+              "source_id": "turn:3",
+              "revision": 0,
+              "game_scope": "run-opaque",
+              "npc_id": 7,
+              "attribution": "player",
+              "visibility": "public"
+            }
+          ],
+          "status": "active",
+          "revision": 0
+        },
+        "source_turns": [
+          {
+            "turn_id": "turn-3",
+            "request_id": "request-3",
+            "key": {
+              "game_scope": "run-opaque",
+              "npc_id": 7,
+              "epoch": 3
+            },
+            "sequence": 3
+          }
+        ],
+        "correction_link": null
+      }
+    ],
+    "revision": 0
+  },
+  "optional_none": {
+    "status": "success",
+    "value": null,
+    "error": null
+  },
+  "optional_failure": {
+    "status": "failure",
+    "value": null,
+    "error": {
+      "code": "STALE_SCOPE",
+      "stage": "claim",
+      "retryable": false,
+      "safe_detail": "Refresh the active world."
+    }
+  },
+  "provider_attempt": {
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "attempt_id": "attempt:proposal:3",
+    "fence": 2,
+    "purpose": "proposal",
+    "dispatched_at": "2026-10-14T10:00:01Z",
+    "status": "dispatched",
+    "output": null,
+    "repair_kind": null
+  },
+  "turn_recovery": {
+    "status": {
+      "turn": {
+        "turn_id": "turn-3",
+        "request_id": "request-3",
+        "key": {
+          "game_scope": "run-opaque",
+          "npc_id": 7,
+          "epoch": 3
+        },
+        "sequence": 3
+      },
+      "phase": "preparing",
+      "response": null
+    },
+    "submission": {
+      "schema_version": 1,
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "player_message": "Tell me about the harbor."
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "turn-3",
+          "request_id": "request-3",
+          "key": {
+            "game_scope": "run-opaque",
+            "npc_id": 7,
+            "epoch": 3
+          },
+          "sequence": 3
+        },
+        "attempt_id": "attempt:proposal:3",
+        "fence": 2,
+        "purpose": "proposal",
+        "dispatched_at": "2026-10-14T10:00:01Z",
+        "status": "dispatched",
+        "output": null,
+        "repair_kind": null
+      }
+    ],
+    "receipt": null,
+    "assembled_reply": null,
+    "fence": 3
+  },
+  "recovery_receipt": {
+    "receipt_id": "receipt:1",
+    "turn_id": "turn-3",
+    "game_scope": "run-opaque",
+    "npc_id": 7,
+    "command_id": "give_item",
+    "argument_digest": "2368bba4518a8215141f5aaadfb23970d07d0fce1ce31dcc43e0370cd62c6de2",
+    "target": {
+      "reference_id": "npc:1",
+      "entity_kind": "npc",
+      "entity_id": "1"
+    },
+    "outcome": "completed",
+    "safe_reason_code": null,
+    "result": {
+      "kind": "item_transfer",
+      "item": "wood",
+      "quantity": 1,
+      "direction": "to_player"
+    },
+    "event_ids": [
+      "event:1"
+    ],
+    "before_revisions": {
+      "resources": {
+        "inventory:1": 1
+      }
+    },
+    "after_revisions": {
+      "resources": {
+        "inventory:1": 2
+      }
+    },
+    "activity_id": null,
+    "committed_at": "2026-10-14T00:00:00Z"
+  },
+  "persisted_proposal": {
+    "concerns": [],
+    "references": [],
+    "reports": [],
+    "correction_candidates": [],
+    "operation_candidates": [],
+    "interaction_links": [],
+    "reply": [
+      {
+        "kind": "expressive",
+        "segment_id": "segment:recovery",
+        "text": "Tell me more.",
+        "addressed_concern_ids": []
+      }
+    ],
+    "canon_candidates": []
+  },
+  "persisted_candidate": {
+    "segments": [
+      {
+        "kind": "expressive",
+        "segment_id": "segment:1",
+        "text": "A🙂éZ",
+        "addressed_concern_ids": [
+          "concern:1"
+        ]
+      },
+      {
+        "kind": "fact_slot",
+        "segment_id": "segment:2",
+        "fact_id": "fact:1",
+        "renderer_id": "fact.exact"
+      },
+      {
+        "kind": "receipt_slot",
+        "segment_id": "segment:3",
+        "receipt_id": "receipt:1",
+        "speech_act": "completed",
+        "renderer_id": "receipt.completed"
+      }
+    ],
+    "source": {
+      "origin": "generated",
+      "source_id": "proposal:1",
+      "schema_version": 1,
+      "policy_versions": {
+        "bounds": "test:1"
+      }
+    },
+    "canon_candidates": [
+      {
+        "candidate_id": "canon-candidate:1",
+        "kind": "add",
+        "subject": "npc:1",
+        "predicate": "story",
+        "content": "🙂é",
+        "supporting_span": {
+          "text_id": "segment:1",
+          "start": 1,
+          "end": 4
+        },
+        "expected_revision": null,
+        "correction_candidate_id": null
+      }
+    ]
+  },
+  "recovered_reply": {
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "fence": 2,
+    "reply": {
+      "text_id": "final:3",
+      "final_text": "Tell me more.",
+      "beats": [
+        "Tell me more."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "segment_spans": {},
+      "evidence_dependencies": [],
+      "candidate_continuity_changes": []
+    }
+  },
+  "proposal_format_repair": {
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "attempt_id": "attempt:repair:proposal:3",
+    "fence": 2,
+    "purpose": "repair",
+    "dispatched_at": "2026-10-14T10:00:01Z",
+    "status": "output_persisted",
+    "output": {
+      "concerns": [],
+      "references": [],
+      "reports": [],
+      "correction_candidates": [],
+      "operation_candidates": [],
+      "interaction_links": [],
+      "reply": [
+        {
+          "kind": "expressive",
+          "segment_id": "segment:recovery",
+          "text": "Tell me more.",
+          "addressed_concern_ids": []
+        }
+      ],
+      "canon_candidates": []
+    },
+    "repair_kind": "proposal_format"
+  },
+  "final_response_repair": {
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "attempt_id": "attempt:repair:final:3",
+    "fence": 2,
+    "purpose": "repair",
+    "dispatched_at": "2026-10-14T10:00:01Z",
+    "status": "output_persisted",
+    "output": {
+      "segments": [
+        {
+          "kind": "expressive",
+          "segment_id": "segment:1",
+          "text": "A🙂éZ",
+          "addressed_concern_ids": [
+            "concern:1"
+          ]
+        },
+        {
+          "kind": "fact_slot",
+          "segment_id": "segment:2",
+          "fact_id": "fact:1",
+          "renderer_id": "fact.exact"
+        },
+        {
+          "kind": "receipt_slot",
+          "segment_id": "segment:3",
+          "receipt_id": "receipt:1",
+          "speech_act": "completed",
+          "renderer_id": "receipt.completed"
+        }
+      ],
+      "source": {
+        "origin": "generated",
+        "source_id": "proposal:1",
+        "schema_version": 1,
+        "policy_versions": {
+          "bounds": "test:1"
+        }
+      },
+      "canon_candidates": [
+        {
+          "candidate_id": "canon-candidate:1",
+          "kind": "add",
+          "subject": "npc:1",
+          "predicate": "story",
+          "content": "🙂é",
+          "supporting_span": {
+            "text_id": "segment:1",
+            "start": 1,
+            "end": 4
+          },
+          "expected_revision": null,
+          "correction_candidate_id": null
+        }
+      ]
+    },
+    "repair_kind": "final_response"
+  }
+}

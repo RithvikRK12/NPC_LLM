@@ -1,0 +1,427 @@
+[
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:6466001309044725395",
+      "key": {
+        "game_scope": "d4bec733-d21b-47c0-af76-fb0c14dcc699",
+        "npc_id": 1,
+        "epoch": 1
+      },
+      "player_message": "I give you water"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "729c25f3-837b-4ecc-bdd8-bd8835eff356",
+          "request_id": "godot:6466001309044725395",
+          "key": {
+            "game_scope": "d4bec733-d21b-47c0-af76-fb0c14dcc699",
+            "npc_id": 1,
+            "epoch": 1
+          },
+          "sequence": 2
+        },
+        "attempt_id": "729c25f3-837b-4ecc-bdd8-bd8835eff356:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:05.137813Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "receive_item",
+              "arguments": {
+                "item": "water"
+              },
+              "target": {
+                "reference_id": "npc:1",
+                "entity_kind": "npc",
+                "entity_id": "1"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:2",
+                  "start": 0,
+                  "end": 16
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "729c25f3-837b-4ecc-bdd8-bd8835eff356",
+          "request_id": "godot:6466001309044725395",
+          "key": {
+            "game_scope": "d4bec733-d21b-47c0-af76-fb0c14dcc699",
+            "npc_id": 1,
+            "epoch": 1
+          },
+          "sequence": 2
+        },
+        "attempt_id": "729c25f3-837b-4ecc-bdd8-bd8835eff356:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:05.149665Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "Your thoughtfulness is a refreshing oasis in my day. I'll make sure to use this water wisely.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:d5775c2a-6913-4178-8b87-10c7e0a7048a",
+              "receipt_id": "d5775c2a-6913-4178-8b87-10c7e0a7048a",
+              "speech_act": "completed",
+              "renderer_id": "receipt.completed"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "729c25f3-837b-4ecc-bdd8-bd8835eff356",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "729c25f3-837b-4ecc-bdd8-bd8835eff356",
+        "request_id": "godot:6466001309044725395",
+        "key": {
+          "game_scope": "d4bec733-d21b-47c0-af76-fb0c14dcc699",
+          "npc_id": 1,
+          "epoch": 1
+        },
+        "sequence": 2
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:729c25f3-837b-4ecc-bdd8-bd8835eff356",
+        "final_text": "Your thoughtfulness is a refreshing oasis in my day. I'll make sure to use this water wisely. You gave me 1 water.",
+        "beats": [
+          "Your thoughtfulness is a refreshing oasis in my day. I'll make sure to use this water wisely. You gave me 1 water."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:729c25f3-837b-4ecc-bdd8-bd8835eff356",
+            "start": 0,
+            "end": 93
+          },
+          "receipt-slot:d5775c2a-6913-4178-8b87-10c7e0a7048a": {
+            "text_id": "final:729c25f3-837b-4ecc-bdd8-bd8835eff356",
+            "start": 94,
+            "end": 114
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "d5775c2a-6913-4178-8b87-10c7e0a7048a",
+            "revision": "0f854c46fccc6883d6a852a3a1a98e4af81927b5dc2899e57e8ce939714fd798",
+            "game_scope": "d4bec733-d21b-47c0-af76-fb0c14dcc699",
+            "npc_id": 1,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "729c25f3-837b-4ecc-bdd8-bd8835eff356",
+        "request_id": "godot:6466001309044725395",
+        "key": {
+          "game_scope": "d4bec733-d21b-47c0-af76-fb0c14dcc699",
+          "npc_id": 1,
+          "epoch": 1
+        },
+        "sequence": 2
+      },
+      "final_dialogue": "Your thoughtfulness is a refreshing oasis in my day. I'll make sure to use this water wisely. You gave me 1 water.",
+      "dialogue_beats": [
+        "Your thoughtfulness is a refreshing oasis in my day. I'll make sure to use this water wisely. You gave me 1 water."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "d5775c2a-6913-4178-8b87-10c7e0a7048a"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": -650.0,
+            "y": 134.0
+          },
+          "current_location": "forest_edge",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope",
+          "water"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "receive_item",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope",
+            "water"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "available",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": false,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 1
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 2,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 1,
+          "inventory:npc:2": 0,
+          "inventory:player": 1,
+          "npc:1": 1,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 3
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "d4bec733-d21b-47c0-af76-fb0c14dcc699",
+        "craftsman_encounter": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "game_scope": "d4bec733-d21b-47c0-af76-fb0c14dcc699",
+          "revision": 1
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "available",
+          "objective": "Explore the village. Start Get a bow when you are ready.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "receive_item",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope",
+            "water"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "Your thoughtfulness is a refreshing oasis in my day. I'll make sure to use this water wisely. You gave me 1 water.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "Your thoughtfulness is a refreshing oasis in my day. I'll make sure to use this water wisely. You gave me 1 water.",
+        "player_inventory": [
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": []
+      }
+    }
+  }
+]
