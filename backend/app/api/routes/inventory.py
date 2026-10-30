@@ -11,7 +11,7 @@ router = APIRouter(prefix='/inventory', tags=['inventory'])
 class TransferRequest(BaseModel):
     game_scope: str | None = None
     npc_id: int = Field(ge=1)
-    item: Literal['wood', 'axe', 'saw', 'hammer', 'rope', 'water', 'food', 'fruits', 'string', 'bow']
+    item: Literal['honeycomb', 'wood', 'axe', 'saw', 'hammer', 'rope', 'water', 'food', 'fruits', 'string', 'bow']
     direction: Literal['to_player', 'to_npc']
 
 

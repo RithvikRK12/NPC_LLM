@@ -2,7 +2,7 @@
 import re
 from app.services.validation.models import LLMResponse, StateUpdate
 
-ITEMS = {'saw', 'hammer', 'rope', 'axe', 'wood', 'fruits', 'water', 'food', 'string', 'bow'}
+ITEMS = {'honeycomb', 'saw', 'hammer', 'rope', 'axe', 'wood', 'fruits', 'water', 'food', 'string', 'bow'}
 
 
 def requested_transfer(question: str) -> tuple[str, str] | None:

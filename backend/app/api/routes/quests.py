@@ -20,7 +20,8 @@ def lock_player(db):
 
 def payload(db, player, reward=None):
     db.flush()
-    data = {'bow_quest': snapshot(get_quest(db)), 'player_inventory': list(player.inventory or []),
+    from app.services.quests.gatherer_recovery import snapshot as recovery_snapshot
+    data = {'bow_quest': snapshot(get_quest(db), recovery_snapshot(db, player)), 'player_inventory': list(player.inventory or []),
             'npcs': [NPCRead.model_validate(npc).model_dump() for npc in db.scalars(select(NPC).order_by(NPC.id))],
             'reward_dialogue': reward, 'game_scope': player.game_scope,
             'state_revisions': revision_labels(db, player)}
@@ -48,6 +49,21 @@ def start(db: Session = Depends(get_db)):
 class PickupRequest(BaseModel):
     x: float = Field(allow_inf_nan=False)
     y: float = Field(allow_inf_nan=False)
+
+
+class HoneycombPickupRequest(PickupRequest):
+    game_scope: str = Field(min_length=1)
+    pickup_id: str = Field(min_length=1)
+
+
+@router.post('/pickup-honeycomb')
+def pickup_honeycomb(request: HoneycombPickupRequest, db: Session = Depends(get_db)):
+    from app.services.opening import current_run
+    from app.services.quests.gatherer_recovery import pickup as collect
+    with game_writer(db):
+        player = current_run(db, request.game_scope)
+        collect(db, player, request.pickup_id, request.x, request.y)
+    return payload(db, player)
 
 
 @router.post('/pickup-string')

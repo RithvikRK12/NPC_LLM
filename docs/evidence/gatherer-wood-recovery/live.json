@@ -1,0 +1,409 @@
+{
+  "model": "llama3:willowbrook",
+  "world": "disposable in-memory SQLite",
+  "retries": false,
+  "turns": [
+    {
+      "npc": 2,
+      "message": "Could you spare some wood so the Craftsman can make my bow?",
+      "dialogue": "I'm too angry to help with your bow. I'm keeping the wood. Talk to the Craftsman.",
+      "interpretation": {
+        "version": 1,
+        "concerns": [
+          {
+            "id": "c1",
+            "kind": "operation_request",
+            "evidence": "Could you spare some wood so the Craftsman can make my bow?",
+            "start": 0,
+            "end": 59,
+            "modality": "direct",
+            "target": "wood",
+            "fact_ids": [
+              "quest.bow.requirements"
+            ],
+            "pending_question_id": null,
+            "answer_type": null,
+            "operation": "give_item",
+            "purpose": null,
+            "social_effect": null
+          }
+        ],
+        "clarification": null
+      },
+      "rejected": false,
+      "state": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer",
+        "trust": 0.0,
+        "fear": 0.25,
+        "aggression": 1.0,
+        "curiosity": 0.7,
+        "location": "forest_edge",
+        "current_state": "speak",
+        "pending_item": null,
+        "inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ]
+      },
+      "inventory": [
+        "water",
+        "food"
+      ],
+      "quest": {
+        "title": "Get a bow",
+        "phase": "gather",
+        "objective": "The angry Gatherer refused the wood. Tell the Craftsman and ask what might calm him down.",
+        "gatherer_recovery": {
+          "refused": true,
+          "hint_unlocked": false,
+          "collected": [],
+          "gifts_given": 0,
+          "blocked": true,
+          "item": "honeycomb",
+          "pickups": []
+        },
+        "string_available": true,
+        "string_position": {
+          "x": -70.0,
+          "y": 240.0
+        },
+        "remaining_seconds": 0.0,
+        "craft_seconds": 5.0,
+        "craft_progress": 0
+      }
+    },
+    {
+      "npc": 1,
+      "message": "The Gatherer is furious with me and won't share lumber. What can I do?",
+      "dialogue": "He likes honeycomb. Look for golden pieces along the forest path west of the well. Give him one as a gift; bring another if he's still angry. Then ask for wood again.",
+      "interpretation": {
+        "version": 1,
+        "concerns": [
+          {
+            "id": "c1",
+            "kind": "operation_request",
+            "evidence": "What can I do?",
+            "start": 56,
+            "end": 70,
+            "modality": "direct",
+            "target": "gatherer",
+            "fact_ids": [],
+            "pending_question_id": null,
+            "answer_type": null,
+            "operation": "craftsman.advise_gatherer",
+            "purpose": null,
+            "social_effect": null
+          }
+        ],
+        "clarification": null
+      },
+      "rejected": false,
+      "state": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman",
+        "trust": 0.65,
+        "fear": 0.1,
+        "aggression": 0.05,
+        "curiosity": 0.3,
+        "location": "workshop",
+        "current_state": "speak",
+        "pending_item": null,
+        "inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ]
+      },
+      "inventory": [
+        "water",
+        "food"
+      ],
+      "quest": {
+        "title": "Get a bow",
+        "phase": "gather",
+        "objective": "Find honeycomb on the forest path west of the well. Give it to the Gatherer until he is calm enough to share wood.",
+        "gatherer_recovery": {
+          "refused": true,
+          "hint_unlocked": true,
+          "collected": [],
+          "gifts_given": 0,
+          "blocked": true,
+          "item": "honeycomb",
+          "pickups": [
+            {
+              "id": "honeycomb-1",
+              "position": {
+                "x": -880.0,
+                "y": 224.0
+              }
+            },
+            {
+              "id": "honeycomb-2",
+              "position": {
+                "x": -1184.0,
+                "y": 352.0
+              }
+            },
+            {
+              "id": "honeycomb-3",
+              "position": {
+                "x": -1456.0,
+                "y": 224.0
+              }
+            }
+          ]
+        },
+        "string_available": true,
+        "string_position": {
+          "x": -70.0,
+          "y": 240.0
+        },
+        "remaining_seconds": 0.0,
+        "craft_seconds": 5.0,
+        "craft_progress": 0
+      }
+    },
+    {
+      "npc": 2,
+      "message": "Here, take this honeycomb.",
+      "dialogue": "Let's be careful. Thank you for the honeycomb. That helps, but I'm still on edge. Another gift would help me settle down.",
+      "interpretation": {
+        "version": 1,
+        "concerns": [
+          {
+            "id": "c1",
+            "kind": "operation_request",
+            "evidence": "Here, take this honeycomb.",
+            "start": 0,
+            "end": 26,
+            "modality": "direct",
+            "target": "honeycomb",
+            "fact_ids": [],
+            "pending_question_id": null,
+            "answer_type": null,
+            "operation": "receive_item",
+            "purpose": null,
+            "social_effect": null
+          }
+        ],
+        "clarification": null
+      },
+      "rejected": false,
+      "state": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer",
+        "trust": 0.3,
+        "fear": 0.25,
+        "aggression": 0.6,
+        "curiosity": 0.7,
+        "location": "forest_edge",
+        "current_state": "receive_item",
+        "pending_item": null,
+        "inventory": [
+          "axe",
+          "wood",
+          "fruits",
+          "honeycomb"
+        ]
+      },
+      "inventory": [
+        "water",
+        "food"
+      ],
+      "quest": {
+        "title": "Get a bow",
+        "phase": "gather",
+        "objective": "Find honeycomb on the forest path west of the well. Give it to the Gatherer until he is calm enough to share wood.",
+        "gatherer_recovery": {
+          "refused": true,
+          "hint_unlocked": true,
+          "collected": [
+            "honeycomb-1"
+          ],
+          "gifts_given": 1,
+          "blocked": true,
+          "item": "honeycomb",
+          "pickups": [
+            {
+              "id": "honeycomb-2",
+              "position": {
+                "x": -1184.0,
+                "y": 352.0
+              }
+            },
+            {
+              "id": "honeycomb-3",
+              "position": {
+                "x": -1456.0,
+                "y": 224.0
+              }
+            }
+          ]
+        },
+        "string_available": true,
+        "string_position": {
+          "x": -70.0,
+          "y": 240.0
+        },
+        "remaining_seconds": 0.0,
+        "craft_seconds": 5.0,
+        "craft_progress": 0
+      }
+    },
+    {
+      "npc": 2,
+      "message": "I brought another honeycomb for you. Please take it.",
+      "dialogue": "Glad to help. Thank you for the honeycomb. I'm calmer now. Ask me for the wood; I'll help with your bow.",
+      "interpretation": {
+        "version": 1,
+        "concerns": [
+          {
+            "id": "c1",
+            "kind": "operation_request",
+            "evidence": "Please take it.",
+            "start": 37,
+            "end": 52,
+            "modality": "direct",
+            "target": "honeycomb",
+            "fact_ids": [],
+            "pending_question_id": null,
+            "answer_type": null,
+            "operation": "receive_item",
+            "purpose": null,
+            "social_effect": null
+          }
+        ],
+        "clarification": null
+      },
+      "rejected": false,
+      "state": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer",
+        "trust": 0.6,
+        "fear": 0.25,
+        "aggression": 0.19999999999999996,
+        "curiosity": 0.7,
+        "location": "forest_edge",
+        "current_state": "receive_item",
+        "pending_item": null,
+        "inventory": [
+          "axe",
+          "wood",
+          "fruits",
+          "honeycomb",
+          "honeycomb"
+        ]
+      },
+      "inventory": [
+        "water",
+        "food"
+      ],
+      "quest": {
+        "title": "Get a bow",
+        "phase": "gather",
+        "objective": "The Gatherer is ready to help. Ask for wood, collect string near the well, and give both to the Craftsman.",
+        "gatherer_recovery": {
+          "refused": true,
+          "hint_unlocked": true,
+          "collected": [
+            "honeycomb-1",
+            "honeycomb-2"
+          ],
+          "gifts_given": 2,
+          "blocked": false,
+          "item": "honeycomb",
+          "pickups": []
+        },
+        "string_available": true,
+        "string_position": {
+          "x": -70.0,
+          "y": 240.0
+        },
+        "remaining_seconds": 0.0,
+        "craft_seconds": 5.0,
+        "craft_progress": 0
+      }
+    },
+    {
+      "npc": 2,
+      "message": "Could you give me wood to make a bow?",
+      "dialogue": "Glad to help. Thanks for explaining. Here, take my wood. It's yours now.",
+      "interpretation": {
+        "version": 1,
+        "concerns": [
+          {
+            "id": "c1",
+            "kind": "operation_request",
+            "evidence": "Could you give me wood to make a bow?",
+            "start": 0,
+            "end": 37,
+            "modality": "direct",
+            "target": "wood",
+            "fact_ids": [],
+            "pending_question_id": null,
+            "answer_type": null,
+            "operation": "give_item",
+            "purpose": "make a bow",
+            "social_effect": null
+          }
+        ],
+        "clarification": null
+      },
+      "rejected": false,
+      "state": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer",
+        "trust": 0.6,
+        "fear": 0.25,
+        "aggression": 0.19999999999999996,
+        "curiosity": 0.7,
+        "location": "forest_edge",
+        "current_state": "give_item",
+        "pending_item": null,
+        "inventory": [
+          "axe",
+          "fruits",
+          "honeycomb",
+          "honeycomb"
+        ]
+      },
+      "inventory": [
+        "water",
+        "food",
+        "wood"
+      ],
+      "quest": {
+        "title": "Get a bow",
+        "phase": "gather",
+        "objective": "The Gatherer is ready to help. Ask for wood, collect string near the well, and give both to the Craftsman.",
+        "gatherer_recovery": {
+          "refused": true,
+          "hint_unlocked": true,
+          "collected": [
+            "honeycomb-1",
+            "honeycomb-2"
+          ],
+          "gifts_given": 2,
+          "blocked": false,
+          "item": "honeycomb",
+          "pickups": []
+        },
+        "string_available": true,
+        "string_position": {
+          "x": -70.0,
+          "y": 240.0
+        },
+        "remaining_seconds": 0.0,
+        "craft_seconds": 5.0,
+        "craft_progress": 0
+      }
+    }
+  ]
+}

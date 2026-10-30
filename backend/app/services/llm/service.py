@@ -63,6 +63,13 @@ class LLMService:
                         concern['operation'] = None; repaired = True
                     if concern.get('kind') != 'operation_request' and concern.get('purpose') is not None:
                         concern['purpose'] = None; repaired = True
+                    purpose = concern.get('purpose')
+                    if (concern.get('kind') == 'operation_request' and isinstance(purpose, str)
+                            and context.message.count(purpose) != 1):
+                        # Preserve the understood request, but an invented or
+                        # paraphrased use cannot authorize giving stock. The
+                        # existing purpose question remains required instead.
+                        concern['purpose'] = None; repaired = True
             if not repaired:
                 raise
             context.span_repairs += 1

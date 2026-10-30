@@ -23,12 +23,13 @@ def world(db: Session = Depends(get_db)) -> dict:
                                   for turn in reversed(turns)]
     from app.services.craftsman import snapshot as craftsman_snapshot
     from app.services.gatherer import snapshot as gatherer_snapshot
+    from app.services.quests.gatherer_recovery import snapshot as recovery_snapshot
     return {**gatherer_snapshot(db, player), **craftsman_snapshot(db, player), 'opening_capability': 1, 'game_scope': player.game_scope if player else '',
             'opening_state': player.opening_state if player else 'complete',
             'opening_version': player.opening_version if player else 1,
             'map_version': player.map_version if player else 1,
             'map_recovery_notice': player.map_recovery_notice if player else '',
-            'salvage_ids': player.salvage_ids if player else [], 'player_position': player.position or {'x': 0.0, 'y': 0.0} if player else {'x': 0.0, 'y': 0.0}, 'bow_quest': snapshot(db.get(BowQuest, 1)), 'npcs': [NPCRead.model_validate(npc).model_dump() for npc in npcs],
+            'salvage_ids': player.salvage_ids if player else [], 'player_position': player.position or {'x': 0.0, 'y': 0.0} if player else {'x': 0.0, 'y': 0.0}, 'bow_quest': snapshot(db.get(BowQuest, 1), recovery_snapshot(db, player)), 'npcs': [NPCRead.model_validate(npc).model_dump() for npc in npcs],
             'player_inventory': list(player.inventory or []) if player else [],
             'quest_status': quest.status if quest else 'unknown',
             'quest_progress': quest.progress if quest else 0, 'histories': histories}

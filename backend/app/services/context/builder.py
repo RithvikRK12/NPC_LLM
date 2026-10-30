@@ -27,7 +27,8 @@ class ContextBuilder:
 
     def build(self, npc: NPC, player: Player, player_input: str) -> ConversationContext:
         quest = self._db.scalar(select(Quest).where(Quest.player_id == player.id))
-        quest_payload = snapshot(self._db.get(BowQuest, player.id))
+        from app.services.quests.gatherer_recovery import snapshot as recovery_snapshot
+        quest_payload = snapshot(self._db.get(BowQuest, player.id), recovery_snapshot(self._db, player))
 
         memories = self._memory_service.retrieve_relevant_memories(npc=npc, query=player_input, top_k=self._settings.memory_top_k)
         # Always include the latest exchanges, independently of semantic memory ranking.

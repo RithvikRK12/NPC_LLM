@@ -144,6 +144,11 @@ def build_facts(db, npc, player, quest, now):
         'services/quests/bow.py; Craftsman quest material stock', 'current')
     add('quest.bow.phase', 'quest.bow', 'phase',
         f"Get a bow: {quest['objective']}", 'BowQuest snapshot')
+    recovery = quest.get('gatherer_recovery', {})
+    if quest['phase'] in {'meet', 'gather'} and recovery.get('refused'):
+        add('quest.bow.gatherer_recovery', 'quest.bow', 'gatherer_recovery',
+            'The Gatherer refused wood. Ask the Craftsman about forest honeycomb: gifts lower anger and build trust until he is willing to share.',
+            'Verified wood refusal and authored Gatherer recovery rules')
     # Delivery history is verified execution, not a remembered player claim. It
     # survives consumption. Retained quest stock also survives clearing chat.
     delivered = []

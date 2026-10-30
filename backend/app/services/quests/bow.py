@@ -21,7 +21,7 @@ def get_quest(db, player_id=1):
     return quest
 
 
-def snapshot(quest):
+def snapshot(quest, recovery=None):
     phase = quest.phase if quest else 'available'
     remaining = max(0.0, (quest.ready_at or 0) - time.time()) if quest and phase == 'crafting' else 0.0
     objectives = {
@@ -31,7 +31,16 @@ def snapshot(quest):
         'crafting': 'The Craftsman is making your bow.',
         'completed': 'Quest complete! Your bow is in your satchel.',
     }
-    return {'title': 'Get a bow', 'phase': phase, 'objective': objectives[phase],
+    objective = objectives[phase]
+    if phase in {'meet', 'gather'} and recovery and recovery.get('refused'):
+        if recovery.get('blocked'):
+            objective = ('Find honeycomb on the forest path west of the well. Give it to the Gatherer until he is calm enough to share wood.'
+                         if recovery.get('hint_unlocked') else
+                         'The angry Gatherer refused the wood. Tell the Craftsman and ask what might calm him down.')
+        else:
+            objective = 'The Gatherer is ready to help. Ask for wood, collect string near the well, and give both to the Craftsman.'
+    return {'title': 'Get a bow', 'phase': phase, 'objective': objective,
+            'gatherer_recovery': recovery or {},
             'string_available': bool(quest and phase == 'gather' and not quest.string_collected),
             'string_position': STRING_POSITION, 'remaining_seconds': remaining,
             'craft_seconds': CRAFT_SECONDS, 'craft_progress': (1 - remaining / CRAFT_SECONDS) * 100 if phase == 'crafting' else (100 if phase == 'completed' else 0)}

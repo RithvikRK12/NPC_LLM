@@ -79,6 +79,8 @@ class ConversationPipeline:
             capabilities.extend({'id': 'craftsman.' + command, 'kind': 'encounter', 'targets': ['ship']} for command in
                                  ('report_wreck', 'begin_inspection', 'resume', 'wait', 'return', 'postpone'))
             capabilities.append({'id': 'craftsman.request_bow', 'kind': 'quest', 'targets': ['bow']})
+            capabilities.append({'id': 'craftsman.advise_gatherer', 'kind': 'quest', 'targets': ['gatherer'],
+                'description': 'Advise on calming the angry Gatherer after he refused bow-quest wood.'})
         from app.services.semantic_routing import InterpretationContext
         interpretation_context = InterpretationContext(
             message=player_message, history=context.recent_dialogue, facts=context.facts,
@@ -170,7 +172,8 @@ class ConversationPipeline:
         # Re-render selections against current facts/resources, including quest
         # changes that happened during generation. Do not retrieve/embed again.
         context.inventory = list(player.inventory or [])
-        context.quest = bow_snapshot(self._db.get(BowQuest, player.id))
+        from app.services.quests.gatherer_recovery import snapshot as recovery_snapshot
+        context.quest = bow_snapshot(self._db.get(BowQuest, player.id), recovery_snapshot(self._db, player))
         context.facts = build_facts(self._db, npc, player, context.quest, datetime.now(timezone.utc).isoformat())
         quest_before = get_quest(self._db, player.id).phase
         pending_before = npc.pending_item
@@ -188,7 +191,15 @@ class ConversationPipeline:
             elif grounded is None:
                 grounded = transfer_interpretation(context.accepted_interpretation, list(npc.inventory or []),
                                                    list(player.inventory or []), npc.pending_item)
-            if grounded is not None and any(c.get('kind') == 'social' for c in context.accepted_interpretation.get('concerns', [])):
+            if not self._output_rejected:
+                from app.services.quests.gatherer_recovery import refuse_wood, prepare_gift, advise
+                if grounded is not None:
+                    grounded = refuse_wood(self._db, player, npc, grounded)
+                    grounded = prepare_gift(self._db, player, npc, grounded)
+                else:
+                    grounded = advise(self._db, player, npc, context.accepted_interpretation)
+            if (grounded is not None and grounded.intent not in {'wood_refused', 'recovery_gift', 'gatherer_recovery_advice'}
+                    and any(c.get('kind') == 'social' for c in context.accepted_interpretation.get('concerns', []))):
                 try:
                     social_segment = self._validation_service.validate(generation.raw_json, validation_npc, context).output
                     combined = ' '.join(part.strip() for part in (social_segment.dialogue, grounded.dialogue) if part.strip())
@@ -373,7 +384,7 @@ class ConversationPipeline:
             grounding_trace=trace,
             behavior_trace=behavior_trace,
             memory_classification=memory_classification,
-            bow_quest=bow_snapshot(get_quest(self._db, player.id)),
+            bow_quest=bow_snapshot(get_quest(self._db, player.id), recovery_snapshot(self._db, current_player)),
             npc=NPCRead.model_validate(refreshed_npc),
             validated_output=StructuredNPCOutput.model_validate(conditioned_output.model_dump()),
             final_dialogue=conditioned_output.dialogue,

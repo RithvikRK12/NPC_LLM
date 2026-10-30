@@ -37,7 +37,7 @@ class StateService:
 
         if output.intent == 'confirm_transfer' and output.action == 'ask_question':
             npc.pending_item = output.item
-        elif output.intent in {'cancel_transfer', 'unavailable_item'} or output.action in {'give_item', 'receive_item'}:
+        elif output.intent in {'cancel_transfer', 'unavailable_item', 'wood_refused'} or output.action in {'give_item', 'receive_item'}:
             npc.pending_item = None
         npc_inventory = list(npc.inventory or [])
         if output.action in {"give_item", "receive_item"}:
@@ -50,6 +50,8 @@ class StateService:
                 quest_status = "active"
                 quest_progress = max(quest_progress, 50)
         npc.inventory = npc_inventory
+        from app.services.quests.gatherer_recovery import record_gift
+        record_gift(self._db, player, npc, output)
 
 
         player.inventory = inventory

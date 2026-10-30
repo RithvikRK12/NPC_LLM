@@ -50,6 +50,13 @@ uvicorn command for the same behavior.
 5. Return to the Craftsman. Open your satchel with **I** or its button, select each material, and click **Give [item] to Craftsman**.
 6. He consumes one wood and one string and crafts for **five seconds**, with a progress bar. A bow is added to your satchel, completing the quest.
 
+An angry Gatherer (aggression at least 0.60) refuses bow-quest wood. Tell the
+Craftsman about the refusal to unlock honeycomb pickups along the forest path
+west of the well. Press **F** near a honeycomb, then give it to the Gatherer
+through conversation or your satchel. Each gift lowers aggression by 0.40 and
+raises trust by 0.30. He helps again below 0.60 aggression with at least 0.35
+trust. Recovery progress and collected honeycombs survive reloading.
+
 Use WASD to walk and Escape to close panels. Each NPC has a separate chat and supplies panel. Item cards show names, icons and stack counts. Click an NPC item and Request to begin its purpose-confirmation conversation. Say “cancel” to cancel. Player gifts transfer immediately and receive a thank-you.
 
 The workshop and both cottages have furnished interiors. Walk up into a front door

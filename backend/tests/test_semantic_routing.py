@@ -54,7 +54,7 @@ class SemanticRoutingContractTests(unittest.TestCase):
         self.assertIsNone(concern.operation)
         self.assertEqual(provider.calls, 1)
 
-    def test_operation_with_invented_purpose_is_still_rejected_without_retry(self):
+    def test_invented_purpose_cannot_authorize_transfer_but_preserves_the_request(self):
         from app.services.llm.provider import LLMProvider
         from app.services.llm.service import LLMService
         raw = {'version': 1, 'concerns': [{'id': 'c1', 'kind': 'operation_request',
@@ -69,8 +69,13 @@ class SemanticRoutingContractTests(unittest.TestCase):
         provider = Provider()
         context = InterpretationContext(message='Give me wood.', history=[], facts=[],
             capabilities=[{'id': 'give_item', 'targets': ['wood']}])
-        with self.assertRaisesRegex(ValueError, 'purpose must be an exact unique span'):
-            LLMService(provider=provider).interpret(context)
+        accepted, _ = LLMService(provider=provider).interpret(context)
+        self.assertEqual(accepted.concerns[0].operation, 'give_item')
+        self.assertIsNone(accepted.concerns[0].purpose)
+        from app.services.validation.items import transfer_interpretation
+        response = transfer_interpretation(accepted.model_dump(), ['wood'], [])
+        self.assertEqual(response.intent, 'confirm_transfer')
+        self.assertEqual(response.action, 'ask_question')
         self.assertEqual(provider.calls, 1)
 
     def test_span_repair_preserves_ship_report_target_for_encounter_routing(self):

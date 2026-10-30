@@ -46,6 +46,7 @@ var quest_request: HTTPRequest
 var quest_busy := false
 var bow_state: Dictionary = {}
 var string_pickup: Sprite2D
+var forest_gifts: Node2D
 var pickup_hint: Label
 var restart_button: Button
 var restart_dialog: ConfirmationDialog
@@ -161,6 +162,9 @@ func _process(_delta: float) -> void:
 	_update_give_action()
 	if string_pickup.visible and player.position.distance_to(string_pickup.position) < 64:
 		interaction_label.text = "F  Pick up string"
+	forest_gifts.update_proximity(player.position)
+	if not forest_gifts.nearby(player.position).is_empty():
+		interaction_label.text = "F  Pick up honeycomb"
 	if player.position.distance_to(fisherman.position) <= fisherman.TALK_RADIUS:
 		interaction_label.text = "E  Talk to Rowan"
 	if not craftsman_activity.hint.is_empty(): interaction_label.text = craftsman_activity.hint
@@ -266,6 +270,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				else: _open_dialogue()
 			elif event.keycode == KEY_F and string_pickup.visible and player.position.distance_to(string_pickup.position) < 64:
 				_quest_call("pickup-string", {"x": player.position.x, "y": player.position.y})
+			elif event.keycode == KEY_F:
+				var gift: Dictionary = forest_gifts.nearby(player.position)
+				if not gift.is_empty():
+					_quest_call("pickup-honeycomb", {"game_scope": game_scope, "pickup_id": gift.id,
+						"x": player.position.x, "y": player.position.y})
 
 func _build_world() -> void:
 	world_view = preload("res://scripts/world_view.gd").new()
@@ -297,6 +306,8 @@ func _build_world() -> void:
 	pickup_hint.scale = Vector2(0.5,0.5)
 	pickup_hint.add_theme_color_override("font_color",Color("fff0ce"))
 	string_pickup.add_child(pickup_hint)
+	forest_gifts = preload("res://scripts/forest_gift_pickups.gd").new()
+	world_view.world.add_child(forest_gifts)
 	player = preload("res://scripts/player.gd").new()
 	player.position = Vector2.ZERO
 	world_view.world.add_child(player)
@@ -847,6 +858,7 @@ func _update_quest(data: Dictionary) -> void:
 	string_pickup.visible = data.get("string_available", false)
 	var at: Dictionary = data.get("string_position",{"x":-70,"y":240})
 	string_pickup.position = Vector2(float(at.x),float(at.y))
+	forest_gifts.sync(data.get("gatherer_recovery", {}))
 
 
 func _quest_call(action: String, payload: Dictionary = {}) -> void:
