@@ -46,11 +46,11 @@ class MockLLMProvider(LLMProvider):
             }
             return json.dumps(response)
 
-        from app.services.context.social import is_social_message
-        if is_social_message(player_input):
-            from app.services.context.craftsman_profile import character_fallback
-            return json.dumps({'answer_kind':'chat','fact_ids':[],'dialogue':character_fallback(player_input)})
-        import re
+        if context.get('accepted_interpretation', {}).get('concerns'):
+            kinds = {c.get('kind') for c in context['accepted_interpretation']['concerns']}
+            if kinds <= {'social', 'player_report'}:
+                return json.dumps({'answer_kind':'chat','fact_ids':[],'dialogue':
+                    'Thanks for sharing that with me. It is good to have a moment to talk.'})
         facts={f['id']:f for f in context.get('facts',[])}
         identity=None
         if 'bow' in player_input and any(w in player_input for w in ('need','material','why')): identity='quest.bow.requirements'

@@ -2,6 +2,7 @@ extends PanelContainer
 
 signal world_changed(response: Dictionary)
 signal overlay_opened(owner: Control)
+signal emotional_state_edited(npc: Dictionary)
 var backend_url := "http://127.0.0.1:8000"
 var npc_id := 0
 var npc_name := "NPC"
@@ -32,6 +33,13 @@ var history_panel: PanelContainer
 var history_bubbles: VBoxContainer
 var overlay_opener: Control
 var supplies_panel: PanelContainer
+var emotion_panel: PanelContainer
+var emotion_values: Dictionary = {}
+var emotion_apply: Button
+var emotion_status: Label
+var emotion_request: HTTPRequest
+var emotion_pending := false
+var emotion_scope := ""
 var pages: Array[String] = []
 var page_index := 0
 var active_speaker := "System"
@@ -149,6 +157,9 @@ func _ready() -> void:
 	take_button = button("Select a supply above", func(): transfer_item(item_grid.selected_item, "to_player"), supplies_panel.get_child(0))
 	take_button.disabled = true
 	take_button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_create_emotion_panel()
+	visibility_changed.connect(func():
+		if not is_visible_in_tree(): emotion_panel.hide())
 	request = HTTPRequest.new()
 	request.timeout = 160
 	add_child(request)
@@ -169,6 +180,117 @@ func _ready() -> void:
 		start_request()
 	resized.connect(func(): if not active_message.is_empty(): paginate())
 	hide()
+
+func _create_emotion_panel() -> void:
+	emotion_panel = PanelContainer.new()
+	emotion_panel.name = "NPCEmotionDebug"
+	emotion_panel.theme = compact_overlay_theme
+	emotion_panel.z_index = 10
+	get_parent().add_child(emotion_panel)
+	emotion_panel.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	emotion_panel.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+	emotion_panel.offset_left = -376
+	emotion_panel.offset_right = -16
+	emotion_panel.offset_top = 16
+	emotion_panel.offset_bottom = 240
+	var layout := VBoxContainer.new()
+	emotion_panel.add_child(layout)
+	var heading := HBoxContainer.new()
+	layout.add_child(heading)
+	var title := Label.new()
+	title.text = "NPC EMOTIONS"
+	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	heading.add_child(title)
+	button("Close", func(): emotion_panel.hide(); message_input.grab_focus(), heading)
+	var identity := Label.new()
+	identity.text = npc_name + " • current values"
+	layout.add_child(identity)
+	var grid := GridContainer.new()
+	grid.columns = 2
+	layout.add_child(grid)
+	for attribute in ["trust", "fear", "aggression", "curiosity"]:
+		var label := Label.new()
+		label.text = attribute.capitalize()
+		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		grid.add_child(label)
+		var value := SpinBox.new()
+		value.min_value = 0.0
+		value.max_value = 1.0
+		value.step = 0.001
+		value.custom_minimum_size.x = 120
+		grid.add_child(value)
+		emotion_values[attribute] = value
+		value.value_changed.connect(func(_value):
+			if is_instance_valid(emotion_status): emotion_status.text = "Not applied")
+	var actions := HBoxContainer.new()
+	layout.add_child(actions)
+	emotion_apply = button("Apply", _apply_emotions, actions)
+	emotion_status = Label.new()
+	emotion_status.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	emotion_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	emotion_status.add_theme_font_size_override("font_size", 18)
+	actions.add_child(emotion_status)
+	emotion_request = HTTPRequest.new()
+	emotion_request.timeout = 10
+	add_child(emotion_request)
+	emotion_request.request_completed.connect(_emotion_edit_completed)
+	emotion_panel.hide()
+
+func set_emotional_state(npc: Dictionary) -> void:
+	if int(npc.get("id", -1)) != npc_id: return
+	for attribute in emotion_values:
+		if npc.has(attribute): emotion_values[attribute].value = float(npc[attribute])
+	emotion_status.text = ""
+
+func _emotion_payload() -> Dictionary:
+	var payload := {"game_scope": game_scope}
+	for attribute in emotion_values:
+		emotion_values[attribute].apply()
+		payload[attribute] = emotion_values[attribute].value
+	return payload
+
+func _refresh_emotion_controls() -> void:
+	var busy := pending or emotion_pending
+	emotion_apply.disabled = busy or modal_blocked or game_scope.is_empty()
+	for field in emotion_values.values(): field.editable = not busy
+	send_button.disabled = busy
+	clear_button.disabled = busy
+	take_button.disabled = busy or item_grid.selected_item.is_empty()
+
+func _apply_emotions() -> void:
+	if pending or emotion_pending or modal_blocked or not visible or game_scope.is_empty(): return
+	var payload := _emotion_payload()
+	emotion_scope = game_scope
+	emotion_pending = true
+	emotion_status.text = "Saving..."
+	_refresh_emotion_controls()
+	var error := emotion_request.request(backend_url + "/npc/%s/emotions" % npc_id,
+		PackedStringArray(["Content-Type: application/json"]), HTTPClient.METHOD_PATCH, JSON.stringify(payload))
+	if error != OK:
+		emotion_pending = false
+		emotion_status.text = "Could not reach backend"
+		_refresh_emotion_controls()
+
+func _emotion_edit_completed(result: int, code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
+	emotion_pending = false
+	_refresh_emotion_controls()
+	if emotion_scope != game_scope: return
+	if result != HTTPRequest.RESULT_SUCCESS or code != 200:
+		emotion_status.text = "Could not save (%s)" % code
+		return
+	var parsed: Variant = JSON.parse_string(body.get_string_from_utf8())
+	if not parsed is Dictionary or int(parsed.get("id", -1)) != npc_id:
+		emotion_status.text = "Could not save (%s)" % code
+		return
+	set_emotional_state(parsed)
+	emotion_status.text = "Saved"
+	emotional_state_edited.emit(parsed)
+
+func _input(event: InputEvent) -> void:
+	if not is_visible_in_tree() or modal_blocked or npc_id <= 0: return
+	if event.is_action_pressed("debug_npc_emotions") and not event.is_echo():
+		emotion_panel.visible = not emotion_panel.visible
+		get_viewport().set_input_as_handled()
 
 func make_overlay(title: String) -> PanelContainer:
 	var panel := PanelContainer.new()
@@ -204,6 +326,7 @@ func restore_overlay_focus() -> void:
 func close_overlays() -> void:
 	history_panel.hide()
 	supplies_panel.hide()
+	emotion_panel.hide()
 
 func open_chat() -> void:
 	show()
@@ -309,6 +432,7 @@ func _process(_delta: float) -> void:
 	if conversation_gateway != null:
 		conversation_gateway.invalidate(game_scope, conversation_epoch)
 	if not visible: return
+	_refresh_emotion_controls()
 	notice.visible = not notice.text.is_empty()
 	# Larger fonts and notices can exceed the preferred box height. Grow upward
 	# from the bottom margin so the reply and Send button remain on screen.
@@ -353,6 +477,7 @@ func submit() -> void:
 	_submit_message(message)
 
 func _submit_message(message: String, clear_composer := true) -> void:
+	if emotion_pending: return
 	operation = "chat"
 	failed_message = message
 	append_dialogue("Player", message)
@@ -370,6 +495,7 @@ func _submit_message(message: String, clear_composer := true) -> void:
 func _on_conversation_finalized(_request_id: String, response: Dictionary) -> void:
 	finish()
 	if sent_game_scope != game_scope or conversation_epoch != int(response.get("turn", {}).get("key", {}).get("epoch", -1)): return
+	set_emotional_state(response.get("npc", {}))
 	var dialogue := str(response.get("final_dialogue", ""))
 	append_dialogue(npc_name, dialogue)
 	var beats: Array = response.get("dialogue_beats", [])
@@ -441,6 +567,7 @@ func _completed(result: int, code: int, _headers: PackedStringArray, body: Packe
 		conversation_epoch = cleared_epoch
 		conversation_presenter.reset(game_scope, conversation_epoch, int(response.get("next_sequence", 1)))
 		return
+	set_emotional_state(response.get("npc", {}))
 	append_dialogue(npc_name, str(response.get("final_dialogue", "")))
 	var output: Dictionary = response.get("validated_output", {})
 	if output.get("action") == "give_item":

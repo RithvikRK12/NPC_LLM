@@ -40,6 +40,60 @@ class NPCPipelineTests(unittest.TestCase):
                                return_value=LLMService(provider=OpenAICompatibleProvider()))
         provider_patch.start()
         self.addCleanup(provider_patch.stop)
+        # Pipeline tests supply an explicit deterministic interpretation fixture;
+        # provider and speech behavior remain independently mocked per test.
+        interpretation_patch = patch('app.services.llm.service.LLMService.interpret',
+                                     side_effect=self._test_interpretation)
+        interpretation_patch.start()
+        self.addCleanup(interpretation_patch.stop)
+
+    def _test_interpretation(self, context):
+        from app.services.semantic_routing import AcceptedInterpretation
+        message = context.message
+        low = message.casefold()
+        concerns = []
+        fact_ids = [fact['id'] for fact in context.facts]
+        selected = None
+        if any(word in low for word in ('where', 'location', 'route', 'how do i get', 'how can i reach')):
+            if 'gatherer' in low:
+                selected = 'person.gatherer.route' if any(w in low for w in ('route', 'get', 'reach')) else 'person.gatherer.location'
+            elif 'craftsman' in low:
+                selected = 'person.craftsman.route' if any(w in low for w in ('route', 'get', 'reach')) else 'person.craftsman.location'
+            elif 'there' in low and context.focus.get('subject'):
+                selected = next((x for x in context.focus.get('fact_ids', []) if x.endswith('.route')), None)
+            if selected in fact_ids:
+                concerns.append(dict(id='c1', kind='factual', evidence=message, start=0, end=len(message),
+                    modality='direct', target=None, fact_ids=[selected], pending_question_id=None,
+                    answer_type=None, operation=None))
+        if not concerns and (context.pending_item or any(w in low for w in ('give me', 'can i have', 'i need', 'i give you', 'here is', 'for my work', 'cancel'))):
+            if context.pending_item and (any(w in low for w in ('cancel', 'never mind')) or
+                                         any(w in low for w in ('for my', 'for a', 'because', 'so i can', 'yes', 'okay', 'sure', 'no thanks'))):
+                kind = 'cancellation' if 'cancel' in low or 'never mind' in low else 'pending_answer'
+                concerns.append(dict(id='c1', kind=kind, evidence=message, start=0, end=len(message), modality='direct',
+                    target=context.pending_item, fact_ids=[], pending_question_id='purpose:' + context.pending_item,
+                    answer_type='refusal' if kind == 'cancellation' else ('purpose' if len(low.split()) > 2 and low not in {'yes', 'okay'} else 'assent'), operation=None))
+            else:
+                item = next((value for value in ('wood', 'rope', 'water', 'food', 'bow', 'string', 'axe', 'hammer', 'saw') if value in low), None)
+                op = 'receive_item' if any(w in low for w in ('i give you', 'here is', 'take my')) else 'give_item'
+                if item and item in context.capabilities[0].get('targets', []) and any(w in low for w in ('give', 'have', 'need', 'want', 'offer', 'take')):
+                    concerns.append(dict(id='c1', kind='operation_request', evidence=message, start=0, end=len(message),
+                        modality='direct', target=item, fact_ids=[], pending_question_id=None, answer_type=None, operation=op))
+        if not concerns and context.npc_role == 'craftsman' and any(w in low for w in ('make me a bow', 'craft me a bow', 'craft a bow', 'please make a bow')):
+            concerns.append(dict(id='c1', kind='operation_request', evidence=message, start=0, end=len(message),
+                modality='direct', target='bow', fact_ids=[], pending_question_id=None,
+                answer_type=None, operation='craftsman.request_bow'))
+        if not concerns:
+            if any(w in low for w in ('how are you', 'how has your day', 'how was your day', "how's your day", 'my day', 'i am', "i'm", 'i’m', 'i prefer', 'i like', 'thanks', 'hello', 'hi', 'who taught', 'what do you think', 'please help')):
+                concerns.append(dict(id='c1', kind='social', evidence=message, start=0, end=len(message), modality='direct',
+                    target=None, fact_ids=[], pending_question_id=None, answer_type=None, operation=None))
+            elif any(w in low for w in ('what', 'where', 'who', 'how many', 'why')):
+                selected = next((x for x in fact_ids if any(term in low and x.endswith(suffix) for term, suffix in [('material', 'requirements'), ('deliver', 'delivered'), ('inventory', 'inventory'), ('need', 'requirements'), ('bow', 'phase'), ('craftsman', 'location'), ('gatherer', 'location')])), None)
+                concerns.append(dict(id='c1', kind='factual', evidence=message, start=0, end=len(message), modality='direct',
+                    target=None, fact_ids=[selected] if selected else [], pending_question_id=None, answer_type=None, operation=None))
+            else:
+                concerns.append(dict(id='c1', kind='clarification', evidence=message, start=0, end=len(message), modality='uncertain',
+                    target=None, fact_ids=[], pending_question_id=None, answer_type=None, operation=None))
+        return AcceptedInterpretation(version=1, concerns=concerns, clarification=None), .001
 
     def tearDown(self):
         self.client.close()
@@ -52,6 +106,8 @@ class NPCPipelineTests(unittest.TestCase):
 
     def test_request_waits_for_reason_and_can_be_cancelled(self):
         first = self.client.post('/inventory/transfer', json={'npc_id': 2, 'item': 'wood', 'direction': 'to_player'}).json()
+        self.assertEqual(first['grounding_trace']['interpretation_origin'], 'structured_ui')
+        self.assertEqual(first['grounding_trace']['model_calls']['interpretation'], 0)
         self.assertEqual(first['validated_output']['action'], 'ask_question')
         self.assertIn('why', first['final_dialogue'])
         self.assertNotIn('wood', first['player_inventory'])

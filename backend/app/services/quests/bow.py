@@ -66,6 +66,27 @@ def dialogue(db, npc, message, player):
 
 
 @versioned
+def request_from_interpretation(db, npc, player):
+    """Handle an interpreted direct bow request without reparsing its wording."""
+    quest = get_quest(db, player.id)
+    if quest.phase == 'available':
+        return reply('If you want a bow, Open Quests and begin Get a bow. For now, feel free to explore the village.')
+    if quest.phase == 'completed':
+        return reply('Your bow quest is complete. The bow is in your satchel.' if 'bow' in (player.inventory or [])
+                     else 'Your bow quest is complete. You have since given the bow away; check the villagers supplies.')
+    if quest.phase == 'crafting':
+        return reply('The bow is still being crafted. Watch the progress bar; it will be placed in your satchel when it is ready.')
+    if npc.role != 'craftsman':
+        return reply('Ask the Craftsman about the bow. I can share wood if I have some; the fallen string is near the well.')
+    if quest.phase == 'meet':
+        quest.phase = 'gather'
+    missing = [item for item in ('wood', 'string') if item not in (npc.inventory or [])]
+    if missing:
+        return reply('I need ' + ' and '.join(missing) + ' to make your bow. Get wood from the Gatherer and pick up string near the well, then give me the materials.')
+    return reply('I have the wood and string. I will begin crafting your bow now.')
+
+
+@versioned
 def maybe_start(db, player, npc, output):
     quest = get_quest(db, player.id)
     if npc.role != 'craftsman' or quest.phase != 'gather':

@@ -163,12 +163,11 @@ class BehaviorPipelineTests(unittest.TestCase):
 
     def test_social_expression_keeps_accepted_generation_visible(self):
         proposal = dict(answer_kind='chat', fact_ids=[], dialogue='Good to see you.')
-        for trust, fear, prefix in [(.95, .05, 'Glad to help.'), (.05, .8, "Let's be careful.")]:
+        for trust, fear in [(.95, .05), (.05, .8)]:
             self.state(trust, fear)
             with patch('app.services.llm.service.LLMService.generate', return_value=GenerationResult('', proposal)):
                 data = self.chat('Hello')
-            self.assertIn(prefix, data['final_dialogue'])
-            self.assertIn('Good to see you.', data['final_dialogue'])
+            self.assertEqual('Good to see you.', data['final_dialogue'])
 
     def delayed(self, concurrent):
         entered, release = Event(), Event()

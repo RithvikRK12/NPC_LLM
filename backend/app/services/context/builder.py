@@ -12,8 +12,8 @@ from app.models.conversation import Conversation
 from app.models.player import Player
 from app.models.quest import Quest
 from app.services.context.models import ConversationContext
-from app.services.memory.service import MemoryService
 from app.services.validation.knowledge import outside_world
+from app.services.memory.service import MemoryService
 from app.models.bow_quest import BowQuest
 from app.services.quests.bow import snapshot
 from app.services.context.grounding import build_facts
@@ -38,8 +38,6 @@ class ContextBuilder:
         recent_dialogue = []
         for turn in reversed(recent):
             if (turn.validated_output or {}).get('grounding_trace', {}).get('rejected'):
-                continue
-            if outside_world(turn.player_input) or outside_world(turn.final_dialogue):
                 continue
             recent_dialogue.append({"role": "user", "content": turn.player_input})
             accepted = {key: value for key, value in (turn.validated_output or {}).items()

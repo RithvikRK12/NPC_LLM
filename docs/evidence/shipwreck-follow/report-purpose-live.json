@@ -1,0 +1,285 @@
+{
+  "model": "llama3:willowbrook",
+  "retries": false,
+  "save": "disposable in-memory SQLite",
+  "scenarios": {
+    "exact": [
+      {
+        "message": "my ship wrecked! i'm stranded",
+        "dialogue": "I'm sorry the ship was damaged. Would you like me to inspect it with you?",
+        "interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "player_report",
+              "evidence": "my ship wrecked!",
+              "start": 0,
+              "end": 16,
+              "modality": "direct",
+              "target": "ship",
+              "fact_ids": [],
+              "pending_question_id": null,
+              "answer_type": null,
+              "operation": null,
+              "purpose": null
+            }
+          ],
+          "clarification": null
+        },
+        "encounter": {
+          "intro_seen": false,
+          "wreck_reported": true,
+          "offer_pending": true,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "9b1128dc-6ab7-4df6-94d8-9810f44266d0",
+          "revision": 1
+        }
+      },
+      {
+        "message": "Yes please",
+        "dialogue": "All right. Let's go and look at the ship together.",
+        "interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "pending_answer",
+              "evidence": "Yes please",
+              "start": 0,
+              "end": 10,
+              "modality": "direct",
+              "target": "ship",
+              "fact_ids": [],
+              "pending_question_id": "craftsman:ship-inspection",
+              "answer_type": "assent",
+              "operation": null,
+              "purpose": null
+            }
+          ],
+          "clarification": null
+        },
+        "encounter": {
+          "intro_seen": false,
+          "wreck_reported": true,
+          "offer_pending": false,
+          "outing_active": true,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "departure_pending",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "9b1128dc-6ab7-4df6-94d8-9810f44266d0",
+          "revision": 2
+        }
+      }
+    ],
+    "boat": [
+      {
+        "message": "Our boat was destroyed in the storm.",
+        "dialogue": "I'm sorry the ship was damaged. Would you like me to inspect it with you?",
+        "interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "player_report",
+              "evidence": "Our boat was destroyed in the storm.",
+              "start": 0,
+              "end": 36,
+              "modality": "direct",
+              "target": "ship",
+              "fact_ids": [],
+              "pending_question_id": null,
+              "answer_type": null,
+              "operation": null,
+              "purpose": null
+            }
+          ],
+          "clarification": null
+        },
+        "encounter": {
+          "intro_seen": false,
+          "wreck_reported": true,
+          "offer_pending": true,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "8bdf92c7-3698-450b-8378-0df409203d68",
+          "revision": 1
+        }
+      },
+      {
+        "message": "Yes please",
+        "dialogue": "All right. Let's go and look at the ship together.",
+        "interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "pending_answer",
+              "evidence": "Yes please",
+              "start": 0,
+              "end": 10,
+              "modality": "direct",
+              "target": "ship",
+              "fact_ids": [],
+              "pending_question_id": "craftsman:ship-inspection",
+              "answer_type": "assent",
+              "operation": null,
+              "purpose": null
+            }
+          ],
+          "clarification": null
+        },
+        "encounter": {
+          "intro_seen": false,
+          "wreck_reported": true,
+          "offer_pending": false,
+          "outing_active": true,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "departure_pending",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "8bdf92c7-3698-450b-8378-0df409203d68",
+          "revision": 2
+        }
+      }
+    ],
+    "sank": [
+      {
+        "message": "My boat sank and I'm stuck here.",
+        "dialogue": "I'm sorry the ship was damaged. Would you like me to inspect it with you?",
+        "interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "player_report",
+              "evidence": "My boat sank",
+              "start": 0,
+              "end": 12,
+              "modality": "direct",
+              "target": "ship",
+              "fact_ids": [
+                "quest.ship.delivered"
+              ],
+              "pending_question_id": null,
+              "answer_type": null,
+              "operation": null,
+              "purpose": null
+            }
+          ],
+          "clarification": null
+        },
+        "encounter": {
+          "intro_seen": false,
+          "wreck_reported": true,
+          "offer_pending": true,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "b8f959bc-a0f1-468c-a501-40559418169f",
+          "revision": 1
+        }
+      },
+      {
+        "message": "Yes please",
+        "dialogue": "All right. Let's go and look at the ship together.",
+        "interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "pending_answer",
+              "evidence": "Yes please",
+              "start": 0,
+              "end": 10,
+              "modality": "direct",
+              "target": "ship",
+              "fact_ids": [],
+              "pending_question_id": "craftsman:ship-inspection",
+              "answer_type": "assent",
+              "operation": null,
+              "purpose": null
+            }
+          ],
+          "clarification": null
+        },
+        "encounter": {
+          "intro_seen": false,
+          "wreck_reported": true,
+          "offer_pending": false,
+          "outing_active": true,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "departure_pending",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship",
+          "game_scope": "b8f959bc-a0f1-468c-a501-40559418169f",
+          "revision": 2
+        }
+      }
+    ]
+  }
+}

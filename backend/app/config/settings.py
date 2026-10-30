@@ -1,6 +1,6 @@
 from functools import lru_cache
 from pathlib import Path
-from typing import List
+from typing import List, Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -31,6 +31,7 @@ class Settings(BaseSettings):
     max_dialogue_chars: int = 240
     memory_top_k: int = 5
     conversation_enabled: bool = False
+    conversation_routing_version: Literal['local_interpretation_v1'] = 'local_interpretation_v1'
     # The structured contract/output bounds are the selected, bounded defaults;
     # all other runtime policy stays unset until a deployment explicitly configures it.
     conversation_policy_version: str | None = None

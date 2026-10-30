@@ -17,7 +17,6 @@ from app.schemas.memory import MemoryRead
 from app.schemas.npc import NPCRead
 from app.services.decision_trace import build_decision_trace
 from app.services.context.builder import ContextBuilder
-from app.services.context.social import is_social_message
 from app.services.llm.service import GenerationResult, LLMService
 from app.services.memory.service import MemoryService
 from app.services.memory.importance import classify
@@ -31,9 +30,10 @@ from app.services.state.service import StateService, WorldStateSnapshot
 from app.services.validation.models import LLMResponse, StateUpdate
 from app.services.validation.service import KnowledgeBoundaryError, ValidationError, ValidationService
 from app.services.validation.knowledge import unfamiliar_topic_response
-from app.services.validation.items import requested_transfer, transfer_answer
+from app.services.semantic_routing import ROUTING_VERSION
+from app.services.validation.items import transfer_interpretation
 from app.services.validation.knowledge import outside_world
-from app.services.quests.bow import dialogue as bow_dialogue, maybe_start, get_quest, snapshot as bow_snapshot, reply
+from app.services.quests.bow import maybe_start, get_quest, snapshot as bow_snapshot, reply
 
 logger = logging.getLogger(__name__)
 
@@ -46,13 +46,16 @@ class ConversationPipeline:
     def __init__(self, db: Session) -> None:
         self._db = db
         self._settings = get_settings()
+        if self._settings.conversation_routing_version != ROUTING_VERSION:
+            raise RuntimeError('Unsupported conversation routing version; refusing phrase-router fallback.')
         self._prompt_builder = PromptBuilder()
         self._validation_service = ValidationService()
         self._role_conditioning = RoleConditioningService()
         self._memory_service = MemoryService(db)
         self._llm_service = LLMService()
 
-    def chat(self, npc_id: int, player_message: str, game_scope: str | None = None) -> ChatResponse:
+    def chat(self, npc_id: int, player_message: str, game_scope: str | None = None,
+             structured_operation: dict | None = None) -> ChatResponse:
         started = monotonic()
         # Snapshot only: no row locks or game mutations while providers run.
         player = self._db.get(Player, 1)
@@ -68,40 +71,78 @@ class ConversationPipeline:
         revision = npc.memory_revision
         context_builder = ContextBuilder(self._db, memory_service=self._memory_service)
         context = context_builder.build(npc=npc, player=player, player_input=player_message)
-        prompt = self._prompt_builder.build(context)
-        from app.services.craftsman_intent import resolve_craftsman_intent, dialogue as craftsman_dialogue
-        from app.services.craftsman import encounter_snapshot
-        encounter_intent = resolve_craftsman_intent(player_message, context.recent_dialogue, encounter_snapshot(self._db,player)) if npc.role=="craftsman" else {}
-        needs_generation = not (encounter_intent or requested_transfer(player_message) or npc.pending_item or
-                                any(phrase in player_message.lower() for phrase in
-                                    ('inventory', 'what do you have', 'what are you carrying')))
-        # Detached validation snapshot: provider calls, including repair, must
+        capabilities = [
+            {'id': 'give_item', 'kind': 'transfer', 'targets': list(npc.inventory or [])},
+            {'id': 'receive_item', 'kind': 'transfer', 'targets': list(player.inventory or [])},
+        ]
+        if npc.role == 'craftsman':
+            capabilities.extend({'id': 'craftsman.' + command, 'kind': 'encounter', 'targets': ['ship']} for command in
+                                 ('report_wreck', 'begin_inspection', 'resume', 'wait', 'return', 'postpone'))
+            capabilities.append({'id': 'craftsman.request_bow', 'kind': 'quest', 'targets': ['bow']})
+        from app.services.semantic_routing import InterpretationContext
+        interpretation_context = InterpretationContext(
+            message=player_message, history=context.recent_dialogue, facts=context.facts,
+            capabilities=capabilities,
+            pending_question=({'id': 'purpose:' + npc.pending_item, 'kind': 'item_purpose', 'item': npc.pending_item}
+                              if npc.pending_item else
+                              {'id': 'craftsman:ship-inspection', 'kind': 'ship_inspection_consent'}
+                              if npc.role == 'craftsman' and context.encounter.get('offer_pending') else None),
+            pending_item=npc.pending_item,
+            focus=context.conversation_focus, encounter=context.encounter,
+            npc_name=npc.name, npc_role=npc.role)
+        structured_interpretation = None
+        if structured_operation is not None:
+            from app.services.semantic_routing import AcceptedInterpretation
+            operation = structured_operation.get('operation')
+            target = structured_operation.get('target')
+            evidence = player_message
+            structured_interpretation = AcceptedInterpretation(version=1, concerns=[{
+                'id': 'c1', 'kind': 'operation_request', 'evidence': evidence,
+                'start': 0, 'end': len(evidence), 'modality': 'direct', 'target': target,
+                'fact_ids': [], 'pending_question_id': None, 'answer_type': None,
+                'operation': operation}], clarification=None)
+            AcceptedInterpretation.validate_for_context(structured_interpretation.model_dump(), interpretation_context)
+        # Detached validation snapshot: provider calls must
         # not refresh ORM rows and reopen a transaction after rollback.
         validation_npc = NPC(id=npc.id, role=npc.role, inventory=list(npc.inventory or []),
                              pending_item=npc.pending_item)
         self._db.rollback()  # release the read transaction before generation
         context_seconds = monotonic() - started
         generation_started = monotonic()
-        generation_status = 'succeeded' if needs_generation else 'bypassed'
+        generation_status = 'succeeded'
+        interpretation_seconds = 0.0
+        interpretation_calls = 0
+        span_repairs = 0
+        interpretation_failed = False
+        speech_calls = 0
         try:
-            generation = (self._llm_service.generate(prompt, context.as_dict()) if needs_generation
-                          else GenerationResult(raw_text="", raw_json={}))
-            if needs_generation and is_social_message(player_message) and not outside_world(player_message):
-                try:
-                    self._validation_service.validate(generation.raw_json, validation_npc, context)
-                except KnowledgeBoundaryError:
-                    pass  # Preserve the explicit outside-world boundary response.
-                except ValidationError as exc:
-                    # One bounded speech repair. Final validation below still
-                    # checks the result against current authoritative state.
-                    repair_prompt = (prompt + '\nThe previous reply failed validation: ' + str(exc) +
-                                     '\nWrite a fresh social reply about feelings or well-being. '
-                                     'Do not recount encounters, combat, inventory or game outcomes. '
-                                     'Return only the same chat JSON contract with no effects.')
-                    generation = self._llm_service.generate(repair_prompt, context.as_dict())
-        except Exception:
-            generation_status = 'provider_or_decode_failure'
-            logger.error("LLM generation failed or could not be decoded for NPC %s; using zero-effect fallback", npc_id)
+            if structured_interpretation is not None:
+                interpretation = structured_interpretation
+                generation_status = 'structured_ui_operation'
+            else:
+                interpretation, interpretation_seconds = self._llm_service.interpret(interpretation_context)
+            interpretation_calls = interpretation_context.provider_calls
+            span_repairs = interpretation_context.span_repairs
+            context.accepted_interpretation = interpretation.model_dump()
+            context.interpretation_seconds = interpretation_seconds
+            kinds = {c.kind for c in interpretation.concerns}
+            speech_required = bool(kinds & {'social', 'player_report'}) or len(kinds) > 1
+            if speech_required:
+                prompt = self._prompt_builder.build(context)
+                generation = self._llm_service.generate(prompt, context.as_dict())
+                speech_calls += 1
+            else:
+                generation_status = 'bypassed_after_interpretation'
+                facts = [identity for c in interpretation.concerns for identity in c.fact_ids]
+                answer_kind = 'answer' if 'factual' in kinds and facts else 'clarify'
+                generation = GenerationResult(raw_text='', raw_json={
+                    'answer_kind': answer_kind, 'fact_ids': facts[:2], 'dialogue': ''})
+        except Exception as exc:
+            interpretation_calls = interpretation_context.provider_calls
+            span_repairs = interpretation_context.span_repairs
+            interpretation_failed = not bool(context.accepted_interpretation)
+            generation_status = 'interpretation_failure' if interpretation_failed else 'speech_provider_or_decode_failure'
+            logger.error("Local interpretation or speech failed for NPC %s (%s: %s); using zero-effect degradation", npc_id, type(exc).__name__, str(exc))
             generation = GenerationResult(raw_text="{}", raw_json={})
 
         generation_seconds = monotonic() - generation_started
@@ -135,20 +176,89 @@ class ConversationPipeline:
         pending_before = npc.pending_item
         self._output_rejected = False
         self._rejection_reason = None
-        grounded = craftsman_dialogue(self._db,npc,player_message,player,context) if not outside_world(player_message) else None
-        if not outside_world(player_message):
-            request = requested_transfer(player_message)
-            if grounded is None and request == ('give_item', 'bow') and not npc.pending_item and 'bow' not in (npc.inventory or []):
-                grounded = bow_dialogue(self._db, npc, player_message, player)
-            if grounded is None:
-                grounded = transfer_answer(player_message, list(npc.inventory or []), list(player.inventory or []), npc.pending_item)
-            if grounded is None and request == ('give_item', 'bow'):
-                grounded = bow_dialogue(self._db, npc, player_message, player)
-            if grounded is None and any(phrase in player_message.lower() for phrase in ('inventory', 'what do you have', 'what are you carrying')):
-                stock = ', '.join(npc.inventory or []) or 'nothing'
-                grounded = reply(f"I currently carry {stock}. Select an item in my supplies to request it.")
-        validated_output = grounded or self._validate_or_repair(generation.raw_json, npc, context, player_message)
+        grounded = None
+        if not interpretation_failed and not outside_world(player_message):
+            if (context.accepted_interpretation.get('clarification') and
+                all(c.get('kind') == 'clarification' for c in context.accepted_interpretation.get('concerns', []))):
+                grounded = reply(context.accepted_interpretation['clarification'], intent='clarify')
+            direct_operations = [c for c in context.accepted_interpretation.get('concerns', [])
+                                 if c.get('kind') == 'operation_request' and c.get('modality') == 'direct']
+            if grounded is None and len(direct_operations) > 1:
+                grounded = reply('Which single action would you like me to handle first?')
+            elif grounded is None:
+                grounded = transfer_interpretation(context.accepted_interpretation, list(npc.inventory or []),
+                                                   list(player.inventory or []), npc.pending_item)
+            if grounded is not None and any(c.get('kind') == 'social' for c in context.accepted_interpretation.get('concerns', [])):
+                try:
+                    social_segment = self._validation_service.validate(generation.raw_json, validation_npc, context).output
+                    combined = ' '.join(part.strip() for part in (social_segment.dialogue, grounded.dialogue) if part.strip())
+                    if len(combined) > self._settings.max_dialogue_chars:
+                        raise ValidationError('Mixed social and operation reply exceeds dialogue limit')
+                    grounded.dialogue = combined
+                except ValidationError as exc:
+                    self._output_rejected = True
+                    self._rejection_reason = str(exc)
+                    grounded = None
+            if grounded is not None and grounded.intent == 'cancel_transfer' and npc.pending_item:
+                npc.pending_item = None
+            operation = next((c for c in context.accepted_interpretation.get('concerns', [])
+                              if c.get('kind') == 'operation_request' and c.get('modality') == 'direct'
+                              and c.get('operation', '').startswith('craftsman.')), None)
+            if operation is None and npc.role == 'craftsman' and context.encounter.get('offer_pending'):
+                consent = next((c for c in context.accepted_interpretation.get('concerns', [])
+                    if c.get('kind') == 'pending_answer' and c.get('modality') == 'direct'
+                    and c.get('pending_question_id') == 'craftsman:ship-inspection'
+                    and c.get('answer_type') == 'assent'), None)
+                if consent:
+                    operation = {'operation': 'craftsman.begin_inspection'}
+            report = next((c for c in context.accepted_interpretation.get('concerns', [])
+                           if c.get('kind') == 'player_report' and c.get('modality') == 'direct'
+                           and c.get('target') in {'ship', 'quest.ship'}), None)
+            if grounded is None and operation is None and report and npc.role == 'craftsman' and not context.encounter.get('wreck_reported'):
+                from app.services.craftsman import record, apply_command
+                row = record(self._db, player)
+                apply_command(self._db, player, npc, 'report_wreck', decision_id, row.revision, {})
+                grounded = reply("I'm sorry the ship was damaged. Would you like me to inspect it with you?")
+            if grounded is None and operation and operation.get('operation') == 'craftsman.request_bow':
+                from app.services.quests.bow import request_from_interpretation
+                grounded = request_from_interpretation(self._db, npc, player)
+            if grounded is None and operation and npc.role == 'craftsman':
+                from app.services.craftsman import record, apply_command, encounter_snapshot
+                row = record(self._db, player)
+                command = operation['operation'].split('.', 1)[1]
+                command_map = {'report_wreck': 'report_wreck', 'begin_inspection': 'begin_ship_inspection',
+                               'wait': 'wait', 'resume': 'resume', 'return': 'return', 'postpone': 'postpone'}
+                encounter = encounter_snapshot(self._db, player)
+                allowed = ((command == 'report_wreck' and not encounter['inspection_complete']) or
+                           (command == 'begin_inspection' and encounter['offer_pending'] and not encounter['outing_active']) or
+                           (command in {'wait', 'resume', 'return', 'postpone'} and encounter['outing_active']))
+                if command == 'postpone' and not encounter['outing_active']:
+                    grounded = reply('Of course. We can talk here until you feel ready.')
+                elif allowed:
+                    apply_command(self._db, player, npc, command_map[command], decision_id, row.revision, {})
+                    text = {'report_wreck': "I'm glad you made it ashore. I can take a look at the damage with you, if you'd like.",
+                            'begin_inspection': "All right. Let's go and look at the ship together.",
+                            'wait': "Of course. I'll wait here; tell me when you're ready to go.",
+                            'resume': "All right. Lead the way; we'll take it at your pace.",
+                            'return': "I'll head back to my workshop.", 'postpone': 'Of course. There is no hurry.'}[command]
+                    grounded = reply(text)
+        if interpretation_failed:
+            self._output_rejected = True
+            self._rejection_reason = 'Local interpretation unavailable; no action was considered.'
+            validated_output = LLMResponse(intent='clarify', emotion='calm',
+                dialogue='I could not understand that just now. Please try again in a moment.', action='speak',
+                reasoning='Explicit local interpretation failure degradation.', state_update=StateUpdate())
+        elif self._output_rejected:
+            validated_output = self._fallback_output(npc=npc, context=context, player_message=player_message)
+        else:
+            validated_output = grounded or self._validate_or_repair(generation.raw_json, npc, context, player_message)
         conditioned_output = self._role_conditioning.apply(npc, validated_output)
+        if (not self._output_rejected and grounded is None and validated_output.answer_kind == 'chat'
+                and set(generation.raw_json) == {'answer_kind', 'fact_ids', 'dialogue'}):
+            from app.services.npc.emotional_feedback import emotional_feedback
+            # Action restrictions remain role-conditioned. The trusted reaction
+            # policy owns these bounded deltas, rather than legacy model caps.
+            conditioned_output.state_update = emotional_feedback(context.accepted_interpretation)
         try:
             self._validation_service.validate_control(conditioned_output, npc, player, authoritative=grounded is not None)
         except ValidationError as exc:
@@ -206,6 +316,13 @@ class ConversationPipeline:
             'rejected': self._output_rejected,
             'rejection_reason': self._rejection_reason,
             'provider': type(self._llm_service._provider).__name__,
+            'routing_version': ROUTING_VERSION,
+            'interpretation_origin': 'structured_ui' if structured_interpretation is not None else 'local_model',
+            'accepted_interpretation': context.accepted_interpretation,
+            'interpretation_seconds': round(interpretation_seconds, 6),
+            'model_calls': {'interpretation': interpretation_calls,
+                            'speech_and_repair': speech_calls},
+            'interpretation_span_repairs': span_repairs,
         }
         conversation = Conversation(
             npc_id=npc.id,
@@ -228,7 +345,9 @@ class ConversationPipeline:
             context=context, raw_proposal=generation.raw_json, grounding=trace, behavior=behavior_trace,
             generation={'status': generation_status, 'authoritative_override': grounded is not None},
             conversation=conversation, memory_classification=memory_classification, settings=self._settings,
-            timings={'context': context_seconds, 'generation': generation_seconds,
+            timings={'context': context_seconds,
+                     'generation': max(0.0, generation_seconds - interpretation_seconds),
+                     'interpretation': interpretation_seconds,
                      'through_memory_write': monotonic() - started},
         )
         conversation.validated_output = conversation.validated_output | {
@@ -279,6 +398,10 @@ class ConversationPipeline:
             return self._fallback_output(npc=npc, context=context, player_message=player_message)
 
     def _fallback_output(self, npc: NPC, context, player_message: str) -> LLMResponse:
+        if not context.accepted_interpretation:
+            return LLMResponse(intent='clarify', emotion='calm',
+                dialogue='I could not understand that just now. Please try again in a moment.', action='speak',
+                reasoning='Explicit local interpretation failure degradation.', state_update=StateUpdate())
         if npc.role == "gatherer":
             refused = (context.encounter.get('status') == 'resolved_declined' and npc.trust < .3)
             return LLMResponse(
@@ -291,16 +414,12 @@ class ConversationPipeline:
                 state_update=StateUpdate(),
             )
 
-        if player_message.lower().strip(" ?!.") in {"what do you want", "what do you need"}:
-            grounded = bow_dialogue(self._db,npc,player_message,self._require_player())
-            if grounded is not None: return grounded
-        from app.services.context.craftsman_profile import character_fallback
         return LLMResponse(
             intent="assist",
             emotion="calm",
-            dialogue=character_fallback(player_message),
+            dialogue="I can't form a grounded reply right now. Please try again shortly.",
             action="speak",
-            reasoning="Fallback response after validation rejected the raw output.",
+            reasoning="Explicit zero-effect degradation after speech validation failed.",
             state_update=StateUpdate(),
         )
 

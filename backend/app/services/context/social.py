@@ -4,6 +4,18 @@ import re
 
 
 def is_social_message(text):
+    # Recognize complete well-being replies, including thanks and reciprocation.
+    # Matching the whole message keeps an appended game request on the grounded
+    # route rather than granting free prose to anything starting with "I'm good".
+    wellbeing = (
+        r"(?:i(?:['’]m| am)\s+(?:doing\s+|feeling\s+)?|"
+        r"my day (?:has been|was|is)\s+)"
+        r"(?:good|well|fine|okay|ok|great|alright|all right|happy|sad|tired|"
+        r"better|rough|bad|not bad)(?:\s+today)?|not bad"
+    )
+    social_tail = r"(?:thanks?(?: for asking)?|thank you(?: for asking)?|(?:how|what) about you|and you)"
+    if re.fullmatch(r"\s*(?:" + wellbeing + r")(?:[.!?,\s]+" + social_tail + r")*[.!?,\s]*", text, re.I):
+        return True
     # Whole-message day/well-being exchanges must use the same social route
     # for prompting, constrained decoding, history and validation.
     day_exchange = (

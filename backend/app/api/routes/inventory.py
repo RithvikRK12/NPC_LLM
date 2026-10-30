@@ -18,9 +18,11 @@ class TransferRequest(BaseModel):
 @router.post('/transfer', response_model=ChatResponse)
 def transfer(request: TransferRequest, pipeline: ConversationPipeline = Depends(get_pipeline)):
     from fastapi import HTTPException
-    message = f'give me {request.item}' if request.direction == 'to_player' else f'I give you {request.item}'
+    operation = 'give_item' if request.direction == 'to_player' else 'receive_item'
+    message = f'[Inventory UI transfer: {request.direction} {request.item}]'
     try:
-        return pipeline.chat(request.npc_id, message, game_scope=request.game_scope)
+        return pipeline.chat(request.npc_id, message, game_scope=request.game_scope,
+                             structured_operation={'operation': operation, 'target': request.item})
     except StaleConversationError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
     except ValueError as exc:

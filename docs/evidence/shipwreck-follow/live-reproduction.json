@@ -1,0 +1,115 @@
+{
+  "model": "llama3:willowbrook",
+  "save": "disposable in-memory SQLite",
+  "passed": true,
+  "turns": [
+    {
+      "message": "My ship wrecked! I'm lost",
+      "dialogue": "I'm sorry the ship was damaged. Would you like me to inspect it with you?",
+      "interpretation": {
+        "version": 1,
+        "concerns": [
+          {
+            "id": "c1",
+            "kind": "player_report",
+            "evidence": "My ship wrecked!",
+            "start": 0,
+            "end": 16,
+            "modality": "direct",
+            "target": "ship",
+            "fact_ids": [
+              "quest.ship.requirements",
+              "quest.ship.phase",
+              "quest.ship.delivered"
+            ],
+            "pending_question_id": null,
+            "answer_type": null,
+            "operation": null,
+            "purpose": null
+          },
+          {
+            "id": "c2",
+            "kind": "social",
+            "evidence": "I'm lost",
+            "start": 17,
+            "end": 25,
+            "modality": "direct",
+            "target": null,
+            "fact_ids": [],
+            "pending_question_id": null,
+            "answer_type": null,
+            "operation": null,
+            "purpose": null
+          }
+        ],
+        "clarification": null
+      },
+      "encounter": {
+        "intro_seen": false,
+        "wreck_reported": true,
+        "offer_pending": true,
+        "outing_active": false,
+        "inspection_complete": false,
+        "outcome_id": "",
+        "mode": "workshop_routine",
+        "navigation_space": "workshop",
+        "position": {
+          "x": 10064.0,
+          "y": 9968.0
+        },
+        "wait_reason": "",
+        "return_index": 0,
+        "presentation": "",
+        "presentation_beat": 0,
+        "topic": "ship",
+        "game_scope": "510b0d1d-8d91-432f-b7d6-a4601e397d67",
+        "revision": 1
+      }
+    },
+    {
+      "message": "Yes please",
+      "dialogue": "All right. Let's go and look at the ship together.",
+      "interpretation": {
+        "version": 1,
+        "concerns": [
+          {
+            "id": "c1",
+            "kind": "pending_answer",
+            "evidence": "Yes please",
+            "start": 0,
+            "end": 10,
+            "modality": "direct",
+            "target": "ship",
+            "fact_ids": [],
+            "pending_question_id": "craftsman:ship-inspection",
+            "answer_type": "assent",
+            "operation": null,
+            "purpose": null
+          }
+        ],
+        "clarification": null
+      },
+      "encounter": {
+        "intro_seen": false,
+        "wreck_reported": true,
+        "offer_pending": false,
+        "outing_active": true,
+        "inspection_complete": false,
+        "outcome_id": "",
+        "mode": "departure_pending",
+        "navigation_space": "workshop",
+        "position": {
+          "x": 10064.0,
+          "y": 9968.0
+        },
+        "wait_reason": "",
+        "return_index": 0,
+        "presentation": "",
+        "presentation_beat": 0,
+        "topic": "ship",
+        "game_scope": "510b0d1d-8d91-432f-b7d6-a4601e397d67",
+        "revision": 2
+      }
+    }
+  ]
+}

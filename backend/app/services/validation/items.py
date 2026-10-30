@@ -69,3 +69,57 @@ def transfer_answer(question: str, npc_inventory: list[str], player_inventory: l
     return LLMResponse(intent='transfer' if action != 'speak' else 'unavailable_item', emotion='calm',
                        dialogue=dialogue, action=action, item=item if action != 'speak' else None,
                        reasoning='Item ownership checked against current inventories.', state_update=StateUpdate())
+
+
+def transfer_interpretation(interpretation: dict, npc_inventory: list[str], player_inventory: list[str],
+                            pending_item: str | None = None) -> LLMResponse | None:
+    """Route only accepted typed item concerns; ownership remains authoritative here."""
+    concerns = interpretation.get('concerns', [])
+    direct = [c for c in concerns if c.get('modality') == 'direct']
+    operations = [c for c in direct if c.get('kind') == 'operation_request' and
+                  c.get('operation') in {'give_item', 'receive_item'}]
+    if len(operations) > 1:
+        return LLMResponse(intent='clarify', emotion='calm',
+            dialogue='Which single item request would you like me to handle first?',
+            action='speak', reasoning='Multiple item operations require explicit selection.', state_update=StateUpdate())
+    if any(c.get('kind') == 'cancellation' and
+           c.get('pending_question_id') == f'purpose:{pending_item}' for c in direct) and pending_item:
+        return LLMResponse(intent='cancel_transfer', emotion='calm', dialogue="All right, I'll keep it for now.",
+                           action='speak', reasoning='Player cancelled the pending item request.', state_update=StateUpdate())
+    operation = operations[0] if operations else None
+    stated_purpose = operation.get('purpose') if operation else None
+    purpose = next((c for c in direct if c.get('kind') == 'pending_answer' and
+                    c.get('answer_type') == 'purpose' and c.get('target') == pending_item), None)
+    if pending_item and not purpose and not stated_purpose:
+        assent = next((c for c in direct if c.get('kind') == 'pending_answer' and
+                       c.get('answer_type') == 'assent' and c.get('target') == pending_item), None)
+        if assent:
+            return LLMResponse(intent='confirm_transfer', emotion='calm',
+                dialogue=f"What will you use the {pending_item} for? Tell me why you need it, or say cancel.",
+                action='ask_question', item=pending_item,
+                reasoning='Assent is not a purpose; the current item negotiation remains pending.', state_update=StateUpdate())
+        if operation and operation.get('target') == pending_item:
+            return LLMResponse(intent='confirm_transfer', emotion='calm',
+                dialogue=f"Before I give you the {pending_item}, why do you need it?", action='ask_question',
+                item=pending_item, reasoning='Purpose remains required.', state_update=StateUpdate())
+        return None
+    if purpose:
+        operation = {'operation': 'give_item', 'target': pending_item}
+    if not operation:
+        return None
+    action, item = operation['operation'], operation.get('target')
+    if not isinstance(item, str) or not item:
+        return None
+    source = npc_inventory if action == 'give_item' else player_inventory
+    if item not in source:
+        text = f"I don't have any {item} left to give you." if action == 'give_item' else f"You don't have {item} to give me."
+        return LLMResponse(intent='unavailable_item', emotion='calm', dialogue=text, action='speak',
+                           reasoning='Ownership checked against current inventories.', state_update=StateUpdate())
+    if action == 'give_item' and not (purpose or stated_purpose):
+        return LLMResponse(intent='confirm_transfer', emotion='calm',
+            dialogue=f"Before I give you the {item}, why do you need it?", action='ask_question', item=item,
+            reasoning='Purpose confirmation required.', state_update=StateUpdate())
+    return LLMResponse(intent='transfer', emotion='calm',
+        dialogue=f"Thanks for explaining. Here, take my {item}. It's yours now." if action == 'give_item'
+        else f"Thank you for the {item}. I'll keep it with my supplies.", action=action, item=item,
+        reasoning='Interpretation routed; ownership checked against current inventories.', state_update=StateUpdate())

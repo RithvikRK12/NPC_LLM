@@ -37,6 +37,39 @@ def tendencies(state, decision_id, scope):
     return degrees, strengths, outputs
 
 
+def dialogue_style(state):
+    """Translate the existing fuzzy memberships into speech guidance, not dialogue."""
+    current = {key: clamp(float(state.get(key, .5))) for key in DIMENSIONS}
+    degrees, _, _ = tendencies(current, 'speech-style', 'speech')
+    high = lambda key: degrees[key]['high'] > degrees[key]['low']
+    low = lambda key: degrees[key]['low'] > degrees[key]['high']
+    if high('aggression'):
+        stance = 'defensive' if high('fear') else ('hostile' if low('trust') else 'irritable')
+        guidance = 'Use sharp, terse, impatient wording. Push back rather than offer cheerful friendliness. '
+    elif high('fear'):
+        stance = 'anxious'
+        guidance = 'Sound tense and hesitant, with restrained, cautious wording. '
+    elif low('trust'):
+        stance = 'guarded'
+        guidance = 'Be reserved and skeptical. Do not imply friendship or easy familiarity. '
+    elif high('trust'):
+        stance = 'friendly'
+        guidance = 'Be warm and comfortable with the player. '
+    else:
+        stance = 'neutral'
+        guidance = 'Be civil without assuming closeness. '
+    if low('trust'):
+        guidance += 'You distrust the player; do not act pleased to see them or call them a friend. '
+    if low('fear'):
+        guidance += 'Low fear means direct and self-assured, not timid or apologetic. '
+    if high('curiosity'):
+        guidance += 'Curiosity can produce probing questions; it does not imply affection. '
+    elif low('curiosity'):
+        guidance += 'Show little interest in prolonging the exchange; avoid unnecessary questions. '
+    guidance += 'Express tone through original wording, without inventing threats, attacks or game actions.'
+    return {'stance': stance, 'guidance': guidance, 'memberships': degrees}
+
+
 def select_behavior(npc, player, output, *, rejected, decision_id, scope):
     """Called only after role conditioning and final control validation.
 
@@ -68,7 +101,7 @@ def select_behavior(npc, player, output, *, rejected, decision_id, scope):
         mapped = mapped.model_copy(update=dict(intent='cancel_transfer', action='speak', item=None,
                     state_update=StateUpdate(), emotion='guarded',
                     dialogue=f"I'd rather keep my {output.item} for now. You can still ask me questions."))
-    elif not rejected and (request or (output.answer_kind == 'chat' and output.intent == 'assist')):
+    elif not rejected and request:
         prefix = "Glad to help. " if values['expression'] >= POLICY['expression_threshold'] else "Let's be careful. "
         # Keep complete authoritative text; omit expression when space is tight.
         if len(prefix + mapped.dialogue) <= POLICY['max_dialogue_chars']:

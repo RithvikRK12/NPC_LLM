@@ -36,6 +36,9 @@ The backend loads `backend/.env` regardless of working directory. Relative SQLit
 
 The playtest profile explicitly selects local Ollama and never substitutes mock
 speech after a provider failure. Cold replies can take tens of seconds.
+The launcher disables HTTP access logs to keep routine autosaves quiet; application
+and error logs remain enabled. For manual launches, add `--no-access-log` to the
+uvicorn command for the same behavior.
 [Playtest policy, verification and receipt-safe rollback](docs/conversation-redesign-runbook.md).
 
 ## Get a bow

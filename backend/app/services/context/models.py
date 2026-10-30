@@ -21,6 +21,8 @@ class ConversationContext:
     time: str = ""
     npc_name: str = ""
     npc_role: str = ""
+    accepted_interpretation: dict[str, Any] = field(default_factory=dict)
+    interpretation_seconds: float = 0.0
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -37,4 +39,6 @@ class ConversationContext:
             "time": self.time,
             "npc_name": self.npc_name,
             "npc_role": self.npc_role,
+            "accepted_interpretation": self.accepted_interpretation,
+            "interpretation_seconds": self.interpretation_seconds,
         }

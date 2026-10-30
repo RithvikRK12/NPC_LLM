@@ -36,7 +36,8 @@ with socket.socket() as listener:
     except OSError:
         raise SystemExit('Port 8000 is already in use. Stop the previous game backend, then run Play.command again.')
 PY
-"$PYTHON" -m uvicorn app.main:app --host 127.0.0.1 --port 8000 &
+# Routine autosaves are frequent; keep application/error logs without HTTP access noise.
+"$PYTHON" -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --no-access-log &
 BACKEND_PID=$!
 cleanup() {
   kill "$BACKEND_PID" 2>/dev/null || true

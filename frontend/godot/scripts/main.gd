@@ -475,6 +475,7 @@ func _build_ui() -> void:
 		window.npc_name = npc_nodes[id].display_name
 		ui.add_child(window)
 		window.world_changed.connect(_apply_chat_state)
+		window.emotional_state_edited.connect(func(npc): npc_nodes[int(npc.id)].apply_state(npc))
 		window.overlay_opened.connect(func(_owner): inventory_drawer.hide(); quest_panel.hide())
 		chat_windows[id] = window
 	menu_layer = Control.new()
@@ -686,6 +687,7 @@ func _world_completed(result: int, code: int, _headers: PackedStringArray, body:
 		var id := int(npc.get("id", 0))
 		if chat_windows.has(id):
 			chat_windows[id].set_inventory(npc.get("inventory", []))
+			chat_windows[id].set_emotional_state(npc)
 			chat_windows[id].load_history(data.get("histories", {}).get(str(id), []))
 			npc_nodes[id].apply_state(npc)
 	_update_player(data)
@@ -874,6 +876,7 @@ func _quest_completed(result: int, code: int, _headers: PackedStringArray, body:
 		var id := int(npc.get("id", 0))
 		if chat_windows.has(id):
 			chat_windows[id].set_inventory(npc.get("inventory", []))
+			chat_windows[id].set_emotional_state(npc)
 			npc_nodes[id].apply_state(npc)
 	if data.get("reward_dialogue"):
 		quest_panel.show()

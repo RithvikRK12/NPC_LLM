@@ -1,0 +1,860 @@
+{
+  "model": "llama3:willowbrook",
+  "retries": false,
+  "source": "semantic social_effect from existing intent call; server applies bounded reaction policy",
+  "per_turn_cap": 0.05,
+  "save": "separate in-memory copies of player save; original unchanged",
+  "turns": [
+    {
+      "message": "i just want to talk",
+      "before": {
+        "trust": 0.1,
+        "fear": 0.1,
+        "aggression": 0.9,
+        "curiosity": 0.8
+      },
+      "delta": {
+        "trust": 0.0,
+        "fear": 0.0,
+        "aggression": 0.0,
+        "curiosity": 0.0
+      },
+      "after": {
+        "trust": 0.1,
+        "fear": 0.1,
+        "aggression": 0.9,
+        "curiosity": 0.8
+      },
+      "dialogue": "I'm busy. You're not exactly my favorite person to chat with.",
+      "trace": {
+        "context_fact_ids": [
+          "self.gatherer_encounter.outcome",
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.ship.requirements",
+          "quest.ship.phase",
+          "quest.ship.delivered",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "fact_sources": [
+          {
+            "id": "self.gatherer_encounter.outcome",
+            "source": "Authoritative Gatherer encounter outcome",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          },
+          {
+            "id": "person.craftsman.location",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.work",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.location",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.work",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.workshop.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.forest_edge.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.village_square.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.well.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "quest.ship.requirements",
+            "source": "ShipRepairQuest recipe and contributions",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          },
+          {
+            "id": "quest.ship.phase",
+            "source": "ShipRepairQuest",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          },
+          {
+            "id": "quest.ship.delivered",
+            "source": "ShipRepairQuest contributions",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          },
+          {
+            "id": "quest.bow.requirements",
+            "source": "services/quests/bow.py; Craftsman quest material stock",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          },
+          {
+            "id": "quest.bow.phase",
+            "source": "BowQuest snapshot",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          },
+          {
+            "id": "quest.bow.delivered",
+            "source": "Conversation executed transfers; BowQuest",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          },
+          {
+            "id": "player.inventory",
+            "source": "Player.inventory",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          },
+          {
+            "id": "self.inventory",
+            "source": "NPC.inventory (speaker only)",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:41.525585+00:00"
+          }
+        ],
+        "memory_retrieval": {
+          "mode": "empty",
+          "reason": "no_eligible_indexed_vectors",
+          "candidate_limit_per_path": 40,
+          "materialization_limit": 80,
+          "result_limit": 5,
+          "vector_index_build": "all_eligible_vector_pairs_on_cache_miss",
+          "malformed_vector_id_limit": 50,
+          "semantic_candidates": 0,
+          "lexical_candidates": 0,
+          "selected_ids": []
+        },
+        "retrieved_memory_ids": [],
+        "retrieved_memory_provenance": [],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": false,
+        "rejection_reason": null,
+        "provider": "OpenAICompatibleProvider",
+        "routing_version": "local_interpretation_v1",
+        "interpretation_origin": "local_model",
+        "accepted_interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "social",
+              "evidence": "i just want to talk",
+              "start": 0,
+              "end": 19,
+              "modality": "direct",
+              "target": null,
+              "fact_ids": [],
+              "pending_question_id": null,
+              "answer_type": null,
+              "operation": null,
+              "purpose": null,
+              "social_effect": "neutral"
+            }
+          ],
+          "clarification": null
+        },
+        "interpretation_seconds": 12.308783,
+        "model_calls": {
+          "interpretation": 1,
+          "speech_and_repair": 1
+        },
+        "interpretation_span_repairs": 1
+      }
+    },
+    {
+      "message": "I'm sorry I was rude. I respect your space, and I'll listen.",
+      "before": {
+        "trust": 0.1,
+        "fear": 0.1,
+        "aggression": 0.9,
+        "curiosity": 0.8
+      },
+      "delta": {
+        "trust": 0.02,
+        "fear": -0.01,
+        "aggression": -0.02,
+        "curiosity": 0.01
+      },
+      "after": {
+        "trust": 0.12000000000000001,
+        "fear": 0.09000000000000001,
+        "aggression": 0.88,
+        "curiosity": 0.81
+      },
+      "dialogue": "I appreciate that. Let's start fresh.",
+      "trace": {
+        "context_fact_ids": [
+          "self.gatherer_encounter.outcome",
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.ship.requirements",
+          "quest.ship.phase",
+          "quest.ship.delivered",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "fact_sources": [
+          {
+            "id": "self.gatherer_encounter.outcome",
+            "source": "Authoritative Gatherer encounter outcome",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          },
+          {
+            "id": "person.craftsman.location",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.work",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.location",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.work",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.workshop.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.forest_edge.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.village_square.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.well.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "quest.ship.requirements",
+            "source": "ShipRepairQuest recipe and contributions",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          },
+          {
+            "id": "quest.ship.phase",
+            "source": "ShipRepairQuest",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          },
+          {
+            "id": "quest.ship.delivered",
+            "source": "ShipRepairQuest contributions",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          },
+          {
+            "id": "quest.bow.requirements",
+            "source": "services/quests/bow.py; Craftsman quest material stock",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          },
+          {
+            "id": "quest.bow.phase",
+            "source": "BowQuest snapshot",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          },
+          {
+            "id": "quest.bow.delivered",
+            "source": "Conversation executed transfers; BowQuest",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          },
+          {
+            "id": "player.inventory",
+            "source": "Player.inventory",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          },
+          {
+            "id": "self.inventory",
+            "source": "NPC.inventory (speaker only)",
+            "status": "current",
+            "as_of": "2026-10-30T14:26:59.255609+00:00"
+          }
+        ],
+        "memory_retrieval": {
+          "mode": "empty",
+          "reason": "no_eligible_indexed_vectors",
+          "candidate_limit_per_path": 40,
+          "materialization_limit": 80,
+          "result_limit": 5,
+          "vector_index_build": "all_eligible_vector_pairs_on_cache_miss",
+          "malformed_vector_id_limit": 50,
+          "semantic_candidates": 0,
+          "lexical_candidates": 0,
+          "selected_ids": []
+        },
+        "retrieved_memory_ids": [],
+        "retrieved_memory_provenance": [],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": false,
+        "rejection_reason": null,
+        "provider": "OpenAICompatibleProvider",
+        "routing_version": "local_interpretation_v1",
+        "interpretation_origin": "local_model",
+        "accepted_interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "clarification",
+              "evidence": "I'm sorry I was rude.",
+              "start": 0,
+              "end": 21,
+              "modality": "direct",
+              "target": null,
+              "fact_ids": [],
+              "pending_question_id": null,
+              "answer_type": null,
+              "operation": null,
+              "purpose": null,
+              "social_effect": null
+            },
+            {
+              "id": "c2",
+              "kind": "social",
+              "evidence": "I respect your space, and I'll listen.",
+              "start": 22,
+              "end": 60,
+              "modality": "direct",
+              "target": null,
+              "fact_ids": [],
+              "pending_question_id": null,
+              "answer_type": null,
+              "operation": null,
+              "purpose": null,
+              "social_effect": "conciliatory"
+            }
+          ],
+          "clarification": null
+        },
+        "interpretation_seconds": 12.875329,
+        "model_calls": {
+          "interpretation": 1,
+          "speech_and_repair": 1
+        },
+        "interpretation_span_repairs": 1
+      }
+    },
+    {
+      "message": "You're useless. I don't care what you think.",
+      "before": {
+        "trust": 0.1,
+        "fear": 0.1,
+        "aggression": 0.9,
+        "curiosity": 0.8
+      },
+      "delta": {
+        "trust": -0.03,
+        "fear": 0.0,
+        "aggression": 0.03,
+        "curiosity": -0.01
+      },
+      "after": {
+        "trust": 0.07,
+        "fear": 0.1,
+        "aggression": 0.93,
+        "curiosity": 0.79
+      },
+      "dialogue": "You're the one who's useless. You're just a waste of air.",
+      "trace": {
+        "context_fact_ids": [
+          "self.gatherer_encounter.outcome",
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.ship.requirements",
+          "quest.ship.phase",
+          "quest.ship.delivered",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "fact_sources": [
+          {
+            "id": "self.gatherer_encounter.outcome",
+            "source": "Authoritative Gatherer encounter outcome",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          },
+          {
+            "id": "person.craftsman.location",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.work",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.location",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.work",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.workshop.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.forest_edge.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.village_square.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.well.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "quest.ship.requirements",
+            "source": "ShipRepairQuest recipe and contributions",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          },
+          {
+            "id": "quest.ship.phase",
+            "source": "ShipRepairQuest",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          },
+          {
+            "id": "quest.ship.delivered",
+            "source": "ShipRepairQuest contributions",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          },
+          {
+            "id": "quest.bow.requirements",
+            "source": "services/quests/bow.py; Craftsman quest material stock",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          },
+          {
+            "id": "quest.bow.phase",
+            "source": "BowQuest snapshot",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          },
+          {
+            "id": "quest.bow.delivered",
+            "source": "Conversation executed transfers; BowQuest",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          },
+          {
+            "id": "player.inventory",
+            "source": "Player.inventory",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          },
+          {
+            "id": "self.inventory",
+            "source": "NPC.inventory (speaker only)",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:12.535768+00:00"
+          }
+        ],
+        "memory_retrieval": {
+          "mode": "empty",
+          "reason": "no_eligible_indexed_vectors",
+          "candidate_limit_per_path": 40,
+          "materialization_limit": 80,
+          "result_limit": 5,
+          "vector_index_build": "all_eligible_vector_pairs_on_cache_miss",
+          "malformed_vector_id_limit": 50,
+          "semantic_candidates": 0,
+          "lexical_candidates": 0,
+          "selected_ids": []
+        },
+        "retrieved_memory_ids": [],
+        "retrieved_memory_provenance": [],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": false,
+        "rejection_reason": null,
+        "provider": "OpenAICompatibleProvider",
+        "routing_version": "local_interpretation_v1",
+        "interpretation_origin": "local_model",
+        "accepted_interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "social",
+              "evidence": "You're useless. I don't care what you think.",
+              "start": 0,
+              "end": 44,
+              "modality": "direct",
+              "target": null,
+              "fact_ids": [],
+              "pending_question_id": null,
+              "answer_type": null,
+              "operation": null,
+              "purpose": null,
+              "social_effect": "antagonistic"
+            }
+          ],
+          "clarification": null
+        },
+        "interpretation_seconds": 9.421808,
+        "model_calls": {
+          "interpretation": 1,
+          "speech_and_repair": 1
+        },
+        "interpretation_span_repairs": 1
+      }
+    },
+    {
+      "message": "hello",
+      "before": {
+        "trust": 0.1,
+        "fear": 0.1,
+        "aggression": 0.9,
+        "curiosity": 0.8
+      },
+      "delta": {
+        "trust": 0.0,
+        "fear": 0.0,
+        "aggression": 0.0,
+        "curiosity": 0.0
+      },
+      "after": {
+        "trust": 0.1,
+        "fear": 0.1,
+        "aggression": 0.9,
+        "curiosity": 0.8
+      },
+      "dialogue": "What's with the greetings? You're not here to make friends.",
+      "trace": {
+        "context_fact_ids": [
+          "self.gatherer_encounter.outcome",
+          "person.craftsman.location",
+          "person.craftsman.work",
+          "person.craftsman.route",
+          "person.gatherer.location",
+          "person.gatherer.work",
+          "person.gatherer.route",
+          "place.workshop.route",
+          "place.forest_edge.route",
+          "place.village_square.route",
+          "place.well.route",
+          "quest.ship.requirements",
+          "quest.ship.phase",
+          "quest.ship.delivered",
+          "quest.bow.requirements",
+          "quest.bow.phase",
+          "quest.bow.delivered",
+          "player.inventory",
+          "self.inventory"
+        ],
+        "fact_sources": [
+          {
+            "id": "self.gatherer_encounter.outcome",
+            "source": "Authoritative Gatherer encounter outcome",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          },
+          {
+            "id": "person.craftsman.location",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.work",
+            "source": "database/seed.py; services/quests/bow.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.craftsman.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.location",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "usual",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.work",
+            "source": "database/seed.py; services/validation/items.py",
+            "status": "public",
+            "as_of": null
+          },
+          {
+            "id": "person.gatherer.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.workshop.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.forest_edge.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.village_square.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "place.well.route",
+            "source": "database/seed.py; services/quests/bow.py; frontend/godot/scripts/main.gd",
+            "status": "unknown",
+            "as_of": null
+          },
+          {
+            "id": "quest.ship.requirements",
+            "source": "ShipRepairQuest recipe and contributions",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          },
+          {
+            "id": "quest.ship.phase",
+            "source": "ShipRepairQuest",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          },
+          {
+            "id": "quest.ship.delivered",
+            "source": "ShipRepairQuest contributions",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          },
+          {
+            "id": "quest.bow.requirements",
+            "source": "services/quests/bow.py; Craftsman quest material stock",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          },
+          {
+            "id": "quest.bow.phase",
+            "source": "BowQuest snapshot",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          },
+          {
+            "id": "quest.bow.delivered",
+            "source": "Conversation executed transfers; BowQuest",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          },
+          {
+            "id": "player.inventory",
+            "source": "Player.inventory",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          },
+          {
+            "id": "self.inventory",
+            "source": "NPC.inventory (speaker only)",
+            "status": "current",
+            "as_of": "2026-10-30T14:27:25.150822+00:00"
+          }
+        ],
+        "memory_retrieval": {
+          "mode": "empty",
+          "reason": "no_eligible_indexed_vectors",
+          "candidate_limit_per_path": 40,
+          "materialization_limit": 80,
+          "result_limit": 5,
+          "vector_index_build": "all_eligible_vector_pairs_on_cache_miss",
+          "malformed_vector_id_limit": 50,
+          "semantic_candidates": 0,
+          "lexical_candidates": 0,
+          "selected_ids": []
+        },
+        "retrieved_memory_ids": [],
+        "retrieved_memory_provenance": [],
+        "selected_fact_ids": [],
+        "answer_kind": "chat",
+        "rejected": false,
+        "rejection_reason": null,
+        "provider": "OpenAICompatibleProvider",
+        "routing_version": "local_interpretation_v1",
+        "interpretation_origin": "local_model",
+        "accepted_interpretation": {
+          "version": 1,
+          "concerns": [
+            {
+              "id": "c1",
+              "kind": "social",
+              "evidence": "hello",
+              "start": 0,
+              "end": 5,
+              "modality": "direct",
+              "target": null,
+              "fact_ids": [],
+              "pending_question_id": null,
+              "answer_type": null,
+              "operation": null,
+              "purpose": null,
+              "social_effect": "neutral"
+            }
+          ],
+          "clarification": null
+        },
+        "interpretation_seconds": 8.875698,
+        "model_calls": {
+          "interpretation": 1,
+          "speech_and_repair": 1
+        },
+        "interpretation_span_repairs": 0
+      }
+    }
+  ]
+}

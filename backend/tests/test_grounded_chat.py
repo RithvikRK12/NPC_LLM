@@ -15,6 +15,7 @@ from app.services.validation.service import ValidationError, ValidationService
 class GroundedChatTests(unittest.TestCase):
     setUp = pipeline_tests.NPCPipelineTests.setUp
     tearDown = pipeline_tests.NPCPipelineTests.tearDown
+    _test_interpretation = pipeline_tests.NPCPipelineTests._test_interpretation
     output = pipeline_tests.NPCPipelineTests.output
 
     def answer(self, ids=(), kind='answer', **changes):
@@ -244,40 +245,119 @@ class GroundedChatTests(unittest.TestCase):
                 self.assertEqual(before[5:], after[5:])
                 self.assertTrue(all(v == 0 for v in result['validated_output']['state_update'].values()))
 
-    def test_day_question_repairs_encounter_claim_before_opening_write_transaction(self):
+    def test_wellbeing_answers_continue_generated_conversation_without_effects(self):
+        for message in ("I'm good! Thanks for asking.", "I’m doing well, thank you!",
+                        "I'm fine. How about you?", "Not bad, thanks.",
+                        "I'm tired today.", "My day has been good, thanks for asking."):
+            with self.subTest(message=message):
+                before = self.state()
+                result = self.chat(message, {'answer_kind': 'chat', 'fact_ids': [],
+                    'dialogue': 'Glad to hear from you. A quiet conversation is always welcome.'}, 2)
+                self.assertFalse(result['grounding_trace']['rejected'])
+                self.assertIn('A quiet conversation', result['final_dialogue'])
+                self.assertEqual(result['grounding_trace']['accepted_interpretation']['concerns'][0]['kind'], 'social')
+                after = self.state()
+                self.assertEqual(before[:4], after[:4])
+                self.assertEqual(before[5:], after[5:])
+
+    def test_unrelated_factual_question_does_not_consume_item_purpose_request(self):
+        self.client.post('/inventory/transfer', json={'npc_id': 2, 'item': 'wood', 'direction': 'to_player'})
+        interrupted = self.client.post('/chat', json={'npc_id': 2, 'player_message': 'Where is the Gatherer?'})
+        self.assertEqual(interrupted.status_code, 200, interrupted.text)
+        self.assertEqual(interrupted.json()['npc']['pending_item'], 'wood')
+        self.assertIn('forest clearing', interrupted.json()['final_dialogue'])
+        resumed = self.client.post('/chat', json={'npc_id': 2, 'player_message': 'I need it for a fire'})
+        self.assertEqual(resumed.status_code, 200, resumed.text)
+        self.assertIsNone(resumed.json()['npc']['pending_item'])
+        self.assertIn('wood', resumed.json()['player_inventory'])
+
+    def test_mixed_social_and_factual_concerns_keep_both_grounded_segments(self):
+        from app.services.semantic_routing import AcceptedInterpretation
+        message = 'I am doing well. Where is the Gatherer?'
+        spans = [(0, 15, 'social'), (17, len(message), 'factual')]
+        concerns = []
+        for index, (start, end, kind) in enumerate(spans, 1):
+            concerns.append({'id': f'c{index}', 'kind': kind, 'evidence': message[start:end],
+                'start': start, 'end': end, 'modality': 'direct', 'target': None,
+                'fact_ids': ['person.gatherer.location'] if kind == 'factual' else [],
+                'pending_question_id': None, 'answer_type': None, 'operation': None})
+        accepted = AcceptedInterpretation(version=1, concerns=concerns, clarification=None)
+        with patch('app.services.llm.service.LLMService.interpret', return_value=(accepted, .01)), \
+             patch.object(OpenAICompatibleProvider, 'generate', return_value=json.dumps({
+                 'answer_kind': 'chat', 'fact_ids': [], 'dialogue': 'I am glad to hear that.'})):
+            response = self.client.post('/chat', json={'npc_id': 2, 'player_message': message})
+        self.assertEqual(response.status_code, 200, response.text)
+        result = response.json()
+        self.assertFalse(result['grounding_trace']['rejected'])
+        self.assertIn('I am glad to hear that.', result['final_dialogue'])
+        self.assertIn('forest clearing', result['final_dialogue'])
+
+    def test_quoted_item_request_is_interpreted_but_never_executed(self):
+        from app.services.semantic_routing import AcceptedInterpretation
+        message = 'He said "give me wood".'
+        start, end = message.index('give'), message.index('wood') + len('wood')
+        accepted = AcceptedInterpretation(version=1, concerns=[{
+            'id': 'c1', 'kind': 'operation_request', 'evidence': message[start:end],
+            'start': start, 'end': end, 'modality': 'quoted', 'target': 'wood', 'fact_ids': [],
+            'pending_question_id': None, 'answer_type': None, 'operation': 'give_item'}], clarification=None)
+        before = self.state()
+        with patch('app.services.llm.service.LLMService.interpret', return_value=(accepted, .01)):
+            response = self.client.post('/chat', json={'npc_id': 2, 'player_message': message})
+        self.assertEqual(response.status_code, 200, response.text)
+        data = response.json()
+        self.assertEqual(self.state(), before)
+        self.assertIsNone(data['npc']['pending_item'])
+        self.assertEqual(data['grounding_trace']['accepted_interpretation']['concerns'][0]['modality'], 'quoted')
+
+    def test_social_output_cannot_claim_unrequested_item_transfer(self):
+        result = self.chat("I'm good! Thanks for asking.", {'answer_kind': 'chat', 'fact_ids': [],
+            'dialogue': 'I gave you wood.'}, 2)
+        self.assertTrue(result['grounding_trace']['rejected'])
+
+    def test_wellbeing_reply_rejects_unrequested_location_without_retry(self):
+        invalid = {'answer_kind': 'chat', 'fact_ids': [], 'dialogue':
+                   "Glad to hear it! Have you seen the Craftsman around?"}
+        with patch.object(OpenAICompatibleProvider, 'generate',
+                          return_value=json.dumps(invalid)) as generate:
+            response = self.client.post('/chat', json={
+                'npc_id': 2, 'player_message': "I'm good! Thanks for asking."})
+        self.assertEqual(response.status_code, 200, response.text)
+        result = response.json()
+        self.assertEqual(generate.call_count, 1)
+        self.assertTrue(result['grounding_trace']['rejected'])
+        self.assertNotIn('Have you seen', result['final_dialogue'])
+
+    def test_day_question_rejects_encounter_claim_without_retry_or_provider_write_lock(self):
         invalid = {'answer_kind': 'chat', 'fact_ids': [], 'dialogue':
                    "I had a scare when two boars threatened me, but the player helped defeat them."}
-        repaired = {'answer_kind': 'chat', 'fact_ids': [], 'dialogue':
-                    "It's been tiring, but I'm glad for a quiet moment. How about you?"}
         calls = []
 
         def generate(prompt, context):
             self.assertFalse(self.db.in_transaction())
             calls.append(prompt)
-            if len(calls) > 2:
-                self.fail('Social repair must be bounded to one retry')
-            return json.dumps(invalid if len(calls) == 1 else repaired)
+            if len(calls) > 1:
+                self.fail('Speech generation must not retry')
+            return json.dumps(invalid)
 
         with patch.object(OpenAICompatibleProvider, 'generate', side_effect=generate):
             result = self.client.post('/chat', json={'npc_id': 2, 'player_message': 'How has your day been?'}).json()
-        self.assertFalse(result['grounding_trace']['rejected'])
-        self.assertIn(repaired['dialogue'], result['final_dialogue'])
+        self.assertTrue(result['grounding_trace']['rejected'])
+        self.assertEqual(len(calls), 1)
         self.assertNotIn('boars', result['final_dialogue'])
-        self.assertIn('Inventory and quest claims', calls[1])
 
-    def test_failed_social_repair_keeps_fallback_and_cannot_grant_items(self):
+    def test_invalid_social_reply_keeps_fallback_without_retry_or_item_grant(self):
         attempts = []
 
         def generate(prompt, context):
             attempts.append(prompt)
-            if len(attempts) > 2:
-                self.fail('Social repair must stop after one retry')
+            if len(attempts) > 1:
+                self.fail('Speech generation must not retry')
             return json.dumps({'answer_kind': 'chat', 'fact_ids': [],
                                'dialogue': 'You received a bow.'})
 
         with patch.object(OpenAICompatibleProvider, 'generate', side_effect=generate):
             result = self.client.post('/chat', json={'npc_id': 2, 'player_message': 'How has your day been?'}).json()
-        self.assertEqual(len(attempts), 2)
+        self.assertEqual(len(attempts), 1)
         self.assertTrue(result['grounding_trace']['rejected'])
         self.assertNotIn('bow', result['player_inventory'])
         self.assertNotIn('received a bow', result['final_dialogue'])
@@ -339,6 +419,7 @@ class GroundedChatTests(unittest.TestCase):
         self.chat('I prefer quiet forests', dict(answer_kind='chat', fact_ids=[], dialogue='Thanks for telling me.'))
         builder = ContextBuilder(self.db)
         context = builder.build(self.db.get(NPC, 1), self.db.get(Player, 1), 'I no longer prefer quiet forests')
+        context.accepted_interpretation = {'version': 1, 'concerns': [{'id': 'c1', 'kind': 'social'}], 'clarification': None}
         prompt = PromptBuilder().build(context)
         self.assertIn('unverified preference', prompt)
         self.assertNotIn('NPC gave player one rope.', prompt)
