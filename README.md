@@ -13,6 +13,8 @@ A Godot 4 village backed by FastAPI, SQLAlchemy, and a local or compatible LLM. 
 
 The backend loads `backend/.env` regardless of working directory. Relative SQLite paths are still relative to the working directory. An empty LLM base URL selects the mock provider. Generation and validation failures are logged in the backend terminal.
 
+Run `./Play.command` to load frontend and backend simultaneously
+
 ## Get a bow
 
 1. Click **Quests → Begin • Get a bow**.
