@@ -1,0 +1,125 @@
+{
+  "F00": {
+    "text": "Oh! Didn't hear you coming. Don't know your face, either… You've come up from the shore? You're soaked through.",
+    "choices": [
+      {
+        "text": "Where am I?",
+        "to": "F10"
+      },
+      {
+        "text": "Can you help me?",
+        "to": "F11"
+      }
+    ]
+  },
+  "F10": {
+    "text": "On the coast, just below the village. Follow this path uphill and you'll reach it. You look like you've had a rough landing.",
+    "choices": [
+      {
+        "text": "Where should I go in the village?",
+        "to": "F20"
+      },
+      {
+        "text": "Who lives here?",
+        "to": "F21"
+      }
+    ]
+  },
+  "F11": {
+    "text": "Depends what you need. I can point you toward shelter. If it's trouble out at sea, these old legs won't be much use.",
+    "choices": [
+      {
+        "text": "I need somewhere warm.",
+        "to": "F22"
+      },
+      {
+        "text": "My boat crashed on the rocks.",
+        "to": "F23"
+      }
+    ]
+  },
+  "F20": {
+    "text": "Keep to the path until you reach the houses. Someone there can help you find a place to rest.",
+    "choices": [
+      {
+        "text": "Will you come with me?",
+        "to": "E01"
+      },
+      {
+        "text": "What if they don't want a stranger there?",
+        "to": "E02"
+      }
+    ]
+  },
+  "F21": {
+    "text": "Ordinary folk. People working, trading, getting on with their day. They'll notice a new face soon enough.",
+    "choices": [
+      {
+        "text": "Who should I speak to first?",
+        "to": "E03"
+      },
+      {
+        "text": "Do you get many strangers here?",
+        "to": "E04"
+      }
+    ]
+  },
+  "F22": {
+    "text": "Then head into the village. Get out of those wet clothes and ask for somewhere to sit by a fire. Sea wind cuts right through you.",
+    "choices": [
+      {
+        "text": "I don't have any money.",
+        "to": "E05"
+      },
+      {
+        "text": "Can I rest here for a moment?",
+        "to": "E06"
+      }
+    ]
+  },
+  "F23": {
+    "text": "The rocks below the path? Nasty stretch of coast. You're fortunate you made it ashore. Leave the wreck alone until you've got your strength back.",
+    "choices": [
+      {
+        "text": "Could you help me recover my things?",
+        "to": "E07"
+      },
+      {
+        "text": "Is there anyone in the village who could help?",
+        "to": "E08"
+      }
+    ]
+  },
+  "E01": {
+    "text": "No, I'll stay with my nets. You can see the roofs from here. Keep walking uphill.",
+    "end": true
+  },
+  "E02": {
+    "text": "Tell them you washed ashore. Someone will hear you out.",
+    "end": true
+  },
+  "E03": {
+    "text": "Start with someone by the houses. Ask where a traveler can rest, and take it from there.",
+    "end": true
+  },
+  "E04": {
+    "text": "A few. Most arrive a good deal drier than you.",
+    "end": true
+  },
+  "E05": {
+    "text": "Ask anyway. A place by the fire needn't cost a fortune.",
+    "end": true
+  },
+  "E06": {
+    "text": "Catch your breath, then. But don't sit in the wind too long. The village is warmer.",
+    "end": true
+  },
+  "E07": {
+    "text": "Can't do that for you. Ask in the village, and mind those rocks if you go back.",
+    "end": true
+  },
+  "E08": {
+    "text": "Perhaps. Ask around the village. You'll have better luck there than with an old man and a torn net.",
+    "end": true
+  }
+}

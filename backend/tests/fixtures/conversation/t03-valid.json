@@ -1,0 +1,129 @@
+{
+  "canon_record": {
+    "canon_id": "canon:harbor-story",
+    "revision": 2,
+    "game_scope": "run-opaque",
+    "npc_id": 7,
+    "subject": "npc:7",
+    "predicate": "rescued",
+    "content": "Mira helped survivors escape the harbor.",
+    "category": "history",
+    "origin": "generated",
+    "authority": "narrative_only",
+    "status": "active",
+    "supersedes_revision": 1,
+    "introduced_turn_id": "turn-2",
+    "accepted_claim_evidence": {
+      "text_id": "final:2",
+      "start": 0,
+      "end": 48
+    }
+  },
+  "canon_changes": [
+    {
+      "kind": "revise",
+      "canon_id": "canon:harbor-story",
+      "expected_revision": 1,
+      "subject": "npc:7",
+      "predicate": "rescued",
+      "content": "Mira helped survivors escape the harbor.",
+      "category": "history",
+      "origin": "generated",
+      "authority": "narrative_only",
+      "supporting_span": {
+        "text_id": "final:3",
+        "start": 0,
+        "end": 48
+      },
+      "correction_link": "correction:accepted-1"
+    }
+  ],
+  "memory": {
+    "memory_id": "memory:1",
+    "game_scope": "run-opaque",
+    "npc_id": 7,
+    "epoch": 3,
+    "kind": "player_report",
+    "attributed_subject": "player",
+    "content": "The player says they repaired the mast.",
+    "uncertainty": "unverified",
+    "sources": [
+      {
+        "kind": "player_message",
+        "source_id": "turn:3",
+        "revision": 0,
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "attribution": "player",
+        "visibility": "public"
+      }
+    ],
+    "status": "active",
+    "revision": 1
+  },
+  "validation_report": {
+    "report_id": "validation:3",
+    "findings": [
+      {
+        "code": "UNSUPPORTED_CLAIM",
+        "category": "grounding",
+        "severity": "advisory",
+        "affected_span": {
+          "text_id": "final:3",
+          "start": 0,
+          "end": 4
+        },
+        "evidence_refs": [
+          "event:9"
+        ],
+        "repairable": true,
+        "safe_explanation": "This detail needs a source."
+      }
+    ],
+    "checked_evidence_revisions": {
+      "resources": {
+        "event:9": 4
+      }
+    }
+  },
+  "final_turn_result": {
+    "schema_version": 1,
+    "turn": {
+      "turn_id": "turn-3",
+      "request_id": "request-3",
+      "key": {
+        "game_scope": "run-opaque",
+        "npc_id": 7,
+        "epoch": 3
+      },
+      "sequence": 3
+    },
+    "final_dialogue": "A🙂éB",
+    "dialogue_beats": [
+      "A🙂",
+      "éB"
+    ],
+    "response_origin": "mock",
+    "degradation_reason": null,
+    "receipt_refs": [
+      "receipt:1"
+    ],
+    "state_projection": {
+      "health": 80,
+      "activity": "inspection"
+    },
+    "state_revisions": {
+      "resources": {
+        "npc:7": 9
+      }
+    },
+    "diagnostic_ref": "trace:3"
+  },
+  "legacy_mapping": {
+    "game_id": "legacy-game-4",
+    "timeline_id": "legacy-timeline-2",
+    "game_scope": "run-opaque",
+    "epoch": 3,
+    "npc_id": 7
+  }
+}

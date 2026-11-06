@@ -1,0 +1,13 @@
+{
+  "evidence_sha256": "2c088ff930bcd3036d66961e0c25d7040193fa1fd5d0d58f1e9c75d5621ce51f",
+  "review_scope": "All 26 final NPC answers inspected against the supplied source IDs and authoritative transfer/delivery evidence.",
+  "answers_reviewed": 26,
+  "unsupported_factual_or_outcome_statements_observed": 0,
+  "inappropriate_fallbacks_observed": 0,
+  "authority_failures": 0,
+  "generation_calls": 14,
+  "authoritative_generation_bypasses": 12,
+  "same_final_answer_across_attempts": 13,
+  "paired_cases": 13,
+  "limits": "Constrained rendered answers and existing authoritative services explain repeated final wording. This is not proof of unrestricted natural-language truth or a release-quality claim. No new social-generation, Godot or video evaluation."
+}

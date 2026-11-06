@@ -1,0 +1,90 @@
+[
+  {
+    "npc": 1,
+    "message": "hello",
+    "seconds": 6.7854,
+    "dialogue": "Ah, hello there! Nice to meet you. What brings you to our village today?",
+    "origin": "generated",
+    "degradation_reason": null,
+    "provider_calls": [
+      {
+        "seconds": 6.6908,
+        "prompt_characters": 1384,
+        "usage": {
+          "prompt_tokens": 292,
+          "prompt_tokens_details": {
+            "cached_tokens": 12
+          },
+          "completion_tokens": 125,
+          "total_tokens": 417
+        }
+      }
+    ]
+  },
+  {
+    "npc": 1,
+    "message": "hi",
+    "seconds": 5.459,
+    "dialogue": "Ah, hello there! Nice to meet you. What brings you to our neck of the woods today?",
+    "origin": "generated",
+    "degradation_reason": null,
+    "provider_calls": [
+      {
+        "seconds": 5.3993,
+        "prompt_characters": 1381,
+        "usage": {
+          "prompt_tokens": 292,
+          "prompt_tokens_details": {
+            "cached_tokens": 175
+          },
+          "completion_tokens": 127,
+          "total_tokens": 419
+        }
+      }
+    ]
+  },
+  {
+    "npc": 2,
+    "message": "hello",
+    "seconds": 5.9262,
+    "dialogue": "What brings you to our neck of the woods? Not that I'm complaining, mind you.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "provider_calls": [
+      {
+        "seconds": 5.8191,
+        "prompt_characters": 1380,
+        "usage": {
+          "prompt_tokens": 294,
+          "prompt_tokens_details": {
+            "cached_tokens": 46
+          },
+          "completion_tokens": 125,
+          "total_tokens": 419
+        }
+      }
+    ]
+  },
+  {
+    "npc": 1,
+    "message": "good morning",
+    "seconds": 5.3448,
+    "dialogue": "Good morning to you as well. How can I help you today?",
+    "origin": "generated",
+    "degradation_reason": null,
+    "provider_calls": [
+      {
+        "seconds": 5.2514,
+        "prompt_characters": 1392,
+        "usage": {
+          "prompt_tokens": 293,
+          "prompt_tokens_details": {
+            "cached_tokens": 175
+          },
+          "completion_tokens": 121,
+          "total_tokens": 414
+        }
+      }
+    ]
+  }
+]

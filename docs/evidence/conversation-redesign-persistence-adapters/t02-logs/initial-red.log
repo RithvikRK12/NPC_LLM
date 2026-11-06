@@ -1,0 +1,140 @@
+test_concurrent_attempts_consume_each_purpose_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_attempts_consume_each_purpose_once) ... FAIL
+test_concurrent_claims_only_one_worker_owns_oldest (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_claims_only_one_worker_owns_oldest) ... FAIL
+test_concurrent_distinct_admissions_have_contiguous_sequences (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_distinct_admissions_have_contiguous_sequences) ... FAIL
+test_concurrent_duplicate_admissions_allocate_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_duplicate_admissions_allocate_once) ... FAIL
+test_expired_claim_retains_oldest_phase_and_rejects_old_worker (test_conversation_persistence.SQLTurnStoreTests.test_expired_claim_retains_oldest_phase_and_rejects_old_worker) ... FAIL
+test_expired_unreplaced_worker_cannot_write (test_conversation_persistence.SQLTurnStoreTests.test_expired_unreplaced_worker_cannot_write) ... FAIL
+test_final_and_invalidated_status_lookup_uses_stored_identity (test_conversation_persistence.SQLTurnStoreTests.test_final_and_invalidated_status_lookup_uses_stored_identity) ... FAIL
+test_output_is_immutable_and_proposal_phase_recovers (test_conversation_persistence.SQLTurnStoreTests.test_output_is_immutable_and_proposal_phase_recovers) ... FAIL
+test_outputs_and_assembly_are_durable_but_stale_output_is_rejected (test_conversation_persistence.SQLTurnStoreTests.test_outputs_and_assembly_are_durable_but_stale_output_is_rejected) ... FAIL
+test_receipt_recovery_is_scoped_and_preserves_operation_phase (test_conversation_persistence.SQLTurnStoreTests.test_receipt_recovery_is_scoped_and_preserves_operation_phase) ... FAIL
+test_repair_token_is_shared_and_attempt_identity_is_immutable (test_conversation_persistence.SQLTurnStoreTests.test_repair_token_is_shared_and_attempt_identity_is_immutable) ... FAIL
+test_reset_scope_blocks_old_recovery_and_forged_turn_identity (test_conversation_persistence.SQLTurnStoreTests.test_reset_scope_blocks_old_recovery_and_forged_turn_identity) ... FAIL
+test_restart_scans_pending_without_admission_or_claim (test_conversation_persistence.SQLTurnStoreTests.test_restart_scans_pending_without_admission_or_claim) ... FAIL
+test_scope_epoch_and_npc_are_checked_without_allocating (test_conversation_persistence.SQLTurnStoreTests.test_scope_epoch_and_npc_are_checked_without_allocating) ... FAIL
+test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence (test_conversation_persistence.SQLTurnStoreTests.test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence) ... FAIL
+
+======================================================================
+FAIL: test_concurrent_attempts_consume_each_purpose_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_attempts_consume_each_purpose_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_concurrent_claims_only_one_worker_owns_oldest (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_claims_only_one_worker_owns_oldest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_concurrent_distinct_admissions_have_contiguous_sequences (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_distinct_admissions_have_contiguous_sequences)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_concurrent_duplicate_admissions_allocate_once (test_conversation_persistence.SQLTurnStoreTests.test_concurrent_duplicate_admissions_allocate_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_expired_claim_retains_oldest_phase_and_rejects_old_worker (test_conversation_persistence.SQLTurnStoreTests.test_expired_claim_retains_oldest_phase_and_rejects_old_worker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_expired_unreplaced_worker_cannot_write (test_conversation_persistence.SQLTurnStoreTests.test_expired_unreplaced_worker_cannot_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_final_and_invalidated_status_lookup_uses_stored_identity (test_conversation_persistence.SQLTurnStoreTests.test_final_and_invalidated_status_lookup_uses_stored_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_output_is_immutable_and_proposal_phase_recovers (test_conversation_persistence.SQLTurnStoreTests.test_output_is_immutable_and_proposal_phase_recovers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_outputs_and_assembly_are_durable_but_stale_output_is_rejected (test_conversation_persistence.SQLTurnStoreTests.test_outputs_and_assembly_are_durable_but_stale_output_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_receipt_recovery_is_scoped_and_preserves_operation_phase (test_conversation_persistence.SQLTurnStoreTests.test_receipt_recovery_is_scoped_and_preserves_operation_phase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_repair_token_is_shared_and_attempt_identity_is_immutable (test_conversation_persistence.SQLTurnStoreTests.test_repair_token_is_shared_and_attempt_identity_is_immutable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_reset_scope_blocks_old_recovery_and_forged_turn_identity (test_conversation_persistence.SQLTurnStoreTests.test_reset_scope_blocks_old_recovery_and_forged_turn_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_restart_scans_pending_without_admission_or_claim (test_conversation_persistence.SQLTurnStoreTests.test_restart_scans_pending_without_admission_or_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_scope_epoch_and_npc_are_checked_without_allocating (test_conversation_persistence.SQLTurnStoreTests.test_scope_epoch_and_npc_are_checked_without_allocating)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+======================================================================
+FAIL: test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence (test_conversation_persistence.SQLTurnStoreTests.test_uncertain_dispatch_remains_consumed_after_restart_and_new_fence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_persistence.py", line 38, in setUp
+    self.assertIsNotNone(SQLTurnStore, 'T02 SQLTurnStore is not implemented')
+AssertionError: unexpectedly None : T02 SQLTurnStore is not implemented
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.001s
+
+FAILED (failures=15)

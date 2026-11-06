@@ -1,0 +1,38 @@
+test_accepted_correction_keeps_head_identity_and_superseded_lineage (test_conversation_canon.CanonCorrectionTests.test_accepted_correction_keeps_head_identity_and_superseded_lineage) ... FAIL
+test_authored_identity_cannot_be_rewritten_by_accepted_correction (test_conversation_canon.CanonCorrectionTests.test_authored_identity_cannot_be_rewritten_by_accepted_correction) ... ok
+test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) ... ok
+test_contradiction_only_remains_attributed_correction_without_revision (test_conversation_canon.CanonCorrectionTests.test_contradiction_only_remains_attributed_correction_without_revision) ... ok
+test_failed_claim_validation_and_practical_affordance_block_revisions (test_conversation_canon.CanonCorrectionTests.test_failed_claim_validation_and_practical_affordance_block_revisions) ... ok
+test_ordinary_followup_cannot_silently_change_accepted_biography (test_conversation_canon.CanonCorrectionTests.test_ordinary_followup_cannot_silently_change_accepted_biography) ... ok
+test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets (test_conversation_canon.CanonCorrectionTests.test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets) ... FAIL
+test_revision_fails_closed_without_acceptance_checker (test_conversation_canon.CanonCorrectionTests.test_revision_fails_closed_without_acceptance_checker) ... ok
+test_revision_requires_exact_link_target_and_attributed_player_evidence (test_conversation_canon.CanonCorrectionTests.test_revision_requires_exact_link_target_and_attributed_player_evidence) ... ok
+test_admits_only_exact_validated_final_speech_additions_as_narrative (test_conversation_canon.CanonPolicyTests.test_admits_only_exact_validated_final_speech_additions_as_narrative) ... ok
+test_allows_relatives_and_historical_places_but_requires_grounding_for_affordances (test_conversation_canon.CanonPolicyTests.test_allows_relatives_and_historical_places_but_requires_grounding_for_affordances) ... ok
+test_authored_identity_wins_and_revisions_are_left_to_t02 (test_conversation_canon.CanonPolicyTests.test_authored_identity_wins_and_revisions_are_left_to_t02) ... ok
+test_rejects_candidate_missing_from_final_span_map (test_conversation_canon.CanonPolicyTests.test_rejects_candidate_missing_from_final_span_map) ... ok
+test_rejects_failed_validation_and_stale_or_mismatched_spans (test_conversation_canon.CanonPolicyTests.test_rejects_failed_validation_and_stale_or_mismatched_spans) ... ok
+test_rejects_final_ref_not_linked_to_fresh_source_segment_mapping (test_conversation_canon.CanonPolicyTests.test_rejects_final_ref_not_linked_to_fresh_source_segment_mapping) ... ok
+
+======================================================================
+FAIL: test_accepted_correction_keeps_head_identity_and_superseded_lineage (test_conversation_canon.CanonCorrectionTests.test_accepted_correction_keeps_head_identity_and_superseded_lineage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 180, in test_accepted_correction_keeps_head_identity_and_superseded_lineage
+    self.assertEqual(len(changes), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets (test_conversation_canon.CanonCorrectionTests.test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 258, in test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets
+    self.assertEqual(len(changes), 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.002s
+
+FAILED (failures=2)
+
+exit_code=1

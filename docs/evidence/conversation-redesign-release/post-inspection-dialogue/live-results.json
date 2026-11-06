@@ -1,0 +1,51 @@
+[
+  {
+    "message": "Thanks for looking at my ship!",
+    "dialogue": "You're welcome, glad I could help you take a closer look at your ship.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 2.175
+  },
+  {
+    "message": "Thanks for looking at my ship.",
+    "dialogue": "You're welcome, glad I could help.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 1.848
+  },
+  {
+    "message": "Thank you for your help.",
+    "dialogue": "You're welcome, happy to help with the repairs.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 1.954
+  },
+  {
+    "message": "Thanks for inspecting the damage.",
+    "dialogue": "You're welcome. I'm glad I could help you assess the damage.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 2.275
+  },
+  {
+    "message": "Thank you so much.",
+    "dialogue": "You're welcome, glad I could help.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 2.069
+  },
+  {
+    "message": "Thanks for taking the time to help me.",
+    "dialogue": "You're welcome, happy to help with the ship's repair.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 2.409
+  },
+  {
+    "forced_invalid_draft": true,
+    "dialogue": "You're welcome, glad I could help with the inspection.",
+    "origin": "repaired",
+    "degradation_reason": null,
+    "seconds": 5.14
+  }
+]

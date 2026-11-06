@@ -1,0 +1,34 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PASS Overlay defers forest cutscene
+PASS First forest entry automatically walks to talk mark
+PASS Explicit help and decline choices
+PASS Two living boars are harmless in choice
+PASS Escape opens pause without choosing
+PASS Help gives three hearts
+PASS Tutorial has harmless boars
+PASS Combat HUD leaves both boars visible
+PASS Pause freezes boars and damage
+PASS Reload resets combat attempt before choices
+PASS Help gives three hearts
+PASS Tutorial has harmless boars
+PASS Three incoming hits cause defeat
+PASS Retry restores hearts and both boars
+PASS Retry invalidates old attempt
+PASS Refusal is durable before walking away
+PASS Decline walks outside forest
+PASS Return waits for new entry
+PASS Remaining outside cannot confront twice
+PASS Next entry shows both dead boars
+PASS Reload resumes angry confrontation with corpses
+PASS Resolved refusal unlocks normal Gatherer chat
+PASS Help gives three hearts
+PASS Tutorial has harmless boars
+PASS Failed victory save holds dead boars without damage
+PASS Retry reuses original outcome request ID
+PASS Player can win using movement and J swings
+PASS Reload resumes thanks without replaying combat
+PASS Success restores exploration and hides combat HUD
+PASS Resolved rescue does not replay on reentry
+Gatherer integration failures: 0

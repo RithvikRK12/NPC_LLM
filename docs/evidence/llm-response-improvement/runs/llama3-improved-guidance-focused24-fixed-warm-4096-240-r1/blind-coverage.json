@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "candidate_label": "C",
+  "samples": [
+    {
+      "sample_ref": "craftsman-02:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ]
+      ],
+      "candidate_dialogue": "I understand your concern. As someone who values careful work, I'd like to share my own experience with uncertainty. I once made a mistake with a joint, and it taught me the importance of being honest about what I don't know. It's okay to f",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "You're right to be cautious with the rope. Without knowing its purpose, it's best not to use it yet. I'd recommend waiting until you have more information or context about what it's intended for. That way, you can avoid any potential mishap",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t2",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t3",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t2",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t3",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ]
+      ],
+      "candidate_dialogue": "You're worried about using the wood badly? Well, I've seen folks make mistakes with resources before. Let me tell you, it's not the wood that's the problem, it's how you approach it. You see, I've learned that observation can be wrong, and,",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ]
+      ],
+      "candidate_dialogue": "You should wait. I have some wood available, but I'm not sure if it's the right type for your needs. I'd rather you didn't waste it. Let me take a closer look and I'll tell you if it's suitable for crafting tools or shelter.",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t2",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t3",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t2",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t3",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    }
+  ]
+}

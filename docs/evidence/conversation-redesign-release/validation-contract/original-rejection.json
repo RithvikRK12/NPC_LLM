@@ -1,0 +1,18 @@
+{
+  "valid_json": true,
+  "typed_rejections": [
+    {
+      "path": "source.policy_versions.authoritative_game_rules",
+      "type": "string_type"
+    },
+    {
+      "path": "source.policy_versions.authored_npc_profile",
+      "type": "string_type"
+    }
+  ],
+  "admitted_concern_ids": [],
+  "invented_concern_ids": [
+    "turn:1"
+  ],
+  "conclusion": "Server-owned metadata must not be generated; speech alone must not invent structural references."
+}

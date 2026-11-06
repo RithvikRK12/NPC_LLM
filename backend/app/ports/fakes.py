@@ -12,7 +12,7 @@ from app.contracts import DomainError, ErrorCode, Identifier
 from .read import IdSource, Result
 from .write import (
     AggregateRevision, ChangeT, CommitReceipt, CommitRequest, DeliveryBatch,
-    DeliveryCursor, DeliveryItem, EventT, RevisionKind, WriteIdentity,
+    DeliveryCursor, DeliveryItem, EventT, WriteIdentity,
     expected_aggregates,
 )
 
@@ -29,8 +29,9 @@ def request_digest(request: CommitRequest[ChangeT, EventT]) -> str:
 
 
 class InMemoryUnitOfWork(Generic[ChangeT, EventT]):
-    def __init__(self, ids: IdSource, initial_revisions: tuple[tuple[Identifier, AggregateRevision], ...] = ()):
+    def __init__(self, ids: IdSource, event_type: type[EventT], initial_revisions: tuple[tuple[Identifier, AggregateRevision], ...] = ()):
         self._ids = ids
+        self._event_type = event_type
         self._revisions = {(timeline, item.kind, item.scope_id): item.revision for timeline, item in initial_revisions}
         if len(self._revisions) != len(initial_revisions):
             raise ValueError("duplicate initial revision")
@@ -56,7 +57,7 @@ class InMemoryUnitOfWork(Generic[ChangeT, EventT]):
         selected = items[cursor.position:cursor.position + limit]
         next_cursor = DeliveryCursor(timeline_id=cursor.timeline_id, consumer_id=cursor.consumer_id,
                                      position=cursor.position + len(selected))
-        return DeliveryBatch[EventT](start_cursor=cursor, next_cursor=next_cursor, items=selected)
+        return DeliveryBatch[self._event_type](start_cursor=cursor, next_cursor=next_cursor, items=selected)
 
 
 class _ScopedWriter(Generic[ChangeT, EventT]):
@@ -109,17 +110,19 @@ class InMemoryTransaction(Generic[ChangeT, EventT]):
                                 payload_digest=digest, revisions_before=expected,
                                 revision_advances=request.revision_advances,
                                 event_ids=tuple(event.envelope.record_id for event in request.events))
+        delivery = self._delivery.copy()
+        for event in request.events:
+            for consumer in event.consumers:
+                key = (timeline, consumer)
+                stream = delivery.get(key, ())
+                delivery[key] = stream + (DeliveryItem[self._owner._event_type](sequence=len(stream) + 1, event=event),)
         # Every rejection and validation happens before staged state changes.
         for item in request.revision_advances:
             self._revisions[timeline, item.kind, item.scope_id] = item.revision
         self._requests[request.identity] = request
         self._receipts[request.identity] = receipt
         self._event_ids.update(event_keys)
-        for event in request.events:
-            for consumer in event.consumers:
-                key = (timeline, consumer)
-                stream = self._delivery.get(key, ())
-                self._delivery[key] = stream + (DeliveryItem[EventT](sequence=len(stream) + 1, event=event),)
+        self._delivery = delivery
         self._dirty = True
         return receipt
 

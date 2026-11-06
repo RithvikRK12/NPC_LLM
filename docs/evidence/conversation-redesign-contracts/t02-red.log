@@ -1,0 +1,140 @@
+test_all_audited_commands_have_typed_arguments_only (test_conversation_contracts_turn_values.TurnValueContractsTests.test_all_audited_commands_have_typed_arguments_only) ... FAIL
+test_assembled_beats_partition_complete_text_and_span_map_is_detached (test_conversation_contracts_turn_values.TurnValueContractsTests.test_assembled_beats_partition_complete_text_and_span_map_is_detached) ... FAIL
+test_candidate_requires_exact_segment_support_and_explicit_revision_link (test_conversation_contracts_turn_values.TurnValueContractsTests.test_candidate_requires_exact_segment_support_and_explicit_revision_link) ... FAIL
+test_capability_schema_is_typed_and_is_only_a_view (test_conversation_contracts_turn_values.TurnValueContractsTests.test_capability_schema_is_typed_and_is_only_a_view) ... FAIL
+test_consent_requires_exact_current_question_answer_terms_and_preconditions (test_conversation_contracts_turn_values.TurnValueContractsTests.test_consent_requires_exact_current_question_answer_terms_and_preconditions) ... FAIL
+test_context_enforces_scope_visibility_and_one_active_item_negotiation (test_conversation_contracts_turn_values.TurnValueContractsTests.test_context_enforces_scope_visibility_and_one_active_item_negotiation) ... FAIL
+test_decision_union_carries_only_one_ready_operation_and_no_authorization (test_conversation_contracts_turn_values.TurnValueContractsTests.test_decision_union_carries_only_one_ready_operation_and_no_authorization) ... FAIL
+test_exact_unicode_message_references_are_validated_against_supplied_text (test_conversation_contracts_turn_values.TurnValueContractsTests.test_exact_unicode_message_references_are_validated_against_supplied_text) ... FAIL
+test_fixture_roundtrips_all_public_composite_values (test_conversation_contracts_turn_values.TurnValueContractsTests.test_fixture_roundtrips_all_public_composite_values) ... FAIL
+test_nested_values_and_policy_maps_are_detached_and_frozen (test_conversation_contracts_turn_values.TurnValueContractsTests.test_nested_values_and_policy_maps_are_detached_and_frozen) ... FAIL
+test_pending_all_statuses_expiry_is_only_failed_preconditions (test_conversation_contracts_turn_values.TurnValueContractsTests.test_pending_all_statuses_expiry_is_only_failed_preconditions) ... FAIL
+test_proposal_describes_multiple_candidates_and_every_modality_without_authorizing (test_conversation_contracts_turn_values.TurnValueContractsTests.test_proposal_describes_multiple_candidates_and_every_modality_without_authorizing) ... FAIL
+test_proposal_reference_and_concern_ids_are_unique_and_linked (test_conversation_contracts_turn_values.TurnValueContractsTests.test_proposal_reference_and_concern_ids_are_unique_and_linked) ... FAIL
+test_receipt_outcomes_cannot_promote_acceptance_to_completion (test_conversation_contracts_turn_values.TurnValueContractsTests.test_receipt_outcomes_cannot_promote_acceptance_to_completion) ... FAIL
+test_segments_strict_union_rejects_code_quantities_and_mismatched_renderer (test_conversation_contracts_turn_values.TurnValueContractsTests.test_segments_strict_union_rejects_code_quantities_and_mismatched_renderer) ... FAIL
+
+======================================================================
+FAIL: test_all_audited_commands_have_typed_arguments_only (test_conversation_contracts_turn_values.TurnValueContractsTests.test_all_audited_commands_have_typed_arguments_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_assembled_beats_partition_complete_text_and_span_map_is_detached (test_conversation_contracts_turn_values.TurnValueContractsTests.test_assembled_beats_partition_complete_text_and_span_map_is_detached)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_candidate_requires_exact_segment_support_and_explicit_revision_link (test_conversation_contracts_turn_values.TurnValueContractsTests.test_candidate_requires_exact_segment_support_and_explicit_revision_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_capability_schema_is_typed_and_is_only_a_view (test_conversation_contracts_turn_values.TurnValueContractsTests.test_capability_schema_is_typed_and_is_only_a_view)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_consent_requires_exact_current_question_answer_terms_and_preconditions (test_conversation_contracts_turn_values.TurnValueContractsTests.test_consent_requires_exact_current_question_answer_terms_and_preconditions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_context_enforces_scope_visibility_and_one_active_item_negotiation (test_conversation_contracts_turn_values.TurnValueContractsTests.test_context_enforces_scope_visibility_and_one_active_item_negotiation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_decision_union_carries_only_one_ready_operation_and_no_authorization (test_conversation_contracts_turn_values.TurnValueContractsTests.test_decision_union_carries_only_one_ready_operation_and_no_authorization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_exact_unicode_message_references_are_validated_against_supplied_text (test_conversation_contracts_turn_values.TurnValueContractsTests.test_exact_unicode_message_references_are_validated_against_supplied_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_fixture_roundtrips_all_public_composite_values (test_conversation_contracts_turn_values.TurnValueContractsTests.test_fixture_roundtrips_all_public_composite_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_nested_values_and_policy_maps_are_detached_and_frozen (test_conversation_contracts_turn_values.TurnValueContractsTests.test_nested_values_and_policy_maps_are_detached_and_frozen)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_pending_all_statuses_expiry_is_only_failed_preconditions (test_conversation_contracts_turn_values.TurnValueContractsTests.test_pending_all_statuses_expiry_is_only_failed_preconditions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_proposal_describes_multiple_candidates_and_every_modality_without_authorizing (test_conversation_contracts_turn_values.TurnValueContractsTests.test_proposal_describes_multiple_candidates_and_every_modality_without_authorizing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_proposal_reference_and_concern_ids_are_unique_and_linked (test_conversation_contracts_turn_values.TurnValueContractsTests.test_proposal_reference_and_concern_ids_are_unique_and_linked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_receipt_outcomes_cannot_promote_acceptance_to_completion (test_conversation_contracts_turn_values.TurnValueContractsTests.test_receipt_outcomes_cannot_promote_acceptance_to_completion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+======================================================================
+FAIL: test_segments_strict_union_rejects_code_quantities_and_mismatched_renderer (test_conversation_contracts_turn_values.TurnValueContractsTests.test_segments_strict_union_rejects_code_quantities_and_mismatched_renderer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_contracts_turn_values.py", line 15, in setUp
+    self.assertTrue(hasattr(c, 'TurnProposal'), 'T02 turn contracts are absent')
+AssertionError: False is not true : T02 turn contracts are absent
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.001s
+
+FAILED (failures=15)

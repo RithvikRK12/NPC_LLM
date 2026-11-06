@@ -1,0 +1,9 @@
+test_decode_is_not_outage (test_measure.MeasurementChecks.test_decode_is_not_outage) ... ok
+test_origins_are_separate (test_measure.MeasurementChecks.test_origins_are_separate) ... ok
+test_percentiles_denominator (test_measure.MeasurementChecks.test_percentiles_denominator) ... ok
+test_url_redaction (test_measure.MeasurementChecks.test_url_redaction) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

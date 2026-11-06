@@ -1,0 +1,38 @@
+ERROR: Failed to open 'user://logs/godot2026-10-18T17.50.00.log'.
+   at: copy (core/io/dir_access.cpp:429)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: Connection to remote host failed!
+   at: connect_to_host (core/io/stream_peer_tcp.cpp:90)
+   GDScript backtrace (most recent call first):
+       [0] _load_world (res://scripts/main.gd:646)
+       [1] _ready (res://scripts/main.gd:108)
+       [2] run_check (res://tests/ui_rework_smoke.gd:43)
+ERROR: Connection to remote host failed!
+   at: connect_to_host (core/io/stream_peer_tcp.cpp:90)
+   GDScript backtrace (most recent call first):
+       [0] _load_world (res://scripts/main.gd:646)
+       [1] <anonymous lambda> (res://scripts/main.gd:573)
+ERROR: Connection to remote host failed!
+   at: connect_to_host (core/io/stream_peer_tcp.cpp:90)
+   GDScript backtrace (most recent call first):
+       [0] _load_world (res://scripts/main.gd:646)
+       [1] <anonymous lambda> (res://scripts/main.gd:573)
+ERROR: Connection to remote host failed!
+   at: connect_to_host (core/io/stream_peer_tcp.cpp:90)
+   GDScript backtrace (most recent call first):
+       [0] _load_world (res://scripts/main.gd:646)
+       [1] <anonymous lambda> (res://scripts/main.gd:573)
+ERROR: Connection to remote host failed!
+   at: connect_to_host (core/io/stream_peer_tcp.cpp:90)
+   GDScript backtrace (most recent call first):
+       [0] _load_world (res://scripts/main.gd:646)
+       [1] <anonymous lambda> (res://scripts/main.gd:573)
+ERROR: UI check timed out
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] wait_for (res://tests/ui_rework_smoke.gd:19)

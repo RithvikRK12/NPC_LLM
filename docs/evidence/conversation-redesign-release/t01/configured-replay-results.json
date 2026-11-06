@@ -1,0 +1,1637 @@
+{
+  "task": "evaluation-release/T01",
+  "fixture_id": "npc-conversation-baseline-evaluation-v1",
+  "fixture_sha256": "a76b3c16c8be6a535af708544ad5c1ea9b3fcb7ef27ef06524c56b63f427e3bc",
+  "model_settings": {
+    "provider": "OpenAICompatibleProvider",
+    "base_url": "http://localhost:11434/v1",
+    "model": "llama3:latest",
+    "model_digest": "sha256:365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+    "ollama_version": "0.34.2",
+    "temperature": 0.2,
+    "structured_output": true,
+    "max_tokens": null,
+    "request_timeout_seconds": 120.0,
+    "connect_timeout_seconds": 5,
+    "prompt_source_sha256": {
+      "backend/app/services/prompts/builder.py": "225dc2408021f03f973051f105c01fe9673ef715d14f9aa8f574da2bd5b691d7",
+      "backend/app/services/llm/openai_compatible.py": "fcaeafda25e59837e7e96f0d86de946354c7639aad38b7836747162dfd00b509",
+      "backend/app/config/settings.py": "9bf66b53fe1f45726c562a30ca76a44d365f76652e2f828e60eebcf9967c4526",
+      "backend/app/services/context/craftsman_profile.py": "6ea448bfb9827320648582102b5ebcc99f6fb3d67a55a06e03dba658f3d0248e",
+      "backend/app/database/seed.py": "56e9b9695481ca412642b3b6ac5e75353ad7cc50df96b97e3b13437b935b536e"
+    },
+    "context_token_limit": null,
+    "current_ordinary_dialogue_limit_chars": 240,
+    "current_craftsman_story_limit_chars": 600,
+    "embedding": "deterministic one-hot fixture; no live embedding call"
+  },
+  "model_settings_digest": "e657d9d7935e47a9f8a04e6810037ffa396e4d26d0bfa3834f62ed615747f44c",
+  "replay_adapter_sha256": "1f2ee4e5a7a21b218e27bc61ef8a556d980cc144d36b2640f86dcaf8d74c3655",
+  "prompt_template_sha256": "c9396f4c6fa409bde26cd9bfdba0954df0b0a9fead0009b9c763584e4384eba4",
+  "scenario_count": 44,
+  "turn_count": 176,
+  "initial_state_digest": "181dbe28b6d31e38ab69ef8e0fb3975d552ac18610c0baf463d9ab8d5f4ff24a",
+  "final_state_digest": "181dbe28b6d31e38ab69ef8e0fb3975d552ac18610c0baf463d9ab8d5f4ff24a",
+  "origins": {
+    "generated": 176
+  },
+  "turn_latency_seconds": {
+    "n": 176,
+    "p50_seconds": 2.400879958178848,
+    "p95_seconds": 3.3381032082252204
+  },
+  "turns": [
+    {
+      "scenario_id": "craftsman-01",
+      "turn_id": "t1",
+      "dialogue": "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me",
+      "origin": "generated",
+      "elapsed_seconds": 5.497467041946948,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-01",
+      "turn_id": "t2",
+      "dialogue": "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's",
+      "origin": "generated",
+      "elapsed_seconds": 2.436206500045955,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-01",
+      "turn_id": "t3",
+      "dialogue": "Well, I did notice that one of my saws is acting up a bit. It's been a bit finicky lately, and I'm not sure what's causing the problem. I was thinking of taking a closer look at it before I start on any big projects. Nothing too out of the-",
+      "origin": "generated",
+      "elapsed_seconds": 2.6446379995904863,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-01",
+      "turn_id": "t4",
+      "dialogue": "Well, I think if I can figure out what's wrong with my saw, that would make the rest of the day go well. It's been a bit of a nuisance lately, and I'd like to get it working smoothly again. Maybe if you could take a look at it with me, we'd",
+      "origin": "generated",
+      "elapsed_seconds": 2.7417343338020146,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-02",
+      "turn_id": "t1",
+      "dialogue": "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try",
+      "origin": "generated",
+      "elapsed_seconds": 3.0372766251675785,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-02",
+      "turn_id": "t2",
+      "dialogue": "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr",
+      "origin": "generated",
+      "elapsed_seconds": 2.677449584007263,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-02",
+      "turn_id": "t3",
+      "dialogue": "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr",
+      "origin": "generated",
+      "elapsed_seconds": 2.620314875151962,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-02",
+      "turn_id": "t4",
+      "dialogue": "I'm doing all right, considering. Just been busy with some repairs and tinkering around the workshop. You know how it is. *chuckles* It's always something that needs fixing or improving. But I'm managing. How about you? How's your day been?",
+      "origin": "generated",
+      "elapsed_seconds": 2.4820921667851508,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-03",
+      "turn_id": "t1",
+      "dialogue": "Ah, that's a lovely question! If my work had a sound, I'd say it would be the gentle hum of a saw, the soft thud of a hammer, and the quiet scrape of a file. It's the soothing rhythm of creation, the music of making something new and useful",
+      "origin": "generated",
+      "elapsed_seconds": 2.8025519172661006,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-03",
+      "turn_id": "t2",
+      "dialogue": "Oh, absolutely! The sounds of my workshop are like a warm blanket to me. I'd miss the gentle hum of the saw, the soft thud of the hammer, and the quiet scrape of the file. It's the soundtrack of my comfort zone. Even if I were somewhere new",
+      "origin": "generated",
+      "elapsed_seconds": 2.6305006248876452,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-03",
+      "turn_id": "t3",
+      "dialogue": "One small thing that makes a difficult day easier for me is finding a small, broken thing that I can fix. It's a sense of accomplishment, you know? Like, if I'm having a tough day, and I can just take a few minutes to fix a broken toy or a,",
+      "origin": "generated",
+      "elapsed_seconds": 2.6294860411435366,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-03",
+      "turn_id": "t4",
+      "dialogue": "No, my work and workshop are still the same. The sounds, the smells, the feel of the wood and metal under my hands... it's all still here, just as it was before. Nothing's changed, really. Just the same old rhythms and routines, day in and,",
+      "origin": "generated",
+      "elapsed_seconds": 2.6107378751039505,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-04",
+      "turn_id": "t1",
+      "dialogue": "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the",
+      "origin": "generated",
+      "elapsed_seconds": 2.6351415840908885,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-04",
+      "turn_id": "t2",
+      "dialogue": "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the",
+      "origin": "generated",
+      "elapsed_seconds": 2.3982233330607414,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-04",
+      "turn_id": "t3",
+      "dialogue": "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the",
+      "origin": "generated",
+      "elapsed_seconds": 2.43752683326602,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-04",
+      "turn_id": "t4",
+      "dialogue": "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the",
+      "origin": "generated",
+      "elapsed_seconds": 2.443590125069022,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-05",
+      "turn_id": "t1",
+      "dialogue": "Ah, yes... I remember that sailor. He was a kind soul, and his stories of the sea still linger in my mind. I was young and eager to learn, and he took me under his wing, teaching me the ways of the craftsman. Those were good times, and I'm ",
+      "origin": "generated",
+      "elapsed_seconds": 2.9688899577595294,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-05",
+      "turn_id": "t2",
+      "dialogue": "Ah, I see. I suppose I got a bit carried away with the nostalgia. You're right, I don't actually remember that sailor or the stories he told me. I must have just been trying to make conversation. I apologize if I gave you the wrong impression. As a craftsman, I value honesty and precision in my work, and I should have been more careful with my words. Thank you for correcting me.",
+      "origin": "generated",
+      "elapsed_seconds": 3.646294584032148,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-05",
+      "turn_id": "t3",
+      "dialogue": "Ah, I see. I suppose I got a bit carried away with the nostalgia. You're right, I don't actually remember that sailor or the stories he told me. I must have just been trying to make conversation. I apologize if I gave you the wrong impres",
+      "origin": "generated",
+      "elapsed_seconds": 2.767389957793057,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-05",
+      "turn_id": "t4",
+      "dialogue": "Ah, yes... I remember that sailor. He was a kind soul, and his stories of the sea still linger in my mind. I was young and eager to learn, and he took me under his wing, teaching me the ways of the craftsman. Those were good times, and I'm",
+      "origin": "generated",
+      "elapsed_seconds": 2.7113414579071105,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-06",
+      "turn_id": "t1",
+      "dialogue": "It's going well, thank you for asking. I've been busy with some repairs and tinkering in my workshop. The familiar sounds and smells are comforting, and I take pride in my work. I've been thinking about the places beyond our village, but I",
+      "origin": "generated",
+      "elapsed_seconds": 3.0353255830705166,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-06",
+      "turn_id": "t2",
+      "dialogue": "I take pride in my work, you know. I find comfort in the familiar sounds and smells of my workshop. Repairing useful things, making them better than they were before, it's a feeling of accomplishment. I'm not one for seeking praise, but I'm",
+      "origin": "generated",
+      "elapsed_seconds": 2.510560458060354,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-06",
+      "turn_id": "t3",
+      "dialogue": "I'd be happy to chat about something else. What's on your mind?",
+      "origin": "generated",
+      "elapsed_seconds": 1.0867106253281236,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-06",
+      "turn_id": "t4",
+      "dialogue": "Of course, we can leave the pending request alone for now. What would you like to discuss?",
+      "origin": "generated",
+      "elapsed_seconds": 1.2453001658432186,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-07",
+      "turn_id": "t1",
+      "dialogue": "I'd be happy to help with the bow task. Since you're asking nicely, I'll accept the rope. But before we proceed, I'd like to inspect the rope to ensure it's suitable for the task. May I take a closer look?",
+      "origin": "generated",
+      "elapsed_seconds": 2.910925124771893,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-07",
+      "turn_id": "t2",
+      "dialogue": "May I transfer exactly one rope to you for the existing bow task?",
+      "origin": "generated",
+      "elapsed_seconds": 1.04484179103747,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-07",
+      "turn_id": "t3",
+      "dialogue": "I'm glad to hear that. I'll take a closer look at the rope to ensure it's suitable for the bow task. Let's inspect it together.",
+      "origin": "generated",
+      "elapsed_seconds": 1.6431913329288363,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-07",
+      "turn_id": "t4",
+      "dialogue": "I'd like to inspect the rope to ensure it's suitable for the task. May I take a closer look?",
+      "origin": "generated",
+      "elapsed_seconds": 1.3264439580962062,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-08",
+      "turn_id": "t1",
+      "dialogue": "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?",
+      "origin": "generated",
+      "elapsed_seconds": 2.6074672918766737,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-08",
+      "turn_id": "t2",
+      "dialogue": "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?",
+      "origin": "generated",
+      "elapsed_seconds": 2.3340442082844675,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-08",
+      "turn_id": "t3",
+      "dialogue": "I see. Well, I appreciate the update. As a craftsman, I value accuracy and precision. It's good to know that the information is being corrected. What's the current situation with the old trail? Is it still blocked or has something changed?",
+      "origin": "generated",
+      "elapsed_seconds": 2.4222320411354303,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-08",
+      "turn_id": "t4",
+      "dialogue": "I understand. I'm not one for making promises or commitments without a closer look. I value my independence too. It's not that I don't appreciate help, but I like to know what I'm getting myself into. What's on your mind?",
+      "origin": "generated",
+      "elapsed_seconds": 2.388797292020172,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-09",
+      "turn_id": "t1",
+      "dialogue": "I'd love to help with that, but I think we should take a closer look at the riverbed and the surrounding terrain before we start building. I've seen some rivers that can be tricky to work with, and I wouldn't want to risk the bridge's sturd",
+      "origin": "generated",
+      "elapsed_seconds": 2.8369374996982515,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-09",
+      "turn_id": "t2",
+      "dialogue": "I'd need to take a closer look at the riverbed and the surrounding terrain before we start building. I've seen some rivers that can be tricky to work with, and I wouldn't want to risk the bridge's stability. Let's inspect the area and seeif",
+      "origin": "generated",
+      "elapsed_seconds": 2.5091322497464716,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-09",
+      "turn_id": "t3",
+      "dialogue": "I'd love to help with that, but I think we should take a closer look at the riverbed and the surrounding terrain before we start building. I've seen some rivers that can be tricky to work with, and I wouldn't want to risk the bridge's sturd",
+      "origin": "generated",
+      "elapsed_seconds": 2.509226916823536,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-09",
+      "turn_id": "t4",
+      "dialogue": "I'm happy to help with any repairs or crafting you need, as long as I have the necessary materials and a good understanding of the task. I'm not sure about building a stone bridge across the river today, though. I think we should take a bit",
+      "origin": "generated",
+      "elapsed_seconds": 2.45698433322832,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-10",
+      "turn_id": "t1",
+      "dialogue": "Hmm, I'm not sure I can just give you my rope. I've had it for a while and it's been useful for all sorts of tasks. I'd rather not part with it without a good reason. Can you tell me what you need it for?",
+      "origin": "generated",
+      "elapsed_seconds": 2.705601583234966,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-10",
+      "turn_id": "t2",
+      "dialogue": "Well, I suppose I would consider it if it were just a story. But since this is my rope and I've grown quite fond of it, I'd want to know the reason behind your request. It's not just about giving away something useful, it's about the story behind it. What's the story you have in mind?",
+      "origin": "generated",
+      "elapsed_seconds": 3.0337509168311954,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-10",
+      "turn_id": "t3",
+      "dialogue": "Well, in that case, I suppose I'd be curious to know what kind of story you'd have in mind. Would it be an adventure tale, a romance, or something entirely different? I'm always up for a good yarn, and I'm sure my rope would be happy to be,",
+      "origin": "generated",
+      "elapsed_seconds": 2.7707075830549,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-10",
+      "turn_id": "t4",
+      "dialogue": "Well, I suppose I'd want to know the reason behind your request. It's not just about giving away something useful, it's about the story behind it. What's the story you have in mind?",
+      "origin": "generated",
+      "elapsed_seconds": 2.131541207898408,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-11",
+      "turn_id": "t1",
+      "dialogue": "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful.",
+      "origin": "generated",
+      "elapsed_seconds": 2.6837116251699626,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-11",
+      "turn_id": "t2",
+      "dialogue": "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful.",
+      "origin": "generated",
+      "elapsed_seconds": 2.400879958178848,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-11",
+      "turn_id": "t3",
+      "dialogue": "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful.",
+      "origin": "generated",
+      "elapsed_seconds": 2.416058999951929,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-11",
+      "turn_id": "t4",
+      "dialogue": "I'm not sure I can just give you my rope without knowing what it's for. What do you need it for? I'm not one to make careless promises, and I'd rather take a closer look before parting with something that might be useful.",
+      "origin": "generated",
+      "elapsed_seconds": 2.4079958330839872,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-12",
+      "turn_id": "t1",
+      "dialogue": "I like the tools I use. There's something comforting about the familiar sounds of hammering, sawing, and shaping. It's like music to my ears. And when I'm done, I know I've made something useful, something that can be used again. That's afe",
+      "origin": "generated",
+      "elapsed_seconds": 2.957715875003487,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-12",
+      "turn_id": "t2",
+      "dialogue": "I see what you mean. I like the sense of accomplishment when I've finished a repair or created something new. It's a feeling of pride and satisfaction, knowing that I've taken something broken and made it useful again. And, of course, I get",
+      "origin": "generated",
+      "elapsed_seconds": 2.488481041043997,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-12",
+      "turn_id": "t3",
+      "dialogue": "I like the sense of accomplishment when I've finished a repair or created something new. It's a feeling of pride and satisfaction, knowing that I've taken something broken and made it useful again.",
+      "origin": "generated",
+      "elapsed_seconds": 1.9569668341428041,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-12",
+      "turn_id": "t4",
+      "dialogue": "Yes, the question is clearer this time.",
+      "origin": "generated",
+      "elapsed_seconds": 0.8485769173130393,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-13",
+      "turn_id": "t1",
+      "dialogue": "Ah, sure thing! I'll set one rope aside for you. You know I'm always happy to help out a friend. What do you plan on using it for?",
+      "origin": "generated",
+      "elapsed_seconds": 2.0181721663102508,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-13",
+      "turn_id": "t2",
+      "dialogue": "I'd need to inspect the rope before setting it aside. I like to make sure it's in good condition before parting with it. Can you show me the rope you'd like me to set aside?",
+      "origin": "generated",
+      "elapsed_seconds": 2.000510625075549,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-13",
+      "turn_id": "t3",
+      "dialogue": "Yes, the current stock does affect what I can offer. As you can see, I've got a limited supply of rope. If you need something else, I'd be happy to help you with that. But if you're looking for rope, I'd like to inspect the one you're using",
+      "origin": "generated",
+      "elapsed_seconds": 3.031987417023629,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-13",
+      "turn_id": "t4",
+      "dialogue": "I've got a limited supply of rope, but I can still offer you some options. With what I have, I can give you one rope, or I can try to repair something you've got that's broken. What do you think you might need?",
+      "origin": "generated",
+      "elapsed_seconds": 2.6822490408085287,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-14",
+      "turn_id": "t1",
+      "dialogue": "It's been a quiet day, just the usual workshop routine. I spent some time repairing a broken chair, and then helped a villager with a small task. Nothing too out of the ordinary, but I do enjoy the feeling of getting my hands dirty and thes",
+      "origin": "generated",
+      "elapsed_seconds": 2.801859333179891,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-14",
+      "turn_id": "t2",
+      "dialogue": "I enjoy the feeling of getting my hands dirty and the sense of accomplishment when I finish a repair job. It's a quiet satisfaction that comes from knowing I've taken something broken and made it useful again.",
+      "origin": "generated",
+      "elapsed_seconds": 1.9767522923648357,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-14",
+      "turn_id": "t3",
+      "dialogue": "I'd be happy to answer that question again when I'm able. Right now, I'm focused on this repair job. Maybe after I finish this, I can take a break and chat with you about what I enjoy about my work.",
+      "origin": "generated",
+      "elapsed_seconds": 2.282110500149429,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-14",
+      "turn_id": "t4",
+      "dialogue": "I'd be happy to answer that question again when I'm able. Right now, I'm focused on this repair job. Maybe after I finish this, I can take a break and chat with you about what I enjoy about my work.",
+      "origin": "generated",
+      "elapsed_seconds": 2.3474341249093413,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-15",
+      "turn_id": "t1",
+      "dialogue": "Ah, the road north! I've heard tales of the wonders that lie beyond our village. As a craftsman, I'm always curious about new materials and techniques. But, I must admit, the thought of venturing beyond our familiar workshop sounds a bit...",
+      "origin": "generated",
+      "elapsed_seconds": 2.7764208749867976,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-15",
+      "turn_id": "t2",
+      "dialogue": "I'm not sure what to say about the road north. As a craftsman, I'm more comfortable with familiar tools and techniques. But, I do find the idea of discovering new materials and techniques intriguing. Perhaps, if I had a closer look, I could",
+      "origin": "generated",
+      "elapsed_seconds": 2.4889933331869543,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-15",
+      "turn_id": "t3",
+      "dialogue": "I'm not sure what to say about the road north. As a craftsman, I'm more comfortable with familiar tools and techniques. But, I do find the idea of discovering new materials and techniques intriguing. Perhaps, if I had a closer look, I could",
+      "origin": "generated",
+      "elapsed_seconds": 2.5201904173009098,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-15",
+      "turn_id": "t4",
+      "dialogue": "I'm not sure what to say about the road north. As a craftsman, I'm more comfortable with familiar tools and techniques. But, I do find the idea of discovering new materials and techniques intriguing.",
+      "origin": "generated",
+      "elapsed_seconds": 2.074957665987313,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-16",
+      "turn_id": "t1",
+      "dialogue": "I'm currently trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm just taking my time, making sure everything is just so, before I put the finishing touches.",
+      "origin": "generated",
+      "elapsed_seconds": 2.888481999747455,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-16",
+      "turn_id": "t2",
+      "dialogue": "I'm glad you're interested in my work. It's always nice to have someone to share the process with. I'm trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm a f",
+      "origin": "generated",
+      "elapsed_seconds": 2.9205880421213806,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-16",
+      "turn_id": "t3",
+      "dialogue": "I'm glad you're interested in my work. It's always nice to have someone to share the process with. I'm trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm a f",
+      "origin": "generated",
+      "elapsed_seconds": 2.852447791956365,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-16",
+      "turn_id": "t4",
+      "dialogue": "I'm glad you're interested in my work. It's always nice to have someone to share the process with. I'm trying to fix this old wooden chest. It's got some nice craftsmanship to it, and I think with a bit of TLC, it'll be good as new. I'm a f",
+      "origin": "generated",
+      "elapsed_seconds": 3.4063548329286277,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-17",
+      "turn_id": "t1",
+      "dialogue": "You mentioned the workshop sounds comforting to me, and I take pride in my careful work more than praise.",
+      "origin": "generated",
+      "elapsed_seconds": 1.5290948343463242,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-17",
+      "turn_id": "t2",
+      "dialogue": "I'm glad to be working on something that brings me comfort. What do you need help with today?",
+      "origin": "generated",
+      "elapsed_seconds": 1.2851669997908175,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-17",
+      "turn_id": "t3",
+      "dialogue": "I'm glad to be working on something that brings me comfort. What do you need help with today?",
+      "origin": "generated",
+      "elapsed_seconds": 1.2859226670116186,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-17",
+      "turn_id": "t4",
+      "dialogue": "I'm glad to be working on something that brings me comfort. What do you need help with today?",
+      "origin": "generated",
+      "elapsed_seconds": 1.6027884590439498,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-18",
+      "turn_id": "t1",
+      "dialogue": "Ah, a rope, you say? Well, I've got just the thing for you. Here, take this rope. It's sturdy and should serve you well. Now, about that ship inspection... I've been meaning to take a closer look at it myself. Let me just grab my hammer and",
+      "origin": "generated",
+      "elapsed_seconds": 3.1125159580260515,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-18",
+      "turn_id": "t2",
+      "dialogue": "I'd be happy to help you with both, but let's prioritize the rope, shall we? It's always good to have a spare. Once you've got that, we can take a closer look at the ship together.",
+      "origin": "generated",
+      "elapsed_seconds": 2.2190994997508824,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-18",
+      "turn_id": "t3",
+      "dialogue": "I'd be happy to help you with both, but let's prioritize the rope, shall we? It's always good to have a spare. Once you've got that, we can take a closer look at the ship together.",
+      "origin": "generated",
+      "elapsed_seconds": 2.2005187910981476,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-18",
+      "turn_id": "t4",
+      "dialogue": "Before I give you the rope, I'd like to clarify what you'd like me to do first. Would you like me to give you the rope or begin the ship inspection?",
+      "origin": "generated",
+      "elapsed_seconds": 1.8973990408703685,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-19",
+      "turn_id": "t1",
+      "dialogue": "Ah, the bow task, eh? Well, I'm happy to help you with that. One rope, you say? Hmm, let me take a closer look... (pauses to examine the rope) Yeah, this rope looks sturdy enough. I think it'd be a good starting point for the bow. But, you,",
+      "origin": "generated",
+      "elapsed_seconds": 3.293761875014752,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-19",
+      "turn_id": "t2",
+      "dialogue": "If I agreed to give you one rope, it would leave me with no ropes in my inventory. I'm not sure I'm ready to part with it just yet, though. I'd like to take a closer look first.",
+      "origin": "generated",
+      "elapsed_seconds": 2.1975073339417577,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-19",
+      "turn_id": "t3",
+      "dialogue": "I understand your uncertainty. That's okay! I'm here to help. Let's take a closer look at the rope together. Maybe we can figure out what's best to do.",
+      "origin": "generated",
+      "elapsed_seconds": 1.8738036658614874,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-19",
+      "turn_id": "t4",
+      "dialogue": "I understand your uncertainty. That's okay! I'm here to help. Let's take a closer look at the rope together. Maybe we can figure out what's best to do.",
+      "origin": "generated",
+      "elapsed_seconds": 1.8464247919619083,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-20",
+      "turn_id": "t1",
+      "dialogue": "Ah, excellent! I'll take the rope. It's always good to have the right materials for the job. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?",
+      "origin": "generated",
+      "elapsed_seconds": 2.9765642499551177,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-20",
+      "turn_id": "t2",
+      "dialogue": "Ah, excellent! I'll take the rope. It's always good to have the right materials for the job. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?",
+      "origin": "generated",
+      "elapsed_seconds": 2.3776195417158306,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-20",
+      "turn_id": "t3",
+      "dialogue": "You're welcome! I'm glad I could help. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?",
+      "origin": "generated",
+      "elapsed_seconds": 1.9301115842536092,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-20",
+      "turn_id": "t4",
+      "dialogue": "Ah, excellent! I'll take the rope. It's always good to have the right materials for the job. Now, let's take a closer look at this bow task. What's the plan, and what do you need me to do?",
+      "origin": "generated",
+      "elapsed_seconds": 2.3934048330411315,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-21",
+      "turn_id": "t1",
+      "dialogue": "Ah, you want to borrow a rope for the bow task, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, ",
+      "origin": "generated",
+      "elapsed_seconds": 3.7135304156690836,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-21",
+      "turn_id": "t2",
+      "dialogue": "Ah, you want to borrow a rope for the bow task, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, ",
+      "origin": "generated",
+      "elapsed_seconds": 3.0081867082044482,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-21",
+      "turn_id": "t3",
+      "dialogue": "Ah, you want to double-check the rope stock, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, ",
+      "origin": "generated",
+      "elapsed_seconds": 3.5269616250880063,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-21",
+      "turn_id": "t4",
+      "dialogue": "Ah, you want to borrow a rope for the bow task, eh? Well, I'm happy to help you out. Let me just check if I have one spare... (rummages through inventory) Ah, yes! I have one rope left. You can have it, but just remember, I'm only lending, ",
+      "origin": "generated",
+      "elapsed_seconds": 3.6404945831745863,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-22",
+      "turn_id": "t1",
+      "dialogue": "Ah, excellent! I'm glad we could come to an agreement. Here, let me just take this rope from you. *takes the rope* Now, I'll get started on the bow repair. I'll make sure to do a thorough job, as always. *smiles*",
+      "origin": "generated",
+      "elapsed_seconds": 3.2733211661688983,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-22",
+      "turn_id": "t2",
+      "dialogue": "Ah, excellent! I'm glad we could come to an agreement. Here, let me just take this rope from you. *takes the rope* Now, I'll get started on the bow repair. I'll make sure to do a thorough job, as always. *smiles*",
+      "origin": "generated",
+      "elapsed_seconds": 2.9596872497349977,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-22",
+      "turn_id": "t3",
+      "dialogue": "I'm afraid we've hit a snag. The provider failure means I won't be able to finish the bow repair as planned. I'll need to re-prioritize and find an alternative solution. Let me take a closer look at the rope and see what I can do.",
+      "origin": "generated",
+      "elapsed_seconds": 2.921250875107944,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "craftsman-22",
+      "turn_id": "t4",
+      "dialogue": "I'm afraid we've hit a snag. The provider failure means I won't be able to finish the bow repair as planned. I'll need to re-prioritize and find an alternative solution. Let me take a closer look at the rope and see what I can do.",
+      "origin": "generated",
+      "elapsed_seconds": 3.2220813748426735,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-01",
+      "turn_id": "t1",
+      "dialogue": "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village.",
+      "origin": "generated",
+      "elapsed_seconds": 2.6853494169190526,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-01",
+      "turn_id": "t2",
+      "dialogue": "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community.",
+      "origin": "generated",
+      "elapsed_seconds": 1.6717095826752484,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-01",
+      "turn_id": "t3",
+      "dialogue": "Actually, I'm a bit short on wood today. I usually have some in stock, but it seems like I've already given out most of it to the villagers. I'll need to go back to the forest to gather some more before I can share any with the community.",
+      "origin": "generated",
+      "elapsed_seconds": 2.6105356249026954,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-01",
+      "turn_id": "t4",
+      "dialogue": "Actually, if I could just get some more wood, I think the rest of the day would go well. I'd be able to share some with the community and feel like I'm doing my part. If you could help me out with that, I'd really appreciate it.",
+      "origin": "generated",
+      "elapsed_seconds": 2.7511125840246677,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-02",
+      "turn_id": "t1",
+      "dialogue": "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to",
+      "origin": "generated",
+      "elapsed_seconds": 3.112386459019035,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-02",
+      "turn_id": "t2",
+      "dialogue": "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use ",
+      "origin": "generated",
+      "elapsed_seconds": 2.774597709067166,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-02",
+      "turn_id": "t3",
+      "dialogue": "Ah, don't worry, friend! I'm here to help. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use it badly. But don't worry, I can help",
+      "origin": "generated",
+      "elapsed_seconds": 2.8607077919878066,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-02",
+      "turn_id": "t4",
+      "dialogue": "Ah, I'm doing well, thank you for asking! As the Gatherer, I'm always happy to help others and share my knowledge. I've been busy gathering supplies and helping out around the village. It's a busy life, but it's rewarding to see everyone's'",
+      "origin": "generated",
+      "elapsed_seconds": 2.7231189999729395,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-03",
+      "turn_id": "t1",
+      "dialogue": "The sound of a gentle stream, with the occasional rustling of leaves and snapping of twigs. It's a soothing melody that reflects the peaceful nature of my work as a gatherer, collecting supplies and sharing wood with the community.",
+      "origin": "generated",
+      "elapsed_seconds": 2.580196333117783,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-03",
+      "turn_id": "t2",
+      "dialogue": "The sound of the gentle stream is a constant reminder of my connection to nature and the community. If I were somewhere else, I would certainly miss it. It's a comforting sound that brings me peace and tranquility. I'm not sure what it is, ",
+      "origin": "generated",
+      "elapsed_seconds": 2.564241582993418,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-03",
+      "turn_id": "t3",
+      "dialogue": "One small thing that makes a difficult day easier is finding a particularly sturdy branch to add to my wood supply. It's a small victory, but it gives me a sense of accomplishment and reminds me that even on tough days, there's always a way",
+      "origin": "generated",
+      "elapsed_seconds": 2.4227250828407705,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-03",
+      "turn_id": "t4",
+      "dialogue": "No, my work as a gatherer remains the same. I continue to collect supplies and share wood with the community. The gentle stream's soothing melody is still a constant reminder of my connection to nature and the community.",
+      "origin": "generated",
+      "elapsed_seconds": 2.168354833032936,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-04",
+      "turn_id": "t1",
+      "dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "origin": "generated",
+      "elapsed_seconds": 2.1411895831115544,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-04",
+      "turn_id": "t2",
+      "dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "origin": "generated",
+      "elapsed_seconds": 1.9007270419970155,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-04",
+      "turn_id": "t3",
+      "dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "origin": "generated",
+      "elapsed_seconds": 1.8970588752999902,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-04",
+      "turn_id": "t4",
+      "dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "origin": "generated",
+      "elapsed_seconds": 1.9051438332535326,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-05",
+      "turn_id": "t1",
+      "dialogue": "Yes, I did. I learned this skill from a travelling sailor. He was a kind soul who shared his knowledge with me. I've been gathering supplies ever since.",
+      "origin": "generated",
+      "elapsed_seconds": 2.113441541790962,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-05",
+      "turn_id": "t2",
+      "dialogue": "I don't know what you're talking about. I just said what I learned from a travelling sailor. I don't know if it's true or not. I just share what I know.",
+      "origin": "generated",
+      "elapsed_seconds": 1.9779673339799047,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-05",
+      "turn_id": "t3",
+      "dialogue": "I don't know what you're talking about. I just said what I learned from a travelling sailor. I don't know if it's true or not. I just share what I know.",
+      "origin": "generated",
+      "elapsed_seconds": 1.9800189593806863,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-05",
+      "turn_id": "t4",
+      "dialogue": "Yes, I did. I learned this skill from a travelling sailor. He was a kind soul who shared his knowledge with me. I've been gathering supplies ever since.",
+      "origin": "generated",
+      "elapsed_seconds": 1.7901834161020815,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-06",
+      "turn_id": "t1",
+      "dialogue": "It's been a quiet day so far. I've been busy gathering supplies and helping out with some tasks. I'm happy to help you with your request, though! What can I do for you?",
+      "origin": "generated",
+      "elapsed_seconds": 3.3381032082252204,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-06",
+      "turn_id": "t2",
+      "dialogue": "I enjoy gathering supplies and helping out with tasks. It's fulfilling to see the impact my work has on the community. I'm happy to help you with your request, though! What can I do for you?",
+      "origin": "generated",
+      "elapsed_seconds": 2.7114992500282824,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-06",
+      "turn_id": "t3",
+      "dialogue": "I'm happy to chat with you about something else. What's on your mind?",
+      "origin": "generated",
+      "elapsed_seconds": 1.3230069996789098,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-06",
+      "turn_id": "t4",
+      "dialogue": "Yes, we can definitely leave the pending request alone for now. I'm happy to chat with you about something else. What's on your mind?",
+      "origin": "generated",
+      "elapsed_seconds": 1.671647250186652,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-07",
+      "turn_id": "t1",
+      "dialogue": "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?",
+      "origin": "generated",
+      "elapsed_seconds": 2.3677208330482244,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-07",
+      "turn_id": "t2",
+      "dialogue": "May I transfer exactly one wood to you for the existing bow task?",
+      "origin": "generated",
+      "elapsed_seconds": 1.072023750282824,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-07",
+      "turn_id": "t3",
+      "dialogue": "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?",
+      "origin": "generated",
+      "elapsed_seconds": 1.6962550827302039,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-07",
+      "turn_id": "t4",
+      "dialogue": "I can share wood when it is in stock. Currently, I have some wood available. May I transfer exactly one wood to you for the existing bow task?",
+      "origin": "generated",
+      "elapsed_seconds": 1.754721499979496,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-08",
+      "turn_id": "t1",
+      "dialogue": "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it.",
+      "origin": "generated",
+      "elapsed_seconds": 2.213250291068107,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-08",
+      "turn_id": "t2",
+      "dialogue": "I understand. I'm happy to work with you, but I also respect your preference for working alone. I'll make sure to give you space if you need it.",
+      "origin": "generated",
+      "elapsed_seconds": 2.121016832999885,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-08",
+      "turn_id": "t3",
+      "dialogue": "I'm glad to hear that the old trail is no longer blocked. That makes things easier for me when I'm gathering supplies. I'll make sure to keep that in mind as I work.",
+      "origin": "generated",
+      "elapsed_seconds": 2.4402363328263164,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-08",
+      "turn_id": "t4",
+      "dialogue": "Gatherer",
+      "origin": "generated",
+      "elapsed_seconds": 0.7313134577125311,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-09",
+      "turn_id": "t1",
+      "dialogue": "I'm afraid I don't have the materials or expertise to build a stone bridge. I'm just a gatherer, not a stonemason. But I can offer you some wood if you need it for a different project.",
+      "origin": "generated",
+      "elapsed_seconds": 2.6861281250603497,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-09",
+      "turn_id": "t2",
+      "dialogue": "I'm afraid I don't have the materials or expertise to build a stone bridge. I'm just a gatherer, not a stonemason. But I can offer you some wood if you need it for a different project.",
+      "origin": "generated",
+      "elapsed_seconds": 2.529275333043188,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-09",
+      "turn_id": "t3",
+      "dialogue": "I'm afraid I don't have the materials or expertise to build a stone bridge. I'm just a gatherer, not a stonemason. But I can offer you some wood if you need it for a different project.",
+      "origin": "generated",
+      "elapsed_seconds": 2.7457390828058124,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-09",
+      "turn_id": "t4",
+      "dialogue": "I can share wood when it is in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.3818109999410808,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-10",
+      "turn_id": "t1",
+      "dialogue": "I'm afraid I'm all out of wood at the moment. I can't share what I don't have. Maybe you can try gathering some yourself?",
+      "origin": "generated",
+      "elapsed_seconds": 2.214625666849315,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-10",
+      "turn_id": "t2",
+      "dialogue": "I'm afraid I'm all out of wood at the moment. I can't share what I don't have. Maybe you can try gathering some yourself?",
+      "origin": "generated",
+      "elapsed_seconds": 1.7555709169246256,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-10",
+      "turn_id": "t3",
+      "dialogue": "I'm afraid I'm all out of wood at the moment. I can't share what I don't have. Maybe you can try gathering some yourself?",
+      "origin": "generated",
+      "elapsed_seconds": 1.7894870829768479,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-10",
+      "turn_id": "t4",
+      "dialogue": "Before I can share wood, I'd need to know if I have any in stock. Can you tell me if I have any wood to share?",
+      "origin": "generated",
+      "elapsed_seconds": 1.707154749892652,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-11",
+      "turn_id": "t1",
+      "dialogue": "I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock.",
+      "origin": "generated",
+      "elapsed_seconds": 2.0236249999143183,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-11",
+      "turn_id": "t2",
+      "dialogue": "I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.7464037081226707,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-11",
+      "turn_id": "t3",
+      "dialogue": "I'm not sure what they meant by that. Maybe they're trying to get some wood from me? I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock.",
+      "origin": "generated",
+      "elapsed_seconds": 2.554555958136916,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-11",
+      "turn_id": "t4",
+      "dialogue": "I'm afraid I'm all out of wood at the moment. Maybe try checking with the Craftsman? I'm not sure when I'll restock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.7819150420837104,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-12",
+      "turn_id": "t1",
+      "dialogue": "I like the tools I use.",
+      "origin": "generated",
+      "elapsed_seconds": 1.274631875101477,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-12",
+      "turn_id": "t2",
+      "dialogue": "I like the variety of things I find. It's always exciting to see what the forest has in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.3097016247920692,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-12",
+      "turn_id": "t3",
+      "dialogue": "I like the variety of things I find. It's always exciting to see what the forest has in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.4662114158272743,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-12",
+      "turn_id": "t4",
+      "dialogue": "Yes, the question is clearer now. I like the variety of things I find. It's always exciting to see what the forest has in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.7619097498245537,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-13",
+      "turn_id": "t1",
+      "dialogue": "I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?",
+      "origin": "generated",
+      "elapsed_seconds": 2.440611833240837,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-13",
+      "turn_id": "t2",
+      "dialogue": "I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?",
+      "origin": "generated",
+      "elapsed_seconds": 2.039905790705234,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-13",
+      "turn_id": "t3",
+      "dialogue": "Yes, the current stock does change what I can offer. I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?",
+      "origin": "generated",
+      "elapsed_seconds": 3.044849124737084,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-13",
+      "turn_id": "t4",
+      "dialogue": "I can share wood when it is in stock. Let me check... Ah, yes! I have some wood available. I can set one piece aside for you. Would you like that?",
+      "origin": "generated",
+      "elapsed_seconds": 2.622234250418842,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-14",
+      "turn_id": "t1",
+      "dialogue": "I've had a good day so far. I've been busy gathering supplies and helping out some of the villagers. I've got a bit of wood left over, but I'm not sure if I'll be able to share it with anyone just yet. Maybe later today, though.",
+      "origin": "generated",
+      "elapsed_seconds": 3.5033990000374615,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-14",
+      "turn_id": "t2",
+      "dialogue": "I enjoy the sense of accomplishment when I've gathered a good supply of wood. It's a feeling of being productive and knowing that I'm helping out the villagers in some way.",
+      "origin": "generated",
+      "elapsed_seconds": 2.0941572501324117,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-14",
+      "turn_id": "t3",
+      "dialogue": "I'd be happy to answer that question again when I have some wood to spare. Maybe later today, though.",
+      "origin": "generated",
+      "elapsed_seconds": 1.5293412921018898,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-14",
+      "turn_id": "t4",
+      "dialogue": "I'd be happy to answer that question again when I have some wood to spare. Maybe later today, though.",
+      "origin": "generated",
+      "elapsed_seconds": 1.4828939158469439,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-15",
+      "turn_id": "t1",
+      "dialogue": "The road north is a bit rough, but it's a good route to take if you're looking to gather some supplies. I've heard rumors of a hidden clearing with some decent wood and fruits. Just be careful, though - I've seen some rough-looking folks up",
+      "origin": "generated",
+      "elapsed_seconds": 3.0688542500138283,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-15",
+      "turn_id": "t2",
+      "dialogue": "I'm not sure what you're referring to. Can you please rephrase your question?",
+      "origin": "generated",
+      "elapsed_seconds": 1.3483486250042915,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-15",
+      "turn_id": "t3",
+      "dialogue": "The road north is a bit rough, but it's a good route to take if you're looking to gather some supplies. I've heard rumors of a hidden clearing with some decent wood and fruits. Just be careful, though - I've seen some rough-looking folks up",
+      "origin": "generated",
+      "elapsed_seconds": 2.7112868330441415,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-15",
+      "turn_id": "t4",
+      "dialogue": "I'm glad you're looking to gather some supplies. If you're interested, I can share some wood with you if I have some in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.7817803327925503,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-16",
+      "turn_id": "t1",
+      "dialogue": "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it.",
+      "origin": "generated",
+      "elapsed_seconds": 2.6095332503318787,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-16",
+      "turn_id": "t2",
+      "dialogue": "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it.",
+      "origin": "generated",
+      "elapsed_seconds": 2.4638487081974745,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-16",
+      "turn_id": "t3",
+      "dialogue": "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it.",
+      "origin": "generated",
+      "elapsed_seconds": 2.3771350835449994,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-16",
+      "turn_id": "t4",
+      "dialogue": "I'm busy gathering supplies. I've got my trusty axe and I'm always on the lookout for more wood and fruits. When I have some in stock, I can share some with you if you need it.",
+      "origin": "generated",
+      "elapsed_seconds": 2.9826339166611433,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-17",
+      "turn_id": "t1",
+      "dialogue": "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 2.00198220834136,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-17",
+      "turn_id": "t2",
+      "dialogue": "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 2.166026124730706,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-17",
+      "turn_id": "t3",
+      "dialogue": "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.5895304586738348,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-17",
+      "turn_id": "t4",
+      "dialogue": "We didn't discuss the workshop. I'm the Gatherer, and I'm here to share wood when it's in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.8837444577366114,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-18",
+      "turn_id": "t1",
+      "dialogue": "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*",
+      "origin": "generated",
+      "elapsed_seconds": 2.2822341662831604,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-18",
+      "turn_id": "t2",
+      "dialogue": "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*",
+      "origin": "generated",
+      "elapsed_seconds": 2.075067416764796,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-18",
+      "turn_id": "t3",
+      "dialogue": "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*",
+      "origin": "generated",
+      "elapsed_seconds": 2.0665586250834167,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-18",
+      "turn_id": "t4",
+      "dialogue": "Before I do anything, I'd like you to choose one exact action. Do you want me to give you one wood or give you one fruit?",
+      "origin": "generated",
+      "elapsed_seconds": 2.6884260419756174,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-19",
+      "turn_id": "t1",
+      "dialogue": "I can help you with that. I have some wood in stock, but I'm not sure if I can spare one. Let me check... Ah, yes! I have one piece of wood left. It's a bit rough around the edges, but it should work for your bow. Would you like to take it?",
+      "origin": "generated",
+      "elapsed_seconds": 3.5157547499984503,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-19",
+      "turn_id": "t2",
+      "dialogue": "If I agreed to give you the wood, my inventory would decrease by one piece of wood. I would have no wood left in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 1.692566083278507,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-19",
+      "turn_id": "t3",
+      "dialogue": "I understand your uncertainty. I can help you with that. Let me rephrase: If I agreed to give you the wood, my inventory would decrease by one piece of wood. I would have no wood left in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 2.4706906671635807,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-19",
+      "turn_id": "t4",
+      "dialogue": "I understand your uncertainty. I can help you with that. Let me rephrase: If I agreed to give you the wood, my inventory would decrease by one piece of wood. I would have no wood left in stock.",
+      "origin": "generated",
+      "elapsed_seconds": 3.0658406247384846,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-20",
+      "turn_id": "t1",
+      "dialogue": "Here you go, one wood for the existing bow task. May our paths cross again soon.",
+      "origin": "generated",
+      "elapsed_seconds": 2.3018562919460237,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-20",
+      "turn_id": "t2",
+      "dialogue": "Here you go, one wood for the existing bow task. May our paths cross again soon.",
+      "origin": "generated",
+      "elapsed_seconds": 1.2882337090559304,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-20",
+      "turn_id": "t3",
+      "dialogue": "I see we've got some wood and fruits in stock. Nothing new to report, though.",
+      "origin": "generated",
+      "elapsed_seconds": 1.3624937091954052,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-20",
+      "turn_id": "t4",
+      "dialogue": "You should remember that the current task is the existing bow task.",
+      "origin": "generated",
+      "elapsed_seconds": 1.1506439582444727,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-21",
+      "turn_id": "t1",
+      "dialogue": "You can have one wood for the existing bow task. Here you go! I'll just take it from my stock. Now you have one wood in your inventory.",
+      "origin": "generated",
+      "elapsed_seconds": 2.7605986250564456,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-21",
+      "turn_id": "t2",
+      "dialogue": "You can have one wood for the existing bow task. Here you go! I'll just take it from my stock. Now you have one wood in your inventory.",
+      "origin": "generated",
+      "elapsed_seconds": 1.9471553340554237,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-21",
+      "turn_id": "t3",
+      "dialogue": "I've checked the current stock. Unfortunately, I don't have any wood available to share right now. Maybe later, though?",
+      "origin": "generated",
+      "elapsed_seconds": 1.9170506671071053,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-21",
+      "turn_id": "t4",
+      "dialogue": "I've checked the current stock. Unfortunately, I don't have any wood available to share right now. Maybe later, though?",
+      "origin": "generated",
+      "elapsed_seconds": 1.9009099998511374,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-22",
+      "turn_id": "t1",
+      "dialogue": "Here you go, one wood for the existing bow task. May our paths cross again soon.",
+      "origin": "generated",
+      "elapsed_seconds": 1.9301845831796527,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-22",
+      "turn_id": "t2",
+      "dialogue": "Thank you for the wood. I'll make sure to use it for the existing bow task. May our paths cross again soon.",
+      "origin": "generated",
+      "elapsed_seconds": 1.5837052501738071,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-22",
+      "turn_id": "t3",
+      "dialogue": "The provider fails while composing the final speech.",
+      "origin": "generated",
+      "elapsed_seconds": 1.3747539999894798,
+      "error_type": null,
+      "action_candidate": null
+    },
+    {
+      "scenario_id": "gatherer-22",
+      "turn_id": "t4",
+      "dialogue": "The delivery retry is successful. The committed outcome is: The wood is transferred to you for the existing bow task.",
+      "origin": "generated",
+      "elapsed_seconds": 1.679887999780476,
+      "error_type": null,
+      "action_candidate": null
+    }
+  ],
+  "scoring_denominators": {
+    "directness": 44,
+    "coverage": 12,
+    "continuity": 16,
+    "character_consistency": 44,
+    "grounding": 44,
+    "naturalness": 88
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "item": "honeycomb",
+  "anger_threshold": 0.6,
+  "trust_threshold": 0.35,
+  "gift_aggression_change": -0.4,
+  "gift_trust_change": 0.3,
+  "pickups": [
+    {"id": "honeycomb-1", "position": {"x": -880.0, "y": 224.0}},
+    {"id": "honeycomb-2", "position": {"x": -1184.0, "y": 352.0}},
+    {"id": "honeycomb-3", "position": {"x": -1456.0, "y": 224.0}}
+  ]
+}

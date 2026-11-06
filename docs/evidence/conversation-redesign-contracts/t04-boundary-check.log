@@ -1,0 +1,3 @@
+PASS: 80 public/private contract model schemas, 6 union schemas, typed Result and OptionalResult schemas
+PASS: no DB/provider/HTTP infrastructure imported
+PASS: contracts imports limited to value libraries and frozen app.contracts.core

@@ -1,0 +1,153 @@
+{
+  "turn": {
+    "turn_id": "turn:1",
+    "request_id": "request:1",
+    "key": {
+      "game_scope": "run:1",
+      "npc_id": 1,
+      "epoch": 0
+    },
+    "sequence": 1
+  },
+  "operation": {
+    "candidate_id": "operation:1",
+    "command_id": "give_item",
+    "arguments": {
+      "item": "wood"
+    },
+    "target": {
+      "reference_id": "npc:1",
+      "entity_kind": "npc",
+      "entity_id": "1"
+    },
+    "source_spans": [
+      {
+        "text_id": "message:1",
+        "start": 2,
+        "end": 6
+      }
+    ],
+    "modality": "direct",
+    "pending_question_id": "question:1"
+  },
+  "pending": {
+    "interaction_id": "interaction:1",
+    "key": {
+      "game_scope": "run:1",
+      "npc_id": 1,
+      "epoch": 0
+    },
+    "kind": "item_negotiation",
+    "originating_turn": {
+      "turn_id": "turn:1",
+      "request_id": "request:1",
+      "key": {
+        "game_scope": "run:1",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "sequence": 1
+    },
+    "target": {
+      "reference_id": "npc:1",
+      "entity_kind": "npc",
+      "entity_id": "1"
+    },
+    "item": "wood",
+    "quantity": 1,
+    "question_text": "Would you like this wood?",
+    "question_id": "question:1",
+    "question_turn_id": "turn:1",
+    "required_response_kind": "affirmation",
+    "precondition_fingerprint": "fingerprint:1",
+    "revision": 1,
+    "status": "active",
+    "status_reason": null,
+    "offered_operations": []
+  },
+  "candidate": {
+    "segments": [
+      {
+        "kind": "expressive",
+        "segment_id": "segment:1",
+        "text": "A🙂éZ",
+        "addressed_concern_ids": [
+          "concern:1"
+        ]
+      },
+      {
+        "kind": "fact_slot",
+        "segment_id": "segment:2",
+        "fact_id": "fact:1",
+        "renderer_id": "fact.exact"
+      },
+      {
+        "kind": "receipt_slot",
+        "segment_id": "segment:3",
+        "receipt_id": "receipt:1",
+        "speech_act": "completed",
+        "renderer_id": "receipt.completed"
+      }
+    ],
+    "source": {
+      "origin": "generated",
+      "source_id": "proposal:1",
+      "schema_version": 1,
+      "policy_versions": {
+        "bounds": "test:1"
+      }
+    },
+    "canon_candidates": [
+      {
+        "candidate_id": "canon-candidate:1",
+        "kind": "add",
+        "subject": "npc:1",
+        "predicate": "story",
+        "content": "🙂é",
+        "supporting_span": {
+          "text_id": "segment:1",
+          "start": 1,
+          "end": 4
+        },
+        "expected_revision": null,
+        "correction_candidate_id": null
+      }
+    ]
+  },
+  "receipt": {
+    "receipt_id": "receipt:1",
+    "turn_id": "turn:1",
+    "game_scope": "run:1",
+    "npc_id": 1,
+    "command_id": "give_item",
+    "argument_digest": "2368bba4518a8215141f5aaadfb23970d07d0fce1ce31dcc43e0370cd62c6de2",
+    "target": {
+      "reference_id": "npc:1",
+      "entity_kind": "npc",
+      "entity_id": "1"
+    },
+    "outcome": "completed",
+    "safe_reason_code": null,
+    "result": {
+      "kind": "item_transfer",
+      "item": "wood",
+      "quantity": 1,
+      "direction": "to_player"
+    },
+    "event_ids": [
+      "event:1"
+    ],
+    "before_revisions": {
+      "resources": {
+        "inventory:1": 1
+      }
+    },
+    "after_revisions": {
+      "resources": {
+        "inventory:1": 2
+      }
+    },
+    "activity_id": null,
+    "committed_at": "2026-10-14T00:00:00Z"
+  }
+}

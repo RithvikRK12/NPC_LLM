@@ -9,7 +9,11 @@ from typing import Any
 class ConversationContext:
     player_input: str
     npc_state: dict[str, Any]
+    encounter: dict[str, Any] = field(default_factory=dict)
+    conversation_focus: dict[str, Any] = field(default_factory=dict)
+    facts: list[dict[str, Any]] = field(default_factory=list)
     memories: list[dict[str, Any]] = field(default_factory=list)
+    memory_retrieval: dict[str, Any] = field(default_factory=dict)
     recent_dialogue: list[dict[str, str]] = field(default_factory=list)
     quest: dict[str, Any] = field(default_factory=dict)
     inventory: list[str] = field(default_factory=list)
@@ -17,11 +21,16 @@ class ConversationContext:
     time: str = ""
     npc_name: str = ""
     npc_role: str = ""
+    accepted_interpretation: dict[str, Any] = field(default_factory=dict)
+    interpretation_seconds: float = 0.0
 
     def as_dict(self) -> dict[str, Any]:
         return {
             "player_input": self.player_input,
+            "encounter": self.encounter,
             "npc_state": self.npc_state,
+            "facts": self.facts,
+            "conversation_focus": self.conversation_focus,
             "memories": self.memories,
             "quest": self.quest,
             "recent_dialogue": self.recent_dialogue,
@@ -30,4 +39,6 @@ class ConversationContext:
             "time": self.time,
             "npc_name": self.npc_name,
             "npc_role": self.npc_role,
+            "accepted_interpretation": self.accepted_interpretation,
+            "interpretation_seconds": self.interpretation_seconds,
         }

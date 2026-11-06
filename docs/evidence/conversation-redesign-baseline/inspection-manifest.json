@@ -1,0 +1,113 @@
+{
+  "task": "baseline/T01",
+  "captured_at": "2026-10-14T15:19:43.369781+00:00",
+  "cwd": "/Users/rukithnayak/Documents/NPC_LLM-1",
+  "python": "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/bin/python",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "output": "inspection-00.txt"
+    },
+    {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "output": "inspection-01.txt"
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "output": "inspection-02.txt"
+    },
+    {
+      "argv": [
+        "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/bin/python",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "inspection-03.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/npc-godot-runtime/Godot.app/Contents/MacOS/Godot",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "inspection-04.txt"
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "max_length|min_length|maxLength|maxItems|max_tokens|timeout|limit\\(|\\[:[0-9]|max_dialogue|memory_top_k|candidate_count",
+        "backend/app",
+        "frontend/godot/scripts/chat_window.gd"
+      ],
+      "exit_code": 0,
+      "output": "inspection-05.txt"
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "commit\\(|flush\\(|revision|inventory =|\\.phase =|\\.status =|\\.state =|game_id=|timeline_id=",
+        "backend/app"
+      ],
+      "exit_code": 0,
+      "output": "inspection-06.txt"
+    },
+    {
+      "argv": [
+        "rg",
+        "--files",
+        "backend/tests",
+        "frontend/godot/tests"
+      ],
+      "exit_code": 0,
+      "output": "inspection-07.txt"
+    }
+  ],
+  "source_snapshot": [
+    "backend/app/api/routes/chat.py",
+    "backend/app/schemas/chat.py",
+    "backend/app/services/pipeline.py",
+    "backend/app/services/context/builder.py",
+    "backend/app/services/llm/openai_compatible.py",
+    "backend/app/services/validation/service.py",
+    "backend/app/services/context/grounding.py",
+    "backend/app/services/craftsman.py",
+    "backend/app/services/gatherer.py",
+    "backend/app/services/craftsman_intent.py",
+    "backend/app/services/quests/bow.py",
+    "backend/app/services/quests/ship_repair.py",
+    "backend/app/services/state/service.py",
+    "backend/app/services/opening.py",
+    "backend/app/services/memory/provenance.py",
+    "backend/app/services/memory/service.py",
+    "backend/app/services/memory/reindex.py",
+    "backend/app/api/routes/memory.py",
+    "backend/app/models/memory.py",
+    "backend/app/database/seed.py",
+    "backend/app/api/routes/quests.py",
+    "backend/app/api/routes/world.py",
+    "backend/app/dialogue/compose.py",
+    "frontend/godot/scripts/chat_window.gd",
+    "frontend/godot/scripts/main.gd",
+    "frontend/godot/scripts/craftsman_gateway.gd",
+    "frontend/godot/scripts/gatherer_gateway.gd"
+  ],
+  "method": "static source inspection; no application import"
+}

@@ -1,0 +1,16 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS All 5142 straight/diagonal coast sweeps stop at water
+PASS All 13195 land chunk seam sweeps remain open
+PASS Player chunk loaded before movement at (0.0, 3600.0)
+PASS Bounded active decorative chunks
+PASS Player chunk loaded before movement at (-6000.0, 0.0)
+PASS Bounded active decorative chunks
+PASS Player chunk loaded before movement at (6000.0, 0.0)
+PASS Bounded active decorative chunks
+PASS Player chunk loaded before movement at (0.0, -4600.0)
+PASS Bounded active decorative chunks
+PASS Player chunk loaded before movement at (0.0, 0.0)
+PASS Bounded active decorative chunks
+PASS Coast collision survives every chunk unload
+PASS Logical interiors never render exterior land

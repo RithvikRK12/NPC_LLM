@@ -1,0 +1,14 @@
+...............E............
+======================================================================
+ERROR: test_provider_schema_cannot_suggest_operations_or_questions_absent_from_context (test_conversation_generation_adapter.GenerationAdapterTests.test_provider_schema_cannot_suggest_operations_or_questions_absent_from_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_generation_adapter.py", line 124, in test_provider_schema_cannot_suggest_operations_or_questions_absent_from_context
+    self.assertEqual(schema['properties']['operation_candidates']['maxItems'], 0)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'maxItems'
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.113s
+
+FAILED (errors=1)

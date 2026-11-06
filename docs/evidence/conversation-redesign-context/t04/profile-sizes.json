@@ -1,0 +1,194 @@
+[
+  {
+    "role": "craftsman",
+    "message": "hello",
+    "source_chars": 18805,
+    "live_profile_chars": 1589,
+    "cards": []
+  },
+  {
+    "role": "craftsman",
+    "message": "Tell me about your childhood",
+    "source_chars": 18805,
+    "live_profile_chars": 1861,
+    "cards": [
+      "background"
+    ]
+  },
+  {
+    "role": "craftsman",
+    "message": "I feel afraid",
+    "source_chars": 18805,
+    "live_profile_chars": 1816,
+    "cards": [
+      "emotions"
+    ]
+  },
+  {
+    "role": "craftsman",
+    "message": "What food do you like?",
+    "source_chars": 18805,
+    "live_profile_chars": 1808,
+    "cards": [
+      "tastes"
+    ]
+  },
+  {
+    "role": "craftsman",
+    "message": "What do you think of the Gatherer?",
+    "source_chars": 18805,
+    "live_profile_chars": 1881,
+    "cards": [
+      "relationships"
+    ]
+  },
+  {
+    "role": "craftsman",
+    "message": "What do you think of the Craftsman?",
+    "source_chars": 18805,
+    "live_profile_chars": 1589,
+    "cards": []
+  },
+  {
+    "role": "craftsman",
+    "message": "What is your daily routine?",
+    "source_chars": 18805,
+    "live_profile_chars": 1813,
+    "cards": [
+      "routines"
+    ]
+  },
+  {
+    "role": "craftsman",
+    "message": "Tell me a story",
+    "source_chars": 18805,
+    "live_profile_chars": 1843,
+    "cards": [
+      "story_threads"
+    ]
+  },
+  {
+    "role": "craftsman",
+    "message": "What motivates you?",
+    "source_chars": 18805,
+    "live_profile_chars": 1799,
+    "cards": [
+      "values"
+    ]
+  },
+  {
+    "role": "craftsman",
+    "message": "Tell me about your values and fears",
+    "source_chars": 18805,
+    "live_profile_chars": 1799,
+    "cards": [
+      "values"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "hello",
+    "source_chars": 18951,
+    "live_profile_chars": 1611,
+    "cards": []
+  },
+  {
+    "role": "gatherer",
+    "message": "Tell me about your childhood",
+    "source_chars": 18951,
+    "live_profile_chars": 1839,
+    "cards": [
+      "background"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "I feel afraid",
+    "source_chars": 18951,
+    "live_profile_chars": 1858,
+    "cards": [
+      "emotions"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "What food do you like?",
+    "source_chars": 18951,
+    "live_profile_chars": 1851,
+    "cards": [
+      "tastes"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "What do you think of the Gatherer?",
+    "source_chars": 18951,
+    "live_profile_chars": 1611,
+    "cards": []
+  },
+  {
+    "role": "gatherer",
+    "message": "What do you think of the Craftsman?",
+    "source_chars": 18951,
+    "live_profile_chars": 1924,
+    "cards": [
+      "relationships"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "What is your daily routine?",
+    "source_chars": 18951,
+    "live_profile_chars": 1830,
+    "cards": [
+      "routines"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "Tell me a story",
+    "source_chars": 18951,
+    "live_profile_chars": 1857,
+    "cards": [
+      "story_threads"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "What motivates you?",
+    "source_chars": 18951,
+    "live_profile_chars": 1823,
+    "cards": [
+      "values"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "Tell me about your values and fears",
+    "source_chars": 18951,
+    "live_profile_chars": 1823,
+    "cards": [
+      "values"
+    ]
+  },
+  {
+    "role": "craftsman",
+    "message": "Tell me about your childhood; I feel afraid",
+    "source_chars": 18805,
+    "live_profile_chars": 2090,
+    "cards": [
+      "emotions",
+      "background"
+    ]
+  },
+  {
+    "role": "gatherer",
+    "message": "Tell me about your childhood; I feel afraid",
+    "source_chars": 18951,
+    "live_profile_chars": 2088,
+    "cards": [
+      "emotions",
+      "background"
+    ]
+  }
+]

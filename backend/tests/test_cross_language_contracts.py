@@ -4,7 +4,7 @@ import unittest
 
 from backend.tests.contract_fixture_reader import CommandFixture, decode_fixture, read_fixture
 
-FIXTURES = Path(__file__).resolve().parents[2].parent / "contracts" / "fixtures" / "v1"
+FIXTURES = Path(__file__).resolve().parents[2] / "contracts" / "fixtures" / "v1"
 
 
 class SharedFixtureTests(unittest.TestCase):

@@ -1,0 +1,18 @@
+backend/tests/test_dialogue_compose.py:57:            (DialoguePolicy, "policy", ("policy", "max_text_chars", "safe_ambiguous_success_text", "outcome_templates")),
+backend/app/schemas/chat.py:43:    final_dialogue: str
+backend/app/services/validation/models.py:39:    dialogue: str = Field(min_length=1, max_length=600)
+backend/app/services/context/grounding.py:127:        place='the workshop' if encounter.state.get('navigation_space')=='workshop' else ('the beach' if encounter.state.get('position',{}).get('y',0)>3000 else 'the island path')
+backend/app/services/llm/openai_compatible.py:45:                        'dialogue': {'type': 'string', 'maxLength': 600 if context.get('npc_role')=='craftsman' and re.search(r'\b(?:story|explain|tell me more)\b',context.get('player_input',''),re.I) else 240},
+backend/app/config/settings.py:26:    max_dialogue_chars: int = 240
+backend/app/dialogue/compose.py:11:DialogueText = Annotated[str, Field(strict=True, min_length=1, max_length=300)]
+backend/app/dialogue/compose.py:30:    approved_text: DialogueText | None = None
+backend/app/dialogue/compose.py:50:    text: DialogueText
+backend/app/dialogue/compose.py:62:    max_text_chars: int = Field(strict=True, ge=1, le=300)
+backend/app/dialogue/compose.py:63:    safe_ambiguous_success_text: DialogueText
+backend/app/dialogue/compose.py:76:    text: DialogueText
+backend/app/dialogue/compose.py:109:    if len(text) > policy.max_text_chars:
+backend/app/dialogue/compose.py:133:    if len(text) > policy.max_text_chars:
+backend/app/services/prompts/builder.py:29:                'Use one to three sentences under 240 characters, at most one follow-up question. A requested story or explanation may use up to 600 characters. '
+backend/app/services/prompts/builder.py:44:            'Social chat: {"answer_kind":"chat","fact_ids":[],"dialogue":"natural reply under 240 characters"}.\n'
+backend/app/services/validation/service.py:64:        dialogue_limit = 600 if story else self._settings.max_dialogue_chars
+backend/app/services/validation/service.py:91:            if len(output.dialogue) > self._settings.max_dialogue_chars:

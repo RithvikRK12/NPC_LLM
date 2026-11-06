@@ -1,0 +1,10 @@
+{
+  "canon_change_without_correction": {
+    "kind":"revise","canon_id":"canon:harbor-story","expected_revision":1,"subject":"npc:7","predicate":"rescued","content":"Changed","category":"history","origin":"generated","authority":"narrative_only","supporting_span":{"text_id":"final:3","start":0,"end":5}
+  },
+  "lossy_beats": {"final_dialogue":"A🙂éB","dialogue_beats":["A🙂","é"]},
+  "generated_authority_escalation": {
+    "canon_id":"canon:x","revision":1,"game_scope":"run-opaque","npc_id":7,"subject":"npc:7","predicate":"knows","content":"secret","category":"history","origin":"generated","authority":"mechanical","status":"active","supersedes_revision":null,"introduced_turn_id":"turn-1","accepted_claim_evidence":{"text_id":"final:1","start":0,"end":6}
+  },
+  "implicit_legacy_alias": {"game_id":"legacy-game-4","timeline_id":"legacy-timeline-2","npc_id":7}
+}

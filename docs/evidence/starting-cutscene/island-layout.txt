@@ -1,0 +1,13 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:991)
+PASS Handoff is on land
+PASS Open sea south of wreck
+PASS Deterministic recovery
+PASS Valid float coordinates retained
+PASS Interior floats retained
+PASS 64-unit inland corridor connects wreck to village
+PASS Every land cell and reserved region connects to the southern spawn (108619 cells)
+PASS At least 35% usable land reserved
+Usable land area: 108856320.0 reserve: 0.68718545693994

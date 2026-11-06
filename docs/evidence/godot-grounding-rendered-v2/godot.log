@@ -1,0 +1,36 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PASS Fresh isolated world
+PASS Displayed parsed response: Where is the Gatherer?
+PASS Controls recovered: Where is the Gatherer?
+PASS Selected person.gatherer.location: Where is the Gatherer?
+FAIL Zero inventory/quest/NPC effects: Where is the Gatherer?
+PASS Displayed parsed response: Where can I find him?
+PASS Controls recovered: Where can I find him?
+PASS Selected person.gatherer.location: Where can I find him?
+PASS Zero inventory/quest/NPC effects: Where can I find him?
+PASS Displayed parsed response: How do I get there?
+PASS Controls recovered: How do I get there?
+PASS Selected person.gatherer.route: How do I get there?
+PASS Zero inventory/quest/NPC effects: How do I get there?
+PASS Displayed parsed response: What does he do?
+PASS Controls recovered: What does he do?
+PASS Selected person.gatherer.work: What does he do?
+PASS Zero inventory/quest/NPC effects: What does he do?
+PASS Displayed parsed response: What materials do you need?
+PASS Controls recovered: What materials do you need?
+PASS Selected quest.bow.requirements: What materials do you need?
+PASS Zero inventory/quest/NPC effects: What materials do you need?
+PASS Displayed parsed response: Why?
+PASS Controls recovered: Why?
+PASS Selected quest.bow.requirements: Why?
+PASS Zero inventory/quest/NPC effects: Why?
+PASS Displayed parsed response: What have I already delivered?
+PASS Controls recovered: What have I already delivered?
+PASS Selected quest.bow.delivered: What have I already delivered?
+PASS Zero inventory/quest/NPC effects: What have I already delivered?
+PASS Displayed parsed response: Where is Eldric?
+PASS Controls recovered: Where is Eldric?
+PASS Answer kind clarify: Where is Eldric?
+PASS Zero inventory/quest/NPC effects: Where is Eldric?

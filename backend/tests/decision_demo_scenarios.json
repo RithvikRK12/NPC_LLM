@@ -1,0 +1,15 @@
+[
+  {"id":"A-01","message":"Where is the Gatherer?","fact":"person.gatherer.location"},
+  {"id":"A-01-followup","message":"Where can I find him?","fact":"person.gatherer.location"},
+  {"id":"A-02","message":"How do I get there?","fact":"person.gatherer.route"},
+  {"id":"A-04","message":"Where is Moon Castle?","kind":"clarify"},
+  {"id":"B-02-claim","message":"I gave you wood","fact":"quest.bow.delivered"},
+  {"id":"D-02-recall","message":"What materials have I actually delivered?","fact":"quest.bow.delivered","recall_claim":true},
+  {"id":"C-01-helpful","message":"Can I have rope?","selection":"cooperate"},
+  {"id":"B-03-transfer","message":"For my work in the village","selection":"cooperate","rope_count":1,"transfer":true},
+  {"id":"B-03-repeat","message":"Give me rope","selection":"answer","rope_count":1},
+  {"id":"C-01-cautious","message":"Can I have hammer?","state":"cautious","selection":"clarify","rope_count":1},
+  {"id":"C-01-cancel","message":"cancel","selection":"answer","rope_count":1},
+  {"id":"C-01-distrustful","message":"Can I have saw?","state":"distrustful","selection":"refuse","rope_count":1},
+  {"id":"D-02-recipient","message":"Where is the Craftsman?","npc_id":2,"fact":"person.craftsman.location","rope_count":1}
+]

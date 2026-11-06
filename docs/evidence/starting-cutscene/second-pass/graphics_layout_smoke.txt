@@ -1,0 +1,58 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Integer enlargement at (960, 540)
+PASS Viewport covers window with only integer remainder at (960, 540)
+PASS World units retained at (960, 540)
+PASS Integer enlargement at (1280, 720)
+PASS Viewport covers window with only integer remainder at (1280, 720)
+PASS World units retained at (1280, 720)
+PASS Integer enlargement at (1920, 1080)
+PASS Viewport covers window with only integer remainder at (1920, 1080)
+PASS World units retained at (1920, 1080)
+PASS Integer enlargement at (1001, 701)
+PASS Viewport covers window with only integer remainder at (1001, 701)
+PASS World units retained at (1001, 701)
+PASS Limited ambient props advance independently
+PASS Reduced scenery motion freezes leaf/cloth frames and hides smoke
+PASS Visuals and collisions share one layout
+PASS Clear approach at (0.0, 0.0)
+PASS Connected route to (0.0, 0.0)
+PASS Clear approach at (110.0, -20.0)
+PASS Connected route to (110.0, -20.0)
+PASS Clear approach at (-650.0, 134.0)
+PASS Connected route to (-650.0, 134.0)
+PASS Clear approach at (-70.0, 288.0)
+PASS Connected route to (-70.0, 288.0)
+PASS Clear approach at (496.0, -48.0)
+PASS Connected route to (496.0, -48.0)
+PASS Clear approach at (720.0, -80.0)
+PASS Connected route to (720.0, -80.0)
+PASS Clear approach at (480.0, 20.0)
+PASS Connected route to (480.0, 20.0)
+PASS Clear approach at (624.0, 36.0)
+PASS Connected route to (624.0, 36.0)
+PASS Authored approach reachable: workshop
+PASS Authored approach reachable: cottage-a
+PASS Authored approach reachable: cottage-b
+PASS Authored approach reachable: produce
+PASS Authored approach reachable: cloth
+PASS Authored approach reachable: board
+PASS Recover only trapped position (496.0, -160.0)
+PASS Recover only trapped position (720.0, -190.0)
+PASS Recover only trapped position (576.0, -30.0)
+PASS Preserve valid old floating-point position (123.25, 17.75)
+PASS Preserve valid old floating-point position (-1700.25, 1400.75)
+PASS Continuous route plus foot clearance across path bends
+PASS Continuous route plus foot clearance across path bends
+PASS Original workshop collision retained exactly
+PASS Cottage physically blocks feet before facade
+PASS Quest route physically traversable
+PASS Four idle/walk directions for player
+PASS Stable (12,30) foot pivot for player
+PASS Four idle/walk directions for craftsman
+PASS Stable (12,30) foot pivot for craftsman
+PASS Four idle/walk directions for gatherer
+PASS Stable (12,30) foot pivot for gatherer
+PASS Camera snaps presentation without modifying simulation
+PASS Speaker projection uses viewport enlargement and margin
+Graphics layout failures: 0

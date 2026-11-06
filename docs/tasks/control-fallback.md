@@ -6,7 +6,7 @@
 
 Source: [Detailed design](../detailed-design.md), 4.3 Behavioural-control modules; [proposal](../proposal.md). The confirmed detailed-design ordering overrides conflicting proposal examples.
 
-**Status:** Planned; target module not complete. **Owner:** unassigned. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
+**Status:** T01–T04 complete; target module complete. **Owner:** Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
 
 ## Dependencies and sequencing
 
@@ -23,22 +23,22 @@ Keep domain calculations pure where applicable; external adapters receive fake c
 
 ## Task checklist
 
-- [ ] **T01 — Define the module contract and fixture boundary.**
+- [x] **T01 — Define the module contract and fixture boundary.**
   - **Acceptance:** Publish the public input/output/error types above, with owned domain fields and shared envelope references. Supply a valid fixture and one rejected fixture; expose no ORM/session or node object in the handoff.
   - **Tests:** Round-trip or construct the valid fixture, reject missing required fields and unsupported variants, and prove input fixtures are not mutated. Import and exercise the module with fake dependencies only.
   - **Depends on:** Start contracts above. Do not wait for full runtime integration.
 
-- [ ] **T02 — Implement the primary behaviour.**
+- [x] **T02 — Implement the primary behaviour.**
   - **Acceptance:** Build a declared safe, zero-effect fallback from current trusted evidence and role-compatible policy without calling the model.
   - **Tests:** Use the valid T01 fixture and a focused fixture for each successful branch named in this acceptance criterion; assert exact result/state/effect identity rather than generated prose. Use a fixed clock and IDs where relevant.
   - **Depends on:** T01; use immutable upstream result fixtures.
 
-- [ ] **T03 — Enforce failures and invariants.**
+- [x] **T03 — Enforce failures and invariants.**
   - **Acceptance:** Reject unsupported fallback behaviour or unavailable targets; bound fallback chaining and never manufacture resources, completion or evidence.
   - **Tests:** No model call, no fabricated target/reward, unsupported fallback rejected and fallback loops bounded. Assert typed rejection/fallback and absence of unintended effects, not merely that an exception occurred.
   - **Depends on:** T02. Failure injection must remain local to this module and its ports.
 
-- [ ] **T04 — Verify adjacent handoff and publish evidence.**
+- [x] **T04 — Verify adjacent handoff and publish evidence.**
   - **Acceptance:** Consume fixtures produced by each direct dependency and show this module's result satisfies the next documented handoff without changing upstream policy or schema implicitly. Record test evidence and unsupported capabilities.
   - **Tests:** One focused adjacent-module contract check plus the module regression suite; include a mismatched source version/timeline where applicable. Do not run the full game unless this is an engine adapter check.
   - **Depends on:** T01–T03 and the direct Integration gate above. Until those dependencies are ready, record this task as waiting without blocking local unit work.
@@ -49,7 +49,8 @@ Check the whole-module box in master-progress only when every applicable uncheck
 
 ## Execution record
 
-- Assigned task/owner: unassigned.
-- Current task state: not started.
-- Test evidence for new work: none yet.
+- Assigned task/owner: complete / Main Agent.
+- Current task state: T04 accepted by Main Agent (2026-10-12). C01/C02/C03 are accepted; this packet completed a pure values-only safe fallback boundary, primary selection behaviour, invariant hardening and adjacent handoff proof.
+- T01–T04 files: `backend/app/control/{__init__,fallback}.py`, `backend/tests/test_control_fallback.py` and `backend/tests/fixtures/control/fallback-t01-{valid,rejected}.json`.
+- T01–T04 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_control_fallback.py'` — 14 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 255 passed, exit 0; existing Starlette/httpx deprecation warning remains and the baseline NPC rejection diagnostic still prints. The module exposes immutable failure context, safe behavior policy and fallback candidate handoffs over C01 envelopes; selects declared zero-effect safe speak/idle responses from trusted evidence without model calls; rejects role-incompatible, effect-bearing, reward-like, unsupported, unavailable-target, missing-evidence and loop-limit fallbacks; and proves a test-local control.validate handoff with policy/timeline mismatch checks. Unsupported capability: no model provider, persistence, application orchestration or runtime control-validation integration is claimed by this pure module gate.
 - Blocker: dependency gates above; no additional module-specific blocker recorded.

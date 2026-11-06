@@ -1,0 +1,33 @@
+{
+  "raw_proposal": {
+    "snapshot_id": "snapshot:001",
+    "proposed_by": "model:mock",
+    "intent": "spawn_reward",
+    "action": "speak",
+    "activity": "conversing",
+    "expression": "practical",
+    "target": {
+      "entity_id": "player:hero",
+      "position_id": null
+    },
+    "dialogue": "Here is a bow.",
+    "confidence": 0.82,
+    "grounding": [
+      {
+        "scope": "fact",
+        "ref_id": "fact:bow_requires_materials"
+      }
+    ],
+    "rationale": "Unsupported intent should be rejected.",
+    "state_deltas": []
+  },
+  "error": {
+    "code": "UNKNOWN_ENUM",
+    "stage": "reasoning.proposal_check",
+    "retryable": false,
+    "source_ids": [
+      "snapshot:001"
+    ],
+    "public_message": "Proposal contains an unsupported vocabulary value."
+  }
+}

@@ -1,0 +1,12 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+Movie Maker mode enabled, recording movie at 30 FPS...
+MOVIE frames=2700 simulated seconds=90.0 generation ms=23001 max sample us=4111
+--------------------------------------------------------------------------------
+Done recording movie at path: /tmp/opening-normal.avi
+2732 frames at 30 FPS (movie length: 00:01:31:02), recorded in 00:00:23 (395% of real-time speed).
+CPU render time: 0.05 seconds (average: 0.02 ms/frame)
+GPU render time: 0.00 seconds (average: 0.00 ms/frame)
+Encoding time: 9.42 seconds (average: 3.45 ms/frame)
+--------------------------------------------------------------------------------

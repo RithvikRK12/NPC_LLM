@@ -1,0 +1,35 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS First entry walks into conversation range
+PASS Introduction does not start bow quest
+Talked: Do you enjoy working here?
+Talked: The storm broke my ship.
+PASS Report alone waits for agreement
+PASS Accepted inspection automatically closes chat
+PASS Accepted inspection shows boat guidance
+Talked: yes
+PASS Inspection acceptance starts outing
+Talked: Wait here
+PASS Wait command holds a safe position
+Talked: Let's go
+PASS Shared doorway moves both actors outside
+PASS Craftsman waits outside unrelated cottage
+Segment (0.0, 384.0) actor=(367.5, -16.0) mode=following_player reason= clear=true
+Segment (0.0, 704.0) actor=(148.045, 328.4831) mode=following_player reason= clear=true
+Segment (0.0, 1024.0) actor=(-0.0, 546.0) mode=following_player reason= clear=true
+Segment (0.0, 1344.0) actor=(0.0, 866.0) mode=following_player reason= clear=true
+Segment (0.0, 1664.0) actor=(0.0, 1186.0) mode=following_player reason= clear=true
+Segment (0.0, 1984.0) actor=(0.0, 1506.0) mode=following_player reason= clear=true
+Segment (0.0, 2304.0) actor=(0.0, 1826.0) mode=following_player reason= clear=true
+Segment (0.0, 2624.0) actor=(0.0, 2146.0) mode=following_player reason= clear=true
+Segment (0.0, 2944.0) actor=(0.0, 2466.0) mode=following_player reason= clear=true
+Segment (0.0, 3264.0) actor=(0.0, 2786.0) mode=following_player reason= clear=true
+Segment (0.0, 3504.0) actor=(0.0, 3106.0) mode=following_player reason= clear=true
+PASS Both actors stage outside hull
+PASS Inspection result confirmed by server
+PASS Ship quest leaves bow and inventory independent
+PASS Craftsman independently returns through workshop portal
+PASS Solo return leaves player at wreck
+PASS Reload preserves introduction and inspection
+PASS Reload resumes routine after return
+Craftsman integration: 0 failures

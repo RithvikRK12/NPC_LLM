@@ -1,0 +1,149 @@
+[
+  {
+    "test": "gatherer_navigation_smoke",
+    "exit_code": 0,
+    "seconds": 2.465,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "conversation_presenter_smoke",
+    "exit_code": 0,
+    "seconds": 0.237,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "revisioned_state_smoke",
+    "exit_code": 0,
+    "seconds": 1.001,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "gateway_contract_codec_smoke",
+    "exit_code": 0,
+    "seconds": 0.185,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "contract_fixture_smoke",
+    "exit_code": 0,
+    "seconds": 0.185,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "building_interiors_smoke",
+    "exit_code": 0,
+    "seconds": 8.044,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "ui_shutdown_smoke",
+    "exit_code": 0,
+    "seconds": 14.242,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "persistence_smoke",
+    "exit_code": 0,
+    "seconds": 16.358,
+    "passed": true,
+    "shutdown_resource_warning": true
+  },
+  {
+    "test": "fullscreen_rowan_smoke",
+    "exit_code": 0,
+    "seconds": 7.4,
+    "passed": true,
+    "shutdown_resource_warning": true
+  },
+  {
+    "test": "ui_rework_smoke",
+    "exit_code": 0,
+    "seconds": 25.933,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "bow_quest_smoke",
+    "exit_code": 0,
+    "seconds": 27.454,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_integration_smoke",
+    "exit_code": 0,
+    "seconds": 38.604,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_guidance_follow_smoke",
+    "exit_code": 0,
+    "seconds": 35.374,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "gatherer_combat_smoke",
+    "exit_code": 0,
+    "seconds": 0.343,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_guidance_smoke",
+    "exit_code": 0,
+    "seconds": 0.945,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "onboarding_smoke",
+    "exit_code": 0,
+    "seconds": 4.052,
+    "passed": true,
+    "shutdown_resource_warning": true
+  },
+  {
+    "test": "conversation_signal_smoke",
+    "exit_code": 0,
+    "seconds": 0.29,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_guidance_natural_smoke",
+    "exit_code": 0,
+    "seconds": 35.126,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "conversation_gateway_smoke",
+    "exit_code": 0,
+    "seconds": 0.614,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_post_inspection_smoke",
+    "exit_code": 0,
+    "seconds": 36.755,
+    "passed": true,
+    "shutdown_resource_warning": true
+  },
+  {
+    "test": "gatherer_integration_smoke",
+    "exit_code": 0,
+    "seconds": 29.715,
+    "passed": true,
+    "shutdown_resource_warning": false
+  }
+]

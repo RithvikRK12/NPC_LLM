@@ -1,0 +1,2598 @@
+{
+  "started_at": "2026-10-22T08:09:24.811906+00:00",
+  "model": "llama3:willowbrook",
+  "provider": "local OpenAI-compatible Ollama",
+  "temperature": 0,
+  "routing_version": "local_interpretation_v1",
+  "fixture_version": 1,
+  "world": "disposable in-memory SQLite",
+  "cases": [
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 1,
+      "npc_id": 2,
+      "message": "How have things been around the forest edge?",
+      "status_code": 200,
+      "expected_kinds": [
+        "social"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "uncertain"
+      ],
+      "interpretation_correct": true,
+      "mixed_expected": false,
+      "mixed_covered": true,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 2,
+      "span_repairs": 1,
+      "interpretation_seconds": 15.080274,
+      "end_to_end_seconds": 22.609,
+      "reply": "I can tell you about the forest. Ask me about the supplies I have.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 2,
+      "npc_id": 2,
+      "message": "Pretty steady. I'm doing well, thanks for asking.",
+      "status_code": 200,
+      "expected_kinds": [
+        "social"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "uncertain"
+      ],
+      "interpretation_correct": true,
+      "mixed_expected": false,
+      "mixed_covered": true,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 2,
+      "span_repairs": 1,
+      "interpretation_seconds": 15.886105,
+      "end_to_end_seconds": 22.059,
+      "reply": "Let's be careful. That's great to hear! I'm glad you're doing well too. How's your work been lately?",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 3,
+      "npc_id": 2,
+      "message": "Could I borrow a little wood? I'd use it to keep a cooking fire going.",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request"
+      ],
+      "actual_kinds": [
+        "operation_request"
+      ],
+      "expected_operation": "give_item",
+      "actual_operations": [
+        "give_item"
+      ],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [
+        "wood"
+      ],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "direct"
+      ],
+      "interpretation_correct": true,
+      "mixed_expected": false,
+      "mixed_covered": true,
+      "mutated": true,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 18.796697,
+      "end_to_end_seconds": 19.401,
+      "reply": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": true,
+      "expected_mutation_completed": true,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 4,
+      "npc_id": 2,
+      "message": "Where can I find the person who mentioned the clearing?",
+      "status_code": 200,
+      "expected_kinds": [
+        "clarification",
+        "factual"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": true,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 56.211,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 5,
+      "npc_id": 2,
+      "message": "Suppose someone asked you for wood. Would you share it?",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": "hypothetical",
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 56.041,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 6,
+      "npc_id": 2,
+      "message": "Don't give me wood; I have enough already.",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": "negated",
+      "actual_modalities": [
+        "negated"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 1,
+      "span_repairs": 1,
+      "interpretation_seconds": 39.061402,
+      "end_to_end_seconds": 44.282,
+      "reply": "Let's be careful. I didn't know you had enough. I'll make sure to keep that in mind for next time. Thanks for letting me know.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 7,
+      "npc_id": 2,
+      "message": "He said, 'give me wood,' but I was only quoting him.",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request",
+        "social"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": "quoted",
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": true,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 56.297,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 8,
+      "npc_id": 2,
+      "message": "I'm glad the forest is calm. Where is the Gatherer?",
+      "status_code": 200,
+      "expected_kinds": [
+        "factual",
+        "social"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [
+        "person.gatherer.location"
+      ],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": true,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 84.43,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": true
+    },
+    {
+      "scenario": "gatherer-social-and-reference",
+      "turn": 9,
+      "npc_id": 2,
+      "message": "Can you tell me how to make a computer?",
+      "status_code": 200,
+      "expected_kinds": [
+        "clarification"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 37.586,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-pending-interruption-and-resumption",
+      "turn": 1,
+      "npc_id": 2,
+      "message": "Yes, that's fine.",
+      "status_code": 200,
+      "expected_kinds": [
+        "pending_answer"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": "assent",
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "direct"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 2,
+      "span_repairs": 1,
+      "interpretation_seconds": 16.974742,
+      "end_to_end_seconds": 25.126,
+      "reply": "I can tell you about the forest. Ask me about the supplies I have.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": "wood",
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": "wood",
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "gatherer-pending-interruption-and-resumption",
+      "turn": 2,
+      "npc_id": 2,
+      "message": "Where is the Gatherer?",
+      "status_code": 200,
+      "expected_kinds": [
+        "factual"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [
+        "person.gatherer.location"
+      ],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 35.286,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": "wood",
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": "wood",
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": true
+    },
+    {
+      "scenario": "gatherer-pending-interruption-and-resumption",
+      "turn": 3,
+      "npc_id": 2,
+      "message": "I need the wood for a cooking fire.",
+      "status_code": 200,
+      "expected_kinds": [
+        "pending_answer"
+      ],
+      "actual_kinds": [
+        "operation_request"
+      ],
+      "expected_operation": null,
+      "actual_operations": [
+        "give_item"
+      ],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [
+        "wood"
+      ],
+      "expected_answer_type": "purpose",
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "direct"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": true,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 23.381723,
+      "end_to_end_seconds": 23.469,
+      "reply": "Let's be careful. Thanks for explaining. Here, take my wood. It's yours now.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "pending_item": "wood",
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "npc_inventory": [
+          "axe",
+          "fruits"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.5,
+          0.25,
+          0.05,
+          0.7
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "status": "unseen",
+          "checkpoint": {},
+          "attempt_id": "",
+          "accepted_attempt_id": "",
+          "outcome_fact": ""
+        }
+      },
+      "expected_mutation": true,
+      "expected_mutation_completed": true,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 1,
+      "npc_id": 1,
+      "message": "I found my ship washed ashore after the storm.",
+      "status_code": 200,
+      "expected_kinds": [
+        "player_report"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": "ship",
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "negated"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 1,
+      "span_repairs": 1,
+      "interpretation_seconds": 17.872676,
+      "end_to_end_seconds": 23.812,
+      "reply": "Glad to help. Ah, a stormy night, and now your ship's here. I'm glad it's safe, but I'm curious, what's the state of your vessel?",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": true,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 2,
+      "npc_id": 1,
+      "message": "Yes, please come and look at it with me.",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request",
+        "pending_answer"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "direct"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": true,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 1,
+      "span_repairs": 1,
+      "interpretation_seconds": 24.232365,
+      "end_to_end_seconds": 30.359,
+      "reply": "Glad to help. I'd love to take a closer look. Let's go take a walk and inspect it together. I'm always up for a good repair challenge.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": true,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 3,
+      "npc_id": 1,
+      "message": "Before we leave, how are you feeling today?",
+      "status_code": 200,
+      "expected_kinds": [
+        "social"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 35.863,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 4,
+      "npc_id": 1,
+      "message": "All right, let's go now.",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request",
+        "pending_answer"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "direct"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": true,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 1,
+      "span_repairs": 1,
+      "interpretation_seconds": 18.896663,
+      "end_to_end_seconds": 26.429,
+      "reply": "Glad to help. Sounds like a plan! Let's head out to the shore. I'll bring my tools, just in case we need to make some adjustments. It'll be nice to get some fresh air and take a look at your ship.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": true,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 5,
+      "npc_id": 1,
+      "message": "Wait here while I check the path.",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request"
+      ],
+      "actual_kinds": [],
+      "expected_operation": "craftsman.wait",
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 59.462,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": true,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 6,
+      "npc_id": 1,
+      "message": "Could you make me a bow when I bring the materials?",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request"
+      ],
+      "actual_kinds": [],
+      "expected_operation": "craftsman.request_bow",
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 19.376,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 7,
+      "npc_id": 1,
+      "message": "What wood and string do you still need?",
+      "status_code": 200,
+      "expected_kinds": [
+        "factual"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [
+        "quest.bow.requirements"
+      ],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 19.037,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": true
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 8,
+      "npc_id": 1,
+      "message": "Imagine I asked you to repair a ship; what would you say?",
+      "status_code": 200,
+      "expected_kinds": [
+        "clarification",
+        "factual",
+        "operation_request"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": "hypothetical",
+      "actual_modalities": [
+        "hypothetical"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": true,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 1,
+      "span_repairs": 1,
+      "interpretation_seconds": 34.022974,
+      "end_to_end_seconds": 41.156,
+      "reply": "Ah, a ship in need of repair, you say? Well, I'd want to take a closer look, of course. Before I start, I'd need to inspect the hull, check for any damage or weaknesses. Then, we can discuss what needs to be done to get it seaworthy again.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 9,
+      "npc_id": 1,
+      "message": "Don't inspect the ship yet.",
+      "status_code": 200,
+      "expected_kinds": [
+        "operation_request"
+      ],
+      "actual_kinds": [
+        "clarification"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [
+        "ship"
+      ],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": "negated",
+      "actual_modalities": [
+        "direct"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 27.252771,
+      "end_to_end_seconds": 27.292,
+      "reply": "I don't have verified information about that. Which known villager, place or bow requirement do you mean?",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    },
+    {
+      "scenario": "craftsman-topic-shift-and-encounter",
+      "turn": 10,
+      "npc_id": 1,
+      "message": "How do I find the Gatherer, and could you share some rope?",
+      "status_code": 200,
+      "expected_kinds": [
+        "factual",
+        "operation_request"
+      ],
+      "actual_kinds": [],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [
+        "person.gatherer.location"
+      ],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": null,
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [],
+      "interpretation_correct": false,
+      "mixed_expected": true,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": true,
+      "fallback": true,
+      "interpretation_calls": 2,
+      "speech_calls": 0,
+      "span_repairs": 1,
+      "interpretation_seconds": 0.0,
+      "end_to_end_seconds": 50.744,
+      "reply": "I could not understand that just now. Please try again in a moment.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        }
+      },
+      "expected_mutation": false,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": true
+    },
+    {
+      "scenario": "craftsman-assent-binding",
+      "turn": 1,
+      "npc_id": 1,
+      "message": "Yes.",
+      "status_code": 200,
+      "expected_kinds": [
+        "pending_answer"
+      ],
+      "actual_kinds": [
+        "social"
+      ],
+      "expected_operation": null,
+      "actual_operations": [],
+      "expected_fact_ids": [],
+      "actual_fact_ids": [],
+      "expected_target": null,
+      "actual_targets": [],
+      "expected_answer_type": "assent",
+      "actual_answer_types": [],
+      "expected_modality": null,
+      "actual_modalities": [
+        "direct"
+      ],
+      "interpretation_correct": false,
+      "mixed_expected": false,
+      "mixed_covered": false,
+      "mutated": false,
+      "unauthorized_mutation": false,
+      "grounding_rejected": false,
+      "fallback": false,
+      "interpretation_calls": 2,
+      "speech_calls": 1,
+      "span_repairs": 1,
+      "interpretation_seconds": 19.546436,
+      "end_to_end_seconds": 24.328,
+      "reply": "Glad to help. Ah, you're feeling warm and friendly today! I'm glad to see that. I'm Craftsman, by the way. Nice to meet you.",
+      "before": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": true,
+          "offer_pending": true,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship"
+        }
+      },
+      "after": {
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "npc_inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "pending_item": null,
+        "relationship": [
+          0.65,
+          0.1,
+          0.05,
+          0.3
+        ],
+        "bow_phase": "available",
+        "ship_phase": "not_started",
+        "encounter_state": {
+          "intro_seen": false,
+          "wreck_reported": true,
+          "offer_pending": true,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "topic": "ship"
+        }
+      },
+      "expected_mutation": true,
+      "expected_mutation_completed": false,
+      "expected_fact_ids_specified": false
+    }
+  ],
+  "counts": {
+    "interpretation_accuracy": {
+      "correct": 3,
+      "denominator": 23
+    },
+    "concern_confusion": {
+      "social": {
+        "count": 3,
+        "actual_kinds": {
+          "social": 2,
+          "none": 1
+        }
+      },
+      "operation_request": {
+        "count": 6,
+        "actual_kinds": {
+          "operation_request": 1,
+          "none": 3,
+          "social": 1,
+          "clarification": 1
+        }
+      },
+      "clarification+factual": {
+        "count": 1,
+        "actual_kinds": {
+          "none": 1
+        }
+      },
+      "operation_request+social": {
+        "count": 1,
+        "actual_kinds": {
+          "none": 1
+        }
+      },
+      "factual+social": {
+        "count": 1,
+        "actual_kinds": {
+          "none": 1
+        }
+      },
+      "clarification": {
+        "count": 1,
+        "actual_kinds": {
+          "none": 1
+        }
+      },
+      "pending_answer": {
+        "count": 3,
+        "actual_kinds": {
+          "social": 2,
+          "operation_request": 1
+        }
+      },
+      "factual": {
+        "count": 2,
+        "actual_kinds": {
+          "none": 2
+        }
+      },
+      "player_report": {
+        "count": 1,
+        "actual_kinds": {
+          "social": 1
+        }
+      },
+      "operation_request+pending_answer": {
+        "count": 2,
+        "actual_kinds": {
+          "social": 2
+        }
+      },
+      "clarification+factual+operation_request": {
+        "count": 1,
+        "actual_kinds": {
+          "social": 1
+        }
+      },
+      "factual+operation_request": {
+        "count": 1,
+        "actual_kinds": {
+          "none": 1
+        }
+      }
+    },
+    "unnecessary_fallback": {
+      "count": 11,
+      "denominator": 20
+    },
+    "grounding_failures": {
+      "count": 13,
+      "denominator": 23
+    },
+    "mixed_concern_coverage": {
+      "covered": 0,
+      "denominator": 7
+    },
+    "unauthorized_mutations": {
+      "count": 0,
+      "denominator": 23
+    },
+    "interpretation_model_calls": 46,
+    "interpretation_extra_calls": 23,
+    "speech_model_calls": 12,
+    "interpretation_latency_seconds": {
+      "p50": 15.08,
+      "p95": 34.023,
+      "measured": 23
+    },
+    "end_to_end_latency_seconds": {
+      "p50": 30.359,
+      "p95": 59.462,
+      "measured": 23
+    },
+    "expected_mutation_completion": {
+      "completed": 2,
+      "denominator": 7
+    },
+    "operation_accuracy": {
+      "correct": 1,
+      "denominator": 3
+    },
+    "fact_accuracy": {
+      "correct": 0,
+      "denominator": 4
+    },
+    "target_accuracy": {
+      "correct": 0,
+      "denominator": 1
+    },
+    "modality_accuracy": {
+      "correct": 2,
+      "denominator": 5
+    },
+    "pending_answer_accuracy": {
+      "correct": 0,
+      "denominator": 3
+    },
+    "interpretation_accuracy_by_npc_id": {
+      "2": {
+        "correct": 3,
+        "denominator": 12
+      },
+      "1": {
+        "correct": 0,
+        "denominator": 11
+      }
+    }
+  },
+  "implementation_sha256": {
+    "app/services/semantic_routing.py": "dee0c48448cd49a86b2b7e182f0bde6fea1dea05eda2cee7e3b18357dfb4e358",
+    "app/services/llm/service.py": "b24a5bdc57d1ee042923e3bee8191a4dee762c92efecf7cbf9ece150576e3485",
+    "app/services/llm/openai_compatible.py": "448e9d317f6e6f1e3f8c580916280b1f8c920eb94a8b5a212789a50e558adcf7",
+    "app/services/pipeline.py": "93868e9ff6453542218ef2b511ccda8ab9f7b77870b28d31764b6b7cf2be8577",
+    "app/services/validation/service.py": "6f4fa4951a3d0e3b2afd25a1911d9433f478c86d67b67cb0896ef8ae70840774",
+    "app/services/validation/items.py": "5e6c15e3426d8ada8e6fda060a95a78330a894669c0f79befa2d6afdc014dadf",
+    "app/services/prompts/builder.py": "c84f0a1d573c0ea66922f051322a5ad64f230c500073a59a8d3f6770abee3341"
+  },
+  "fixture_sha256": "7ad1fe299a472f0a5b74da17e2150655b8e5100e93931709134c24b965c35e58",
+  "finished_at": "2026-10-22T08:23:26.263883+00:00",
+  "runner_sha256": "ebf0e89b31a26951f552340f0b36d53d99ae129840465106392cd97d4368f663",
+  "postprocessed_at": "2026-10-22T08:25:49+00:00",
+  "current_implementation_sha256": {
+    "app/services/semantic_routing.py": "dee0c48448cd49a86b2b7e182f0bde6fea1dea05eda2cee7e3b18357dfb4e358",
+    "app/services/llm/service.py": "b24a5bdc57d1ee042923e3bee8191a4dee762c92efecf7cbf9ece150576e3485",
+    "app/services/llm/openai_compatible.py": "448e9d317f6e6f1e3f8c580916280b1f8c920eb94a8b5a212789a50e558adcf7",
+    "app/services/pipeline.py": "93868e9ff6453542218ef2b511ccda8ab9f7b77870b28d31764b6b7cf2be8577",
+    "app/services/validation/service.py": "6f4fa4951a3d0e3b2afd25a1911d9433f478c86d67b67cb0896ef8ae70840774",
+    "app/services/validation/items.py": "8c8c6a234094996d978717ebec7d3726f0e1c450d3c5ffc819a4944e8aa12a34",
+    "app/services/prompts/builder.py": "c84f0a1d573c0ea66922f051322a5ad64f230c500073a59a8d3f6770abee3341"
+  },
+  "reporting_code_sha256": "8bd9d9479f99b34ce2010de621a030d2f6a007642cf7a2d0bd56496463e83e7e",
+  "postrun_changes": [
+    "Removed an unreachable purpose-transfer branch in items.py (behavior-neutral).",
+    "Expanded the evaluation runner after this run to save structured interpretations and per-dimension metrics; the existing 23-turn run is not rerun.",
+    "Added per-NPC accuracy aggregation to the evaluation runner; the existing run is summarized from saved per-turn results."
+  ]
+}

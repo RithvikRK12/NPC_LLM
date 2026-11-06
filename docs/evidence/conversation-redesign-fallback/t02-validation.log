@@ -1,0 +1,18 @@
+test_canon_contradiction_is_blocked_from_typed_projections (test_conversation_validation.ValidationTests.test_canon_contradiction_is_blocked_from_typed_projections) ... ok
+test_category_word_in_unrelated_evidence_does_not_ground_claim (test_conversation_validation.ValidationTests.test_category_word_in_unrelated_evidence_does_not_ground_claim) ... ok
+test_check_blocks_contradiction_around_actual_operation_receipt (test_conversation_validation.ValidationTests.test_check_blocks_contradiction_around_actual_operation_receipt) ... ok
+test_check_blocks_contradiction_around_receipt_backed_outcome (test_conversation_validation.ValidationTests.test_check_blocks_contradiction_around_receipt_backed_outcome) ... ok
+test_correct_slot_does_not_excuse_contradictory_surrounding_text (test_conversation_validation.ValidationTests.test_correct_slot_does_not_excuse_contradictory_surrounding_text) ... ok
+test_harmless_idioms_do_not_trigger_mechanical_findings (test_conversation_validation.ValidationTests.test_harmless_idioms_do_not_trigger_mechanical_findings) ... ok
+test_missing_and_unknown_canon_comparisons_fail_closed (test_conversation_validation.ValidationTests.test_missing_and_unknown_canon_comparisons_fail_closed) ... ok
+test_partial_or_unavailable_claim_coverage_blocks_canon_validation (test_conversation_validation.ValidationTests.test_partial_or_unavailable_claim_coverage_blocks_canon_validation) ... ok
+test_report_is_not_a_witnessed_event (test_conversation_validation.ValidationTests.test_report_is_not_a_witnessed_event) ... ok
+test_resolved_evidence_source_id_is_known_dependency (test_conversation_validation.ValidationTests.test_resolved_evidence_source_id_is_known_dependency) ... ok
+test_stale_and_private_evidence_dependencies_block (test_conversation_validation.ValidationTests.test_stale_and_private_evidence_dependencies_block) ... ok
+test_unknown_ids_are_blocked (test_conversation_validation.ValidationTests.test_unknown_ids_are_blocked) ... ok
+test_unsupported_shop_cache_recipe_and_route_claims_are_blocked (test_conversation_validation.ValidationTests.test_unsupported_shop_cache_recipe_and_route_claims_are_blocked) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.003s
+
+OK

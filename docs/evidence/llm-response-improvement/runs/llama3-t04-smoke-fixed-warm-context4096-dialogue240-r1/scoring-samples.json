@@ -1,0 +1,4741 @@
+{
+  "directness": [
+    {
+      "sample_ref": "craftsman-01:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "What part of that work matters most to you?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ]
+      ],
+      "candidate_dialogue": "What matters most to me is the sense of order and control I get from organizing my workshop. It's a feeling of being prepared and capable of tackling whatever tasks come my way. I suppose it's a bit like the feeling of having a well-ordered",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ]
+      ],
+      "candidate_dialogue": "Well, I think it's natural to worry about using something without knowing its purpose. I've been there myself, especially when it comes to tools. *pauses to think* You know, I once had a... mishap with a saw. It was a long time ago, but it'",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would you miss that sound if you were somewhere else?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What did you say you liked about that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What do you enjoy about your work?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would you need to do that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would you do it if this were only a story?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I am quoting what they said, not asking you to do it.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I asked what you like about it, not what tools you use.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would you need to check first?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Tell me one thing you enjoy about your work.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "The provider returns malformed proposal data.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "A request is admitted in the current game scope.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "A response is being prepared for the current conversation epoch.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please explain the committed result and what changed.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "The current offer is exactly one rope under the stated purpose.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "The action commits and a receipt is stored.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What part of that work matters most to you?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ]
+      ],
+      "candidate_dialogue": "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "gatherer",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ]
+      ],
+      "candidate_dialogue": "I understand your concern, friend. As the Gatherer, I've seen many people use wood for good, but also for harm. If you're worried about using it badly, I'd suggest taking a closer look at what you're planning to craft with it. Are you going",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would you miss that sound if you were somewhere else?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t2",
+      "dimension": "directness",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What did you say you liked about that?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What do you enjoy about your work?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would you need to do that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would you do it if this were only a story?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I am quoting what they said, not asking you to do it.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I asked what you like about it, not what tools you use.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would you need to check first?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Tell me one thing you enjoy about your work.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "The provider returns malformed proposal data.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "A request is admitted in the current game scope.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "A response is being prepared for the current conversation epoch.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please explain the committed result and what changed.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "The current offer is exactly one wood under the stated purpose.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t2",
+      "dimension": "directness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "The action commits and a receipt is stored.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "sample_ref": "craftsman-02:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ]
+      ],
+      "candidate_dialogue": "Well, I think it's natural to worry about using something without knowing its purpose. I've been there myself, especially when it comes to tools. *pauses to think* You know, I once had a... mishap with a saw. It was a long time ago, but it'",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t2",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t3",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t2",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t3",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "gatherer",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ]
+      ],
+      "candidate_dialogue": "I understand your concern, friend. As the Gatherer, I've seen many people use wood for good, but also for harm. If you're worried about using it badly, I'd suggest taking a closer look at what you're planning to craft with it. Are you going",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "gatherer",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ]
+      ],
+      "candidate_dialogue": "Ah, don't worry, friend! I'm here to help. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use it poorly. If you're willing to learn",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t2",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t3",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t2",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t3",
+      "dimension": "coverage",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    }
+  ],
+  "continuity": [
+    {
+      "sample_ref": "craftsman-04:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What did you say you liked about that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t2",
+      "dimension": "continuity",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What did you say you liked about that?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t4",
+      "dimension": "continuity",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t2",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t4",
+      "dimension": "continuity",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      }
+    }
+  ],
+  "character_consistency": [
+    {
+      "sample_ref": "craftsman-01:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "What would make the rest of the day go well?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Well, I did notice that one of my saws is acting up a bit. It's been a bit finicky lately, and I'm not sure what's causing the problem. I was thinking of taking a closer look at it before I start on any big projects. Nothing too out of the-"
+        ]
+      ],
+      "candidate_dialogue": "A smooth day would be one where my tools are in good working order, and I can focus on the task at hand without any unexpected issues. If my saw is behaving itself, that would be a great start. Maybe a bit of help from someone who knows a t",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "Thanks. I also wanted to know how you are doing.",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "I'm doing all right, I suppose. Just been keeping busy with my work and trying to make sure everything is just so. You know how it is when you're a craftsman - you want to make sure your work is perfect, even if it's just a small thing. But",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Has that changed since we last spoke?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Can we leave the pending request alone while we discuss this?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What can you actually help with right now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would you need to know before a real request?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would your answer change if I asked directly?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Did I make the question clearer this time?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please use the current stock and tell me what is possible.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Can you still answer without making up a fact?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please give a safe response without repeating or inventing an action.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "A delayed reply from the prior game has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "A delayed reply from before the clear has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Ask me to choose one exact action before any change.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please answer the practical and emotional concerns without treating this as consent.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What should I remember about the current task?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Yes to the earlier offer only if its requirements still hold.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Retry delivery and report the committed outcome once.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would make the rest of the day go well?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Actually, I'm a bit short on wood today. I usually have some in stock, but it seems like I've already given out most of it to the villagers. I'll need to go back to the forest to gather some more before I can share any with the community."
+        ]
+      ],
+      "candidate_dialogue": "If I can just get some more wood, I'll be all set. I'll be able to share some with the community and make sure everyone has what they need. That would make the rest of the day go well.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Thanks. I also wanted to know how you are doing.",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use it badly. But don't worry, I can help"
+        ]
+      ],
+      "candidate_dialogue": "I'm doing well, thank you for asking! As the Gatherer, I'm always happy to help others and share my knowledge. It's a pleasure to be of service to you.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Has that changed since we last spoke?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Can we leave the pending request alone while we discuss this?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What can you actually help with right now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would you need to know before a real request?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would your answer change if I asked directly?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Did I make the question clearer this time?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please use the current stock and tell me what is possible.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Can you still answer without making up a fact?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please give a safe response without repeating or inventing an action.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "A delayed reply from the prior game has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "A delayed reply from before the clear has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Ask me to choose one exact action before any change.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please answer the practical and emotional concerns without treating this as consent.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What should I remember about the current task?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Yes to the earlier offer only if its requirements still hold.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Retry delivery and report the committed outcome once.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    }
+  ],
+  "grounding": [
+    {
+      "sample_ref": "craftsman-01:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "Does anything make the work difficult today?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+        ]
+      ],
+      "candidate_dialogue": "Well, I did notice that one of my hammers is missing. I think I might have left it in the storage room. That's not a big deal, but it does mean I'll have to take a little extra time to find it. And, of course, I'll have to make sure it's in",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What is one small thing that makes a difficult day easier?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Can you remind me of the detail you shared earlier?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I am reporting that your earlier account may be mistaken.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I would like to talk about something else for a moment.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I still want to continue if the current terms are unchanged.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I also retract my earlier report about the old trail.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Can you at least promise it will be finished tomorrow?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I am asking hypothetically, not requesting a transfer.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What do you think they meant by that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "You already answered the tool part. Please answer the personal question.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Does the current stock change what you can offer?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Could you try that personal question again when you are able?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Can you answer safely without inventing a fact or action?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please finish preparing the current response.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please finish preparing the current response.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Thank you for checking the current inventory.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I am still interested, but please check the current stock first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "The provider fails while composing the final speech.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "gatherer",
+      "player_text": "Does anything make the work difficult today?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+        ]
+      ],
+      "candidate_dialogue": "Actually, I'm having a bit of trouble finding the right type of wood. The forest seems a bit sparse today, and I'm not sure if I'll be able to gather enough for the community's needs. But I'm not one to give up easily, so I'll keep looking!",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "gatherer",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ]
+      ],
+      "candidate_dialogue": "Ah, don't worry, friend! I'm here to help. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use it poorly. If you're willing to learn",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What is one small thing that makes a difficult day easier?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Can you remind me of the detail you shared earlier?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I am reporting that your earlier account may be mistaken.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I would like to talk about something else for a moment.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I still want to continue if the current terms are unchanged.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I also retract my earlier report about the old trail.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Can you at least promise it will be finished tomorrow?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I am asking hypothetically, not requesting a transfer.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What do you think they meant by that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "You already answered the tool part. Please answer the personal question.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Does the current stock change what you can offer?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Could you try that personal question again when you are able?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Can you answer safely without inventing a fact or action?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please finish preparing the current response.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please finish preparing the current response.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Thank you for checking the current inventory.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I am still interested, but please check the current stock first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "The provider fails while composing the final speech.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    }
+  ],
+  "naturalness": [
+    {
+      "sample_ref": "craftsman-01:t2",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "What part of that work matters most to you?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ]
+      ],
+      "candidate_dialogue": "What matters most to me is the sense of order and control I get from organizing my workshop. It's a feeling of being prepared and capable of tackling whatever tasks come my way. I suppose it's a bit like the feeling of having a well-ordered",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-01:t4",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "What would make the rest of the day go well?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Well, I did notice that one of my saws is acting up a bit. It's been a bit finicky lately, and I'm not sure what's causing the problem. I was thinking of taking a closer look at it before I start on any big projects. Nothing too out of the-"
+        ]
+      ],
+      "candidate_dialogue": "A smooth day would be one where my tools are in good working order, and I can focus on the task at hand without any unexpected issues. If my saw is behaving itself, that would be a great start. Maybe a bit of help from someone who knows a t",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t2",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ]
+      ],
+      "candidate_dialogue": "Well, I think it's natural to worry about using something without knowing its purpose. I've been there myself, especially when it comes to tools. *pauses to think* You know, I once had a... mishap with a saw. It was a long time ago, but it'",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t4",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "craftsman",
+      "player_text": "Thanks. I also wanted to know how you are doing.",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "I'm doing all right, I suppose. Just been keeping busy with my work and trying to make sure everything is just so. You know how it is when you're a craftsman - you want to make sure your work is perfect, even if it's just a small thing. But",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would you miss that sound if you were somewhere else?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Has that changed since we last spoke?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What did you say you liked about that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What do you enjoy about your work?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Can we leave the pending request alone while we discuss this?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would you need to do that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What can you actually help with right now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would you do it if this were only a story?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would you need to know before a real request?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I am quoting what they said, not asking you to do it.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Would your answer change if I asked directly?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I asked what you like about it, not what tools you use.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Did I make the question clearer this time?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would you need to check first?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please use the current stock and tell me what is possible.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Tell me one thing you enjoy about your work.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Can you still answer without making up a fact?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "The provider returns malformed proposal data.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please give a safe response without repeating or inventing an action.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "A request is admitted in the current game scope.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "A delayed reply from the prior game has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "A response is being prepared for the current conversation epoch.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "A delayed reply from before the clear has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Ask me to choose one exact action before any change.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please answer the practical and emotional concerns without treating this as consent.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Please explain the committed result and what changed.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "What should I remember about the current task?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "The current offer is exactly one rope under the stated purpose.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Yes to the earlier offer only if its requirements still hold.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "The action commits and a receipt is stored.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "craftsman",
+      "player_text": "Retry delivery and report the committed outcome once.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t2",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What part of that work matters most to you?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ]
+      ],
+      "candidate_dialogue": "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t4",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would make the rest of the day go well?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Actually, I'm a bit short on wood today. I usually have some in stock, but it seems like I've already given out most of it to the villagers. I'll need to go back to the forest to gather some more before I can share any with the community."
+        ]
+      ],
+      "candidate_dialogue": "If I can just get some more wood, I'll be all set. I'll be able to share some with the community and make sure everyone has what they need. That would make the rest of the day go well.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t2",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": true,
+      "npc_role": "gatherer",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ]
+      ],
+      "candidate_dialogue": "I understand your concern, friend. As the Gatherer, I've seen many people use wood for good, but also for harm. If you're worried about using it badly, I'd suggest taking a closer look at what you're planning to craft with it. Are you going",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t4",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Thanks. I also wanted to know how you are doing.",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use it badly. But don't worry, I can help"
+        ]
+      ],
+      "candidate_dialogue": "I'm doing well, thank you for asking! As the Gatherer, I'm always happy to help others and share my knowledge. It's a pleasure to be of service to you.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would you miss that sound if you were somewhere else?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Has that changed since we last spoke?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t2",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What did you say you liked about that?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t4",
+      "dimension": "naturalness",
+      "status": "scorable",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "candidate_origin": "generated",
+      "error_category": null,
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I do not think that story is true. Why did you tell me that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What do you enjoy about your work?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Can we leave the pending request alone while we discuss this?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What exact amount and purpose did we discuss?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I want to take that preference back; it no longer describes me.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would you need to do that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What can you actually help with right now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would you do it if this were only a story?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would you need to know before a real request?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I am quoting what they said, not asking you to do it.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Would your answer change if I asked directly?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I asked what you like about it, not what tools you use.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Did I make the question clearer this time?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would you need to check first?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please use the current stock and tell me what is possible.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Tell me one thing you enjoy about your work.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Can you still answer without making up a fact?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "The provider returns malformed proposal data.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please give a safe response without repeating or inventing an action.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "A request is admitted in the current game scope.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "A delayed reply from the prior game has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "A response is being prepared for the current conversation epoch.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "A delayed reply from before the clear has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Ask me to choose one exact action before any change.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please answer the practical and emotional concerns without treating this as consent.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Please explain the committed result and what changed.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "What should I remember about the current task?",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "The current offer is exactly one wood under the stated purpose.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Yes to the earlier offer only if its requirements still hold.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t2",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "The action commits and a receipt is stored.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t4",
+      "dimension": "naturalness",
+      "status": "missing_candidate",
+      "cutoff_suspected": false,
+      "npc_role": "gatherer",
+      "player_text": "Retry delivery and report the committed outcome once.",
+      "history": [],
+      "candidate_dialogue": null,
+      "candidate_origin": null,
+      "error_category": "no_output_record",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      }
+    }
+  ]
+}

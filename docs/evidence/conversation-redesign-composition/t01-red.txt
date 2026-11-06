@@ -1,0 +1,117 @@
+FFFFFFFFFFFFFF
+======================================================================
+FAIL: test_command_golden_clauses_describe_actual_changed_flag (test_conversation_composition.ReplyAssemblyTests.test_command_golden_clauses_describe_actual_changed_flag)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_evidence_is_detached_immutable_and_rejects_duplicate_ids (test_conversation_composition.ReplyAssemblyTests.test_evidence_is_detached_immutable_and_rejects_duplicate_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_exact_slots_keep_prose_and_server_owned_quantities (test_conversation_composition.ReplyAssemblyTests.test_exact_slots_keep_prose_and_server_owned_quantities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_fact_out_of_scope_private_or_nonfactual_provenance_is_rejected (test_conversation_composition.ReplyAssemblyTests.test_fact_out_of_scope_private_or_nonfactual_provenance_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_import_has_no_infrastructure_and_assembler_exposes_no_execution (test_conversation_composition.ReplyAssemblyTests.test_import_has_no_infrastructure_and_assembler_exposes_no_execution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_invalid_speech_act_and_progress_without_activity_projection_fail (test_conversation_composition.ReplyAssemblyTests.test_invalid_speech_act_and_progress_without_activity_projection_fail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_long_story_and_unbroken_text_have_lossless_bounded_beats (test_conversation_composition.ReplyAssemblyTests.test_long_story_and_unbroken_text_have_lossless_bounded_beats)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_only_injected_output_bound_applies_and_overflow_never_truncates (test_conversation_composition.ReplyAssemblyTests.test_only_injected_output_bound_applies_and_overflow_never_truncates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_policy_version_mismatch_is_rejected (test_conversation_composition.ReplyAssemblyTests.test_policy_version_mismatch_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_receipt_golden_outcomes_never_upgrade_accepted_to_completed (test_conversation_composition.ReplyAssemblyTests.test_receipt_golden_outcomes_never_upgrade_accepted_to_completed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_receipt_wrong_scope_npc_or_turn_cannot_support_speech (test_conversation_composition.ReplyAssemblyTests.test_receipt_wrong_scope_npc_or_turn_cannot_support_speech)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_repaired_final_span_map_relocates_unicode_canon_after_slot_expansion (test_conversation_composition.ReplyAssemblyTests.test_repaired_final_span_map_relocates_unicode_canon_after_slot_expansion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_stale_fact_receipt_and_missing_resources_fail_closed (test_conversation_composition.ReplyAssemblyTests.test_stale_fact_receipt_and_missing_resources_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+======================================================================
+FAIL: test_unknown_fact_and_receipt_ids_fail_closed (test_conversation_composition.ReplyAssemblyTests.test_unknown_fact_and_receipt_ids_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 19, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('app.services.conversation.composition'),
+AssertionError: unexpectedly None : ReplyAssembler is not implemented
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+FAILED (failures=14)

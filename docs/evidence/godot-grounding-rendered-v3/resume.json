@@ -1,0 +1,49 @@
+{
+  "chats": [],
+  "checks": [
+    {
+      "label": "Backend and Godot restart preserve completed quest and one reward",
+      "passed": true
+    },
+    {
+      "label": "Backend restart preserves saved position",
+      "passed": true
+    },
+    {
+      "label": "Backend restart preserves grounded history",
+      "passed": true
+    },
+    {
+      "label": "Repeated advance does not duplicate completed reward",
+      "passed": true
+    },
+    {
+      "label": "Repeated advance does not duplicate completed reward",
+      "passed": true
+    },
+    {
+      "label": "Explicit restart asks for confirmation",
+      "passed": true
+    },
+    {
+      "label": "Disposable restart resets phase, inventory and position",
+      "passed": true
+    },
+    {
+      "label": "Disposable restart clears old dialogue",
+      "passed": true
+    }
+  ],
+  "display": "macOS",
+  "engine": {
+    "build": "official",
+    "hash": "f62fdbde15035c5576dad93e586201f4d41ef0cb",
+    "hex": 263425,
+    "major": 4,
+    "minor": 5,
+    "patch": 1,
+    "status": "stable",
+    "string": "4.5.1-stable (official)",
+    "timestamp": 0
+  }
+}

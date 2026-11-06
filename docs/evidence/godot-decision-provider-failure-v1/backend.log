@@ -1,0 +1,16 @@
+INFO:     Started server process [97781]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on socket ('127.0.0.1', 52900) (Press CTRL+C to quit)
+INFO:     127.0.0.1:52901 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52903 - "GET /world HTTP/1.1" 200 OK
+LLM generation failed or could not be decoded for NPC 1; using zero-effect fallback
+NPC 1 output rejected: Malformed structured JSON
+INFO:     127.0.0.1:52904 - "POST /chat HTTP/1.1" 200 OK
+LLM generation failed or could not be decoded for NPC 2; using zero-effect fallback
+NPC 2 output rejected: Malformed structured JSON
+INFO:     127.0.0.1:52906 - "POST /chat HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [97781]

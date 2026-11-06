@@ -1,0 +1,35 @@
+{
+  "proposal": {
+    "schema_version": 1,
+    "record_id": "role-proposal:rejected",
+    "trace_id": "trace:roles-001",
+    "causation_id": "decision-proposal-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "decision-proposal-record:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "roles:permissions",
+        "version": "v1"
+      }
+    ],
+    "proposal_id": "proposal:bad",
+    "action": "teleport",
+    "required_material_ids": []
+  },
+  "error": {
+    "code": "UNKNOWN_ENUM",
+    "stage": "roles.permissions",
+    "retryable": false,
+    "source_ids": [
+      "role-proposal:rejected"
+    ],
+    "public_message": "Role proposal contains an unsupported action."
+  }
+}

@@ -1,0 +1,83 @@
+test_atomic_publication_and_restart_replay_keep_exact_utf8_speech_and_beats (test_conversation_finalization.DurableFinalizationTests.test_atomic_publication_and_restart_replay_keep_exact_utf8_speech_and_beats) ... /Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+ok
+test_failure_between_transcript_and_canon_rolls_back_entire_publication (test_conversation_finalization.DurableFinalizationTests.test_failure_between_transcript_and_canon_rolls_back_entire_publication) ... ok
+test_persistent_sql_evidence_churn_never_publishes_or_marks_terminal (test_conversation_finalization.DurableFinalizationTests.test_persistent_sql_evidence_churn_never_publishes_or_marks_terminal) ... FAIL
+test_refresh_replacement_publishes_after_sql_transaction_is_released (test_conversation_finalization.DurableFinalizationTests.test_refresh_replacement_publishes_after_sql_transaction_is_released) ... FAIL
+test_active_scope_epoch_fence_and_stream_position_fail_without_refresh (test_conversation_finalization.FinalizationTests.test_active_scope_epoch_fence_and_stream_position_fail_without_refresh) ... ok
+test_changed_canon_head_rejects_an_earlier_revision_plan (test_conversation_finalization.FinalizationTests.test_changed_canon_head_rejects_an_earlier_revision_plan) ... ok
+test_exact_evidence_is_checked_even_when_revision_plan_is_empty (test_conversation_finalization.FinalizationTests.test_exact_evidence_is_checked_even_when_revision_plan_is_empty) ... ok
+test_exact_final_text_beats_and_prevalidated_plan_reach_store (test_conversation_finalization.FinalizationTests.test_exact_final_text_beats_and_prevalidated_plan_reach_store) ... ok
+test_fulfilled_interaction_invalidates_stale_reactivation (test_conversation_finalization.FinalizationTests.test_fulfilled_interaction_invalidates_stale_reactivation) ... ok
+test_invalid_turn_plan_fence_and_final_span_never_reach_store (test_conversation_finalization.FinalizationTests.test_invalid_turn_plan_fence_and_final_span_never_reach_store) ... ok
+test_named_revision_change_requests_revalidation (test_conversation_finalization.FinalizationTests.test_named_revision_change_requests_revalidation) ... ok
+test_nonretryable_evidence_and_uncertain_storage_errors_do_not_refresh (test_conversation_finalization.FinalizationTests.test_nonretryable_evidence_and_uncertain_storage_errors_do_not_refresh) ... ok
+test_out_of_scope_or_private_speech_sources_never_reach_store (test_conversation_finalization.FinalizationTests.test_out_of_scope_or_private_speech_sources_never_reach_store) ... ok
+test_persistent_evidence_churn_returns_recoverable_conflict_at_budget (test_conversation_finalization.FinalizationTests.test_persistent_evidence_churn_returns_recoverable_conflict_at_budget) ... ok
+test_progress_refresh_runs_outside_lock_and_keeps_historical_receipt (test_conversation_finalization.FinalizationTests.test_progress_refresh_runs_outside_lock_and_keeps_historical_receipt) ... ok
+test_refresh_budget_requires_nonnegative_strict_integer (test_conversation_finalization.FinalizationTests.test_refresh_budget_requires_nonnegative_strict_integer) ... ok
+test_refresh_failure_preserves_typed_deadline_result (test_conversation_finalization.FinalizationTests.test_refresh_failure_preserves_typed_deadline_result) ... ok
+test_refreshed_reply_and_plan_are_prevalidated_before_another_attempt (test_conversation_finalization.FinalizationTests.test_refreshed_reply_and_plan_are_prevalidated_before_another_attempt) ... ok
+test_unrelated_revision_and_evidence_churn_does_not_request_refresh (test_conversation_finalization.FinalizationTests.test_unrelated_revision_and_evidence_churn_does_not_request_refresh) ... ok
+test_zero_refresh_budget_returns_original_conflict (test_conversation_finalization.FinalizationTests.test_zero_refresh_budget_returns_original_conflict) ... ok
+test_matching_revision_cannot_reactivate_a_terminal_negotiation (test_conversation_finalization.OperationFulfilledFinalizationTests.test_matching_revision_cannot_reactivate_a_terminal_negotiation) ... FAIL
+test_stale_preoperation_plan_cannot_reactivate_committed_negotiation (test_conversation_finalization.OperationFulfilledFinalizationTests.test_stale_preoperation_plan_cannot_reactivate_committed_negotiation) ... FAIL
+
+======================================================================
+FAIL: test_persistent_sql_evidence_churn_never_publishes_or_marks_terminal (test_conversation_finalization.DurableFinalizationTests.test_persistent_sql_evidence_churn_never_publishes_or_marks_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_finalization.py", line 427, in test_persistent_sql_evidence_churn_never_publishes_or_marks_terminal
+    self.assertEqual((result.code, result.retryable), ('EVIDENCE_CHANGED', True))
+AssertionError: Tuples differ: ('EVIDENCE_CHANGED', False) != ('EVIDENCE_CHANGED', True)
+
+First differing element 1:
+False
+True
+
+- ('EVIDENCE_CHANGED', False)
+?                      ^^^^
+
++ ('EVIDENCE_CHANGED', True)
+?                      ^^^
+
+
+======================================================================
+FAIL: test_refresh_replacement_publishes_after_sql_transaction_is_released (test_conversation_finalization.DurableFinalizationTests.test_refresh_replacement_publishes_after_sql_transaction_is_released)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_finalization.py", line 410, in test_refresh_replacement_publishes_after_sql_transaction_is_released
+    self.assertIsInstance(result, c.FinalTurnResult)
+AssertionError: ConversationError(code='EVIDENCE_CHANGED', stage='finalization', retryable=False, turn=TurnRef(turn_id='8681ab1d-6593-4edf-b683-c4d7e63d3c74', request_id='request:1', key=ConversationKey(game_scope='run:1', npc_id=1, epoch=0), sequence=1), safe_detail='Conversation state does not permit this request.') is not an instance of <class 'app.services.conversation.contracts.FinalTurnResult'>
+
+======================================================================
+FAIL: test_matching_revision_cannot_reactivate_a_terminal_negotiation (test_conversation_finalization.OperationFulfilledFinalizationTests.test_matching_revision_cannot_reactivate_a_terminal_negotiation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_finalization.py", line 484, in test_matching_revision_cannot_reactivate_a_terminal_negotiation
+    self.assertEqual((result.code, result.retryable), ('EVIDENCE_CHANGED', True))
+AssertionError: Tuples differ: ('EVIDENCE_CHANGED', False) != ('EVIDENCE_CHANGED', True)
+
+First differing element 1:
+False
+True
+
+- ('EVIDENCE_CHANGED', False)
+?                      ^^^^
+
++ ('EVIDENCE_CHANGED', True)
+?                      ^^^
+
+
+======================================================================
+FAIL: test_stale_preoperation_plan_cannot_reactivate_committed_negotiation (test_conversation_finalization.OperationFulfilledFinalizationTests.test_stale_preoperation_plan_cannot_reactivate_committed_negotiation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_finalization.py", line 466, in test_stale_preoperation_plan_cannot_reactivate_committed_negotiation
+    self.assertIsInstance(result, c.FinalTurnResult)
+AssertionError: ConversationError(code='EVIDENCE_CHANGED', stage='finalization', retryable=False, turn=TurnRef(turn_id='f66f45ed-9d5d-4e48-b9e2-3d90e4db5df7', request_id='request:operation', key=ConversationKey(game_scope='run:1', npc_id=2, epoch=0), sequence=2), safe_detail='Conversation state does not permit this request.') is not an instance of <class 'app.services.conversation.contracts.FinalTurnResult'>
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.221s
+
+FAILED (failures=4)

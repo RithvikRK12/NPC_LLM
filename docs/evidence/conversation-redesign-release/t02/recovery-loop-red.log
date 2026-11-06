@@ -1,0 +1,14 @@
+.....E.
+======================================================================
+ERROR: test_recovery_loop_wakes_a_late_pending_stream_without_another_post (test_conversation_worker.WorkerTests.test_recovery_loop_wakes_a_late_pending_stream_without_another_post)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_worker.py", line 202, in test_recovery_loop_wakes_a_late_pending_stream_without_another_post
+    app.start_recovery_loop(interval_seconds=.01)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConversationApplicationService' object has no attribute 'start_recovery_loop'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.017s
+
+FAILED (errors=1)

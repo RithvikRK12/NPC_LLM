@@ -1,0 +1,113 @@
+test_ambiguous_answer_requires_clarification (backend.tests.test_conversation_operations.OperationPolicyTests.test_ambiguous_answer_requires_clarification) ... FAIL
+test_direct_supported_request_is_only_ready_for_gateway_recheck (backend.tests.test_conversation_operations.OperationPolicyTests.test_direct_supported_request_is_only_ready_for_gateway_recheck) ... FAIL
+test_invalid_command_quantity_and_confidence_cannot_enter_policy (backend.tests.test_conversation_operations.OperationPolicyTests.test_invalid_command_quantity_and_confidence_cannot_enter_policy) ... FAIL
+test_multiple_supported_actions_clarify_even_with_empty_plan (backend.tests.test_conversation_operations.OperationPolicyTests.test_multiple_supported_actions_clarify_even_with_empty_plan) ... FAIL
+test_pending_answer_requires_exact_binding_and_current_satisfied_state (backend.tests.test_conversation_operations.OperationPolicyTests.test_pending_answer_requires_exact_binding_and_current_satisfied_state) ... FAIL
+test_policy_does_not_mutate_inputs (backend.tests.test_conversation_operations.OperationPolicyTests.test_policy_does_not_mutate_inputs) ... FAIL
+test_quoted_negated_hypothetical_requests_never_become_ready (backend.tests.test_conversation_operations.OperationPolicyTests.test_quoted_negated_hypothetical_requests_never_become_ready) ... FAIL
+test_stale_plan_or_binding_terms_cannot_authorize (backend.tests.test_conversation_operations.OperationPolicyTests.test_stale_plan_or_binding_terms_cannot_authorize) ... FAIL
+test_suspended_or_terminal_question_never_authorizes (backend.tests.test_conversation_operations.OperationPolicyTests.test_suspended_or_terminal_question_never_authorizes) ... FAIL
+test_unrelated_purpose_words_and_generated_prose_never_transfer (backend.tests.test_conversation_operations.OperationPolicyTests.test_unrelated_purpose_words_and_generated_prose_never_transfer) ... FAIL
+test_unresolved_or_out_of_range_current_message_spans_are_denied (backend.tests.test_conversation_operations.OperationPolicyTests.test_unresolved_or_out_of_range_current_message_spans_are_denied) ... FAIL
+test_unsupported_unavailable_target_parameter_and_speech_act_are_denied (backend.tests.test_conversation_operations.OperationPolicyTests.test_unsupported_unavailable_target_parameter_and_speech_act_are_denied) ... FAIL
+
+======================================================================
+FAIL: test_ambiguous_answer_requires_clarification (backend.tests.test_conversation_operations.OperationPolicyTests.test_ambiguous_answer_requires_clarification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_direct_supported_request_is_only_ready_for_gateway_recheck (backend.tests.test_conversation_operations.OperationPolicyTests.test_direct_supported_request_is_only_ready_for_gateway_recheck)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_invalid_command_quantity_and_confidence_cannot_enter_policy (backend.tests.test_conversation_operations.OperationPolicyTests.test_invalid_command_quantity_and_confidence_cannot_enter_policy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_multiple_supported_actions_clarify_even_with_empty_plan (backend.tests.test_conversation_operations.OperationPolicyTests.test_multiple_supported_actions_clarify_even_with_empty_plan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_pending_answer_requires_exact_binding_and_current_satisfied_state (backend.tests.test_conversation_operations.OperationPolicyTests.test_pending_answer_requires_exact_binding_and_current_satisfied_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_policy_does_not_mutate_inputs (backend.tests.test_conversation_operations.OperationPolicyTests.test_policy_does_not_mutate_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_quoted_negated_hypothetical_requests_never_become_ready (backend.tests.test_conversation_operations.OperationPolicyTests.test_quoted_negated_hypothetical_requests_never_become_ready)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_stale_plan_or_binding_terms_cannot_authorize (backend.tests.test_conversation_operations.OperationPolicyTests.test_stale_plan_or_binding_terms_cannot_authorize)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_suspended_or_terminal_question_never_authorizes (backend.tests.test_conversation_operations.OperationPolicyTests.test_suspended_or_terminal_question_never_authorizes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_unrelated_purpose_words_and_generated_prose_never_transfer (backend.tests.test_conversation_operations.OperationPolicyTests.test_unrelated_purpose_words_and_generated_prose_never_transfer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_unresolved_or_out_of_range_current_message_spans_are_denied (backend.tests.test_conversation_operations.OperationPolicyTests.test_unresolved_or_out_of_range_current_message_spans_are_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+======================================================================
+FAIL: test_unsupported_unavailable_target_parameter_and_speech_act_are_denied (backend.tests.test_conversation_operations.OperationPolicyTests.test_unsupported_unavailable_target_parameter_and_speech_act_are_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_operations.py", line 19, in setUp
+    self.assertIsNotNone(OperationPolicy, 'pure operation policy is absent')
+AssertionError: unexpectedly None : pure operation policy is absent
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+FAILED (failures=12)

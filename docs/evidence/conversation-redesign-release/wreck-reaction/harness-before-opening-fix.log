@@ -1,0 +1,8 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{'npc': 1, 'message': "my ship just wrecked and i'm stranded!", 'seconds': 15.5066, 'dialogue': "I'm so sorry to hear that. It can be tough to deal with unexpected setbacks. Would you like to talk about what happened or how you're feeling right now?", 'origin': 'generated', 'degradation_reason': None, 'provider_calls': [{'seconds': 15.3847, 'prompt_characters': 8929, 'usage': {'prompt_tokens': 2002, 'prompt_tokens_details': {'cached_tokens': 441}, 'completion_tokens': 258, 'total_tokens': 2260}}]}
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/docs/evidence/conversation-redesign-release/wreck-reaction/run_live.py", line 44, in <module>
+    assert "glad you made it ashore" in result['final_dialogue'],row
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'npc': 1, 'message': "my ship just wrecked and i'm stranded!", 'seconds': 15.5066, 'dialogue': "I'm so sorry to hear that. It can be tough to deal with unexpected setbacks. Would you like to talk about what happened or how you're feeling right now?", 'origin': 'generated', 'degradation_reason': None, 'provider_calls': [{'seconds': 15.3847, 'prompt_characters': 8929, 'usage': {'prompt_tokens': 2002, 'prompt_tokens_details': {'cached_tokens': 441}, 'completion_tokens': 258, 'total_tokens': 2260}}]}

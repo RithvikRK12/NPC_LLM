@@ -1,0 +1,25 @@
+[
+  {
+    "npc": 1,
+    "message": "my ship just wrecked and i'm stranded!",
+    "seconds": 13.4311,
+    "dialogue": "I'm glad you made it ashore. I can take a look at the damage with you, if you'd like.",
+    "origin": "fallback",
+    "degradation_reason": "INTERNAL_FAILURE",
+    "provider_calls": [
+      {
+        "seconds": 13.3298,
+        "prompt_characters": 12847,
+        "usage": {
+          "prompt_tokens": 3098,
+          "prompt_tokens_details": {
+            "cached_tokens": 441
+          },
+          "completion_tokens": 163,
+          "total_tokens": 3261
+        },
+        "output": "{\n\"segments\": [\n  {\n    \"kind\": \"expressive\",\n    \"segment_id\": \"candidate_reply:1\",\n    \"text\": \"I'm glad you made it ashore. I can take a look at the damage with you, if you'd like. Let's inspect the ship together and see what we can do to get it seaworthy again.\",\n    \"addressed_concern_ids\": [\"turn:1\"]\n  }\n],\n\"source\": {\n  \"origin\": \"generated\",\n  \"source_id\": \"candidate_reply:1\",\n  \"schema_version\": 1,\n  \"policy_versions\": {\n    \"authoritative_game_rules\": 1,\n    \"authored_npc_profile\": 3e4\n  }\n},\n\"canon_candidates\": []\n}"
+      }
+    ]
+  }
+]

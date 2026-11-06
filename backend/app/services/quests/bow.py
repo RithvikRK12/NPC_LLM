@@ -1,3 +1,4 @@
+from app.services.state.resources import versioned
 """Authoritative, restart-safe bow quest. Only these rules can craft/reward a bow."""
 import re
 import time
@@ -10,6 +11,7 @@ CRAFT_SECONDS = 5.0
 STRING_POSITION = {'x': -70.0, 'y': 240.0}
 
 
+@versioned
 def get_quest(db, player_id=1):
     quest = db.get(BowQuest, player_id)
     if quest is None:
@@ -19,7 +21,7 @@ def get_quest(db, player_id=1):
     return quest
 
 
-def snapshot(quest):
+def snapshot(quest, recovery=None):
     phase = quest.phase if quest else 'available'
     remaining = max(0.0, (quest.ready_at or 0) - time.time()) if quest and phase == 'crafting' else 0.0
     objectives = {
@@ -29,7 +31,16 @@ def snapshot(quest):
         'crafting': 'The Craftsman is making your bow.',
         'completed': 'Quest complete! Your bow is in your satchel.',
     }
-    return {'title': 'Get a bow', 'phase': phase, 'objective': objectives[phase],
+    objective = objectives[phase]
+    if phase in {'meet', 'gather'} and recovery and recovery.get('refused'):
+        if recovery.get('blocked'):
+            objective = ('Find honeycomb on the forest path west of the well. Give it to the Gatherer until he is calm enough to share wood.'
+                         if recovery.get('hint_unlocked') else
+                         'The angry Gatherer refused the wood. Tell the Craftsman and ask what might calm him down.')
+        else:
+            objective = 'The Gatherer is ready to help. Ask for wood, collect string near the well, and give both to the Craftsman.'
+    return {'title': 'Get a bow', 'phase': phase, 'objective': objective,
+            'gatherer_recovery': recovery or {},
             'string_available': bool(quest and phase == 'gather' and not quest.string_collected),
             'string_position': STRING_POSITION, 'remaining_seconds': remaining,
             'craft_seconds': CRAFT_SECONDS, 'craft_progress': (1 - remaining / CRAFT_SECONDS) * 100 if phase == 'crafting' else (100 if phase == 'completed' else 0)}
@@ -40,6 +51,7 @@ def reply(text, intent='inform'):
                        reasoning='Authoritative village and bow quest state.', state_update=StateUpdate())
 
 
+@versioned
 def dialogue(db, npc, message, player):
     quest = get_quest(db, player.id)
     words = set(re.findall(r'[a-z]+', message.lower()))
@@ -47,7 +59,7 @@ def dialogue(db, npc, message, player):
     if not relevant:
         return None
     if quest.phase == 'available':
-        return reply('If you want a bow, open Quests and begin Get a bow. For now, feel free to explore the village.')
+        return reply('If you want a bow, Open Quests and begin Get a bow. For now, feel free to explore the village.')
     if quest.phase == 'completed':
         return reply('Your bow quest is complete. The bow is in your satchel.' if 'bow' in (player.inventory or []) else 'Your bow quest is complete. You have since given the bow away; check the villagers supplies.')
     if quest.phase == 'crafting':
@@ -62,9 +74,35 @@ def dialogue(db, npc, message, player):
     return reply('I have the wood and string. I will begin crafting your bow now.')
 
 
+@versioned
+def request_from_interpretation(db, npc, player):
+    """Handle an interpreted direct bow request without reparsing its wording."""
+    quest = get_quest(db, player.id)
+    if quest.phase == 'available':
+        return reply('If you want a bow, Open Quests and begin Get a bow. For now, feel free to explore the village.')
+    if quest.phase == 'completed':
+        return reply('Your bow quest is complete. The bow is in your satchel.' if 'bow' in (player.inventory or [])
+                     else 'Your bow quest is complete. You have since given the bow away; check the villagers supplies.')
+    if quest.phase == 'crafting':
+        return reply('The bow is still being crafted. Watch the progress bar; it will be placed in your satchel when it is ready.')
+    if npc.role != 'craftsman':
+        return reply('Ask the Craftsman about the bow. I can share wood if I have some; the fallen string is near the well.')
+    if quest.phase == 'meet':
+        quest.phase = 'gather'
+    missing = [item for item in ('wood', 'string') if item not in (npc.inventory or [])]
+    if missing:
+        return reply('I need ' + ' and '.join(missing) + ' to make your bow. Get wood from the Gatherer and pick up string near the well, then give me the materials.')
+    return reply('I have the wood and string. I will begin crafting your bow now.')
+
+
+@versioned
 def maybe_start(db, player, npc, output):
     quest = get_quest(db, player.id)
     if npc.role != 'craftsman' or quest.phase != 'gather':
+        return
+    from app.models import CraftsmanEncounter
+    encounter = db.get(CraftsmanEncounter, player.id)
+    if encounter and (encounter.state.get('mode') != 'workshop_routine' or encounter.state.get('navigation_space') != 'workshop'):
         return
     stock = list(npc.inventory or [])
     if not all(item in stock for item in ('wood', 'string')):
@@ -80,19 +118,31 @@ def maybe_start(db, player, npc, output):
     db.flush()
 
 
+@versioned
 def finish_if_ready(db, player):
     quest = get_quest(db, player.id)
     if quest.phase != 'crafting' or time.time() < (quest.ready_at or float('inf')):
         return None
     craftsman = db.scalar(select(NPC).where(NPC.role == 'craftsman').with_for_update())
-    player.inventory = list(player.inventory or []) + ['bow']
+    inventory_before = list(player.inventory or [])
+    player.inventory = inventory_before + ['bow']
     quest.phase = 'completed'
     craftsman.current_state = 'available'
     output = reply('Your bow is ready. Here you are! Get a bow is complete.')
     from app.services.memory.service import MemoryService
-    classification = {'important': True, 'importance': 1.0, 'category': 'quest_completion',
-                      'reason': 'Server completed crafting and granted one bow.', 'stored': True, 'version': 1}
-    MemoryService(db).store_memory(craftsman, 'Bow quest completed. Craftsman gave the player one bow.', 1.0, 'calm', event_type='quest_completion', quest_id='get_bow')
-    db.add(Conversation(npc_id=craftsman.id, player_input='[Bow crafting finished]', llm_output={},
-                        validated_output=output.model_dump() | {"memory_classification": classification}, final_dialogue=output.dialogue))
+    from app.services.memory.importance import MemoryDecision
+    classification = MemoryDecision(1., 'quest_completion', 'Authoritative timed reward executed.',
+                                    'Bow quest completed. Craftsman gave the player one bow.').payload()
+    outcome = {'quest_before': 'crafting', 'quest_after': 'completed', 'reward': 'bow',
+               'inventory_before': {'player': inventory_before}, 'inventory_after': {'player': list(player.inventory)}}
+    conversation = Conversation(npc_id=craftsman.id, game_scope=player.game_scope,
+        player_input='[Bow crafting finished]', llm_output={},
+        validated_output=output.model_dump() | {'memory_classification': classification,
+                          'behavior_trace': {'verified_outcome': outcome}}, final_dialogue=output.dialogue)
+    db.add(conversation)
+    db.flush()
+    conversation.validated_output = conversation.validated_output | {'behavior_trace': {
+        'verified_outcome': outcome | {'event_id': conversation.source_event_id, 'conversation_id': conversation.id}}}
+    write = MemoryService(db).store_conversation(craftsman, conversation)
+    conversation.validated_output = conversation.validated_output | {'memory_classification': classification | write.payload()}
     return output.dialogue

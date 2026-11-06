@@ -1,0 +1,20 @@
+{
+  "normal": {
+    "peak_dbfs": -16.89,
+    "silence_probe_seconds": [
+      40.8,
+      41.7
+    ],
+    "silence_peak_pcm": 0,
+    "silence_rms_pcm": 0.0
+  },
+  "fast": {
+    "peak_dbfs": -18.12,
+    "silence_probe_seconds": [
+      20.6,
+      20.9
+    ],
+    "silence_peak_pcm": 0,
+    "silence_rms_pcm": 0.0
+  }
+}

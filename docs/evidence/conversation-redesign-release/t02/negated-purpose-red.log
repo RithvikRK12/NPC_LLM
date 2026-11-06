@@ -1,0 +1,15 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+.......F..
+======================================================================
+FAIL: test_negated_purpose_answer_does_not_authorize_stock_transfer (test_conversation_playtest.PlaytestRuntimeTests.test_negated_purpose_answer_does_not_authorize_stock_transfer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_playtest.py", line 132, in test_negated_purpose_answer_does_not_authorize_stock_transfer
+    self.assertFalse(result.response.receipt_refs)
+AssertionError: ('d0ce4657-5ad7-48a4-b07e-ab0a6ee2c8d9',) is not false
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.873s
+
+FAILED (failures=1)

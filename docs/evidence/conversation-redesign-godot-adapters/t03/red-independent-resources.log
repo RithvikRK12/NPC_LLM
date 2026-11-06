@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: revisioned_state_smoke: FAIL duplicate activity delivery still applies newer independent world resources
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/revisioned_state_smoke.gd:170)
+       [1] run (res://tests/revisioned_state_smoke.gd:79)
+revisioned_state_smoke: 24 passed, 1 failed

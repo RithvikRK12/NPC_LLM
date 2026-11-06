@@ -1,0 +1,79 @@
+INFO:     Started server process [97598]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on socket ('127.0.0.1', 52265) (Press CTRL+C to quit)
+INFO:     127.0.0.1:52266 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52269 - "GET /world HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52270 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52271 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52285 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52301 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52317 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52337 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52345 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52353 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52361 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52371 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52380 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52388 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52396 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52404 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52412 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52420 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52446 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52464 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52482 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52500 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52518 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52537 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52556 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52574 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52592 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52610 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52629 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52647 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52666 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52684 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52702 - "POST /quests/bow/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52703 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52714 - "POST /inventory/transfer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52730 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52746 - "POST /quests/bow/pickup-string HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52747 - "POST /inventory/transfer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52776 - "PUT /world/player-position HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52763 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52782 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52801 - "GET /world HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52802 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52820 - "POST /inventory/transfer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52836 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52837 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52838 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52839 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52841 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52842 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52843 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52844 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52845 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52846 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52852 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52871 - "POST /chat HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [97598]
+INFO:     Started server process [97760]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on socket ('127.0.0.1', 52265) (Press CTRL+C to quit)
+INFO:     127.0.0.1:52890 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52891 - "GET /world HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52892 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52893 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52894 - "POST /world/new-game HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [97760]

@@ -1,0 +1,8 @@
+PASS gatherer-input
+PASS gatherer-gateway
+PASS gatherer-combat
+PASS gatherer-navigation
+PASS render-960
+PASS render-1280
+PASS render-approaches
+FINAL CHECK FAILURES []

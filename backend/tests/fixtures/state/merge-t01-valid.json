@@ -1,0 +1,201 @@
+{
+  "current": {
+    "schema_version": 1,
+    "record_id": "current-state:001",
+    "trace_id": "trace:state-merge-001",
+    "causation_id": "interaction:ask_help",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-09-29T10:00:00Z",
+    "source_ids": [
+      "interaction:ask_help"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "state:merge",
+        "version": "v1"
+      }
+    ],
+    "state_id": "state:npc_craftsman",
+    "revisions": {
+      "npc_id": "npc:craftsman",
+      "base_npc_state_revision": 7,
+      "approved_npc_state_revision": null,
+      "quest": [],
+      "inventory": [],
+      "relationship": [
+        {
+          "scope_id": "player:hero",
+          "revision": 3
+        }
+      ],
+      "policy": [
+        {
+          "scope_id": "state:merge",
+          "revision": 1
+        }
+      ],
+      "controller": []
+    },
+    "scalar_values": [
+      {
+        "dimension": "emotion_valence",
+        "value": 0.1,
+        "subject_id": null
+      },
+      {
+        "dimension": "trust",
+        "value": 0.25,
+        "subject_id": "player:hero"
+      }
+    ],
+    "known_relationship_subject_ids": [
+      "player:hero"
+    ]
+  },
+  "proposed": {
+    "schema_version": 1,
+    "record_id": "proposed-changes:001",
+    "trace_id": "trace:state-merge-001",
+    "causation_id": "decision-proposal-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-09-29T10:00:01Z",
+    "source_ids": [
+      "decision-proposal-record:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "state:merge",
+        "version": "v1"
+      }
+    ],
+    "proposal_set_id": "proposal-set:001",
+    "changes": [
+      {
+        "effect_id": "effect:memory_helped",
+        "dimension": "trust",
+        "delta": 0.2,
+        "source": "memory_influence",
+        "source_id": "memory:helped_before",
+        "subject_id": "player:hero"
+      },
+      {
+        "effect_id": "effect:proposal_help",
+        "dimension": "trust",
+        "delta": 0.1,
+        "source": "decision_proposal",
+        "source_id": "proposal:001",
+        "subject_id": "player:hero"
+      },
+      {
+        "effect_id": "effect:proposal_attention",
+        "dimension": "attention",
+        "delta": 0.3,
+        "source": "decision_proposal",
+        "source_id": "proposal:001",
+        "subject_id": null
+      }
+    ]
+  },
+  "policy": {
+    "schema_version": 1,
+    "record_id": "merge-policy:001",
+    "trace_id": "trace:state-merge-001",
+    "causation_id": "decision-proposal-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-09-29T10:00:00Z",
+    "source_ids": [
+      "decision-proposal-record:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "state:merge",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "state:merge",
+      "version": "v1"
+    },
+    "source_precedence": [
+      "verified_event",
+      "memory_influence",
+      "decision_proposal"
+    ],
+    "reject_duplicate_effects": true
+  },
+  "merged": {
+    "schema_version": 1,
+    "record_id": "merged-changes:001",
+    "trace_id": "trace:state-merge-001",
+    "causation_id": "proposed-changes:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-09-29T10:00:01Z",
+    "source_ids": [
+      "current-state:001",
+      "proposed-changes:001",
+      "merge-policy:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "state:merge",
+        "version": "v1"
+      }
+    ],
+    "state_id": "state:npc_craftsman",
+    "proposal_set_id": "proposal-set:001",
+    "policy": {
+      "policy_id": "state:merge",
+      "version": "v1"
+    },
+    "accepted": [
+      {
+        "effect_id": "effect:memory_helped",
+        "dimension": "trust",
+        "delta": 0.2,
+        "source": "memory_influence",
+        "source_id": "memory:helped_before",
+        "decision": "accepted",
+        "reason": "state.merge:highest_precedence",
+        "subject_id": "player:hero"
+      },
+      {
+        "effect_id": "effect:proposal_attention",
+        "dimension": "attention",
+        "delta": 0.3,
+        "source": "decision_proposal",
+        "source_id": "proposal:001",
+        "decision": "accepted",
+        "reason": "state.merge:highest_precedence",
+        "subject_id": null
+      }
+    ],
+    "rejected": [
+      {
+        "effect_id": "effect:proposal_help",
+        "dimension": "trust",
+        "delta": 0.1,
+        "source": "decision_proposal",
+        "source_id": "proposal:001",
+        "decision": "superseded",
+        "reason": "state.merge:lower_precedence",
+        "subject_id": "player:hero"
+      }
+    ]
+  }
+}

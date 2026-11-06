@@ -1,0 +1,40 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Every village building has an authored interior
+PASS Menu blocks doorway travel: workshop
+PASS Walking into correct interior: workshop
+PASS Arrival leaves feet clear of furniture: workshop
+PASS Interior wall blocks walking: workshop
+PASS Furniture has foot collision: workshop
+PASS Craftsman lives inside workshop
+PASS Craftsman is reachable for talking and gifts
+PASS E interaction opens workshop conversation
+PASS Save resumes exact interior position: workshop
+PASS Exit returns to matching outside doorway: workshop
+PASS Exit does not immediately re-enter: workshop
+PASS Cannot talk to craftsman through exterior walls
+PASS Menu blocks doorway travel: cottage-a
+PASS Walking into correct interior: cottage-a
+PASS Arrival leaves feet clear of furniture: cottage-a
+PASS Interior wall blocks walking: cottage-a
+PASS Furniture has foot collision: cottage-a
+PASS No NPC interaction leaks into cottages
+PASS Save resumes exact interior position: cottage-a
+PASS Exit returns to matching outside doorway: cottage-a
+PASS Exit does not immediately re-enter: cottage-a
+PASS Cannot talk to craftsman through exterior walls
+PASS Menu blocks doorway travel: cottage-b
+PASS Walking into correct interior: cottage-b
+PASS Arrival leaves feet clear of furniture: cottage-b
+PASS Interior wall blocks walking: cottage-b
+PASS Furniture has foot collision: cottage-b
+PASS No NPC interaction leaks into cottages
+PASS Save resumes exact interior position: cottage-b
+PASS Exit returns to matching outside doorway: cottage-b
+PASS Exit does not immediately re-enter: cottage-b
+PASS Cannot talk to craftsman through exterior walls
+PASS Workshop and both cottages can be entered and exited
+PASS E enters a building from its door apron
+PASS Door fade prevents restart and shutdown races
+PASS E arrives inside workshop
+Building interior failures: 0

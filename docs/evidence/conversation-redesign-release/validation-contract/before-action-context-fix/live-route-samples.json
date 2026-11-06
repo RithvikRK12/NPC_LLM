@@ -1,0 +1,123 @@
+[
+  {
+    "npc_id": 1,
+    "message": "What do you enjoy about your work?",
+    "route": "ordinary",
+    "seconds": 2.7258,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I enjoy the quiet focus of working with my hands, and the sense of accomplishment when a project comes together. It's a feeling that's hard to describe, but it's what gets me out of bed in the morning.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "What helps you feel at ease?",
+    "route": "ordinary",
+    "seconds": 2.906,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I find comfort in the familiar rhythms of my workshop, the smell of wood and metal, and the sense of creating something with my own hands. It's a feeling that's hard to describe, but it's what brings me peace.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "What do you enjoy about your work?",
+    "route": "ordinary",
+    "seconds": 2.8092,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I enjoy the quiet, methodical nature of gathering. It's a chance to clear my mind and appreciate the simple things, like a well-crafted tool or a ripe fruit.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "What helps you feel at ease?",
+    "route": "ordinary",
+    "seconds": 2.2742,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I find that quiet, methodical work helps me feel at ease. It's a chance to clear my mind and appreciate the simple things.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "my ship just wrecked and i'm stranded!",
+    "route": "action",
+    "seconds": 2.606,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I'm sorry to hear that your ship wrecked. It's always unsettling to feel stranded and unsure of what's to come. I can imagine it's a lot to take in. I'm glad you made it ashore. I can take a look at the damage with you, if you'd like.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "Can you make me a bow?",
+    "route": "action",
+    "seconds": 2.8419,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I'm sorry to hear about your ship. It's always tough to feel stranded. I'm here to help, and I'll do my best to make you a bow that'll get you back on your feet. We discussed the materials for your bow. Check your quest journal for the next steps.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "May I have wood?",
+    "route": "purpose_question",
+    "seconds": 0.0426,
+    "response_origin": "fallback",
+    "degradation_reason": "SAFE_FALLBACK",
+    "dialogue": "Before I give you the wood, why do you need it?",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "To help the Craftsman make a bow",
+    "route": "action",
+    "seconds": 1.7612,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "Your curiosity is refreshing. I'm glad you're willing to learn. I gave you 1 wood.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "I give you water",
+    "route": "action",
+    "seconds": 3.1556,
+    "response_origin": "generated",
+    "degradation_reason": null,
+    "dialogue": "I'm sorry to hear about your ship. It's always tough to feel stranded. I'm here to help, and I'll do my best to make you a bow that'll get you back on your feet. You gave me 1 water.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "How are you feeling today?",
+    "route": "provider_outage",
+    "seconds": 0.0424,
+    "response_origin": "fallback",
+    "degradation_reason": "PROVIDER_UNAVAILABLE",
+    "dialogue": "The workshop's gone quiet for a moment. Ask me again shortly.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "How are you feeling today?",
+    "route": "provider_outage",
+    "seconds": 0.0357,
+    "response_origin": "fallback",
+    "degradation_reason": "PROVIDER_UNAVAILABLE",
+    "dialogue": "I need a moment to listen to the trail. Ask me again shortly.",
+    "receipt_count": 0,
+    "exact_retry": true
+  }
+]

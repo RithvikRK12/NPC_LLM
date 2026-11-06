@@ -1,0 +1,27 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Focus notification pauses acceleration
+PASS Focus return does not resume stale hold
+PASS Release while paused enables a fresh press
+PASS Cancel at 33.0 keeps actor locked
+PASS Restart after 33.0 resets effects and cues
+PASS Cancel at 33.3 keeps actor locked
+PASS Restart after 33.3 resets effects and cues
+PASS Cancel at 34.2 keeps actor locked
+PASS Restart after 34.2 resets effects and cues
+PASS Cancel at 35.0 keeps actor locked
+PASS Restart after 35.0 resets effects and cues
+PASS Cancel at 35.4 keeps actor locked
+PASS Restart after 35.4 resets effects and cues
+PASS Cancel at 39.0 keeps actor locked
+PASS Restart after 39.0 resets effects and cues
+PASS Readiness barrier retains control
+PASS Waiting timeout cannot be accelerated
+PASS Retry acknowledgment releases final step exactly once
+PASS Held WASD lands at exact endpoint before next physics tick
+PASS Held WASD starts normal-speed movement only after handoff
+PASS Lifecycle never changes global time scale
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2514)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:795)

@@ -1,0 +1,25 @@
+[
+  {
+    "npc": 1,
+    "message": "my ship just wrecked and i'm stranded!",
+    "seconds": 2.7783,
+    "dialogue": "I'm sorry to hear that. It's a tough spot to be in. I've had my share of setbacks too, and it's good to have someone to talk to when that happens. I'm glad you made it ashore. I can take a look at the damage with you, if you'd like.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "provider_calls": [
+      {
+        "seconds": 2.6977,
+        "prompt_characters": 1781,
+        "usage": {
+          "prompt_tokens": 371,
+          "prompt_tokens_details": {
+            "cached_tokens": 12
+          },
+          "completion_tokens": 46,
+          "total_tokens": 417
+        },
+        "output": "{\"dialogue\": \"I'm sorry to hear that. It's a tough spot to be in. I've had my share of setbacks too, and it's good to have someone to talk to when that happens.\"}"
+      }
+    ]
+  }
+]

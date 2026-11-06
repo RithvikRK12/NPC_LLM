@@ -21,3 +21,6 @@ def initialize_database() -> None:
     if 'position' not in {c['name'] for c in inspect(engine).get_columns('players')}:
         with engine.begin() as connection:
             connection.execute(text('ALTER TABLE players ADD COLUMN position JSON'))
+
+    from app.database.opening_migration import upgrade_opening_schema
+    upgrade_opening_schema(engine)

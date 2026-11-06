@@ -1,0 +1,102 @@
+[
+  {
+    "sample_ref": "craftsman-01:t1",
+    "prompt_sha256": "59a8b434e3ece047208f6cd1ae18805a3a69b1f088539cd312f0adf25e4a4201",
+    "snapshot": "prompts/craftsman-01_t1.prompt.txt"
+  },
+  {
+    "sample_ref": "craftsman-01:t2",
+    "prompt_sha256": "bcdf5d6ba5407f96d8c693b638a33bed763c29f2951c503340af92e842fb29bc",
+    "snapshot": "prompts/craftsman-01_t2.prompt.txt"
+  },
+  {
+    "sample_ref": "craftsman-01:t3",
+    "prompt_sha256": "1e513a647f8f2b53fe97f5a24f998d8be6216c01457d8c06797c94a8deed6e9c",
+    "snapshot": "prompts/craftsman-01_t3.prompt.txt"
+  },
+  {
+    "sample_ref": "craftsman-01:t4",
+    "prompt_sha256": "d674746fb7f501c7f40713879088932e0368d37e77a77e9d6edfffb65f1dbb1c",
+    "snapshot": "prompts/craftsman-01_t4.prompt.txt"
+  },
+  {
+    "sample_ref": "craftsman-02:t1",
+    "prompt_sha256": "e112667d822ff5bde55bdb9bbff221f8c8568c51db2a04a841e4d9c9fa4869e3",
+    "snapshot": "prompts/craftsman-02_t1.prompt.txt"
+  },
+  {
+    "sample_ref": "craftsman-02:t2",
+    "prompt_sha256": "6a0e18c020ffb04379682d8e35cb601b56e05cbd6f424df187f2b010ea205b28",
+    "snapshot": "prompts/craftsman-02_t2.prompt.txt"
+  },
+  {
+    "sample_ref": "craftsman-02:t3",
+    "prompt_sha256": "cee82e11d1a43ea9f1bdb4987215769f8fbc69db557d91d92e113f138199b663",
+    "snapshot": "prompts/craftsman-02_t3.prompt.txt"
+  },
+  {
+    "sample_ref": "craftsman-02:t4",
+    "prompt_sha256": "3c3657312bc783dcc0041a0ad00c3ac829f3f9a652a85198123a4a4ede7a3516",
+    "snapshot": "prompts/craftsman-02_t4.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-01:t1",
+    "prompt_sha256": "fa1ea7066533bc08ecc8b741bea19750ff638660960c2ab7232b4297e23f51b7",
+    "snapshot": "prompts/gatherer-01_t1.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-01:t2",
+    "prompt_sha256": "54c738f1a333e88c24afae2b871d1f4278164d40ce6b700d7443c797bfa014f0",
+    "snapshot": "prompts/gatherer-01_t2.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-01:t3",
+    "prompt_sha256": "9c4e468769a6521f3f11017ac01fc8fb99e1a8c77984ab5d6b5b6fd2907eb315",
+    "snapshot": "prompts/gatherer-01_t3.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-01:t4",
+    "prompt_sha256": "66823e7213defe84117eb73c8011b3ba826ac5021999702629bb539714ee0288",
+    "snapshot": "prompts/gatherer-01_t4.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-02:t1",
+    "prompt_sha256": "6423099d703b5f95a2d4036be933e5f0affc027c8932f31809e84566ef1f4fbf",
+    "snapshot": "prompts/gatherer-02_t1.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-02:t2",
+    "prompt_sha256": "4180e2fae3bcad45d578333e432b0cf23e0963ed293f9e040c8f673e8b290bf1",
+    "snapshot": "prompts/gatherer-02_t2.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-02:t3",
+    "prompt_sha256": "05fa6eef4f1c3aa0a884515072fd1ae2bcaf55492222fc70eaffa5399363e554",
+    "snapshot": "prompts/gatherer-02_t3.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-02:t4",
+    "prompt_sha256": "2e56e54902b67c54f5cbde4bd10da3c9bc8ada826c873864d3a88f876e79cc82",
+    "snapshot": "prompts/gatherer-02_t4.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-04:t1",
+    "prompt_sha256": "6225f49513d416e75c5be7e24796c155438fe9c76904969e1d7b61087f81efb3",
+    "snapshot": "prompts/gatherer-04_t1.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-04:t2",
+    "prompt_sha256": "145f2a0602bf951bc1aaacbbe34357a37a295eeea3f9f17cdeb05a196e2f90b7",
+    "snapshot": "prompts/gatherer-04_t2.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-04:t3",
+    "prompt_sha256": "f0a0ed073158f2fb81e54817fe019a0dd21c4cb5e6f94fa88602c2ed7dec5f8a",
+    "snapshot": "prompts/gatherer-04_t3.prompt.txt"
+  },
+  {
+    "sample_ref": "gatherer-04:t4",
+    "prompt_sha256": "0b30cfcfb9b24006d6a2f8ec02213a32d951488c86a8eb8fb61835075fca55b7",
+    "snapshot": "prompts/gatherer-04_t4.prompt.txt"
+  }
+]

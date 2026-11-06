@@ -1,0 +1,15 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+.....F..
+======================================================================
+FAIL: test_multiple_stock_requests_choose_one_then_confirm_its_purpose (test_conversation_playtest.PlaytestRuntimeTests.test_multiple_stock_requests_choose_one_then_confirm_its_purpose)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_playtest.py", line 112, in test_multiple_stock_requests_choose_one_then_confirm_its_purpose
+    self.assertIn('why',choice.response.final_dialogue)
+AssertionError: 'why' not found in 'I need to recheck that choice before I can continue. Would you like me to proceed?'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.655s
+
+FAILED (failures=1)

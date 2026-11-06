@@ -1,0 +1,125 @@
+{
+  "input": {
+    "schema_version": 1,
+    "record_id": "membership-input:triangle",
+    "trace_id": "trace:triangle",
+    "causation_id": "candidate:triangle",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": null,
+    "created_at": "2026-09-12T10:00:00Z",
+    "source_ids": [
+      "candidate:triangle"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "fuzzy:membership",
+        "version": "v1"
+      }
+    ],
+    "candidate_state_id": "candidate:triangle",
+    "dimensions": [
+      {
+        "dimension": "fear",
+        "value": 0.5
+      }
+    ]
+  },
+  "policy": {
+    "schema_version": 1,
+    "record_id": "membership-policy:triangle",
+    "trace_id": "trace:triangle",
+    "causation_id": "policy-publication:triangle",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": null,
+    "created_at": "2026-09-12T10:00:00Z",
+    "source_ids": [
+      "policy-publication:triangle"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "fuzzy:membership",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "fuzzy:membership",
+      "version": "v1"
+    },
+    "dimensions": [
+      {
+        "dimension": "fear",
+        "labels": [
+          {
+            "label": "LOW",
+            "shape": {
+              "kind": "trapezoid",
+              "a": 0.0,
+              "b": 0.0,
+              "c": 0.2,
+              "d": 0.45
+            }
+          },
+          {
+            "label": "MEDIUM",
+            "shape": {
+              "kind": "triangle",
+              "a": 0.25,
+              "b": 0.5,
+              "c": 0.75
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "schema_version": 1,
+    "record_id": "memberships:triangle",
+    "trace_id": "trace:triangle",
+    "causation_id": "membership-input:triangle",
+    "game_id": "game:local",
+    "timeline_id": "timeline:002",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:local",
+    "target_id": null,
+    "created_at": "2026-09-12T10:00:00Z",
+    "source_ids": [
+      "membership-input:triangle",
+      "candidate:triangle",
+      "membership-policy:triangle"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "fuzzy:membership",
+        "version": "v1"
+      }
+    ],
+    "input_id": "membership-input:triangle",
+    "candidate_state_id": "candidate:triangle",
+    "policy": {
+      "policy_id": "fuzzy:membership",
+      "version": "v1"
+    },
+    "dimensions": [
+      {
+        "dimension": "fear",
+        "labels": [
+          {
+            "label": "LOW",
+            "degree": 0.0
+          },
+          {
+            "label": "MEDIUM",
+            "degree": 1.0
+          }
+        ]
+      }
+    ]
+  }
+}

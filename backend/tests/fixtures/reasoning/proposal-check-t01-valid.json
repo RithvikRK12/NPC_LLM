@@ -1,0 +1,166 @@
+{
+  "raw_proposal": {
+    "snapshot_id": "snapshot:001",
+    "proposed_by": "model:mock",
+    "intent": "help",
+    "action": "speak",
+    "activity": "conversing",
+    "expression": "practical",
+    "target": {
+      "entity_id": "player:hero",
+      "position_id": null
+    },
+    "dialogue": "I can help with the bow if you bring wood and string.",
+    "confidence": 0.82,
+    "grounding": [
+      {
+        "scope": "fact",
+        "ref_id": "fact:bow_requires_materials"
+      },
+      {
+        "scope": "memory",
+        "ref_id": "memory:recent_request"
+      }
+    ],
+    "rationale": "The player asked for a bow and known quest facts require materials.",
+    "state_deltas": [
+      {
+        "field": "trust",
+        "delta": 0.1,
+        "source_ref_id": "memory:recent_request"
+      }
+    ]
+  },
+  "snapshot": {
+    "schema_version": 1,
+    "record_id": "snapshot-record:001",
+    "trace_id": "trace:proposal-check-001",
+    "causation_id": "interaction:ask_bow",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-09-29T10:00:00Z",
+    "source_ids": [
+      "interaction:ask_bow"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "reasoning:proposal_check",
+        "version": "v1"
+      }
+    ],
+    "snapshot_id": "snapshot:001",
+    "fact_ids": [
+      "fact:bow_requires_materials"
+    ],
+    "memory_ids": [
+      "memory:recent_request"
+    ],
+    "observation_ids": [
+      "observation:player_nearby"
+    ],
+    "constraint_ids": [
+      "constraint:no_inventory_grant"
+    ]
+  },
+  "policy": {
+    "schema_version": 1,
+    "record_id": "proposal-policy:001",
+    "trace_id": "trace:proposal-check-001",
+    "causation_id": "interaction:ask_bow",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-09-29T10:00:00Z",
+    "source_ids": [
+      "interaction:ask_bow"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "reasoning:proposal_check",
+        "version": "v1"
+      }
+    ],
+    "policy": {
+      "policy_id": "reasoning:proposal_check",
+      "version": "v1"
+    },
+    "allowed_intents": [
+      "help",
+      "request_purpose",
+      "decline",
+      "converse"
+    ],
+    "allowed_actions": [
+      "speak",
+      "face_target",
+      "idle"
+    ],
+    "allowed_state_fields": [
+      "trust",
+      "attention",
+      "urgency"
+    ],
+    "max_dialogue_chars": 240
+  },
+  "decision": {
+    "schema_version": 1,
+    "record_id": "decision-proposal-record:001",
+    "trace_id": "trace:proposal-check-001",
+    "causation_id": "snapshot-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-09-29T10:00:00Z",
+    "source_ids": [
+      "snapshot-record:001",
+      "proposal-policy:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "reasoning:proposal_check",
+        "version": "v1"
+      }
+    ],
+    "proposal_id": "proposal:001",
+    "snapshot_id": "snapshot:001",
+    "policy": {
+      "policy_id": "reasoning:proposal_check",
+      "version": "v1"
+    },
+    "intent": "help",
+    "action": "speak",
+    "activity": "conversing",
+    "expression": "practical",
+    "target": {
+      "entity_id": "player:hero",
+      "position_id": null
+    },
+    "dialogue": "I can help with the bow if you bring wood and string.",
+    "confidence": 0.82,
+    "grounding": [
+      {
+        "scope": "fact",
+        "ref_id": "fact:bow_requires_materials"
+      },
+      {
+        "scope": "memory",
+        "ref_id": "memory:recent_request"
+      }
+    ],
+    "rationale": "The player asked for a bow and known quest facts require materials.",
+    "state_deltas": [
+      {
+        "field": "trust",
+        "delta": 0.1,
+        "source_ref_id": "memory:recent_request"
+      }
+    ]
+  }
+}

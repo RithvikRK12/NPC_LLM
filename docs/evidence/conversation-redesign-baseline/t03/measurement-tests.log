@@ -1,0 +1,7 @@
+$ .venv/bin/python -m unittest discover -s docs/evidence/conversation-redesign-baseline/measurement -p 'test_measure.py'
+exit_code=0
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.214s
+
+OK

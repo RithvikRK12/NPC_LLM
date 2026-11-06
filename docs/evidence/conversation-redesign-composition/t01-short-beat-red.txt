@@ -1,0 +1,28 @@
+.............F..
+======================================================================
+FAIL: test_short_reply_stays_in_one_readable_beat (test_conversation_composition.ReplyAssemblyTests.test_short_reply_stays_in_one_readable_beat)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_composition.py", line 171, in test_short_reply_stays_in_one_readable_beat
+    self.assertEqual(reply.beats, ('The sea remembers.',))
+AssertionError: Tuples differ: ('The sea ', 'remembers.') != ('The sea remembers.',)
+
+First differing element 0:
+'The sea '
+'The sea remembers.'
+
+First tuple contains 1 additional elements.
+First extra element 1:
+'remembers.'
+
+- ('The sea ', 'remembers.')
+?           ----
+
++ ('The sea remembers.',)
+?                      +
+
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.114s
+
+FAILED (failures=1)

@@ -1,0 +1,85 @@
+{
+  "purpose": "local pilot functionality, not semantic release certification",
+  "model": "llama3:willowbrook",
+  "temperature": 0.2,
+  "context": 8192,
+  "generation_tokens": 2048,
+  "contract_json_characters": 16384,
+  "dialogue_characters": 600,
+  "models": [
+    {
+      "name": "llama3:willowbrook",
+      "model": "llama3:willowbrook",
+      "modified_at": "2026-10-20T11:13:35.191993269+05:30",
+      "size": 4661224319,
+      "digest": "f0b3ffc1f6aabddbd01767cb7d7ccd9ed4ce7354cf75f20b5ead4a8269c04d87",
+      "details": {
+        "parent_model": "llama3:latest",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_0",
+        "context_length": 8192,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion"
+      ]
+    },
+    {
+      "name": "llama3:latest",
+      "model": "llama3:latest",
+      "modified_at": "2026-09-20T20:02:04.01085426+05:30",
+      "size": 4661224676,
+      "digest": "365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_0",
+        "context_length": 8192,
+        "embedding_length": 4096
+      },
+      "capabilities": [
+        "completion"
+      ]
+    }
+  ],
+  "routes": {
+    "action": {
+      "n": 3,
+      "p50": 16.7691,
+      "p95": 19.1348
+    },
+    "ordinary": {
+      "n": 4,
+      "p50": 21.5759,
+      "p95": 23.1506
+    },
+    "provider_outage": {
+      "n": 2,
+      "p50": 0.0395,
+      "p95": 0.0473
+    },
+    "purpose_question": {
+      "n": 1,
+      "p50": 0.0664,
+      "p95": 0.0664
+    }
+  },
+  "exact_retries": 10,
+  "passed": true,
+  "semantic_quality_percentages": "unmeasured; human scoring waived",
+  "repair_latency": {
+    "n": 0,
+    "p50": null,
+    "p95": null
+  }
+}

@@ -1,0 +1,86 @@
+backend/app/gateway/contract_codec.py:91:    text: Annotated[str, Field(strict=True, min_length=1, max_length=300)]
+frontend/godot/scripts/chat_window.gd:94:	message_input.max_length = 500
+frontend/godot/scripts/chat_window.gd:133:	request.timeout = 160
+backend/app/schemas/chat.py:10:    player_message: str = Field(min_length=1, max_length=500)
+backend/app/policy/registry.py:27:    required_versions: tuple[PolicyVersion, ...] = Field(min_length=1)
+backend/app/policy/registry.py:60:    items: tuple[PolicyBundleItem, ...] = Field(min_length=1)
+backend/app/schemas/craftsman.py:6:    request_id: str = Field(min_length=1,max_length=100)
+backend/app/schemas/gatherer.py:9:    request_id: str = Field(min_length=1, max_length=100)
+backend/app/services/validation/models.py:24:    fact_ids: list[str] = Field(default_factory=list, max_length=2)
+backend/app/services/validation/models.py:36:    fact_ids: list[str] = Field(default_factory=list, max_length=2)
+backend/app/services/validation/models.py:37:    intent: str = Field(min_length=1)
+backend/app/services/validation/models.py:38:    emotion: str = Field(min_length=1)
+backend/app/services/validation/models.py:39:    dialogue: str = Field(min_length=1, max_length=600)
+backend/app/services/validation/models.py:40:    action: str = Field(min_length=1)
+backend/app/services/validation/models.py:42:    reasoning: str = Field(min_length=1)
+backend/app/roles/permissions.py:115:    reasons: tuple[PermissionReason, ...] = Field(min_length=1)
+backend/app/services/validation/service.py:64:        dialogue_limit = 600 if story else self._settings.max_dialogue_chars
+backend/app/services/validation/service.py:91:            if len(output.dialogue) > self._settings.max_dialogue_chars:
+backend/app/services/rule_engine/behavior_policy.json:24:  "max_dialogue_chars": 240
+backend/app/config/settings.py:19:    llm_timeout_seconds: float = Field(default=120.0, gt=0)
+backend/app/config/settings.py:24:    embedding_timeout_seconds: float = Field(default=30.0, gt=0)
+backend/app/config/settings.py:25:    memory_candidate_count: int = Field(default=40, ge=20, le=50)
+backend/app/config/settings.py:26:    max_dialogue_chars: int = 240
+backend/app/config/settings.py:27:    memory_top_k: int = 5
+backend/app/reasoning/proposal_check.py:22:ProposalText = Annotated[str, Field(strict=True, min_length=1, max_length=1200)]
+backend/app/reasoning/proposal_check.py:23:RationaleText = Annotated[str, Field(strict=True, min_length=1, max_length=500)]
+backend/app/reasoning/proposal_check.py:74:    grounding: tuple[GroundingReference, ...] = Field(min_length=1)
+backend/app/reasoning/proposal_check.py:110:    max_dialogue_chars: Annotated[int, Field(strict=True, ge=1, le=1200)]
+backend/app/reasoning/proposal_check.py:132:    grounding: tuple[GroundingReference, ...] = Field(min_length=1)
+backend/app/reasoning/proposal_check.py:229:    if raw_proposal.dialogue is not None and len(raw_proposal.dialogue) > policy.max_dialogue_chars:
+backend/app/services/memory/reindex.py:27:        rows = list(db.scalars(select(Memory).where(*conditions).order_by(Memory.id).limit(batch_size)))
+backend/app/memory/reconcile.py:12:MemoryText = Annotated[str, Field(strict=True, min_length=1, max_length=2000)]
+backend/app/services/rule_engine/behavior.py:74:        if len(prefix + mapped.dialogue) <= POLICY['max_dialogue_chars']:
+backend/app/services/rule_engine/behavior.py:83:                          'max_dialogue_chars': POLICY['max_dialogue_chars']})
+backend/app/services/pipeline.py:221:        memories = self._memory_service.retrieve_relevant_memories(refreshed_npc, player_message, self._settings.memory_top_k)
+backend/app/services/memory/service.py:98:        event = event[:512]
+backend/app/services/memory/service.py:128:        bound = get_settings().memory_candidate_count
+backend/app/services/memory/service.py:190:            *semantic_filters, Memory.id.in_(candidates)).order_by(Memory.id).limit(bound))) if candidates else []
+backend/app/services/memory/service.py:202:        tokens = sorted(set(re.findall(r'[a-z0-9]{2,32}', query[:500].lower())))[:12]
+backend/app/services/memory/service.py:208:                                            .order_by(*ordering).limit(bound)))
+backend/app/contracts/core.py:17:Identifier = Annotated[str, Field(strict=True, min_length=1, pattern=r"^[A-Za-z0-9][A-Za-z0-9_.:-]*$")]
+backend/app/contracts/core.py:71:    source_ids: tuple[Identifier, ...] = Field(min_length=1)
+backend/app/contracts/core.py:189:    public_message: Annotated[str, Field(strict=True, min_length=1)]
+backend/app/services/memory/importance.py:54:                              claim_text=player_input[:500], retracts_claim=target)
+backend/app/services/memory/importance.py:57:                              f'Player stated (unverified delivery claim): {player_input[:430]}', claim_text=player_input[:500])
+backend/app/services/memory/importance.py:68:                                      f'Player stated (unverified {category}): {text[:430]}', claim_text=text[:500])
+backend/app/services/decision_trace.py:16:    selected = sorted({value for value in ids if isinstance(value, str) and value in known})[:2]
+backend/app/services/decision_trace.py:43:    safe_behavior['mapping'] = {key: mapping[key] for key in ('action', 'item', 'max_dialogue_chars')}
+backend/app/memory/classify.py:13:MemoryText = Annotated[str, Field(strict=True, min_length=1, max_length=1200)]
+backend/app/memory/classify.py:130:        summary = f"Player stated (unverified {category.value}): {text[:430]}"
+backend/app/services/island.py:17:    for a, b in zip(points, points[1:] + points[:1]):
+backend/app/services/memory/embedding.py:31:                timeout=httpx.Timeout(self.settings.embedding_timeout_seconds, connect=3),
+backend/app/services/context/grounding.py:35:    directions: str = Field(min_length=1, max_length=140)
+backend/app/services/context/grounding.py:36:    source: str = Field(min_length=1)
+backend/app/services/context/grounding.py:41:    people: list[Person] = Field(max_length=8)
+backend/app/services/context/grounding.py:42:    places: list[Place] = Field(max_length=12)
+backend/app/services/context/grounding.py:43:    routes: list[Route] = Field(max_length=12)
+backend/app/control/fallback.py:54:    public_message: str = Field(strict=True, min_length=1, max_length=300)
+backend/app/control/fallback.py:70:    options: tuple[SafeFallbackOption, ...] = Field(min_length=1)
+backend/app/control/fallback.py:88:    public_message: str = Field(strict=True, min_length=1, max_length=300)
+backend/app/services/context/builder.py:32:        memories = self._memory_service.retrieve_relevant_memories(npc=npc, query=player_input, top_k=self._settings.memory_top_k)
+backend/app/services/context/builder.py:36:            .order_by(Conversation.id.desc()).limit(6)
+backend/app/services/memory/index.py:38:        return cls(ids, index, sorted(rejected)[:50])
+backend/app/domain/quest/recovery.py:99:    routes: tuple[RecoveryRoute, ...] = Field(min_length=1)
+backend/app/perception/normalize.py:16:SignalText = Annotated[str, Field(strict=True, min_length=1, max_length=2000)]
+backend/app/perception/normalize.py:17:UnitName = Annotated[str, Field(strict=True, min_length=1, max_length=40, pattern=r"^[a-z][a-z0-9_:/.-]*$")]
+backend/app/perception/normalize.py:83:    signals: tuple[ObservationSignal, ...] = Field(min_length=1)
+backend/app/perception/normalize.py:87:    source_ids: tuple[Identifier, ...] = Field(min_length=1)
+backend/app/perception/normalize.py:134:    signals: tuple[NormalizedSignal, ...] = Field(min_length=1)
+backend/app/domain/world/inventory.py:101:    owner_deltas: tuple[OwnerDelta, ...] = Field(min_length=1)
+backend/app/ports/read.py:38:    values: tuple[FiniteFloat, ...] = Field(min_length=1)
+backend/app/domain/fuzzy/membership.py:42:    dimensions: tuple[NamedInput, ...] = Field(min_length=1)
+backend/app/domain/fuzzy/membership.py:70:    labels: tuple[LabelDefinition, ...] = Field(min_length=1)
+backend/app/domain/fuzzy/membership.py:81:    dimensions: tuple[DimensionDefinition, ...] = Field(min_length=1)
+backend/app/domain/fuzzy/membership.py:91:    labels: tuple[LabelDegree, ...] = Field(min_length=1)
+backend/app/domain/fuzzy/membership.py:100:    dimensions: tuple[DimensionMemberships, ...] = Field(min_length=1)
+backend/app/domain/world/eligibility.py:16:InteractionText = Annotated[str, Field(strict=True, min_length=1, max_length=1000)]
+backend/app/domain/world/eligibility.py:68:    interaction_kinds: tuple[InteractionKind, ...] = Field(min_length=1)
+backend/app/domain/world/eligibility.py:100:    rules: tuple[InteractionRule, ...] = Field(min_length=1)
+backend/app/domain/world/eligibility.py:118:    predicates: tuple[PredicateResult, ...] = Field(min_length=1)
+backend/app/api/routes/world.py:21:                               .order_by(Conversation.id.desc()).limit(50)))
+backend/app/services/llm/openai_compatible.py:43:                        'fact_ids': {'type': 'array', 'maxItems': 0 if social else 2, 'items': {
+backend/app/services/llm/openai_compatible.py:45:                        'dialogue': {'type': 'string', 'maxLength': 600 if context.get('npc_role')=='craftsman' and re.search(r'\b(?:story|explain|tell me more)\b',context.get('player_input',''),re.I) else 240},
+backend/app/services/llm/openai_compatible.py:51:        with httpx.Client(timeout=httpx.Timeout(self._settings.llm_timeout_seconds, connect=5.0)) as client:
+backend/app/ports/write.py:51:    consumers: tuple[Identifier, ...] = Field(min_length=1)
+backend/app/dialogue/compose.py:11:DialogueText = Annotated[str, Field(strict=True, min_length=1, max_length=300)]

@@ -1,0 +1,237 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF...
+======================================================================
+FAIL: test_canon_creation_collision_rolls_back_all_publication (test_conversation_store_ports.FakeWriteRepositoryTests.test_canon_creation_collision_rolls_back_all_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_claim_next_only_oldest_and_independent_npc_streams (test_conversation_store_ports.FakeWriteRepositoryTests.test_claim_next_only_oldest_and_independent_npc_streams)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_clear_deletes_publication_and_preserves_canon_and_receipt (test_conversation_store_ports.FakeWriteRepositoryTests.test_clear_deletes_publication_and_preserves_canon_and_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_clear_erases_attempt_outputs_and_assembly_but_keeps_tombstone (test_conversation_store_ports.FakeWriteRepositoryTests.test_clear_erases_attempt_outputs_and_assembly_but_keeps_tombstone)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_clear_tombstone_replays_identity_without_erased_payload (test_conversation_store_ports.FakeWriteRepositoryTests.test_clear_tombstone_replays_identity_without_erased_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_cleared_turn_cannot_execute_or_recover_in_new_epoch (test_conversation_store_ports.FakeWriteRepositoryTests.test_cleared_turn_cannot_execute_or_recover_in_new_epoch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_committed_receipt_survives_clear_but_old_execution_is_invalidated (test_conversation_store_ports.FakeWriteRepositoryTests.test_committed_receipt_survives_clear_but_old_execution_is_invalidated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_dispatch_consumption_survives_restart_and_replacement_without_output (test_conversation_store_ports.FakeWriteRepositoryTests.test_dispatch_consumption_survives_restart_and_replacement_without_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_existing_receipt_is_recovered_without_a_second_effect (test_conversation_store_ports.FakeWriteRepositoryTests.test_existing_receipt_is_recovered_without_a_second_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_expired_claim_increments_fence_without_skipping_pending_turn (test_conversation_store_ports.FakeWriteRepositoryTests.test_expired_claim_increments_fence_without_skipping_pending_turn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_fake_claim_control_models_oldest_turn_and_independent_npcs (test_conversation_store_ports.FakeWriteRepositoryTests.test_fake_claim_control_models_oldest_turn_and_independent_npcs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_fake_structurally_conforms_to_available_protocols (test_conversation_store_ports.FakeWriteRepositoryTests.test_fake_structurally_conforms_to_available_protocols)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_final_retry_is_exact_and_releases_next_turn (test_conversation_store_ports.FakeWriteRepositoryTests.test_final_retry_is_exact_and_releases_next_turn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_finalization_failure_rolls_back_transcript_continuity_and_status (test_conversation_store_ports.FakeWriteRepositoryTests.test_finalization_failure_rolls_back_transcript_continuity_and_status)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_lookup_is_scoped_and_does_not_admit_or_execute (test_conversation_store_ports.FakeWriteRepositoryTests.test_lookup_is_scoped_and_does_not_admit_or_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_new_game_replaces_scope_and_prevents_old_recovery_and_writes (test_conversation_store_ports.FakeWriteRepositoryTests.test_new_game_replaces_scope_and_prevents_old_recovery_and_writes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_one_repair_token_is_shared_by_proposal_and_final_response (test_conversation_store_ports.FakeWriteRepositoryTests.test_one_repair_token_is_shared_by_proposal_and_final_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_operation_committed_interaction_cannot_be_overwritten (test_conversation_store_ports.FakeWriteRepositoryTests.test_operation_committed_interaction_cannot_be_overwritten)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_output_cannot_be_persisted_without_dispatch_or_changed_after_persistence (test_conversation_store_ports.FakeWriteRepositoryTests.test_output_cannot_be_persisted_without_dispatch_or_changed_after_persistence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_pending_scan_is_scoped_durable_and_read_only (test_conversation_store_ports.FakeWriteRepositoryTests.test_pending_scan_is_scoped_durable_and_read_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_publication_rejects_replaced_fence_and_relevant_revision_change (test_conversation_store_ports.FakeWriteRepositoryTests.test_publication_rejects_replaced_fence_and_relevant_revision_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_receipt_failure_rolls_back_effect_and_phase (test_conversation_store_ports.FakeWriteRepositoryTests.test_receipt_failure_rolls_back_effect_and_phase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_receipt_lookup_is_exact_scoped_and_does_not_execute (test_conversation_store_ports.FakeWriteRepositoryTests.test_receipt_lookup_is_exact_scoped_and_does_not_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_recorded_output_and_assembly_recover_with_original_fence (test_conversation_store_ports.FakeWriteRepositoryTests.test_recorded_output_and_assembly_recover_with_original_fence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_replaced_fence_cannot_execute (test_conversation_store_ports.FakeWriteRepositoryTests.test_replaced_fence_cannot_execute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_same_id_replays_and_different_payload_conflicts (test_conversation_store_ports.FakeWriteRepositoryTests.test_same_id_replays_and_different_payload_conflicts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_summary_cas_and_source_revisions_survive_restart (test_conversation_store_ports.FakeWriteRepositoryTests.test_summary_cas_and_source_revisions_survive_restart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_summary_publication_after_clear_is_rejected_and_old_summary_removed (test_conversation_store_ports.FakeWriteRepositoryTests.test_summary_publication_after_clear_is_rejected_and_old_summary_removed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 88, in setUp
+    self.assertTrue(hasattr(self.repository, method), f'T02 fake {method} is absent')
+AssertionError: False is not true : T02 fake record_attempt is absent
+
+======================================================================
+FAIL: test_attempt_protocols_use_t04_shared_repair_and_recovery_values (test_conversation_store_ports.FrozenWriteProtocolTests.test_attempt_protocols_use_t04_shared_repair_and_recovery_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_store_ports.py", line 53, in test_attempt_protocols_use_t04_shared_repair_and_recovery_values
+    self.assertTrue(hasattr(p.TurnStore, method), f'T02 {method} is absent')
+AssertionError: False is not true : T02 record_attempt is absent
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.001s
+
+FAILED (failures=29)

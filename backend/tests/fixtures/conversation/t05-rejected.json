@@ -1,0 +1,1227 @@
+[
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('schema_version', 2)",
+    "value": {
+      "schema_version": 2,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "direct",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('schema_version', True)",
+    "value": {
+      "schema_version": true,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "direct",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('modality', 'quoted')",
+    "value": {
+      "schema_version": 1,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "quoted",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('modality', 'hypothetical')",
+    "value": {
+      "schema_version": 1,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "hypothetical",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('modality', 'negated')",
+    "value": {
+      "schema_version": 1,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "negated",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('modality', 'ambiguous')",
+    "value": {
+      "schema_version": 1,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "ambiguous",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('action', 'accept')",
+    "value": {
+      "schema_version": 1,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "accept",
+      "modality": "direct",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('source_text', ' ')",
+    "value": {
+      "schema_version": 1,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "direct",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": " "
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('source_span', {'text_id': 'message:2', 'start': 4, 'end': 4})",
+    "value": {
+      "schema_version": 1,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "direct",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 4,
+        "end": 4
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "('consent', True)",
+    "value": {
+      "schema_version": 1,
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "direct",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood",
+      "consent": true
+    }
+  },
+  {
+    "model": "InteractionPreconditionState",
+    "label": "('schema_version', 2)",
+    "value": {
+      "schema_version": 2,
+      "interaction_id": "interaction:1",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "precondition_fingerprint": "fingerprint:1",
+      "authority": "server_evaluated",
+      "outcome": "failed"
+    }
+  },
+  {
+    "model": "InteractionPreconditionState",
+    "label": "('outcome', 'stale')",
+    "value": {
+      "schema_version": 1,
+      "interaction_id": "interaction:1",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "precondition_fingerprint": "fingerprint:1",
+      "authority": "server_evaluated",
+      "outcome": "stale"
+    }
+  },
+  {
+    "model": "InteractionPreconditionState",
+    "label": "('outcome', True)",
+    "value": {
+      "schema_version": 1,
+      "interaction_id": "interaction:1",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "precondition_fingerprint": "fingerprint:1",
+      "authority": "server_evaluated",
+      "outcome": true
+    }
+  },
+  {
+    "model": "InteractionPreconditionState",
+    "label": "('authority', 'provider')",
+    "value": {
+      "schema_version": 1,
+      "interaction_id": "interaction:1",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "precondition_fingerprint": "fingerprint:1",
+      "authority": "provider",
+      "outcome": "failed"
+    }
+  },
+  {
+    "model": "InteractionPreconditionState",
+    "label": "('safe_reason', 'private ownership rule')",
+    "value": {
+      "schema_version": 1,
+      "interaction_id": "interaction:1",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "precondition_fingerprint": "fingerprint:1",
+      "authority": "server_evaluated",
+      "outcome": "failed",
+      "safe_reason": "private ownership rule"
+    }
+  },
+  {
+    "model": "InteractionPreconditionState",
+    "label": "('sources', [])",
+    "value": {
+      "schema_version": 1,
+      "interaction_id": "interaction:1",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "precondition_fingerprint": "fingerprint:1",
+      "authority": "server_evaluated",
+      "outcome": "failed",
+      "sources": []
+    }
+  },
+  {
+    "model": "ContextPacket",
+    "label": "bad precondition missing {'schema_version': 1, 'interaction_id': 'interaction:1', 'turn': {'turn_id': 'turn:2', 'request_id': 'request:2', 'key': {'game_scope': 'run:1', 'npc_id': 1, 'epoch': 0}, 'sequence': 2}, 'precondition_fingerprint': 'fingerprint:1', 'authority': 'server_evaluated', 'outcome': 'failed'}",
+    "value": {
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "current_message": {
+        "text_id": "message:2",
+        "text": "🙂 Cancel the wood. Resume the outing."
+      },
+      "character_profile": [],
+      "active_canon": [],
+      "visible_recent_turns": [],
+      "summaries": [],
+      "reports": [],
+      "interpretations": [],
+      "visible_facts": [],
+      "capabilities": [],
+      "pending_interactions": [
+        {
+          "interaction_id": "interaction:1",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "item_negotiation",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": "wood",
+          "quantity": 1,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:1",
+          "revision": 1,
+          "status": "active",
+          "status_reason": null,
+          "offered_operations": []
+        },
+        {
+          "interaction_id": "interaction:2",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "activity_offer",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": null,
+          "quantity": null,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:2",
+          "revision": 1,
+          "status": "suspended",
+          "status_reason": "topic_changed",
+          "offered_operations": []
+        }
+      ],
+      "revisions": {
+        "resources": {}
+      },
+      "policy_versions": {
+        "bounds": "test:1"
+      },
+      "interaction_preconditions": {
+        "missing": {
+          "schema_version": 1,
+          "interaction_id": "interaction:1",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "precondition_fingerprint": "fingerprint:1",
+          "authority": "server_evaluated",
+          "outcome": "failed"
+        }
+      }
+    }
+  },
+  {
+    "model": "ContextPacket",
+    "label": "bad precondition interaction:1 {'schema_version': 1, 'interaction_id': 'interaction:1', 'turn': {'turn_id': 'turn:2', 'request_id': 'request:2', 'key': {'game_scope': 'run:1', 'npc_id': 1, 'epoch': 0}, 'sequence': 2}, 'precondition_fingerprint': 'stale', 'authority': 'server_evaluated', 'outcome': 'failed'}",
+    "value": {
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "current_message": {
+        "text_id": "message:2",
+        "text": "🙂 Cancel the wood. Resume the outing."
+      },
+      "character_profile": [],
+      "active_canon": [],
+      "visible_recent_turns": [],
+      "summaries": [],
+      "reports": [],
+      "interpretations": [],
+      "visible_facts": [],
+      "capabilities": [],
+      "pending_interactions": [
+        {
+          "interaction_id": "interaction:1",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "item_negotiation",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": "wood",
+          "quantity": 1,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:1",
+          "revision": 1,
+          "status": "active",
+          "status_reason": null,
+          "offered_operations": []
+        },
+        {
+          "interaction_id": "interaction:2",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "activity_offer",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": null,
+          "quantity": null,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:2",
+          "revision": 1,
+          "status": "suspended",
+          "status_reason": "topic_changed",
+          "offered_operations": []
+        }
+      ],
+      "revisions": {
+        "resources": {}
+      },
+      "policy_versions": {
+        "bounds": "test:1"
+      },
+      "interaction_preconditions": {
+        "interaction:1": {
+          "schema_version": 1,
+          "interaction_id": "interaction:1",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "precondition_fingerprint": "stale",
+          "authority": "server_evaluated",
+          "outcome": "failed"
+        }
+      }
+    }
+  },
+  {
+    "model": "ContextPacket",
+    "label": "bad precondition interaction:1 {'schema_version': 1, 'interaction_id': 'interaction:2', 'turn': {'turn_id': 'turn:2', 'request_id': 'request:2', 'key': {'game_scope': 'run:1', 'npc_id': 1, 'epoch': 0}, 'sequence': 2}, 'precondition_fingerprint': 'fingerprint:1', 'authority': 'server_evaluated', 'outcome': 'failed'}",
+    "value": {
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "current_message": {
+        "text_id": "message:2",
+        "text": "🙂 Cancel the wood. Resume the outing."
+      },
+      "character_profile": [],
+      "active_canon": [],
+      "visible_recent_turns": [],
+      "summaries": [],
+      "reports": [],
+      "interpretations": [],
+      "visible_facts": [],
+      "capabilities": [],
+      "pending_interactions": [
+        {
+          "interaction_id": "interaction:1",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "item_negotiation",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": "wood",
+          "quantity": 1,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:1",
+          "revision": 1,
+          "status": "active",
+          "status_reason": null,
+          "offered_operations": []
+        },
+        {
+          "interaction_id": "interaction:2",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "activity_offer",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": null,
+          "quantity": null,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:2",
+          "revision": 1,
+          "status": "suspended",
+          "status_reason": "topic_changed",
+          "offered_operations": []
+        }
+      ],
+      "revisions": {
+        "resources": {}
+      },
+      "policy_versions": {
+        "bounds": "test:1"
+      },
+      "interaction_preconditions": {
+        "interaction:1": {
+          "schema_version": 1,
+          "interaction_id": "interaction:2",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "precondition_fingerprint": "fingerprint:1",
+          "authority": "server_evaluated",
+          "outcome": "failed"
+        }
+      }
+    }
+  },
+  {
+    "model": "ContextPacket",
+    "label": "bad precondition interaction:1 {'schema_version': 1, 'interaction_id': 'interaction:1', 'turn': {'turn_id': 'turn:1', 'request_id': 'request:1', 'key': {'game_scope': 'run:1', 'npc_id': 1, 'epoch': 0}, 'sequence': 1}, 'precondition_fingerprint': 'fingerprint:1', 'authority': 'server_evaluated', 'outcome': 'failed'}",
+    "value": {
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "current_message": {
+        "text_id": "message:2",
+        "text": "🙂 Cancel the wood. Resume the outing."
+      },
+      "character_profile": [],
+      "active_canon": [],
+      "visible_recent_turns": [],
+      "summaries": [],
+      "reports": [],
+      "interpretations": [],
+      "visible_facts": [],
+      "capabilities": [],
+      "pending_interactions": [
+        {
+          "interaction_id": "interaction:1",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "item_negotiation",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": "wood",
+          "quantity": 1,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:1",
+          "revision": 1,
+          "status": "active",
+          "status_reason": null,
+          "offered_operations": []
+        },
+        {
+          "interaction_id": "interaction:2",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "activity_offer",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": null,
+          "quantity": null,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:2",
+          "revision": 1,
+          "status": "suspended",
+          "status_reason": "topic_changed",
+          "offered_operations": []
+        }
+      ],
+      "revisions": {
+        "resources": {}
+      },
+      "policy_versions": {
+        "bounds": "test:1"
+      },
+      "interaction_preconditions": {
+        "interaction:1": {
+          "schema_version": 1,
+          "interaction_id": "interaction:1",
+          "turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "precondition_fingerprint": "fingerprint:1",
+          "authority": "server_evaluated",
+          "outcome": "failed"
+        }
+      }
+    }
+  },
+  {
+    "model": "TurnProposal",
+    "label": "duplicate cue IDs",
+    "value": {
+      "concerns": [],
+      "references": [],
+      "reports": [],
+      "correction_candidates": [],
+      "operation_candidates": [],
+      "interaction_links": [],
+      "reply": [
+        {
+          "kind": "expressive",
+          "segment_id": "reply:2",
+          "text": "Understood.",
+          "addressed_concern_ids": []
+        }
+      ],
+      "canon_candidates": [],
+      "interaction_lifecycle_cues": [
+        {
+          "schema_version": 1,
+          "cue_id": "cue:cancel",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "interaction_id": "interaction:1",
+          "action": "cancel",
+          "modality": "direct",
+          "source_span": {
+            "text_id": "message:2",
+            "start": 2,
+            "end": 17
+          },
+          "source_text": "Cancel the wood"
+        },
+        {
+          "schema_version": 1,
+          "cue_id": "cue:cancel",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "interaction_id": "interaction:1",
+          "action": "cancel",
+          "modality": "direct",
+          "source_span": {
+            "text_id": "message:2",
+            "start": 2,
+            "end": 17
+          },
+          "source_text": "Cancel the wood"
+        }
+      ]
+    }
+  },
+  {
+    "model": "TurnProposal",
+    "label": "conflicting cues for one interaction",
+    "value": {
+      "concerns": [],
+      "references": [],
+      "reports": [],
+      "correction_candidates": [],
+      "operation_candidates": [],
+      "interaction_links": [],
+      "reply": [
+        {
+          "kind": "expressive",
+          "segment_id": "reply:2",
+          "text": "Understood.",
+          "addressed_concern_ids": []
+        }
+      ],
+      "canon_candidates": [],
+      "interaction_lifecycle_cues": [
+        {
+          "schema_version": 1,
+          "cue_id": "cue:cancel",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "interaction_id": "interaction:1",
+          "action": "cancel",
+          "modality": "direct",
+          "source_span": {
+            "text_id": "message:2",
+            "start": 2,
+            "end": 17
+          },
+          "source_text": "Cancel the wood"
+        },
+        {
+          "schema_version": 1,
+          "cue_id": "cue:resume",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "interaction_id": "interaction:1",
+          "action": "resume",
+          "modality": "direct",
+          "source_span": {
+            "text_id": "message:2",
+            "start": 19,
+            "end": 36
+          },
+          "source_text": "Resume the outing"
+        }
+      ]
+    }
+  },
+  {
+    "model": "ContextPacket",
+    "label": "duplicate evaluation value IDs",
+    "value": {
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "current_message": {
+        "text_id": "message:2",
+        "text": "🙂 Cancel the wood. Resume the outing."
+      },
+      "character_profile": [],
+      "active_canon": [],
+      "visible_recent_turns": [],
+      "summaries": [],
+      "reports": [],
+      "interpretations": [],
+      "visible_facts": [],
+      "capabilities": [],
+      "pending_interactions": [
+        {
+          "interaction_id": "interaction:1",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "item_negotiation",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": "wood",
+          "quantity": 1,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:1",
+          "revision": 1,
+          "status": "active",
+          "status_reason": null,
+          "offered_operations": []
+        },
+        {
+          "interaction_id": "interaction:2",
+          "key": {
+            "game_scope": "run:1",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "kind": "activity_offer",
+          "originating_turn": {
+            "turn_id": "turn:1",
+            "request_id": "request:1",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 1
+          },
+          "target": {
+            "reference_id": "npc:1",
+            "entity_kind": "npc",
+            "entity_id": "1"
+          },
+          "item": null,
+          "quantity": null,
+          "question_text": "Would you like this wood?",
+          "question_id": "question:1",
+          "question_turn_id": "turn:1",
+          "required_response_kind": "affirmation",
+          "precondition_fingerprint": "fingerprint:2",
+          "revision": 1,
+          "status": "suspended",
+          "status_reason": "topic_changed",
+          "offered_operations": []
+        }
+      ],
+      "revisions": {
+        "resources": {}
+      },
+      "policy_versions": {
+        "bounds": "test:1"
+      },
+      "interaction_preconditions": {
+        "interaction:1": {
+          "schema_version": 1,
+          "interaction_id": "interaction:1",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "precondition_fingerprint": "fingerprint:1",
+          "authority": "server_evaluated",
+          "outcome": "failed"
+        },
+        "interaction:2": {
+          "schema_version": 1,
+          "interaction_id": "interaction:1",
+          "turn": {
+            "turn_id": "turn:2",
+            "request_id": "request:2",
+            "key": {
+              "game_scope": "run:1",
+              "npc_id": 1,
+              "epoch": 0
+            },
+            "sequence": 2
+          },
+          "precondition_fingerprint": "fingerprint:1",
+          "authority": "server_evaluated",
+          "outcome": "failed"
+        }
+      }
+    }
+  },
+  {
+    "model": "InteractionLifecycleCue",
+    "label": "missing required schema_version",
+    "value": {
+      "cue_id": "cue:cancel",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "interaction_id": "interaction:1",
+      "action": "cancel",
+      "modality": "direct",
+      "source_span": {
+        "text_id": "message:2",
+        "start": 2,
+        "end": 17
+      },
+      "source_text": "Cancel the wood"
+    }
+  },
+  {
+    "model": "InteractionPreconditionState",
+    "label": "missing required outcome",
+    "value": {
+      "schema_version": 1,
+      "interaction_id": "interaction:1",
+      "turn": {
+        "turn_id": "turn:2",
+        "request_id": "request:2",
+        "key": {
+          "game_scope": "run:1",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "precondition_fingerprint": "fingerprint:1",
+      "authority": "server_evaluated"
+    }
+  }
+]

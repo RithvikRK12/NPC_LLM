@@ -1,0 +1,2161 @@
+[
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:6620743836267044073",
+      "key": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "Can you make me a bow?"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "aff62191-a94e-4b5d-883d-8055208a8ff5",
+          "request_id": "godot:6620743836267044073",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 1
+        },
+        "attempt_id": "aff62191-a94e-4b5d-883d-8055208a8ff5:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:08.468755Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "discuss_bow",
+              "arguments": {},
+              "target": {
+                "reference_id": "npc:1",
+                "entity_kind": "npc",
+                "entity_id": "1"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:1",
+                  "start": 0,
+                  "end": 22
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "aff62191-a94e-4b5d-883d-8055208a8ff5",
+          "request_id": "godot:6620743836267044073",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 1
+        },
+        "attempt_id": "aff62191-a94e-4b5d-883d-8055208a8ff5:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:08.476947Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "A bow, you say? That's a thoughtful gift. I'm glad you thought of me. It's been a while since I've made one, but I'm happy to help.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:103fd271-7f5a-47eb-a105-df17ec1a734c",
+              "receipt_id": "103fd271-7f5a-47eb-a105-df17ec1a734c",
+              "speech_act": "completed",
+              "renderer_id": "receipt.completed"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "aff62191-a94e-4b5d-883d-8055208a8ff5",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "aff62191-a94e-4b5d-883d-8055208a8ff5",
+        "request_id": "godot:6620743836267044073",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 1
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:aff62191-a94e-4b5d-883d-8055208a8ff5",
+        "final_text": "A bow, you say? That's a thoughtful gift. I'm glad you thought of me. It's been a while since I've made one, but I'm happy to help. We discussed the materials for your bow. Check your quest journal for the next steps.",
+        "beats": [
+          "A bow, you say? That's a thoughtful gift. I'm glad you thought of me. It's been a while since I've made one, but I'm happy to help. We discussed the materials for your bow. Check your quest journal for the next steps."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:aff62191-a94e-4b5d-883d-8055208a8ff5",
+            "start": 0,
+            "end": 131
+          },
+          "receipt-slot:103fd271-7f5a-47eb-a105-df17ec1a734c": {
+            "text_id": "final:aff62191-a94e-4b5d-883d-8055208a8ff5",
+            "start": 132,
+            "end": 217
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "103fd271-7f5a-47eb-a105-df17ec1a734c",
+            "revision": "7b7590099cb2595029762a7323fd21fd49ae22cca577dd5011978e757ca8db93",
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "aff62191-a94e-4b5d-883d-8055208a8ff5",
+        "request_id": "godot:6620743836267044073",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 1
+      },
+      "final_dialogue": "A bow, you say? That's a thoughtful gift. I'm glad you thought of me. It's been a while since I've made one, but I'm happy to help. We discussed the materials for your bow. Check your quest journal for the next steps.",
+      "dialogue_beats": [
+        "A bow, you say? That's a thoughtful gift. I'm glad you thought of me. It's been a while since I've made one, but I'm happy to help. We discussed the materials for your bow. Check your quest journal for the next steps."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "103fd271-7f5a-47eb-a105-df17ec1a734c"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 10064.0,
+            "y": 10016.0
+          },
+          "current_location": "workshop",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "gather",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": false,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 1
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 2,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 0,
+          "quest:bow": 2,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 2
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "craftsman_encounter": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "revision": 1
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "gather",
+          "objective": "Get wood from the Gatherer. Pick up string near the well. Give both to the Craftsman.",
+          "string_available": true,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "A bow, you say? That's a thoughtful gift. I'm glad you thought of me. It's been a while since I've made one, but I'm happy to help. We discussed the materials for your bow. Check your quest journal for the next steps.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "A bow, you say? That's a thoughtful gift. I'm glad you thought of me. It's been a while since I've made one, but I'm happy to help. We discussed the materials for your bow. Check your quest journal for the next steps.",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": []
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:1704119318343024899",
+      "key": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "I give you wood"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "dc2a0579-db8e-496b-9348-a33f5af681f4",
+          "request_id": "godot:1704119318343024899",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 2
+        },
+        "attempt_id": "dc2a0579-db8e-496b-9348-a33f5af681f4:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:26.492451Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "receive_item",
+              "arguments": {
+                "item": "wood"
+              },
+              "target": {
+                "reference_id": "npc:1",
+                "entity_kind": "npc",
+                "entity_id": "1"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:2",
+                  "start": 0,
+                  "end": 15
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "dc2a0579-db8e-496b-9348-a33f5af681f4",
+          "request_id": "godot:1704119318343024899",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 2
+        },
+        "attempt_id": "dc2a0579-db8e-496b-9348-a33f5af681f4:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:26.499863Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "I appreciate the wood, but I hope it's not a one-time gift. I've got a lot of projects in mind.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:88ed03de-3e5e-467c-96e1-d6dc59a263e6",
+              "receipt_id": "88ed03de-3e5e-467c-96e1-d6dc59a263e6",
+              "speech_act": "completed",
+              "renderer_id": "receipt.completed"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "dc2a0579-db8e-496b-9348-a33f5af681f4",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "dc2a0579-db8e-496b-9348-a33f5af681f4",
+        "request_id": "godot:1704119318343024899",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:dc2a0579-db8e-496b-9348-a33f5af681f4",
+        "final_text": "I appreciate the wood, but I hope it's not a one-time gift. I've got a lot of projects in mind. You gave me 1 wood.",
+        "beats": [
+          "I appreciate the wood, but I hope it's not a one-time gift. I've got a lot of projects in mind. You gave me 1 wood."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:dc2a0579-db8e-496b-9348-a33f5af681f4",
+            "start": 0,
+            "end": 95
+          },
+          "receipt-slot:88ed03de-3e5e-467c-96e1-d6dc59a263e6": {
+            "text_id": "final:dc2a0579-db8e-496b-9348-a33f5af681f4",
+            "start": 96,
+            "end": 115
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "88ed03de-3e5e-467c-96e1-d6dc59a263e6",
+            "revision": "c013063ef59a6592f928deb49abe7a45b667b2e8df4bdcee817d782ba46ba716",
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "dc2a0579-db8e-496b-9348-a33f5af681f4",
+        "request_id": "godot:1704119318343024899",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "final_dialogue": "I appreciate the wood, but I hope it's not a one-time gift. I've got a lot of projects in mind. You gave me 1 wood.",
+      "dialogue_beats": [
+        "I appreciate the wood, but I hope it's not a one-time gift. I've got a lot of projects in mind. You gave me 1 wood."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "88ed03de-3e5e-467c-96e1-d6dc59a263e6"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 10064.0,
+            "y": 10016.0
+          },
+          "current_location": "workshop",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food",
+          "string"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope",
+          "wood"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "receive_item",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope",
+            "wood"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.15,
+          "fear": 0.25,
+          "aggression": 0.75,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "give_item",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "active",
+          "progress": 50
+        },
+        "quest:bow": {
+          "phase": "gather",
+          "string_collected": true,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": false,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 1
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "resolved_declined",
+            "checkpoint": {
+              "position": {
+                "x": -1370.0,
+                "y": 70.0
+              },
+              "facing": {
+                "x": -1.0,
+                "y": 0.0
+              },
+              "staging_version": 2
+            },
+            "attempt_id": "d2626d0f-966a-4047-abab-a73d78e59637",
+            "accepted_attempt_id": "",
+            "outcome_fact": "I asked the player for help against two boars. They refused and returned toward the village; I dealt with the boars myself."
+          },
+          "revision": 5
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 2,
+          "encounter:gatherer": 6,
+          "inventory:npc:1": 1,
+          "inventory:npc:2": 1,
+          "inventory:player": 3,
+          "npc:1": 1,
+          "npc:2": 2,
+          "quest:bow": 3,
+          "quest:legacy": 1,
+          "quest:ship_repair": 0,
+          "world": 16
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "craftsman_encounter": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "revision": 1
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "gather",
+          "objective": "Get wood from the Gatherer. Pick up string near the well. Give both to the Craftsman.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "receive_item",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope",
+            "wood"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "I appreciate the wood, but I hope it's not a one-time gift. I've got a lot of projects in mind. You gave me 1 wood.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "I appreciate the wood, but I hope it's not a one-time gift. I've got a lot of projects in mind. You gave me 1 wood.",
+        "player_inventory": [
+          "water",
+          "food",
+          "string"
+        ],
+        "quest_status": "active",
+        "quest_progress": 50,
+        "memories": []
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:6409584292608851785",
+      "key": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "npc_id": 1,
+        "epoch": 0
+      },
+      "player_message": "I give you string"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "c9c8f424-a363-44e8-9242-fe2323ec6192",
+          "request_id": "godot:6409584292608851785",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 3
+        },
+        "attempt_id": "c9c8f424-a363-44e8-9242-fe2323ec6192:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:29.101590Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "receive_item",
+              "arguments": {
+                "item": "string"
+              },
+              "target": {
+                "reference_id": "npc:1",
+                "entity_kind": "npc",
+                "entity_id": "1"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:3",
+                  "start": 0,
+                  "end": 17
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "c9c8f424-a363-44e8-9242-fe2323ec6192",
+          "request_id": "godot:6409584292608851785",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "epoch": 0
+          },
+          "sequence": 3
+        },
+        "attempt_id": "c9c8f424-a363-44e8-9242-fe2323ec6192:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:29.109463Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "A string, you say? I'm not sure what to make of it, but I suppose it's a start. I've always found that a well-crafted string can be quite useful.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:ee104ba2-67b0-49e7-9198-fd5e2060dfe3",
+              "receipt_id": "ee104ba2-67b0-49e7-9198-fd5e2060dfe3",
+              "speech_act": "completed",
+              "renderer_id": "receipt.completed"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "c9c8f424-a363-44e8-9242-fe2323ec6192",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "c9c8f424-a363-44e8-9242-fe2323ec6192",
+        "request_id": "godot:6409584292608851785",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 3
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:c9c8f424-a363-44e8-9242-fe2323ec6192",
+        "final_text": "A string, you say? I'm not sure what to make of it, but I suppose it's a start. I've always found that a well-crafted string can be quite useful. You gave me 1 string.",
+        "beats": [
+          "A string, you say? I'm not sure what to make of it, but I suppose it's a start. I've always found that a well-crafted string can be quite useful. You gave me 1 string."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:c9c8f424-a363-44e8-9242-fe2323ec6192",
+            "start": 0,
+            "end": 145
+          },
+          "receipt-slot:ee104ba2-67b0-49e7-9198-fd5e2060dfe3": {
+            "text_id": "final:c9c8f424-a363-44e8-9242-fe2323ec6192",
+            "start": 146,
+            "end": 167
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "ee104ba2-67b0-49e7-9198-fd5e2060dfe3",
+            "revision": "9b89f610648f889d333fba5f71f81bff3b581207087c56eca483b96f96448be4",
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 1,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "c9c8f424-a363-44e8-9242-fe2323ec6192",
+        "request_id": "godot:6409584292608851785",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 3
+      },
+      "final_dialogue": "A string, you say? I'm not sure what to make of it, but I suppose it's a start. I've always found that a well-crafted string can be quite useful. You gave me 1 string.",
+      "dialogue_beats": [
+        "A string, you say? I'm not sure what to make of it, but I suppose it's a start. I've always found that a well-crafted string can be quite useful. You gave me 1 string."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "ee104ba2-67b0-49e7-9198-fd5e2060dfe3"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 10064.0,
+            "y": 10016.0
+          },
+          "current_location": "workshop",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "crafting_bow",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.15,
+          "fear": 0.25,
+          "aggression": 0.75,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "give_item",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "active",
+          "progress": 50
+        },
+        "quest:bow": {
+          "phase": "crafting",
+          "string_collected": true,
+          "ready_at": 1792484854.1082509
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": false,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 1
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "resolved_declined",
+            "checkpoint": {
+              "position": {
+                "x": -1370.0,
+                "y": 70.0
+              },
+              "facing": {
+                "x": -1.0,
+                "y": 0.0
+              },
+              "staging_version": 2
+            },
+            "attempt_id": "d2626d0f-966a-4047-abab-a73d78e59637",
+            "accepted_attempt_id": "",
+            "outcome_fact": "I asked the player for help against two boars. They refused and returned toward the village; I dealt with the boars myself."
+          },
+          "revision": 5
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 2,
+          "encounter:gatherer": 6,
+          "inventory:npc:1": 3,
+          "inventory:npc:2": 1,
+          "inventory:player": 4,
+          "npc:1": 3,
+          "npc:2": 2,
+          "quest:bow": 4,
+          "quest:legacy": 1,
+          "quest:ship_repair": 0,
+          "world": 16
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "craftsman_encounter": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "revision": 1
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "crafting",
+          "objective": "The Craftsman is making your bow.",
+          "string_available": false,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 2.5646920204162598,
+          "craft_seconds": 5.0,
+          "craft_progress": 48.706159591674805
+        },
+        "npc": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "crafting_bow",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "A string, you say? I'm not sure what to make of it, but I suppose it's a start. I've always found that a well-crafted string can be quite useful. You gave me 1 string.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "A string, you say? I'm not sure what to make of it, but I suppose it's a start. I've always found that a well-crafted string can be quite useful. You gave me 1 string.",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "active",
+        "quest_progress": 50,
+        "memories": []
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:1129592090520275757",
+      "key": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "npc_id": 2,
+        "epoch": 0
+      },
+      "player_message": "give me wood"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "56f972a7-be2d-42ba-a582-77ddd29077a0",
+          "request_id": "godot:1129592090520275757",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 2,
+            "epoch": 0
+          },
+          "sequence": 1
+        },
+        "attempt_id": "56f972a7-be2d-42ba-a582-77ddd29077a0:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:24.527280Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "give_item",
+              "arguments": {
+                "item": "wood"
+              },
+              "target": {
+                "reference_id": "npc:2",
+                "entity_kind": "npc",
+                "entity_id": "2"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:1",
+                  "start": 0,
+                  "end": 12
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": null
+            }
+          ],
+          "interaction_links": [],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "56f972a7-be2d-42ba-a582-77ddd29077a0",
+        "request_id": "godot:1129592090520275757",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 2,
+          "epoch": 0
+        },
+        "sequence": 1
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "fallback:56f972a7-be2d-42ba-a582-77ddd29077a0",
+        "final_text": "Before I give you the wood, why do you need it?",
+        "beats": [
+          "Before I give you the wood, why do you need it?"
+        ],
+        "response_origin": "fallback",
+        "degradation_reason": "SAFE_FALLBACK",
+        "segment_spans": {
+          "fallback": {
+            "text_id": "fallback:56f972a7-be2d-42ba-a582-77ddd29077a0",
+            "start": 0,
+            "end": 47
+          }
+        },
+        "evidence_dependencies": [],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "56f972a7-be2d-42ba-a582-77ddd29077a0",
+        "request_id": "godot:1129592090520275757",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 2,
+          "epoch": 0
+        },
+        "sequence": 1
+      },
+      "final_dialogue": "Before I give you the wood, why do you need it?",
+      "dialogue_beats": [
+        "Before I give you the wood, why do you need it?"
+      ],
+      "response_origin": "fallback",
+      "degradation_reason": "SAFE_FALLBACK",
+      "receipt_refs": [],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": -1644.0,
+            "y": 70.0
+          },
+          "current_location": "forest_edge",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.15,
+          "fear": 0.25,
+          "aggression": 0.75,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "not_started",
+          "progress": 0
+        },
+        "quest:bow": {
+          "phase": "gather",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": false,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 1
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "resolved_declined",
+            "checkpoint": {
+              "position": {
+                "x": -1370.0,
+                "y": 70.0
+              },
+              "facing": {
+                "x": -1.0,
+                "y": 0.0
+              },
+              "staging_version": 2
+            },
+            "attempt_id": "d2626d0f-966a-4047-abab-a73d78e59637",
+            "accepted_attempt_id": "",
+            "outcome_fact": "I asked the player for help against two boars. They refused and returned toward the village; I dealt with the boars myself."
+          },
+          "revision": 5
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 2,
+          "encounter:gatherer": 6,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 1,
+          "quest:bow": 2,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 14
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "craftsman_encounter": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "revision": 1
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "gather",
+          "objective": "Get wood from the Gatherer. Pick up string near the well. Give both to the Craftsman.",
+          "string_available": true,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.15,
+          "fear": 0.25,
+          "aggression": 0.75,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "Before I give you the wood, why do you need it?",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "Before I give you the wood, why do you need it?",
+        "player_inventory": [
+          "water",
+          "food"
+        ],
+        "quest_status": "not_started",
+        "quest_progress": 0,
+        "memories": [
+          {
+            "id": 1,
+            "npc_id": 2,
+            "event": "I asked the player for help against two boars. They refused and returned toward the village; I dealt with the boars myself.",
+            "importance": 1.0,
+            "emotion": "anger and distrust",
+            "timestamp": "2026-10-20T08:27:18.403237",
+            "event_type": "gatherer_encounter",
+            "quest_id": null,
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "source_event_id": "8bc72b0f-389d-5fc4-b5c0-254ad019090f",
+            "source_conversation_id": null,
+            "epistemic_status": "fact",
+            "authority": "authoritative",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "submission": {
+      "schema_version": 1,
+      "request_id": "godot:6907506457573710198",
+      "key": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "npc_id": 2,
+        "epoch": 0
+      },
+      "player_message": "To help the Craftsman make a bow"
+    },
+    "attempts": [
+      {
+        "turn": {
+          "turn_id": "3ee7c64f-ae2b-4291-8988-2cb1c416f244",
+          "request_id": "godot:6907506457573710198",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 2,
+            "epoch": 0
+          },
+          "sequence": 2
+        },
+        "attempt_id": "3ee7c64f-ae2b-4291-8988-2cb1c416f244:proposal",
+        "fence": 1,
+        "purpose": "proposal",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:24.595190Z",
+        "status": "output_persisted",
+        "output": {
+          "concerns": [
+            {
+              "concern_id": "server:purpose",
+              "kind": "request",
+              "message_spans": [
+                {
+                  "text_id": "turn:2",
+                  "start": 0,
+                  "end": 32
+                }
+              ]
+            }
+          ],
+          "references": [],
+          "reports": [],
+          "correction_candidates": [],
+          "operation_candidates": [
+            {
+              "candidate_id": "server:request",
+              "command_id": "give_item",
+              "arguments": {
+                "item": "wood"
+              },
+              "target": {
+                "reference_id": "npc:2",
+                "entity_kind": "npc",
+                "entity_id": "2"
+              },
+              "source_spans": [
+                {
+                  "text_id": "turn:2",
+                  "start": 0,
+                  "end": 32
+                }
+              ],
+              "modality": "direct",
+              "pending_question_id": "fallback:56f972a7-be2d-42ba-a582-77ddd29077a0"
+            }
+          ],
+          "interaction_links": [
+            {
+              "link_id": "server:purpose-link",
+              "question_id": "fallback:56f972a7-be2d-42ba-a582-77ddd29077a0",
+              "concern_id": "server:purpose",
+              "source_spans": [
+                {
+                  "text_id": "turn:2",
+                  "start": 0,
+                  "end": 32
+                }
+              ]
+            }
+          ],
+          "reply": [
+            {
+              "kind": "expressive",
+              "segment_id": "server:request-reply",
+              "text": "All right.",
+              "addressed_concern_ids": []
+            }
+          ],
+          "canon_candidates": []
+        }
+      },
+      {
+        "turn": {
+          "turn_id": "3ee7c64f-ae2b-4291-8988-2cb1c416f244",
+          "request_id": "godot:6907506457573710198",
+          "key": {
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 2,
+            "epoch": 0
+          },
+          "sequence": 2
+        },
+        "attempt_id": "3ee7c64f-ae2b-4291-8988-2cb1c416f244:composition",
+        "fence": 1,
+        "purpose": "composition",
+        "repair_kind": null,
+        "dispatched_at": "2026-10-20T08:27:24.605636Z",
+        "status": "output_persisted",
+        "output": {
+          "segments": [
+            {
+              "kind": "expressive",
+              "segment_id": "speech:generated",
+              "text": "A bow? That's a new one. I'm not sure I'm ready to make one that's perfect.",
+              "addressed_concern_ids": []
+            },
+            {
+              "kind": "receipt_slot",
+              "segment_id": "receipt-slot:95df22e2-7d8c-41f3-ae15-d83963ad4425",
+              "receipt_id": "95df22e2-7d8c-41f3-ae15-d83963ad4425",
+              "speech_act": "completed",
+              "renderer_id": "receipt.completed"
+            }
+          ],
+          "source": {
+            "origin": "generated",
+            "source_id": "3ee7c64f-ae2b-4291-8988-2cb1c416f244",
+            "schema_version": 1,
+            "policy_versions": {
+              "context": "sql-context-v1",
+              "bounds": "local-playtest-v1"
+            }
+          },
+          "canon_candidates": []
+        }
+      }
+    ],
+    "assembled_reply": {
+      "turn": {
+        "turn_id": "3ee7c64f-ae2b-4291-8988-2cb1c416f244",
+        "request_id": "godot:6907506457573710198",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 2,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "fence": 1,
+      "reply": {
+        "text_id": "final:3ee7c64f-ae2b-4291-8988-2cb1c416f244",
+        "final_text": "A bow? That's a new one. I'm not sure I'm ready to make one that's perfect. I gave you 1 wood.",
+        "beats": [
+          "A bow? That's a new one. I'm not sure I'm ready to make one that's perfect. I gave you 1 wood."
+        ],
+        "response_origin": "generated",
+        "degradation_reason": null,
+        "segment_spans": {
+          "speech:generated": {
+            "text_id": "final:3ee7c64f-ae2b-4291-8988-2cb1c416f244",
+            "start": 0,
+            "end": 75
+          },
+          "receipt-slot:95df22e2-7d8c-41f3-ae15-d83963ad4425": {
+            "text_id": "final:3ee7c64f-ae2b-4291-8988-2cb1c416f244",
+            "start": 76,
+            "end": 94
+          }
+        },
+        "evidence_dependencies": [
+          {
+            "kind": "operation_receipt",
+            "source_id": "95df22e2-7d8c-41f3-ae15-d83963ad4425",
+            "revision": "2368bba4518a8215141f5aaadfb23970d07d0fce1ce31dcc43e0370cd62c6de2",
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "npc_id": 2,
+            "attribution": "server",
+            "visibility": "npc_private"
+          }
+        ],
+        "candidate_continuity_changes": []
+      }
+    },
+    "final_result": {
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "3ee7c64f-ae2b-4291-8988-2cb1c416f244",
+        "request_id": "godot:6907506457573710198",
+        "key": {
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "npc_id": 2,
+          "epoch": 0
+        },
+        "sequence": 2
+      },
+      "final_dialogue": "A bow? That's a new one. I'm not sure I'm ready to make one that's perfect. I gave you 1 wood.",
+      "dialogue_beats": [
+        "A bow? That's a new one. I'm not sure I'm ready to make one that's perfect. I gave you 1 wood."
+      ],
+      "response_origin": "generated",
+      "degradation_reason": null,
+      "receipt_refs": [
+        "95df22e2-7d8c-41f3-ae15-d83963ad4425"
+      ],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": -1800.0,
+            "y": 134.0
+          },
+          "current_location": "forest_edge",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.15,
+          "fear": 0.25,
+          "aggression": 0.75,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "give_item",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "active",
+          "progress": 50
+        },
+        "quest:bow": {
+          "phase": "gather",
+          "string_collected": false,
+          "ready_at": null
+        },
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": false,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 1
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "resolved_declined",
+            "checkpoint": {
+              "position": {
+                "x": -1370.0,
+                "y": 70.0
+              },
+              "facing": {
+                "x": -1.0,
+                "y": 0.0
+              },
+              "staging_version": 2
+            },
+            "attempt_id": "d2626d0f-966a-4047-abab-a73d78e59637",
+            "accepted_attempt_id": "",
+            "outcome_fact": "I asked the player for help against two boars. They refused and returned toward the village; I dealt with the boars myself."
+          },
+          "revision": 5
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 2,
+          "encounter:gatherer": 6,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 1,
+          "inventory:player": 1,
+          "npc:1": 0,
+          "npc:2": 2,
+          "quest:bow": 2,
+          "quest:legacy": 1,
+          "quest:ship_repair": 0,
+          "world": 15
+        }
+      },
+      "diagnostic_ref": null,
+      "legacy_projection": {
+        "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+        "craftsman_encounter": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0,
+          "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+          "revision": 1
+        },
+        "ship_repair": {
+          "id": "ship_repair",
+          "title": "A Way Home",
+          "category": "Main story",
+          "recipe_version": 1,
+          "phase": "not_started",
+          "materials": [
+            {
+              "item": "ship_plank",
+              "name": "Sound timber plank",
+              "required": 12,
+              "contributed": 0,
+              "remaining": 12
+            },
+            {
+              "item": "rope",
+              "name": "Coil of rope",
+              "required": 3,
+              "contributed": 0,
+              "remaining": 3
+            },
+            {
+              "item": "sailcloth_bundle",
+              "name": "Bundle of sailcloth",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            },
+            {
+              "item": "pitch_pot",
+              "name": "Pot of pitch",
+              "required": 2,
+              "contributed": 0,
+              "remaining": 2
+            }
+          ],
+          "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+          "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+          "availability_note": "Material gathering and ship repair will be added in a later update."
+        },
+        "decision_trace": {},
+        "behavior_trace": {},
+        "grounding_trace": {},
+        "memory_classification": {},
+        "bow_quest": {
+          "title": "Get a bow",
+          "phase": "gather",
+          "objective": "Get wood from the Gatherer. Pick up string near the well. Give both to the Craftsman.",
+          "string_available": true,
+          "string_position": {
+            "x": -70.0,
+            "y": 240.0
+          },
+          "remaining_seconds": 0.0,
+          "craft_seconds": 5.0,
+          "craft_progress": 0
+        },
+        "npc": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.15,
+          "fear": 0.25,
+          "aggression": 0.75,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "give_item",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "fruits"
+          ]
+        },
+        "validated_output": {
+          "answer_kind": "chat",
+          "fact_ids": [],
+          "intent": "conversation",
+          "emotion": "neutral",
+          "dialogue": "A bow? That's a new one. I'm not sure I'm ready to make one that's perfect. I gave you 1 wood.",
+          "action": "none",
+          "item": null,
+          "reasoning": "",
+          "state_update": {
+            "trust": 0.0,
+            "fear": 0.0,
+            "aggression": 0.0,
+            "curiosity": 0.0
+          }
+        },
+        "final_dialogue": "A bow? That's a new one. I'm not sure I'm ready to make one that's perfect. I gave you 1 wood.",
+        "player_inventory": [
+          "water",
+          "food",
+          "wood"
+        ],
+        "quest_status": "active",
+        "quest_progress": 50,
+        "memories": [
+          {
+            "id": 1,
+            "npc_id": 2,
+            "event": "I asked the player for help against two boars. They refused and returned toward the village; I dealt with the boars myself.",
+            "importance": 1.0,
+            "emotion": "anger and distrust",
+            "timestamp": "2026-10-20T08:27:18.403237",
+            "event_type": "gatherer_encounter",
+            "quest_id": null,
+            "game_scope": "c5228aa8-32e8-4d1d-83f0-7b62cebe428c",
+            "source_event_id": "8bc72b0f-389d-5fc4-b5c0-254ad019090f",
+            "source_conversation_id": null,
+            "epistemic_status": "fact",
+            "authority": "authoritative",
+            "lifecycle": "active",
+            "correction_of_id": null,
+            "superseded_by_id": null
+          }
+        ]
+      }
+    }
+  }
+]

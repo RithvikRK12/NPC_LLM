@@ -1,0 +1,25 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+EE..
+======================================================================
+ERROR: test_authored_persona_reaches_provider_from_sql_for_both_roles (test_conversation_context_adapter.SQLContextReadAdapterTests.test_authored_persona_reaches_provider_from_sql_for_both_roles) (role='craftsman')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_context_adapter.py", line 160, in test_authored_persona_reaches_provider_from_sql_for_both_roles
+    self.assertEqual(profile['authority'], 'narrative_only')
+                     ~~~~~~~^^^^^^^^^^^^^
+KeyError: 'authority'
+
+======================================================================
+ERROR: test_authored_persona_reaches_provider_from_sql_for_both_roles (test_conversation_context_adapter.SQLContextReadAdapterTests.test_authored_persona_reaches_provider_from_sql_for_both_roles) (role='gatherer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_context_adapter.py", line 160, in test_authored_persona_reaches_provider_from_sql_for_both_roles
+    self.assertEqual(profile['authority'], 'narrative_only')
+                     ~~~~~~~^^^^^^^^^^^^^
+KeyError: 'authority'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.182s
+
+FAILED (errors=2)

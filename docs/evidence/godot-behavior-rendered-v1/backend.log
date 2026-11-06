@@ -1,0 +1,279 @@
+INFO:     Started server process [93864]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on socket ('127.0.0.1', 63300) (Press CTRL+C to quit)
+INFO:     127.0.0.1:63301 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63305 - "GET /world HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63306 - "POST /chat HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63307 - "POST /chat HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63309 - "POST /chat HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63311 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63313 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63320 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63328 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63337 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63345 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63355 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63363 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63371 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63379 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63387 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63395 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63405 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63414 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63422 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63430 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63438 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63446 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63454 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63463 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63471 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63479 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63487 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63495 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63504 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63513 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63523 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63532 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63544 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63557 - "POST /quests/bow/start HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63558 - "POST /chat HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63560 - "POST /inventory/transfer HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63562 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63564 - "POST /quests/bow/pickup-string HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "PUT /world/player-position HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63566 - "POST /inventory/transfer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63577 - "PUT /world/player-position HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63568 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63578 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63586 - "GET /world HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63587 - "POST /chat HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63595 - "POST /inventory/transfer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63597 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63598 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63599 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63600 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63601 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63602 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63603 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63604 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63605 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63606 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+Memory saved without semantic vector; run memory.reindex when Ollama is available
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 33, in embed_many
+    response.raise_for_status()
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/service.py", line 80, in store_memory
+    vector = self._embedder.embed(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 45, in embed
+    return self.embed_many([text], query=query)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/app/services/memory/embedding.py", line 42, in embed_many
+    raise EmbeddingUnavailable(f'Semantic embedding failed for {self.model_key}: {exc}') from exc
+app.services.memory.embedding.EmbeddingUnavailable: Semantic embedding failed for ollama:nomic-embed-text:v1:768: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/embed'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+INFO:     127.0.0.1:63607 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63609 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63617 - "POST /chat HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [93864]
+INFO:     Started server process [93998]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on socket ('127.0.0.1', 63300) (Press CTRL+C to quit)
+INFO:     127.0.0.1:63625 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63626 - "GET /world HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63627 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63628 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63629 - "POST /world/new-game HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [93998]

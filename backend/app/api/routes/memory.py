@@ -12,7 +12,11 @@ router = APIRouter(prefix="/memory", tags=["memory"])
 
 @router.get("/{npc_id}", response_model=list[MemoryRead])
 def get_memories(npc_id: int, db: Session = Depends(get_db)) -> list[MemoryRead]:
-    memories = list(db.scalars(select(Memory).where(Memory.npc_id == npc_id).order_by(Memory.timestamp.desc())))
+    from app.models import Player
+    player = db.get(Player, 1)
+    if player is None:
+        return []
+    memories = list(db.scalars(select(Memory).where(Memory.npc_id == npc_id, Memory.game_scope == (player.game_scope if player else None)).order_by(Memory.timestamp.desc())))
     return [MemoryRead.model_validate(memory) for memory in memories]
 
 @router.get('/{npc_id}/search')

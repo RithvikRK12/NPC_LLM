@@ -1,0 +1,30 @@
+{
+  "art_direction": {
+    "engine": "Godot 4.7.2, 2D top-down pixel village",
+    "asset_size": [
+      24,
+      24
+    ],
+    "world_scale": 2,
+    "background": "transparent",
+    "filtering": "nearest",
+    "palette": [
+      "#70482c",
+      "#d6ad55",
+      "#fff0ce",
+      "#9b632d",
+      "#edb66c"
+    ],
+    "placement": "three reachable forest spots; pickup icon above canopy, key hints nearby only"
+  },
+  "assets": [
+    {
+      "id": "honeycomb",
+      "path": "frontend/godot/assets/items/pixel/honeycomb.svg",
+      "source": "original authored SVG using existing item palette and pixel silhouettes",
+      "instances": 3,
+      "collision": "none; server validates pickup radius",
+      "qa": "Godot import, inventory icon lookup, gameplay screenshot, clear-ground and path-reachability checks pass"
+    }
+  ]
+}

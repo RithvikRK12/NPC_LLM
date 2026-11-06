@@ -1,0 +1,4 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PASS Native wall playback: 90.006 s; expected 90.0 s; endpoint (0.0, 4560.0)

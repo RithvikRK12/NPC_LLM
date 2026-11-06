@@ -6,38 +6,38 @@ var objective: Label
 var start_button: Button
 var progress: ProgressBar
 var remaining := 0.0
+var content_scroll: ScrollContainer
 
 func _ready() -> void:
-	position = Vector2(24, 152)
-	custom_minimum_size = Vector2(600, 172)
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color("202a27")
-	style.border_color = Color("bd9d64")
-	style.set_border_width_all(1)
-	style.set_corner_radius_all(10)
-	style.content_margin_left = 16
-	style.content_margin_right = 16
-	style.content_margin_top = 14
-	style.content_margin_bottom = 14
-	add_theme_stylebox_override("panel", style)
+	set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	offset_left = 24
+	offset_top = 100
+	offset_right = 600
+	add_theme_stylebox_override("panel", preload("res://scripts/medieval_theme.gd").frame())
+	content_scroll=ScrollContainer.new()
+	content_scroll.follow_focus=true
+	content_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	content_scroll.custom_minimum_size=Vector2(550,360)
+	add_child(content_scroll)
 	var layout := VBoxContainer.new()
+	layout.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	layout.add_theme_constant_override("separation", 10)
-	add_child(layout)
+	content_scroll.add_child(layout)
 	title = Label.new()
 	title.text = "GET A BOW"
-	title.add_theme_font_size_override("font_size", 24)
-	title.add_theme_color_override("font_color", Color("ead5a4"))
+	title.add_theme_font_size_override("font_size", 28)
+	title.add_theme_color_override("font_color", Color("302419"))
 	layout.add_child(title)
+	var close := Button.new()
+	close.text = "Close"
+	close.pressed.connect(hide)
+	layout.add_child(close)
 	objective = Label.new()
 	objective.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	objective.custom_minimum_size.x = 564
+	objective.custom_minimum_size.x = 400
 	layout.add_child(objective)
 	progress = ProgressBar.new()
 	progress.custom_minimum_size.y = 26
-	var fill := StyleBoxFlat.new()
-	fill.bg_color = Color("c9a866")
-	fill.set_corner_radius_all(5)
-	progress.add_theme_stylebox_override("fill", fill)
 	layout.add_child(progress)
 	start_button = Button.new()
 	start_button.text = "Begin • Get a bow"
@@ -58,6 +58,35 @@ func update_quest(data: Dictionary) -> void:
 	if phase == "crafting": show()
 
 func _process(delta: float) -> void:
+	if content_scroll:
+		var available: float=get_parent().size.y-140
+		content_scroll.custom_minimum_size.y=minf(500,maxf(240,available))
+		content_scroll.custom_minimum_size.x=minf(550,get_parent().size.x-64)
 	if state.get("phase") == "crafting":
 		remaining = maxf(0, remaining - delta)
 		progress.value = minf(99, (1.0 - remaining / float(state.get("craft_seconds", 5))) * 100)
+
+var ship_title: Label
+var ship_objective: Label
+func set_ship_state(data: Dictionary, encounter: Dictionary) -> void:
+	if ship_title==null:
+		var container: VBoxContainer=title.get_parent()
+		ship_title=Label.new(); ship_title.text="A WAY HOME • MAIN STORY"; container.add_child(ship_title)
+		ship_title.add_theme_font_size_override("font_size",24)
+		ship_objective=Label.new(); ship_objective.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+		ship_objective.custom_minimum_size.x=400; container.add_child(ship_objective)
+	var phase: String=data.get("phase","not_started")
+	ship_title.visible=phase!="not_started" or encounter.get("outing_active",false)
+	ship_objective.visible=ship_title.visible
+	var lines: Array[String]=[]
+	if phase!="not_started":
+		lines.append(data.get("objective","Gather ship-repair materials."))
+		for material in data.get("materials",[]):
+			lines.append("%s: %s / %s" % [material.name,int(material.contributed),int(material.required)])
+		lines.append(data.get("availability_note",""))
+	elif encounter.get("outing_active",false): lines.append("Lead the Craftsman to your ship.")
+	var mode: String=encounter.get("mode","")
+	if mode=="waiting_for_player": lines.append("Craftsman: waiting for you. Return and ask him to resume.")
+	elif mode=="returning_to_workshop": lines.append("Craftsman: walking back to his workshop.")
+	elif encounter.get("navigation_space","")=="workshop": lines.append("Craftsman: at the workshop.")
+	ship_objective.text="\n".join(lines)

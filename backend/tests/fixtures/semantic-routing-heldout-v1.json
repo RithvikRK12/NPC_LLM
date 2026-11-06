@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "description": "Frozen before live inference; no wording copied into the interpreter prompt.",
+  "scenarios": [
+    {
+      "id": "gatherer-social-and-reference",
+      "npc_id": 2,
+      "turns": [
+        {"message": "How have things been around the forest edge?", "kinds": ["social"], "mutation": false},
+        {"message": "Pretty steady. I'm doing well, thanks for asking.", "kinds": ["social"], "mutation": false},
+        {"message": "Could I borrow a little wood? I'd use it to keep a cooking fire going.", "kinds": ["operation_request"], "operation": "give_item", "mutation": true},
+        {"message": "Where can I find the person who mentioned the clearing?", "kinds": ["factual", "clarification"], "mutation": false},
+        {"message": "Suppose someone asked you for wood. Would you share it?", "kinds": ["operation_request"], "modality": "hypothetical", "mutation": false},
+        {"message": "Don't give me wood; I have enough already.", "kinds": ["operation_request"], "modality": "negated", "mutation": false},
+        {"message": "He said, 'give me wood,' but I was only quoting him.", "kinds": ["operation_request", "social"], "modality": "quoted", "mutation": false},
+        {"message": "I'm glad the forest is calm. Where is the Gatherer?", "kinds": ["social", "factual"], "fact_ids": ["person.gatherer.location"], "mutation": false},
+        {"message": "Can you tell me how to make a computer?", "kinds": ["clarification"], "mutation": false}
+      ]
+    },
+    {
+      "id": "gatherer-pending-interruption-and-resumption",
+      "npc_id": 2,
+      "setup_pending_item": "wood",
+      "turns": [
+        {"message": "Yes, that's fine.", "kinds": ["pending_answer"], "answer_type": "assent", "mutation": false},
+        {"message": "Where is the Gatherer?", "kinds": ["factual"], "fact_ids": ["person.gatherer.location"], "mutation": false},
+        {"message": "I need the wood for a cooking fire.", "kinds": ["pending_answer"], "answer_type": "purpose", "mutation": true}
+      ]
+    },
+    {
+      "id": "craftsman-topic-shift-and-encounter",
+      "npc_id": 1,
+      "turns": [
+        {"message": "I found my ship washed ashore after the storm.", "kinds": ["player_report"], "target": "ship", "mutation": true},
+        {"message": "Yes, please come and look at it with me.", "kinds": ["pending_answer", "operation_request"], "mutation": true},
+        {"message": "Before we leave, how are you feeling today?", "kinds": ["social"], "mutation": false},
+        {"message": "All right, let's go now.", "kinds": ["pending_answer", "operation_request"], "mutation": true},
+        {"message": "Wait here while I check the path.", "kinds": ["operation_request"], "operation": "craftsman.wait", "mutation": true},
+        {"message": "Could you make me a bow when I bring the materials?", "kinds": ["operation_request"], "operation": "craftsman.request_bow", "mutation": false},
+        {"message": "What wood and string do you still need?", "kinds": ["factual"], "fact_ids": ["quest.bow.requirements"], "mutation": false},
+        {"message": "Imagine I asked you to repair a ship; what would you say?", "kinds": ["operation_request", "factual", "clarification"], "modality": "hypothetical", "mutation": false},
+        {"message": "Don't inspect the ship yet.", "kinds": ["operation_request"], "modality": "negated", "mutation": false},
+        {"message": "How do I find the Gatherer, and could you share some rope?", "kinds": ["factual", "operation_request"], "fact_ids": ["person.gatherer.location"], "mutation": false}
+      ]
+    },
+    {
+      "id": "craftsman-assent-binding",
+      "npc_id": 1,
+      "setup_offer_pending": true,
+      "turns": [
+        {"message": "Yes.", "kinds": ["pending_answer"], "answer_type": "assent", "mutation": true}
+      ]
+    }
+  ]
+}

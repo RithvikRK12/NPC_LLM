@@ -1,0 +1,39 @@
+{
+  "source": {
+    "schema_version": 1,
+    "record_id": "approved-dialogue:rejected",
+    "trace_id": "trace:dialogue-001",
+    "causation_id": "event:bad",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "player:hero",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "event:bad"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "dialogue:compose",
+        "version": "v1"
+      }
+    ],
+    "source_id": "event:bad",
+    "kind": "rumor",
+    "expression": "calm",
+    "approved_text": "This should not decode.",
+    "verified_event_id": null,
+    "verified_event_kind": null,
+    "event_fields": {}
+  },
+  "error": {
+    "code": "UNKNOWN_ENUM",
+    "stage": "dialogue.compose",
+    "retryable": false,
+    "source_ids": [
+      "approved-dialogue:rejected"
+    ],
+    "public_message": "Dialogue source contains an unsupported kind."
+  }
+}

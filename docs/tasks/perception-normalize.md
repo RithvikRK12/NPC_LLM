@@ -6,7 +6,7 @@
 
 Source: [Detailed design](../detailed-design.md), 4.2 Perception and reasoning modules; [proposal](../proposal.md). The confirmed detailed-design ordering overrides conflicting proposal examples.
 
-**Status:** Planned; target module not complete. **Owner:** unassigned. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
+**Status:** T01–T04 complete; target module complete. **Owner:** Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
 
 ## Dependencies and sequencing
 
@@ -23,22 +23,22 @@ Keep domain calculations pure where applicable; external adapters receive fake c
 
 ## Task checklist
 
-- [ ] **T01 — Define the module contract and fixture boundary.**
+- [x] **T01 — Define the module contract and fixture boundary.**
   - **Acceptance:** Publish the public input/output/error types above, with owned domain fields and shared envelope references. Supply a valid fixture and one rejected fixture; expose no ORM/session or node object in the handoff.
   - **Tests:** Round-trip or construct the valid fixture, reject missing required fields and unsupported variants, and prove input fixtures are not mutated. Import and exercise the module with fake dependencies only.
   - **Depends on:** Start contracts above. Do not wait for full runtime integration.
 
-- [ ] **T02 — Implement the primary behaviour.**
+- [x] **T02 — Implement the primary behaviour.**
   - **Acceptance:** Normalize raw observations into immutable signals with canonical units, finite values, timestamps and explicit fact/claim/interpretation status.
   - **Tests:** Use the valid T01 fixture and a focused fixture for each successful branch named in this acceptance criterion; assert exact result/state/effect identity rather than generated prose. Use a fixed clock and IDs where relevant.
   - **Depends on:** T01; use immutable upstream result fixtures.
 
-- [ ] **T03 — Enforce failures and invariants.**
+- [x] **T03 — Enforce failures and invariants.**
   - **Acceptance:** Deduplicate by source identity without merging contradictory claims; reject invalid source IDs and preserve private visibility markings.
   - **Tests:** Facts versus interpretations, duplicate observations, invalid references and non-finite positions. Assert typed rejection/fallback and absence of unintended effects, not merely that an exception occurred.
   - **Depends on:** T02. Failure injection must remain local to this module and its ports.
 
-- [ ] **T04 — Verify adjacent handoff and publish evidence.**
+- [x] **T04 — Verify adjacent handoff and publish evidence.**
   - **Acceptance:** Consume fixtures produced by each direct dependency and show this module's result satisfies the next documented handoff without changing upstream policy or schema implicitly. Record test evidence and unsupported capabilities.
   - **Tests:** One focused adjacent-module contract check plus the module regression suite; include a mismatched source version/timeline where applicable. Do not run the full game unless this is an engine adapter check.
   - **Depends on:** T01–T03 and the direct Integration gate above. Until those dependencies are ready, record this task as waiting without blocking local unit work.
@@ -49,7 +49,10 @@ Check the whole-module box in master-progress only when every applicable uncheck
 
 ## Execution record
 
-- Assigned task/owner: unassigned.
-- Current task state: not started.
-- Test evidence for new work: none yet.
+- Assigned task/owner: complete / Main Agent.
+- Current task state: T04 accepted by Main Agent (2026-09-29). C01/C02/C03 are accepted; this packet completed a pure values-only perception boundary.
+- T01 files: `backend/app/perception/{__init__,normalize}.py`, `backend/tests/test_perception_normalize.py`, `backend/tests/fixtures/perception/normalize-t01-{valid,rejected}.json`.
+- T01 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_perception_normalize.py'` — 8 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 160 passed, exit 0; existing Starlette/httpx deprecation warning remains and the baseline NPC rejection diagnostic still prints. Valid/rejected fixtures cover immutable observed signals, normalization policy and normalized signal handoffs, fact/claim/interpretation status, private-capable visibility, timestamp/unit validation, fake protocol execution and infrastructure-free import. No normalization, deduplication or live perception service behaviour claimed until T02/T03.
+- T02–T04 files: `backend/app/perception/normalize.py`, `backend/tests/test_perception_normalize.py`.
+- T02–T04 evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_perception_normalize.py'` — 20 passed, exit 0. Full backend regression: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 172 passed, exit 0; existing Starlette/httpx deprecation warning remains and the baseline NPC rejection diagnostic still prints. Primary behaviour now emits immutable normalized signals with canonical units, finite values, UTC timestamps and explicit fact/claim/interpretation status. Duplicate identical source observations deduplicate, conflicting duplicates and noncanonical units return typed `INVALID_CONTRACT`, private visibility is preserved, and C01 envelope plus test-local relevance handoff checks pass. Unsupported capability: no live perception service or runtime adapter integration is claimed by this pure module gate.
 - Blocker: dependency gates above; no additional module-specific blocker recorded.

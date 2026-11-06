@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "pending",
+    "exit_code": 0,
+    "position": {
+      "x": 73.0,
+      "y": 83.0
+    },
+    "passed": true
+  },
+  {
+    "mode": "failure",
+    "exit_code": 0,
+    "position": {
+      "x": 73.0,
+      "y": 83.0
+    },
+    "passed": true
+  },
+  {
+    "mode": "window",
+    "exit_code": 0,
+    "position": {
+      "x": 73.0,
+      "y": 83.0
+    },
+    "passed": true
+  },
+  {
+    "mode": "loading",
+    "exit_code": 0,
+    "position": {
+      "x": 73.0,
+      "y": 83.0
+    },
+    "passed": true
+  }
+]

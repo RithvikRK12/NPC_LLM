@@ -1,0 +1,405 @@
+{
+  "purpose": "paired local functionality trial; not semantic quality certification",
+  "context_token_budget": 2000,
+  "generation_token_reserve": 256,
+  "same_source_message_and_query": true,
+  "npc_ids": [
+    1,
+    2
+  ],
+  "personal_save_used": false,
+  "results": [
+    {
+      "mode": "off",
+      "model": "llama3:willowbrook",
+      "embedding_model": "nomic-embed-text",
+      "messages": [
+        {
+          "npc_id": 1,
+          "message": "I feel at ease when people speak gently, give me time, and do not rush. I like blue cups, red scarves, rainy mornings, sunny afternoons, pressed flowers, bird stories, fishing trips, tide changes, the old lighthouse, apple pie, warm tea, quiet rooms, wool blankets, small gardens, river walks, hand drawn maps, woodworking, sea glass, and morning fog.",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find a quiet spot to sit and enjoy a warm cup of tea together?",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 2.202
+        },
+        {
+          "npc_id": 1,
+          "message": "What do you enjoy about your work?",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find a quiet spot to sit and enjoy a warm cup of tea together?",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 2.205
+        },
+        {
+          "npc_id": 1,
+          "message": "What helps me feel at ease when we talk?",
+          "dialogue": "You told me that you feel at ease when conversations are quiet, patient, and unhurried.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 1.226
+        },
+        {
+          "npc_id": 2,
+          "message": "I feel at ease when people speak gently, give me time, and do not rush. I like blue cups, red scarves, rainy mornings, sunny afternoons, pressed flowers, bird stories, fishing trips, tide changes, the old lighthouse, apple pie, warm tea, quiet rooms, wool blankets, small gardens, river walks, hand drawn maps, woodworking, sea glass, and morning fog.",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find a quiet spot to enjoy a warm cup of tea and some pressed flowers?",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 2.191
+        },
+        {
+          "npc_id": 2,
+          "message": "What do you enjoy about your work?",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find a quiet spot to enjoy a warm cup of tea and some pressed flowers?",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 4.129
+        },
+        {
+          "npc_id": 2,
+          "message": "What helps me feel at ease when we talk?",
+          "dialogue": "You told me that you feel at ease when conversations are quiet, patient, and unhurried.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 3.352
+        }
+      ],
+      "persistent_vector_count": 0,
+      "query_prompt_capture_count": 2,
+      "query_prompt_contains_memory": true,
+      "query_prompt_memory_by_npc": [
+        true,
+        true
+      ],
+      "query_prompt_memory_order": [
+        {
+          "speaker": "Craftsman",
+          "memories": [
+            "The player likes blue cups.",
+            "The player likes red scarves.",
+            "The player enjoys rainy mornings.",
+            "The player likes sunny afternoons.",
+            "The player keeps pressed flowers.",
+            "The player likes bird stories.",
+            "The player enjoys fishing trips.",
+            "The player likes tide changes.",
+            "The player admires the old lighthouse.",
+            "The player likes apple pie.",
+            "The player enjoys warm tea.",
+            "The player likes quiet rooms.",
+            "The player appreciates wool blankets.",
+            "The player likes small gardens.",
+            "The player enjoys river walks.",
+            "The player likes hand drawn maps.",
+            "The player enjoys woodworking.",
+            "The player collects sea glass.",
+            "The player likes morning fog.",
+            "The player says they feel at ease when conversations are quiet, patient, and unhurried."
+          ]
+        },
+        {
+          "speaker": "Gatherer",
+          "memories": [
+            "The player likes blue cups.",
+            "The player likes red scarves.",
+            "The player enjoys rainy mornings.",
+            "The player likes sunny afternoons.",
+            "The player keeps pressed flowers.",
+            "The player likes bird stories.",
+            "The player enjoys fishing trips.",
+            "The player likes tide changes.",
+            "The player admires the old lighthouse.",
+            "The player likes apple pie.",
+            "The player enjoys warm tea.",
+            "The player likes quiet rooms.",
+            "The player appreciates wool blankets.",
+            "The player likes small gardens.",
+            "The player enjoys river walks.",
+            "The player likes hand drawn maps.",
+            "The player enjoys woodworking.",
+            "The player collects sea glass.",
+            "The player likes morning fog.",
+            "The player says they feel at ease when conversations are quiet, patient, and unhurried."
+          ]
+        }
+      ],
+      "retrieval_trace_events": [
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"457910c5-29c3-499d-9cdf-356bb43e00f4\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"457910c5-29c3-499d-9cdf-356bb43e00f4\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"disabled\", \"npc_id\": 1, \"selected_count\": 20, \"turn_id\": \"81272b31-757b-4744-8ced-b6302c9ed13c\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"disabled\", \"npc_id\": 1, \"selected_count\": 20, \"turn_id\": \"81272b31-757b-4744-8ced-b6302c9ed13c\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"disabled\", \"npc_id\": 1, \"selected_count\": 20, \"turn_id\": \"5da04dd6-b8a2-44bd-806c-a1c4127b4039\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"disabled\", \"npc_id\": 1, \"selected_count\": 20, \"turn_id\": \"5da04dd6-b8a2-44bd-806c-a1c4127b4039\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"9fe4ba89-471b-4ee2-a651-51aa92eb9a00\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"9fe4ba89-471b-4ee2-a651-51aa92eb9a00\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"disabled\", \"npc_id\": 2, \"selected_count\": 20, \"turn_id\": \"b380eee4-e0ce-4465-8536-5ab4f53e8294\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"disabled\", \"npc_id\": 2, \"selected_count\": 20, \"turn_id\": \"b380eee4-e0ce-4465-8536-5ab4f53e8294\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"disabled\", \"npc_id\": 2, \"selected_count\": 20, \"turn_id\": \"bd49b6a7-9df2-442d-a7b3-9a7c6fd37251\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"151a6f57-78c9-48d1-be62-6257f76866ad\", \"latency_seconds\": 0.0, \"mode\": \"disabled\", \"npc_id\": 2, \"selected_count\": 20, \"turn_id\": \"bd49b6a7-9df2-442d-a7b3-9a7c6fd37251\"}"
+      ]
+    },
+    {
+      "mode": "on",
+      "model": "llama3:willowbrook",
+      "embedding_model": "nomic-embed-text",
+      "messages": [
+        {
+          "npc_id": 1,
+          "message": "I feel at ease when people speak gently, give me time, and do not rush. I like blue cups, red scarves, rainy mornings, sunny afternoons, pressed flowers, bird stories, fishing trips, tide changes, the old lighthouse, apple pie, warm tea, quiet rooms, wool blankets, small gardens, river walks, hand drawn maps, woodworking, sea glass, and morning fog.",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find some quiet moments together, like a sunny afternoon by the river or a morning fog walk. I've always ",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 2.515
+        },
+        {
+          "npc_id": 1,
+          "message": "What do you enjoy about your work?",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find some quiet moments together, like a sunny afternoon by the river or a morning fog walk. I've always",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 4.455
+        },
+        {
+          "npc_id": 1,
+          "message": "What helps me feel at ease when we talk?",
+          "dialogue": "You told me that you feel at ease when conversations are quiet, patient, and unhurried.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 3.258
+        },
+        {
+          "npc_id": 2,
+          "message": "I feel at ease when people speak gently, give me time, and do not rush. I like blue cups, red scarves, rainy mornings, sunny afternoons, pressed flowers, bird stories, fishing trips, tide changes, the old lighthouse, apple pie, warm tea, quiet rooms, wool blankets, small gardens, river walks, hand drawn maps, woodworking, sea glass, and morning fog.",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find a quiet spot to sit and enjoy a warm cup of tea together, just like on a rainy morning.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 2.402
+        },
+        {
+          "npc_id": 2,
+          "message": "What do you enjoy about your work?",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find a quiet spot to sit and enjoy a warm cup of tea together, just like on a rainy morning.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 4.554
+        },
+        {
+          "npc_id": 2,
+          "message": "What helps me feel at ease when we talk?",
+          "dialogue": "You told me that you feel at ease when conversations are quiet, patient, and unhurried.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 3.365
+        }
+      ],
+      "persistent_vector_count": 40,
+      "query_prompt_capture_count": 2,
+      "query_prompt_contains_memory": true,
+      "query_prompt_memory_by_npc": [
+        true,
+        true
+      ],
+      "query_prompt_memory_order": [
+        {
+          "speaker": "Craftsman",
+          "memories": [
+            "The player says they feel at ease when conversations are quiet, patient, and unhurried.",
+            "The player likes quiet rooms.",
+            "The player appreciates wool blankets.",
+            "The player enjoys warm tea.",
+            "The player likes morning fog.",
+            "The player likes blue cups.",
+            "The player likes red scarves.",
+            "The player enjoys rainy mornings.",
+            "The player likes sunny afternoons.",
+            "The player keeps pressed flowers.",
+            "The player likes bird stories.",
+            "The player enjoys fishing trips.",
+            "The player likes tide changes.",
+            "The player admires the old lighthouse.",
+            "The player likes apple pie.",
+            "The player likes small gardens.",
+            "The player enjoys river walks.",
+            "The player likes hand drawn maps.",
+            "The player enjoys woodworking.",
+            "The player collects sea glass."
+          ]
+        },
+        {
+          "speaker": "Gatherer",
+          "memories": [
+            "The player says they feel at ease when conversations are quiet, patient, and unhurried.",
+            "The player likes quiet rooms.",
+            "The player appreciates wool blankets.",
+            "The player enjoys warm tea.",
+            "The player likes morning fog.",
+            "The player likes blue cups.",
+            "The player likes red scarves.",
+            "The player enjoys rainy mornings.",
+            "The player likes sunny afternoons.",
+            "The player keeps pressed flowers.",
+            "The player likes bird stories.",
+            "The player enjoys fishing trips.",
+            "The player likes tide changes.",
+            "The player admires the old lighthouse.",
+            "The player likes apple pie.",
+            "The player likes small gardens.",
+            "The player enjoys river walks.",
+            "The player likes hand drawn maps.",
+            "The player enjoys woodworking.",
+            "The player collects sea glass."
+          ]
+        }
+      ],
+      "retrieval_trace_events": [
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"0d5fab8b-57ee-46b5-af42-a879694c730b\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"0d5fab8b-57ee-46b5-af42-a879694c730b\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": null, \"eligible_count\": 20, \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"index_identity\": \"0e4ac4a000c7f8ea40a9\", \"latency_seconds\": 0.219229, \"mode\": \"semantic\", \"npc_id\": 1, \"preselection_policy\": \"round_robin_summary_report_interpretation_id_ascending\", \"selected_count\": 5, \"top_k\": 5, \"turn_id\": \"eb699951-8a43-4664-81b5-18c86be34dd1\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": null, \"eligible_count\": 20, \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"index_identity\": \"0e4ac4a000c7f8ea40a9\", \"latency_seconds\": 0.030395, \"mode\": \"semantic\", \"npc_id\": 1, \"preselection_policy\": \"round_robin_summary_report_interpretation_id_ascending\", \"selected_count\": 5, \"top_k\": 5, \"turn_id\": \"eb699951-8a43-4664-81b5-18c86be34dd1\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": null, \"eligible_count\": 20, \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"index_identity\": \"0e4ac4a000c7f8ea40a9\", \"latency_seconds\": 0.045951, \"mode\": \"semantic\", \"npc_id\": 1, \"preselection_policy\": \"round_robin_summary_report_interpretation_id_ascending\", \"selected_count\": 5, \"top_k\": 5, \"turn_id\": \"4f33e79b-4001-442a-9cb4-a844bc2dd102\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": null, \"eligible_count\": 20, \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"index_identity\": \"0e4ac4a000c7f8ea40a9\", \"latency_seconds\": 0.03392, \"mode\": \"semantic\", \"npc_id\": 1, \"preselection_policy\": \"round_robin_summary_report_interpretation_id_ascending\", \"selected_count\": 5, \"top_k\": 5, \"turn_id\": \"4f33e79b-4001-442a-9cb4-a844bc2dd102\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"5f7f9c32-dc62-4da5-a176-74d902e622b4\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"5f7f9c32-dc62-4da5-a176-74d902e622b4\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": null, \"eligible_count\": 20, \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"index_identity\": \"54c085936fe8d263d60b\", \"latency_seconds\": 0.240809, \"mode\": \"semantic\", \"npc_id\": 2, \"preselection_policy\": \"round_robin_summary_report_interpretation_id_ascending\", \"selected_count\": 5, \"top_k\": 5, \"turn_id\": \"fd3367c4-5ec5-44d5-9a12-cbb3984092a1\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": null, \"eligible_count\": 20, \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"index_identity\": \"54c085936fe8d263d60b\", \"latency_seconds\": 0.031883, \"mode\": \"semantic\", \"npc_id\": 2, \"preselection_policy\": \"round_robin_summary_report_interpretation_id_ascending\", \"selected_count\": 5, \"top_k\": 5, \"turn_id\": \"fd3367c4-5ec5-44d5-9a12-cbb3984092a1\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": null, \"eligible_count\": 20, \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"index_identity\": \"54c085936fe8d263d60b\", \"latency_seconds\": 0.045843, \"mode\": \"semantic\", \"npc_id\": 2, \"preselection_policy\": \"round_robin_summary_report_interpretation_id_ascending\", \"selected_count\": 5, \"top_k\": 5, \"turn_id\": \"5fea20d6-c15c-431f-a8e0-28b39bac0caf\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": null, \"eligible_count\": 20, \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"654065d8-4917-4f70-92a0-8f3144319af7\", \"index_identity\": \"54c085936fe8d263d60b\", \"latency_seconds\": 0.029646, \"mode\": \"semantic\", \"npc_id\": 2, \"preselection_policy\": \"round_robin_summary_report_interpretation_id_ascending\", \"selected_count\": 5, \"top_k\": 5, \"turn_id\": \"5fea20d6-c15c-431f-a8e0-28b39bac0caf\"}"
+      ]
+    },
+    {
+      "mode": "embedding_outage",
+      "model": "llama3:willowbrook",
+      "embedding_model": "nomic-embed-text",
+      "messages": [
+        {
+          "npc_id": 1,
+          "message": "I feel at ease when people speak gently, give me time, and do not rush. I like blue cups, red scarves, rainy mornings, sunny afternoons, pressed flowers, bird stories, fishing trips, tide changes, the old lighthouse, apple pie, warm tea, quiet rooms, wool blankets, small gardens, river walks, hand drawn maps, woodworking, sea glass, and morning fog.",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find a quiet spot to sit and enjoy the morning fog together.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 2.091
+        },
+        {
+          "npc_id": 1,
+          "message": "What do you enjoy about your work?",
+          "dialogue": "I'm glad to hear you feel at ease when people speak gently and give you time. I, too, appreciate a peaceful atmosphere. Perhaps we can find a quiet spot to sit and enjoy the morning fog together.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 4.235
+        },
+        {
+          "npc_id": 1,
+          "message": "What helps me feel at ease when we talk?",
+          "dialogue": "You told me that you feel at ease when conversations are quiet, patient, and unhurried.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 3.597
+        },
+        {
+          "npc_id": 2,
+          "message": "I feel at ease when people speak gently, give me time, and do not rush. I like blue cups, red scarves, rainy mornings, sunny afternoons, pressed flowers, bird stories, fishing trips, tide changes, the old lighthouse, apple pie, warm tea, quiet rooms, wool blankets, small gardens, river walks, hand drawn maps, woodworking, sea glass, and morning fog.",
+          "dialogue": "I'm glad to hear you appreciate quiet moments. I, too, find solace in gentle conversations and the soothing sounds of nature. Perhaps we can share a cup of warm tea and some pressed flowers on a rainy morning?",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 2.197
+        },
+        {
+          "npc_id": 2,
+          "message": "What do you enjoy about your work?",
+          "dialogue": "I'm glad to hear you appreciate quiet moments. I, too, find solace in gentle conversations and the soothing sounds of nature. Perhaps we can share a cup of warm tea and some pressed flowers on a rainy morning?",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 4.458
+        },
+        {
+          "npc_id": 2,
+          "message": "What helps me feel at ease when we talk?",
+          "dialogue": "You told me that you feel at ease when conversations are quiet, patient, and unhurried.",
+          "response_origin": "generated",
+          "degradation_reason": null,
+          "seconds": 3.486
+        }
+      ],
+      "persistent_vector_count": 0,
+      "query_prompt_capture_count": 2,
+      "query_prompt_contains_memory": true,
+      "query_prompt_memory_by_npc": [
+        true,
+        true
+      ],
+      "query_prompt_memory_order": [
+        {
+          "speaker": "Craftsman",
+          "memories": [
+            "The player likes blue cups.",
+            "The player likes red scarves.",
+            "The player enjoys rainy mornings.",
+            "The player likes sunny afternoons.",
+            "The player keeps pressed flowers.",
+            "The player likes bird stories.",
+            "The player enjoys fishing trips.",
+            "The player likes tide changes.",
+            "The player admires the old lighthouse.",
+            "The player likes apple pie.",
+            "The player enjoys warm tea.",
+            "The player likes quiet rooms.",
+            "The player appreciates wool blankets.",
+            "The player likes small gardens.",
+            "The player enjoys river walks.",
+            "The player likes hand drawn maps.",
+            "The player enjoys woodworking.",
+            "The player collects sea glass.",
+            "The player likes morning fog.",
+            "The player says they feel at ease when conversations are quiet, patient, and unhurried."
+          ]
+        },
+        {
+          "speaker": "Gatherer",
+          "memories": [
+            "The player likes blue cups.",
+            "The player likes red scarves.",
+            "The player enjoys rainy mornings.",
+            "The player likes sunny afternoons.",
+            "The player keeps pressed flowers.",
+            "The player likes bird stories.",
+            "The player enjoys fishing trips.",
+            "The player likes tide changes.",
+            "The player admires the old lighthouse.",
+            "The player likes apple pie.",
+            "The player enjoys warm tea.",
+            "The player likes quiet rooms.",
+            "The player appreciates wool blankets.",
+            "The player likes small gardens.",
+            "The player enjoys river walks.",
+            "The player likes hand drawn maps.",
+            "The player enjoys woodworking.",
+            "The player collects sea glass.",
+            "The player likes morning fog.",
+            "The player says they feel at ease when conversations are quiet, patient, and unhurried."
+          ]
+        }
+      ],
+      "retrieval_trace_events": [
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"085afc00-c758-4487-9352-e1026b9851ba\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"085afc00-c758-4487-9352-e1026b9851ba\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": \"EmbeddingUnavailable\", \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"index_identity\": null, \"latency_seconds\": 0.010087, \"mode\": \"degraded\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"a57f2684-602d-4b34-8bd3-d2421cc944a9\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": \"EmbeddingUnavailable\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.010137, \"mode\": \"degraded\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"a57f2684-602d-4b34-8bd3-d2421cc944a9\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": \"EmbeddingUnavailable\", \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"index_identity\": null, \"latency_seconds\": 0.012247, \"mode\": \"degraded\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"a57f2684-602d-4b34-8bd3-d2421cc944a9\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": \"EmbeddingUnavailable\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.012306, \"mode\": \"degraded\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"a57f2684-602d-4b34-8bd3-d2421cc944a9\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": \"EmbeddingUnavailable\", \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"index_identity\": null, \"latency_seconds\": 0.009481, \"mode\": \"degraded\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"64535fbd-7bc3-4d31-bdb7-7d0f85416f64\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": \"EmbeddingUnavailable\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.009527, \"mode\": \"degraded\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"64535fbd-7bc3-4d31-bdb7-7d0f85416f64\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": \"EmbeddingUnavailable\", \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"index_identity\": null, \"latency_seconds\": 0.011644, \"mode\": \"degraded\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"64535fbd-7bc3-4d31-bdb7-7d0f85416f64\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": \"EmbeddingUnavailable\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.011737, \"mode\": \"degraded\", \"npc_id\": 1, \"selected_count\": 0, \"turn_id\": \"64535fbd-7bc3-4d31-bdb7-7d0f85416f64\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"6fa74dc2-32eb-4d60-a77b-d1f1e3e2f58f\"}",
+        "{\"candidate_count\": 0, \"degradation_reason\": null, \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.0, \"mode\": \"not_needed\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"6fa74dc2-32eb-4d60-a77b-d1f1e3e2f58f\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": \"EmbeddingUnavailable\", \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"index_identity\": null, \"latency_seconds\": 0.009301, \"mode\": \"degraded\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"351921c2-335f-416b-92b9-b9c6b9a9f91a\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": \"EmbeddingUnavailable\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.009358, \"mode\": \"degraded\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"351921c2-335f-416b-92b9-b9c6b9a9f91a\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": \"EmbeddingUnavailable\", \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"index_identity\": null, \"latency_seconds\": 0.012158, \"mode\": \"degraded\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"351921c2-335f-416b-92b9-b9c6b9a9f91a\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": \"EmbeddingUnavailable\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.012239, \"mode\": \"degraded\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"351921c2-335f-416b-92b9-b9c6b9a9f91a\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": \"EmbeddingUnavailable\", \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"index_identity\": null, \"latency_seconds\": 0.00904, \"mode\": \"degraded\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"10227255-83e4-4ab6-96e3-1b593a5c4f44\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": \"EmbeddingUnavailable\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.009086, \"mode\": \"degraded\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"10227255-83e4-4ab6-96e3-1b593a5c4f44\"}",
+        "{\"candidate_count\": 20, \"candidate_limit\": 40, \"degradation_reason\": \"EmbeddingUnavailable\", \"embedding_dimensions\": 768, \"embedding_model\": \"ollama:nomic-embed-text:v1:768\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"index_identity\": null, \"latency_seconds\": 0.012162, \"mode\": \"degraded\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"10227255-83e4-4ab6-96e3-1b593a5c4f44\"}",
+        "{\"candidate_count\": 20, \"degradation_reason\": \"EmbeddingUnavailable\", \"epoch\": 0, \"game_scope\": \"ae5e3b66-bcc7-4703-9967-d94ab5958c45\", \"latency_seconds\": 0.012219, \"mode\": \"degraded\", \"npc_id\": 2, \"selected_count\": 0, \"turn_id\": \"10227255-83e4-4ab6-96e3-1b593a5c4f44\"}"
+      ]
+    }
+  ]
+}

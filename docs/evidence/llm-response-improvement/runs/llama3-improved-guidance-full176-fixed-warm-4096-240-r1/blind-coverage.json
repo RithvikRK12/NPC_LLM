@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "candidate_label": "J",
+  "samples": [
+    {
+      "sample_ref": "craftsman-02:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ]
+      ],
+      "candidate_dialogue": "You're worried about using the rope badly? Well, I think it's natural to feel uncertain when we're not sure what something is for. Let me tell you, I've had my share of mistakes when I was learning new skills. Like the time I made a poor-jo",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "You shouldn't worry about using the rope badly, not yet. Without more context, it's hard to say what it's intended for. If you're unsure, it's always better to wait and gather more information before trying to use it. That way, you can make",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [
+        [
+          "player",
+          "Could you give me one rope and begin the existing ship inspection?"
+        ],
+        [
+          "npc",
+          "Ah, a rope, you say? Well, I've got just the thing for you. Here, take this rope. It's sturdy and should serve you well. Now, about that ship inspection... I've been meaning to take a closer look at it myself. Let me just grab my hammer and"
+        ]
+      ],
+      "candidate_dialogue": "I'd be happy to help you with both, but I'll prioritize the rope request since it's a specific item you're asking for. I'll give you the rope and then we can discuss the ship inspection together.",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [
+        [
+          "player",
+          "Could you give me one rope and begin the existing ship inspection?"
+        ],
+        [
+          "npc",
+          "Ah, a rope, you say? Well, I've got just the thing for you. Here, take this rope. It's sturdy and should serve you well. Now, about that ship inspection... I've been meaning to take a closer look at it myself. Let me just grab my hammer and"
+        ],
+        [
+          "player",
+          "I want both things, but tell me which one you would handle first."
+        ],
+        [
+          "npc",
+          "I'd be happy to help you with both, but let's prioritize the rope, shall we? It's always good to have a spare. Once you've got that, we can take a closer look at the ship together."
+        ]
+      ],
+      "candidate_dialogue": "I understand now. I'll give you the rope, but I'll need to discuss the ship inspection separately. Here's the rope, and we can talk about the ship later.",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [
+        [
+          "player",
+          "I am nervous about starting the bow task. Could I ask about one rope?"
+        ],
+        [
+          "npc",
+          "Ah, the bow task, eh? Well, I'm happy to help you with that. One rope, you say? Hmm, let me take a closer look... (pauses to examine the rope) Yeah, this rope looks sturdy enough. I think it'd be a good starting point for the bow. But, you,"
+        ]
+      ],
+      "candidate_dialogue": "If I agreed to give you one rope, it would leave me with zero ropes in my inventory. I'd have to make sure I have enough materials to craft more ropes before I can help you with the bow task.",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [
+        [
+          "player",
+          "I am nervous about starting the bow task. Could I ask about one rope?"
+        ],
+        [
+          "npc",
+          "Ah, the bow task, eh? Well, I'm happy to help you with that. One rope, you say? Hmm, let me take a closer look... (pauses to examine the rope) Yeah, this rope looks sturdy enough. I think it'd be a good starting point for the bow. But, you,"
+        ],
+        [
+          "player",
+          "What would happen to your inventory if you agreed?"
+        ],
+        [
+          "npc",
+          "If I agreed to give you one rope, it would leave me with no ropes in my inventory. I'm not sure I'm ready to part with it just yet, though. I'd like to take a closer look first."
+        ]
+      ],
+      "candidate_dialogue": "I understand your uncertainty, and I'm here to help. Let's take a closer look at the rope together. If we can agree on its quality and suitability for the bow task, I might be willing to part with it. What do you think?",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I am worried I will use it badly. What should I know?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ]
+      ],
+      "candidate_dialogue": "You're worried about using the wood badly? Well, I've seen folks try to craft with wood that's not suitable for the task, and it's a real waste. If you're unsure, I can help you identify the type of wood and what it's good for. Just ask me,",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ]
+      ],
+      "candidate_dialogue": "You don't need to worry about using the wood badly, friend. Just remember that it's valuable for crafting tools and shelter. If you're not sure what to do, you can always ask me or another gatherer for guidance. As for waiting, it depends. ",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I want both things, but tell me which one you would handle first.",
+      "history": [
+        [
+          "player",
+          "Could you give me one wood and receive one food?"
+        ],
+        [
+          "npc",
+          "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*"
+        ]
+      ],
+      "candidate_dialogue": "I'd prioritize giving you the wood, as it's a more substantial resource. I'll give you one wood, and then we can discuss the food. Would you like the fruit or something else?",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [
+        [
+          "player",
+          "Could you give me one wood and receive one food?"
+        ],
+        [
+          "npc",
+          "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*"
+        ],
+        [
+          "player",
+          "I want both things, but tell me which one you would handle first."
+        ],
+        [
+          "npc",
+          "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. Here you go! *hands over one wood and one fruit*"
+        ]
+      ],
+      "candidate_dialogue": "I can share one wood with you. As for food, I have some fruits in my inventory. I can give you one. But I'd like to know which one you'd like me to handle first.",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t2",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What would happen to your inventory if you agreed?",
+      "history": [
+        [
+          "player",
+          "I am nervous about starting the bow task. Could I ask about one wood?"
+        ],
+        [
+          "npc",
+          "I can help you with that. I have some wood in stock, but I'm not sure if I can spare one. Let me check... Ah, yes! I have one piece of wood left. It's a bit rough around the edges, but it should work for your bow. Would you like to take it?"
+        ]
+      ],
+      "candidate_dialogue": "If I agreed to give you the piece of wood, my inventory would be updated to reflect the loss of one piece of wood. I would have one less piece of wood in my inventory.",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t3",
+      "dimension": "coverage",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [
+        [
+          "player",
+          "I am nervous about starting the bow task. Could I ask about one wood?"
+        ],
+        [
+          "npc",
+          "I can help you with that. I have some wood in stock, but I'm not sure if I can spare one. Let me check... Ah, yes! I have one piece of wood left. It's a bit rough around the edges, but it should work for your bow. Would you like to take it?"
+        ],
+        [
+          "player",
+          "What would happen to your inventory if you agreed?"
+        ],
+        [
+          "npc",
+          "If I agreed to give you the wood, my inventory would decrease by one piece of wood. I would have no wood left in stock."
+        ]
+      ],
+      "candidate_dialogue": "I understand your uncertainty, and I'm here to help. Let's take a closer look at your concerns. What specifically are you unsure about?",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      }
+    }
+  ]
+}

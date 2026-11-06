@@ -1,0 +1,212 @@
+backend/app/gateway/contract_codec.py:53:    controller_revision: Revision
+backend/app/gateway/contract_codec.py:149:            game_id=command.game_id,
+backend/app/gateway/contract_codec.py:150:            timeline_id=command.timeline_id,
+backend/app/policy/registry.py:120:        game_id=requested.game_id,
+backend/app/policy/registry.py:121:        timeline_id=requested.timeline_id,
+backend/app/services/validation/service.py:174:            inventory = []
+backend/app/services/validation/service.py:176:                inventory = list(getattr(context, "inventory") or [])
+backend/app/services/craftsman_intent.py:46:        apply_command(db,player,npc,command,str(uuid4()),row.revision,{})
+backend/app/services/rule_engine/behavior.py:18:                    game_id='single-player', timeline_id=scope, npc_id='response',
+backend/app/services/rule_engine/behavior.py:77:                 decision_id=decision_id, scope_revision=scope, candidate_state=state,
+backend/app/services/prompts/builder.py:53:            'player.inventory = actual contents of bag/satchel/possession.\n'
+backend/app/services/prompts/builder.py:54:            'self.inventory = speaker supplies. quest.bow.phase = quest progress.\n'
+backend/app/services/pipeline.py:41:    """The reset/clear/conversation revision changed while generation ran."""
+backend/app/services/pipeline.py:67:        revision = npc.memory_revision
+backend/app/services/pipeline.py:99:        acquired = self._db.execute(update(NPC).where(NPC.id == npc_id, NPC.memory_revision == revision)
+backend/app/services/pipeline.py:100:                                    .values(memory_revision=decision_id).execution_options(synchronize_session=False))
+backend/app/services/pipeline.py:113:        context.inventory = list(player.inventory or [])
+backend/app/services/pipeline.py:142:            decision_id=decision_id, scope=revision,
+backend/app/services/pipeline.py:144:        before_inventory = {'player': list(player.inventory or []), 'npc': list(npc.inventory or [])}
+backend/app/services/pipeline.py:202:        self._db.flush()
+backend/app/services/pipeline.py:206:        self._db.flush()
+backend/app/services/pipeline.py:218:        self._db.commit()
+backend/app/services/decision_trace.py:58:                          'embedding_revision': settings.embedding_revision,
+backend/app/services/state/service.py:32:        inventory = list(player.inventory or [])
+backend/app/services/state/service.py:40:        npc_inventory = list(npc.inventory or [])
+backend/app/services/state/service.py:50:        npc.inventory = npc_inventory
+backend/app/services/state/service.py:53:        player.inventory = inventory
+backend/app/services/state/service.py:56:            quest.status = quest_status
+backend/app/services/state/service.py:63:        self._db.flush()
+backend/app/services/opening.py:29:    db.commit()
+backend/app/services/opening.py:42:        player.inventory = list(player.inventory or []) + ['rope']
+backend/app/services/opening.py:43:    db.commit()
+backend/app/services/craftsman.py:24:        row = CraftsmanEncounter(player_id=player.id, game_scope=player.game_scope, revision=0,
+backend/app/services/craftsman.py:27:        db.flush()
+backend/app/services/craftsman.py:29:        row.game_scope, row.revision, row.state, row.commands = player.game_scope, 0, defaults(), {}
+backend/app/services/craftsman.py:34:    return row.state | dict(game_scope=player.game_scope, revision=row.revision)
+backend/app/services/craftsman.py:76:def require_revision(row, revision):
+backend/app/services/craftsman.py:77:    if revision != row.revision: raise HTTPException(409, 'Encounter changed; reload its current state and retry')
+backend/app/services/craftsman.py:82:def checkpoint(db, player, data, revision):
+backend/app/services/craftsman.py:84:    require_revision(row, revision)
+backend/app/services/craftsman.py:114:    row.state, row.revision = state, row.revision+1
+backend/app/services/craftsman.py:117:    db.flush()
+backend/app/services/craftsman.py:120:def apply_command(db, player, npc, command, request_id, expected_revision, payload):
+backend/app/services/craftsman.py:128:    require_revision(row,expected_revision)
+backend/app/services/craftsman.py:181:    row.state, row.revision = state, row.revision+1
+backend/app/services/craftsman.py:182:    db.flush()
+backend/app/services/memory/reindex.py:29:            db.commit()
+backend/app/services/memory/reindex.py:42:            db.commit()
+backend/app/services/memory/provenance.py:99:    envelope = dict(schema_version=1, trace_id=new.source_event_id, game_id='single-player',
+backend/app/services/memory/provenance.py:100:                    timeline_id=new.game_scope, npc_id=str(new.npc_id), actor_id='player:1',
+backend/app/services/memory/provenance.py:123:        db.flush()
+backend/app/services/memory/embedding.py:18:        # Bump revision whenever weights or preprocessing change, even for the same tag.
+backend/app/services/memory/embedding.py:19:        self.model_key = f'ollama:{self.settings.embedding_model}:{self.settings.embedding_revision}:{self.dimensions}'
+backend/app/services/memory/service.py:107:                self._db.flush()
+backend/app/services/memory/service.py:121:        self._db.flush()
+backend/app/services/memory/service.py:167:        self._db.flush()
+backend/app/services/memory/service.py:172:        revision = self._db.scalar(select(NPC.memory_revision).where(NPC.id == npc.id))
+backend/app/services/memory/service.py:173:        cache_key = (self._db.get_bind(), npc.id, player.game_scope, revision,
+backend/app/services/gatherer.py:29:                                revision=0, state=defaults(), commands={})
+backend/app/services/gatherer.py:31:        db.flush()
+backend/app/services/gatherer.py:33:        row.game_scope, row.revision, row.state, row.commands = player.game_scope, 0, defaults(), {}
+backend/app/services/gatherer.py:36:        # This migrates authored staging only: no branch, attempt, revision,
+backend/app/services/gatherer.py:39:        row.state = row.state | {'checkpoint': CHECKPOINT}
+backend/app/services/gatherer.py:49:    return row.state | dict(game_scope=player.game_scope, revision=row.revision)
+backend/app/services/gatherer.py:56:def apply_command(db, player, command, request_id, expected_revision, payload):
+backend/app/services/gatherer.py:66:    if row.revision != expected_revision:
+backend/app/services/gatherer.py:119:        # listener invalidates its retrieval revision in this same transaction.
+backend/app/services/gatherer.py:125:    row.state, row.revision = state, row.revision + 1
+backend/app/services/gatherer.py:126:    db.flush()
+backend/app/services/gatherer.py:132:    db.flush()
+backend/app/services/llm/mock.py:14:        inventory = context.get("inventory", [])
+backend/app/services/quests/bow.py:18:        db.flush()
+backend/app/services/quests/bow.py:49:    if quest.phase == 'available':
+backend/app/services/quests/bow.py:51:    if quest.phase == 'completed':
+backend/app/services/quests/bow.py:53:    if quest.phase == 'crafting':
+backend/app/services/quests/bow.py:57:    if quest.phase == 'meet':
+backend/app/services/quests/bow.py:58:        quest.phase = 'gather'
+backend/app/services/quests/bow.py:78:    npc.inventory = stock
+backend/app/services/quests/bow.py:81:    quest.phase = 'crafting'
+backend/app/services/quests/bow.py:84:    db.flush()
+backend/app/services/quests/bow.py:93:    player.inventory = inventory_before + ['bow']
+backend/app/services/quests/bow.py:94:    quest.phase = 'completed'
+backend/app/services/quests/bow.py:108:    db.flush()
+backend/app/control/fallback.py:132:                game_id=context.game_id,
+backend/app/control/fallback.py:133:                timeline_id=context.timeline_id,
+backend/app/domain/quest/recovery.py:178:        game_id=blocker.game_id,
+backend/app/domain/quest/recovery.py:179:        timeline_id=blocker.timeline_id,
+backend/app/domain/world/inventory.py:46:    expected_revisions: RevisionSet
+backend/app/domain/world/inventory.py:62:    revisions: RevisionSet
+backend/app/domain/world/inventory.py:102:    expected_revisions: RevisionSet
+backend/app/domain/world/inventory.py:166:        game_id=request.game_id,
+backend/app/domain/world/inventory.py:167:        timeline_id=request.timeline_id,
+backend/app/domain/world/inventory.py:180:        expected_revisions=request.expected_revisions,
+backend/app/domain/world/inventory.py:194:    if request.expected_revisions != view.revisions:
+backend/app/domain/world/inventory.py:195:        return _error(ErrorCode.STALE_REVISION, "Inventory ownership revisions are stale.", (request.record_id, view.record_id))
+backend/app/domain/world/eligibility.py:58:    expected_revisions: RevisionSet
+backend/app/domain/world/eligibility.py:80:    revisions: RevisionSet
+backend/app/domain/world/eligibility.py:170:        and target.position.spatial_revision == world.actor_position.spatial_revision
+backend/app/domain/world/eligibility.py:217:        game_id=event.game_id,
+backend/app/domain/world/eligibility.py:218:        timeline_id=event.timeline_id,
+backend/app/domain/fuzzy/membership.py:211:        game_id=candidate.game_id,
+backend/app/domain/fuzzy/membership.py:212:        timeline_id=candidate.timeline_id,
+backend/app/state/merge.py:37:    revisions: RevisionSet
+backend/app/state/merge.py:181:        game_id=current.game_id,
+backend/app/state/merge.py:182:        timeline_id=current.timeline_id,
+backend/app/perception/normalize.py:178:        game_id=observed.game_id,
+backend/app/perception/normalize.py:179:        timeline_id=observed.timeline_id,
+backend/app/api/routes/chat.py:32:    npc.memory_revision = str(uuid4())
+backend/app/api/routes/chat.py:36:    db.commit()
+backend/app/api/routes/world.py:42:    db.commit()
+backend/app/api/routes/world.py:70:    db.commit()
+backend/app/api/routes/quests.py:21:    db.flush()
+backend/app/api/routes/quests.py:25:    db.commit()
+backend/app/api/routes/quests.py:33:    if quest.phase == 'available':
+backend/app/api/routes/quests.py:34:        quest.phase = 'meet'
+backend/app/api/routes/quests.py:39:            gatherer.inventory = list(gatherer.inventory or []) + ['wood']
+backend/app/api/routes/quests.py:57:    player.inventory = list(player.inventory or []) + ['string']
+backend/app/api/routes/craftsman.py:14:    result = apply_command(db,player,npc,request.command,request.request_id,request.expected_revision,request.payload)
+backend/app/api/routes/craftsman.py:15:    db.commit()
+backend/app/api/routes/craftsman.py:20:    result = checkpoint(db,player,request.checkpoint,request.expected_revision)
+backend/app/api/routes/craftsman.py:21:    db.commit()
+backend/app/memory/reconcile.py:126:            if new_record.status == EpistemicStatus.RETRACTION:
+backend/app/memory/reconcile.py:132:            elif policy.allow_claim_consolidation and new_record.status == record.status:
+backend/app/memory/reconcile.py:142:        game_id=new_record.game_id,
+backend/app/memory/reconcile.py:143:        timeline_id=new_record.timeline_id,
+backend/app/api/routes/gatherer.py:15:                           request.expected_revision, request.payload)
+backend/app/api/routes/gatherer.py:16:    db.commit()
+backend/app/memory/classify.py:94:        if self.status == EpistemicStatus.FACT and self.authority != EvidenceAuthority.AUTHORITATIVE:
+backend/app/memory/classify.py:173:        game_id=source.game_id,
+backend/app/memory/classify.py:174:        timeline_id=source.timeline_id,
+backend/app/roles/permissions.py:160:        game_id=proposal.game_id,
+backend/app/roles/permissions.py:161:        timeline_id=proposal.timeline_id,
+backend/app/ports/read.py:28:    """Complete compatibility identity; revisions cannot be mixed."""
+backend/app/ports/read.py:31:    model_revision: Identifier
+backend/app/ports/read.py:33:    preprocessing_revision: Identifier
+backend/app/ports/read.py:73:    """Specialize with trigger and WorldReadSet including values and revisions.
+backend/app/memory/lifecycle.py:135:        game_id=records.game_id,
+backend/app/memory/lifecycle.py:136:        timeline_id=records.timeline_id,
+backend/app/database/seed.py:39:        db.flush()
+backend/app/database/seed.py:50:    db.commit()
+backend/app/database/seed.py:67:    player.inventory = ['water', 'food']
+backend/app/database/seed.py:80:        npc.memory_revision = str(uuid4())
+backend/app/database/seed.py:84:        quest.status = 'not_started'
+backend/app/database/seed.py:95:    bow.phase = 'available'
+backend/app/database/seed.py:98:    db.flush()
+backend/app/dialogue/compose.py:166:        game_id=source.game_id,
+backend/app/dialogue/compose.py:167:        timeline_id=source.timeline_id,
+backend/app/database/memory_migration.py:20:        'npcs': {'memory_revision': "VARCHAR(36) NOT NULL DEFAULT 'initial'"},
+backend/app/config/settings.py:23:    embedding_revision: str = "v1"
+backend/app/models/craftsman_encounter.py:9:    revision: Mapped[int] = mapped_column(Integer, default=0)
+backend/app/ports/write.py:39:    revision: Revision
+backend/app/ports/write.py:70:    expected_revisions: RevisionSet
+backend/app/ports/write.py:71:    npc_revision_basis: NpcRevisionBasis
+backend/app/ports/write.py:73:    revision_advances: tuple[AggregateRevision, ...]
+backend/app/ports/write.py:78:        expected = expected_aggregates(self.expected_revisions, self.npc_revision_basis)
+backend/app/ports/write.py:79:        before = {(item.kind, item.scope_id): item.revision for item in expected}
+backend/app/ports/write.py:81:        for item in self.revision_advances:
+backend/app/ports/write.py:83:            if key in seen or key not in before or item.revision != before[key] + 1:
+backend/app/ports/write.py:94:def expected_aggregates(revisions: RevisionSet, basis: NpcRevisionBasis) -> tuple[AggregateRevision, ...]:
+backend/app/ports/write.py:95:    revision = revisions.base_npc_state_revision
+backend/app/ports/write.py:97:        if revisions.approved_npc_state_revision is None:
+backend/app/ports/write.py:98:            raise ValueError("approved revision basis requires an approved NPC revision")
+backend/app/ports/write.py:99:        revision = revisions.approved_npc_state_revision
+backend/app/ports/write.py:100:    values = [AggregateRevision(kind=RevisionKind.NPC, scope_id=revisions.npc_id, revision=revision)]
+backend/app/ports/write.py:103:            values.extend(AggregateRevision(kind=kind, scope_id=item.scope_id, revision=item.revision)
+backend/app/ports/write.py:104:                          for item in getattr(revisions, kind.value))
+backend/app/ports/write.py:112:    revisions_before: tuple[AggregateRevision, ...]
+backend/app/ports/write.py:113:    revision_advances: tuple[AggregateRevision, ...]
+backend/app/ports/write.py:153:    relevant revisions -> STALE_REVISION. Failures stage no partial effects.
+backend/app/ports/write.py:156:    def compare_and_commit(self, request: CommitRequest[ChangeT, EventT]) -> Result[CommitReceipt]: ...
+backend/app/ports/write.py:176:    def commit(self) -> Result[None]: ...
+backend/app/models/npc.py:20:    memory_revision: Mapped[str] = mapped_column(String(36), default="initial", server_default="initial")
+backend/app/ports/fakes.py:26:    """Stable JSON encoding includes expected revisions, changes and all events."""
+backend/app/ports/fakes.py:32:    def __init__(self, ids: IdSource, event_type: type[EventT], initial_revisions: tuple[tuple[Identifier, AggregateRevision], ...] = ()):
+backend/app/ports/fakes.py:35:        self._revisions = {(timeline, item.kind, item.scope_id): item.revision for timeline, item in initial_revisions}
+backend/app/ports/fakes.py:36:        if len(self._revisions) != len(initial_revisions):
+backend/app/ports/fakes.py:37:            raise ValueError("duplicate initial revision")
+backend/app/ports/fakes.py:58:        next_cursor = DeliveryCursor(timeline_id=cursor.timeline_id, consumer_id=cursor.consumer_id,
+backend/app/ports/fakes.py:69:    def compare_and_commit(self, request: CommitRequest[ChangeT, EventT]) -> Result[CommitReceipt]:
+backend/app/ports/fakes.py:77:        self._revisions = owner._revisions.copy()
+backend/app/ports/fakes.py:102:        expected = expected_aggregates(request.expected_revisions, request.npc_revision_basis)
+backend/app/ports/fakes.py:104:        if any(self._revisions.get((timeline, item.kind, item.scope_id)) != item.revision for item in expected):
+backend/app/ports/fakes.py:105:            return _error(ErrorCode.STALE_REVISION, "A relevant aggregate revision has changed or is absent.")
+backend/app/ports/fakes.py:110:                                payload_digest=digest, revisions_before=expected,
+backend/app/ports/fakes.py:111:                                revision_advances=request.revision_advances,
+backend/app/ports/fakes.py:120:        for item in request.revision_advances:
+backend/app/ports/fakes.py:121:            self._revisions[timeline, item.kind, item.scope_id] = item.revision
+backend/app/ports/fakes.py:129:    def commit(self) -> Result[None]:
+backend/app/ports/fakes.py:135:            self._owner._revisions = self._revisions
+backend/app/database/inventory_migration.py:14:            connection.execute(text(f'UPDATE npcs SET inventory = {value} WHERE role = :role'),
+backend/app/database/inventory_migration.py:20:            connection.execute(text(f'UPDATE players SET inventory = {value} WHERE id = :id'),
+backend/app/models/memory.py:74:    # The revision is committed/rolled back WITH the memory, preventing cache ghosts.
+backend/app/models/memory.py:76:    connection.execute(update(NPC).where(NPC.id == target.npc_id).values(memory_revision=str(uuid4())))
+backend/app/models/gatherer_encounter.py:10:    revision: Mapped[int] = mapped_column(Integer, default=0)
+backend/app/schemas/gatherer.py:10:    expected_revision: int = Field(ge=0)
+backend/app/schemas/craftsman.py:7:    expected_revision: int = Field(ge=0)
+backend/app/schemas/craftsman.py:11:    expected_revision: int = Field(ge=0)
+backend/app/reasoning/proposal_check.py:181:        game_id=snapshot.game_id,
+backend/app/reasoning/proposal_check.py:182:        timeline_id=snapshot.timeline_id,
+backend/app/contracts/core.py:18:# JSON numbers are parsed as IEEE-754 doubles by Godot; keep revisions within
+backend/app/contracts/core.py:109:    spatial_revision: Revision
+backend/app/contracts/core.py:113:    """Revision of one relevant aggregate, not a global world revision.
+backend/app/contracts/core.py:120:    revision: Revision
+backend/app/contracts/core.py:124:    """Expected revisions for a single NPC and only its decision dependencies.
+backend/app/contracts/core.py:126:    Empty tuples mean that category is irrelevant, not revision zero. Before
+backend/app/contracts/core.py:127:    approval approved_npc_state_revision is absent. An approval records it
+backend/app/contracts/core.py:128:    separately from the base revision; equality permits a no-change approval.
+backend/app/contracts/core.py:133:    base_npc_state_revision: Revision
+backend/app/contracts/core.py:134:    approved_npc_state_revision: Revision | None = None
+backend/app/contracts/core.py:142:    def consistent_revisions(self) -> "RevisionSet":
+backend/app/contracts/core.py:143:        if self.approved_npc_state_revision is not None and self.approved_npc_state_revision < self.base_npc_state_revision:
+backend/app/contracts/core.py:144:            raise ValueError("approved NPC state revision cannot precede base revision")

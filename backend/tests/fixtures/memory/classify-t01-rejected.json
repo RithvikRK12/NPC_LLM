@@ -1,0 +1,39 @@
+{
+  "source": {
+    "schema_version": 1,
+    "record_id": "classified-source:bad",
+    "trace_id": "trace:classify-001",
+    "causation_id": "dialogue:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:hero",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "dialogue:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "memory:classify",
+        "version": "v1"
+      }
+    ],
+    "source_kind": "rumor",
+    "player_text": "hello",
+    "approved_dialogue": "Hello.",
+    "verified_event_type": null,
+    "subject_id": null,
+    "predicate": null,
+    "object_id": null,
+    "object_text": null,
+    "grounded": false
+  },
+  "error": {
+    "code": "UNKNOWN_ENUM",
+    "stage": "memory.classify",
+    "retryable": false,
+    "source_ids": [],
+    "public_message": "Unsupported memory classification source."
+  }
+}

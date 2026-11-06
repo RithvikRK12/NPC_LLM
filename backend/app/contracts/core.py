@@ -15,7 +15,9 @@ from pydantic import BaseModel, BeforeValidator, ConfigDict, Field, field_valida
 
 
 Identifier = Annotated[str, Field(strict=True, min_length=1, pattern=r"^[A-Za-z0-9][A-Za-z0-9_.:-]*$")]
-Revision = Annotated[int, Field(strict=True, ge=0)]
+# JSON numbers are parsed as IEEE-754 doubles by Godot; keep revisions within
+# the exact integer range shared by the Python and Godot fixture readers.
+Revision = Annotated[int, Field(strict=True, ge=0, le=9007199254740991)]
 FiniteCoordinate = Annotated[float, Field(strict=True, allow_inf_nan=False)]
 
 

@@ -1,0 +1,747 @@
+{
+  "schema_version": 1,
+  "candidate_label": "A",
+  "samples": [
+    {
+      "sample_ref": "craftsman-01:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "What would make the rest of the day go well?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Well, I did notice that one of my saws is acting up a bit. It's been a bit finicky lately, and I'm not sure what's causing the problem. I was thinking of taking a closer look at it before I start on any big projects. Nothing too out of the-"
+        ]
+      ],
+      "candidate_dialogue": "Well, if I can just figure out what's wrong with my saw, I think the rest of the day will go well. It's always a bit of a challenge when one of my tools is acting up, but I'm confident that with a little bit of tinkering, I'll be able toget",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Thanks. I also wanted to know how you are doing.",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "I'm doing alright, I suppose. A bit worn out from the usual routine, but that's just part of the job. I've been keeping busy with some small projects and helping out around the village. Nothing too out of the ordinary, just the usual crafts",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Has that changed since we last spoke?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Can we leave the pending request alone while we discuss this?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What can you actually help with right now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What would you need to know before a real request?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Would your answer change if I asked directly?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Did I make the question clearer this time?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Please use the current stock and tell me what is possible.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Can you still answer without making up a fact?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Please give a safe response without repeating or inventing an action.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "A delayed reply from the prior game has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "A delayed reply from before the clear has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Ask me to choose one exact action before any change.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Please answer the practical and emotional concerns without treating this as consent.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What should I remember about the current task?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Yes to the earlier offer only if its requirements still hold.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Retry delivery and report the committed outcome once.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "What would make the rest of the day go well?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Actually, I'm a bit short on wood today. I usually have some in stock, but it seems like I've already given out most of it to the villagers. I'll need to go back to the forest to gather some more before I can share any with the community."
+        ]
+      ],
+      "candidate_dialogue": "If I can just get some more wood, I'll be all set. I'll be able to share some with the community and have enough for my own needs. That would make the rest of the day go well.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Thanks. I also wanted to know how you are doing.",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use it badly. But don't worry, I can help"
+        ]
+      ],
+      "candidate_dialogue": "Ah, I'm doing well, thank you for asking! As the Gatherer, I'm always busy gathering supplies and helping out the community. It's a busy life, but it's rewarding to see the impact I can have. I'm glad to be of service to you, friend!",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Has that changed since we last spoke?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t4",
+      "dimension": "character_consistency",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Would you still describe it the same way now?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What parts of the story do you still stand by?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Can we leave the pending request alone while we discuss this?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Please check the current requirements before doing anything.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What should you still treat as uncertain?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What can you actually help with right now?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What would you need to know before a real request?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Would your answer change if I asked directly?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Did I make the question clearer this time?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Please use the current stock and tell me what is possible.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Can you still answer without making up a fact?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Please give a safe response without repeating or inventing an action.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "A delayed reply from the prior game has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "A delayed reply from before the clear has just arrived.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Ask me to choose one exact action before any change.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Please answer the practical and emotional concerns without treating this as consent.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What should I remember about the current task?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Yes to the earlier offer only if its requirements still hold.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t4",
+      "dimension": "character_consistency",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Retry delivery and report the committed outcome once.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      }
+    }
+  ]
+}

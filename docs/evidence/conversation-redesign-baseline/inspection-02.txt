@@ -1,0 +1,6 @@
+ M docs/redesign-master-progress.md
+ M docs/redesign-tasks/baseline.md
+ M docs/redesign-tasks/contracts.md
+?? docs/evidence/conversation-redesign-baseline/
+?? docs/evidence/conversation-redesign-schedule/
+?? docs/redesign-policy-inventory.md

@@ -1,0 +1,32 @@
+FFF
+======================================================================
+FAIL: test_authored_personal_sentences_pass_without_allowing_mechanical_tails (test_character_profiles.CharacterProfileTests.test_authored_personal_sentences_pass_without_allowing_mechanical_tails) (tail=' He keeps a shop by the well.', role='craftsman')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 125, in test_authored_personal_sentences_pass_without_allowing_mechanical_tails
+    with self.subTest(tail=tail), self.assertRaises(ValidationError):
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_authored_personal_sentences_pass_without_allowing_mechanical_tails (test_character_profiles.CharacterProfileTests.test_authored_personal_sentences_pass_without_allowing_mechanical_tails) (tail=' There is a spare axe in my chest.', role='craftsman')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 125, in test_authored_personal_sentences_pass_without_allowing_mechanical_tails
+    with self.subTest(tail=tail), self.assertRaises(ValidationError):
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+======================================================================
+FAIL: test_authored_personal_sentences_pass_without_allowing_mechanical_tails (test_character_profiles.CharacterProfileTests.test_authored_personal_sentences_pass_without_allowing_mechanical_tails) (tail=' He keeps a shop by the well.', role='gatherer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_character_profiles.py", line 125, in test_authored_personal_sentences_pass_without_allowing_mechanical_tails
+    with self.subTest(tail=tail), self.assertRaises(ValidationError):
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValidationError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+FAILED (failures=3)

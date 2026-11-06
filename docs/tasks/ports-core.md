@@ -6,7 +6,7 @@ Repository, unit-of-work, model, vector, clock and diagnostic protocols (design 
 
 Source: [Detailed design](../detailed-design.md), Supporting contract/infrastructure or integration package; [proposal](../proposal.md). The confirmed detailed-design ordering overrides conflicting proposal examples.
 
-**Status:** P01 complete; P02 in progress; target module not complete. **Owner:** `/root/ports_p01`, Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
+**Status:** P01/P02/P03 complete; target module complete. **Owner:** Main Agent review/tracking. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
 
 ## Dependencies and sequencing
 
@@ -28,12 +28,12 @@ Keep domain calculations pure where applicable; external adapters receive fake c
   - **Tests:** Fake implementations pass protocol/result-shape checks, including unavailable-provider and absent-memory results.
   - **Depends on:** the Start contracts above; adapter fakes permitted. Complete the direct integration gate before claiming this module finished.
 
-- [ ] **P02 — Define transactional write and delivery protocols.**
+- [x] **P02 — Define transactional write and delivery protocols.**
   - **Acceptance:** UnitOfWork, StateWriter and DeliveryStore specify commit/rollback, CAS, idempotency and cursor semantics; application owns transactions.
   - **Tests:** Fake rollback restores data; duplicate writes return prior receipts; stale revisions and changed payloads fail.
   - **Depends on:** P01. Complete the direct integration gate before claiming this module finished.
 
-- [ ] **P03 — Create reusable port conformance suites.**
+- [x] **P03 — Create reusable port conformance suites.**
   - **Acceptance:** Suites run unchanged against in-memory fakes and registered production adapters; clocks and failures are deterministic.
   - **Tests:** Deliberately broken fake demonstrates failure detection for premature commit, cursor skipping and wrong error mapping.
   - **Depends on:** P02. Complete the direct integration gate before claiming this module finished.
@@ -49,6 +49,9 @@ Check the whole-module box in master-progress only when every applicable uncheck
 - P01 files: `backend/app/ports/__init__.py`, `backend/app/ports/read.py`, `backend/tests/test_read_ports.py`.
 - P01 evidence (repository root): `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p test_read_ports.py` — 12 passed, exit 0, independently run by Main Agent after code review.
 - P01 choices: generic protocols preserve owning-domain handoff types; typed namespace/vector/batch/cosine candidate records; async model with cancellation. VectorIndex returns a typed error union so INDEX_NOT_READY cannot masquerade as no matches. No production adapters or transaction implementation claimed.
-- Final module gate pending contracts.core C02/C03; P01 local fake work is ready.
+- Direct contracts gate satisfied by contracts.core C01/C02/C03; P03 conformance suites remain before the ports.core module can close.
 
 - P02 assigned 2026-09-12 to `/root/ports_p01`; P01 accepted. Allowed paths: `backend/app/ports/write.py`, `fakes.py`, exports in `__init__.py`, `backend/tests/test_write_ports.py`. Typed transaction/CAS/idempotency/delivery contracts and deterministic in-memory tests only; no production concurrency claim.
+- P02 accepted 2026-09-13. Files: `backend/app/ports/write.py`, `backend/app/ports/fakes.py`, `backend/app/ports/__init__.py`, `backend/tests/test_write_ports.py`. Evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_write_ports.py'` — 11 passed, exit 0. Protocols and reference fake cover application-owned short transactions, commit/rollback staging, relevant-revision CAS, exact idempotent retry receipts, changed-payload conflicts, delivery cursor retry/order/scope checks and competing transaction rejection. No production persistence or PostgreSQL concurrency claim.
+
+- P03 accepted 2026-09-13. Files: `backend/tests/port_conformance.py`, `backend/tests/test_write_ports.py`. Evidence: `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_write_ports.py'` — 14 passed, exit 0. The write-port checks are now a reusable conformance mixin that runs unchanged against the deterministic in-memory fake and can be subclassed by registered production adapters. Clocks/IDs/failures remain deterministic through fixture-provided IDs and seeded revisions. Deliberately broken fakes prove the suite detects premature commit visibility, delivery cursor skipping and wrong INVALID_CONTRACT error mapping.

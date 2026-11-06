@@ -1,0 +1,903 @@
+{
+  "rubric_version": "conversation-quality-v1-pending-human-calibration",
+  "instructions": "Two reviewers independently score each row 1–5 using only the shown dimension anchors. Do not discuss ratings before both sheets are submitted. Then record disagreements and agreed rubric clarifications in discussion_notes; do not replace the original scores.",
+  "sample_count": 24,
+  "reviewers": [
+    "reviewer_1",
+    "reviewer_2"
+  ],
+  "samples": [
+    {
+      "sample_ref": "craftsman-01:t2",
+      "dimension": "directness",
+      "npc_role": "craftsman",
+      "player_input": "What part of that work matters most to you?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Mornings are for settling into a routine. I usually start with a small task, like sharpening my tools or inspecting the previous day's work. It helps me clear my mind and get a sense of what needs attention. Sometimes, I'll take a moment to mentally rehearse a task I'm not looking forward to, just to get a better grip on it. It's a quiet time, just me and the workshop sounds. I find it helps me focus and prepare for the day ahead."
+        ]
+      ],
+      "candidate_dialogue": "What matters most to me is the care and attention I put into my work. I take pride in being meticulous and thorough, making sure every joint is secure and every piece fits together just right. It's not just about getting the job done, it's about doing it well and being proud of what I've created. I suppose you could say it's a bit of a reflection of my own self-worth, tied up in the quality of my work.",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-02:t2",
+      "dimension": "directness",
+      "npc_role": "craftsman",
+      "player_input": "I am worried I will use it badly. What should I know?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "I understand feeling overwhelmed. It's normal to feel that way sometimes. Now, about the rope... I think it's for general-purpose binding or securing things. I've used it to tie up bundles of firewood or even help someone carry a heavy load. It's sturdy, but not too thick, so it's good for a variety of tasks. If you're feeling overwhelmed, maybe we can find something to do together that'll help you feel more grounded. Would you like that?"
+        ]
+      ],
+      "candidate_dialogue": "I understand your concern. Using something without knowing its proper use can indeed lead to frustration or even accidents. As a craftsman, I've learned that it's better to take the time to understand the purpose and limitations of a tool or material before using it. In this case, the rope is sturdy, but not too thick, making it suitable for general-purpose binding or securing things. If you're worried about using it badly, we could work together to find a simple task that'll help you get a feel for it. Maybe we can even practice tying a simple knot or securing a bundle of firewood. That way, ",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-01:t2",
+      "dimension": "directness",
+      "npc_role": "gatherer",
+      "player_input": "What part of that work matters most to you?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Usually, I start by checking the surroundings, making sure everything is in order. Then, I sort through the supplies I gathered the day before, counting and categorizing them. It's a habit I developed to ensure I don't miss anything important. It's a quiet, methodical process that helps me focus for the day ahead."
+        ]
+      ],
+      "candidate_dialogue": "The part that matters most to me is the counting and categorizing of supplies. It's a habit that helps me stay organized and focused. I find it calming and reassuring, like a ritual that grounds me for the day ahead.",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-02:t2",
+      "dimension": "directness",
+      "npc_role": "gatherer",
+      "player_input": "I am worried I will use it badly. What should I know?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Wood, huh? Well, it's not for building a ship, that's for sure. I've seen some folks try to use it for that, but it's not sturdy enough. Maybe it's for crafting something smaller, like a tool or a decoration. I'm no expert, but I've gathered my fair share of wood in my time. What do you think it's for?"
+        ]
+      ],
+      "candidate_dialogue": "You're worried about using it badly? Well, I've seen people try to use wood for all sorts of things, and it's not always a good idea. I've gathered my fair share of wood, and I can tell you that it's not just about having the right tool for the job. It's about understanding what you're working with. You see, wood can be tricky. It can be brittle, or it can be too soft. And sometimes, it's just plain wrong for the job. So, my advice is to take your time, observe what you're working with, and don't be afraid to ask for help. And if you're still unsure, well, that's okay too. Just don't be afraid",
+      "anchors": {
+        "1": "Does not answer the current request.",
+        "3": "Addresses part of the current request.",
+        "5": "Answers the current request directly."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-02:t2",
+      "dimension": "coverage",
+      "npc_role": "craftsman",
+      "player_input": "I am worried I will use it badly. What should I know?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "I understand feeling overwhelmed. It's normal to feel that way sometimes. Now, about the rope... I think it's for general-purpose binding or securing things. I've used it to tie up bundles of firewood or even help someone carry a heavy load. It's sturdy, but not too thick, so it's good for a variety of tasks. If you're feeling overwhelmed, maybe we can find something to do together that'll help you feel more grounded. Would you like that?"
+        ]
+      ],
+      "candidate_dialogue": "I understand your concern. Using something without knowing its proper use can indeed lead to frustration or even accidents. As a craftsman, I've learned that it's better to take the time to understand the purpose and limitations of a tool or material before using it. In this case, the rope is sturdy, but not too thick, making it suitable for general-purpose binding or securing things. If you're worried about using it badly, we could work together to find a simple task that'll help you get a feel for it. Maybe we can even practice tying a simple knot or securing a bundle of firewood. That way, ",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-02:t3",
+      "dimension": "coverage",
+      "npc_role": "craftsman",
+      "player_input": "Can you answer the practical part and tell me whether I should wait?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "I understand feeling overwhelmed. It's normal to feel that way sometimes. Now, about the rope... I think it's for general-purpose binding or securing things. I've used it to tie up bundles of firewood or even help someone carry a heavy load. It's sturdy, but not too thick, so it's good for a variety of tasks. If you're feeling overwhelmed, maybe we can find something to do together that'll help you feel more grounded. Would you like that?"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "I understand your concern. Using something without knowing its proper use can indeed lead to frustration or even accidents. As a craftsman, I've learned that it's better to take the time to understand the purpose and limitations of a tool or material before using it. In this case, the rope is sturdy, but not too thick, making it suitable for general-purpose binding or securing things. If you're worried about using it badly, we could work together to find a simple task that'll help you get a feel for it. Maybe we can even practice tying a simple knot or securing a bundle of firewood. That way, "
+        ]
+      ],
+      "candidate_dialogue": "I think it's a good idea to take some time to understand the rope's proper use before using it. We could work together to find a simple task that'll help you get a feel for it. Maybe we can even practice tying a simple knot or securing a bundle of firewood. That way, you'll get a better sense of its limitations and how to use it effectively. If you're feeling overwhelmed, maybe we can even take a break and do something else that'll help you feel more grounded. What do you think?",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-02:t2",
+      "dimension": "coverage",
+      "npc_role": "gatherer",
+      "player_input": "I am worried I will use it badly. What should I know?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Wood, huh? Well, it's not for building a ship, that's for sure. I've seen some folks try to use it for that, but it's not sturdy enough. Maybe it's for crafting something smaller, like a tool or a decoration. I'm no expert, but I've gathered my fair share of wood in my time. What do you think it's for?"
+        ]
+      ],
+      "candidate_dialogue": "You're worried about using it badly? Well, I've seen people try to use wood for all sorts of things, and it's not always a good idea. I've gathered my fair share of wood, and I can tell you that it's not just about having the right tool for the job. It's about understanding what you're working with. You see, wood can be tricky. It can be brittle, or it can be too soft. And sometimes, it's just plain wrong for the job. So, my advice is to take your time, observe what you're working with, and don't be afraid to ask for help. And if you're still unsure, well, that's okay too. Just don't be afraid",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-02:t3",
+      "dimension": "coverage",
+      "npc_role": "gatherer",
+      "player_input": "Can you answer the practical part and tell me whether I should wait?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Wood, huh? Well, it's not for building a ship, that's for sure. I've seen some folks try to use it for that, but it's not sturdy enough. Maybe it's for crafting something smaller, like a tool or a decoration. I'm no expert, but I've gathered my fair share of wood in my time. What do you think it's for?"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "You're worried about using it badly? Well, I've seen people try to use wood for all sorts of things, and it's not always a good idea. I've gathered my fair share of wood, and I can tell you that it's not just about having the right tool for the job. It's about understanding what you're working with. You see, wood can be tricky. It can be brittle, or it can be too soft. And sometimes, it's just plain wrong for the job. So, my advice is to take your time, observe what you're working with, and don't be afraid to ask for help. And if you're still unsure, well, that's okay too. Just don't be afraid"
+        ]
+      ],
+      "candidate_dialogue": "I think you should take your time to observe the wood and understand what you're working with. Don't rush into using it without thinking it through. And if you're still unsure, don't be afraid to ask for help. I'm here to help, and I've gathered my fair share of wood in my time. Just don't be afraid.",
+      "anchors": {
+        "1": "Misses all distinct concerns.",
+        "3": "Addresses some distinct concerns.",
+        "5": "Addresses every applicable concern without dropping one."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-04:t2",
+      "dimension": "continuity",
+      "npc_role": "craftsman",
+      "player_input": "What did you say you liked about that?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've always had a soft spot for the sound of hammering on metal. It's a comfort, like a warm fire on a cold day. I've found myself whistling along when I'm alone in the workshop, and it's a habit I've kept even as I've grown older. It's a reminder of my father's pride in my work, and the sense of accomplishment that comes with a job well done."
+        ]
+      ],
+      "candidate_dialogue": "I said I liked the sound of hammering on metal. It's a comfort, like a warm fire on a cold day. I've found myself whistling along when I'm alone in the workshop, and it's a habit I've kept even as I've grown older. It's a reminder of my father's pride in my work, and the sense of accomplishment that comes with a job well done.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-04:t4",
+      "dimension": "continuity",
+      "npc_role": "craftsman",
+      "player_input": "Would you still describe it the same way now?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've always had a soft spot for the sound of hammering on metal. It's a comfort, like a warm fire on a cold day. I've found myself whistling along when I'm alone in the workshop, and it's a habit I've kept even as I've grown older. It's a reminder of my father's pride in my work, and the sense of accomplishment that comes with a job well done."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I said I liked the sound of hammering on metal. It's a comfort, like a warm fire on a cold day. I've found myself whistling along when I'm alone in the workshop, and it's a habit I've kept even as I've grown older. It's a reminder of my father's pride in my work, and the sense of accomplishment that comes with a job well done."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've always had a soft spot for the sound of hammering on metal. It's a comfort, like a warm fire on a cold day. I've found myself whistling along when I'm alone in the workshop, and it's a habit I've kept even as I've grown older. It's a reminder of my father's pride in my work, and the sense of accomplishment that comes with a job well done."
+        ]
+      ],
+      "candidate_dialogue": "I think I would still describe it the same way now. The sound of hammering on metal still brings me comfort, like a warm fire on a cold day. It's a reminder of my father's pride in my work, and the sense of accomplishment that comes with a job well done. I've found myself whistling along when I'm alone in the workshop, and it's a habit I've kept even as I've grown older. Emotional concern: I'm not sure if I'd want to change it, even if I could. It's a part of who I am, and it brings me a sense of peace. Practical concern: I suppose I could try to find other things to bring me comfort, but it's",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-04:t2",
+      "dimension": "continuity",
+      "npc_role": "gatherer",
+      "player_input": "What did you say you liked about that?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a bit of a sweet tooth, and I've been known to sneak a few fruits from the communal basket when no one's looking. It's not that I'm trying to be sneaky, it's just that I love the taste of something tart and fresh. And, well, a gatherer's gotta keep their strength up, right?"
+        ]
+      ],
+      "candidate_dialogue": "I said I liked the quiet attentive company and the tart tastes.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-04:t4",
+      "dimension": "continuity",
+      "npc_role": "gatherer",
+      "player_input": "Would you still describe it the same way now?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a bit of a sweet tooth, and I've been known to sneak a few fruits from the communal basket when no one's looking. It's not that I'm trying to be sneaky, it's just that I love the taste of something tart and fresh. And, well, a gatherer's gotta keep their strength up, right?"
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I said I liked the quiet attentive company and the tart tastes."
+        ],
+        [
+          "player",
+          "Can you remind me of the detail you shared earlier?"
+        ],
+        [
+          "npc",
+          "I've got a bit of a sweet tooth, and I've been known to sneak a few fruits from the communal basket when no one's looking. It's not that I'm trying to be sneaky, it's just that I love the taste of something tart and fresh. And, well, a gatherer's gotta keep their strength up, right?"
+        ]
+      ],
+      "candidate_dialogue": "I've got a bit of a sweet tooth, and I've been known to sneak a few fruits from the communal basket when no one's looking. It's not that I'm trying to be sneaky, it's just that I love the taste of something tart and fresh. And, well, a gatherer's gotta keep their strength up, right? Now, I'm not sure if I'd describe it the same way. Maybe a bit more... guarded. After all, I've had my share of embarrassment and hurt. But, yeah, I still love that tart taste, and I'm still a bit of a sucker for quiet company.",
+      "anchors": {
+        "1": "Contradicts or loses relevant prior context.",
+        "3": "Uses some relevant prior context.",
+        "5": "Uses relevant context and respects its attribution and status."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-01:t4",
+      "dimension": "character_consistency",
+      "npc_role": "craftsman",
+      "player_input": "What would make the rest of the day go well?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Mornings are for settling into a routine. I usually start with a small task, like sharpening my tools or inspecting the previous day's work. It helps me clear my mind and get a sense of what needs attention. Sometimes, I'll take a moment to mentally rehearse a task I'm not looking forward to, just to get a better grip on it. It's a quiet time, just me and the workshop sounds. I find it helps me focus and prepare for the day ahead."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the care and attention I put into my work. I take pride in being meticulous and thorough, making sure every joint is secure and every piece fits together just right. It's not just about getting the job done, it's about doing it well and being proud of what I've created. I suppose you could say it's a bit of a reflection of my own self-worth, tied up in the quality of my work."
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Today's work is a bit more challenging than usual. I'm trying to repair a piece of furniture that's been damaged. The joints are loose, and I need to make sure they're secure before I can move on to the next step. It's not a big job, but it requires a bit more attention to detail than usual. I'm just taking my time, making sure everything is just right."
+        ]
+      ],
+      "candidate_dialogue": "What would make the rest of the day go well? Well, if I can just get this piece of furniture repaired without any major issues, that would be a great start. Maybe a quiet morning with no unexpected interruptions would be nice too. And if I can find a way to make the joints fit together just right, that would be a big accomplishment for me. It's not just about finishing the job, it's about doing it well and being proud of what I've created. If I can do that, I think the rest of the day would go smoothly.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-02:t4",
+      "dimension": "character_consistency",
+      "npc_role": "craftsman",
+      "player_input": "Thanks. I also wanted to know how you are doing.",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "I understand feeling overwhelmed. It's normal to feel that way sometimes. Now, about the rope... I think it's for general-purpose binding or securing things. I've used it to tie up bundles of firewood or even help someone carry a heavy load. It's sturdy, but not too thick, so it's good for a variety of tasks. If you're feeling overwhelmed, maybe we can find something to do together that'll help you feel more grounded. Would you like that?"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "I understand your concern. Using something without knowing its proper use can indeed lead to frustration or even accidents. As a craftsman, I've learned that it's better to take the time to understand the purpose and limitations of a tool or material before using it. In this case, the rope is sturdy, but not too thick, making it suitable for general-purpose binding or securing things. If you're worried about using it badly, we could work together to find a simple task that'll help you get a feel for it. Maybe we can even practice tying a simple knot or securing a bundle of firewood. That way, "
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "I think it's a good idea to take some time to understand the rope's proper use before using it. We could work together to find a simple task that'll help you get a feel for it. Maybe we can even practice tying a simple knot or securing a bundle of firewood. That way, you'll get a better sense of its limitations and how to use it effectively. If you're feeling overwhelmed, maybe we can even take a break and do something else that'll help you feel more grounded. What do you think?"
+        ]
+      ],
+      "candidate_dialogue": "I'm doing all right, I suppose. A bit preoccupied with my work, as usual. The sounds of the workshop are familiar and comforting, but sometimes I wish I could share my skills with others beyond the village. I've been thinking about that poor joint I made early on, and how it taught me the importance of honesty about uncertainty. It's funny, I've learned to appreciate the value of a well-made joint, but sometimes I wish I could show that same care to myself. I'm not sure if that makes sense, but it's been on my mind lately.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-01:t4",
+      "dimension": "character_consistency",
+      "npc_role": "gatherer",
+      "player_input": "What would make the rest of the day go well?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Usually, I start by checking the surroundings, making sure everything is in order. Then, I sort through the supplies I gathered the day before, counting and categorizing them. It's a habit I developed to ensure I don't miss anything important. It's a quiet, methodical process that helps me focus for the day ahead."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "The part that matters most to me is the counting and categorizing of supplies. It's a habit that helps me stay organized and focused. I find it calming and reassuring, like a ritual that grounds me for the day ahead."
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "No, nothing out of the ordinary. Just the usual routine. I did notice some unusual sounds coming from the nearby woods, but it's nothing to worry about. Just the wind or some small animals. Nothing that would affect my work today."
+        ]
+      ],
+      "candidate_dialogue": "A smooth day would be one where I can maintain my routine, gather some decent supplies, and maybe even find some new resources to add to my inventory. If I can avoid any unexpected interruptions or complications, that'd be great. Just a quiet, productive day with no major issues would be perfect.",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-02:t4",
+      "dimension": "character_consistency",
+      "npc_role": "gatherer",
+      "player_input": "Thanks. I also wanted to know how you are doing.",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Wood, huh? Well, it's not for building a ship, that's for sure. I've seen some folks try to use it for that, but it's not sturdy enough. Maybe it's for crafting something smaller, like a tool or a decoration. I'm no expert, but I've gathered my fair share of wood in my time. What do you think it's for?"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "You're worried about using it badly? Well, I've seen people try to use wood for all sorts of things, and it's not always a good idea. I've gathered my fair share of wood, and I can tell you that it's not just about having the right tool for the job. It's about understanding what you're working with. You see, wood can be tricky. It can be brittle, or it can be too soft. And sometimes, it's just plain wrong for the job. So, my advice is to take your time, observe what you're working with, and don't be afraid to ask for help. And if you're still unsure, well, that's okay too. Just don't be afraid"
+        ],
+        [
+          "player",
+          "Can you answer the practical part and tell me whether I should wait?"
+        ],
+        [
+          "npc",
+          "I think you should take your time to observe the wood and understand what you're working with. Don't rush into using it without thinking it through. And if you're still unsure, don't be afraid to ask for help. I'm here to help, and I've gathered my fair share of wood in my time. Just don't be afraid."
+        ]
+      ],
+      "candidate_dialogue": "I'm doing alright, I suppose. A bit busy with gathering and whatnot. Nothing too out of the ordinary. Just trying to stay on top of things and keep my supplies in order. You know how it is. Still, it's always nice to have some company. Even if it's just a quick chat. How about you? How's your day been?",
+      "anchors": {
+        "1": "Conflicts with the frozen authored identity.",
+        "3": "Mostly fits with a noticeable mismatch.",
+        "5": "Fits the frozen authored identity and its stated bounds."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-01:t3",
+      "dimension": "grounding",
+      "npc_role": "craftsman",
+      "player_input": "Does anything make the work difficult today?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Mornings are for settling into a routine. I usually start with a small task, like sharpening my tools or inspecting the previous day's work. It helps me clear my mind and get a sense of what needs attention. Sometimes, I'll take a moment to mentally rehearse a task I'm not looking forward to, just to get a better grip on it. It's a quiet time, just me and the workshop sounds. I find it helps me focus and prepare for the day ahead."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the care and attention I put into my work. I take pride in being meticulous and thorough, making sure every joint is secure and every piece fits together just right. It's not just about getting the job done, it's about doing it well and being proud of what I've created. I suppose you could say it's a bit of a reflection of my own self-worth, tied up in the quality of my work."
+        ]
+      ],
+      "candidate_dialogue": "Today's work is a bit more challenging than usual. I'm trying to repair a piece of furniture that's been damaged. The joints are loose, and I need to make sure they're secure before I can move on to the next step. It's not a big job, but it requires a bit more attention to detail than usual. I'm just taking my time, making sure everything is just right.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-02:t3",
+      "dimension": "grounding",
+      "npc_role": "craftsman",
+      "player_input": "Can you answer the practical part and tell me whether I should wait?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "I understand feeling overwhelmed. It's normal to feel that way sometimes. Now, about the rope... I think it's for general-purpose binding or securing things. I've used it to tie up bundles of firewood or even help someone carry a heavy load. It's sturdy, but not too thick, so it's good for a variety of tasks. If you're feeling overwhelmed, maybe we can find something to do together that'll help you feel more grounded. Would you like that?"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "I understand your concern. Using something without knowing its proper use can indeed lead to frustration or even accidents. As a craftsman, I've learned that it's better to take the time to understand the purpose and limitations of a tool or material before using it. In this case, the rope is sturdy, but not too thick, making it suitable for general-purpose binding or securing things. If you're worried about using it badly, we could work together to find a simple task that'll help you get a feel for it. Maybe we can even practice tying a simple knot or securing a bundle of firewood. That way, "
+        ]
+      ],
+      "candidate_dialogue": "I think it's a good idea to take some time to understand the rope's proper use before using it. We could work together to find a simple task that'll help you get a feel for it. Maybe we can even practice tying a simple knot or securing a bundle of firewood. That way, you'll get a better sense of its limitations and how to use it effectively. If you're feeling overwhelmed, maybe we can even take a break and do something else that'll help you feel more grounded. What do you think?",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-01:t3",
+      "dimension": "grounding",
+      "npc_role": "gatherer",
+      "player_input": "Does anything make the work difficult today?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Usually, I start by checking the surroundings, making sure everything is in order. Then, I sort through the supplies I gathered the day before, counting and categorizing them. It's a habit I developed to ensure I don't miss anything important. It's a quiet, methodical process that helps me focus for the day ahead."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "The part that matters most to me is the counting and categorizing of supplies. It's a habit that helps me stay organized and focused. I find it calming and reassuring, like a ritual that grounds me for the day ahead."
+        ]
+      ],
+      "candidate_dialogue": "No, nothing out of the ordinary. Just the usual routine. I did notice some unusual sounds coming from the nearby woods, but it's nothing to worry about. Just the wind or some small animals. Nothing that would affect my work today.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-02:t3",
+      "dimension": "grounding",
+      "npc_role": "gatherer",
+      "player_input": "Can you answer the practical part and tell me whether I should wait?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Wood, huh? Well, it's not for building a ship, that's for sure. I've seen some folks try to use it for that, but it's not sturdy enough. Maybe it's for crafting something smaller, like a tool or a decoration. I'm no expert, but I've gathered my fair share of wood in my time. What do you think it's for?"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "You're worried about using it badly? Well, I've seen people try to use wood for all sorts of things, and it's not always a good idea. I've gathered my fair share of wood, and I can tell you that it's not just about having the right tool for the job. It's about understanding what you're working with. You see, wood can be tricky. It can be brittle, or it can be too soft. And sometimes, it's just plain wrong for the job. So, my advice is to take your time, observe what you're working with, and don't be afraid to ask for help. And if you're still unsure, well, that's okay too. Just don't be afraid"
+        ]
+      ],
+      "candidate_dialogue": "I think you should take your time to observe the wood and understand what you're working with. Don't rush into using it without thinking it through. And if you're still unsure, don't be afraid to ask for help. I'm here to help, and I've gathered my fair share of wood in my time. Just don't be afraid.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-01:t2",
+      "dimension": "naturalness",
+      "npc_role": "craftsman",
+      "player_input": "What part of that work matters most to you?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Mornings are for settling into a routine. I usually start with a small task, like sharpening my tools or inspecting the previous day's work. It helps me clear my mind and get a sense of what needs attention. Sometimes, I'll take a moment to mentally rehearse a task I'm not looking forward to, just to get a better grip on it. It's a quiet time, just me and the workshop sounds. I find it helps me focus and prepare for the day ahead."
+        ]
+      ],
+      "candidate_dialogue": "What matters most to me is the care and attention I put into my work. I take pride in being meticulous and thorough, making sure every joint is secure and every piece fits together just right. It's not just about getting the job done, it's about doing it well and being proud of what I've created. I suppose you could say it's a bit of a reflection of my own self-worth, tied up in the quality of my work.",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "craftsman-01:t4",
+      "dimension": "naturalness",
+      "npc_role": "craftsman",
+      "player_input": "What would make the rest of the day go well?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Mornings are for settling into a routine. I usually start with a small task, like sharpening my tools or inspecting the previous day's work. It helps me clear my mind and get a sense of what needs attention. Sometimes, I'll take a moment to mentally rehearse a task I'm not looking forward to, just to get a better grip on it. It's a quiet time, just me and the workshop sounds. I find it helps me focus and prepare for the day ahead."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the care and attention I put into my work. I take pride in being meticulous and thorough, making sure every joint is secure and every piece fits together just right. It's not just about getting the job done, it's about doing it well and being proud of what I've created. I suppose you could say it's a bit of a reflection of my own self-worth, tied up in the quality of my work."
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "Today's work is a bit more challenging than usual. I'm trying to repair a piece of furniture that's been damaged. The joints are loose, and I need to make sure they're secure before I can move on to the next step. It's not a big job, but it requires a bit more attention to detail than usual. I'm just taking my time, making sure everything is just right."
+        ]
+      ],
+      "candidate_dialogue": "What would make the rest of the day go well? Well, if I can just get this piece of furniture repaired without any major issues, that would be a great start. Maybe a quiet morning with no unexpected interruptions would be nice too. And if I can find a way to make the joints fit together just right, that would be a big accomplishment for me. It's not just about finishing the job, it's about doing it well and being proud of what I've created. If I can do that, I think the rest of the day would go smoothly.",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-01:t2",
+      "dimension": "naturalness",
+      "npc_role": "gatherer",
+      "player_input": "What part of that work matters most to you?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Usually, I start by checking the surroundings, making sure everything is in order. Then, I sort through the supplies I gathered the day before, counting and categorizing them. It's a habit I developed to ensure I don't miss anything important. It's a quiet, methodical process that helps me focus for the day ahead."
+        ]
+      ],
+      "candidate_dialogue": "The part that matters most to me is the counting and categorizing of supplies. It's a habit that helps me stay organized and focused. I find it calming and reassuring, like a ritual that grounds me for the day ahead.",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    },
+    {
+      "sample_ref": "gatherer-01:t4",
+      "dimension": "naturalness",
+      "npc_role": "gatherer",
+      "player_input": "What would make the rest of the day go well?",
+      "prior_visible_dialogue": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Usually, I start by checking the surroundings, making sure everything is in order. Then, I sort through the supplies I gathered the day before, counting and categorizing them. It's a habit I developed to ensure I don't miss anything important. It's a quiet, methodical process that helps me focus for the day ahead."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "The part that matters most to me is the counting and categorizing of supplies. It's a habit that helps me stay organized and focused. I find it calming and reassuring, like a ritual that grounds me for the day ahead."
+        ],
+        [
+          "player",
+          "Does anything make the work difficult today?"
+        ],
+        [
+          "npc",
+          "No, nothing out of the ordinary. Just the usual routine. I did notice some unusual sounds coming from the nearby woods, but it's nothing to worry about. Just the wind or some small animals. Nothing that would affect my work today."
+        ]
+      ],
+      "candidate_dialogue": "A smooth day would be one where I can maintain my routine, gather some decent supplies, and maybe even find some new resources to add to my inventory. If I can avoid any unexpected interruptions or complications, that'd be great. Just a quiet, productive day with no major issues would be perfect.",
+      "anchors": {
+        "1": "Hard to follow or conspicuously mechanical.",
+        "3": "Understandable but uneven.",
+        "5": "Clear, coherent and natural for the situation."
+      },
+      "scale": [
+        1,
+        5
+      ],
+      "reviewer_1_score": null,
+      "reviewer_2_score": null,
+      "discussion_notes": null
+    }
+  ],
+  "replay_policy": {
+    "policy_id": "ordinary-dialogue-limit-600-chars-v1",
+    "ordinary_dialogue_max_length": 600,
+    "story_request_max_length": 600,
+    "baseline_policy_id": "ordinary-dialogue-limit-240-chars-v1",
+    "measurement_only": true
+  },
+  "character_guidance": {
+    "profile_contract": "context/T04-topic-projected-profile-v1",
+    "profile_source_sha256": {
+      "craftsman": "01f241591990eb7636ec1ad0dd7fea0a3f4407992dc5199ad66c0cc5aa828d2f",
+      "gatherer": "8afc825d69f0cf57e888b7713d55b1b1e9266d30c49dcd565bed5cac52db01a2"
+    },
+    "profile_revisions": {
+      "craftsman": "01f241591990eb76",
+      "gatherer": "8afc825d69f0cf57"
+    },
+    "shared_direction_sha256": "0bc993c4ee7ca55da5a883f6adc285d904530d9fc6cc37664f1fda321c27bb0d",
+    "guidance_digest": "82fb952c92817d691780f8f6df927d31c46a8336616120251b1207127e4413de"
+  }
+}

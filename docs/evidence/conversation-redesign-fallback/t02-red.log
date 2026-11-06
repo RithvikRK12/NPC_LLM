@@ -1,0 +1,14 @@
+fallback/T02 red test runs (SQLite/temp and pure tests; no provider or player database)
+
+Command: PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_conversation_fallback.py' -v
+
+Initial red after adding the T02 cases and changing tests to inject configured policy/validator:
+9 tests ran; all 9 errored with the expected `TypeError: FallbackPolicy() takes no arguments`, confirming the configured policy/validation dependency was missing. Existing implementation was unchanged at this point.
+
+After implementation, the policy-version regression was added first and run independently:
+10 tests ran; 1 failed because fallback published despite `context.policy_versions['bounds']` not matching the configured policy.
+
+The validator-failure regression was added next and run independently:
+11 tests ran; 1 errored because the validator exception escaped instead of failing publication closed.
+
+Both expected failures were fixed; final green results are recorded in t02-focused.log.

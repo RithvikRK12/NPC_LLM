@@ -1,0 +1,44 @@
+[
+  {
+    "message": "Thanks for looking at my ship!",
+    "dialogue": "Thank you for your kind words. I'm glad you're pleased with the ship's condition. The hull does need some repair, but I'm happy to help you get started on fixing it.",
+    "origin": "repaired",
+    "degradation_reason": null,
+    "seconds": 6.193
+  },
+  {
+    "message": "Thanks for looking at my ship.",
+    "dialogue": "Thank you for your kind words. I'm glad you're taking the time to appreciate the ship's condition. It's a good thing we're taking a closer look, as the hull does need some repair.",
+    "origin": "repaired",
+    "degradation_reason": null,
+    "seconds": 7.215
+  },
+  {
+    "message": "Thank you for your help.",
+    "dialogue": "Thank you for your kind words. I'm glad I could help. Your ship's condition is concerning, and we should focus on repairing the hull before we can think about setting sail again.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 4.276
+  },
+  {
+    "message": "Thanks for inspecting the damage.",
+    "dialogue": "I'm glad you're grateful for the inspection. The hull does need some work, but we can get started on the repairs once we have the necessary materials.",
+    "origin": "repaired",
+    "degradation_reason": null,
+    "seconds": 7.325
+  },
+  {
+    "message": "Thank you so much.",
+    "dialogue": "You're welcome, I'm glad I could help. It's always a relief when the inspection is complete and we can start thinking about the repairs.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 3.952
+  },
+  {
+    "message": "Thanks for taking the time to help me.",
+    "dialogue": "You're welcome! I'm glad I could help. It's not easy being stranded, but at least we can take a look at the damage together.",
+    "origin": "generated",
+    "degradation_reason": null,
+    "seconds": 3.637
+  }
+]

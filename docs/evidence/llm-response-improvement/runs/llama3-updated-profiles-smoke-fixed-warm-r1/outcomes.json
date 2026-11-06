@@ -1,0 +1,537 @@
+[
+  {
+    "sample_ref": "craftsman-01:t1",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "In the morning, I usually start with a small, manageable task to get my hands moving and my mind focused. It's often something like sharpening my saw or checking the condition of my tools. It's a quiet, meditative time for me, and it helps我",
+    "error_category": null,
+    "elapsed_seconds": 3.9331014160998166,
+    "available_tokens": 62,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Hi Craftsman. What do you usually work on first thing in the morning?",
+    "history": [],
+    "input_sha256": "a1175043e6436557b3fd1e57b9d37ac1d51f1e0bdc969cf1e204104d22a31ca4"
+  },
+  {
+    "sample_ref": "craftsman-01:t2",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I think what matters most to me is the quality of my work. I take pride in being meticulous and making sure everything is just right. It's not just about getting the job done, it's about doing it well. I suppose that's why I'm a craftsman, ",
+    "error_category": null,
+    "elapsed_seconds": 2.602268708869815,
+    "available_tokens": 64,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "What part of that work matters most to you?",
+    "history": [
+      [
+        "player",
+        "Hi Craftsman. What do you usually work on first thing in the morning?"
+      ],
+      [
+        "npc",
+        "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+      ]
+    ],
+    "input_sha256": "124876a8e475d5f7894a9e1e1a7a381aa02ffa81ae647f9325134c99de4a5915"
+  },
+  {
+    "sample_ref": "craftsman-01:t3",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "Well, I did have a bit of a setback last night. I was working on a small project and I realized I was missing a crucial piece. Now I have to go back and rework some of the parts. It's not a huge deal, but it's a bit frustrating to have to '",
+    "error_category": null,
+    "elapsed_seconds": 2.7928419169038534,
+    "available_tokens": 69,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Does anything make the work difficult today?",
+    "history": [
+      [
+        "player",
+        "Hi Craftsman. What do you usually work on first thing in the morning?"
+      ],
+      [
+        "npc",
+        "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+      ],
+      [
+        "player",
+        "What part of that work matters most to you?"
+      ],
+      [
+        "npc",
+        "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+      ]
+    ],
+    "input_sha256": "a9664925195311e70cdc398742b3325bb9381becb74b8e9f5a19f756815fadde"
+  },
+  {
+    "sample_ref": "craftsman-01:t4",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "Well, I think if I can just figure out what's wrong with that saw, the rest of the day will go smoothly. I like to have a sense of control over my tools and materials, and when something's not working right, it can throw off my whole rhythm",
+    "error_category": null,
+    "elapsed_seconds": 3.368447999935597,
+    "available_tokens": 62,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "What would make the rest of the day go well?",
+    "history": [
+      [
+        "player",
+        "Hi Craftsman. What do you usually work on first thing in the morning?"
+      ],
+      [
+        "npc",
+        "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+      ],
+      [
+        "player",
+        "What part of that work matters most to you?"
+      ],
+      [
+        "npc",
+        "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+      ],
+      [
+        "player",
+        "Does anything make the work difficult today?"
+      ],
+      [
+        "npc",
+        "Well, I did notice that one of my saws is acting up a bit. It's been a bit finicky lately, and I'm not sure what's causing the problem. I was thinking of taking a closer look at it before I start on any big projects. Nothing too out of the-"
+      ]
+    ],
+    "input_sha256": "ba1e6973840b37579fdb15f4c4f89c3458b18fd4c2eb3264803126fecc9c8595"
+  },
+  {
+    "sample_ref": "craftsman-02:t1",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I'm happy to help. You're feeling overwhelmed, huh? That's understandable. Now, about this rope... It's a sturdy piece of cordage, good for tying things up or creating a makeshift pulley system. I've used it to secure some loose boards in a",
+    "error_category": null,
+    "elapsed_seconds": 2.9085690421052277,
+    "available_tokens": 65,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "I feel a little overwhelmed today. Could you help me understand what this rope is for?",
+    "history": [],
+    "input_sha256": "cb4c04ae94d40d6ffb04bea5b17ce7be56aecc70b3d105f6ece6afb4eded3083"
+  },
+  {
+    "sample_ref": "craftsman-02:t2",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I understand your concern. As a craftsman, I've learned that even the best intentions can lead to mistakes. That's why I always take my time to examine and understand the materials before using them. With this rope, I think it's importantto",
+    "error_category": null,
+    "elapsed_seconds": 2.9455252080224454,
+    "available_tokens": 59,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "I am worried I will use it badly. What should I know?",
+    "history": [
+      [
+        "player",
+        "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+      ],
+      [
+        "npc",
+        "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+      ]
+    ],
+    "input_sha256": "5df2172fc69b135a81d623fef9b097c711513c67ce5bcf1e9da5b912b4a4a5b3"
+  },
+  {
+    "sample_ref": "craftsman-02:t3",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I think it's best to wait until you have more context about the rope's purpose. Without knowing what it's for, it's hard to give you specific advice on how to use it. Maybe we can figure it out together, or you can ask someone else who's an",
+    "error_category": null,
+    "elapsed_seconds": 3.1927134161815047,
+    "available_tokens": 64,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Can you answer the practical part and tell me whether I should wait?",
+    "history": [
+      [
+        "player",
+        "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+      ],
+      [
+        "npc",
+        "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+      ],
+      [
+        "player",
+        "I am worried I will use it badly. What should I know?"
+      ],
+      [
+        "npc",
+        "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+      ]
+    ],
+    "input_sha256": "46ad92b1b44036e74e6d05855a844f86b80f703ed7168e89040c21ec53d11bed"
+  },
+  {
+    "sample_ref": "craftsman-02:t4",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I'm doing all right, I suppose. A bit worried about the state of my workshop, to be honest. I've been putting off some repairs, and it's been weighing on my mind. But, you know, it's just a part of being a craftsman, right? You've got to be",
+    "error_category": null,
+    "elapsed_seconds": 3.785164332948625,
+    "available_tokens": 71,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Thanks. I also wanted to know how you are doing.",
+    "history": [
+      [
+        "player",
+        "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+      ],
+      [
+        "npc",
+        "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+      ],
+      [
+        "player",
+        "I am worried I will use it badly. What should I know?"
+      ],
+      [
+        "npc",
+        "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+      ],
+      [
+        "player",
+        "Can you answer the practical part and tell me whether I should wait?"
+      ],
+      [
+        "npc",
+        "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+      ]
+    ],
+    "input_sha256": "c2cf2cca452775a5faf1c8d1644d0f66031532bc04a57a99cac026f9eba3e4b3"
+  },
+  {
+    "sample_ref": "gatherer-01:t1",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "Morning routine's a habit, not a schedule. I usually start by checking the surroundings, making sure everything's in order. Then, I sort through the supplies I gathered the day before, counting and categorizing them. It's a quiet, methodic,",
+    "error_category": null,
+    "elapsed_seconds": 3.728497415781021,
+    "available_tokens": 61,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Hi Gatherer. What do you usually work on first thing in the morning?",
+    "history": [],
+    "input_sha256": "cadcaff801a27617abbe377c014f90adf74e470283daa893fe747fd91963f4ba"
+  },
+  {
+    "sample_ref": "gatherer-01:t2",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I value independence and reciprocity, so the part that matters most to me is making sure I have enough supplies to share with the community. It's not just about gathering for myself, but also about being able to contribute to the village. I",
+    "error_category": null,
+    "elapsed_seconds": 2.448859500233084,
+    "available_tokens": 56,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "What part of that work matters most to you?",
+    "history": [
+      [
+        "player",
+        "Hi Gatherer. What do you usually work on first thing in the morning?"
+      ],
+      [
+        "npc",
+        "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+      ]
+    ],
+    "input_sha256": "e2791cd32f2eb3c89d505eb41118e30cc5c1eee1cf522ddedd8c352e0f0faa8a"
+  },
+  {
+    "sample_ref": "gatherer-01:t3",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "No, nothing out of the ordinary. Just the usual routine. Although, I did notice some of the fruits are ripening a bit faster than usual. That might make it harder to gather as much as I'd like. But it's not a big deal. Just a minor change.",
+    "error_category": null,
+    "elapsed_seconds": 2.8227793336845934,
+    "available_tokens": 64,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Does anything make the work difficult today?",
+    "history": [
+      [
+        "player",
+        "Hi Gatherer. What do you usually work on first thing in the morning?"
+      ],
+      [
+        "npc",
+        "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+      ],
+      [
+        "player",
+        "What part of that work matters most to you?"
+      ],
+      [
+        "npc",
+        "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+      ]
+    ],
+    "input_sha256": "d1d746e7e9f290051565f469096a41a0ebe3944f1e1ed9db02a734620117de7a"
+  },
+  {
+    "sample_ref": "gatherer-01:t4",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "A bit more wood would make the rest of the day go well. If I can find some decent logs, I'll be all set to share with the community. Maybe I'll even have some left over for myself.",
+    "error_category": null,
+    "elapsed_seconds": 2.240924207959324,
+    "available_tokens": 51,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "What would make the rest of the day go well?",
+    "history": [
+      [
+        "player",
+        "Hi Gatherer. What do you usually work on first thing in the morning?"
+      ],
+      [
+        "npc",
+        "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+      ],
+      [
+        "player",
+        "What part of that work matters most to you?"
+      ],
+      [
+        "npc",
+        "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+      ],
+      [
+        "player",
+        "Does anything make the work difficult today?"
+      ],
+      [
+        "npc",
+        "Actually, I'm a bit short on wood today. I usually have some in stock, but it seems like I've already given out most of it to the villagers. I'll need to go back to the forest to gather some more before I can share any with the community."
+      ]
+    ],
+    "input_sha256": "47c0b3f09926091ecc4fd4aab3ddb61a3517b175977b66ddd65c72096099e770"
+  },
+  {
+    "sample_ref": "gatherer-02:t1",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "Wood's a decent find, but I'm not sure what you're planning to do with it. You're not looking to craft something, are you? I'm more of a gatherer, not a craftsman. If you're trying to figure out what to make, I can offer some observations. ",
+    "error_category": null,
+    "elapsed_seconds": 3.154687208123505,
+    "available_tokens": 68,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "I feel a little overwhelmed today. Could you help me understand what this wood is for?",
+    "history": [],
+    "input_sha256": "1e355867434d6cfae4419c517108f430f092d3daad482ad7d33b2931948ef787"
+  },
+  {
+    "sample_ref": "gatherer-02:t2",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "You're worried about using it badly? Well, I've seen people make mistakes before. That's why I'm here to help. Just remember, observation can be wrong. Labels hunches as hunches; is unsure whether the older relative's lesson was one or many",
+    "error_category": null,
+    "elapsed_seconds": 3.2728149578906596,
+    "available_tokens": 64,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "I am worried I will use it badly. What should I know?",
+    "history": [
+      [
+        "player",
+        "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+      ],
+      [
+        "npc",
+        "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+      ]
+    ],
+    "input_sha256": "82067292f57c6b10d83f590442e605aee1b8cf3f491b923e839e21e054378c02"
+  },
+  {
+    "sample_ref": "gatherer-02:t3",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I've got some wood available, and I'm happy to share it with you. Since you're worried about using it badly, I think it's a good idea to take some time to think about what you want to do with it. Don't rush into anything just yet. Take a gk",
+    "error_category": null,
+    "elapsed_seconds": 3.753269084263593,
+    "available_tokens": 68,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Can you answer the practical part and tell me whether I should wait?",
+    "history": [
+      [
+        "player",
+        "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+      ],
+      [
+        "npc",
+        "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+      ],
+      [
+        "player",
+        "I am worried I will use it badly. What should I know?"
+      ],
+      [
+        "npc",
+        "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+      ]
+    ],
+    "input_sha256": "c7b5d5f56583e427e7dfd6ac54940f5054b81e8f399b310aa9c3acce9a0c8d41"
+  },
+  {
+    "sample_ref": "gatherer-02:t4",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I'm doing alright, considering. Still a bit hurt from that earlier misunderstanding. But I'm trying to focus on the present and not let it get me down. I've been keeping busy gathering supplies and observing the world around me. It's nice, ",
+    "error_category": null,
+    "elapsed_seconds": 3.6496060830540955,
+    "available_tokens": 59,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Thanks. I also wanted to know how you are doing.",
+    "history": [
+      [
+        "player",
+        "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+      ],
+      [
+        "npc",
+        "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+      ],
+      [
+        "player",
+        "I am worried I will use it badly. What should I know?"
+      ],
+      [
+        "npc",
+        "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+      ],
+      [
+        "player",
+        "Can you answer the practical part and tell me whether I should wait?"
+      ],
+      [
+        "npc",
+        "Ah, don't worry, friend! I'm here to help. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use it badly. But don't worry, I can help"
+      ]
+    ],
+    "input_sha256": "a42725d423ea1123e3894c6a178b7c78b2b9e4642ee974c84eac78b9c3cb3fc2"
+  },
+  {
+    "sample_ref": "gatherer-04:t1",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I've got a bit of a sweet tooth, and when I'm not gathering supplies, I love to forage for wild berries. There's something about the tartness that really hits the spot. I've even been known to trade a few extra fruits for a taste of someone",
+    "error_category": null,
+    "elapsed_seconds": 2.94825908401981,
+    "available_tokens": 64,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Tell me something about yourself that you have not told me before.",
+    "history": [],
+    "input_sha256": "662dc5077129f19bbc2fbf7ff3ca0b0fb64c174b2c4a1d343174208541a992ed"
+  },
+  {
+    "sample_ref": "gatherer-04:t2",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I liked the quiet attentive company.",
+    "error_category": null,
+    "elapsed_seconds": 0.7950970837846398,
+    "available_tokens": 14,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "What did you say you liked about that?",
+    "history": [
+      [
+        "player",
+        "Tell me something about yourself that you have not told me before."
+      ],
+      [
+        "npc",
+        "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+      ]
+    ],
+    "input_sha256": "ebebe953f27810bada29b3024ea85656bf9779954b1c4bc033903c64ebba029b"
+  },
+  {
+    "sample_ref": "gatherer-04:t3",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+    "error_category": null,
+    "elapsed_seconds": 1.893369416706264,
+    "available_tokens": 44,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Can you remind me of the detail you shared earlier?",
+    "history": [
+      [
+        "player",
+        "Tell me something about yourself that you have not told me before."
+      ],
+      [
+        "npc",
+        "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+      ],
+      [
+        "player",
+        "What did you say you liked about that?"
+      ],
+      [
+        "npc",
+        "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+      ]
+    ],
+    "input_sha256": "f3326baccd56918bd0d139a752662c2b618185a9e6dbb87f89fb9209d48ea170"
+  },
+  {
+    "sample_ref": "gatherer-04:t4",
+    "status": "generated",
+    "origin": "generated",
+    "dialogue": "Now? I'd say it's more like a stash of fruits I'm holding onto for a reason. The occasion might not be clear yet, but I'm not sharing it with just anyone. You've got to earn the right to know what's really important to me.",
+    "error_category": null,
+    "elapsed_seconds": 2.6219939161092043,
+    "available_tokens": 62,
+    "finish_reason": "stop",
+    "call_count": 1,
+    "player_text": "Would you still describe it the same way now?",
+    "history": [
+      [
+        "player",
+        "Tell me something about yourself that you have not told me before."
+      ],
+      [
+        "npc",
+        "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+      ],
+      [
+        "player",
+        "What did you say you liked about that?"
+      ],
+      [
+        "npc",
+        "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+      ],
+      [
+        "player",
+        "Can you remind me of the detail you shared earlier?"
+      ],
+      [
+        "npc",
+        "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+      ]
+    ],
+    "input_sha256": "5244c9021139914971eb8724cb4c690992f933771268ca5aa28a90075e28d7f2"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "initial_state": {"database": "fresh sqlite memory per NPC/session/replay", "opening_state": "complete", "gatherer_status": "resolved_helped", "game_scope": "baseline-measurement", "seed": "existing seed_world inventories; no player save"},
+  "sessions": [
+    {"id": "craftsman-representative", "npc_id": 1, "turns": [
+      {"route": "ordinary", "message": "Hello"},
+      {"route": "ordinary", "message": "Are you happy here?"},
+      {"route": "ordinary", "message": "Tell me a story about your childhood"},
+      {"route": "ordinary", "message": "That isn't what I asked. How did that make you feel?"},
+      {"route": "action", "message": "give me rope"},
+      {"route": "action", "message": "I need it for my work in the village"},
+      {"route": "ordinary", "message": "what are you carrying"}]},
+    {"id": "gatherer-representative", "npc_id": 2, "turns": [
+      {"route": "ordinary", "message": "Hello"},
+      {"route": "ordinary", "message": "Do you ever feel scared?"},
+      {"route": "ordinary", "message": "Tell me a story about your childhood"},
+      {"route": "ordinary", "message": "That isn't what I asked. How did that make you feel?"},
+      {"route": "action", "message": "give me wood"},
+      {"route": "action", "message": "I need it for my work in the village"},
+      {"route": "ordinary", "message": "what are you carrying"}]}
+  ]
+}

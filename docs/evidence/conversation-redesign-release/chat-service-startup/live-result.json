@@ -1,0 +1,9 @@
+{
+  "status": 200,
+  "seconds": 4.238,
+  "dialogue": "Good day to you, then. How may I be of help?",
+  "origin": "generated",
+  "degradation_reason": null,
+  "exact_replay": true,
+  "configuration": "ordinary Settings reads backend/.env; no exported playtest profile"
+}

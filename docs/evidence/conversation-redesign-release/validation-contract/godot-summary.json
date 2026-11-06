@@ -1,0 +1,30 @@
+[
+  {
+    "test": "conversation_signal_smoke",
+    "exit_code": 0,
+    "seconds": 0.664,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "ui_rework_smoke",
+    "exit_code": 0,
+    "seconds": 25.933,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "bow_quest_smoke",
+    "exit_code": 0,
+    "seconds": 27.454,
+    "passed": true,
+    "shutdown_resource_warning": false
+  },
+  {
+    "test": "craftsman_integration_smoke",
+    "exit_code": 0,
+    "seconds": 35.167,
+    "passed": true,
+    "shutdown_resource_warning": true
+  }
+]

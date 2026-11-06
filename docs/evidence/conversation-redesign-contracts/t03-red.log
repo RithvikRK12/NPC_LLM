@@ -1,0 +1,4 @@
+RED phase captured before adding T03 classes.
+Command: PYTHONPATH=backend .venv/bin/python -m unittest backend.tests.test_conversation_contracts_continuity
+Exit code: 1
+Result: 7 tests, 7 errors. Each failure was an AttributeError for a missing T03 public value (CanonRecord, FinalTurnResult, LegacyConversationMapping, MemoryRecord, TurnStatus, ValidationReport). This established the expected pre-implementation failure. The test set and public values were then implemented; the final focused run is recorded in t03-green.log.

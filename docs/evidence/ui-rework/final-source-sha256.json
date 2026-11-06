@@ -1,0 +1,15 @@
+{
+  "frontend/godot/scripts/chat_window.gd": "e6b403376f3fa96d7277412b405f2066b83cbee1c5f61a49a2b7393bf93f70eb",
+  "frontend/godot/scripts/item_grid.gd": "20911a073efb6afeb8550ac16bea0dac407a1206fb28d77b2c74c9fcf7cd5f45",
+  "frontend/godot/scripts/main.gd": "8983f515893a927b982724310af9856a687dfcd16abf32a4f7356974df9a9bed",
+  "frontend/godot/scripts/medieval_theme.gd": "bec2904c0992e0ff57e14670b2d7bd459e5cd2238b20e131243b6d2f48b91a78",
+  "frontend/godot/scripts/npc.gd": "190119eb49646cdfc969a19246a85b269338e5b0638fa388f7ed58f2ee29def5",
+  "frontend/godot/scripts/person.gd": "ddab6f8579b844b862b44d12ba0819d2cba11977fb6752a09a75de7ff76321e7",
+  "frontend/godot/scripts/player.gd": "bf81efc9382720755f041a05287c8a5ffe382aa78e67c08c289ccf25434e5e34",
+  "frontend/godot/scripts/quest_panel.gd": "c1c0cd1275ed34b8737468bc0db987f7ad4d349506c1ed71f93c48612230021a",
+  "frontend/godot/scripts/village.gd": "b34e881d43c853900e00e2c35c588f0cf406b03d2c894b25350087533137c07a",
+  "frontend/godot/tests/grounded_chat_smoke.gd": "0e91c803ef3830ed82321352d6a9b737201a533ed33cbab58e750efb744135f5",
+  "frontend/godot/tests/persistence_smoke.gd": "1afdcdce5a966864760b343d0640a3e4b7e791b3b0716417b70b6ac329073527",
+  "frontend/godot/tests/ui_rework_smoke.gd": "5ddc03aa8628c8ecbe5021616b1b2db7055f0697a8e9379972e4a1fc8baa2ad0",
+  "frontend/godot/tests/ui_shutdown_smoke.gd": "a4a59a9df1d7349573719ef7ba926539b8e7830073af8880287f48153c3613cd"
+}

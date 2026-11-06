@@ -1,0 +1,15 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+..F......
+======================================================================
+FAIL: test_choice_item_name_never_overrides_an_explicit_gift_direction (test_conversation_playtest.PlaytestRuntimeTests.test_choice_item_name_never_overrides_an_explicit_gift_direction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_playtest.py", line 124, in test_choice_item_name_never_overrides_an_explicit_gift_direction
+    self.assertEqual(len(result.response.receipt_refs),1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.817s
+
+FAILED (failures=1)

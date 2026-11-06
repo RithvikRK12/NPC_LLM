@@ -1,0 +1,520 @@
+[
+  {
+    "npc_id": 1,
+    "seconds": 9.688,
+    "status": 200,
+    "response": {
+      "game_scope": "99d45f96-106b-4786-86fd-7047dd98ce8e",
+      "craftsman_encounter": {
+        "state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        },
+        "revision": 0
+      },
+      "ship_repair": {
+        "id": "ship_repair",
+        "title": "A Way Home",
+        "category": "Main story",
+        "recipe_version": 1,
+        "phase": "not_started",
+        "materials": [
+          {
+            "item": "ship_plank",
+            "name": "Sound timber plank",
+            "required": 12,
+            "contributed": 0,
+            "remaining": 12
+          },
+          {
+            "item": "rope",
+            "name": "Coil of rope",
+            "required": 3,
+            "contributed": 0,
+            "remaining": 3
+          },
+          {
+            "item": "sailcloth_bundle",
+            "name": "Bundle of sailcloth",
+            "required": 2,
+            "contributed": 0,
+            "remaining": 2
+          },
+          {
+            "item": "pitch_pot",
+            "name": "Pot of pitch",
+            "required": 2,
+            "contributed": 0,
+            "remaining": 2
+          }
+        ],
+        "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+        "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+        "availability_note": "Material gathering and ship repair will be added in a later update."
+      },
+      "decision_trace": {},
+      "behavior_trace": {},
+      "grounding_trace": {},
+      "memory_classification": {},
+      "bow_quest": {
+        "title": "Get a bow",
+        "phase": "available",
+        "objective": "Explore the village. Start Get a bow when you are ready.",
+        "string_available": false,
+        "string_position": {
+          "x": -70.0,
+          "y": 240.0
+        },
+        "remaining_seconds": 0.0,
+        "craft_seconds": 5.0,
+        "craft_progress": 0
+      },
+      "npc": {
+        "id": 1,
+        "name": "Craftsman",
+        "role": "craftsman",
+        "trust": 0.65,
+        "fear": 0.1,
+        "aggression": 0.05,
+        "curiosity": 0.3,
+        "location": "workshop",
+        "current_state": "available",
+        "pending_item": null,
+        "inventory": [
+          "saw",
+          "hammer",
+          "rope"
+        ]
+      },
+      "validated_output": {
+        "answer_kind": "chat",
+        "fact_ids": [],
+        "intent": "conversation",
+        "emotion": "neutral",
+        "dialogue": "The workshop's gone quiet for a moment. Ask me again shortly.",
+        "action": "none",
+        "item": null,
+        "reasoning": "",
+        "state_update": {
+          "trust": 0.0,
+          "fear": 0.0,
+          "aggression": 0.0,
+          "curiosity": 0.0
+        }
+      },
+      "final_dialogue": "The workshop's gone quiet for a moment. Ask me again shortly.",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "quest_status": "active",
+      "quest_progress": 0,
+      "memories": [],
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "f2b5d595-3d27-4a98-93a4-e8e149c1c40e",
+        "request_id": "probe:1",
+        "key": {
+          "game_scope": "99d45f96-106b-4786-86fd-7047dd98ce8e",
+          "npc_id": 1,
+          "epoch": 0
+        },
+        "sequence": 1
+      },
+      "dialogue_beats": [
+        "The workshop's gone quiet for a moment. Ask me again shortly."
+      ],
+      "response_origin": "fallback",
+      "degradation_reason": "PROVIDER_INVALID_OUTPUT",
+      "receipt_refs": [],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 0.0,
+            "y": 3600.0
+          },
+          "current_location": "shipwreck_beach",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "active",
+          "progress": 0
+        },
+        "quest:bow": null,
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": false,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 0
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 1,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 1
+        }
+      },
+      "diagnostic_ref": null
+    }
+  },
+  {
+    "npc_id": 2,
+    "seconds": 4.063,
+    "status": 200,
+    "response": {
+      "game_scope": "99d45f96-106b-4786-86fd-7047dd98ce8e",
+      "craftsman_encounter": {
+        "state": {
+          "intro_seen": false,
+          "wreck_reported": false,
+          "offer_pending": false,
+          "outing_active": false,
+          "inspection_complete": false,
+          "outcome_id": "",
+          "mode": "workshop_routine",
+          "navigation_space": "workshop",
+          "position": {
+            "x": 10064.0,
+            "y": 9968.0
+          },
+          "wait_reason": "",
+          "return_index": 0,
+          "presentation": "",
+          "presentation_beat": 0
+        },
+        "revision": 0
+      },
+      "ship_repair": {
+        "id": "ship_repair",
+        "title": "A Way Home",
+        "category": "Main story",
+        "recipe_version": 1,
+        "phase": "not_started",
+        "materials": [
+          {
+            "item": "ship_plank",
+            "name": "Sound timber plank",
+            "required": 12,
+            "contributed": 0,
+            "remaining": 12
+          },
+          {
+            "item": "rope",
+            "name": "Coil of rope",
+            "required": 3,
+            "contributed": 0,
+            "remaining": 3
+          },
+          {
+            "item": "sailcloth_bundle",
+            "name": "Bundle of sailcloth",
+            "required": 2,
+            "contributed": 0,
+            "remaining": 2
+          },
+          {
+            "item": "pitch_pot",
+            "name": "Pot of pitch",
+            "required": 2,
+            "contributed": 0,
+            "remaining": 2
+          }
+        ],
+        "requirement_text": "Bring me 12 sound timber planks, 3 coils of rope, 2 bundles of sailcloth, and 2 pots of pitch. That should give us a start.",
+        "objective": "Gather the materials and bring them to the Craftsman\u2019s workshop.",
+        "availability_note": "Material gathering and ship repair will be added in a later update."
+      },
+      "decision_trace": {},
+      "behavior_trace": {},
+      "grounding_trace": {},
+      "memory_classification": {},
+      "bow_quest": {
+        "title": "Get a bow",
+        "phase": "available",
+        "objective": "Explore the village. Start Get a bow when you are ready.",
+        "string_available": false,
+        "string_position": {
+          "x": -70.0,
+          "y": 240.0
+        },
+        "remaining_seconds": 0.0,
+        "craft_seconds": 5.0,
+        "craft_progress": 0
+      },
+      "npc": {
+        "id": 2,
+        "name": "Gatherer",
+        "role": "gatherer",
+        "trust": 0.5,
+        "fear": 0.25,
+        "aggression": 0.05,
+        "curiosity": 0.7,
+        "location": "forest_edge",
+        "current_state": "available",
+        "pending_item": null,
+        "inventory": [
+          "axe",
+          "wood",
+          "fruits"
+        ]
+      },
+      "validated_output": {
+        "answer_kind": "chat",
+        "fact_ids": [],
+        "intent": "conversation",
+        "emotion": "neutral",
+        "dialogue": "I need a moment to listen to the trail. Ask me again shortly.",
+        "action": "none",
+        "item": null,
+        "reasoning": "",
+        "state_update": {
+          "trust": 0.0,
+          "fear": 0.0,
+          "aggression": 0.0,
+          "curiosity": 0.0
+        }
+      },
+      "final_dialogue": "I need a moment to listen to the trail. Ask me again shortly.",
+      "player_inventory": [
+        "water",
+        "food"
+      ],
+      "quest_status": "active",
+      "quest_progress": 0,
+      "memories": [],
+      "schema_version": 1,
+      "turn": {
+        "turn_id": "fc3316d4-dbbf-4467-9744-26541e8e07e7",
+        "request_id": "probe:2",
+        "key": {
+          "game_scope": "99d45f96-106b-4786-86fd-7047dd98ce8e",
+          "npc_id": 2,
+          "epoch": 0
+        },
+        "sequence": 1
+      },
+      "dialogue_beats": [
+        "I need a moment to listen to the trail. Ask me again shortly."
+      ],
+      "response_origin": "fallback",
+      "degradation_reason": "PROVIDER_INVALID_OUTPUT",
+      "receipt_refs": [],
+      "state_projection": {
+        "world": {
+          "position": {
+            "x": 0.0,
+            "y": 3600.0
+          },
+          "current_location": "shipwreck_beach",
+          "opening_state": "complete",
+          "opening_version": 1,
+          "map_version": 2,
+          "map_recovery_notice": "",
+          "salvage_ids": []
+        },
+        "inventory:player": [
+          "water",
+          "food"
+        ],
+        "inventory:npc:1": [
+          "saw",
+          "hammer",
+          "rope"
+        ],
+        "npc:1": {
+          "id": 1,
+          "name": "Craftsman",
+          "role": "craftsman",
+          "trust": 0.65,
+          "fear": 0.1,
+          "aggression": 0.05,
+          "curiosity": 0.3,
+          "location": "workshop",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "saw",
+            "hammer",
+            "rope"
+          ]
+        },
+        "inventory:npc:2": [
+          "axe",
+          "wood",
+          "fruits"
+        ],
+        "npc:2": {
+          "id": 2,
+          "name": "Gatherer",
+          "role": "gatherer",
+          "trust": 0.5,
+          "fear": 0.25,
+          "aggression": 0.05,
+          "curiosity": 0.7,
+          "location": "forest_edge",
+          "current_state": "available",
+          "pending_item": null,
+          "inventory": [
+            "axe",
+            "wood",
+            "fruits"
+          ]
+        },
+        "quest:legacy": {
+          "status": "active",
+          "progress": 0
+        },
+        "quest:bow": null,
+        "quest:ship_repair": null,
+        "activity:ship_inspection": {
+          "state": {
+            "intro_seen": false,
+            "wreck_reported": false,
+            "offer_pending": false,
+            "outing_active": false,
+            "inspection_complete": false,
+            "outcome_id": "",
+            "mode": "workshop_routine",
+            "navigation_space": "workshop",
+            "position": {
+              "x": 10064.0,
+              "y": 9968.0
+            },
+            "wait_reason": "",
+            "return_index": 0,
+            "presentation": "",
+            "presentation_beat": 0
+          },
+          "revision": 0
+        },
+        "encounter:gatherer": {
+          "state": {
+            "status": "unseen",
+            "checkpoint": {},
+            "attempt_id": "",
+            "accepted_attempt_id": "",
+            "outcome_fact": ""
+          },
+          "revision": 0
+        }
+      },
+      "state_revisions": {
+        "resources": {
+          "activity:ship_inspection": 1,
+          "encounter:gatherer": 1,
+          "inventory:npc:1": 0,
+          "inventory:npc:2": 0,
+          "inventory:player": 0,
+          "npc:1": 0,
+          "npc:2": 0,
+          "quest:bow": 0,
+          "quest:legacy": 0,
+          "quest:ship_repair": 0,
+          "world": 1
+        }
+      },
+      "diagnostic_ref": null
+    }
+  }
+]

@@ -1,0 +1,129 @@
+{
+  "requested": {
+    "schema_version": 1,
+    "record_id": "policy-version-set:001",
+    "trace_id": "trace:policy-001",
+    "causation_id": "decision-trigger:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:hero",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "decision-trigger:001"
+    ],
+    "policy_versions": [],
+    "required_versions": [
+      {"policy_id": "profile:gatherer", "version": "v1"},
+      {"policy_id": "bounds:global", "version": "v1"},
+      {"policy_id": "fuzzy:membership", "version": "v1"},
+      {"policy_id": "control:fallback", "version": "v1"},
+      {"policy_id": "fsec:mapping", "version": "v1"},
+      {"policy_id": "quest:recovery", "version": "v1"}
+    ]
+  },
+  "catalog": {
+    "schema_version": 1,
+    "record_id": "policy-catalog:001",
+    "trace_id": "trace:policy-001",
+    "causation_id": "policy-publication:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": null,
+    "target_id": null,
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "policy-publication:001"
+    ],
+    "policy_versions": [],
+    "policies": [
+      {
+        "policy": {"policy_id": "profile:gatherer", "version": "v1"},
+        "kind": "profile",
+        "payload": {"allowed_actions": ["speak", "idle", "interact"]}
+      },
+      {
+        "policy": {"policy_id": "bounds:global", "version": "v1"},
+        "kind": "bounds",
+        "payload": {"emotion": {"min": 0.0, "max": 1.0}, "relationship": {"min": 0.0, "max": 1.0}}
+      },
+      {
+        "policy": {"policy_id": "fuzzy:membership", "version": "v1"},
+        "kind": "fuzzy_rules",
+        "payload": {
+          "dimensions": [
+            {
+              "dimension": "trust",
+              "labels": [
+                {"label": "low", "shape": {"kind": "triangle", "a": 0.0, "b": 0.0, "c": 0.5}},
+                {"label": "high", "shape": {"kind": "trapezoid", "a": 0.4, "b": 0.7, "c": 1.0, "d": 1.0}}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "policy": {"policy_id": "control:fallback", "version": "v1"},
+        "kind": "fallbacks",
+        "payload": {"options": [{"fallback_id": "fallback:speak_only", "action": "speak", "effect_ids": []}]}
+      },
+      {
+        "policy": {"policy_id": "fsec:mapping", "version": "v1"},
+        "kind": "mappings",
+        "payload": {"commands": [{"mapping_id": "mapping:speak", "action": "speak", "command": "say_line"}]}
+      },
+      {
+        "policy": {"policy_id": "quest:recovery", "version": "v1"},
+        "kind": "recovery_routes",
+        "payload": {
+          "routes": [
+            {
+              "route_id": "route:diagnostic_favour",
+              "version": "v1",
+              "kind": "favour",
+              "npc_id": "npc:gatherer",
+              "blocked_step": "material_access",
+              "completion_event_type": "event:diagnostic_complete",
+              "grant_effect_id": "effect:grant_material_access"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "bundle": {
+    "schema_version": 1,
+    "record_id": "policy-bundle-record:001",
+    "trace_id": "trace:policy-001",
+    "causation_id": "policy-version-set:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:gatherer",
+    "actor_id": "player:hero",
+    "target_id": "npc:gatherer",
+    "created_at": "2026-10-12T10:00:00Z",
+    "source_ids": [
+      "policy-version-set:001",
+      "policy-catalog:001"
+    ],
+    "policy_versions": [
+      {"policy_id": "profile:gatherer", "version": "v1"},
+      {"policy_id": "bounds:global", "version": "v1"},
+      {"policy_id": "fuzzy:membership", "version": "v1"},
+      {"policy_id": "control:fallback", "version": "v1"},
+      {"policy_id": "fsec:mapping", "version": "v1"},
+      {"policy_id": "quest:recovery", "version": "v1"}
+    ],
+    "bundle_id": "policy-bundle:001",
+    "items": [
+      {"policy": {"policy_id": "profile:gatherer", "version": "v1"}, "kind": "profile", "payload": {"allowed_actions": ["speak", "idle", "interact"]}},
+      {"policy": {"policy_id": "bounds:global", "version": "v1"}, "kind": "bounds", "payload": {"emotion": {"min": 0.0, "max": 1.0}, "relationship": {"min": 0.0, "max": 1.0}}},
+      {"policy": {"policy_id": "fuzzy:membership", "version": "v1"}, "kind": "fuzzy_rules", "payload": {"dimensions": [{"dimension": "trust", "labels": [{"label": "low", "shape": {"kind": "triangle", "a": 0.0, "b": 0.0, "c": 0.5}}, {"label": "high", "shape": {"kind": "trapezoid", "a": 0.4, "b": 0.7, "c": 1.0, "d": 1.0}}]}]}},
+      {"policy": {"policy_id": "control:fallback", "version": "v1"}, "kind": "fallbacks", "payload": {"options": [{"fallback_id": "fallback:speak_only", "action": "speak", "effect_ids": []}]}},
+      {"policy": {"policy_id": "fsec:mapping", "version": "v1"}, "kind": "mappings", "payload": {"commands": [{"mapping_id": "mapping:speak", "action": "speak", "command": "say_line"}]}},
+      {"policy": {"policy_id": "quest:recovery", "version": "v1"}, "kind": "recovery_routes", "payload": {"routes": [{"route_id": "route:diagnostic_favour", "version": "v1", "kind": "favour", "npc_id": "npc:gatherer", "blocked_step": "material_access", "completion_event_type": "event:diagnostic_complete", "grant_effect_id": "effect:grant_material_access"}]}}
+    ]
+  }
+}

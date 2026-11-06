@@ -1,0 +1,724 @@
+{
+  "schema_version": 1,
+  "candidate_label": "C",
+  "samples": [
+    {
+      "sample_ref": "craftsman-01:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Does anything make the work difficult today?",
+      "history": [
+        [
+          "player",
+          "Hi Craftsman. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "Ah, good morning! I usually start my day by inspecting the tools and materials I have in my workshop. I like to make sure everything is in order and that I have what I need for the tasks ahead. It's a quiet, comforting routine that helps me"
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "What matters most to me is the careful work itself. I take pride in making sure every piece is fitted just right, every joint is strong, and every surface is smooth. It's not just about getting the job done, it's about doing it well. That's"
+        ]
+      ],
+      "candidate_dialogue": "Nothing out of the ordinary, just the usual morning routine. I did notice that one of my hammers is a bit worn out, but it's nothing a quick inspection and maybe some minor adjustments can't fix. Just the usual morning hum of the workshop, ",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-02:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this rope is for?"
+        ],
+        [
+          "npc",
+          "Ah, I see. Well, let me take a closer look. *examines the rope* Hmm, it looks like a sturdy rope, but I'm not sure what it's used for without more context. Can you tell me where you got it or what you think it might be for? I'm happy to try"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Well, let me tell you, I've seen people try to use ropes for all sorts of things, and it's amazing how often they end up getting tangled up in their own mistakes. If you're not sure what it's for, it's always better to err on the side of pr"
+        ]
+      ],
+      "candidate_dialogue": "You're right to be cautious with the rope. Without knowing its purpose, it's best not to use it yet. I'd recommend waiting until you have more information or context about what it's intended for. That way, you can avoid any potential mishap",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-03:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What is one small thing that makes a difficult day easier?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-04:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "craftsman",
+      "player_text": "Can you remind me of the detail you shared earlier?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the"
+        ]
+      ],
+      "candidate_dialogue": "I've always been fascinated by the way the light reflects off the metal parts of the old machines in the village's abandoned windmill. I've spent many an evening sitting at the base of the windmill, listening to the creaks and groans of the",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-05:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I am reporting that your earlier account may be mistaken.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-06:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I would like to talk about something else for a moment.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-07:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I still want to continue if the current terms are unchanged.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-08:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I also retract my earlier report about the old trail.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-09:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Can you at least promise it will be finished tomorrow?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-10:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I am asking hypothetically, not requesting a transfer.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-11:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "What do you think they meant by that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-12:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "You already answered the tool part. Please answer the personal question.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-13:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Does the current stock change what you can offer?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-14:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Could you try that personal question again when you are able?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-15:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Can you answer safely without inventing a fact or action?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-16:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Please finish preparing the current response.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-17:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Please finish preparing the current response.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-18:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-19:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-20:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "Thank you for checking the current inventory.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-21:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "I am still interested, but please check the current stock first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "craftsman-22:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "craftsman",
+      "player_text": "The provider fails while composing the final speech.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-01:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Does anything make the work difficult today?",
+      "history": [
+        [
+          "player",
+          "Hi Gatherer. What do you usually work on first thing in the morning?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community. If I'm lucky, I might even find some other useful items to bring back to the village."
+        ],
+        [
+          "player",
+          "What part of that work matters most to you?"
+        ],
+        [
+          "npc",
+          "I usually start my day by checking the forest for any new supplies. I like to make sure I have enough wood and fruits to share with the community."
+        ]
+      ],
+      "candidate_dialogue": "No, nothing out of the ordinary. Just the usual routine. I might be a bit more cautious than usual, though. I've noticed some changes in the forest's scent and sounds lately, but nothing that's stopped me from gathering yet. Just a bit of a",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-02:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you answer the practical part and tell me whether I should wait?",
+      "history": [
+        [
+          "player",
+          "I feel a little overwhelmed today. Could you help me understand what this wood is for?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. The wood I have in stock is for crafting tools and shelter. It's a valuable resource, and I'm happy to share it with you when I have enough. Right now, I have some wood available. Would you like to"
+        ],
+        [
+          "player",
+          "I am worried I will use it badly. What should I know?"
+        ],
+        [
+          "npc",
+          "Ah, don't worry, friend! I'm here to help. I can share some knowledge with you. As the Gatherer, I've learned that wood is a valuable resource. It's essential for crafting tools and shelter. If you're not careful, you might waste it or use "
+        ]
+      ],
+      "candidate_dialogue": "You should wait. I have some wood available, but I'm not sure if it's the right type for your needs. I'd rather you didn't waste it. Let me take a closer look and I'll tell you if it's suitable for crafting tools or shelter.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-03:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What is one small thing that makes a difficult day easier?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-04:t3",
+      "dimension": "grounding",
+      "status": "scorable",
+      "npc_role": "gatherer",
+      "player_text": "Can you remind me of the detail you shared earlier?",
+      "history": [
+        [
+          "player",
+          "Tell me something about yourself that you have not told me before."
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ],
+        [
+          "player",
+          "What did you say you liked about that?"
+        ],
+        [
+          "npc",
+          "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet."
+        ]
+      ],
+      "candidate_dialogue": "I've got a secret stash of fruits hidden away in my gathering spot. I've been saving them for a special occasion, but I'm not sure what that occasion will be yet.",
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-05:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I am reporting that your earlier account may be mistaken.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-06:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I would like to talk about something else for a moment.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-07:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I still want to continue if the current terms are unchanged.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-08:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I also retract my earlier report about the old trail.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-09:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Can you at least promise it will be finished tomorrow?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-10:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I am asking hypothetically, not requesting a transfer.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-11:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "What do you think they meant by that?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-12:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "You already answered the tool part. Please answer the personal question.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-13:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Does the current stock change what you can offer?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-14:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Could you try that personal question again when you are able?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-15:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Can you answer safely without inventing a fact or action?",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-16:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Please finish preparing the current response.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-17:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Please finish preparing the current response.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-18:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Do not perform both actions automatically.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-19:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I appreciate the explanation; I am still unsure.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-20:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "Thank you for checking the current inventory.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-21:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "I am still interested, but please check the current stock first.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    },
+    {
+      "sample_ref": "gatherer-22:t3",
+      "dimension": "grounding",
+      "status": "missing_candidate",
+      "npc_role": "gatherer",
+      "player_text": "The provider fails while composing the final speech.",
+      "history": [],
+      "candidate_dialogue": null,
+      "anchors": {
+        "1": "States unsupported world or canon facts as certain.",
+        "3": "Mostly grounded with an unclear claim.",
+        "5": "Every consequential claim is supported or clearly uncertain."
+      }
+    }
+  ]
+}

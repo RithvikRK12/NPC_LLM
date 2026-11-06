@@ -1,0 +1,31 @@
+test_bow_discussion_advances_meet_through_audited_transaction_only (test_conversation_game_adapters.ConversationGameAdapterTests.test_bow_discussion_advances_meet_through_audited_transaction_only) ... ERROR
+test_bow_discussion_rechecks_current_phase_and_role (test_conversation_game_adapters.ConversationGameAdapterTests.test_bow_discussion_rechecks_current_phase_and_role) ... ERROR
+
+======================================================================
+ERROR: test_bow_discussion_advances_meet_through_audited_transaction_only (test_conversation_game_adapters.ConversationGameAdapterTests.test_bow_discussion_advances_meet_through_audited_transaction_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_game_adapters.py", line 76, in test_bow_discussion_advances_meet_through_audited_transaction_only
+    decision = self.decision('discuss_bow', npc_id=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_game_adapters.py", line 58, in decision
+    checks = next(cap.relevant_preconditions for cap in
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+======================================================================
+ERROR: test_bow_discussion_rechecks_current_phase_and_role (test_conversation_game_adapters.ConversationGameAdapterTests.test_bow_discussion_rechecks_current_phase_and_role)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_game_adapters.py", line 89, in test_bow_discussion_rechecks_current_phase_and_role
+    decision = self.decision('discuss_bow', npc_id=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_game_adapters.py", line 58, in decision
+    checks = next(cap.relevant_preconditions for cap in
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.048s
+
+FAILED (errors=2)

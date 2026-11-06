@@ -1,0 +1,32 @@
+INFO:     Started server process [92723]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on socket ('127.0.0.1', 62568) (Press CTRL+C to quit)
+INFO:     127.0.0.1:62569 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62574 - "GET /world HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62575 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62582 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62589 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62598 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62606 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62617 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62625 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62633 - "POST /chat HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [92723]
+INFO:     Started server process [92764]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on socket ('127.0.0.1', 62568) (Press CTRL+C to quit)
+INFO:     127.0.0.1:62653 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62659 - "GET /world HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62660 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62661 - "POST /quests/bow/advance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62662 - "POST /world/new-game HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [92764]

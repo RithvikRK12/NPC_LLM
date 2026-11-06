@@ -1,0 +1,12 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+Metal 3.2 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PASS Backend and Godot restart preserve completed quest and one reward
+PASS Backend restart preserves saved position
+PASS Backend restart preserves grounded history
+PASS Repeated advance does not duplicate completed reward
+PASS Repeated advance does not duplicate completed reward
+PASS Explicit restart asks for confirmation
+PASS Disposable restart resets phase, inventory and position
+PASS Disposable restart clears old dialogue
+PASS Saved rendered snapshot: reset

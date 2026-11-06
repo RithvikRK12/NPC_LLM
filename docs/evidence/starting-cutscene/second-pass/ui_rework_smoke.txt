@@ -1,0 +1,47 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Gatherer works deeper in the forest, away from village
+PASS Forest Gatherer remains reachable from village
+PASS Default dialogue panel fits viewport
+PASS Default reply remains fully visible
+PASS Dialogue blocks movement
+PASS Esc from focused reply opens menu and focuses Resume
+PASS Arrow navigation stays inside menu
+PASS Resume preserves unsent reply and focus
+PASS Response while menu open preserves menu focus
+PASS Menu preserves history overlay
+PASS Esc preserves supplies overlay
+PASS Only one dialogue overlay opens
+PASS Esc preserves satchel
+PASS Conversation pins gift recipient despite nearby NPC change
+PASS Esc preserves quest panel
+PASS Selection survives quantity refresh
+PASS Empty inventory clears selection and retains decorative slots
+PASS Long response paginates
+PASS Pagination retains every character
+PASS Continue advances locally
+PASS Dialogue panel fits at 960
+PASS Inventory keeps reply visible at 960
+PASS Satchel gift action stays above dialogue at 960
+PASS Supplies remains inside viewport at 960
+PASS Menu panel fits at 960
+PASS Large-text reply fits compact viewport
+PASS Large-text supplies expose a full item row at compact size
+PASS Large-text supplies stay above dialogue
+PASS Large-text satchel exposes a full item row at compact size
+PASS Large-text satchel stays above dialogue
+PASS Large-text menu fits compact viewport
+PASS Esc cancels restart confirmation before menu
+PASS Dialogue panel fits at 1920
+PASS Inventory keeps reply visible at 1920
+PASS Satchel gift action stays above dialogue at 1920
+PASS Supplies remains inside viewport at 1920
+PASS Menu panel fits at 1920
+PASS Save failure keeps application open with Retry and Back
+PASS Failed chat retained for manual retry
+PASS Large stacks keep one slot per distinct item
+PASS Long unknown item details fit viewport
+PASS Clear chat clears transcript
+PASS Gift response after closure updates correct NPC and world exactly once
+PASS Late response preserves other NPC's reply
+UI rework failures: 0

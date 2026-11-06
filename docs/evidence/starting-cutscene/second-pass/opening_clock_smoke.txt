@@ -1,0 +1,19 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Ten retained rebased shots
+PASS Discarded lead-in cues removed
+PASS 60 cinematic seconds at rate 1.0
+PASS Ordered cues and completion once
+PASS Completion repeat safe
+PASS 60 cinematic seconds at rate 2.0
+PASS Ordered cues and completion once
+PASS Completion repeat safe
+PASS Mixed 20 + 20×2 run
+PASS Release restores normal speed immediately
+PASS Pause freezes time
+PASS Focus loss freezes time
+PASS Focus return requires fresh hold
+PASS Fresh press restores acceleration
+PASS Preview seek suppresses past side effects
+PASS Seek dispatches only future cues
+PASS Global time scale unchanged

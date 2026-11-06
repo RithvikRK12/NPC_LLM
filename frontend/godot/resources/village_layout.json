@@ -1,0 +1,1205 @@
+[
+  {
+    "id": "workshop",
+    "art": "workshop",
+    "at": [
+      195,
+      -97.5
+    ],
+    "pivot": [
+      64,
+      115
+    ],
+    "footprint": [
+      -115,
+      -125,
+      230,
+      125
+    ],
+    "ambient": false,
+    "approach": [
+      195,
+      -60
+    ]
+  },
+  {
+    "id": "bench",
+    "art": "bench",
+    "at": [
+      280,
+      -40
+    ],
+    "pivot": [
+      24,
+      28
+    ],
+    "footprint": [
+      -34,
+      -16,
+      68,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "logs",
+    "art": "logs",
+    "at": [
+      352,
+      -64
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -32,
+      -14,
+      64,
+      14
+    ],
+    "ambient": false
+  },
+  {
+    "id": "well",
+    "art": "well",
+    "at": [
+      -15,
+      172
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -30,
+      -14,
+      60,
+      28
+    ],
+    "ambient": false
+  },
+  {
+    "id": "cottage-a",
+    "art": "cottage-a",
+    "at": [
+      496,
+      -96
+    ],
+    "pivot": [
+      40,
+      91
+    ],
+    "footprint": [
+      -64,
+      -128,
+      128,
+      128
+    ],
+    "ambient": false,
+    "approach": [
+      496,
+      -48
+    ]
+  },
+  {
+    "id": "cottage-b",
+    "art": "cottage-b",
+    "at": [
+      720,
+      -128
+    ],
+    "pivot": [
+      40,
+      91
+    ],
+    "footprint": [
+      -64,
+      -128,
+      128,
+      128
+    ],
+    "ambient": false,
+    "approach": [
+      720,
+      -80
+    ]
+  },
+  {
+    "id": "produce",
+    "art": "produce-0",
+    "at": [
+      576,
+      -16
+    ],
+    "pivot": [
+      24,
+      44
+    ],
+    "footprint": [
+      -32,
+      -32,
+      64,
+      32
+    ],
+    "ambient": true,
+    "approach": [
+      576,
+      20
+    ]
+  },
+  {
+    "id": "cloth",
+    "art": "cloth-0",
+    "at": [
+      704,
+      16
+    ],
+    "pivot": [
+      24,
+      44
+    ],
+    "footprint": [
+      -32,
+      -32,
+      64,
+      32
+    ],
+    "ambient": true,
+    "approach": [
+      704,
+      52
+    ]
+  },
+  {
+    "id": "board",
+    "art": "board",
+    "at": [
+      384,
+      -32
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -20,
+      -8,
+      40,
+      8
+    ],
+    "ambient": false,
+    "approach": [
+      384,
+      16
+    ]
+  },
+  {
+    "id": "tree-0",
+    "art": "tree-0-0",
+    "at": [
+      -370,
+      -54
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": true
+  },
+  {
+    "id": "tree-1",
+    "art": "tree-1-0",
+    "at": [
+      -460,
+      -120
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-2",
+    "art": "tree-2-0",
+    "at": [
+      -550,
+      -80
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-3",
+    "art": "tree-0-0",
+    "at": [
+      -630,
+      -172
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-4",
+    "art": "tree-1-0",
+    "at": [
+      -340,
+      -215
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": true
+  },
+  {
+    "id": "tree-5",
+    "art": "tree-2-0",
+    "at": [
+      -435,
+      -265
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-6",
+    "art": "tree-0-0",
+    "at": [
+      -535,
+      -310
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-7",
+    "art": "tree-1-0",
+    "at": [
+      -650,
+      -350
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-8",
+    "art": "tree-2-0",
+    "at": [
+      -385,
+      210
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": true
+  },
+  {
+    "id": "tree-9",
+    "art": "tree-0-0",
+    "at": [
+      -510,
+      185
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-10",
+    "art": "tree-1-0",
+    "at": [
+      -610,
+      245
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-11",
+    "art": "tree-2-0",
+    "at": [
+      -490,
+      350
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-12",
+    "art": "tree-0-0",
+    "at": [
+      -320,
+      365
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": true
+  },
+  {
+    "id": "tree-13",
+    "art": "tree-1-0",
+    "at": [
+      -200,
+      412
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-14",
+    "art": "tree-2-0",
+    "at": [
+      140,
+      390
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-15",
+    "art": "tree-0-0",
+    "at": [
+      290,
+      420
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-16",
+    "art": "tree-1-0",
+    "at": [
+      420,
+      400
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": true
+  },
+  {
+    "id": "tree-17",
+    "art": "tree-2-0",
+    "at": [
+      850,
+      -270
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-18",
+    "art": "tree-0-0",
+    "at": [
+      916,
+      -200
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-19",
+    "art": "tree-1-0",
+    "at": [
+      860,
+      340
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": false
+  },
+  {
+    "id": "tree-20",
+    "art": "tree-2-0",
+    "at": [
+      728,
+      350
+    ],
+    "pivot": [
+      24,
+      68
+    ],
+    "footprint": [
+      -8,
+      -12,
+      16,
+      16
+    ],
+    "ambient": true
+  },
+  {
+    "id": "fence-0",
+    "art": "fence",
+    "at": [
+      82,
+      228
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -36,
+      -6,
+      72,
+      8
+    ],
+    "ambient": false
+  },
+  {
+    "id": "fence-1",
+    "art": "fence",
+    "at": [
+      162,
+      228
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -36,
+      -6,
+      72,
+      8
+    ],
+    "ambient": false
+  },
+  {
+    "id": "fence-2",
+    "art": "fence",
+    "at": [
+      242,
+      228
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -36,
+      -6,
+      72,
+      8
+    ],
+    "ambient": false
+  },
+  {
+    "id": "fence-3",
+    "art": "fence",
+    "at": [
+      322,
+      228
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -36,
+      -6,
+      72,
+      8
+    ],
+    "ambient": false
+  },
+  {
+    "id": "fence-4",
+    "art": "fence",
+    "at": [
+      682,
+      -268
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -36,
+      -6,
+      72,
+      8
+    ],
+    "ambient": false
+  },
+  {
+    "id": "fence-5",
+    "art": "fence",
+    "at": [
+      762,
+      -268
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -36,
+      -6,
+      72,
+      8
+    ],
+    "ambient": false
+  },
+  {
+    "id": "bush-0",
+    "art": "bush",
+    "at": [
+      377,
+      -212
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "bush-1",
+    "art": "bush",
+    "at": [
+      402,
+      -202
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "bush-2",
+    "art": "bush",
+    "at": [
+      588,
+      -153
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "bush-3",
+    "art": "bush",
+    "at": [
+      795,
+      -194
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "bush-4",
+    "art": "bush",
+    "at": [
+      404,
+      172
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "bush-5",
+    "art": "bush",
+    "at": [
+      -260,
+      -98
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "bush-6",
+    "art": "bush",
+    "at": [
+      -390,
+      288
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "bush-7",
+    "art": "bush",
+    "at": [
+      240,
+      310
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-0",
+    "art": "flowers",
+    "at": [
+      414,
+      -125
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-1",
+    "art": "flowers",
+    "at": [
+      414,
+      -181
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-2",
+    "art": "flowers",
+    "at": [
+      574,
+      -102
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-3",
+    "art": "flowers",
+    "at": [
+      790,
+      -128
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-4",
+    "art": "flowers",
+    "at": [
+      792,
+      -198
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-5",
+    "art": "flowers",
+    "at": [
+      100,
+      190
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-6",
+    "art": "flowers",
+    "at": [
+      340,
+      184
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-7",
+    "art": "flowers",
+    "at": [
+      -285,
+      -90
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-8",
+    "art": "flowers",
+    "at": [
+      -280,
+      175
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-9",
+    "art": "flowers",
+    "at": [
+      -110,
+      320
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-10",
+    "art": "flowers",
+    "at": [
+      572,
+      200
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "flowers-11",
+    "art": "flowers",
+    "at": [
+      750,
+      220
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "workshop-barrel",
+    "art": "barrel",
+    "at": [
+      332,
+      -120
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -12,
+      -12,
+      24,
+      12
+    ],
+    "ambient": false
+  },
+  {
+    "id": "market-crate",
+    "art": "crate",
+    "at": [
+      644,
+      -50
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -20,
+      -14,
+      40,
+      14
+    ],
+    "ambient": false
+  },
+  {
+    "id": "cottage-pot",
+    "art": "barrel",
+    "at": [
+      808,
+      -96
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      -12,
+      -12,
+      24,
+      12
+    ],
+    "ambient": false
+  },
+  {
+    "id": "garden-a",
+    "art": "garden",
+    "at": [
+      392,
+      -140
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "garden-b",
+    "art": "garden",
+    "at": [
+      810,
+      -152
+    ],
+    "pivot": [
+      24,
+      50
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": false
+  },
+  {
+    "id": "workshop-smoke",
+    "art": "smoke",
+    "at": [
+      195,
+      -97.5
+    ],
+    "pivot": [
+      -16,
+      158
+    ],
+    "footprint": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ambient": true,
+    "smoke": true
+  }
+]

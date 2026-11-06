@@ -40,6 +40,60 @@ class NPCPipelineTests(unittest.TestCase):
                                return_value=LLMService(provider=OpenAICompatibleProvider()))
         provider_patch.start()
         self.addCleanup(provider_patch.stop)
+        # Pipeline tests supply an explicit deterministic interpretation fixture;
+        # provider and speech behavior remain independently mocked per test.
+        interpretation_patch = patch('app.services.llm.service.LLMService.interpret',
+                                     side_effect=self._test_interpretation)
+        interpretation_patch.start()
+        self.addCleanup(interpretation_patch.stop)
+
+    def _test_interpretation(self, context):
+        from app.services.semantic_routing import AcceptedInterpretation
+        message = context.message
+        low = message.casefold()
+        concerns = []
+        fact_ids = [fact['id'] for fact in context.facts]
+        selected = None
+        if any(word in low for word in ('where', 'location', 'route', 'how do i get', 'how can i reach')):
+            if 'gatherer' in low:
+                selected = 'person.gatherer.route' if any(w in low for w in ('route', 'get', 'reach')) else 'person.gatherer.location'
+            elif 'craftsman' in low:
+                selected = 'person.craftsman.route' if any(w in low for w in ('route', 'get', 'reach')) else 'person.craftsman.location'
+            elif 'there' in low and context.focus.get('subject'):
+                selected = next((x for x in context.focus.get('fact_ids', []) if x.endswith('.route')), None)
+            if selected in fact_ids:
+                concerns.append(dict(id='c1', kind='factual', evidence=message, start=0, end=len(message),
+                    modality='direct', target=None, fact_ids=[selected], pending_question_id=None,
+                    answer_type=None, operation=None))
+        if not concerns and (context.pending_item or any(w in low for w in ('give me', 'can i have', 'i need', 'i give you', 'here is', 'for my work', 'cancel'))):
+            if context.pending_item and (any(w in low for w in ('cancel', 'never mind')) or
+                                         any(w in low for w in ('for my', 'for a', 'because', 'so i can', 'yes', 'okay', 'sure', 'no thanks'))):
+                kind = 'cancellation' if 'cancel' in low or 'never mind' in low else 'pending_answer'
+                concerns.append(dict(id='c1', kind=kind, evidence=message, start=0, end=len(message), modality='direct',
+                    target=context.pending_item, fact_ids=[], pending_question_id='purpose:' + context.pending_item,
+                    answer_type='refusal' if kind == 'cancellation' else ('purpose' if len(low.split()) > 2 and low not in {'yes', 'okay'} else 'assent'), operation=None))
+            else:
+                item = next((value for value in ('wood', 'rope', 'water', 'food', 'bow', 'string', 'axe', 'hammer', 'saw') if value in low), None)
+                op = 'receive_item' if any(w in low for w in ('i give you', 'here is', 'take my')) else 'give_item'
+                if item and item in context.capabilities[0].get('targets', []) and any(w in low for w in ('give', 'have', 'need', 'want', 'offer', 'take')):
+                    concerns.append(dict(id='c1', kind='operation_request', evidence=message, start=0, end=len(message),
+                        modality='direct', target=item, fact_ids=[], pending_question_id=None, answer_type=None, operation=op))
+        if not concerns and context.npc_role == 'craftsman' and any(w in low for w in ('make me a bow', 'craft me a bow', 'craft a bow', 'please make a bow')):
+            concerns.append(dict(id='c1', kind='operation_request', evidence=message, start=0, end=len(message),
+                modality='direct', target='bow', fact_ids=[], pending_question_id=None,
+                answer_type=None, operation='craftsman.request_bow'))
+        if not concerns:
+            if any(w in low for w in ('how are you', 'how has your day', 'how was your day', "how's your day", 'my day', 'i am', "i'm", 'i’m', 'i prefer', 'i like', 'thanks', 'hello', 'hi', 'who taught', 'what do you think', 'please help')):
+                concerns.append(dict(id='c1', kind='social', evidence=message, start=0, end=len(message), modality='direct',
+                    target=None, fact_ids=[], pending_question_id=None, answer_type=None, operation=None))
+            elif any(w in low for w in ('what', 'where', 'who', 'how many', 'why')):
+                selected = next((x for x in fact_ids if any(term in low and x.endswith(suffix) for term, suffix in [('material', 'requirements'), ('deliver', 'delivered'), ('inventory', 'inventory'), ('need', 'requirements'), ('bow', 'phase'), ('craftsman', 'location'), ('gatherer', 'location')])), None)
+                concerns.append(dict(id='c1', kind='factual', evidence=message, start=0, end=len(message), modality='direct',
+                    target=None, fact_ids=[selected] if selected else [], pending_question_id=None, answer_type=None, operation=None))
+            else:
+                concerns.append(dict(id='c1', kind='clarification', evidence=message, start=0, end=len(message), modality='uncertain',
+                    target=None, fact_ids=[], pending_question_id=None, answer_type=None, operation=None))
+        return AcceptedInterpretation(version=1, concerns=concerns, clarification=None), .001
 
     def tearDown(self):
         self.client.close()
@@ -52,6 +106,8 @@ class NPCPipelineTests(unittest.TestCase):
 
     def test_request_waits_for_reason_and_can_be_cancelled(self):
         first = self.client.post('/inventory/transfer', json={'npc_id': 2, 'item': 'wood', 'direction': 'to_player'}).json()
+        self.assertEqual(first['grounding_trace']['interpretation_origin'], 'structured_ui')
+        self.assertEqual(first['grounding_trace']['model_calls']['interpretation'], 0)
         self.assertEqual(first['validated_output']['action'], 'ask_question')
         self.assertIn('why', first['final_dialogue'])
         self.assertNotIn('wood', first['player_inventory'])
@@ -141,7 +197,7 @@ class NPCPipelineTests(unittest.TestCase):
             self.assertEqual(context.memories, [])
 
     def test_quest_question_cannot_repeat_greeting_or_change_inventory(self):
-        for inventory, expected in [([], 'open Quests'), (['wood'], 'open Quests'), (['axe'], 'open Quests')]:
+        for inventory, expected in [([], 'Open Quests'), (['wood'], 'Open Quests'), (['axe'], 'Open Quests')]:
             player = self.db.get(Player, 1)
             player.inventory = inventory
             self.db.commit()
@@ -337,6 +393,8 @@ class NPCPipelineTests(unittest.TestCase):
 
     def test_saved_world_survives_new_sessions_and_read_requests(self):
         from app.models import Memory
+        snapshot = self.client.get('/world').json()
+        self.client.post('/world/opening/complete', json={'game_scope': snapshot['game_scope'], 'opening_version': 1})
         self.client.post('/quests/bow/start')
         self.client.post('/inventory/transfer', json={'npc_id': 1, 'item': 'water', 'direction': 'to_npc'})
         self.assertEqual(self.client.put('/world/player-position', json={'x': 123.5, 'y': -82}).status_code, 200)
@@ -351,6 +409,8 @@ class NPCPipelineTests(unittest.TestCase):
             self.assertEqual(len(list(reopened.scalars(select(Memory)))), count)
             reset = self.client.post('/world/new-game').json()
             self.assertEqual(reset['player_position'], {'x': 0., 'y': 0.})
+            self.assertEqual(reset['opening_state'], 'pending')
+            self.assertNotEqual(reset['game_scope'], before['game_scope'])
             self.assertEqual(reset['bow_quest']['phase'], 'available')
             self.assertEqual(reset['histories']['1'], [])
             self.assertEqual(reset['player_inventory'], ['water', 'food'])
@@ -440,20 +500,21 @@ class NPCPipelineTests(unittest.TestCase):
         self.db.commit()
         self.assertEqual(MemoryService(self.db).retrieve_relevant_memories(self.db.get(NPC, 1), 'hello'), [])
 
-    def test_chat_returns_model_dialogue_and_persists_signed_state(self):
+    def test_unsupported_opening_hours_cannot_become_world_facts(self):
         raw = self.output()
         raw['dialogue'] = 'The workshop opens at sunrise.'
         with patch.object(OpenAICompatibleProvider, 'generate', return_value=json.dumps(raw)):
             response = self.client.post('/chat', json={'npc_id': 1, 'player_message': 'When do you open?'})
         self.assertEqual(response.status_code, 200, response.text)
         data = response.json()
-        self.assertEqual(data['final_dialogue'], raw['dialogue'])
-        self.assertAlmostEqual(data['npc']['fear'], 0.09)
+        self.assertNotEqual(data['final_dialogue'], raw['dialogue'])
+        self.assertTrue(data['grounding_trace']['rejected'])
+        self.assertAlmostEqual(data['npc']['fear'], 0.10)
         self.assertEqual(data['memories'], [])
         self.assertFalse(data['memory_classification']['important'])
         saved = self.db.scalar(select(Conversation))
         self.assertEqual(saved.llm_output, raw)
-        self.assertEqual(saved.final_dialogue, raw['dialogue'])
+        self.assertEqual(saved.final_dialogue, data['final_dialogue'])
 
     def test_provider_failure_is_logged_and_falls_back(self):
         with patch.object(OpenAICompatibleProvider, 'generate', side_effect=httpx.ConnectError('offline')):

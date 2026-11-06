@@ -1,3 +1,5 @@
+from app.services.state.resources import versioned
+from app.services.island import MAP_VERSION
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -33,7 +35,7 @@ NPC_SEEDS = [
 def seed_world(db: Session) -> None:
     player = db.scalar(select(Player).where(Player.id == 1))
     if player is None:
-        player = Player(id=1, inventory=["water", "food"], current_location="village_square")
+        player = Player(id=1, inventory=["water", "food"], current_location="village_square", opening_state="pending", map_version=MAP_VERSION)
         db.add(player)
         db.flush()
 
@@ -48,20 +50,30 @@ def seed_world(db: Session) -> None:
             db.add(NPC(**payload))
     db.commit()
 
+@versioned
 def reset_world(db: Session) -> None:
     """Start a new single-player run without deleting schema or changing NPC IDs."""
     from sqlalchemy import delete
     from app.models import BowQuest
 
-    player = db.scalar(select(Player).where(Player.id == 1).with_for_update())
+    from app.services.state.locking import lock_player
+    player = lock_player(db)
     if player is None:
         raise ValueError('The world must be initialized before starting a game')
     npcs = list(db.scalars(select(NPC).order_by(NPC.id).with_for_update()))
     db.execute(delete(Conversation))
     db.execute(delete(Memory))
+    from uuid import uuid4
+    player.game_scope = str(uuid4())
+    player.resource_revisions = {}
     player.position = {'x': 0.0, 'y': 0.0}
     player.inventory = ['water', 'food']
     player.current_location = 'village_square'
+    player.opening_state = 'pending'
+    player.opening_version = 1
+    player.map_version = MAP_VERSION
+    player.salvage_ids = []
+    player.map_recovery_notice = ''
     for npc in npcs:
         initial = next((values for values in NPC_SEEDS if values['name'] == npc.name), None)
         if initial is not None:
@@ -74,6 +86,11 @@ def reset_world(db: Session) -> None:
     if quest is not None:
         quest.status = 'not_started'
         quest.progress = 0
+    from app.models import CraftsmanEncounter, ShipRepairQuest, StoryEvent, GathererEncounter
+    db.execute(delete(GathererEncounter).where(GathererEncounter.player_id == player.id))
+    db.execute(delete(CraftsmanEncounter).where(CraftsmanEncounter.player_id == player.id))
+    db.execute(delete(ShipRepairQuest).where(ShipRepairQuest.player_id == player.id))
+    db.execute(delete(StoryEvent))
     bow = db.get(BowQuest, player.id)
     if bow is None:
         bow = BowQuest(player_id=player.id)

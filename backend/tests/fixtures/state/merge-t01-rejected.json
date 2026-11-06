@@ -1,0 +1,45 @@
+{
+  "proposed": {
+    "schema_version": 1,
+    "record_id": "proposed-changes:rejected",
+    "trace_id": "trace:state-merge-001",
+    "causation_id": "decision-proposal-record:001",
+    "game_id": "game:demo",
+    "timeline_id": "timeline:main",
+    "npc_id": "npc:craftsman",
+    "actor_id": "player:hero",
+    "target_id": "npc:craftsman",
+    "created_at": "2026-09-29T10:00:01Z",
+    "source_ids": [
+      "decision-proposal-record:001"
+    ],
+    "policy_versions": [
+      {
+        "policy_id": "state:merge",
+        "version": "v1"
+      }
+    ],
+    "proposal_set_id": "proposal-set:rejected",
+    "changes": [
+      {
+        "effect_id": "effect:bad",
+        "dimension": "inventory",
+        "delta": 0.5,
+        "source": "decision_proposal",
+        "source_id": "proposal:001",
+        "subject_id": null
+      }
+    ]
+  },
+  "error": {
+    "code": "INVALID_CONTRACT",
+    "stage": "state.merge",
+    "retryable": false,
+    "source_ids": [
+      "current-state:001",
+      "proposed-changes:rejected",
+      "merge-policy:001"
+    ],
+    "public_message": "Proposed change is not valid for state merging."
+  }
+}

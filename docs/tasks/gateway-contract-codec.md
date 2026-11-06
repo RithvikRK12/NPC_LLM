@@ -6,7 +6,7 @@
 
 Source: [Detailed design](../detailed-design.md), 6.3 Godot modules; [proposal](../proposal.md). The confirmed detailed-design ordering overrides conflicting proposal examples.
 
-**Status:** Planned; target module not complete. **Owner:** unassigned. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
+**Status:** T01-T04 complete; target module complete. **Owner:** Main Agent. Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
 
 ## Dependencies and sequencing
 
@@ -23,22 +23,22 @@ Use fake transport/controller collaborators for unit checks. Real navigation/ren
 
 ## Task checklist
 
-- [ ] **T01 — Define the module contract and fixture boundary.**
+- [x] **T01 — Define the module contract and fixture boundary.**
   - **Acceptance:** Publish the public input/output/error types above, with owned domain fields and shared envelope references. Supply a valid fixture and one rejected fixture; expose no ORM/session or node object in the handoff.
   - **Tests:** Round-trip or construct the valid fixture, reject missing required fields and unsupported variants, and prove input fixtures are not mutated. Decode the shared command fixture in Godot.
   - **Depends on:** Start contracts above. Do not wait for full runtime integration.
 
-- [ ] **T02 — Implement the primary behaviour.**
+- [x] **T02 — Implement the primary behaviour.**
   - **Acceptance:** Decode and validate versioned commands and outcome/display records into typed Godot values without applying gameplay changes.
   - **Tests:** Use the valid T01 fixture and a focused fixture for each successful branch named in this acceptance criterion; assert exact result/state/effect identity rather than generated prose. Use a fixed clock and IDs where relevant.
   - **Depends on:** T01; use immutable upstream result fixtures.
 
-- [ ] **T03 — Enforce failures and invariants.**
+- [x] **T03 — Enforce failures and invariants.**
   - **Acceptance:** Reject old timelines, unknown commands, missing parameters and non-finite values; preserve IDs and backend constraint ranges.
   - **Tests:** Unknown version/action, missing target, old timeline, non-finite values. Assert typed rejection/fallback and absence of unintended effects, not merely that an exception occurred.
   - **Depends on:** T02. Failure injection must remain local to this module and its ports.
 
-- [ ] **T04 — Verify adjacent handoff and publish evidence.**
+- [x] **T04 — Verify adjacent handoff and publish evidence.**
   - **Acceptance:** Consume fixtures produced by each direct dependency and show this module's result satisfies the next documented handoff without changing upstream policy or schema implicitly. Record test evidence and unsupported capabilities.
   - **Tests:** One focused adjacent-module contract check plus the module regression suite; include a mismatched source version/timeline where applicable. Do not run the full game unless this is an engine adapter check.
   - **Depends on:** T01–T03 and the direct Integration gate above. Until those dependencies are ready, record this task as waiting without blocking local unit work.
@@ -49,7 +49,13 @@ Check the whole-module box in master-progress only when every applicable uncheck
 
 ## Execution record
 
-- Assigned task/owner: unassigned.
-- Current task state: not started.
-- Test evidence for new work: none yet.
-- Blocker: dependency gates above; no additional module-specific blocker recorded.
+- Assigned task/owner: Main Agent completed T01-T04 on 2026-10-12.
+- Current task state: complete.
+- Test evidence for new work:
+  - `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p 'test_gateway_contract_codec.py'` — 14 tests passed on 2026-10-12.
+  - `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests` — 361 tests passed on 2026-10-12.
+  - `/opt/homebrew/bin/godot --headless --path frontend/godot --script res://tests/gateway_contract_codec_smoke.gd` — fixture smoke passed on 2026-10-12; Godot emitted local log/certificate warnings but exited 0 and printed the pass message.
+- Implemented files: `backend/app/gateway/contract_codec.py`, `backend/app/gateway/__init__.py`, `backend/tests/test_gateway_contract_codec.py`, `backend/tests/fixtures/gateway/contract-codec-t01-valid.json`, `backend/tests/fixtures/gateway/contract-codec-t01-rejected.json`, `frontend/godot/tests/gateway_contract_codec_smoke.gd`.
+- Unsupported capabilities recorded: this module decodes and validates transport payloads only; it does not apply gameplay changes, schedule controller work, perform HTTP handling or grant outcome authority.
+- Adjacent handoff: focused tests prove decoded `CommandResult` values satisfy a `controllers.lifecycle` input boundary and reject mismatched timeline evidence.
+- Blocker: none.

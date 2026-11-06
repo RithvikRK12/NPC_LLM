@@ -1,0 +1,171 @@
+test_accepted_correction_keeps_head_identity_and_superseded_lineage (test_conversation_canon.CanonCorrectionTests.test_accepted_correction_keeps_head_identity_and_superseded_lineage) ... ERROR
+test_authored_identity_cannot_be_rewritten_by_accepted_correction (test_conversation_canon.CanonCorrectionTests.test_authored_identity_cannot_be_rewritten_by_accepted_correction) ... ERROR
+test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) ... 
+  test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) (heads=()) ... ERROR
+  test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) (heads=(CanonRecord(canon_id='canon:smithing', revision=3, game_scope='run:1', npc_id=7, subject='npc:7', predicate='biography', content='I learned smithing from my father.', category='background', origin='generated', authority='narrative_only', status='active', supersedes_revision=2, introduced_turn_id='turn:old', accepted_claim_evidence=TextSpan(text_id='final:old', start=0, end=34)),)) ... ERROR
+  test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) (heads=(CanonRecord(canon_id='canon:smithing', revision=2, game_scope='run:1', npc_id=7, subject='npc:7', predicate='biography', content='I learned smithing from my father.', category='background', origin='generated', authority='narrative_only', status='superseded', supersedes_revision=1, introduced_turn_id='turn:old', accepted_claim_evidence=TextSpan(text_id='final:old', start=0, end=34)),)) ... ERROR
+  test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) (heads=(CanonRecord(canon_id='canon:smithing', revision=2, game_scope='run:1', npc_id=7, subject='npc:7', predicate='biography', content='I learned smithing from my father.', category='background', origin='generated', authority='narrative_only', status='active', supersedes_revision=1, introduced_turn_id='turn:old', accepted_claim_evidence=TextSpan(text_id='final:old', start=0, end=34)), CanonRecord(canon_id='canon:smithing', revision=3, game_scope='run:1', npc_id=7, subject='npc:7', predicate='biography', content='I learned smithing from my father.', category='background', origin='generated', authority='narrative_only', status='active', supersedes_revision=2, introduced_turn_id='turn:old', accepted_claim_evidence=TextSpan(text_id='final:old', start=0, end=34)))) ... ERROR
+test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) ... ERROR
+test_contradiction_only_remains_attributed_correction_without_revision (test_conversation_canon.CanonCorrectionTests.test_contradiction_only_remains_attributed_correction_without_revision) ... ERROR
+test_failed_claim_validation_and_practical_affordance_block_revisions (test_conversation_canon.CanonCorrectionTests.test_failed_claim_validation_and_practical_affordance_block_revisions) ... ERROR
+test_ordinary_followup_cannot_silently_change_accepted_biography (test_conversation_canon.CanonCorrectionTests.test_ordinary_followup_cannot_silently_change_accepted_biography) ... ok
+test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets (test_conversation_canon.CanonCorrectionTests.test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets) ... ERROR
+test_revision_fails_closed_without_acceptance_checker (test_conversation_canon.CanonCorrectionTests.test_revision_fails_closed_without_acceptance_checker) ... ERROR
+test_revision_requires_exact_link_target_and_attributed_player_evidence (test_conversation_canon.CanonCorrectionTests.test_revision_requires_exact_link_target_and_attributed_player_evidence) ... ERROR
+test_admits_only_exact_validated_final_speech_additions_as_narrative (test_conversation_canon.CanonPolicyTests.test_admits_only_exact_validated_final_speech_additions_as_narrative) ... ok
+test_allows_relatives_and_historical_places_but_requires_grounding_for_affordances (test_conversation_canon.CanonPolicyTests.test_allows_relatives_and_historical_places_but_requires_grounding_for_affordances) ... ok
+test_authored_identity_wins_and_revisions_are_left_to_t02 (test_conversation_canon.CanonPolicyTests.test_authored_identity_wins_and_revisions_are_left_to_t02) ... ok
+test_rejects_candidate_missing_from_final_span_map (test_conversation_canon.CanonPolicyTests.test_rejects_candidate_missing_from_final_span_map) ... ok
+test_rejects_failed_validation_and_stale_or_mismatched_spans (test_conversation_canon.CanonPolicyTests.test_rejects_failed_validation_and_stale_or_mismatched_spans) ... ok
+test_rejects_final_ref_not_linked_to_fresh_source_segment_mapping (test_conversation_canon.CanonPolicyTests.test_rejects_final_ref_not_linked_to_fresh_source_segment_mapping) ... ok
+
+======================================================================
+ERROR: test_accepted_correction_keeps_head_identity_and_superseded_lineage (test_conversation_canon.CanonCorrectionTests.test_accepted_correction_keeps_head_identity_and_superseded_lineage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 179, in test_accepted_correction_keeps_head_identity_and_superseded_lineage
+    change, = CanonPolicy(CorrectionRules()).plan(t02_reply(), (previous, head), ())
+                                                  ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_authored_identity_cannot_be_rewritten_by_accepted_correction (test_conversation_canon.CanonCorrectionTests.test_authored_identity_cannot_be_rewritten_by_accepted_correction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 235, in test_authored_identity_cannot_be_rewritten_by_accepted_correction
+    self.assertEqual(CanonPolicy(CorrectionRules()).plan(t02_reply(), (authored,), ()), ())
+                                                         ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) (heads=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 229, in test_concurrent_or_ambiguous_heads_reject_expected_revision
+    self.assertEqual(CanonPolicy(CorrectionRules()).plan(t02_reply(), heads, ()), ())
+                                                         ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) (heads=(CanonRecord(canon_id='canon:smithing', revision=3, game_scope='run:1', npc_id=7, subject='npc:7', predicate='biography', content='I learned smithing from my father.', category='background', origin='generated', authority='narrative_only', status='active', supersedes_revision=2, introduced_turn_id='turn:old', accepted_claim_evidence=TextSpan(text_id='final:old', start=0, end=34)),))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 229, in test_concurrent_or_ambiguous_heads_reject_expected_revision
+    self.assertEqual(CanonPolicy(CorrectionRules()).plan(t02_reply(), heads, ()), ())
+                                                         ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) (heads=(CanonRecord(canon_id='canon:smithing', revision=2, game_scope='run:1', npc_id=7, subject='npc:7', predicate='biography', content='I learned smithing from my father.', category='background', origin='generated', authority='narrative_only', status='superseded', supersedes_revision=1, introduced_turn_id='turn:old', accepted_claim_evidence=TextSpan(text_id='final:old', start=0, end=34)),))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 229, in test_concurrent_or_ambiguous_heads_reject_expected_revision
+    self.assertEqual(CanonPolicy(CorrectionRules()).plan(t02_reply(), heads, ()), ())
+                                                         ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision) (heads=(CanonRecord(canon_id='canon:smithing', revision=2, game_scope='run:1', npc_id=7, subject='npc:7', predicate='biography', content='I learned smithing from my father.', category='background', origin='generated', authority='narrative_only', status='active', supersedes_revision=1, introduced_turn_id='turn:old', accepted_claim_evidence=TextSpan(text_id='final:old', start=0, end=34)), CanonRecord(canon_id='canon:smithing', revision=3, game_scope='run:1', npc_id=7, subject='npc:7', predicate='biography', content='I learned smithing from my father.', category='background', origin='generated', authority='narrative_only', status='active', supersedes_revision=2, introduced_turn_id='turn:old', accepted_claim_evidence=TextSpan(text_id='final:old', start=0, end=34))))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 229, in test_concurrent_or_ambiguous_heads_reject_expected_revision
+    self.assertEqual(CanonPolicy(CorrectionRules()).plan(t02_reply(), heads, ()), ())
+                                                         ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_concurrent_or_ambiguous_heads_reject_expected_revision (test_conversation_canon.CanonCorrectionTests.test_concurrent_or_ambiguous_heads_reject_expected_revision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 230, in test_concurrent_or_ambiguous_heads_reject_expected_revision
+    self.assertEqual(CanonPolicy(CorrectionRules()).plan(t02_reply(expected_revision=1),
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_contradiction_only_remains_attributed_correction_without_revision (test_conversation_canon.CanonCorrectionTests.test_contradiction_only_remains_attributed_correction_without_revision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 190, in test_contradiction_only_remains_attributed_correction_without_revision
+    reply = t02_reply(T02['contradiction_only_speech'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_failed_claim_validation_and_practical_affordance_block_revisions (test_conversation_canon.CanonCorrectionTests.test_failed_claim_validation_and_practical_affordance_block_revisions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 265, in test_failed_claim_validation_and_practical_affordance_block_revisions
+    t02_reply(), (t02_head(),), ()), ())
+    ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets (test_conversation_canon.CanonCorrectionTests.test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 246, in test_rebuilt_final_span_rejects_draft_offsets_and_admits_fresh_offsets
+    reply = t02_reply()
+            ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_revision_fails_closed_without_acceptance_checker (test_conversation_canon.CanonCorrectionTests.test_revision_fails_closed_without_acceptance_checker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 196, in test_revision_fails_closed_without_acceptance_checker
+    self.assertEqual(CanonPolicy(Rules()).plan(t02_reply(), (t02_head(),), ()), ())
+                                               ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+======================================================================
+ERROR: test_revision_requires_exact_link_target_and_attributed_player_evidence (test_conversation_canon.CanonCorrectionTests.test_revision_requires_exact_link_target_and_attributed_player_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 204, in test_revision_requires_exact_link_target_and_attributed_player_evidence
+    reply = t02_reply()
+            ^^^^^^^^^^^
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_canon.py", line 169, in t02_reply
+    return CanonReply(reply.candidate_reply,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CanonReply.__init__() got an unexpected keyword argument 'corrections'
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.002s
+
+FAILED (errors=12)
+
+exit_code=1

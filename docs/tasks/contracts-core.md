@@ -6,7 +6,7 @@ Common envelopes, identities, revisions, value types and transport fixture conve
 
 Source: [Detailed design](../detailed-design.md), Supporting contract/infrastructure or integration package; [proposal](../proposal.md). The confirmed detailed-design ordering overrides conflicting proposal examples.
 
-**Status:** C01/C02 complete; C03 pending; target module not complete. **Owner:** Main Agent (review/tracking), `/root/c01_contracts` (C01 implementation). Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
+**Status:** C01/C02/C03 complete; target module complete. **Owner:** Main Agent (review/tracking). Whole-module completion is tracked in [master-progress](../master-progress.md#module-status).
 
 ## Dependencies and sequencing
 
@@ -33,7 +33,7 @@ Keep domain calculations pure where applicable; external adapters receive fake c
   - **Tests:** Unknown action/enum rejected; constraint intersection cannot add privileges; timing fields reject invalid combinations.
   - **Depends on:** C01. Complete the direct integration gate before claiming this module finished.
 
-- [ ] **C03 — Publish cross-language fixture and ownership conventions.**
+- [x] **C03 — Publish cross-language fixture and ownership conventions.**
   - **Acceptance:** Backend and Godot consume the same stable envelope/command fixtures; document owner of each domain handoff and changes to shared contract versions.
   - **Tests:** Decode fixtures with a small Python harness and an independent Godot fixture reader; incompatible version fixture fails predictably.
   - **Depends on:** C02. Complete the direct integration gate before claiming this module finished.
@@ -57,3 +57,5 @@ Check the whole-module box in master-progress only when every applicable uncheck
 - C02 accepted 2026-09-12 by Main Agent after code review. Files: `backend/app/contracts/behavior.py`, exports in `__init__.py`, `backend/tests/test_behavior_contracts.py`, `backend/tests/fixtures/contracts/c02_constraints.json`, `c02_denied.json`, `c02_failure_dialogue.json`.
 - C02 evidence (root): `PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -p test_behavior_contracts.py` — 17 passed, exit 0. Includes 512 associativity combinations; Main Agent separately checked 1000 deterministic algebra trials. Combined regression recorded in master-progress.
 - C02 semantics: sorted immutable sets, per-action target alternatives and bounds, conjunctive predicates, accumulating evidence, deny-all on contradictions; empty dialogue permissions retain silent action permissions. Unknown actions reject. Outcome IDs and predicates are structural references, verified by owning modules.
+
+- C03 accepted 2026-09-13. Shared fixtures: `contracts/fixtures/v1/` (4 valid and 10 invalid examples); Python decoder/tests in `backend/tests/contract_fixture_reader.py` and `backend/tests/test_cross_language_contracts.py`; independent Godot reader `frontend/godot/tests/contract_fixture_smoke.gd`. Python checks: 4 passed. Godot 4.7.2 headless check: 4 valid and 3 invalid fixture checks passed. Revision values are bounded to `2^53-1` for exact Godot JSON compatibility. Fixture DTOs remain test-only; production command ownership is unchanged.

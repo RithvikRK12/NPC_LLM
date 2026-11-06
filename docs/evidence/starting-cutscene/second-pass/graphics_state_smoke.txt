@@ -1,0 +1,11 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+PASS Old position inside new cottage recovers to clear ground
+PASS Recovery explained to player
+PASS Recovered position saved through existing save path
+PASS Recovery preserves quest, inventory and history
+PASS Pickup consumes authoritative snapshot coordinates without rounding
+PASS Talk radius remains 96 at 95.5
+PASS Talk radius remains 96 at 96.5
+PASS Old save outside detailed district retains exact floating-point position
+Graphics state failures: 0

@@ -1,0 +1,49 @@
+test_fresh_hello_has_no_global_quest_or_capability_priming (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_fresh_hello_has_no_global_quest_or_capability_priming) ... FAIL
+test_greeting_grammar_avoids_unneeded_extraction_and_fact_slots (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_greeting_grammar_avoids_unneeded_extraction_and_fact_slots) ... FAIL
+test_mixed_greeting_still_exposes_grounded_operation_context (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_mixed_greeting_still_exposes_grounded_operation_context) ... ok
+test_reported_ship_remains_available_for_contextual_questions (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_reported_ship_remains_available_for_contextual_questions) ... ERROR
+test_unreported_ship_is_absent_from_non_greeting_generation (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_unreported_ship_is_absent_from_non_greeting_generation) ... FAIL
+
+======================================================================
+ERROR: test_reported_ship_remains_available_for_contextual_questions (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_reported_ship_remains_available_for_contextual_questions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_speaker_knowledge.py", line 51, in test_reported_ship_remains_available_for_contextual_questions
+    self.assertEqual(data['speaker_knowledge']['player_ship'],'reported_to_this_npc')
+                     ~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'speaker_knowledge'
+
+======================================================================
+FAIL: test_fresh_hello_has_no_global_quest_or_capability_priming (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_fresh_hello_has_no_global_quest_or_capability_priming)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_speaker_knowledge.py", line 36, in test_fresh_hello_has_no_global_quest_or_capability_priming
+    self.assertEqual(data['visible_facts'],[])
+AssertionError: Lists differ: [{'evidence_id': 'activity:test', 'content[694 chars]ct'}] != []
+
+First list contains 2 additional elements.
+First extra element 0:
+{'evidence_id': 'activity:test', 'content': '{"wreck_reported": false, "outing_active": false, "inspection_complete": false}', 'sources': [{'kind': 'activity', 'source_id': 'activity:ship_inspection', 'revision': 0, 'game_scope': 'run:1', 'npc_id': 1, 'attribution': 'authoritative_game_rules', 'visibility': 'public'}], 'created_at': '2026-10-20T00:00:00Z', 'kind': 'mechanical_fact'}
+
+Diff is 1006 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_greeting_grammar_avoids_unneeded_extraction_and_fact_slots (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_greeting_grammar_avoids_unneeded_extraction_and_fact_slots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_speaker_knowledge.py", line 56, in test_greeting_grammar_avoids_unneeded_extraction_and_fact_slots
+    self.assertEqual(schema['properties'][name].get('maxItems'),0,name)
+AssertionError: None != 0 : concerns
+
+======================================================================
+FAIL: test_unreported_ship_is_absent_from_non_greeting_generation (test_conversation_speaker_knowledge.SpeakerKnowledgeTests.test_unreported_ship_is_absent_from_non_greeting_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_speaker_knowledge.py", line 45, in test_unreported_ship_is_absent_from_non_greeting_generation
+    self.assertFalse(any('quest:ship_repair' in json.dumps(fact) for fact in data['visible_facts']))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.014s
+
+FAILED (failures=3, errors=1)

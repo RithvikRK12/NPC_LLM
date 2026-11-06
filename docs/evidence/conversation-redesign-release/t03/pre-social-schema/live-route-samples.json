@@ -1,0 +1,112 @@
+[
+  {
+    "npc_id": 1,
+    "message": "What do you enjoy about your work?",
+    "route": "ordinary",
+    "seconds": 17.803,
+    "response_origin": "fallback",
+    "degradation_reason": "SAFE_FALLBACK",
+    "dialogue": "Please ask directly for the action you want me to take.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "What helps you feel at ease?",
+    "route": "ordinary",
+    "seconds": 23.1506,
+    "response_origin": "fallback",
+    "degradation_reason": "INTERNAL_FAILURE",
+    "dialogue": "The workshop's gone quiet for a moment. Ask me again shortly.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "What do you enjoy about your work?",
+    "route": "ordinary",
+    "seconds": 21.8494,
+    "response_origin": "fallback",
+    "degradation_reason": "SAFE_FALLBACK",
+    "dialogue": "Please ask directly for the action you want me to take.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "What helps you feel at ease?",
+    "route": "ordinary",
+    "seconds": 21.5759,
+    "response_origin": "fallback",
+    "degradation_reason": "INTERNAL_FAILURE",
+    "dialogue": "I need a moment to listen to the trail. Ask me again shortly.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "Can you make me a bow?",
+    "route": "action",
+    "seconds": 16.7691,
+    "response_origin": "fallback",
+    "degradation_reason": "PROVIDER_INVALID_OUTPUT",
+    "dialogue": "We discussed the materials for your bow. Check your quest journal for the next steps.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "May I have wood?",
+    "route": "purpose_question",
+    "seconds": 0.0664,
+    "response_origin": "fallback",
+    "degradation_reason": "SAFE_FALLBACK",
+    "dialogue": "Before I give you the wood, why do you need it?",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "To help the Craftsman make a bow",
+    "route": "action",
+    "seconds": 19.1348,
+    "response_origin": "fallback",
+    "degradation_reason": "PROVIDER_INVALID_OUTPUT",
+    "dialogue": "I gave you 1 wood.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "I give you water",
+    "route": "action",
+    "seconds": 15.7447,
+    "response_origin": "fallback",
+    "degradation_reason": "INTERNAL_FAILURE",
+    "dialogue": "You gave me 1 water.",
+    "receipt_count": 1,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 1,
+    "message": "How are you feeling today?",
+    "route": "provider_outage",
+    "seconds": 0.0473,
+    "response_origin": "fallback",
+    "degradation_reason": "PROVIDER_UNAVAILABLE",
+    "dialogue": "The workshop's gone quiet for a moment. Ask me again shortly.",
+    "receipt_count": 0,
+    "exact_retry": true
+  },
+  {
+    "npc_id": 2,
+    "message": "How are you feeling today?",
+    "route": "provider_outage",
+    "seconds": 0.0395,
+    "response_origin": "fallback",
+    "degradation_reason": "PROVIDER_UNAVAILABLE",
+    "dialogue": "I need a moment to listen to the trail. Ask me again shortly.",
+    "receipt_count": 0,
+    "exact_retry": true
+  }
+]

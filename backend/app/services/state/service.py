@@ -1,4 +1,5 @@
 from __future__ import annotations
+from app.services.state.resources import versioned
 
 from dataclasses import dataclass
 
@@ -22,6 +23,7 @@ class StateService:
     def __init__(self, db: Session) -> None:
         self._db = db
 
+    @versioned
     def apply(self, npc: NPC, player: Player, quest: Quest | None, output: LLMResponse) -> WorldStateSnapshot:
         npc.trust = clamp(npc.trust + output.state_update.trust)
         npc.fear = clamp(npc.fear + output.state_update.fear)
@@ -35,7 +37,7 @@ class StateService:
 
         if output.intent == 'confirm_transfer' and output.action == 'ask_question':
             npc.pending_item = output.item
-        elif output.intent in {'cancel_transfer', 'unavailable_item'} or output.action in {'give_item', 'receive_item'}:
+        elif output.intent in {'cancel_transfer', 'unavailable_item', 'wood_refused'} or output.action in {'give_item', 'receive_item'}:
             npc.pending_item = None
         npc_inventory = list(npc.inventory or [])
         if output.action in {"give_item", "receive_item"}:
@@ -48,6 +50,8 @@ class StateService:
                 quest_status = "active"
                 quest_progress = max(quest_progress, 50)
         npc.inventory = npc_inventory
+        from app.services.quests.gatherer_recovery import record_gift
+        record_gift(self._db, player, npc, output)
 
 
         player.inventory = inventory

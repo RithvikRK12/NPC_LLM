@@ -1,0 +1,45 @@
+{"npc_id": 1, "state": "helpful", "message": "Hello", "passed": true, "dialogue": "Glad to help. Hello there! Nice to meet you."}
+{"npc_id": 1, "state": "helpful", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 1, "state": "helpful", "message": "Can I have rope?", "passed": true, "dialogue": "Glad to help. Before I give you the rope, why do you need it?"}
+{"npc_id": 1, "state": "helpful", "message": "For my work in the village", "passed": true, "dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now."}
+{"npc_id": 1, "state": "cautious", "message": "Hello", "passed": true, "dialogue": "Let's be careful. Hello! I'm the Craftsman."}
+{"npc_id": 1, "state": "cautious", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 1, "state": "cautious", "message": "Can I have rope?", "passed": true, "dialogue": "Let's be careful. Before I give you the rope, why do you need it?"}
+{"npc_id": 1, "state": "cautious", "message": "For my work in the village", "passed": true, "dialogue": "Let's be careful. Thanks for explaining. Here, take my rope. It's yours now."}
+{"npc_id": 1, "state": "distrustful", "message": "Hello", "passed": true, "dialogue": "Let's be careful. Hello! I'm the Craftsman."}
+{"npc_id": 1, "state": "distrustful", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 1, "state": "distrustful", "message": "Can I have rope?", "passed": true, "dialogue": "I'd rather keep my rope for now. You can still ask me questions."}
+{"npc_id": 2, "state": "helpful", "message": "Hello", "passed": true, "dialogue": "Glad to help. Hello! I'm the Gatherer."}
+{"npc_id": 2, "state": "helpful", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 2, "state": "helpful", "message": "Can I have fruits?", "passed": true, "dialogue": "Glad to help. Before I give you the fruits, why do you need it?"}
+{"npc_id": 2, "state": "helpful", "message": "For my work in the village", "passed": true, "dialogue": "Glad to help. Thanks for explaining. Here, take my fruits. It's yours now."}
+{"npc_id": 2, "state": "cautious", "message": "Hello", "passed": true, "dialogue": "Let's be careful. Hello! I'm the Gatherer."}
+{"npc_id": 2, "state": "cautious", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 2, "state": "cautious", "message": "Can I have fruits?", "passed": true, "dialogue": "Let's be careful. Before I give you the fruits, why do you need it?"}
+{"npc_id": 2, "state": "cautious", "message": "For my work in the village", "passed": true, "dialogue": "Let's be careful. Thanks for explaining. Here, take my fruits. It's yours now."}
+{"npc_id": 2, "state": "distrustful", "message": "Hello", "passed": true, "dialogue": "Let's be careful. Hello! I'm the Gatherer."}
+{"npc_id": 2, "state": "distrustful", "message": "Where is the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 2, "state": "distrustful", "message": "Can I have fruits?", "passed": true, "dialogue": "I'd rather keep my fruits for now. You can still ask me questions."}
+{"npc_id": 1, "state": "helpful", "message": "Good morning", "passed": true, "dialogue": "Glad to help. Good morning! I'm the Craftsman."}
+{"npc_id": 1, "state": "helpful", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 1, "state": "helpful", "message": "Please give me rope", "passed": true, "dialogue": "Glad to help. Before I give you the rope, why do you need it?"}
+{"npc_id": 1, "state": "helpful", "message": "For my work in the village", "passed": true, "dialogue": "Glad to help. Thanks for explaining. Here, take my rope. It's yours now."}
+{"npc_id": 1, "state": "cautious", "message": "Good morning", "passed": true, "dialogue": "Let's be careful. Good morning! I'm the Craftsman."}
+{"npc_id": 1, "state": "cautious", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 1, "state": "cautious", "message": "Please give me rope", "passed": true, "dialogue": "Let's be careful. Before I give you the rope, why do you need it?"}
+{"npc_id": 1, "state": "cautious", "message": "For my work in the village", "passed": true, "dialogue": "Let's be careful. Thanks for explaining. Here, take my rope. It's yours now."}
+{"npc_id": 1, "state": "distrustful", "message": "Good morning", "passed": true, "dialogue": "Let's be careful. Good morning! I'm the Craftsman."}
+{"npc_id": 1, "state": "distrustful", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 1, "state": "distrustful", "message": "Please give me rope", "passed": true, "dialogue": "I'd rather keep my rope for now. You can still ask me questions."}
+{"npc_id": 2, "state": "helpful", "message": "Good morning", "passed": true, "dialogue": "Glad to help. Good morning! I'm the Gatherer."}
+{"npc_id": 2, "state": "helpful", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 2, "state": "helpful", "message": "Please give me fruits", "passed": true, "dialogue": "Glad to help. Before I give you the fruits, why do you need it?"}
+{"npc_id": 2, "state": "helpful", "message": "For my work in the village", "passed": true, "dialogue": "Glad to help. Thanks for explaining. Here, take my fruits. It's yours now."}
+{"npc_id": 2, "state": "cautious", "message": "Good morning", "passed": true, "dialogue": "Let's be careful. Good morning! I'm the Gatherer."}
+{"npc_id": 2, "state": "cautious", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 2, "state": "cautious", "message": "Please give me fruits", "passed": true, "dialogue": "Let's be careful. Before I give you the fruits, why do you need it?"}
+{"npc_id": 2, "state": "cautious", "message": "For my work in the village", "passed": true, "dialogue": "Let's be careful. Thanks for explaining. Here, take my fruits. It's yours now."}
+{"npc_id": 2, "state": "distrustful", "message": "Good morning", "passed": true, "dialogue": "Let's be careful. Good morning! I'm the Gatherer."}
+{"npc_id": 2, "state": "distrustful", "message": "Where can I find the Gatherer?", "passed": true, "dialogue": "Gatherer is usually at the forest edge. I don't have an observed current position."}
+{"npc_id": 2, "state": "distrustful", "message": "Please give me fruits", "passed": true, "dialogue": "I'd rather keep my fruits for now. You can still ask me questions."}
+Passed 44/44; evidence: docs/evidence/behavior-social-embedding-v1.json

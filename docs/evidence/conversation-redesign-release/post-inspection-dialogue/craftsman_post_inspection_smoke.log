@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS First entry walks into conversation range
+PASS Introduction does not start bow quest
+Talked: Do you enjoy working here?
+Talked: The storm broke my ship.
+PASS Report alone waits for agreement
+PASS Accepted inspection automatically closes chat
+PASS Accepted inspection shows boat guidance
+Talked: Sure! That would be helpful.
+PASS Inspection acceptance starts outing
+Talked: Wait here
+PASS Wait command holds a safe position
+Talked: Let's go
+PASS Shared doorway moves both actors outside
+PASS Craftsman waits outside unrelated cottage
+Segment (0.0, 384.0) actor=(384.0, -16.0) mode=following_player reason= clear=true
+Segment (0.0, 704.0) actor=(146.6405, 329.0099) mode=following_player reason= clear=true
+Segment (0.0, 1024.0) actor=(-0.0, 549.0) mode=following_player reason= clear=true
+Segment (0.0, 1344.0) actor=(0.0, 869.0) mode=following_player reason= clear=true
+Segment (0.0, 1664.0) actor=(0.0, 1189.0) mode=following_player reason= clear=true
+Segment (0.0, 1984.0) actor=(0.0, 1509.0) mode=following_player reason= clear=true
+Segment (0.0, 2304.0) actor=(0.0, 1829.0) mode=following_player reason= clear=true
+Segment (0.0, 2624.0) actor=(0.0, 2149.0) mode=following_player reason= clear=true
+Segment (0.0, 2944.0) actor=(0.0, 2469.0) mode=following_player reason= clear=true
+Segment (0.0, 3264.0) actor=(0.0, 2789.0) mode=following_player reason= clear=true
+Segment (0.0, 3504.0) actor=(0.0, 3109.0) mode=following_player reason= clear=true
+PASS Both actors stage outside hull
+PASS Inspection result confirmed by server
+PASS Ship quest leaves bow and inventory independent
+Talked: Thanks for looking at my ship!
+Post-inspection answer: you're welcome, glad i could help you take a closer look at your ship.
+PASS Thanks keeps NPC perspective and does not reopen inspection
+PASS Gratitude preserves completed inspection
+PASS Gratitude does not replay escort guidance
+PASS Craftsman independently returns through workshop portal
+PASS Solo return leaves player at wreck
+PASS Reload preserves introduction and inspection
+PASS Reload resumes routine after return
+Craftsman integration: 0 failures
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

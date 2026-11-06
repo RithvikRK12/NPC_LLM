@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "ForestEntryRegion": [
+    -2250,
+    -350,
+    850,
+    760
+  ],
+  "CombatBounds": [
+    -2040,
+    -20,
+    500,
+    160
+  ],
+  "marks": {
+    "IntroCheckpoint": [
+      -1370,
+      70
+    ],
+    "PlayerTalkMark": [
+      -1740,
+      70
+    ],
+    "GathererMark": [
+      -1800,
+      70
+    ],
+    "BoarSpawnA": [
+      -1940,
+      0
+    ],
+    "BoarSpawnB": [
+      -1940,
+      130
+    ],
+    "BoarThreatA": [
+      -1880,
+      10
+    ],
+    "BoarThreatB": [
+      -1880,
+      110
+    ],
+    "CombatStartMark": [
+      -1740,
+      70
+    ],
+    "VillageReturnMark": [
+      -1000,
+      70
+    ]
+  }
+}

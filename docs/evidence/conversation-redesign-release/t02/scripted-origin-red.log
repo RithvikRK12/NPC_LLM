@@ -1,0 +1,18 @@
+/Users/rukithnayak/Documents/NPC_LLM-1/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3627: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+.F.....
+======================================================================
+FAIL: test_cancel_ends_the_persisted_item_request_without_transfer (test_conversation_playtest.PlaytestRuntimeTests.test_cancel_ends_the_persisted_item_request_without_transfer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rukithnayak/Documents/NPC_LLM-1/backend/tests/test_conversation_playtest.py", line 92, in test_cancel_ends_the_persisted_item_request_without_transfer
+    self.assertEqual(cancelled.response.response_origin,'scripted')
+AssertionError: 'generated' != 'scripted'
+- generated
++ scripted
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.548s
+
+FAILED (failures=1)

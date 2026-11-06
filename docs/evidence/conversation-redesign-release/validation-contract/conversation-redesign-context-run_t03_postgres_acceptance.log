@@ -1,0 +1,13 @@
+PostgreSQL version: 16.15 (Debian 16.15-1.pgdg12+2)
+Disposable database: npc_test_context_t03_1f88108b922e
+test_authored_persona_reaches_provider_from_sql_for_both_roles (test_conversation_context_adapter.SQLContextReadAdapterTests.test_authored_persona_reaches_provider_from_sql_for_both_roles) ... ok
+test_player_text_provenance_ids_match_the_context_producer (test_conversation_context_adapter.SQLContextReadAdapterTests.test_player_text_provenance_ids_match_the_context_producer) ... ok
+test_uses_literal_world_scope_and_only_finalized_prior_turns (test_conversation_context_adapter.SQLContextReadAdapterTests.test_uses_literal_world_scope_and_only_finalized_prior_turns) ... ok
+test_rejects_mismatched_explicit_scope_guard (test_conversation_scoped_reads.ScopedTurnReadTests.test_rejects_mismatched_explicit_scope_guard) ... ok
+test_returns_only_ordered_finalized_rows_from_exact_scope_npc_epoch_before_current (test_conversation_scoped_reads.ScopedTurnReadTests.test_returns_only_ordered_finalized_rows_from_exact_scope_npc_epoch_before_current) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.768s
+
+OK
+Dropped disposable database: npc_test_context_t03_1f88108b922e
